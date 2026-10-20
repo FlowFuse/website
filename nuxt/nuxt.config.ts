@@ -262,7 +262,7 @@ export default defineNuxtConfig({
                     { title: 'Pricing', href: `${site.baseURL}/pricing/`, description: 'Plans and pricing information' },
                     { title: 'Integrations', href: `${site.baseURL}/integrations/`, description: 'Supported integrations and connectors' },
                     { title: 'Application Guide', href: `${site.baseURL}/docs/application-guide/`, description: 'Patterns for building FlowFuse applications' },
-                    { title: 'Create an account', href: `${site.appURL}/account/create`, description: 'Start a free trial' },
+                    { title: 'Build With Us', href: `${site.baseURL}/build-with-us/`, description: 'Build your first industrial application with FlowFuse engineers' },
                     { title: 'Terms of Service', href: `${site.baseURL}/terms/` },
                     { title: 'Privacy Policy', href: `${site.baseURL}/privacy-policy/` },
                 ],

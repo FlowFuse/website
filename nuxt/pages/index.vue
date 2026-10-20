@@ -374,7 +374,7 @@ useSchemaOrg([
       <!-- Get Started -->
       <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
           <p class="text-white text-5xl font-medium m-0">Get Started with FlowFuse</p>
-          <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Book a demo to see how, or start a free trial and build it yourself.</p>
+          <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Talk to our team, and our engineers will build your first operational application alongside you.</p>
           <CtaBookDemo variant="highlight" position="get-started" />
       </div>
       <!-- FF Content -->
