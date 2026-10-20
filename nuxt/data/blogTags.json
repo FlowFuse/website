@@ -37,4 +37,7 @@
 }, {
     "label": "Modbus",
     "value": "modbus"
+}, {
+    "label": "Templates",
+    "value": "templates"
 }]

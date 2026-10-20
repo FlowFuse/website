@@ -9,6 +9,7 @@ image: /blog/2026/09/images/fishbone-diagram-template.png
 tags:
   - posts
   - flowfuse
+  - templates
 cta:
   type: demo
   title: "Verify Which Suspected Cause Is Real"

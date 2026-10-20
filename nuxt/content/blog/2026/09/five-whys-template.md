@@ -9,6 +9,7 @@ image: /blog/2026/09/images/5-why-template.png
 tags:
   - posts
   - flowfuse
+  - templates
 cta:
   type: demo
   title: "Connect Production Data to Corrective Actions"

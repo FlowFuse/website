@@ -17,9 +17,11 @@ and the plan are all agreed before it starts — and it ends in a clear decision
 ## Where a PoV fits in the sales process
 
 A PoV is **[stage 4 — Validate](https://docs.google.com/spreadsheets/d/1WKz_ll6bLxkkRlZ4K94Va1laGksHXleo8Pnv0aB08lU/)** of the sales process: the technical heart of the
-Evaluation phase, jointly owned by the **AE and SE**. It is where a deal moves
-from *best case* into *forecast* — the customer has agreed the problem is worth
-solving, and the PoV proves FlowFuse is the solution. A **completed installation**
+Evaluation phase, jointly owned by the **AE and SE**. It provides technical
+evidence that strengthens the forecast by proving FlowFuse solves the agreed
+problem. Deals can qualify for the forecast from Stage 3 when they meet the
+[Forecast Deal criteria](/handbook/sales/forecast-review/#forecast-deals).
+A **completed installation**
 and **technical validation** against the agreed criteria are the exit signals that
 carry the deal out of Validate toward Commit.
 

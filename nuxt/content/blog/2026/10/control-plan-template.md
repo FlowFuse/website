@@ -9,6 +9,7 @@ image: /blog/2026/10/images/control-plan-template.png
 tags:
   - posts
   - flowfuse
+  - templates
 cta:
   type: demo
   title: "Your Control Plan Is Only as Good as the Data Behind It"
