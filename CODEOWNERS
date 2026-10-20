@@ -1,22 +1,22 @@
 # Please note the _last matching rule_ is used
 
 # Start with a catch all for the handbook
-/nuxt/content/handbook/ @ZJvandeWeg
+/nuxt/content/handbook/ @FlowFuse/leadership
 /nuxt/content/handbook/design @FlowFuse/marketing
 /nuxt/content/handbook/marketing @FlowFuse/marketing
-/nuxt/content/handbook/sales @MichaelBDavis
+/nuxt/content/handbook/sales @FlowFuse/sales
 
 # Customer department
-/nuxt/content/handbook/sales/customer-success.md @Esmewieringa
+/nuxt/content/handbook/sales/customer-success.md @FlowFuse/customer-success
 
 # Security Polices
-/nuxt/content/handbook/company/security/information-security.md @ZJvandeWeg
-/nuxt/content/handbook/company/security/access-control.md @knolleary
-/nuxt/content/handbook/company/security/data-management.md @ZJvandeWeg
-/nuxt/content/handbook/company/security/secure-development.md @knolleary
+/nuxt/content/handbook/company/security/information-security.md @FlowFuse/leadership
+/nuxt/content/handbook/company/security/access-control.md @FlowFuse/leadership
+/nuxt/content/handbook/company/security/data-management.md @FlowFuse/leadership
+/nuxt/content/handbook/company/security/secure-development.md @FlowFuse/leadership
 
 # Change in values need sign off from both the CEO and CTO
-/nuxt/content/handbook/company/values.md @knolleary @ZJvandeWeg
+/nuxt/content/handbook/company/values.md @FlowFuse/leadership
 
 # Package-lock.json (engineering team)
 /package-lock.json @FlowFuse/engineering  @FlowFuse/marketing
