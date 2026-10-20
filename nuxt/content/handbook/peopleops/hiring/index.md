@@ -236,6 +236,8 @@ The purpose of the offboarding section in the handbook is to provide a clear and
 
 When a team member or contractor decides to leave FlowFuse, they will receive a detailed email before their final date of employment. The email will include information regarding the impact on benefits coverage, stocks, final pay, and the process for returning any company assets.
 
+Extra notes to know regarding [Offboarding](https://docs.google.com/document/d/1JU3IOOBNH0c26bEcgKC_n5U_t2z5MteKPj5GgNp4IcM/edit?usp=sharing) based on the type of employee (Contractor, PEO, EOR).
+
 ### Voluntary Resignation
 
 If a team member decides to leave FlowFuse, they're expected to continue working to facilitate a smooth handover and enable us to find a suitable replacement. Please note that we generally expect the team member to work for the entire notice period.
