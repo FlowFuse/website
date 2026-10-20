@@ -4,7 +4,7 @@
 import CtaButton from './cta/CtaButton.vue'
 import { CTA_DESTINATIONS, type CtaQuery } from '../lib/cta-destinations'
 
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
     variant: 'primary' | 'primary-outlined' | 'highlight' | 'highlight-outlined' | 'nav-text' | 'ghost'
     position: string
     plan?: string
@@ -19,11 +19,7 @@ const props = withDefaults(defineProps<{
 const DEST = CTA_DESTINATIONS.signUp
 const EVENT = DEST.event
 const HREF = DEST.href
-
-// Kept as a fixed lookup (not a caller-supplied prop) so callers can't
-// reintroduce arbitrary copy variants - only `position` decides.
-const NAV_POSITIONS = new Set<string>(DEST.navPositions)
-const LABEL = computed(() => NAV_POSITIONS.has(props.position) ? DEST.navLabel : DEST.label)
+const LABEL = DEST.label
 </script>
 
 <template>
