@@ -12,6 +12,7 @@ defineProps<{ heading: string, description: string }>()
         <p class="text-white text-5xl font-medium m-0">{{ heading }}</p>
         <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">{{ description }}</p>
         <CtaBookDemo variant="highlight" position="final-cta" />
+        <slot />
       </div>
     </div>
   </div>
