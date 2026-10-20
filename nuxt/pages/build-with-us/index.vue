@@ -92,19 +92,6 @@ useSchemaOrg([
       </div>
     </section>
 
-    <!-- TRIAL NOTE: most visitors arrive from an old "Free Trial" link. One short
-         answer to "where did it go?", then out of the way. -->
-    <section class="w-full px-6 pb-12 sm:pb-16">
-      <div class="max-w-3xl mx-auto flex items-start gap-4 rounded-lg border border-indigo-100 bg-indigo-50/50 p-5">
-        <UIcon name="i-lucide-info" class="size-6 flex-none text-indigo-600" aria-hidden="true" />
-        <p class="m-0 text-sm text-gray-600">
-          <span class="font-semibold text-gray-900">Looking for the free trial?</span>
-          Enterprise teams told us they would rather start with a real problem on their own equipment and data, so that is where getting started now begins. If a hands-on trial is still the right next step for you,
-          <a href="#talk-to-us" :class="LINK">just ask</a>.
-        </p>
-      </div>
-    </section>
-
     <!-- OUTCOMES: what the first solution leaves the customer with. -->
     <section class="w-full px-6 pb-12 sm:pb-16">
       <div class="md:max-w-screen-lg m-auto">
