@@ -65,11 +65,3 @@ Partner with the CEO and GTM leadership on positioning, packaging, and expansion
 * Experience building and leading product teams, with the willingness to operate hands-on as the function develops.
 
 Experience working directly with forward deployed engineers, solutions engineers, or a comparable customer delivery organization is particularly valuable. We are interested in the decisions you made together and the products that resulted.
-
-## 90 Day Plan
-
-To be defined with the hiring manager. The first-year outcomes above are separate from the onboarding plan.
-
-## Hiring Plan
-
-To be defined with the hiring manager.
