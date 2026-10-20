@@ -506,6 +506,15 @@ export default defineContentConfig({
                     steps: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
                     note: z.string().optional(),
                 }).optional(),
+                // Solution pages only: how FlowFuse builds the first system with the
+                // customer and hands it over. Rendered last, ahead of the closing CTA.
+                engagement: z.object({
+                    heading: z.string(),
+                    intro: z.string().optional(),
+                    steps: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                    keepHeading: z.string().optional(),
+                    keep: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                }).optional(),
                 closingCta: z.object({
                     heading: z.string().optional(),
                     description: z.string().optional(),
