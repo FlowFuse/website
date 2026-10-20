@@ -54,7 +54,7 @@ useSeoMeta({
 
 <template>
   <div v-if="page" class="w-full">
-    <UseCaseHero :title="page.title" :problem="page.problem" />
+    <UseCaseHero :title="page.title" :problem="page.problem" :media="page.heroMedia" />
     <UseCaseSectionNav :items="navItems" />
 
     <UseCasePain v-if="page.customerPain" :block="page.customerPain" />
