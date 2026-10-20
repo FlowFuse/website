@@ -196,7 +196,7 @@ useSchemaOrg([
             systems. Keep your existing SCADA in place while giving your team more ways to use plant data.
           </p>
           <div class="mt-8 flex gap-4 items-center max-md:justify-center flex-wrap">
-            <CtaBookDemo variant="highlight" position="hero" />
+            <CtaSignUp variant="highlight" position="hero" />
             <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
           </div>
         </div>
@@ -423,6 +423,7 @@ useSchemaOrg([
     </section>
 
     <IndustryPageCta
+        lead="build-with-us"
         heading="Let's design a solution, together"
         description="Bring one real use case: a device the SCADA can't reach, data another system keeps asking for, or a report someone still builds by hand. We'll bring an engineer and work out the first step together."
     >
