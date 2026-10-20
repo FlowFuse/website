@@ -8,12 +8,40 @@ navigation:
 
 The weekly Forecast Review is an internal sales meeting designed to create clarity on the team's revenue forecast and drive accountability across Account Executives and Customer Success Managers. The meeting reviews what is in the pipeline, what has changed since the last session, and whether pipeline generation is on track to meet full-year targets.
 
+## Forecast and Commit Deals
+
+The forecast gives the organization and board our best estimate of what we expect to deliver for the quarter. Commit Deals are a subset of Forecast Deals and are included in the total forecast. Forecast ARR and new-customer count must use the same deal assumptions.
+
+### Forecast Deals
+
+Deals we expect to close in the quarter being forecast, based on buyer engagement, deal progress and a credible plan to complete the remaining work.
+
+Forecast Deals can be in **Stage 3 or higher**, provided they meet the following criteria:
+
+- The buyer has confirmed the business need and intended purchase timing, with a credible budget source and approval path identified.
+- There is a realistic plan to resolve outstanding commercial terms and technical requirements within the quarter.
+- Procurement, legal and security requirements are identified, with sufficient time and a credible plan to complete the necessary steps.
+- There is a credible path to signature by quarter-end, supported by buyer engagement and a concrete next milestone.
+
+### Commit Deals
+
+The subset of Forecast Deals we have high confidence will close in the quarter being forecast, supported by confirmed buyer decisions and limited remaining uncertainty.
+
+Commit Deals must be moved to **Stage 5 - Commit** and meet the following criteria:
+
+- The buyer has confirmed the purchase decision, budget and approval authority.
+- Commercial terms and remaining technical requirements are sufficiently resolved.
+- Procurement, legal and security steps have owners and credible completion dates.
+- There is a buyer-supported path to signature by quarter-end, with a concrete next milestone.
+
 ## Preparation
 
-Before the meeting, every AE and CSM must update:
-- Their [HubSpot Forecasting](https://app-eu1.hubspot.com/forecasting/26586079/teams/147609275?forecast_type=0&pipeline=default&time_period=THIS_MONTH&deal_grouping_type=DEAL_STAGE)
+Before the meeting, every AE and CSM must:
+
+- Update their [HubSpot Forecasting](https://app-eu1.hubspot.com/forecasting/26586079/teams/147609275?forecast_type=0&pipeline=default&time_period=THIS_MONTH&deal_grouping_type=DEAL_STAGE)
    - Current month
    - Subsequent 2 months
+- Review deals against the [Forecast and Commit criteria](#forecast-and-commit-deals) and move Commit Deals to **Stage 5 - Commit**
 - Ensure an up to date "Next steps" property for all deals
 
 ## Meeting agenda

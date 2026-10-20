@@ -10,6 +10,7 @@ image: /blog/2025/09/images/what-is-5s-checklist.png
 tags:
   - flowfuse
   - dashboard
+  - templates
 ---
 
 Manufacturing environments face increasing pressure to eliminate waste, improve safety, and maintain quality standards. Disorganized workspaces contribute to production delays, safety incidents, and quality defects that directly impact operational performance. The 5S methodology addresses these challenges through systematic work area organization, but implementation requires consistent evaluation and measurement. A 5S checklist provides the structured framework necessary to assess, maintain, and improve work area organization standards across manufacturing operations.

@@ -3367,18 +3367,6 @@ lite-youtube::before {
     height: 1.25rem;
 }
 
-/* Capability marker icon: the item's own icon stands in for the old number
-   chip, so the blocks read as a parallel list rather than an ordered sequence.
-   Sized slot, indigo to match the brand accent, aligned to the block top. */
-.ff-cap-icon {
-    flex: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    color: var(--color-indigo-600);
-}
 /* "Differs by agent" clause: sits under a capability whose behaviour is not identical
    on the FlowFuse Expert path and the bring-your-own-agent path. Quieter than the body
    copy, and set off by a rule, so it reads as a qualification rather than a feature. */
@@ -3599,103 +3587,6 @@ lite-youtube::before {
        the padding was doing. */
     padding-top: 0;
     padding-bottom: 0;
-}
-
-/* Media well: the frame around each capability's schematic. */
-.ff-cap-well {
-    /* Matches the diagram's 720x150 viewBox, so the frame hugs the drawing instead
-       of leaving a 16:9 box mostly empty. Full column width - the drawing is wide
-       enough to fill it, so the width costs nothing in height. */
-    aspect-ratio: 720 / 150;
-    width: 100%;
-    overflow: hidden;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-indigo-100);
-    border-radius: 0.5rem;
-}
-
-.ff-cap-icon svg {
-    width: 1.875rem;
-    height: 1.875rem;
-}
-
-/* Capability schematics (AiCapabilityDiagram): a neutral card for the parts that
-   are yours, an accent card for the FlowFuse piece, a static arrow for direction.
-   The SVG's 720x150 viewBox fills the well, so nothing is scaled up.
-
-   Colour is set once per column on the group (.is-accent) rather than per element,
-   so a card, its glyph and its label cannot end up in different states. */
-.ff-aidiag {
-    display: block;
-    width: 100%;
-    height: 100%;
-    font-family: inherit;
-}
-.ff-aidiag__card {
-    fill: var(--color-white);
-    stroke: var(--color-indigo-100);
-    stroke-width: 1.25;
-}
-.ff-aidiag__glyph {
-    fill: none;
-    stroke: var(--color-gray-400);
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-/* 12 in a 720-wide viewBox that renders at ~800: about 13px on screen, so a
-   diagram label sits below the 16px body copy rather than competing with it. */
-.ff-aidiag__label {
-    font-size: 12px;
-    fill: var(--color-gray-600);
-}
-
-/* The FlowFuse column: filled, brand-bordered, and its glyph and label lift with
-   it, so the governed piece is what the eye lands on. */
-.ff-aidiag .is-accent .ff-aidiag__card {
-    fill: var(--color-indigo-50);
-    stroke: var(--color-indigo-600);
-}
-.ff-aidiag .is-accent .ff-aidiag__glyph {
-    stroke: var(--color-indigo-600);
-    stroke-width: 1.7;
-}
-.ff-aidiag .is-accent .ff-aidiag__label {
-    fill: var(--color-indigo-800);
-    font-weight: 500;
-}
-
-/* Static connector. Eleven of these scroll past on one page, so direction is
-   carried by an arrowhead rather than by animation - travelling dots at that count
-   read as eleven things moving at the reader. */
-.ff-aidiag__flow {
-    stroke: var(--color-indigo-300);
-    stroke-width: 2;
-    stroke-linecap: round;
-}
-.ff-aidiag__arrowhead {
-    fill: var(--color-indigo-300);
-}
-
-/* "Coming soon" pill: shape and type only. The amber colour comes from utility
-   classes on the element (bg-amber-50 / text-amber-700 / border-amber-200), so
-   the palette stays in sync with the design tokens. Amber reads as
-   in-development, not the error-red it used before. */
-.ff-cap-soon {
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 0.125rem 0.5rem;
-    border-radius: 9999px;
-}
-
-/* Capability blocks are informational, not interactive: no hover fill, no
-   focus ring, no click affordance. The rounded corners are cosmetic only. */
-.ff-cap-item {
-    border-radius: 0.5rem;
 }
 
 /* Top utility bar (AppUtilityBar.vue). These rules once lived in an inline <style>
