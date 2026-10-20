@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { faqAnswerText } from '../../lib/faq-answer.mjs'
-// Where the retired free trial sends people. FlowFuse no longer offers a
-// self-serve trial: a visitor talks to the sales team, and FlowFuse engineers
-// build the first production application alongside them (the Foundation
-// Partnership). The page explains that change and ends in the sales team's
-// meeting scheduler, the same embed /book-demo/ uses.
+// Where the old self-serve "Free Trial" links now land. Enterprise teams told us a
+// trial isn't how they want to evaluate FlowFuse, so the default path is a
+// conversation with sales, after which FlowFuse engineers build the first
+// application alongside them (the Foundation Partnership). A trial is still
+// available through sales for teams that want one. The page explains the model
+// and ends in the sales team's meeting scheduler, the same embed /book-demo/ uses.
+//
+// Tone: this is a response to what customers asked for, not a fix for the
+// platform being hard to use. Keep copy on that side of the line.
 //
 // No prices here on purpose: the Solution Foundation rates are still working
 // numbers, not an approved price list. Scope is described, cost is scoped on
@@ -15,7 +19,7 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 // page says the engineering is part of the license and not when it is bought.
 useSeoMeta({
     title: 'Build Your First Application With FlowFuse Engineers',
-    description: 'FlowFuse has replaced its free trial. Talk to our team, and our engineers will build your first industrial application alongside you, then help you scale it across your plants.',
+    description: 'Talk to our team, and FlowFuse engineers will build your first industrial application alongside you, then hand it over for your team to own and extend across your plants.',
     ogUrl: 'https://flowfuse.com/build-with-us/',
     twitterSite: '@FlowFuseinc',
 })
@@ -31,12 +35,12 @@ const STEPS = [
     { icon: 'i-lucide-factory', title: 'Prove it, then scale', description: 'Validate the results in production, then reuse what we built to roll it out to more sites and solve the next problem, with your own engineers, a partner or FlowFuse.' },
 ]
 
-// What teams said they were missing when they tried to get started on their
-// own. The reason the trial was retired, so it sits directly under the hero.
+// What enterprise manufacturers asked for. The customer signals behind the model,
+// so it sits directly under the hero.
 const NEEDS = [
-    { icon: 'i-lucide-graduation-cap', title: 'Expertise', description: 'People who have connected PLCs, historians, MES and ERP systems before, and know where industrial projects stall.' },
-    { icon: 'i-lucide-route', title: 'A proven path', description: 'An implementation pattern that has already worked in production, rather than a blank canvas and a list of features.' },
-    { icon: 'i-lucide-handshake', title: 'Help building it', description: 'Engineers working next to their own team on a real problem, until the first application is running.' },
+    { icon: 'i-lucide-puzzle', title: 'A solution fitted to their operations', description: 'Built around their own equipment, systems and processes, not a generic template.' },
+    { icon: 'i-lucide-graduation-cap', title: 'Experienced engineers alongside them', description: 'People who have connected PLCs, historians, MES and ERP systems before, and know what production-ready looks like.' },
+    { icon: 'i-lucide-key-round', title: 'Something they own and can extend', description: 'Documentation, knowledge transfer and a foundation their own engineers can take to the next line and the next plant.' },
 ]
 
 const PARTNERSHIP = [
@@ -55,8 +59,8 @@ const INCLUDED = [
 
 const FAQ = [
     {
-        question: 'What happened to the FlowFuse free trial?',
-        answer: 'We have replaced it. A trial gave you an empty platform and left the hard part, turning it into a working industrial application, to you. Now our engineers build your first application with you, so you see FlowFuse solving one of your own problems rather than a demo.',
+        question: 'Can I still get a free trial?',
+        answer: 'Yes, if a hands-on trial is the right next step for your team, talk to us and we can set one up. Most enterprise teams we speak with get more from building a first solution together, on their own equipment and data, so that is where we usually start.',
     },
     {
         question: 'What happens on the first call?',
@@ -84,16 +88,16 @@ useSchemaOrg([
 
 <template>
   <div class="w-full">
-    <!-- HERO: says plainly what changed, since most visitors arrive from an old
-         "Free Trial" link expecting a sign-up form. -->
+    <!-- HERO: most visitors arrive from an old "Free Trial" link, so this says
+         plainly what getting started looks like now. -->
     <section class="w-full px-6 pt-12 md:pt-24 pb-12 sm:pb-16">
       <div class="max-w-3xl mx-auto text-center mt-6 sm:mt-12">
-        <p class="text-indigo-600 mb-4 text-sm font-semibold uppercase tracking-wide">The free trial has moved on</p>
+        <p class="text-indigo-600 mb-4 text-sm font-semibold uppercase tracking-wide">A new way to get started</p>
         <h1 class="font-medium home text-gray-900 mb-6">
-          Don't start from a blank canvas. <span class="text-indigo-600">We'll build it with you.</span>
+          Your operations are unique. <span class="text-indigo-600">We'll build it with you.</span>
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Instead of a self-serve trial, our engineers work alongside your team to build your first industrial application, then help you prove it and reuse it across your plants.
+          Our engineers work alongside your team to build your first industrial application around your own equipment and data, then hand over everything you need to own it and extend it across your plants.
         </p>
         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a href="#talk-to-us" class="ff-btn ff-btn--primary uppercase font-semibold no-underline">Talk to our team</a>
@@ -105,27 +109,27 @@ useSchemaOrg([
       </div>
     </section>
 
-    <!-- WHY WE CHANGED: the reason the trial is gone, told before the new model,
-         so the steps below read as the answer to it. No top padding: the hero's
+    <!-- WHAT WE HEARD: the customer signals behind the model, told before the
+         steps so they read as the answer to it. No top padding: the hero's
          bottom padding already separates the two on the same background. -->
     <section class="w-full px-6 pt-4 pb-12 sm:pb-16">
       <div class="md:max-w-screen-lg m-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
         <div>
-          <p class="text-indigo-600 mb-3 text-sm font-semibold uppercase tracking-wide">Why we changed</p>
-          <h2 class="m-0">Tools were never <span class="text-indigo-600">the hard part</span></h2>
+          <p class="text-indigo-600 mb-3 text-sm font-semibold uppercase tracking-wide">What we heard</p>
+          <h2 class="m-0">Built around what <span class="text-indigo-600">manufacturers asked for</span></h2>
           <p class="mt-6 text-gray-600">
-            As we talked with teams getting started on FlowFuse, we kept hearing the same thing. The platform did what they needed. What held them back was everything around it: connecting to their own equipment, modelling their data, deciding how it should be governed, and knowing what a production-ready application looks like.
+            Industrial operations keep getting more complex. The enterprise manufacturers we work with run a mix of legacy and modern equipment across many plants, with integration, data and governance needs that are specific to their business. No two look the same.
           </p>
           <p class="mt-4 text-gray-600">
-            A free trial handed them the tools and left them to work that out alone. Too many good projects stalled at a blank canvas, not because the problem was too hard, but because nobody had solved it with them before.
+            They also told us they want to own what they build: a solution their own engineers understand, can maintain, and can extend to the next line and the next plant.
           </p>
           <p class="mt-4 text-gray-900 font-medium">
-            So we stopped offering a trial, and started building with our customers instead.
+            A self-serve trial isn't how those teams want to get started. So we're following their lead, and building the first solution alongside them.
           </p>
         </div>
         <div class="rounded-xl border border-indigo-100 bg-white shadow-sm overflow-hidden">
           <p class="m-0 border-b border-indigo-100 bg-indigo-50/60 px-5 py-3 font-mono text-xs font-semibold uppercase leading-4 tracking-[0.04em] text-indigo-600">
-            What teams told us they needed
+            What enterprise teams asked for
           </p>
           <ul class="m-0 list-none p-0">
             <li v-for="(need, index) in NEEDS" :key="need.title" class="m-0 flex gap-4 px-5 py-5" :class="index > 0 ? 'border-t border-indigo-100' : ''">
