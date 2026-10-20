@@ -77,9 +77,9 @@ The list of blockers you ran into, or items to smooth over, should each have an 
 
 Help other team members by answering any questions you had to figure out yourself to complete your demo, and add them to the handbook. Update the script where possible, and where you can make it more realistic.
 
-#### Ping ZJ
+#### Ping the CEO
 
-ZJ will review each demo, and the issues we ran into. Point him to the directory where your recording is. If there's a blocker or must-fix item, let him know directly so it can be actioned prior to watching the full demo.
+The CEO will review each demo, and the issues we ran into. Point the CEO to the directory where your recording is. If there's a blocker or must-fix item, let the CEO know directly so it can be actioned prior to watching the full demo.
 
 ## Scripts for applications to build
 
