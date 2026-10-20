@@ -11,6 +11,11 @@ problem: "A site hundreds of miles away raises a fault. Often the only way to fi
 industries: ["energy-utilities", "industrial-machinery"]
 values: ["labor-operational-efficiency"]
 architecture: "remote-device-management"
+heroMedia:
+  video: "/blog/2026/02/images/remote-instance-immersive.webm"
+  alt: "Opening the Node-RED editor on a remote device from FlowFuse to inspect the flows running on site"
+  width: 2026
+  height: 1340
 
 customerPain:
   heading: "Every unknown fault costs a truck roll."
