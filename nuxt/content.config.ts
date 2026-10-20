@@ -464,6 +464,14 @@ export default defineContentConfig({
                 // "Operational use cases" rather than "By architecture" on the listing.
                 values: z.array(z.string()).optional(),
                 architecture: z.string().optional(),
+                // Optional demo clip beside the hero text; without it the hero stays centered.
+                heroMedia: z.object({
+                    video: z.string(),
+                    poster: z.string().optional(),
+                    alt: z.string(),
+                    width: z.number().optional(),
+                    height: z.number().optional(),
+                }).optional(),
                 customerPain: z.object({
                     heading: z.string(),
                     intro: z.array(z.string()).optional(),
