@@ -47,10 +47,6 @@ const STEPS = [
 
 const FAQ = [
     {
-        question: 'Can I still get a free trial?',
-        answer: 'Yes, if a hands-on trial is the right next step for your team, talk to us and we can set one up. Most enterprise teams we speak with get more from putting FlowFuse to work on a real problem, with their own equipment and data, so that is where we usually start.',
-    },
-    {
         question: 'What happens on the first call?',
         answer: 'We talk through the operational problem you want to solve, the equipment and systems involved, and who would be part of the project. If FlowFuse is a good fit, we agree the next step together, usually a session to scope the solution and its value.',
     },
