@@ -43,7 +43,7 @@ Ask three people on the same shop floor whether an order is on track and you mig
 
 A Manufacturing Execution System (MES) connects live shop-floor activity with the production plan. It tracks the work order, materials, quality checks, and output as production happens, rather than requiring teams to reconstruct what occurred at the end of a shift.
 
-::cta-image{src="/blog/2025/06/images/mes-vendors-cta.png" alt="Add what your MES is missing without replacing it: connect Siemens, Rockwell Automation, SAP, Tulip, Dassault Systèmes, Honeywell, GE Vernova or ABB MES to machines, ERP and quality systems with FlowFuse. Talk to us." cta="demo"}
+::cta-image{src="/blog/2025/06/images/mes-vendors-cta-dark.png" alt="Add what your MES is missing without replacing it: connect Siemens, Rockwell Automation, SAP, Tulip, Dassault Systèmes, Honeywell, GE Vernova or ABB MES to machines, ERP and quality systems with FlowFuse. Talk to us." cta="demo"}
 ::
 
 ## How does an MES system work on the shop floor?
@@ -93,6 +93,9 @@ Adding a quality check, connecting a new data point, or changing an operational 
 ### Standardization without rebuilding at every site
 
 Multi-site manufacturers can lose time rebuilding MES logic at every plant because equipment and legacy systems differ. FlowFuse supports reusable operational applications, so teams can [structure and store shop-floor data](/blog/2025/06/structuring-storing-data-mes-integration/) consistently and deploy the same core integration pattern across sites.
+
+::cta-image{src="/blog/2025/06/images/mes-vendors-cta-light.png" alt="Add what your MES is missing without replacing it: connect Siemens, Rockwell Automation, SAP, Tulip, Dassault Systèmes, Honeywell, GE Vernova or ABB MES to machines, ERP and quality systems with FlowFuse. Talk to us." cta="demo"}
+::
 
 ## Final thoughts
 
