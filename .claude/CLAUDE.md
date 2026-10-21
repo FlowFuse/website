@@ -316,16 +316,16 @@ This also covers old `/docs/**` paths left behind by a rename in `flowfuse/flowf
 
 ## Call-to-Action components
 
-The *data* (event name, href, and fixed label per destination) lives in one file, `nuxt/lib/cta-destinations.ts`, read by every `Cta*.vue` component and by `CtaCustom.vue`, so no call site carries its own copy of the copy or the event name. `site.json`'s `appURL` supplies the base URL for `signUp`/`signIn`, since it differs per environment.
+The *data* (event name, href, and fixed label per destination) lives in one file, `nuxt/lib/cta-destinations.ts`, read by every `Cta*.vue` component and by `CtaCustom.vue`, so no call site carries its own copy of the copy or the event name. `site.json`'s `appURL` supplies the base URL for `signIn`, since it differs per environment.
 
 There are exactly five CTA destinations, each with its own component with **fixed copy and href** (a PostHog audit found dozens of different button texts pointing at the same handful of URLs, which made it impossible to tell which copy converted best — see `/handbook/marketing/website#call-to-action-buttons` for the non-engineer-facing explanation and a live gallery of every variant):
 
 | Component | href | Fixed label |
 |---|---|---|
-| `nuxt/components/CtaSignUp.vue` | `{site.appURL}/account/create` | "Free Trial" on `position="main-nav"`/`"mobile-cta-bar"`, else "Try it out" |
+| `nuxt/components/CtaSignUp.vue` | `/build-with-us/` | "Build With Us" |
 | `nuxt/components/CtaSignIn.vue` | `site.appURL` | "Sign In" |
 | `nuxt/components/CtaContactUs.vue` | `/contact-us/` | "Contact Us" |
-| `nuxt/components/CtaBookDemo.vue` | `/book-demo/` | "Book a Demo" |
+| `nuxt/components/CtaBookDemo.vue` | `/book-demo/` | "Talk to Us" |
 | `nuxt/components/CtaPricing.vue` | `/pricing/` | "View Pricing" |
 
 All five are thin wrappers around `nuxt/components/cta/CtaButton.vue`, which does the actual styling/tracking and isn't meant to be used directly. If a page needs different wording, that's a sign a sixth destination-specific component is needed — not a prop that lets callers override copy on these five.
@@ -344,7 +344,7 @@ This exists because a raw `event` prop would let two different `CtaCustom` insta
 - Like the five fixed components, `CtaCustom` throws a descriptive error (same convention as `CtaImage.vue`'s invalid-`cta` check) if pointed at one of the five *reserved* destinations' hrefs — use the matching fixed component instead. Both checks match reserved destinations with `ctaDestinationKey()` (see **Inline links**), so a query string or absolute `https://flowfuse.com/...` URL counts as the same destination, while a hash (a section of the page, like `deviceAgentInstall`'s) counts as its own.
 - A render-time throw doesn't fail the build: Nitro's `prerender.failOnError` is off (the `failOnError: true` in `nuxt.config.ts` is the link checker's), so the failed route is logged and the build stays green. That's why these guards are also checked in `npm test`, the required PR check.
 
-`nav-text` is deliberately not called `text` — it's the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar) specifically, not a general-purpose inline link. Inline links are `CtaLink` (see **Inline links** below), not a `CtaButton` variant.
+`nav-text` is deliberately not called `text` — it's the plain, no-underline treatment used for "Sign In" (utility bar) specifically, not a general-purpose inline link. Inline links are `CtaLink` (see **Inline links** below), not a `CtaButton` variant.
 
 There's no `size` prop — every real-button variant's padding/font-size is hardcoded to match `.ff-btn` exactly (see the Computed-tab note in the gotchas below), so a size knob would only ever have affected icon dimensions. It was removed once confirmed nothing used a non-default value.
 

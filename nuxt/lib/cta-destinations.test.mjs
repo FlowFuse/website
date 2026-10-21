@@ -11,6 +11,9 @@ const nuxtDir = fileURLToPath(new URL('..', import.meta.url))
 
 test('matches every way of writing a destination URL', () => {
     const cases = {
+        '/build-with-us/': 'signUp',
+        'https://flowfuse.com/build-with-us': 'signUp',
+        // The retired trial's sign-up form, still matched so old links land on the new page.
         'https://app.flowfuse.com/account/create': 'signUp',
         'https://app.flowfuse.com/account/create/?code=RELEASE11': 'signUp',
         'https://app.flowfuse.com': 'signIn',

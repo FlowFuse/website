@@ -109,13 +109,13 @@ The site has five main call-to-action destinations, each with **fixed copy** —
 
 | Component        | Goes to                           | Button text                                          |
 | ---------------- | --------------------------------- | ---------------------------------------------------- |
-| `<CtaSignUp>`    | `app.flowfuse.com/account/create` | "Free Trial" (nav) or "Try it out" (everywhere else) |
+| `<CtaSignUp>`    | `/build-with-us/` | "Build With Us" |
 | `<CtaSignIn>`    | `app.flowfuse.com`                | "Sign In"                                            |
 | `<CtaContactUs>` | `/contact-us/`                    | "Contact Us"                                         |
-| `<CtaBookDemo>`  | `/book-demo/`                     | "Book a Demo"                                        |
+| `<CtaBookDemo>`  | `/book-demo/`                     | "Talk to Us"                                         |
 | `<CtaPricing>`   | `/pricing/`                       | "View Pricing"                                       |
 
-Contact Us vs. Book a Demo: these two CTAs carry different intent signals and should be treated accordingly. Contact Us is for general inquiries — support questions, partnership asks, anything that isn't a sales-ready request. Book a Demo is a high-intent motion: someone clicking it has effectively raised their hand to buy, so the path from click to booked call should have as little friction as possible. This is why Book a Demo needs to be visible from the main nav and not buried.
+Contact Us vs. Talk to Us: these two CTAs carry different intent signals and should be treated accordingly. Contact Us is for general inquiries — support questions, partnership asks, anything that isn't a sales-ready request. Talk to Us is a high-intent motion: someone clicking it has effectively raised their hand to buy, so the path from click to booked call should have as little friction as possible. This is why Talk to Us needs to be visible from the main nav and not buried.
 
 If a page needs different wording than what's listed above, that's a sign the destination needs a sixth CTA, not a new prop on these five or custom inline code.
 
@@ -164,7 +164,7 @@ Every component takes the same `variant` prop, which controls the look. Click "S
   :::
 ::
 
-There's also a `nav-text` variant — the plain, no-underline treatment used for "Free Trial" (main nav) and "Sign In" (utility bar). It's not meant for general use in page content, so it's not in this gallery; stick to the five variants above for anything outside the nav.
+There's also a `nav-text` variant — the plain, no-underline treatment used for "Sign In" (utility bar). It's not meant for general use in page content, so it's not in this gallery; stick to the five variants above for anything outside the nav.
 
 There's a sixth variant, `ghost`, for a button that reads like a solid one (bold, uppercase, same padding) but has no background or border. Because it has no background of its own, it needs a `color` to know what text color to use, and an `icon` to add a trailing icon:
 

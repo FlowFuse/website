@@ -9,7 +9,7 @@ import { customCtaImageDestination } from '../../../lib/cta-image'
 // Mirrors the hrefs behind nuxt/lib/cta-image.ts's CTA_IMAGE_DESTINATIONS - kept in
 // sync manually. cta="custom" resolves through customCtaImageDestination instead.
 const CTA_IMAGE_DESTINATIONS: Record<string, string> = {
-    'sign-up': `${site.appURL}/account/create`,
+    'sign-up': '/build-with-us/',
     demo: '/book-demo/',
     contact: '/contact-us/',
     pricing: '/pricing',
@@ -21,14 +21,14 @@ const CTA_IMAGE_DESTINATIONS: Record<string, string> = {
 // or names an unrecognised type.
 const END_CTA_VARIANTS: Record<string, { title: string, description: string, label: string }> = {
     'sign-up': {
-        title: 'Start building with your own industrial data',
-        description: 'Connect your systems, automate workflows, and see what’s possible in your environment.',
-        label: 'Try it out',
+        title: 'Build your first industrial application with us',
+        description: 'Our engineers work alongside your team to solve a real problem on your own equipment and data.',
+        label: 'Build With Us',
     },
     demo: {
         title: 'See how FlowFuse works in real environments',
         description: 'Walk through real use cases and see how teams connect systems, automate workflows, and deploy at scale.',
-        label: 'Book a Demo',
+        label: 'Talk to Us',
     },
     contact: {
         title: 'Discuss your use case with our team',
