@@ -94,9 +94,6 @@ Adding a quality check, connecting a new data point, or changing an operational 
 
 Multi-site manufacturers can lose time rebuilding MES logic at every plant because equipment and legacy systems differ. FlowFuse supports reusable operational applications, so teams can [structure and store shop-floor data](/blog/2025/06/structuring-storing-data-mes-integration/) consistently and deploy the same core integration pattern across sites.
 
-::cta-image{src="/blog/2025/06/images/mes-vendors-cta-light.png" alt="Add what your MES is missing without replacing it: connect Siemens, Rockwell Automation, SAP, Tulip, Dassault Systèmes, Honeywell, GE Vernova or ABB MES to machines, ERP and quality systems with FlowFuse. Talk to us." cta="demo"}
-::
-
 ## Final thoughts
 
 An MES earns its place by closing the gap between what machines are doing and what the business needs to know. That depends far more on connectivity than on any single feature list. The distinction between SCADA and MES matters in practice because it defines how cleanly data can move from the machine to the production plan and back again.
