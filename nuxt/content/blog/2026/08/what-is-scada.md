@@ -42,7 +42,7 @@ FlowFuse, an industrial application platform, works directly inside the environm
 
 This article breaks down what SCADA is, how it works, how it compares to related systems like PLCs and HMIs, and why it still matters in brownfield environments today.
 
-::cta-image{src="/blog/2026/08/images/scada-vendors-cta-dark.png" alt="Get more out of the SCADA you already run: pull data from Siemens, Rockwell Automation, Schneider Electric, GE Vernova, ABB, Honeywell or Emerson SCADA and share it with MES, ERP and the cloud using FlowFuse. Talk to us." cta="demo"}
+::cta-image{src="/blog/2026/08/images/scada-vendors-cta-dark.png" alt="Get more out of the SCADA you already run: pull data from Siemens, Rockwell Automation, Schneider Electric, GE Vernova, ABB, Honeywell, Emerson or Ignition SCADA and share it with MES, ERP and the cloud using FlowFuse. Talk to us." cta="demo"}
 ::
 
 ## How Does SCADA Work? The Core Components
@@ -95,7 +95,7 @@ _Extending a brownfield SCADA system with an IT/OT layer rather than replacing i
 
 Extending a brownfield SCADA system, rather than replacing it, lets manufacturers keep proven equipment logic in place while adding the [IT/OT connectivity](/use-cases/it-ot-middleware/) needed for enterprise-wide visibility. That approach protects existing investment and reduces the operational risk that comes with large-scale system replacement.
 
-::cta-image{src="/blog/2026/08/images/scada-vendors-cta-light.png" alt="Get more out of the SCADA you already run: pull data from Siemens, Rockwell Automation, Schneider Electric, GE Vernova, ABB, Honeywell or Emerson SCADA and share it with MES, ERP and the cloud using FlowFuse. Talk to us." cta="demo"}
+::cta-image{src="/blog/2026/08/images/scada-vendors-cta-light.png" alt="Get more out of the SCADA you already run: pull data from Siemens, Rockwell Automation, Schneider Electric, GE Vernova, ABB, Honeywell, Emerson or Ignition SCADA and share it with MES, ERP and the cloud using FlowFuse. Talk to us." cta="demo"}
 ::
 
 ## Final Thoughts
