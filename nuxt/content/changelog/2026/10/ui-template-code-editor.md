@@ -3,7 +3,7 @@ title: Vue and Vuetify Editing for Templates
 description: The FlowFuse Dashboard ui-template editor now understands Vue and Vuetify, making templates faster to write.
 date: 2026-10-21 12:00:00
 release: "3.3"
-authors: ["stephen-mclaughlin"]
+authors: ["stephen-mclaughlin", "noley-holland"]
 tags:
   - changelog
 issues:
