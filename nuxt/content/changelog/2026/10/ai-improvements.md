@@ -2,7 +2,7 @@
 title: AI Improvements in FlowFuse
 description: New features and automations to improve your flow building experience delivered in FlowFuse Expert.
 date: 2026-10-22 12:00:00
-release: "3.3"
+release: "3.2"
 authors: ["serban-costin", "andrea-palmieri", "stephen-mclaughlin"]
 tags:
   - changelog
@@ -62,8 +62,8 @@ settings page and let AI help you out.
 
 ---
 
-These features are available to all FlowFuse Cloud users and all Self-Hosted users from v3.3.
+These features are available to all FlowFuse Cloud users and all Self-Hosted users from v3.2.
 
-- Vue SFC requires Node-RED v5.0.9 or greater -  update your instance in the FlowFuse Instance Settings.
-- Vue SFC requires Dashboard v1.34.0 or greater -  update your instance in the palette manager.
-- All features require `nr-assistant` v0.21.0 or greater - update your instance in the palette manager.
+- _Vue SFC requires Node-RED v5.0.9 or greater - update your instance in the FlowFuse Instance Settings._
+- _Vue SFC requires Dashboard v1.34.0 or greater - update your instance in the palette manager._
+- _All features require `nr-assistant` v0.21.0 or greater - update your instance in the palette manager._
