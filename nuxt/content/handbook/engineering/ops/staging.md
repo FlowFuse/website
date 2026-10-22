@@ -23,7 +23,7 @@ and assign to the CTO for review.
 
 ## Email
 
-Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address & domains can RECEIVE emails from it, this is currently limited to flowfuse.com email addresses and a small set of pre-approved disposable emails.
+Amazon SES is setup on staging however it is still running in sandbox mode which means only verified address & domains can RECEIVE emails from it, this is currently limited to `flowfuse.com` and `flowfuse.dev` email addresses.
 
 If you need to use another email address with staging then you should raise an issue 
 in [CloudProject](https://github.com/FlowFuse/CloudProject) and assign to the CTO for review.
@@ -32,11 +32,7 @@ If approved, the email will need to be added to the SES configuration in the AWS
 
 ### Test Email accounts
 
-We have enabled a small list of mailinator.com based email addresses for the purposes
-of short-lived testing of sign-up and user management.
-
-The inboxes for these email addresses are publicly accessible if known, so the list
-is available on [this private issue](https://github.com/FlowFuse/CloudProject/issues/135).
+As the `flowfuse.com` email domain is configured to use SSO, it cannot be used to create test accounts in the Staging environment. Instead, use `<user>@flowfuse.dev`; we have an email forwarder in place so email sent to `foo@flowfuse.dev` will get relayed to `foo@flowfuse.com`. This also works with `foo+test@flowfuse.dev` type addresses. This means you can setup multiple test accounts under your own email. It also means we have visibility on who owns particular test accounts in the staging environment.
 
 ### Accessing Staging
 
