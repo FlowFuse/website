@@ -2,7 +2,7 @@
 title: Vue and Vuetify Editing for Templates
 description: The FlowFuse Dashboard ui-template editor now understands Vue and Vuetify, making templates faster to write.
 date: 2026-10-21 12:00:00
-release: "3.3"
+release: "3.2"
 authors: ["stephen-mclaughlin", "noley-holland"]
 tags:
   - changelog
@@ -23,7 +23,7 @@ What's new:
 - **`this` knows your component.** In `<script>`, `this.` suggests your data, computed values, and methods, then Dashboard's own `send()`, `msg`, and friends.
 - **Errors before you deploy.** Mistakes in `<script>` and `<style>` are underlined as you type, and a template saved with errors is flagged in the workspace, just like a Function node.
 
-<video autoplay loop muted playsinline aria-label="Writing a ui-template with Vue and Vuetify support in the code editor" style="border: 2px solid #E5E7EB;" width="1280" height="800" preload="none"><source src="/changelog/2026/10/images/ui-template-code-editor.webm" type="video/webm" /></video>
+<video autoplay loop muted playsinline aria-label="Writing a ui-template with Vue and Vuetify support in the code editor" style="border: 2px solid #E5E7EB;" width="1920" height="1080" preload="none"><source src="/changelog/2026/10/images/ui-template-code-editor.webm" type="video/webm" /></video>
 
 *Building a ui-template with help from the editor along the way.*
 
