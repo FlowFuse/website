@@ -184,7 +184,6 @@ onMounted(() => {
 
       <!-- Desktop CTAs -->
       <ul class="cta hidden md:flex flex-row items-center justify-end font-medium text no-underline z-10 bg-transparent w-auto">
-        <li class="hidden md:flex"><CtaSignUp variant="nav-text" position="main-nav" padded class="ff-nav-freetrial text-base" /></li>
         <li class="flex">
           <CtaBookDemo variant="primary" position="main-nav" class="ml-2" />
         </li>
@@ -193,9 +192,10 @@ onMounted(() => {
 
     <!-- Mobile CTAs -->
     <div id="mobile-ctas" class="hidden fixed bottom-0 z-20">
-      <div class="grid grid-cols-2 gap-2">
+      <!-- No sign-up button: the self-serve free trial is retired, and
+           /build-with-us/ is where its old links now land. -->
+      <div class="grid grid-cols-1 gap-2">
         <CtaSignIn variant="primary-outlined" position="mobile-cta-bar" />
-        <CtaSignUp variant="primary-outlined" position="mobile-cta-bar" />
       </div>
       <CtaBookDemo variant="primary" position="mobile-cta-bar" />
     </div>

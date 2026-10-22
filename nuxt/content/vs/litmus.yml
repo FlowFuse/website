@@ -51,7 +51,7 @@ switch:
 cta:
     title: "Exploring Alternatives to Litmus?"
     content: "Discover how FlowFuse can help your team modernize its industrial edge and data infrastructure with an open, flexible platform that complements your existing AI and analytics strategy."
-    linkText: "Book a Demo with a FlowFuse Expert"
+    linkText: "Talk to a FlowFuse Expert"
     linkHref: "site:meetings.salesRoundRobin"
     linkSuffix: "."
 cards:

@@ -9,8 +9,8 @@ const props = defineProps<{
 // CTA can't drift from the rest of the site's copy.
 const CTA_VARIANTS: Record<string, { title: string, description: string }> = {
     'sign-up': {
-        title: 'Start building with your own industrial data',
-        description: 'Connect your systems, automate workflows, and see what’s possible in your environment.',
+        title: 'Build your first industrial application with us',
+        description: 'Our engineers work alongside your team to solve a real problem on your own equipment and data.',
     },
     demo: {
         title: 'See how FlowFuse works in real environments',

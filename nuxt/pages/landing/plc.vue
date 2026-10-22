@@ -565,7 +565,7 @@ useSchemaOrg([
               <div class="ff-blue-card">
                   <h4 class="mb-6 w-full text-center">Ready to unlock your PLC data?</h4>
                   <p class="text-center text-gray-600 mb-8">
-                      Stop paying for expensive gateways and inflexible SCADA licenses. See how FlowFuse connects your PLCs to the modern industrial stack, in a live demo or a free trial.
+                      Stop paying for expensive gateways and inflexible SCADA licenses. See how FlowFuse connects your PLCs to the modern industrial stack in a live demo, or build your first application with our engineers.
                   </p>
                   <div class="flex max-sm:flex-col max-md:mx-auto gap-3 justify-center">
                       <CtaBookDemo variant="primary" position="secondary" class="min-h-[40px]" />
