@@ -60,6 +60,10 @@ settings page and let AI help you out.
 *Enabling deploy and inject.*
 
 
+## Node-RED editor intelligence
+
+We have updated the AI model behind the editor suggestions giving better context-aware completions. Editor suggestions now fit the code around your cursor. In function and `ui-template` nodes, a suggestion starts where your line stops and ends where your code carries on, without repeating brackets, tags or indentation that are already there. Ask for JSON in plain English and you get the data back indented, formatted and ready to use.
+
 ---
 
 These features are available to all FlowFuse Cloud users and all Self-Hosted users from v3.2.
