@@ -43,7 +43,7 @@ Ask three people on the same shop floor whether an order is on track and you mig
 
 A Manufacturing Execution System (MES) connects live shop-floor activity with the production plan. It tracks the work order, materials, quality checks, and output as production happens, rather than requiring teams to reconstruct what occurred at the end of a shift.
 
-::cta-image{src="/blog/2025/06/images/mes-blog-cta.png" alt="Build, Scale, and Manage the MES Capabilities You Need" cta="sign-up"}
+::cta-image{src="/blog/2025/06/images/mes-vendors-cta-dark.png" alt="Add what your MES is missing without replacing it: connect Siemens, Rockwell Automation, SAP, Tulip, Dassault Systèmes, Honeywell, GE Vernova or ABB MES to machines, ERP and quality systems with FlowFuse. Talk to us." cta="demo"}
 ::
 
 ## How does an MES system work on the shop floor?
