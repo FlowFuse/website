@@ -42,7 +42,7 @@ FlowFuse, an industrial application platform, works directly inside the environm
 
 This article breaks down what SCADA is, how it works, how it compares to related systems like PLCs and HMIs, and why it still matters in brownfield environments today.
 
-::cta-image{src="/blog/2026/08/images/scada-article-cta.png" alt="Extend your SCADA, don't replace it — connect to a PLC over OPC UA or Modbus and build a view on top" cta="sign-up"}
+::cta-image{src="/blog/2026/08/images/scada-vendors-cta-dark.png" alt="Get more out of the SCADA you already run: pull data from Siemens, Rockwell Automation, Schneider Electric, GE Vernova, ABB, Honeywell, Emerson or Ignition SCADA and share it with MES, ERP and the cloud using FlowFuse. Talk to us." cta="demo"}
 ::
 
 ## How Does SCADA Work? The Core Components
