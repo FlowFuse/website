@@ -3,7 +3,7 @@ title: "AI Tools for Manufacturing Monitoring: Live OEE, Torque, and UNS Apps in
 metaTitle: "AI Tools for Manufacturing Monitoring"
 subtitle: "How manufacturing teams use AI and FlowFuse to build monitoring apps, dashboards, and data integrations from live plant data"
 description: "AI tools for manufacturing monitoring that build OEE, torque, and UNS dashboards from live plant data in hours, with engineers approving every deploy."
-date: 2026-10-20
+date: 2026-10-23
 authors: ["sumit-shinde"]
 image: /blog/2026/10/images/ai-dashboard-generator-tile.png
 tags:
