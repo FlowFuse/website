@@ -38,6 +38,7 @@ do not benefit anyone involved.
 1. Time/date (UTC) the issue was discovered
 2. Username/email of any users involved with the issue
 3. URLs involved in the issue; simply providing the home url of our website is not sufficient
+4. Disclose use of AI in finding, preparing or verifying the report 
 
 The more concrete information that can be provided in the initial issue report, the quicker we will
 be able to evaluate it.
@@ -50,7 +51,9 @@ of bug bounty rewards for genuine issues they submit.
 ## Bug Bounties
 
 At our sole discretion, we may choose to reward a responsibly disclosed issue according
-to their severity, impact and quality of report.
+to their severity, impact and quality of report. We also consider the role of AI in the report; asking
+an AI agent to do all the work to find issues does not represent work done by a human that warrants
+reward.
 
 We also consider a reporter's history of reporting issues. We will not reward someone who spams
 us in the hope that something sticks.
