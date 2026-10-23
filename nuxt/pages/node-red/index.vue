@@ -1,100 +1,189 @@
 <script setup lang="ts">
-// Ported from src/node-red/index.njk (11ty), which this replaces. Same page, same copy,
-// same classes from nuxt/assets/css/style.css.
-//
-// The rest of /node-red/ (the core-node reference and the hardware guides) already moved
-// into /docs/; this was the last page left under that prefix.
-//
-// What the port changes on purpose:
-//  - The certified-nodes grid was driven by src/_data/certifiedNodes.js, whose own comment
-//    said it "deliberately duplicates the fetch rather than importing across the boundary"
-//    while the site was mid-migration. It reads /api/certified-nodes now, which derives
-//    the list from the catalogue Nuxt already fetches for /integrations/. That data file
-//    goes away with 11ty.
-//  - components/device-agent-install-commands.njk becomes <DeviceAgentInstallCommands>.
-//  - The customer-stories grid read collections.stories sorted by date; it queries the
-//    `stories` collection for the same three.
-//  - faq.njk becomes <Faq> plus useSchemaOrg. Two answers carried <ol>/<ul> lists and
-//    several carried inline links, all under `| safe`; they are markdown now, since Faq
-//    renders answer text as text, not HTML. Its parser gained list support for this.
+// /node-red/ for the enterprise. Visitors here already know Node-RED, so the page doesn't explain
+// it. It shows how FlowFuse relates to Node-RED and how it differs, who it's for (teams running
+// Node-RED in production at scale), what it adds, and proof, then asks them to talk to us.
+// Every link in the body goes to a top-of-funnel page rather than the docs, except where an
+// FAQ answer needs the detail.
 import { faqAnswerText } from '../../lib/faq-answer.mjs'
 
-const route = useRoute()
-const capture = useCapture()
+const META_TITLE = 'Node-RED for the Enterprise | FlowFuse'
+const META_DESCRIPTION = 'Run Node-RED across your organization with FlowFuse: the same open-source Node-RED, with DevOps pipelines, access control, monitoring and fleet management for production.'
 
-const LOW_CODE = [
-    { svgPath: 'i-heroicons-light-bulb', title: 'Flow Based Programming', description: 'Node-RED’s visual programming makes it easy for non-developers to build robust applications.' },
-    { svgPath: 'i-heroicons-puzzle-piece', title: 'Digital Services Integration', description: 'Node-RED facilitates seamless integration with a wide array of digital services, including protocols (OPC-UA, Modbus, Siemens S7), databases, APIs, and devices. <a href="/integrations/">Browse the full integrations catalog</a>.' },
-    { svgPath: 'i-heroicons-document-chart-bar', title: 'Data Visualization', description: '<a href="/platform/dashboard/">Node-RED Dashboard</a> makes it easy to visualize your data in charts that integrate directly with actions and events that respond to the data.' },
+// Who FlowFuse is for
+const FIT = [
+    { text: 'You run Node-RED on many lines, in many plants and on edge devices' },
+    { text: 'Several teams build and change flows at the same time' },
+    { text: 'Changes must be tested before they reach production' },
+    { text: 'IT and auditors need to know who can change what, and who did' },
+    { text: 'One change has to reach every site at once' },
 ]
 
-const WHY = [
-    { iconPath: 'i-heroicons-shield-check', title: 'Enhanced Security', description: 'Security and compliance guardrails ensure adherence to security protocols.' },
-    { iconPath: 'i-heroicons-user-group', title: 'Seamless Collaboration', description: 'Cloud-based solutions and dev-ops pipelines streamline development with user-friendly interfaces and safeguard against errors.' },
-    { iconPath: 'i-heroicons-arrows-pointing-out', title: 'Scalable Architecture ', description: 'Start small and scale to thousands of self–built and self–maintained applications. Reduce reliance on point solutions and vendor lock-in.' },
-    { iconPath: 'i-heroicons-academic-cap', title: 'Expert Support', description: 'Get access to our dedicated support team who are creators and experts in Node-RED, ready to assist you at every step.' },
+// What FlowFuse adds: each card leads to a top-of-funnel page
+const ADDS = [
+    {
+        title: 'Run your whole Node-RED fleet',
+        text: 'Bring every Node-RED instance, in the cloud or on edge devices, into a single view. Track health and performance, get alerted when something fails, and push updates remotely without a site visit.',
+        image: { src: '/images/node-red/flowfuse-home-framed.webp', alt: 'FlowFuse home screen: 76 hosted and 40 remote Node-RED instances running, with recently modified instances and recent activity', width: 2767, height: 1860 },
+        variant: 'indigo',
+        link: { to: '/use-cases/remote-device-management/', label: 'Explore remote device management' },
+    },
+    {
+        title: 'Change flows without stopping the line',
+        text: 'Promote each change from development to test to production through pipelines. Every version is saved as a snapshot, so a bad change is one click from being rolled back.',
+        image: { src: '/images/node-red/flowfuse-pipelines-plants-framed.webp', alt: 'FlowFuse DevOps pipelines for a manufacturing plant: development to staging to GitHub, then an edge deployment rolled out to Japan, Europe and the USA', width: 1186, height: 797 },
+        variant: 'red',
+        link: { to: '/platform/device-agent/', label: 'See how changes reach the plant floor safely' },
+    },
+    {
+        title: 'Pass the security review',
+        text: 'FlowFuse covers what security reviewers ask for: company SSO with two-factor login, a role for every person in every application, and an audit log of every change. Its SOC 2 Type I and Type II audits are already complete.',
+        image: { src: '/images/node-red/flowfuse-application-access-framed.webp', alt: 'Application user access settings in FlowFuse, with owner, member and dashboard roles per user', width: 2030, height: 1364 },
+        variant: 'indigo',
+        link: { to: '/platform/security/', label: 'Review FlowFuse security' },
+    },
+    {
+        title: 'Describe it, and AI builds it',
+        text: 'Tell FlowFuse Expert what you need and it builds the flow, or connect the AI agent your company already approved, such as Copilot, ChatGPT or Claude. Nothing goes live until your team approves it.',
+        image: { src: '/images/use-cases/mes/torque-monitoring-video.webp', alt: 'Video: an industrial AI agent builds a torque monitoring app in 68 minutes', width: 1280, height: 720 },
+        youtube: 'kPBLW-kMfsg',
+        variant: 'red',
+        link: { to: '/ai/', label: 'Explore Industrial AI' },
+    },
+    {
+        title: 'Standardize integrations across every plant',
+        text: 'Run your Unified Namespace on the built-in MQTT broker, use OPC UA, Modbus and Siemens S7 nodes certified and maintained by FlowFuse, and share proven flows with every site through a team library.',
+        image: { src: '/images/node-red/flowfuse-broker-hierarchy-framed.webp', alt: 'The FlowFuse MQTT broker, connected, showing a Unified Namespace topic hierarchy from plant to assembly line, cell, PLC and sensor', width: 1628, height: 1094 },
+        variant: 'indigo',
+        link: { to: '/use-cases/uns/', label: 'Explore the Unified Namespace' },
+    },
+    {
+        title: 'See it in your industry',
+        text: 'Learn how teams in automotive, industrial machinery, building materials, energy, and aerospace use FlowFuse to run Node-RED in production.',
+        image: { src: '/images/industries/energy-utilities.jpg', alt: 'Solar panels on an industrial roof beside farmland', width: 750, height: 422 },
+        variant: 'red',
+        link: { to: '/industries/', label: 'Explore industries' },
+    },
 ]
 
-const DEPLOYMENT = [
-    { title: 'FlowFuse Cloud', description: 'Get started with Node-RED easily! No installation needed – just sign up for instant editor access.', buttonText: 'MORE INFO', buttonLink: '/pricing/' },
-    { title: 'On your own machine', description: 'One command installs Node-RED, keeps it running as a service, and connects it to FlowFuse. It imports flows you already have.', buttonText: 'INSTALL NODE-RED', buttonLink: '#install-node-red-from-your-terminal' },
-    // The .njk branched on buttonLink === '/book-demo/' to swap in the shared CTA; the
-    // intent is a flag, so it is one.
-    { title: 'Self managed', description: "Run FlowFuse where you prefer; that's possible too! In your cloud of preference, or even on-site.", bookDemo: true },
+const FRAME_VARIANTS = {
+    indigo: { backdrop: 'from-indigo-400 via-indigo-300 to-indigo-100', border: 'border-indigo-300' },
+    red: { backdrop: 'from-red-200 via-red-100 to-red-50', border: 'border-red-100' },
+} as const
+
+// Customer proof: published case studies, each showing Node-RED running at scale on FlowFuse
+const PROOF = [
+    {
+        logo: { src: '/images/home-logos/walter-logo.svg', alt: 'Walter', height: 'h-7' },
+        stat: '130+',
+        label: 'Node-RED instances, run by a seven-person IT team',
+        line: 'One FlowFuse platform replaced five separate systems across Walter\'s locations.',
+        link: { to: '/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/', label: 'Read the Walter story' },
+    },
+    {
+        logo: { src: '/images/home-logos/energinet-logo.png', alt: 'Energinet', height: 'h-8' },
+        stat: '7,000 km',
+        label: 'of Denmark\'s power grid, monitored in real time',
+        line: 'A small team connects SCADA systems and IoT sensors for the national grid operator, and every change goes through development before production.',
+        link: { to: '/customer-stories/energinet-streamlining-critical-infrastructure-data-management/', label: 'Read the Energinet story' },
+    },
+    {
+        logo: { src: '/images/home-logos/arch-systems-logo.png', alt: 'Arch Systems', height: 'h-8' },
+        stat: '100+',
+        label: 'manufacturing databases automated',
+        line: 'Arch builds a Node-RED flow once and deploys it to every customer site through DevOps pipelines.',
+        link: { to: '/customer-stories/scaling-manufacturing-automation-with-flowfuse/', label: 'Read the Arch Systems story' },
+    },
 ]
+
+// Customer quotes already published on flowfuse.com
+const QUOTES = [
+    {
+        text: 'FlowFuse has helped us take our Node-RED from proof-of-concept through to a reliable, scalable solution for the future.',
+        name: 'Robert VanHofwegen',
+        role: 'Paloma Irrigation District',
+        avatar: '/images/customer-headshots/robert-van-hofwegen-paloma-irrigation.png',
+    },
+    {
+        text: 'The Node-RED editor allows for very rapid development, and FlowFuse makes deployment and updates very easy. We can create and deploy a new dashboard page in days rather than weeks.',
+        name: 'Dave Olsen',
+        role: 'Product Manager, Wenco',
+        avatar: '/images/customer-headshots/dave-olsen-wenco.png',
+    },
+    {
+        text: 'FlowFuse removes concerns about scalability and reliability. It also makes it a lot easier for us to complete security audits for our customers.',
+        name: 'Alan Yeung',
+        role: 'CTO, Power Workplace',
+        avatar: '/images/customer-headshots/alan-yeung-power-workplace.png',
+    },
+    {
+        text: 'Without FlowFuse, I would be able to support maybe one production unit, but that\'s it. FlowFuse gives us the chance to deliver what the business asks us for while maintaining our small team size.',
+        name: 'Felix Reck',
+        role: 'IT Application Manager, Walter',
+        avatar: '/images/customer-headshots/felix-reck-walter-tools.png',
+    },
+]
+
+// One quote sits in the large card and the rest beside it. The large card moves through every
+// customer in turn, starting with Walter's scale quote; it pauses on hover and stays put for
+// visitors who prefer reduced motion.
+const featuredIndex = ref(QUOTES.findIndex(q => q.name === 'Felix Reck'))
+const FEATURED_QUOTE = computed(() => QUOTES[featuredIndex.value]!)
+const OTHER_QUOTES = computed(() => QUOTES.filter((_, i) => i !== featuredIndex.value))
+const quotesPaused = ref(false)
+let quoteTimer: ReturnType<typeof setInterval> | undefined
+onMounted(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    quoteTimer = setInterval(() => {
+        if (!quotesPaused.value) featuredIndex.value = (featuredIndex.value + 1) % QUOTES.length
+    }, 7000)
+})
+onUnmounted(() => clearInterval(quoteTimer))
+
+// Node-RED Con 2026: the FAQ names this year's date until the conference has ended
+const NR_CON_ENDS = new Date('2026-11-03T20:00:00Z')
+const nrConUpcoming = Date.now() < NR_CON_ENDS.getTime()
 
 const FAQ = [
-    { question: 'What is Node-RED and how does it work?', answer: 'Node-RED is a low-code programming environment that allows developers to connect a wide variety of endpoints, such as industrial PLCs, APIs, databases, enterprise applications and online services. Users of Node-RED visually drag ‘nodes’ from a palette that represent the end points and then connect them together into flows to accomplish the desired task. Node-RED applications are accessible via a web browser.' },
-    { question: 'Who uses Node-RED?', answer: 'Node-RED is popular among IoT and individuals creating DIY home automation systems. However, Node-RED is  mostly being used in professional use cases in a variety of industries. Apart from software engineers, Node-RED’s graphical approach to unlocking and effectively using data has empowered industrial engineers or non developers to apply their domain knowledge easily and accelerate projects.' },
-    { question: 'Which industrial sectors use Node-RED in production environments?', answer: 'Yes, Node-RED is widely used in real-world production environments across industries like manufacturing, energy, smart buildings, and more. While Node-RED provides a powerful low-code runtime, FlowFuse makes it easier and safer to use in professional settings. Many companies are already using FlowFuse to run Node-RED in production. FlowFuse adds everything needed to manage and scale Node-RED reliably, including user access control, version control for flows, automated deployments, remote device management, and secure team collaboration. This gives organizations the confidence to build and maintain robust industrial applications using Node-RED.' },
-    { question: 'How do I deploy Node-RED online or in the Cloud?', answer: '[FlowFuse Cloud](/product/) is a hosted Node-RED service that developers can use to access Node-RED online. This makes it much quicker to get started using Node-RED since you don’t need to install it locally.' },
     {
-        question: 'What is Node-RED used for?',
-        answer: `Node-RED can be used for a wide variety of use cases, including:
-
-- The [manufacturing industry](/use-cases/it-ot-middleware/) uses Node-RED for collecting data from different pieces of factory equipment.
-- Creating dashboards that visualize data and allow for event triggers to occur based on the data.
-- Developing chatbot platforms that can collect interactions of a wide variety of social media platforms.
-- Extract, transform and integrate data from many different sources in the enterprise.
-- Lots of hobbyists use Node-RED for home automation.
-- Integrating data with machine learning models`,
+        question: 'Does FlowFuse replace Node-RED?',
+        answer: 'No. FlowFuse runs standard open-source Node-RED and manages it: where each instance runs, who can change it, and how updates are rolled out. Your engineers keep building in Node-RED. [See the full comparison](/blog/2025/10/node-red-vs-flowfuse/)',
     },
-    { question: 'How much does Node-RED cost?', answer: 'Node-RED is an open source project hosted at the [OpenJS Foundation](https://openjsf.org/). It is made available under the Apache Software License so individuals can use Node-RED free of charge. Participation in the open source project is encouraged to help support the Node-RED community.' },
-    { question: 'What language is Node-RED?', answer: 'Node-RED is a visual programming environment that allows you to do a lot without writing a single line of code. An important benefit of Node-RED is that it also allows for developers to write JavaScript and use the NodeJS API to extend the functionality of a node or flow.' },
-    { question: 'How can I get started using Node-RED?', answer: 'There are three routes. [FlowFuse Cloud](/product/) needs no installation at all: Node-RED runs in the cloud and you open the editor in your browser. To run Node-RED on your own machine, a [single command](/node-red/#install-node-red-from-your-terminal) installs Node-RED, sets it up as a service so it restarts on boot, and offers to import flows you already have on that machine. If you would rather install Node-RED by hand, the [Getting Started guide on nodered.org](https://nodered.org/docs/getting-started/) covers every platform.' },
-    { question: 'What port number does Node-RED use?', answer: 'Node-RED is accessed via port 1880. You can access the Node-RED editor running locally at http://localhost:1880 or on another computer at http://domain name:1880.' },
     {
-        question: 'How can I secure a Node-RED installation?',
-        answer: `There are three aspects of Node-RED that need to be secured.
-
-1. Node-RED is a web application so you need to enable HTTPS access to the Node-RED runtime. The default Node-RED settings include a commented out section that can be used for local certificates.
-2. The Node-RED editor and administration require authentication to access it. Node-RED supports username/password and OAuth/OpenID authentication. The adminAuth property in the setting file is used to specify the authentication credentials.
-3. Securing the HTTP Node can be done using basic authentication. This can be set using the httpNodeAuth property in the settings file.
-
-You can also follow [our guide](/blog/2023/04/securing-node-red-in-production/) on how to secure Node-RED.`,
+        question: 'Will Node-RED stay free and open source?',
+        answer: 'Yes. Node-RED is an OpenJS Foundation project under the Apache 2.0 license, independent of any one company. FlowFuse is a commercial platform built around it, not a paid version of it.',
     },
-    { question: 'How is Node-RED used in IoT?', answer: 'Node-RED is very popular in the manufacturing and industrial automation industries (IIoT) as an edge computing solution. Often deployed on PLCs and IoT gateways, Node-RED supports collecting data from legacy and proprietary systems (Siemens S7, Modbus, OPC-UA, etc), integrating the industrial data with other data sources (weather data, enterprise data), filtering data on the edge, and then sending the data to the cloud. FlowFuse offers remote device deployment to IIoT edge devices. Node-RED is also very popular with DIY home automation enthusiasts, in particular the [Home Assistant](https://community.home-assistant.io/t/home-assistant-community-add-on-node-red/55023/) community.' },
+    {
+        question: 'How do we move existing Node-RED instances to FlowFuse?',
+        answer: 'Export the flows, credentials and environment variables from each instance, then restore them in FlowFuse. Read the [migration guide](/docs/migration/introduction/).',
+    },
+    {
+        question: 'Can we take our flows out of FlowFuse?',
+        answer: 'Yes. Flows stay standard Node-RED, so you can export them at any time and run them in any Node-RED.',
+    },
+    {
+        question: 'Where can FlowFuse run?',
+        answer: 'In FlowFuse Cloud, on your own servers, or both, with Node-RED instances on edge devices managed from either. Self-hosted deployments support air-gapped sites. See [deployment architectures](/docs/application-guide/architectures/).',
+    },
+    {
+        question: 'Does FlowFuse meet enterprise security requirements?',
+        answer: 'FlowFuse has completed SOC 2 Type I and Type II audits. It supports company SSO, two-factor login, role-based access and a full audit log. Learn about [FlowFuse security](/platform/security/).',
+    },
+    {
+        question: 'How is FlowFuse priced, and what support is included?',
+        answer: 'Pricing depends on your scale and how you deploy. Paid plans include support for the FlowFuse platform and your account from our team. View [pricing](/pricing/).',
+    },
+    {
+        question: 'Are there community events for Node-RED users?',
+        answer: `Yes. Node-RED Con is an annual online event where the Node-RED community comes together to share projects, real-world use cases, and updates on the future of Node-RED.${nrConUpcoming ? ' The 2026 event takes place on Tuesday, 3 November, with free registration.' : ''} It's held in collaboration with the OpenJS Foundation and sponsored by FlowFuse. [${nrConUpcoming ? 'Register for Node-RED Con' : 'Learn more about Node-RED Con'}](https://nrcon.nodered.org/)`,
+    },
 ]
 
-const META_DESCRIPTION = 'Node-RED is the low-code programming language of choice for industrial applications. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.'
-
-const { data: stories } = await useAsyncData('node-red-stories', () =>
-    queryCollection('stories').select('path', 'title', 'image', 'logo', 'story', 'date')
-        .order('date', 'DESC').limit(3).all()
-)
-
-// Drives the certified-nodes grid, which sits beside the "Why FlowFuse" block because both
-// make the production/trust case. Reading the live catalogues means a newly certified node
-// appears without editing this page. A catalogue feed being unreachable yields an empty list
-// and the section is skipped - the same degradation the .njk's
-// `{% if certifiedNodes.all.length %}` gave.
-const { data: certifiedNodes } = await useFetch('/api/certified-nodes', { default: () => [] })
-
 useSeoMeta({
-    title: 'What is Node-RED?',
+    title: META_TITLE,
     description: META_DESCRIPTION,
+    ogTitle: META_TITLE,
     ogDescription: META_DESCRIPTION,
-    keywords: 'what is node-red, what is Node-RED, how does node-red works, low-code programming, visual programming, flow-based programming, node-red enterprise, node-red for production',
+    keywords: 'node-red enterprise, node-red at scale, node-red in production, node-red fleet management, node-red devops, node-red security, node-red vs flowfuse',
     ogUrl: 'https://flowfuse.com/node-red/',
     twitterSite: '@FlowFuseinc',
 })
@@ -106,245 +195,220 @@ useSchemaOrg([
 </script>
 
 <template>
-  <!--First two sections-->
-  <div class="nohero w-full">
-      <!--Hero Content-->
-      <div class="w-full pt-12 pb-20 md:pt-6 md:pb-12">
-          <div class="flex flex-col px-6 md:my-16 items-center md:flex-row md:items-start container mx-auto text-center md:text-left md:max-w-screen-lg gap-8">
-          <div class="md:my-auto md:w-1/2 max-w-md">
-              <h1 class="mt-0 px-12 md:px-0 m-auto text-indigo-800">
-                  What is <span class="inline-block">Node-RED?</span>
-              </h1>
-              <!-- The .njk opened a stray <p> here with no closing tag. HTML auto-closes
-                   it; Vue's template compiler does not, so it is gone. -->
-              <p>
-                  Co-created by Nick O'Leary, CTO of FlowFuse, Node-RED is <span class="font-semibold">the <span class="inline-block">low-code</span> programming language of choice for industrial applications</span>. Industrial engineers use Node-RED to collect, transform, and integrate data through visualized dashboards.
-              </p>
-              <p><span class="font-semibold">FlowFuse enhances Node-RED with enterprise features</span> to accelerate digitalization and optimize industrial processes.</p>
-              <p class="md:mb-6">Ready to <span class="font-semibold">get started building with Node-RED</span>? There are two ways in.</p>
-              <div class="max-md:hidden md:mb-10">
-                  <CtaSignUp variant="primary" position="nodered" class="min-h-[40px] md:inline" />
-                  <p class="font-light mt-3 mb-0">
-                      Nothing to install, you get an editor in the browser. Or
-                      <a href="#install-node-red-from-your-terminal" @click="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
-                      with one command.
-                  </p>
-              </div>
-          </div>
-          <div class="max-w-md md:w-1/2 m-auto border-4 border-indigo-200 rounded-xl ff-image-cover">
-              <img src="/images/pseudo-editor.png" alt="Node-RED pseudo UI" width="500" class="w-full h-auto">
-          </div>
-          <div class="md:hidden w-full max-w-md m-auto">
-              <CtaSignUp variant="primary" position="nodered-mobile" class="flex flex-col w-full" />
-              <p class="font-light mt-3 mb-0 text-center">
-                  Nothing to install, you get an editor in the browser. Or
-                  <a href="#install-node-red-from-your-terminal" @click="capture('cta-install-terminal', {'position': 'nodered-hero'})">install Node-RED on your own machine</a>
-                  with one command.
-              </p>
-          </div>
-      </div>
-  </div>
-
-      <!--Install commands, directly under the hero. This is the second of the two routes
-          the hero names: TRY IT NOW signs you up for a hosted editor, this one runs
-          Node-RED on hardware you already have.-->
-      <div id="install-node-red-from-your-terminal" class="w-full scroll-mt-24 pb-16">
-          <div class="max-w-screen-lg mx-auto px-6">
-              <DeviceAgentInstallCommands heading="Or install Node-RED on your own machine" />
-              <p class="font-light mt-6 max-md:max-w-md max-md:mx-auto">
-                  One command installs Node.js, Node-RED and the FlowFuse Device Agent, sets it up as a
-                  service so it restarts on boot, and opens your browser to connect it. It creates a
-                  FlowFuse account for you if you do not have one. If the machine already runs Node-RED,
-                  it offers to import those flows.
-              </p>
-          </div>
-      </div>
-
-      <!-- Power of low-code -->
-      <div class="w-full pb-16">
-          <div class="max-w-screen-lg mx-auto px-6">
-              <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14">
-                  <h2 class="text-center w-full md:text-left col-span-full">Harness the Power of <span class="text-indigo-600">Low-Code Integration</span></h2>
-
-                  <div v-for="section in LOW_CODE" :key="section.title" class="relative w-full max-md:max-w-md mx-auto">
-                          <div class="flex flex-col items-center sm:items-start">
-                              <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
-                                  <div class="w-8 h-8 m-auto sm:m-0 text-indigo-600">
-                                      <UIcon :name="section.svgPath" class="w-full h-full" />
-                                  </div>
-                                  <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
-                                      <h5 class="w-full md:m-0">
-                                          <span class="block text-xl text-gray-600 text-center sm:text-left">{{ section.title }}</span>
-                                      </h5>
-                                  </div>
-                              </div>
-                              <div>
-                                  <!-- eslint-disable-next-line vue/no-v-html -->
-                                  <p class="text-center sm:text-left font-light" v-html="section.description" />
-                              </div>
-                          </div>
-                  </div>
-
-              </div>
-          </div>
-      </div>
-  </div>    
-
-  <div class="max-w-screen-lg mx-auto text-center pt-20 pb-6 px-6 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
-      <!--Customer Stories Banner-->
-      <h2 class="md:text-left max-w-3xl">Explore <span class="text-indigo-600">Real-World Node-RED Applications</span> from FlowFuse Customers</h2>
-      <ul class="mt-10 grid grid-cols-1 md:grid md:grid-cols-3 gap-y-4 pb-4 m-auto gap-6">
-          <li v-for="story in stories" :key="story.path" class="w-full max-w-md m-auto my-2">
-              <NuxtLink :to="`${story.path}/`" class="w-full flex flex-col group hover:no-underline">
-                  <div>
-                      <div>
-                          <div class="relative">
-                              <div class="w-full h-40 ff-image-cover scale mb-4 ff-image-rounded object-contain overflow-hidden">
-                                  <div v-if="story.image && story.logo" class="w-1/2 h-full absolute left-0 top-0 bg-white flex items-center justify-center">
-                                      <img :src="story.logo" :alt="`Image representing ${story.story.brand} logo`" width="285" class="max-h-full max-w-full object-contain">
-                                  </div>
-                                  <img
-                                      :src="story.image || '/images/og-blog.jpg'"
-                                      :alt="story.image ? `Image representing ${story.title}` : 'Image with logo and the slogan: Elevate Node-RED with Flowfuse'"
-                                      width="285"
-                                      loading="lazy"
-                                      class="w-full h-auto"
-                                  >
-                              </div>
-                          </div>
-                      </div>
-                      <h5 class="mt-1 mb-0 group-hover:underline font-light text-lg text-left text-gray-600">{{ story.title }}</h5>
-                  </div>
-              </NuxtLink>
-          </li>
-      </ul>
-      <a href="/customer-stories/" class="w-full font-light text-center md:text-left hover:underline pt-3 flex flex-row items-center gap-1 cursor-pointer flex-wrap max-md:max-w-md mx-auto mb-20">
-          See more customer stories <UIcon name="i-heroicons-chevron-right" class="w-4 h-4 shrink-0" />
-      </a>
-  </div>
-
-  <!--Why FlowFuse-->
-  <div class="max-w-screen-lg mx-auto text-center pb-6 px-6 text-lg">
-      <div class="ff-blue-card">
-          <h2 class="font-bold m-auto w-full text-center sm:text-left mb-5">Why Choose <span class="text-red-600">FlowFuse</span> for Node-RED </h2>
-          <div class="w-full sm:grid sm:grid-cols-2 gap-6 sm:gap-8">
-                  <div v-for="section in WHY" :key="section.title" class="w-full mt-4 md:mt-0 flex flex-col justify-between">
-                      <div>
-                          <div class="flex max-sm:w-full justify-center sm:justify-start mt-3 mb-2 w-8 h-8">
-                              <UIcon :name="section.iconPath" class="w-full h-full" />
-                          </div>
-                          <h4 class="flex justify-center sm:justify-start font-semibold">{{ section.title }}</h4>
-                          <p class="font-light mt-6">{{ section.description }}</p>
-                      </div>
-                  </div>
-          </div>
-      </div>
-  </div>
-
-  <!--Certified Nodes-->
-  <div v-if="certifiedNodes?.length" class="w-full pb-20 pt-16">
-      <div class="max-w-screen-lg m-auto px-6">
-          <span class="certified-eyebrow">
-              <IntegrationsCertifiedIcon />
-              <span>FlowFuse Certified</span>
-          </span>
-          <h2 class="max-md:text-center">
-              Nodes <span class="text-indigo-600">certified for production</span>
-          </h2>
-          <p class="mt-4 max-w-3xl">
-              The Node-RED library is enormous, and a README cannot tell you whether a package is still
-              maintained, whether it is secure, or whether anyone will answer when it breaks. FlowFuse
-              certifies a set of nodes against those questions: each one has a named owner accountable
-              for it, is vetted for reliability, security and current documentation, and is patched by
-              FlowFuse after release.
+  <div class="w-full text-gray-700">
+    <!-- Hero -->
+    <section class="nr-gradient w-full px-6 pt-14 md:pt-20 pb-16 md:pb-20">
+      <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div class="max-md:text-center">
+          <h1 class="m-0 text-4xl md:text-5xl font-medium">
+            Node-RED
+            <span class="block text-red-600">for the enterprise</span>
+          </h1>
+          <p class="mt-6 mb-0 text-lg text-gray-700">
+            FlowFuse gives you one platform to deploy, secure and manage <span class="whitespace-nowrap">Node-RED</span>
+            across your organization, with the control IT needs and the speed your engineers expect.
           </p>
-          <ul class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-              <li v-for="node in certifiedNodes" :key="`${node.id}-${node.collection}`" class="w-full">
-                  <NuxtLink
-                      :to="node.docsPath"
-                      class="flex flex-col h-full p-6 bg-white border-2 border-indigo-100 rounded-lg hover:border-indigo-300 hover:no-underline transition-colors"
-                      @click="capture('certified-node-click', { node: node.id, collection: node.collection, page: route.path })"
+          <div class="mt-8 flex gap-4 items-center max-md:justify-center flex-wrap">
+            <CtaBookDemo variant="highlight" position="hero" />
+            <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
+          </div>
+        </div>
+        <!-- FlowFuse and what it adds, above the Node-RED editor it runs -->
+        <div class="rounded-2xl border border-indigo-100 bg-white p-4 sm:p-6 shadow-[0_24px_48px_-32px_rgba(55,48,163,0.45)]">
+        <img
+            src="/images/node-red/flowfuse-nodered-hero.webp"
+            alt="FlowFuse, enterprise application management: security and access control, deployments and versioning, team management, monitoring and observability, multi-tenant and scaling, above a Node-RED editor running a Plant A flow that publishes PLC and sensor data to Unified Namespace topics"
+            width="1820"
+            height="1166"
+            loading="eager"
+            class="block w-full h-auto"
+        >
+        </div>
+      </div>
+    </section>
+
+    <!-- Shared social proof strip, placed right after the hero as on the other templates -->
+    <section class="w-full px-6 pb-4">
+      <SocialProof />
+    </section>
+
+    <!-- Who FlowFuse is for: the case on the left, five numbered conditions on the right -->
+    <section class="w-full px-6 py-20 md:py-28">
+      <div class="max-w-screen-lg mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-20">
+        <div class="lg:sticky lg:top-28 self-start max-lg:text-center">
+          <p class="m-0 text-sm font-semibold uppercase tracking-wide text-indigo-600">Who FlowFuse is for</p>
+          <h2 class="mt-2 mb-0">Built for <span class="text-indigo-600 whitespace-nowrap">mission-critical</span> <span class="whitespace-nowrap">Node-RED</span></h2>
+          <p class="mt-4 mb-0 text-lg text-gray-600">
+            Once <span class="whitespace-nowrap">Node-RED</span> runs production across hundreds or thousands of instances,
+            it carries the same risk as any other system on the line. FlowFuse is the right fit when:
+          </p>
+        </div>
+        <div>
+          <ol class="m-0 p-0 list-none">
+            <li v-for="(f, i) in FIT" :key="f.text" class="m-0 grid grid-cols-[3.5rem_1fr] items-baseline gap-2 py-6 border-b border-gray-200 first:border-t">
+              <span class="text-3xl font-medium tabular-nums text-indigo-300">{{ String(i + 1).padStart(2, '0') }}</span>
+              <span class="text-xl leading-snug text-gray-800">{{ f.text }}</span>
+            </li>
+          </ol>
+          <p class="mt-8 mb-0 pl-[4rem] max-lg:pl-0 max-lg:text-center text-lg font-medium text-indigo-700">If this describes your operation, FlowFuse is designed for you.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What FlowFuse adds -->
+    <section class="w-full px-6 py-20">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="m-0 max-w-3xl">What FlowFuse adds <span class="text-indigo-600">to Node-RED</span></h2>
+        <p class="mt-4 mb-0 max-w-3xl text-gray-600">
+          <span class="whitespace-nowrap">Node-RED</span> stays exactly as your team knows it, standard and open source.
+          FlowFuse takes care of everything around it, from running the fleet to passing the security review.
+        </p>
+        <div class="mt-20">
+          <div
+              v-for="(item, i) in ADDS"
+              :key="item.title"
+              class="flex flex-col md:flex-row gap-8 md:gap-12 items-center mb-14 md:mb-20 last:mb-0"
+              :class="{ 'md:flex-row-reverse': i % 2 === 1 }"
+          >
+            <div class="w-full max-w-[500px] md:max-w-none md:w-[45%] max-md:mt-5">
+              <div class="relative" :class="'youtube' in item ? 'aspect-video' : 'aspect-[430/289]'">
+                <div
+                    class="absolute -top-5 w-full h-full rounded-lg bg-gradient-to-tl"
+                    :class="[FRAME_VARIANTS[item.variant].backdrop, i % 2 === 0 ? '-left-5' : '-right-5']"
+                    aria-hidden="true"
+                />
+                <div class="absolute inset-0 rounded-lg border-2 overflow-hidden ff-image-cover bg-white" :class="FRAME_VARIANTS[item.variant].border">
+                  <LiteYoutube v-if="'youtube' in item" :videoid="item.youtube" :title="item.image.alt" :poster="item.image.src" class="nr-frame__video" />
+                  <img
+                      v-else
+                      :src="item.image.src"
+                      :alt="item.image.alt"
+                      :width="item.image.width"
+                      :height="item.image.height"
+                      loading="lazy"
+                      :style="(item.image as { fit?: string }).fit === 'contain' ? 'object-fit: contain; padding: 12px' : 'object-position: left top'"
                   >
-                      <span class="flex items-center gap-3 mb-2">
-                          <span class="font-semibold text-lg text-gray-900">{{ node.name }}</span>
-                          <span class="certified-pill">
-                              <IntegrationsCertifiedIcon />
-                              <span>{{ node.collectionLabel }}</span>
-                          </span>
-                      </span>
-                      <span class="text-sm text-gray-700">{{ node.description }}</span>
-                  </NuxtLink>
-              </li>
-          </ul>
-          <div class="mt-10 flex flex-wrap items-center gap-4">
-              <a class="ff-btn ff-btn--primary min-h-[40px]" href="/integrations/?certified=1"
-                 @click="capture('cta-browse-certified-nodes', {'position': 'nodered'})">BROWSE CERTIFIED NODES</a>
-          </div>
-      </div>
-  </div>
-
-  <!--Learning Resources (on-ramp, positioned near the closing CTAs)-->
-  <div class="w-full bg-gray-50 pb-20 pt-16">
-      <div class="max-w-screen-lg m-auto px-6">
-      <h2 class="max-md:text-center">
-          Node-RED <span class="text-indigo-600">Learning Resources</span>
-      </h2>
-  <div class="max-sm:text-center max-w-md sm:max-w-none mx-auto sm:grid justify-center items-center mt-10" style="grid-template-columns: 45% auto;">
-      <div class="max-h-[400px] md:max-h-[350px] ff-image-cover scale ff-image-rounded w-full h-full mb-4 sm:mb-0">
-          <img src="/images/learning_nr.png" alt="Node-RED pseudo UI" width="406" class="w-full h-auto">
-      </div>
-          <div class="content-center justify-center sm:pl-8 flex-1">
-              <p class="md:mt-0">
-                  Jumpstart your Node-RED journey with FlowFuse’s comprehensive learning resources, including tutorials, case studies, and community forums. Whether you’re new to Node-RED or looking to refine your skills, our resources are designed to accelerate your learning curve.
-              </p>
-              <p class="text-blue-700 mb-10 mt-7">
-                  <a href="https://node-red-academy.learnworlds.com/">Node-RED Academy</a>
-                  <span class="px-3">|</span>
-                  <a href="/docs/node-red/core-nodes/">Core Nodes</a>
-                  <span class="px-3">|</span>
-                  <a href="/blog/2024/05/understanding-node-flow-global-environment-variables-in-node-red/">Variables</a>
-                  <span class="px-3">|</span>
-                  <a href="/blog/2023/04/3-quick-node-red-tips-6/">Quick Tips</a>
-              </p>
-              <a class="ff-btn ff-btn--primary min-h-[40px] md:inline mb-2 md:mb-0 md:mr-2" href="/docs/node-red/">SEE MORE</a>
-              <a class="ff-btn ff-btn--primary-outlined min-h-[40px] md:inline" href="/professional-services/">GET IMPLEMENTATION SUPPORT</a>
-          </div>
-      </div>
-  </div>
-  </div>
-
-  <!--Flexible Deployment + FAQ-->
-  <div class="max-w-screen-lg mx-auto text-center pb-6 px-6 text-lg">
-      <!--Flexible Deployment with FlowFuse-->
-      <div class="text-center text-teal-50 mt-12 pt-12 text-lg flex-col flex-row items-center justify-center gap-1 hover:no-underline flex-wrap">
-          <div class="text-center mt-6 md:mt-4 mb-14">
-              <h2 class="md:text-left max-w-3xl"><span class="text-indigo-600">Flexible Deployment</span> with FlowFuse</h2>
-          </div>
-          <div class="m-auto max-w-screen-lg">
-              <div class="grid md:px-0 grid-cols-1 md:grid-cols-3 gap-12 md:gap-5 max-w-md md:max-w-none mx-auto">
-                      <div v-for="card in DEPLOYMENT" :key="card.title" class="deployment-card white-bg">
-                          <div>
-                              <div class="title pb-4">
-                                  <h4 class="text-indigo-600">
-                                      {{ card.title }}
-                                  </h4>
-                              </div>
-                              <p class="mb-0 text-left mb-8">
-                                  {{ card.description }}
-                              </p>
-                          </div>
-                          <CtaBookDemo v-if="card.bookDemo" variant="primary-outlined" position="nodered-deployment" class="md:self-end align-baseline w-full mt-3" />
-                          <a v-else class="md:self-end ff-btn ff-btn--primary-outlined uppercase align-baseline w-full mt-3" :href="card.buttonLink">{{ card.buttonText }}</a>
-                      </div>
+                </div>
               </div>
+            </div>
+            <div class="md:w-[55%] flex flex-col gap-3">
+              <h3 class="m-0 text-3xl font-medium text-gray-700">{{ item.title }}</h3>
+              <p class="m-0 text-gray-500">{{ item.text }}</p>
+              <NuxtLink :to="item.link.to" class="flex items-center gap-1.5 text-blue-600 hover:underline">
+                {{ item.link.label }}
+                <UIcon name="i-heroicons-arrow-long-right" class="w-6 h-6 shrink-0" />
+              </NuxtLink>
+            </div>
           </div>
+        </div>
       </div>
-      <!-- Frequently Asked Questions -->
-      <div class="md:text-left max-md:max-w-md mx-auto pt-24 md:pt-16 text-left">
-          <h2 class="max-md:text-center -mb-12">
-              Frequently Asked <span class="text-indigo-600">Questions</span>
-          </h2>
-          <Faq :faq="FAQ" variant="page" />
+    </section>
+
+    <!-- Proof -->
+    <section class="w-full px-6 py-20">
+      <div class="max-w-screen-lg mx-auto">
+        <div class="text-center">
+          <h2 class="m-0">Organizations running Node-RED <span class="text-indigo-600">at scale with FlowFuse</span></h2>
+          <p class="mt-4 mb-0 mx-auto max-w-2xl text-lg text-gray-600">
+            These organizations run <span class="whitespace-nowrap">Node-RED</span> on FlowFuse as part of daily operations,
+            from tool manufacturing to a national power grid.
+          </p>
+        </div>
+        <ul class="mt-12 mb-0 p-0 list-none grid md:grid-cols-3 rounded-2xl border border-gray-200 bg-white md:divide-x max-md:divide-y divide-gray-200">
+          <li v-for="c in PROOF" :key="c.logo.alt" class="m-0 flex flex-col p-7">
+            <img :src="c.logo.src" :alt="c.logo.alt" class="w-auto self-start object-contain" :class="c.logo.height" loading="lazy">
+            <p class="mt-6 mb-0 text-4xl font-medium text-indigo-600">{{ c.stat }}</p>
+            <p class="mt-1 mb-0 font-medium text-gray-800">{{ c.label }}</p>
+            <p class="mt-3 mb-0 text-sm text-gray-600">{{ c.line }}</p>
+            <NuxtLink :to="c.link.to" class="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm text-blue-600 hover:underline">
+              {{ c.link.label }}
+              <UIcon name="i-heroicons-arrow-long-right" class="w-5 h-5 shrink-0" />
+            </NuxtLink>
+          </li>
+        </ul>
+        <div class="mt-8 text-center">
+          <NuxtLink to="/customer-stories/" class="inline-flex items-center gap-1.5 text-blue-600 hover:underline">
+            See all customer stories
+            <UIcon name="i-heroicons-arrow-long-right" class="w-6 h-6 shrink-0" />
+          </NuxtLink>
+        </div>
       </div>
+    </section>
+
+    <!-- Quotes: the scale quote featured, the other three beside it -->
+    <section class="w-full px-6 py-20 bg-gray-50">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="m-0">What teams say about running <span class="text-indigo-600"><span class="whitespace-nowrap">Node-RED</span> with FlowFuse</span></h2>
+        <div class="mt-10 grid lg:grid-cols-[1.1fr_1fr] gap-6" @mouseenter="quotesPaused = true" @mouseleave="quotesPaused = false">
+          <figure class="quote-featured m-0 flex flex-col rounded-2xl p-8 md:p-10 text-white">
+            <UIcon name="i-lucide-quote" class="w-10 h-10 text-indigo-200" />
+            <blockquote :key="FEATURED_QUOTE.name" class="quote-fade m-0 my-8 flex-1 flex items-center text-xl md:text-[1.75rem] leading-snug font-medium" aria-live="polite">{{ FEATURED_QUOTE.text }}</blockquote>
+            <figcaption :key="`by-${FEATURED_QUOTE.name}`" class="quote-fade flex items-center gap-4">
+              <img v-if="FEATURED_QUOTE.avatar" :src="FEATURED_QUOTE.avatar" :alt="FEATURED_QUOTE.name" width="56" height="56" loading="lazy" class="w-14 h-14 shrink-0 rounded-full object-cover ring-2 ring-white/40">
+              <span>
+                <span class="block font-semibold">{{ FEATURED_QUOTE.name }}</span>
+                <span class="block text-sm text-indigo-100">{{ FEATURED_QUOTE.role }}</span>
+              </span>
+            </figcaption>
+          </figure>
+          <ul class="m-0 p-0 list-none flex flex-col gap-6">
+            <li v-for="q in OTHER_QUOTES" :key="q.name" class="quote-fade m-0 flex-1">
+              <figure class="m-0 flex flex-col h-full rounded-2xl border border-gray-200 bg-white p-6">
+                <blockquote class="m-0 flex-1 leading-relaxed text-gray-700">&ldquo;{{ q.text }}&rdquo;</blockquote>
+                <figcaption class="mt-4 flex items-center gap-3">
+                  <img v-if="q.avatar" :src="q.avatar" :alt="q.name" width="36" height="36" loading="lazy" class="w-9 h-9 shrink-0 rounded-full object-cover">
+                  <span v-else class="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-indigo-50 text-xs font-semibold text-indigo-700" aria-hidden="true">{{ q.name.split(' ').map(w => w[0]).join('') }}</span>
+                  <span>
+                    <span class="block text-sm font-semibold text-gray-800">{{ q.name }}</span>
+                    <span class="block text-xs text-gray-500">{{ q.role }}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="w-full px-6 pt-20 pb-10">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-1 text-center md:text-left">Node-RED and FlowFuse: <span class="text-indigo-600">FAQs</span></h2>
+        <Faq :faq="FAQ" />
+      </div>
+    </section>
+
+    <IndustryPageCta
+        heading="Running Node-RED in more than one place?"
+        description="Tell us how many instances you run and how you update them today. We'll show you how to manage them all from one place."
+    />
   </div>
 </template>
+
+<style scoped>
+.quote-fade {
+    animation: quote-in 0.5s ease-out;
+}
+
+@keyframes quote-in {
+    from { opacity: 0; transform: translateY(8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quote-fade { animation: none; }
+}
+
+.quote-featured {
+    background:
+        radial-gradient(80% 60% at 100% 0%, color-mix(in oklab, var(--color-indigo-400) 45%, transparent), transparent 70%),
+        linear-gradient(135deg, var(--color-indigo-700), var(--color-indigo-900));
+}
+
+.nr-frame__video {
+    border-radius: 0;
+}
+
+.nr-gradient {
+    background: linear-gradient(100deg, var(--color-indigo-50) 0%, white 50%, color-mix(in oklab, var(--color-red-50) 70%, white) 100%);
+}
+</style>
