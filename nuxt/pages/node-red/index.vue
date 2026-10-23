@@ -58,7 +58,7 @@ const ADDS = [
     },
     {
         title: 'See it in your industry',
-        text: 'Applications, compliance requirements and customer results for automotive, industrial machinery, building materials, energy and aerospace.',
+        text: 'Learn how teams in automotive, industrial machinery, building materials, energy, and aerospace use FlowFuse to run Node-RED in production.',
         image: { src: '/images/industries/energy-utilities.jpg', alt: 'Solar panels on an industrial roof beside farmland', width: 750, height: 422 },
         variant: 'red',
         link: { to: '/industries/', label: 'Explore industries' },
