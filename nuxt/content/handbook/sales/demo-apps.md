@@ -41,3 +41,12 @@ Every use case added to Demo Apps must meet these criteria:
 Together these make each demo app self-describing: a prospect finds a use case in
 the website registry, sees its architecture and value on the front end, and the
 sales [Demo](/handbook/sales/meetings/demo/) picks up from there in the backend.
+
+## Where Demo Apps come from
+
+Demo Apps are **reusable** — published once, discoverable by any prospect. Many start
+life as a [tailored demo](/handbook/sales/meetings/demo/#tailored-demos): a working app
+built for one prospect's own use case during a deal. When a tailored demo turns out to
+be a strong, broadly relevant use case, we can decide to roll it into this registry —
+giving it its own `Demo App - {Use-case name}` team and listing it so every prospect can
+find it. Tailored demos are the pipeline; Demo Apps are the ones we chose to publish.
