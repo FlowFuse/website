@@ -53,24 +53,66 @@ further meeting is paid at the cap.
 The process and tasks for paying out this bonus are described in the Operations
 handbook, under [Processing Bonuses](/handbook/operations/commission-payment/#processing-bonuses).
 
-#### CRM Hygiene
+## Daily Process
+
+An SDR's day is split into three kinds of work: sourcing new leads, calling
+them, and the administrative work that keeps everything moving.
+
+| Block | Time per day | Focus |
+| --- | --- | --- |
+| Sourcing | 2 hours, in two 1-hour blocks | Finding and enriching intent-based accounts, new accounts, and ICP leads within them |
+| Calling | At least 4 hours, in two blocks of at least 2 hours | Outbound calls to sequenced leads, 50 or more a day |
+| Administrative work | 1–2 hours, usually at the start or end of the day | Email, meetings, sequence development, and reporting |
+
+Plan your sourcing blocks around your calling blocks. The time zones of your
+call tasks decide when you call, and sourcing fills the time around it. The
+schedule can shift from day to day depending on meetings and other
+administrative work.
+
+## Meeting Tracking
+
+When an SDR books a discovery meeting, they are also responsible for tracking
+it through to completion. To make this easier, each SDR creates a HubSpot
+segment named `<Your name> - SDR meetings booked`.
+
+1. **Book the meeting.** Use the calendar of the AE who covers the lead's
+territory, either through Google Calendar or HubSpot.
+2. **Write the discovery note.** Paste the lead's name, email address, and your
+call notes into Claude, and use the Disconotes skill to format them into a
+discovery note.
+3. **Share the discovery note.** Post it in the `#dept-sales` channel in Slack.
+4. **Add the company to your segment.** Add it to your SDR meetings booked
+segment in HubSpot.
+5. **Join the first meeting.** The SDR attends the first meeting and introduces
+the prospect to the AE.
+6. **Reschedule no-shows.** If the prospect doesn't attend, the SDR reschedules
+the meeting.
+7. **Mark the meeting as completed.** Once the meeting has taken place, set its
+outcome to `Completed` in HubSpot. This applies whether or not the lead moves
+to SQL.
+
+After an attended meeting, the AE creates the deal and the lead moves to SQL.
+The SDR stays involved after the handoff and helps the AE with any further
+outreach to the account, if needed.
+
+## CRM Hygiene
 
 The SDR is responsible for keeping lifecycle stage and lead status current in
 HubSpot based on the outcome of each call. Lifecycle stage will be set to
 `Disqualified` and lead status will be set to `Unqualified` for all contacts
 that have no business relevance.
 
-##### Call Outcomes and Definitions
+## Call Outcomes and Definitions
 
 When you log a call, pick the outcome that best matches what happened. Using the same definitions across the team keeps our reporting accurate.
 
--Busy: The prospect answered but couldn't talk. They asked you to call back or said something like "I can't talk right now" or "It's a bad time."
--Connected: The prospect you were trying to reach answered and talked with you. They answered at least basic questions, and you gathered some information.
--Left Live Message: You left a message with someone other than the prospect.
--Left Voicemail: You recorded and left a voicemail for the prospect.
--Meeting Booked: you connected with the prospect, and they booked a meeting with an AE.
--No Answer: The prospect didn't answer, and you didn't leave a message.
--wrong Number: The number doesn't belong to the assigned contact.
+1. Busy: The prospect answered but couldn't talk. They asked you to call back or said something like "I can't talk right now" or "It's a bad time."
+2. Connected: The prospect you were trying to reach answered and talked with you. They answered at least basic questions, and you gathered some information.
+3. Left Live Message: You left a message with someone other than the prospect.
+4. Left Voicemail: You recorded and left a voicemail for the prospect.
+5. Meeting Booked: you connected with the prospect, and they booked a meeting with an AE.
+6. No Answer: The prospect didn't answer, and you didn't leave a message.
+7. wrong Number: The number doesn't belong to the assigned contact.
 
 **Examples**
 
