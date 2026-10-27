@@ -142,9 +142,9 @@ const film = computed(() => FILMS[filmIndex.value]!)
         description="Our engineers build production performance solutions with your team, on your equipment: finding the hidden losses, lost capacity and failing assets, and acting on them before the shift ends."
         :image="{
           src: `${ASSETS}/hidden-loss.gif`,
-          alt: 'FlowFuse AI answers where pack line 2 lost the most output this shift: the cartoner, with 42 short stops totalling 48 minutes, none of them in the downtime log.',
-          width: 960,
-          height: 540,
+          alt: 'The problem: 48 minutes of cartoner stops in one shift, each under two minutes, and 0 minutes in the downtime log, because traditional downtime tracking only logs the long stops. Then FlowFuse AI answers where pack line 2 lost the most output: the cartoner, with 42 short stops totalling 48 minutes.',
+          width: 720,
+          height: 406,
         }"
     />
 
