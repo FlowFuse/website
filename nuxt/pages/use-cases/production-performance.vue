@@ -20,63 +20,37 @@ const WHY = [
     { icon: 'i-lucide-factory', title: 'Built once, reused at every plant', description: 'The first solution becomes the template for the next line and the next site.', destination: 'signUp' as const, linkText: 'How we build with you' },
 ]
 
+// The solutions under this track, one tab each: the film, what it solves, and where to go
+// next when the solution has its own page.
 const FILMS = [
     {
         key: 'packaging',
-        tab: 'Downtime Tracking',
-        title: 'Finding the hidden losses on a packaging line',
-        summary: 'Dozens of short stops on the cartoner never reached the downtime log. FlowFuse found them, put them in front of the team and measured the fix.',
+        name: 'Downtime Tracking',
+        story: 'Finding the hidden losses on a packaging line',
+        description: 'Short stops too brief for the downtime log add up to real lost output. FlowFuse counts every stop on every machine, shows the biggest loss to the team on shift, and measures each fix from a baseline.',
         webm: `${ASSETS}/packaging.webm`,
         mp4: `${ASSETS}/packaging.mp4`,
         poster: `${ASSETS}/packaging-poster.jpg`,
     },
     {
         key: 'machining',
-        tab: 'Machine Utilization',
-        title: 'Finding the capacity a machining cell is losing',
-        summary: 'The idle machine looked like the problem. The real loss was one lathe running slower on second shift, with orders already at risk.',
+        name: 'Machine Utilization',
+        story: 'Finding the capacity a machining cell is losing',
+        description: 'Idle time is not the same as lost capacity. FlowFuse separates time lost to how machines are run from time with no work, ties it to the orders at risk, and shows it shift by shift.',
         webm: `${ASSETS}/machining.webm`,
         mp4: `${ASSETS}/machining.mp4`,
         poster: `${ASSETS}/machining-poster.jpg`,
     },
     {
         key: 'maintenance',
-        tab: 'Predictive Maintenance',
-        title: 'Finding the real cause before a pump fails',
-        summary: 'The vibration alarm flagged the wrong pump. FlowFuse found the bearing that was really wearing out and sent maintenance the evidence.',
+        name: 'Predictive Maintenance',
+        story: 'Finding the real cause before a pump fails',
+        description: 'Vibration alarms show the state, not the cause. FlowFuse ranks every asset by its real wear, teaches the alarm to catch it early, and sends maintenance the evidence before the line stops.',
         webm: '/images/use-cases/predictive-maintenance/promo.webm',
         mp4: '/images/use-cases/predictive-maintenance/promo.mp4',
         poster: '/images/use-cases/predictive-maintenance/promo-poster.jpg',
-    },
-]
-
-const APPLICATIONS = [
-    {
-        title: 'Downtime Tracking',
-        description: 'Short stops too brief for the downtime log add up to real lost output. FlowFuse counts every stop on every machine, shows the biggest loss to the team on shift, and measures each fix from a baseline.',
-        linkText: 'Watch downtime tracking in action',
-        linkHref: '#films',
-        image: `${ASSETS}/packaging-losses.jpg`,
-        imageAlt: 'A packaging line dashboard showing the cartoner\'s short stops and short-stop minutes above the machine status table',
-        variant: 'indigo' as const,
-    },
-    {
-        title: 'Machine Utilization',
-        description: 'Idle time is not the same as lost capacity. FlowFuse separates time lost to how machines are run from time with no work, ties it to the orders at risk, and shows it shift by shift.',
-        linkText: 'Watch machine utilization in action',
-        linkHref: '#films',
-        image: `${ASSETS}/machining-capacity.jpg`,
-        imageAlt: 'Where the time went over five days for each machine in the cell: scheduled, cutting, setup and waiting hours, with feed override by shift',
-        variant: 'red' as const,
-    },
-    {
-        title: 'Predictive Maintenance',
-        description: 'Vibration alarms show the state, not the cause. FlowFuse ranks every asset by its real wear, teaches the alarm to catch it early, and sends maintenance the evidence before the line stops.',
+        to: '/use-cases/predictive-maintenance/',
         linkText: 'Explore predictive maintenance',
-        linkHref: '/use-cases/predictive-maintenance/',
-        image: `${ASSETS}/pump-health.jpg`,
-        imageAlt: 'The asset health dashboard with CP-104 at the top, flagged for its bearing defect band and kurtosis',
-        variant: 'mixed' as const,
     },
 ]
 
@@ -121,8 +95,8 @@ useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
     ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
     ...FILMS.map(f => defineVideo({
-        name: f.title,
-        description: f.summary,
+        name: f.story,
+        description: f.description,
         thumbnailUrl: `https://flowfuse.com${f.poster}`,
         contentUrl: `https://flowfuse.com${f.mp4}`,
         uploadDate: '2026-10-27',
@@ -174,16 +148,12 @@ const film = computed(() => FILMS[filmIndex.value]!)
       </div>
     </section>
 
-    <IndustryPageApplications
-        heading="How manufacturers use FlowFuse for production performance"
-        description="Every one of these started as a single problem on a single line. We build yours the same way, around your equipment and your data."
-        :items="APPLICATIONS"
-    />
 
     <!-- THE FILMS: one player, a tab per solution -->
     <section id="films" class="w-full py-16 md:py-24 px-6 bg-indigo-50/50 border-y border-indigo-100 scroll-mt-16">
       <div class="max-w-screen-lg mx-auto">
-        <h2 class="m-0 max-md:text-center">Watch each solution <span class="text-indigo-600">find the loss</span></h2>
+        <h2 class="m-0 max-md:text-center">How manufacturers use FlowFuse for <span class="text-indigo-600">production performance</span></h2>
+        <p class="mt-4 text-gray-600 max-md:text-center">Every one of these started as a single problem on a single line. We build yours the same way, around your equipment and your data.</p>
         <div class="mt-8 flex flex-wrap gap-2 max-md:justify-center" role="tablist">
           <button
               v-for="(f, i) in FILMS"
@@ -195,13 +165,13 @@ const film = computed(() => FILMS[filmIndex.value]!)
               :class="i === filmIndex ? 'bg-indigo-600 border-indigo-600 text-white' : 'bg-white border-gray-200 text-gray-700 hover:border-indigo-300'"
               @click="filmIndex = i"
           >
-            {{ f.tab }}
+            {{ f.name }}
           </button>
         </div>
         <div class="mt-6 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-center">
           <div class="relative">
-            <div class="absolute -top-4 -left-4 w-full h-full rounded-lg bg-gradient-to-tl from-indigo-400 via-indigo-300 to-indigo-100" aria-hidden="true" />
-            <div class="relative rounded-lg border-2 border-indigo-300 overflow-hidden bg-indigo-950">
+            <div class="absolute -top-2 -left-2 w-full h-full rounded-lg bg-gradient-to-tl from-indigo-400 via-indigo-300 to-indigo-100" aria-hidden="true" />
+            <div class="relative rounded-lg border border-indigo-300 overflow-hidden bg-indigo-950 shadow-lg">
               <video
                   :key="film.key"
                   class="block w-full h-auto"
@@ -211,7 +181,7 @@ const film = computed(() => FILMS[filmIndex.value]!)
                   controls
                   playsinline
                   preload="metadata"
-                  :aria-label="`Film: ${film.title}`"
+                  :aria-label="`Film: ${film.story}`"
               >
                 <source :src="film.webm" type="video/webm">
                 <source :src="film.mp4" type="video/mp4">
@@ -219,8 +189,13 @@ const film = computed(() => FILMS[filmIndex.value]!)
             </div>
           </div>
           <div class="max-lg:text-center">
-            <h3 class="m-0 text-2xl text-gray-800">{{ film.title }}</h3>
-            <p class="mt-4 mb-0 text-gray-600">{{ film.summary }}</p>
+            <h3 class="m-0 text-3xl font-medium text-gray-700">{{ film.name }}</h3>
+            <p class="mt-2 mb-0 text-sm font-medium text-indigo-600">{{ film.story }}</p>
+            <p class="mt-4 mb-0 text-gray-600">{{ film.description }}</p>
+            <NuxtLink v-if="film.to" :to="film.to" class="mt-4 inline-flex items-center gap-1.5 text-blue-600 hover:underline">
+              {{ film.linkText }}
+              <UIcon name="i-heroicons-arrow-long-right" class="w-5 h-5 shrink-0" />
+            </NuxtLink>
           </div>
         </div>
       </div>
