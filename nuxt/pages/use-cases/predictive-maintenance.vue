@@ -32,8 +32,8 @@ const SOLUTION = [
     {
         title: 'Rank every asset by real risk',
         description: 'FlowFuse AI checks each wear trend against the production plan and explains its ranking, so the pump that is really failing comes first, not the loudest one.',
-        linkText: 'See it built',
-        linkHref: '#see-it-built',
+        linkText: 'How FlowFuse AI works',
+        linkHref: '/ai/',
         image: `${ASSETS}/ranked-answer.jpg`,
         imageAlt: 'FlowFuse AI ranking the pumps that need attention, with CP-104 first because its bearing defect band rose more than fourfold in seven days',
         variant: 'indigo' as const,
@@ -41,8 +41,8 @@ const SOLUTION = [
     {
         title: 'Catch wear, not just shaking',
         description: 'The alarm rules learn to watch bearing wear. Your team approves every change before it goes live, and every change is recorded.',
-        linkText: 'See it built',
-        linkHref: '#see-it-built',
+        linkText: 'Security and change control',
+        linkHref: '/platform/security/',
         image: `${ASSETS}/new-rule.jpg`,
         imageAlt: 'The updated health rules: an asset now needs attention when its bearing defect band is above 0.2 g or its kurtosis is above 4.5',
         variant: 'red' as const,
@@ -50,21 +50,12 @@ const SOLUTION = [
     {
         title: 'Send maintenance the evidence',
         description: 'One work request with the asset, the trend and the reason, so repairs happen on schedule, not in a breakdown.',
-        linkText: 'See it built',
-        linkHref: '#see-it-built',
+        linkText: 'Connect your maintenance system',
+        linkHref: '/integrations/',
         image: `${ASSETS}/work-request.jpg`,
         imageAlt: 'A work request raised for CP-104, titled Inspect CP-104 bearings, awaiting approval',
         variant: 'mixed' as const,
     },
-]
-
-// Where each step starts in the walkthrough film, in seconds (from the cut list in
-// solution-sim/film/corrow_walk).
-const STEPS = [
-    { at: 26, label: 'Step 1', title: 'The vibration alarm flags one pump', description: 'The pump that shakes most is flagged. Every other pump looks fine.' },
-    { at: 37, label: 'Step 2', title: 'Ask FlowFuse AI which pumps really need attention', description: 'It checks every pump\'s wear trend and the production plan, and finds the bearing that has been wearing for nine days.' },
-    { at: 83, label: 'Step 3', title: 'FlowFuse AI teaches the alarm to spot bearing wear', description: 'It updates the health rules, and the change is reviewed and deployed.' },
-    { at: 125, label: 'Step 4', title: 'Send maintenance the evidence', description: 'A work request with the wear trend, raised before the bearing fails.' },
 ]
 
 const NEXT = [
@@ -121,25 +112,8 @@ useSchemaOrg([
         contentUrl: `https://flowfuse.com${ASSETS}/promo.mp4`,
         uploadDate: '2026-10-27',
     }),
-    defineVideo({
-        name: 'Predictive maintenance with FlowFuse: the full walkthrough',
-        description: 'Step by step: the alarm flags one pump, FlowFuse AI ranks the pumps that need attention, teaches the alarm to spot bearing wear, and raises the work request.',
-        thumbnailUrl: `https://flowfuse.com${ASSETS}/walkthrough-poster.jpg`,
-        contentUrl: `https://flowfuse.com${ASSETS}/walkthrough.mp4`,
-        uploadDate: '2026-10-27',
-    }),
 ])
 
-const walkthrough = ref<HTMLVideoElement | null>(null)
-const current = ref(0)
-const activeStep = computed(() => STEPS.findLastIndex(s => current.value >= s.at))
-function seek(at: number) {
-    const v = walkthrough.value
-    if (!v) return
-    v.currentTime = at
-    v.play().catch(() => {})
-}
-const formatTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
 </script>
 
 <template>
@@ -222,49 +196,6 @@ const formatTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padSta
     />
 
     <SolutionPagePartnership :image="`${ASSETS}/crew.jpg`" image-alt="Two engineers in hard hats working on a pump together" />
-
-    <!-- SEE IT BUILT: the walkthrough, with its steps as a clickable outline -->
-    <section id="see-it-built" class="w-full py-16 md:py-24 px-6 scroll-mt-16">
-      <div class="max-w-screen-lg mx-auto">
-        <h2 class="m-0 max-md:text-center">See it <span class="text-indigo-600">built</span></h2>
-        <p class="mt-4 text-gray-600 max-md:text-center">From the alarm to the work request, step by step.</p>
-        <div class="mt-10 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-start">
-          <div class="rounded-lg border-2 border-indigo-200 overflow-hidden bg-indigo-950">
-            <video
-                ref="walkthrough"
-                class="block w-full h-auto"
-                :poster="`${ASSETS}/walkthrough-poster.jpg`"
-                width="1920"
-                height="1080"
-                controls
-                playsinline
-                preload="metadata"
-                aria-label="Walkthrough: the alarm flags one pump, FlowFuse AI ranks the pumps that need attention, updates the alarm rules to catch bearing wear, and a work request is raised for maintenance."
-                @timeupdate="current = ($event.target as HTMLVideoElement).currentTime"
-            >
-              <source :src="`${ASSETS}/walkthrough.webm`" type="video/webm">
-              <source :src="`${ASSETS}/walkthrough.mp4`" type="video/mp4">
-            </video>
-          </div>
-          <ol class="list-none p-0 m-0 flex flex-col gap-2">
-            <li v-for="(step, i) in STEPS" :key="step.at" class="m-0">
-              <button
-                  type="button"
-                  class="w-full text-left rounded-lg border p-4 transition-colors cursor-pointer"
-                  :class="i === activeStep ? 'bg-indigo-50 border-indigo-300' : 'bg-white border-gray-200 hover:border-indigo-200'"
-                  @click="seek(step.at)"
-              >
-                <span class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-red-600">
-                  {{ step.label }} <span class="text-gray-400 font-normal normal-case tracking-normal">{{ formatTime(step.at) }}</span>
-                </span>
-                <span class="block mt-1 font-medium text-gray-800">{{ step.title }}</span>
-                <span class="block mt-1 text-sm text-gray-600">{{ step.description }}</span>
-              </button>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
 
     <SolutionPageFoundation solution="Predictive maintenance">
       <p class="mt-6 mb-2 text-sm font-semibold text-gray-700">What you can build next on the same foundation</p>
