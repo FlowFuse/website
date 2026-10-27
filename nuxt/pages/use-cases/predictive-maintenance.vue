@@ -42,25 +42,25 @@ const CAPABILITIES = [
         image: `${ASSETS}/ranked-answer.jpg`,
         alt: 'FlowFuse AI ranking the pumps that need attention, with CP-104 first because its bearing defect band rose more than fourfold in seven days',
         kicker: 'Find',
-        title: 'Ranks equipment by what really needs attention',
-        description: 'Ask which assets need attention this week. FlowFuse AI checks every wear trend against the production plan and explains its ranking in plain language.',
-        points: ['Reads condition data across every asset', 'Separates real wear from planned slowdowns'],
+        title: 'Rank every asset by real risk',
+        description: 'FlowFuse AI checks each wear trend against the production plan and explains its ranking.',
+        points: ['Every asset, not just the loudest', 'Real wear, not planned slowdowns'],
     },
     {
         image: `${ASSETS}/new-rule.jpg`,
         alt: 'The updated health rules: an asset now needs attention when its bearing defect band is above 0.2 g or its kurtosis is above 4.5',
         kicker: 'Fix',
-        title: 'Updates the alarm rules so wear is caught early',
-        description: 'FlowFuse AI teaches the alarm to watch bearing wear, not just overall shaking. A person on your team approves the change before it goes live.',
-        points: ['Every change reviewed and recorded', 'Roll back with one click'],
+        title: 'Catch wear, not just shaking',
+        description: 'The alarm rules learn to watch bearing wear. Your team approves every change before it goes live.',
+        points: ['Every change recorded', 'Roll back in one click'],
     },
     {
         image: `${ASSETS}/work-request.jpg`,
         alt: 'A work request raised for CP-104, titled Inspect CP-104 bearings, awaiting approval',
         kicker: 'Act',
-        title: 'Raises the work request with the evidence',
-        description: 'Maintenance gets the asset, the trend and the reason in one request, so the bearing is changed on schedule, not in a breakdown.',
-        points: ['Lands in your maintenance system', 'The trend travels with the request'],
+        title: 'Send maintenance the evidence',
+        description: 'One work request with the asset, the trend and the reason, so repairs happen on schedule, not in a breakdown.',
+        points: ['Lands in your maintenance system', 'The trend goes with it'],
     },
 ]
 
@@ -187,11 +187,10 @@ const formatTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padSta
               See the cause, <span class="text-indigo-300">not just the state.</span>
             </h1>
             <p class="mt-6 text-lg text-indigo-100 max-md:mx-auto max-w-md">
-              Find the failing bearing a vibration alarm misses, and fix it before it stops the line.
+              Our engineers build condition monitoring with your team that finds the real cause, so maintenance acts before the line stops.
             </p>
             <div class="mt-8 flex flex-wrap gap-3 max-md:justify-center">
               <CtaBookDemo variant="highlight" position="hero" class="min-h-[40px]" />
-              <CtaSignUp variant="ghost" color="white" position="hero" icon="i-heroicons-arrow-long-right" class="min-h-[40px]" />
             </div>
           </div>
           <!-- The frame clips, not the video: Chrome ignores a radius on its own control bar. -->
@@ -291,10 +290,10 @@ const formatTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padSta
       <div class="relative max-w-screen-lg mx-auto">
         <div class="max-w-3xl max-md:text-center max-md:mx-auto">
           <p class="uppercase text-xs font-semibold tracking-wide text-orange-300 mb-3">The solution</p>
-          <h2 class="m-0 text-white">FlowFuse finds the cause and helps your team act on it, <span class="text-indigo-200">with a person approving every change.</span></h2>
+          <h2 class="m-0 text-white">We find the cause. <span class="text-indigo-200">Your team stays in charge.</span></h2>
           <p class="mt-6 text-indigo-100">
-            Condition-based monitoring that looks past the alarm. FlowFuse connects your vibration sensors, production
-            plan and maintenance system, and FlowFuse AI reads the trends across all of them.
+            We connect your sensors, production plan and maintenance system, and FlowFuse AI reads the trends across all
+            of them.
           </p>
         </div>
         <div class="mt-16 flex flex-col gap-16 md:gap-20">
@@ -353,11 +352,6 @@ const formatTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padSta
               <p class="mt-2 mb-0 text-gray-600">{{ stage.description }}</p>
             </li>
           </ol>
-          <p class="mt-8 mb-0 max-md:text-center">
-            <CtaLink destination="signUp" position="partnership" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center gap-1">
-              How the partnership works <UIcon name="i-heroicons-arrow-long-right" class="w-4 h-4" />
-            </CtaLink>
-          </p>
         </div>
       </div>
     </section>
@@ -502,7 +496,6 @@ const formatTime = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padSta
         </p>
         <div class="mt-8 flex flex-wrap gap-3 max-md:justify-center">
           <CtaBookDemo variant="highlight" position="footer" class="min-h-[40px]" />
-          <CtaSignUp variant="ghost" color="white" position="footer" icon="i-heroicons-arrow-long-right" class="min-h-[40px]" />
         </div>
       </div>
     </section>
