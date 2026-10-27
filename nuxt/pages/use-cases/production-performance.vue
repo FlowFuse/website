@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { faqAnswerText } from '../../lib/faq-answer.mjs'
+import { CtaLink, NuxtLink } from '#components'
 // Production Performance: a solution track, the theme a buyer talks to us about, with the
 // solutions we have built under it shown as examples of what we build with a customer
 // rather than products off the shelf. The structure follows tulip.co/production-management
@@ -10,17 +11,19 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 // names until approved, never describe the demo plants as simulated.
 const ASSETS = '/images/use-cases/production-performance'
 
+// Each reason links to the page that shows it. "Built once" goes to /build-with-us/, a CTA
+// destination, so it routes through CtaLink (cta-destinations.test.mjs rejects a literal href).
 const WHY = [
-    { icon: 'i-lucide-cable', title: 'Connect what you already run', description: 'PLCs, machines, sensors, historians and business systems, over the protocols they already speak. No rip and replace.' },
-    { icon: 'i-lucide-search-check', title: 'Find the cause, not just the state', description: 'FlowFuse AI reads across every machine, shift and plan to explain where output is really being lost.' },
-    { icon: 'i-lucide-shield-check', title: 'A person approves every change', description: 'AI proposes the fix and your team approves it. Every change is recorded and can be rolled back.' },
-    { icon: 'i-lucide-factory', title: 'Built once, reused at every plant', description: 'The first solution becomes the template for the next line and the next site.' },
+    { icon: 'i-lucide-cable', title: 'Connect what you already run', description: 'PLCs, machines, sensors, historians and business systems, over the protocols they already speak. No rip and replace.', to: '/integrations/', linkText: 'See the integrations' },
+    { icon: 'i-lucide-search-check', title: 'Find the cause, not just the state', description: 'FlowFuse AI reads across every machine, shift and plan to explain where output is really being lost.', to: '/ai/', linkText: 'How FlowFuse AI works' },
+    { icon: 'i-lucide-shield-check', title: 'A person approves every change', description: 'AI proposes the fix and your team approves it. Every change is recorded and can be rolled back.', to: '/platform/security/', linkText: 'See how it is governed' },
+    { icon: 'i-lucide-factory', title: 'Built once, reused at every plant', description: 'The first solution becomes the template for the next line and the next site.', destination: 'signUp' as const, linkText: 'How we build with you' },
 ]
 
 const FILMS = [
     {
         key: 'packaging',
-        tab: 'Packaging line',
+        tab: 'Downtime Tracking',
         title: 'Finding the hidden losses on a packaging line',
         summary: 'Dozens of short stops on the cartoner never reached the downtime log. FlowFuse found them, put them in front of the team and measured the fix.',
         webm: `${ASSETS}/packaging.webm`,
@@ -29,7 +32,7 @@ const FILMS = [
     },
     {
         key: 'machining',
-        tab: 'Machining cell',
+        tab: 'Machine Utilization',
         title: 'Finding the capacity a machining cell is losing',
         summary: 'The idle machine looked like the problem. The real loss was one lathe running slower on second shift, with orders already at risk.',
         webm: `${ASSETS}/machining.webm`,
@@ -38,7 +41,7 @@ const FILMS = [
     },
     {
         key: 'maintenance',
-        tab: 'Pump maintenance',
+        tab: 'Predictive Maintenance',
         title: 'Finding the real cause before a pump fails',
         summary: 'The vibration alarm flagged the wrong pump. FlowFuse found the bearing that was really wearing out and sent maintenance the evidence.',
         webm: '/images/use-cases/predictive-maintenance/promo.webm',
@@ -49,25 +52,25 @@ const FILMS = [
 
 const APPLICATIONS = [
     {
-        title: 'Hidden losses on the line',
+        title: 'Downtime Tracking',
         description: 'Short stops too brief for the downtime log add up to real lost output. FlowFuse counts every stop on every machine, shows the biggest loss to the team on shift, and measures each fix from a baseline.',
-        linkText: 'Watch the packaging film',
+        linkText: 'Watch downtime tracking in action',
         linkHref: '#films',
         image: `${ASSETS}/packaging-losses.jpg`,
         imageAlt: 'A packaging line dashboard showing the cartoner\'s short stops and short-stop minutes above the machine status table',
         variant: 'indigo' as const,
     },
     {
-        title: 'Capacity lost on the shop floor',
+        title: 'Machine Utilization',
         description: 'Idle time is not the same as lost capacity. FlowFuse separates time lost to how machines are run from time with no work, ties it to the orders at risk, and shows it shift by shift.',
-        linkText: 'Watch the machining film',
+        linkText: 'Watch machine utilization in action',
         linkHref: '#films',
         image: `${ASSETS}/machining-capacity.jpg`,
         imageAlt: 'Where the time went over five days for each machine in the cell: scheduled, cutting, setup and waiting hours, with feed override by shift',
         variant: 'red' as const,
     },
     {
-        title: 'Predictive maintenance',
+        title: 'Predictive Maintenance',
         description: 'Vibration alarms show the state, not the cause. FlowFuse ranks every asset by its real wear, teaches the alarm to catch it early, and sends maintenance the evidence before the line stops.',
         linkText: 'Explore predictive maintenance',
         linkHref: '/use-cases/predictive-maintenance/',
@@ -137,11 +140,11 @@ const film = computed(() => FILMS[filmIndex.value]!)
         eyebrow-icon="arrow-trending-up"
         heading="Win back the output <span class=&quot;text-indigo-600&quot;>your lines are losing</span>"
         description="Our engineers build production performance solutions with your team, on your equipment: finding the hidden losses, lost capacity and failing assets, and acting on them before the shift ends."
-        :video="{
-          webm: FILMS[0]!.webm,
-          mp4: FILMS[0]!.mp4,
-          poster: FILMS[0]!.poster,
-          label: 'Film: a packaging line loses output to short stops its downtime log never sees. FlowFuse finds the hidden loss and the team fixes it.',
+        :image="{
+          src: `${ASSETS}/hidden-loss.gif`,
+          alt: 'FlowFuse AI answers where pack line 2 lost the most output this shift: the cartoner, with 42 short stops totalling 48 minutes, none of them in the downtime log.',
+          width: 960,
+          height: 540,
         }"
     />
 
@@ -150,27 +153,37 @@ const film = computed(() => FILMS[filmIndex.value]!)
       <div class="max-w-screen-lg mx-auto">
         <h2 class="m-0 max-md:text-center">Your dashboards show the state. <span class="text-indigo-600">We find the cause.</span></h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-          <div v-for="item in WHY" :key="item.title" class="rounded-lg border border-gray-200 bg-white p-6 flex flex-col gap-3 max-sm:text-center max-sm:items-center">
+          <component
+              :is="item.destination ? CtaLink : NuxtLink"
+              v-for="item in WHY"
+              :key="item.title"
+              v-bind="item.destination ? { destination: item.destination, position: 'why-card' } : { to: item.to }"
+              class="group hover:no-underline rounded-lg border border-gray-200 bg-white p-6 flex flex-col gap-3 max-sm:text-center max-sm:items-center hover:border-indigo-300 hover:shadow-sm transition-all"
+          >
             <div class="w-10 h-10 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
               <UIcon :name="item.icon" class="w-5 h-5" />
             </div>
-            <h3 class="m-0 text-lg text-gray-800">{{ item.title }}</h3>
-            <p class="m-0 text-sm text-gray-600">{{ item.description }}</p>
-          </div>
+            <h3 class="m-0 text-lg text-gray-800 group-hover:text-indigo-600 transition-colors">{{ item.title }}</h3>
+            <p class="m-0 text-sm text-gray-600 flex-grow">{{ item.description }}</p>
+            <span class="text-blue-600 text-sm flex items-center gap-1.5 group-hover:underline">
+              {{ item.linkText }}
+              <UIcon name="i-heroicons-arrow-long-right" class="shrink-0 w-4 h-4" />
+            </span>
+          </component>
         </div>
       </div>
     </section>
 
     <IndustryPageApplications
         heading="How manufacturers use FlowFuse for production performance"
-        description="Three solutions we have built, each starting from one problem on one line. Yours starts from your problem."
+        description="Every one of these started as a single problem on a single line. We build yours the same way, around your equipment and your data."
         :items="APPLICATIONS"
     />
 
     <!-- THE FILMS: one player, a tab per solution -->
     <section id="films" class="w-full py-16 md:py-24 px-6 bg-indigo-50/50 border-y border-indigo-100 scroll-mt-16">
       <div class="max-w-screen-lg mx-auto">
-        <h2 class="m-0 max-md:text-center">See it <span class="text-indigo-600">in action</span></h2>
+        <h2 class="m-0 max-md:text-center">Watch each solution <span class="text-indigo-600">find the loss</span></h2>
         <div class="mt-8 flex flex-wrap gap-2 max-md:justify-center" role="tablist">
           <button
               v-for="(f, i) in FILMS"
