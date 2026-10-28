@@ -26,8 +26,7 @@ const WHY = [
     { icon: 'i-lucide-factory', title: 'Every plant after the first is faster', description: 'The first solution becomes the template for the next line and the next site.', destination: 'signUp' as const, linkText: 'How we build with you' },
 ]
 
-// The solutions under this track, one tab each: the film, what it solves, and where to go
-// next when the solution has its own page.
+// The solutions under this track, one tab each: the film and what it solves.
 const FILMS = [
     {
         key: 'packaging',
@@ -52,11 +51,9 @@ const FILMS = [
         name: 'Predictive Maintenance',
         story: 'Finding the real cause before a pump fails',
         description: 'Vibration alarms show the state, not the cause. FlowFuse ranks every asset by its real wear, teaches the alarm to catch it early, and sends maintenance the evidence before the line stops.',
-        webm: '/images/use-cases/predictive-maintenance/promo.webm',
-        mp4: '/images/use-cases/predictive-maintenance/promo.mp4',
-        poster: '/images/use-cases/predictive-maintenance/promo-poster.jpg',
-        to: '/use-cases/predictive-maintenance/',
-        linkText: 'Explore predictive maintenance',
+        webm: `${ASSETS}/maintenance.webm`,
+        mp4: `${ASSETS}/maintenance.mp4`,
+        poster: `${ASSETS}/maintenance-poster.jpg`,
     },
 ]
 
@@ -130,7 +127,7 @@ watch(filmIndex, () => nextTick(quietFilms))
         description="Short stops, slow running and failing equipment take output off your lines every shift, and most of it never reaches a report. Our engineers build the fix with your team, on your equipment."
         :image="{
           src: `${ASSETS}/hidden-loss.gif`,
-          alt: 'The problem: 48 minutes of cartoner stops in one shift, each under two minutes, and 0 minutes in the downtime log, because traditional downtime tracking only logs the long stops. Then FlowFuse AI answers where pack line 2 lost the most output: the cartoner, with 42 short stops totalling 48 minutes.',
+          alt: 'The problem: 48 minutes of cartoner stops in one shift, each under two minutes, and 0 minutes in the downtime log. Then FlowFuse AI answers where pack line 2 lost the most output: the cartoner, with 42 short stops totalling 48 minutes.',
           width: 720,
           height: 406,
         }"
@@ -225,17 +222,13 @@ watch(filmIndex, () => nextTick(quietFilms))
             <h3 class="m-0 text-3xl font-medium text-gray-700">{{ film.name }}</h3>
             <p class="mt-2 mb-0 text-sm font-medium text-indigo-600">{{ film.story }}</p>
             <p class="mt-4 mb-0 text-gray-600">{{ film.description }}</p>
-            <NuxtLink v-if="film.to" :to="film.to" class="mt-4 inline-flex items-center gap-1.5 text-blue-600 hover:underline">
-              {{ film.linkText }}
-              <UIcon name="i-heroicons-arrow-long-right" class="w-5 h-5 shrink-0" />
-            </NuxtLink>
           </div>
         </div>
       </div>
     </section>
 
     <SolutionPagePartnership
-        image="/images/use-cases/predictive-maintenance/crew.jpg"
+        image="/images/use-cases/production-performance/crew.jpg"
         image-alt="Two engineers in hard hats working on a pump together"
     />
 
