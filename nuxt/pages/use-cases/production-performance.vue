@@ -137,6 +137,12 @@ const film = computed(() => FILMS[filmIndex.value]!)
         role="Senior Manufacturing Test Engineer"
         headshot="/images/team/headshot-rhythm.png"
         story="/customer-stories/aperia-technologies-plc-replacement/"
+        :video="{
+          webm: FILMS[0]!.webm,
+          mp4: FILMS[0]!.mp4,
+          poster: FILMS[0]!.poster,
+          label: `Film: ${FILMS[0]!.story}`,
+        }"
     />
 
     <SolutionPageLossCalculator />
