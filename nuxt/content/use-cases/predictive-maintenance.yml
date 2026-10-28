@@ -1,6 +1,0 @@
-# Listing entry only: the page itself is hand-written in pages/use-cases/predictive-maintenance.vue,
-# which Nuxt matches ahead of [slug].vue. `values` puts it under "Operational use cases".
-slug: predictive-maintenance
-title: "Predictive Maintenance"
-problem: "Vibration alarms show you the state, not the cause. Find the failing bearing an alarm misses, and fix it before it stops the line."
-values: ["asset-reliability"]
