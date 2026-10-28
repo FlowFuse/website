@@ -166,8 +166,13 @@
                     {
                         "title": "By Use Case",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-3 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-4 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
+                            {
+                                "label": "Production Performance",
+                                "href": "/use-cases/production-performance/",
+                                "icon": "arrow-trending-up"
+                            },
                             {
                                 "label": "Production Monitoring",
                                 "href": "/use-cases/production-monitoring/",
@@ -517,6 +522,10 @@
                     {
                         "title": "By Use Case",
                         "links": [
+                            {
+                                "label": "Production Performance",
+                                "href": "/use-cases/production-performance/"
+                            },
                             {
                                 "label": "Production Monitoring",
                                 "href": "/use-cases/production-monitoring/"
