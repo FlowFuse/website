@@ -7,17 +7,23 @@ import { CtaLink, NuxtLink } from '#components'
 // (hero film, logo strip, why-us band, how manufacturers use it, proof); the look is the
 // industry pages', from their own components, so it reads as part of the site.
 //
-// "Talk to Us" is the only call to action. Copy rules: no outcome numbers, no customer
-// names until approved, never describe the demo plants as simulated.
+// The page has to make the buyer want to start now, so it leads with the loss: a real
+// customer result (Aperia, an approved published story), then a calculator that prices the
+// buyer's own hidden losses, then why FlowFuse and what we have built. It closes on a small,
+// concrete first step (a call, then a loss review on one line, the start of a proof of value).
+//
+// "Talk to Us" is the only call to action. Copy rules: no outcome numbers of our own (the
+// calculator is the buyer's estimate from their inputs), quote only approved customers,
+// never describe the demo plants as simulated.
 const ASSETS = '/images/use-cases/production-performance'
 
 // Each reason links to the page that shows it. "Built once" goes to /build-with-us/, a CTA
 // destination, so it routes through CtaLink (cta-destinations.test.mjs rejects a literal href).
 const WHY = [
-    { icon: 'i-lucide-cable', title: 'Connect what you already run', description: 'PLCs, machines, sensors, historians and business systems, over the protocols they already speak. No rip and replace.', to: '/integrations/', linkText: 'See the integrations' },
-    { icon: 'i-lucide-search-check', title: 'Find the cause, not just the state', description: 'FlowFuse AI reads across every machine, shift and plan to explain where output is really being lost.', to: '/ai/', linkText: 'How FlowFuse AI works' },
-    { icon: 'i-lucide-shield-check', title: 'A person approves every change', description: 'AI proposes the fix and your team approves it. Every change is recorded and can be rolled back.', to: '/platform/security/', linkText: 'See how it is governed' },
-    { icon: 'i-lucide-factory', title: 'Built once, reused at every plant', description: 'The first solution becomes the template for the next line and the next site.', destination: 'signUp' as const, linkText: 'How we build with you' },
+    { icon: 'i-lucide-search-check', title: 'Find your biggest loss first', description: 'FlowFuse AI reads every machine, shift and plan and tells you where output really goes, so the team fixes the loss that matters most.', to: '/ai/', linkText: 'How FlowFuse AI works' },
+    { icon: 'i-lucide-cable', title: 'No rip and replace, no capex project', description: 'It connects to the PLCs, sensors, historians and MES you already run, over the protocols they already speak.', to: '/integrations/', linkText: 'See the integrations' },
+    { icon: 'i-lucide-shield-check', title: 'Fixes approved by your team, the same shift', description: 'AI proposes the change and your team approves it. Every change is recorded and can be rolled back.', to: '/platform/security/', linkText: 'See how it is governed' },
+    { icon: 'i-lucide-factory', title: 'Every plant after the first is faster', description: 'The first solution becomes the template for the next line and the next site.', destination: 'signUp' as const, linkText: 'How we build with you' },
 ]
 
 // The solutions under this track, one tab each: the film, what it solves, and where to go
@@ -73,7 +79,7 @@ const FAQ = [
     },
     {
         question: 'How do we get started?',
-        answer: 'Pick one problem on one line. We define it with your team, design the solution on a foundation you can reuse, and deliver it into production. [Talk to us](cta:bookDemo) about your first solution.',
+        answer: 'With a 30-minute call about one line. We then run a loss review on that line, showing where it really loses output from your own data, as the start of a proof of value. If the loss is worth fixing, we build the first solution with your team. [Talk to us](cta:bookDemo) to start.',
     },
 ]
 
@@ -113,7 +119,7 @@ const film = computed(() => FILMS[filmIndex.value]!)
         eyebrow="Production Performance"
         eyebrow-icon="arrow-trending-up"
         heading="Win back the output <span class=&quot;text-indigo-600&quot;>your lines are losing</span>"
-        description="Our engineers build production performance solutions with your team, on your equipment: finding the hidden losses, lost capacity and failing assets, and acting on them before the shift ends."
+        description="Short stops, slow running and failing equipment take output off your lines every shift, and most of it never reaches a report. Our engineers build the fix with your team, on your equipment."
         :image="{
           src: `${ASSETS}/hidden-loss.gif`,
           alt: 'The problem: 48 minutes of cartoner stops in one shift, each under two minutes, and 0 minutes in the downtime log, because traditional downtime tracking only logs the long stops. Then FlowFuse AI answers where pack line 2 lost the most output: the cartoner, with 42 short stops totalling 48 minutes.',
@@ -122,8 +128,21 @@ const film = computed(() => FILMS[filmIndex.value]!)
         }"
     />
 
+    <SolutionPageCustomerProof
+        logo="/images/stories/logos/aperia-technologies.png"
+        brand="Aperia Technologies"
+        result="Equipment that sat idle 8 to 12 hours a day, put back to work."
+        quote="The business impact was immediate. Zero manual setup time between shift handovers."
+        author="Rhythm Agarwal"
+        role="Senior Manufacturing Test Engineer"
+        headshot="/images/team/headshot-rhythm.png"
+        story="/customer-stories/aperia-technologies-plc-replacement/"
+    />
+
+    <SolutionPageLossCalculator />
+
     <!-- WHY FLOWFUSE: four short reasons, in the band layout Tulip uses -->
-    <section class="w-full pt-28 pb-16 px-6">
+    <section class="w-full pt-8 pb-16 px-6">
       <div class="max-w-screen-lg mx-auto">
         <h2 class="m-0 max-md:text-center">Your dashboards show the state. <span class="text-indigo-600">We find the cause.</span></h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
@@ -215,9 +234,9 @@ const film = computed(() => FILMS[filmIndex.value]!)
       </div>
     </div>
 
-    <SolutionPageClosingCta
-        heading="Start your first solution with us"
-        description="Pick one problem on one line. We'll define it with your team, design it on a foundation you can reuse, and deliver it into production."
+    <SolutionPageFirstStep
+        heading="Find out what your lines are losing"
+        description="The first step is small. It starts with a conversation and one line, and it ends with you knowing where your output goes."
     />
   </div>
 </template>
