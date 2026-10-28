@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const highlights = [
     '<span class="font-semibold">The problem:</span> what it costs you today, and what fixed looks like',
-    '<span class="font-semibold">The wiring:</span> the PLCs, systems and sites involved, brownfield included',
-    '<span class="font-semibold">The first build:</span> what we\'d build first, and how it reuses across every plant',
+    '<span class="font-semibold">The solution:</span> the PLCs, systems and sites involved, and how to maintain it',
+    '<span class="font-semibold">The build:</span> what to build first, and how to reuse it across every plant',
 ]
 
 const approach = [
@@ -36,7 +36,7 @@ useSeoMeta({
     title="Bring us one problem from your floor"
     subtitle="Leave with a plan to fix it"
     subtitle-icon="i-lucide-arrow-right"
-    description="Tell us what's slowing your plants down. We'll work out where the data lives, what the fix looks like, and who builds it: your team, FlowFuse Expert, or our engineers. A person approves every change before it reaches a machine."
+    description="Tell us what's slowing your plants down. We'll work out where the data lives, what the fix looks like, and how it scales."
     :highlights="highlights"
   >
     <HubSpotMeetings />
