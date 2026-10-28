@@ -111,10 +111,18 @@ useSchemaOrg([
 
 const filmIndex = ref(0)
 const film = computed(() => FILMS[filmIndex.value]!)
+
+// This page is shown to customers live, so its films start at 30% volume rather than full.
+// Set after mount (and after each tab switch, which renders a new player) because the players
+// are server-rendered and can load before an event handler would attach.
+const page = ref<HTMLElement>()
+const quietFilms = () => page.value?.querySelectorAll('video').forEach((v) => { v.volume = 0.3 })
+onMounted(quietFilms)
+watch(filmIndex, () => nextTick(quietFilms))
 </script>
 
 <template>
-  <div class="w-full">
+  <div ref="page" class="w-full">
     <SolutionPageHero
         eyebrow="Production Performance"
         eyebrow-icon="arrow-trending-up"
