@@ -1,135 +1,279 @@
 <script setup lang="ts">
-// Ported from src/platform/features.njk (11ty). Cta* components enforce
-// fixed copy/destinations (see CLAUDE.md), so the old custom-copy "Request a
-// Demo" and "View Pricing" buttons become <CtaBookDemo>/<CtaPricing>.
+// The platform page: FlowFuse as the foundation every solution we build runs on, not a feature
+// list. The structure follows tulip.co/platform (a layered hero diagram, four building blocks,
+// a "built to compound" band, proof); it stays high level and links out to the pages that go
+// into the detail. The solutions are the point; the platform is why they ship fast, stay
+// governed and get reused at the next plant.
+//
+// Copy rules (as on the solution pages): AI proposes, a person approves; no outcome numbers of
+// our own; Edge, Hub and Fleet keep their names and read as where the platform runs.
 useSeoMeta({
-    title: 'Features',
-    description: 'FlowFuse provides the features companies require to reliably deliver industrial applications to devices and cloud in a collaborative, secure manner.',
+    title: 'The Platform Behind Every Solution | FlowFuse',
+    description: 'Every FlowFuse solution runs on one governed platform: connected to your machines, built and changed with AI your team approves, and reused at every plant.',
     ogUrl: 'https://flowfuse.com/product/',
     twitterSite: '@FlowFuseinc',
 })
 
 const capture = useCapture()
 
-const TIERS = [
+// The hero diagram, top to bottom: the solutions, the AI that works on them, the platform
+// they run on, and the equipment underneath. Solution names match the solution pages.
+const HERO_SOLUTIONS = ['Downtime Tracking', 'Machine Monitoring', 'Predictive Maintenance']
+const HERO_PLATFORM = [
+    { icon: 'i-lucide-cable', label: 'Connect' },
+    { icon: 'i-lucide-layout-dashboard', label: 'Build' },
+    { icon: 'i-lucide-shield-check', label: 'Govern' },
+    { icon: 'i-lucide-factory', label: 'Deploy' },
+]
+const HERO_EQUIPMENT = ['PLCs', 'Sensors', 'Historians', 'MES', 'ERP']
+
+const BLOCKS = [
+    {
+        icon: 'i-lucide-cable',
+        eyebrow: 'Connect',
+        title: 'Reaches any machine',
+        description: 'OPC UA, Modbus, EtherNet/IP, MQTT and 5,000+ Node-RED nodes. It works with the equipment and systems you already run, old and new.',
+        to: '/integrations/',
+        linkText: 'See the integrations',
+    },
+    {
+        icon: 'i-lucide-layout-dashboard',
+        eyebrow: 'Build',
+        title: 'Apps your team can change',
+        description: 'Low-code flows, dashboards and ready-made blueprints. Your engineers change a solution in minutes, without waiting on a project.',
+        to: '/platform/dashboard/',
+        linkText: 'See the dashboards',
+    },
+    {
+        icon: 'i-lucide-sparkles',
+        eyebrow: 'AI',
+        title: 'AI that does the work',
+        description: 'FlowFuse AI builds the change and ships it to every site. A person approves, edits or rejects each change before it reaches a machine.',
+        to: '/ai/',
+        linkText: 'How FlowFuse AI works',
+    },
+    {
+        icon: 'i-lucide-shield-check',
+        eyebrow: 'Govern',
+        title: 'Control you can audit',
+        description: 'Role-based access, an audit log of every change, snapshots and one-click rollback. Your security team sees who changed what, and when.',
+        to: '/platform/security/',
+        linkText: 'See how it is governed',
+    },
+]
+
+const COMPOUND = [
+    { icon: 'i-lucide-target', title: 'Start with one problem', description: 'One line, one loss worth fixing. Not a year-long transformation programme.' },
+    { icon: 'i-lucide-layers', title: 'Build on a foundation', description: 'Connections, data model, approvals and AI are set up once and stay in place.' },
+    { icon: 'i-lucide-copy', title: 'Reuse it at every plant', description: 'Ship the same solution to the next line and the next site, governed and in sync.' },
+    { icon: 'i-lucide-trending-up', title: 'Each one makes the next faster', description: 'Every new solution starts on what is already there, not from a blank page.' },
+]
+
+// Edge, Hub and Fleet are the three places the platform runs, not three platforms.
+const PLACES = [
     {
         id: 'edge',
         label: 'FlowFuse Edge',
-        heading: 'You run the plant floor',
-        description: 'Connect <a class="text-indigo-600 hover:underline" href="/blog/2025/12/what-is-plc/">PLCs</a>, machines, and controllers. Standardize automation across sites instead of reinventing it plant by plant. Built for OT and digitalization leadership running production at scale.',
-        idealFit: 'Ideal fit if you\'re dealing with: multi-plant rollouts, <a class="text-indigo-600 hover:underline" href="/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/">PLC/SCADA integration</a>, <a class="text-indigo-600 hover:underline" href="/blog/2025/10/plc-to-mqtt-using-flowfuse/">machine connectivity</a>, or Node-RED sprawl across sites.',
-        image: { src: '/images/home/home-scada.png', alt: 'FlowFuse Edge: industrial edge connectivity' },
+        where: 'At the site',
+        description: 'Runs on the plant floor, next to the PLCs and machines it connects.',
+        image: { src: '/images/home/home-scada.png', alt: 'FlowFuse Edge: a dashboard running on the plant floor' },
     },
     {
         id: 'hub',
         label: 'FlowFuse Hub',
-        heading: 'You move data across the business',
-        description: 'Integrate and orchestrate data across <a class="text-indigo-600 hover:underline" href="/blog/2025/06/connect-shop-floor-to-odoo-erp-flowfuse/">ERPs</a>, <a class="text-indigo-600 hover:underline" href="/blog/2025/08/getting-started-with-flowfuse-tables/">databases</a>, and cloud APIs — governed centrally, not stitched together app by app. Built for central IT and enterprise architecture teams.',
-        idealFit: 'Ideal fit if you\'re dealing with: system integration, API orchestration, <a class="text-indigo-600 hover:underline" href="/blog/2026/02/mqtt-influxdb-tutorial/">data pipelines</a>, or governance across business systems.',
-        image: { src: '/images/product/hub.jpg', alt: 'FlowFuse Hub: enterprise data integration' },
+        where: 'In the data centre',
+        description: 'Joins plant data to ERP, MES and the rest of the business.',
+        image: { src: '/images/product/hub.jpg', alt: 'FlowFuse Hub: plant data integrated with business systems' },
     },
     {
         id: 'fleet',
         label: 'FlowFuse Fleet',
-        heading: 'You manage a Node-RED fleet',
-        description: 'Push flows, ship updates, and roll back remotely across thousands of distributed devices, without waiting on a firmware release. Built for hardware OEMs, partners, and asset operators.',
-        idealFit: "Ideal fit if you're dealing with: distributed devices, remote sites, sensors and telemetry at scale, or shipping Node-RED inside your own product.",
-        image: { src: '/images/product/fleet.jpg', alt: 'FlowFuse Fleet: device fleet management console' },
+        where: 'In the field',
+        description: 'Updates and rolls back thousands of remote devices from one place.',
+        image: { src: '/images/product/fleet.jpg', alt: 'FlowFuse Fleet: managing remote devices from one console' },
     },
 ]
 
-const CAPABILITIES = [
-    { label: 'Industrial AI', to: '/ai/' },
-    { label: 'IT/OT Middleware', to: '/use-cases/it-ot-middleware/' },
-    { label: 'Unified Namespace', to: '/use-cases/uns/' },
-    { label: 'MES', to: '/use-cases/mes/' },
-    { label: 'SCADA', to: '/use-cases/scada/' },
-    { label: 'Remote Device Management', to: '/use-cases/remote-device-management/' },
-    { label: 'Data Integration', to: '/use-cases/data-integration/' },
+const YOURS = [
+    { icon: 'i-lucide-git-branch', title: 'Open source at the core', description: 'Apache-2.0, built on Node-RED.' },
+    { icon: 'i-lucide-server', title: 'Run it where you want', description: 'FlowFuse Cloud, self-hosted or air-gapped.' },
+    { icon: 'i-lucide-plug', title: 'Bring your own AI', description: 'Connect your own agents over MCP.' },
+    { icon: 'i-lucide-package-x', title: 'No hardware to sell you', description: 'It works with the equipment you have.' },
 ]
-// ScrollSpySections needs each item's nav-anchor id up front, distinct from
-// tier.id (which is also the /product/{id}/ route slug used below).
-const TIER_ITEMS = TIERS.map(tier => ({ ...tier, slug: tier.id, id: `tier-${tier.id}` }))
 </script>
 
 <template>
   <div class="w-full product-page">
-    <div class="w-full px-6 product-content">
-      <div class="pt-12 max-w-screen-lg mx-auto">
-        <!-- Hero -->
-        <div class="container max-w-screen-lg mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div class="text-center lg:text-left">
-              <h1 class="text-4xl md:text-5xl font-medium">
-                Build, deploy, and govern industrial applications - <span class="text-red-600">in record time</span>
-              </h1>
-              <p class="mt-6 text-lg max-w-xl mx-auto lg:mx-0">Bridge the gap between OT and IT teams using FlowFuse, the only comprehensive application platform with industrial AI and governance baked in.</p>
-              <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center lg:justify-start">
-                <CtaBookDemo variant="highlight" position="hero" />
-                <CtaPricing variant="ghost" position="hero" icon="i-lucide-arrow-right" />
-              </div>
-            </div>
-            <div class="w-full">
-              <div class="rounded-lg shadow-2xl border-2 border-red-100">
-                <img :src="'/images/product/flowfuse-ui.png'" alt="FlowFuse Features" class="w-full h-full object-cover rounded-lg" loading="eager">
-              </div>
-            </div>
+    <!-- Hero: what the platform is for, and a picture of the layers -->
+    <section class="w-full px-6 pt-16 pb-20 bg-gradient-to-br from-indigo-950 via-indigo-900 to-indigo-800 text-white">
+      <div class="max-w-screen-lg mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left">
+          <div class="text-sm font-semibold uppercase tracking-widest text-indigo-200">The FlowFuse Platform</div>
+          <h1 class="mt-4 text-4xl md:text-5xl font-medium text-white">One platform under <span class="text-red-300">every solution</span></h1>
+          <p class="mt-6 text-lg text-indigo-100 max-w-xl mx-auto lg:mx-0">
+            Every solution we build with you runs on FlowFuse. Connected to your machines. Changed by AI your team approves. Ready to reuse at the next plant.
+          </p>
+          <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center lg:justify-start">
+            <CtaBookDemo variant="highlight" position="hero" />
+            <NuxtLink
+                to="/use-cases/production-line-monitoring/"
+                class="inline-flex items-center gap-1 font-semibold text-white hover:underline"
+                @click="capture('cta-learn-more', { position: 'hero-solutions' })"
+            >
+              See a solution
+              <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+            </NuxtLink>
           </div>
         </div>
 
-        <!-- Differentiator cards -->
-        <div class="mt-24">
-          <h2 class="mb-10 max-md:text-center">
-            The needs of modern industry requires <span class="text-indigo-600">modern solutions</span>
-          </h2>
-          <DifferentiatorCards class="mb-16" />
-
-          <!-- Tier scrollytelling -->
-          <div class="max-w-screen-lg mx-auto pt-8 pb-20">
-            <h2 class="mb-12 max-lg:text-center">Find the product for <span class="text-indigo-600">how you work</span></h2>
-            <ScrollSpySections :items="TIER_ITEMS" gap-class="gap-20" divider-class="pt-20 border-t border-gray-100" aria-label="FlowFuse Edge, Hub, and Fleet">
-              <template v-for="tier in TIER_ITEMS" :key="tier.id" #[tier.id]="{ item }">
-                <div class="grid md:grid-cols-2 gap-12 items-center md:items-stretch">
-                  <div class="flex flex-col justify-center text-center md:text-left">
-                    <div class="text-sm font-semibold uppercase tracking-wide text-red-300">{{ item.label }}</div>
-                    <h3 class="text-3xl mt-2">{{ item.heading }}</h3>
-                    <p class="mt-4 text-gray-500" v-html="item.description" />
-                    <ProseNote class="mt-4"><span v-html="item.idealFit" /></ProseNote>
-                    <NuxtLink class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline" :to="`/product/${item.slug}/`" @click="capture('cta-learn-more', { position: `features-${item.slug}` })">Learn more about {{ item.label }} &rarr;</NuxtLink>
-                  </div>
-                  <div class="min-h-64 rounded-lg overflow-hidden border border-gray-200">
-                    <img :src="item.image.src" :alt="item.image.alt" class="block w-full h-full object-cover" loading="lazy">
-                  </div>
-                </div>
-              </template>
-            </ScrollSpySections>
+        <div
+            class="rounded-xl border border-white/15 bg-white/5 p-5 flex flex-col gap-3"
+            role="img"
+            aria-label="The FlowFuse platform in layers: solutions such as downtime tracking, machine monitoring and predictive maintenance sit on top; FlowFuse AI proposes changes that people approve; the platform connects, builds, governs and deploys; underneath are the PLCs, sensors, historians, MES and ERP you already run."
+        >
+          <div class="text-[11px] font-semibold uppercase tracking-widest text-indigo-200">Solutions</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div v-for="name in HERO_SOLUTIONS" :key="name" class="rounded-md bg-white text-indigo-900 text-xs font-semibold px-2 py-3 text-center">{{ name }}</div>
+            <div class="rounded-md border border-dashed border-white/40 text-indigo-100 text-xs font-semibold px-2 py-3 text-center">Your next one</div>
           </div>
 
-          <!-- FlowFuse Platform / integrations -->
-          <div class="max-w-screen-lg mx-auto pt-8 pb-20 text-center lg:text-left">
-            <h2 class="m-0">The FlowFuse platform is <span class="text-indigo-600">the foundation for all of your IT/OT applications</span></h2>
-            <p class="mt-6 text-gray-500">Leveraging enterprise-grade development, deployment, and governance solutions, you can build faster, scale more efficiently, and secure deployments of any size.</p>
-            <div class="mt-10">
-              <div class="text-sm font-semibold uppercase tracking-wide text-gray-500 mb-4">Integrations</div>
-              <div class="product-cap-links flex flex-nowrap sm:flex-wrap justify-center lg:justify-start gap-2">
-                <NuxtLink
-                  v-for="cap in CAPABILITIES"
-                  :key="cap.to"
-                  :to="cap.to"
-                  class="whitespace-nowrap inline-flex items-center gap-1 py-1.5 px-3 border border-gray-200 rounded-full text-sm font-medium text-gray-700 bg-white no-underline hover:no-underline transition-colors duration-150 after:text-indigo-300 hover:border-indigo-600 hover:text-indigo-600 hover:bg-indigo-50 hover:after:text-indigo-600"
-                >{{ cap.label }}</NuxtLink>
+          <div class="rounded-md bg-red-500/90 text-white text-sm px-3 py-2.5 flex items-center justify-center gap-2">
+            <UIcon name="i-lucide-sparkles" class="w-4 h-4 shrink-0" />
+            <span><span class="font-semibold">FlowFuse AI</span> builds the change. You approve it.</span>
+          </div>
+
+          <div class="rounded-md bg-indigo-600 px-3 py-3">
+            <div class="text-[11px] font-semibold uppercase tracking-widest text-indigo-100 text-center mb-2">The FlowFuse platform</div>
+            <div class="grid grid-cols-4 gap-2">
+              <div v-for="item in HERO_PLATFORM" :key="item.label" class="rounded bg-white/10 border border-white/20 py-2 flex flex-col items-center gap-1 text-xs">
+                <UIcon :name="item.icon" class="w-4 h-4 text-indigo-100" />
+                {{ item.label }}
               </div>
             </div>
+          </div>
+
+          <div class="flex flex-wrap justify-center gap-2 pt-1">
+            <span v-for="item in HERO_EQUIPMENT" :key="item" class="rounded-full border border-white/25 text-indigo-100 text-xs px-3 py-1">{{ item }}</span>
           </div>
         </div>
       </div>
-    </div>  
-      <EnterpriseSecurity />
+    </section>
+
+    <!-- The four building blocks -->
+    <section class="w-full px-6 py-20">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="m-0 max-md:text-center">Four building blocks. <span class="text-indigo-600">Every solution uses them.</span></h2>
+        <p class="mt-4 text-gray-600 max-w-2xl max-md:text-center max-md:mx-auto">
+          You don't buy a pile of features. You get a solution that works, on a platform that keeps it working.
+        </p>
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div v-for="block in BLOCKS" :key="block.eyebrow" class="rounded-lg border border-gray-200 p-6 flex flex-col">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                <UIcon :name="block.icon" class="w-5 h-5" />
+              </span>
+              <span class="text-sm font-semibold uppercase tracking-wide text-red-400">{{ block.eyebrow }}</span>
+            </div>
+            <h3 class="mt-4 mb-0 text-2xl text-gray-800">{{ block.title }}</h3>
+            <p class="mt-3 mb-0 text-gray-600 flex-1">{{ block.description }}</p>
+            <NuxtLink
+                :to="block.to"
+                class="mt-5 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline"
+                @click="capture('cta-learn-more', { position: `platform-${block.eyebrow.toLowerCase()}` })"
+            >
+              {{ block.linkText }}
+              <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built once, reused everywhere -->
+    <section class="w-full px-6 py-20 bg-indigo-50/50 border-y border-indigo-100">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="m-0 max-md:text-center">Built once. <span class="text-indigo-600">Reused at every plant.</span></h2>
+        <p class="mt-4 text-gray-600 max-w-2xl max-md:text-center max-md:mx-auto">
+          The first solution is the hardest one. Everything under it stays in place, so plant two takes days, not a new project.
+        </p>
+        <ol class="list-none p-0 m-0 mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <li v-for="(step, i) in COMPOUND" :key="step.title" class="m-0 rounded-lg bg-white border border-indigo-100 p-6">
+            <div class="flex items-center justify-between">
+              <UIcon :name="step.icon" class="w-6 h-6 text-indigo-600" />
+              <span class="text-sm font-semibold text-indigo-300">0{{ i + 1 }}</span>
+            </div>
+            <h3 class="mt-4 mb-0 text-lg text-gray-800">{{ step.title }}</h3>
+            <p class="mt-2 mb-0 text-sm text-gray-600">{{ step.description }}</p>
+          </li>
+        </ol>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 items-center max-md:justify-center">
+          <p class="m-0 text-gray-700">Our engineers build the first one with your team.</p>
+          <CtaSignUp variant="primary" position="platform-compound" icon="i-lucide-arrow-right" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Where it runs: Edge, Hub and Fleet -->
+    <section class="w-full px-6 py-20">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="m-0 max-md:text-center">Govern centrally. <span class="text-indigo-600">Run wherever the work is.</span></h2>
+        <p class="mt-4 text-gray-600 max-w-2xl max-md:text-center max-md:mx-auto">
+          One platform in three places, with the same approvals, access control and audit log in each.
+        </p>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <NuxtLink
+              v-for="place in PLACES"
+              :key="place.id"
+              :to="`/product/${place.id}/`"
+              class="group rounded-lg border border-gray-200 overflow-hidden flex flex-col no-underline hover:no-underline hover:border-indigo-300 transition-colors"
+              @click="capture('cta-learn-more', { position: `features-${place.id}` })"
+          >
+            <div class="aspect-[16/10] overflow-hidden bg-gray-50">
+              <img :src="place.image.src" :alt="place.image.alt" class="block w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <div class="text-sm font-semibold uppercase tracking-wide text-red-400">{{ place.where }}</div>
+              <h3 class="mt-2 mb-0 text-xl text-gray-800">{{ place.label }}</h3>
+              <p class="mt-2 mb-0 text-gray-600 flex-1">{{ place.description }}</p>
+              <span class="mt-4 inline-flex items-center gap-1 font-medium text-indigo-600 group-hover:underline">
+                Learn more
+                <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+              </span>
+            </div>
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <EnterpriseSecurity />
+
+    <!-- Independence: rung four of the ladder, after the trust block -->
+    <section class="w-full px-6 py-20">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="m-0 max-md:text-center">Still yours <span class="text-indigo-600">in ten years</span></h2>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div v-for="item in YOURS" :key="item.title" class="max-sm:text-center">
+            <UIcon :name="item.icon" class="w-6 h-6 text-indigo-600" />
+            <h3 class="mt-3 mb-0 text-lg text-gray-800">{{ item.title }}</h3>
+            <p class="mt-1 mb-0 text-gray-600">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section class="w-full px-6 pb-8">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="mb-8 max-md:text-center">From one line <span class="text-indigo-600">to every plant</span></h2>
+        <TestimonialCarousel hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
+      </div>
+    </section>
+
     <div class="w-full px-6">
       <div class="max-w-screen-lg mx-auto py-20">
         <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
-          <p class="text-white text-4xl sm:text-5xl font-medium m-0">Get Started with FlowFuse</p>
-          <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Your first operational application could be running this week. Request a demo to see how, or explore pricing to find the right fit.</p>
+          <p class="text-white text-4xl sm:text-5xl font-medium m-0">Start with one problem</p>
+          <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Tell us the loss that costs you most. We'll show you what the first solution looks like on your equipment.</p>
           <div class="flex flex-col sm:flex-row gap-4 items-center">
             <CtaBookDemo variant="highlight" position="get-started" />
             <CtaPricing variant="ghost" color="white" position="get-started" icon="i-lucide-arrow-right" />
