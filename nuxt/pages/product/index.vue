@@ -159,13 +159,9 @@ const YOURS = [
             aria-label="The FlowFuse platform in layers: three solution tracks sit on top (Production Performance, Intelligent Operations and Control, and Remote Equipment and Service Operations); FlowFuse AI proposes changes that people approve; the platform connects, builds, governs and deploys; underneath are the PLCs, sensors, historians, MES and ERP you already run."
         >
           <div class="text-[11px] font-semibold uppercase tracking-widest text-indigo-200">Solutions</div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            <div v-for="track in TRACKS" :key="track.key" class="rounded-md bg-white text-indigo-900 px-3 py-2.5">
-              <div class="text-xs font-semibold leading-snug">{{ track.name }}</div>
-              <ul class="list-none p-0 m-0 mt-1.5">
-                <li v-for="solution in track.solutions" :key="solution" class="m-0 text-[11px] leading-snug text-gray-500">{{ solution }}</li>
-              </ul>
-            </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <div v-for="track in TRACKS" :key="track.key" class="rounded-md bg-white text-indigo-900 text-xs font-semibold leading-snug px-2 py-3 flex items-center justify-center text-center">{{ track.name }}</div>
+            <div class="rounded-md border border-dashed border-white/40 text-indigo-100 text-xs font-semibold leading-snug px-2 py-3 flex items-center justify-center text-center">Your next one</div>
           </div>
 
           <div class="rounded-md bg-red-500/90 text-white text-sm px-3 py-2.5 flex items-center justify-center gap-2">
