@@ -84,7 +84,7 @@ const FAQ = [
     },
     {
         question: 'How do we get started?',
-        answer: 'With a 30-minute call about one line. We then run a loss review on that line, showing where it really loses output from your own data, as the start of a proof of value. If the loss is worth fixing, we build the first solution with your team. [Talk to us](cta:bookDemo) to start.',
+        answer: 'With a 30-minute call about one line. We then run a loss review on that line, showing where it really loses output from your own data, as the start of a proof of value. If the loss is worth fixing, we build the first solution with your team. [Talk to us](/book-demo/) to start.',
     },
 ]
 
