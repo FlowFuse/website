@@ -35,7 +35,7 @@ const audiences = [
   {
     heading: 'Manufacturers & plant engineering teams',
     lead: 'One avoided outage pays for the platform',
-    description: 'A single <a class="text-indigo-600 hover:underline" href="/use-cases/production-monitoring/">unplanned line stop</a> can cost more than a year of licensing. <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">Snapshots, one-click rollback</a>, and remote deployment turn a multi-hour recovery into minutes. That is <b class="font-semibold text-gray-900">uptime</b> and recovery speed, and it is why the payback window in this calculator is usually measured in months rather than years.',
+    description: 'A single <a class="text-indigo-600 hover:underline" href="/use-cases/production-line-monitoring/">unplanned line stop</a> can cost more than a year of licensing. <a class="text-indigo-600 hover:underline" href="/blog/2024/09/node-red-version-control-with-snapshots/">Snapshots, one-click rollback</a>, and remote deployment turn a multi-hour recovery into minutes. That is <b class="font-semibold text-gray-900">uptime</b> and recovery speed, and it is why the payback window in this calculator is usually measured in months rather than years.',
     icon: 'i-lucide-factory',
   },
   {

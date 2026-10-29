@@ -52,7 +52,7 @@ A safe launch plan gives structure to what would otherwise be a loosely managed 
 
 ### Containment Inspection That Sits On Top of Normal Controls
 
-Containment inspection is additional, not a substitute. It runs at a dedicated station downstream of the normal process, covering the characteristics the customer specified, usually at 100%. Operators need to see which characteristics are under containment and what the current results look like, on the line, in the shift they are working. Real-time [production monitoring](/use-cases/production-monitoring/) turns that into a live view instead of a paper checklist.
+Containment inspection is additional, not a substitute. It runs at a dedicated station downstream of the normal process, covering the characteristics the customer specified, usually at 100%. Operators need to see which characteristics are under containment and what the current results look like, on the line, in the shift they are working. Real-time [production monitoring](/use-cases/production-line-monitoring/) turns that into a live view instead of a paper checklist.
 
 ### Escalation Criteria Everyone Understands
 

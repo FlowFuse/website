@@ -52,7 +52,7 @@ applications:
     - title: "Monitor Production in Real Time"
       description: "Build production dashboards with low-code and AI assistance to monitor machine status, production counts, cycle time, OEE, alarms, and line performance using live data from your manufacturing systems."
       linkText: "See what production monitoring looks like with FlowFuse"
-      linkHref: "/use-cases/production-monitoring/"
+      linkHref: "/use-cases/production-line-monitoring/"
       image: "/images/industries/automotive/2-monitor-production.png"
       imageAlt: "Screenshot of a real-time production monitoring dashboard"
       variant: "mixed"
