@@ -90,7 +90,7 @@ const BLOCKS = [
 ]
 
 const COMPOUND = [
-    { icon: 'i-lucide-target', title: 'Start with one problem', description: 'One line, one loss worth fixing. Not a year-long transformation programme.' },
+    { icon: 'i-lucide-target', title: 'Start with one problem', description: 'One line, one loss worth fixing. Not a year-long transformation program.' },
     { icon: 'i-lucide-layers', title: 'Build on a foundation', description: 'Connections, data model, approvals and AI are set up once and stay in place.' },
     { icon: 'i-lucide-copy', title: 'Reuse it at every plant', description: 'Ship the same solution to the next line and the next site, governed and in sync.' },
     { icon: 'i-lucide-trending-up', title: 'Each one makes the next faster', description: 'Every new solution starts on what is already there, not from a blank page.' },
@@ -108,7 +108,7 @@ const PLACES = [
     {
         id: 'hub',
         label: 'FlowFuse Hub',
-        where: 'In the data centre',
+        where: 'In the data center',
         description: 'Joins plant data to ERP, MES and the rest of the business.',
         image: { src: '/images/product/hub.jpg', alt: 'FlowFuse Hub: plant data integrated with business systems' },
     },
