@@ -20,7 +20,7 @@
         "rehype-katex": "^7.0.1",
         "remark-math": "^6.0.0",
         "sanitize-html": "^2.18.1",
-        "satori": "^0.26.0",
+        "satori": "^0.33.5",
         "unstorage": "^1.17.5"
     },
     "devDependencies": {
