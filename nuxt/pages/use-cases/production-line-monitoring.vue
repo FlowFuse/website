@@ -39,7 +39,7 @@ const FILMS = [
     },
     {
         key: 'machining',
-        name: 'Machine Utilization',
+        name: 'Machine Monitoring',
         story: 'Finding the capacity a machining cell is losing',
         description: 'Idle time is not the same as lost capacity. FlowFuse separates time lost to how machines are run from time with no work, ties it to the orders at risk, and shows it shift by shift.',
         webm: `${ASSETS}/machining.webm`,
@@ -59,8 +59,8 @@ const FILMS = [
 
 const FAQ = [
     {
-        question: 'What is production performance management?',
-        answer: 'It is the work of knowing where your lines lose output, whether to stops, slow running, quality or failing equipment, and acting on it while it still matters. FlowFuse brings the data from your machines and systems together and helps your team find and fix the biggest losses first.',
+        question: 'What is production line monitoring?',
+        answer: 'It is the work of watching your lines as they run, so you know where they lose output, whether to stops, slow running, quality or failing equipment, and can act while it still matters. FlowFuse brings the data from your machines and systems together and helps your team find and fix the biggest losses first.',
     },
     {
         question: 'Is this an off-the-shelf product?',
@@ -75,13 +75,21 @@ const FAQ = [
         answer: 'Yes. Availability, performance and quality come from the same machine and line data, so OEE is one view among many. The bigger win is seeing which losses sit behind the number, down to the machine and the shift.',
     },
     {
+        question: 'How do you track downtime on a production line?',
+        answer: 'Count every stop from the machine itself instead of relying on operator logs, so short stops too brief to be logged still show up. FlowFuse groups the stops by cause and machine and shows the biggest loss to the team on shift.',
+    },
+    {
+        question: 'How do you improve production line efficiency?',
+        answer: 'Find the largest loss first, fix it, then measure the result against a baseline. Fixing a few short stops on one machine often recovers more output than a broad efficiency programme.',
+    },
+    {
         question: 'How do we get started?',
         answer: 'With a 30-minute call about one line. We then run a loss review on that line, showing where it really loses output from your own data, as the start of a proof of value. If the loss is worth fixing, we build the first solution with your team. [Talk to us](cta:bookDemo) to start.',
     },
 ]
 
-const TITLE = 'Production Performance'
-const DESCRIPTION = 'FlowFuse engineers build production performance solutions with your team: find the hidden losses, lost capacity and failing equipment on your lines, and act on them before the shift ends.'
+const TITLE = 'Production Line Monitoring'
+const DESCRIPTION = 'FlowFuse engineers build production line monitoring with your team: find hidden downtime, lost capacity and failing equipment on your lines, and act on it before the shift ends.'
 
 useSeoMeta({
     title: `${TITLE}: Find and Fix Lost Output | FlowFuse`,
@@ -89,8 +97,8 @@ useSeoMeta({
     ogTitle: TITLE,
     ogDescription: DESCRIPTION,
     ogImage: `https://flowfuse.com${ASSETS}/packaging-poster.jpg`,
-    ogUrl: 'https://flowfuse.com/use-cases/production-performance/',
-    keywords: 'production performance, production performance management, OEE, downtime tracking, manufacturing performance, lost capacity, predictive maintenance, FlowFuse',
+    ogUrl: 'https://flowfuse.com/use-cases/production-line-monitoring/',
+    keywords: 'production line monitoring, downtime tracking, OEE, production line efficiency, manufacturing efficiency, machine monitoring, lost capacity, FlowFuse',
     twitterSite: '@FlowFuseinc',
 })
 
@@ -123,7 +131,7 @@ watch(filmIndex, () => nextTick(quietFilms))
     <SolutionPageHero
         eyebrow="Production Performance"
         eyebrow-icon="arrow-trending-up"
-        heading="Win back the output <span class=&quot;text-indigo-600&quot;>your lines are losing</span>"
+        heading="Reclaim <span class=&quot;text-indigo-600&quot;>lost output</span> with production line monitoring"
         description="Short stops, slow running and failing equipment take output off your lines every shift, and most of it never reaches a report. Our engineers build the fix with your team, on your equipment."
         :image="{
           src: `${ASSETS}/hidden-loss.gif`,
@@ -155,7 +163,7 @@ watch(filmIndex, () => nextTick(quietFilms))
     <!-- WHY FLOWFUSE: four short reasons, in the band layout Tulip uses -->
     <section class="w-full pt-8 pb-16 px-6">
       <div class="max-w-screen-lg mx-auto">
-        <h2 class="m-0 max-md:text-center">Your dashboards show the state. <span class="text-indigo-600">We find the cause.</span></h2>
+        <h2 class="m-0 max-md:text-center">Production line monitoring shows the state. <span class="text-indigo-600">We find the cause.</span></h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
           <component
               :is="item.destination ? CtaLink : NuxtLink"
@@ -182,8 +190,8 @@ watch(filmIndex, () => nextTick(quietFilms))
     <!-- THE FILMS: one player, a tab per solution -->
     <section id="films" class="w-full py-16 md:py-24 px-6 bg-indigo-50/50 border-y border-indigo-100 scroll-mt-16">
       <div class="max-w-screen-lg mx-auto">
-        <h2 class="m-0 max-md:text-center">How manufacturers use FlowFuse for <span class="text-indigo-600">production performance</span></h2>
-        <p class="mt-4 text-gray-600 max-md:text-center">Every one of these started as a single problem on a single line. We build yours the same way, around your equipment and your data.</p>
+        <h2 class="m-0 max-md:text-center">How manufacturers use FlowFuse for <span class="text-indigo-600">production line monitoring</span></h2>
+        <p class="mt-4 text-gray-600 max-md:text-center">Every one of these production line monitoring solutions started as a single problem on a single line. We build yours the same way, around your equipment and your data.</p>
         <div class="mt-8 flex flex-wrap gap-2 max-md:justify-center" role="tablist">
           <button
               v-for="(f, i) in FILMS"

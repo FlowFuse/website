@@ -169,8 +169,8 @@
                         "listClasses": "row-span-4 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
-                                "label": "Production Performance",
-                                "href": "/use-cases/production-performance/",
+                                "label": "Production Line Monitoring",
+                                "href": "/use-cases/production-line-monitoring/",
                                 "icon": "arrow-trending-up"
                             },
                             {
@@ -523,8 +523,8 @@
                         "title": "By Use Case",
                         "links": [
                             {
-                                "label": "Production Performance",
-                                "href": "/use-cases/production-performance/"
+                                "label": "Production Line Monitoring",
+                                "href": "/use-cases/production-line-monitoring/"
                             },
                             {
                                 "label": "Production Monitoring",
