@@ -1,0 +1,6 @@
+# Listing entry only: the page itself is hand-written in pages/use-cases/production-line-monitoring.vue,
+# which Nuxt matches ahead of [slug].vue. `values` puts it under "Operational use cases".
+slug: production-line-monitoring
+title: "Production Line Monitoring"
+problem: "Your dashboards show the state. Find the hidden losses, lost capacity and failing equipment behind it, and win back the output your lines are losing."
+values: ["production-performance"]
