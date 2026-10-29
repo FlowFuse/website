@@ -249,9 +249,5 @@ watch(filmIndex, () => nextTick(quietFilms))
       </div>
     </div>
 
-    <SolutionPageFirstStep
-        heading="Find out what your lines are losing"
-        description="The first step is small. It starts with a conversation and one line, and it ends with you knowing where your output goes."
-    />
   </div>
 </template>
