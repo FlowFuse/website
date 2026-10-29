@@ -174,11 +174,6 @@
                                 "icon": "arrow-trending-up"
                             },
                             {
-                                "label": "Production Monitoring",
-                                "href": "/use-cases/production-monitoring/",
-                                "icon": "pulse"
-                            },
-                            {
                                 "label": "Shop Floor Communication",
                                 "href": "/use-cases/shop-floor-communication/",
                                 "icon": "chat"
@@ -525,10 +520,6 @@
                             {
                                 "label": "Production Line Monitoring",
                                 "href": "/use-cases/production-line-monitoring/"
-                            },
-                            {
-                                "label": "Production Monitoring",
-                                "href": "/use-cases/production-monitoring/"
                             },
                             {
                                 "label": "Shop Floor Communication",

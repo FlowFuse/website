@@ -92,7 +92,7 @@ faqs:
   - question: "Can FlowFuse enforce NADCAP and customer approval status?"
     answer: "Yes. You can build approval checks into the production workflow that block a job from releasing when a NADCAP or customer approval is missing or expired, and trigger renewals before they lapse. See [Shop Floor Communication](/use-cases/shop-floor-communication/)."
   - question: "Can FlowFuse link torque, weld, and NDT data to a part serial?"
-    answer: "Yes. Process data from torque tools, weld controllers, ovens, and NDT systems is captured via [OPC UA](/docs/flowfuse-nodes/edge/opcua/), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), Atlas Copco Open Protocol, or file-based exports, and linked automatically to the part serial and work order. See [Production Monitoring](/use-cases/production-monitoring/)."
+    answer: "Yes. Process data from torque tools, weld controllers, ovens, and NDT systems is captured via [OPC UA](/docs/flowfuse-nodes/edge/opcua/), [MQTT](/blog/2024/06/how-to-use-mqtt-in-node-red/), Atlas Copco Open Protocol, or file-based exports, and linked automatically to the part serial and work order. See [Production Monitoring](/use-cases/production-line-monitoring/)."
   - question: "How does FlowFuse fit alongside our existing MES and ERP?"
     answer: "FlowFuse works alongside your [MES](/use-cases/mes/) and [ERP](/landing/enterprise-integration/) rather than replacing them. It connects to both and lets you build the plant-specific workflows your MES doesn't cover, without a vendor change request. See [MES](/use-cases/mes/) and [IT/OT middleware](/use-cases/it-ot-middleware/)."
   - question: "What is the difference between aerospace component manufacturing and OEM assembly?"

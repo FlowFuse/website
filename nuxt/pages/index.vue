@@ -52,8 +52,8 @@ const CAPABILITIES = [
         description: 'Move production events, work orders, alarms, and operational data securely between PLCs, edge devices, MES, ERP, cloud platforms, and operator interfaces, without brittle point-to-point integrations or exposing inbound firewall ports.',
         imagePath: '/images/home/home-dashboard.png',
         imageAlt: 'FlowFuse Dashboard',
-        linkText: 'Explore production monitoring',
-        linkHref: '/use-cases/production-monitoring/',
+        linkText: 'Explore production line monitoring',
+        linkHref: '/use-cases/production-line-monitoring/',
     },
 ]
 
@@ -61,7 +61,7 @@ const OPERATIONAL_SYSTEM = [
     {
         title: 'PRODUCTION & OPERATIONS',
         items: [
-            { name: 'Production Monitoring', url: '/use-cases/production-monitoring/', description: 'OEE tracking across lines, shifts, and plants.' },
+            { name: 'Production Line Monitoring', url: '/use-cases/production-line-monitoring/', description: 'OEE tracking across lines, shifts, and plants.' },
             { name: 'Continuous Improvement', description: 'Digital CI workflow from suggestion to closure.' },
         ],
     },

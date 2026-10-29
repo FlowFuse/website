@@ -56,7 +56,7 @@ Surviving CS1 or CS2 status depends on more than reacting to the initial defect 
 
 ### Documenting Every Inspection Point
 
-Every added inspection step needs a written record: what is being checked, how often, and by whom. Inspection also has to happen in a dedicated containment area, separate from normal production flow, staffed by people other than the operators who produced the part. Real-time [production monitoring](/use-cases/production-monitoring/) can capture this automatically at the line level, giving you a live record instead of a stack of paper checklists compiled after each shift. It's the same discipline a [layered process audit](/blog/2026/08/layered-process-audit/) runs on: defined checks, at a defined frequency, signed off by someone other than the operator.
+Every added inspection step needs a written record: what is being checked, how often, and by whom. Inspection also has to happen in a dedicated containment area, separate from normal production flow, staffed by people other than the operators who produced the part. Real-time [production monitoring](/use-cases/production-line-monitoring/) can capture this automatically at the line level, giving you a live record instead of a stack of paper checklists compiled after each shift. It's the same discipline a [layered process audit](/blog/2026/08/layered-process-audit/) runs on: defined checks, at a defined frequency, signed off by someone other than the operator.
 
 ### Sign-Offs That Hold Up During Customer Containment
 
