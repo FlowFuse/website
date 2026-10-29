@@ -33,6 +33,9 @@ const STAGES = [
             <p class="mt-2 mb-0 text-gray-600">{{ stage.description }}</p>
           </li>
         </ol>
+        <CtaLink destination="signUp" position="partnership" class="mt-8 inline-flex items-center justify-center rounded-md bg-indigo-600 px-6 py-3 font-semibold text-white uppercase no-underline hover:no-underline hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          Build with us
+        </CtaLink>
       </div>
     </div>
   </section>
