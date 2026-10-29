@@ -16,9 +16,36 @@ useSeoMeta({
 
 const capture = useCapture()
 
-// The hero diagram, top to bottom: the solutions, the AI that works on them, the platform
-// they run on, and the equipment underneath. Solution names match the solution pages.
-const HERO_SOLUTIONS = ['Downtime Tracking', 'Machine Monitoring', 'Predictive Maintenance']
+// The three solution tracks and the solutions under each, as in the solution examples sheet
+// (tracks A, B and C; the letters stay internal). Solution names use the sheet's SEO terms.
+// Only Production Performance has a page so far; the other two link to a conversation.
+const TRACKS = [
+    {
+        key: 'production-performance',
+        icon: 'i-lucide-gauge',
+        name: 'Production Performance',
+        description: 'Find the losses that keep lines and machines short of target, and fix the biggest one first.',
+        solutions: ['Production Line Monitoring', 'CNC Machine Monitoring'],
+        to: '/use-cases/production-line-monitoring/',
+    },
+    {
+        key: 'operations-control',
+        icon: 'i-lucide-scan-eye',
+        name: 'Intelligent Operations & Control',
+        description: 'Turn what you detect into an approved response at the line or the well, not a report.',
+        solutions: ['Visual Quality Inspection', 'Well Production Optimization'],
+    },
+    {
+        key: 'remote-operations',
+        icon: 'i-lucide-radio-tower',
+        name: 'Remote Equipment & Service Operations',
+        description: 'Catch failing assets before they stop production, and fix remote sites without a wasted visit.',
+        solutions: ['Predictive Maintenance', 'Remote Energy Monitoring'],
+    },
+]
+
+// The hero diagram, top to bottom: the solution tracks, the AI that works on them, the
+// platform they run on, and the equipment underneath.
 const HERO_PLATFORM = [
     { icon: 'i-lucide-cable', label: 'Connect' },
     { icon: 'i-lucide-layout-dashboard', label: 'Build' },
@@ -116,11 +143,11 @@ const YOURS = [
           <div class="mt-8 flex flex-row flex-wrap gap-4 items-center justify-center lg:justify-start">
             <CtaBookDemo variant="highlight" position="hero" />
             <NuxtLink
-                to="/use-cases/production-line-monitoring/"
+                to="#solutions"
                 class="inline-flex items-center gap-1 font-semibold text-white hover:underline"
                 @click="capture('cta-learn-more', { position: 'hero-solutions' })"
             >
-              See a solution
+              See the solutions
               <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
             </NuxtLink>
           </div>
@@ -129,12 +156,16 @@ const YOURS = [
         <div
             class="rounded-xl border border-white/15 bg-white/5 p-5 flex flex-col gap-3"
             role="img"
-            aria-label="The FlowFuse platform in layers: solutions such as downtime tracking, machine monitoring and predictive maintenance sit on top; FlowFuse AI proposes changes that people approve; the platform connects, builds, governs and deploys; underneath are the PLCs, sensors, historians, MES and ERP you already run."
+            aria-label="The FlowFuse platform in layers: three solution tracks sit on top (Production Performance, Intelligent Operations and Control, and Remote Equipment and Service Operations); FlowFuse AI proposes changes that people approve; the platform connects, builds, governs and deploys; underneath are the PLCs, sensors, historians, MES and ERP you already run."
         >
           <div class="text-[11px] font-semibold uppercase tracking-widest text-indigo-200">Solutions</div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-            <div v-for="name in HERO_SOLUTIONS" :key="name" class="rounded-md bg-white text-indigo-900 text-xs font-semibold px-2 py-3 text-center">{{ name }}</div>
-            <div class="rounded-md border border-dashed border-white/40 text-indigo-100 text-xs font-semibold px-2 py-3 text-center">Your next one</div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <div v-for="track in TRACKS" :key="track.key" class="rounded-md bg-white text-indigo-900 px-3 py-2.5">
+              <div class="text-xs font-semibold leading-snug">{{ track.name }}</div>
+              <ul class="list-none p-0 m-0 mt-1.5">
+                <li v-for="solution in track.solutions" :key="solution" class="m-0 text-[11px] leading-snug text-gray-500">{{ solution }}</li>
+              </ul>
+            </div>
           </div>
 
           <div class="rounded-md bg-red-500/90 text-white text-sm px-3 py-2.5 flex items-center justify-center gap-2">
@@ -154,6 +185,44 @@ const YOURS = [
 
           <div class="flex flex-wrap justify-center gap-2 pt-1">
             <span v-for="item in HERO_EQUIPMENT" :key="item" class="rounded-full border border-white/25 text-indigo-100 text-xs px-3 py-1">{{ item }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The solutions the platform is for -->
+    <section id="solutions" class="w-full px-6 pt-20 pb-4 scroll-mt-16">
+      <div class="max-w-screen-lg mx-auto">
+        <h2 class="m-0 max-md:text-center">What we build <span class="text-indigo-600">on FlowFuse</span></h2>
+        <p class="mt-4 text-gray-600 max-w-2xl max-md:text-center max-md:mx-auto">
+          Three areas we solve with you. Each solution starts from one problem on one line, and every one runs on the same platform.
+        </p>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div v-for="track in TRACKS" :key="track.key" class="rounded-lg border-2 border-indigo-100 bg-indigo-50/40 p-6 flex flex-col">
+            <span class="w-11 h-11 rounded-md bg-indigo-600 text-white flex items-center justify-center">
+              <UIcon :name="track.icon" class="w-6 h-6" />
+            </span>
+            <h3 class="mt-4 mb-0 text-xl text-gray-800">{{ track.name }}</h3>
+            <p class="mt-2 mb-0 text-gray-600">{{ track.description }}</p>
+            <ul class="list-none p-0 m-0 mt-5 flex-1 flex flex-col gap-2">
+              <li v-for="solution in track.solutions" :key="solution" class="m-0 flex items-center gap-2 text-sm font-medium text-gray-700">
+                <UIcon name="i-lucide-check" class="w-4 h-4 text-indigo-600 shrink-0" />
+                {{ solution }}
+              </li>
+            </ul>
+            <NuxtLink
+                v-if="track.to"
+                :to="track.to"
+                class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline"
+                @click="capture('cta-learn-more', { position: `platform-track-${track.key}` })"
+            >
+              Explore {{ track.name }}
+              <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+            </NuxtLink>
+            <CtaLink v-else destination="bookDemo" :position="`platform-track-${track.key}`" class="mt-6 inline-flex items-center gap-1 font-medium text-indigo-600 hover:underline">
+              Talk to us about this
+              <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+            </CtaLink>
           </div>
         </div>
       </div>
