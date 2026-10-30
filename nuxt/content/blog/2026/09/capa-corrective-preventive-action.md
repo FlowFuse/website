@@ -134,7 +134,7 @@ For example, FlowFuse can help teams:
 
 - **Collect relevant production data** when a quality issue or nonconformity occurs using [data integration](/use-cases/data-integration/) workflows.
 - **Connect data across machines, PLCs, databases, and quality systems** to support root cause investigations.
-- **Automate workflows and notifications** when production or quality events require attention, including [production monitoring](/use-cases/production-monitoring/) and [notifications](/node-red/notification/).
+- **Automate workflows and notifications** when production or quality events require attention, including [production monitoring](/use-cases/production-line-monitoring/) and [notifications](/node-red/notification/).
 - **Monitor process and quality data after an action is implemented** to provide evidence for effectiveness checks, such as through [quality dashboards](/blog/2026/08/manufacturing-dashboard-examples/#_4-quality-dashboard-defect-quality-monitoring).
 
 FlowFuse does not replace an organization's CAPA or quality management system. Instead, it helps connect the production data and operational workflows that support investigations, corrective actions, and verification that an action actually worked.

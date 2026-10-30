@@ -96,6 +96,8 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/solutions/mes/': { redirect: { to: '/use-cases/mes/', statusCode: 301 } },
     '/solutions/scada/': { redirect: { to: '/use-cases/scada/', statusCode: 301 } },
     '/solutions/uns/': { redirect: { to: '/use-cases/uns/', statusCode: 301 } },
+    '/use-cases/production-monitoring/': { redirect: { to: '/use-cases/production-line-monitoring/', statusCode: 301 } },
+    '/use-cases/production-monitoring': { redirect: { to: '/use-cases/production-line-monitoring/', statusCode: 301 } },
     '/certified-nodes/': { redirect: { to: '/integrations/?certified=1', statusCode: 301 } },
     '/certified-nodes/**': { redirect: { to: '/integrations/?certified=1', statusCode: 301 } },
     // 11ty copied every `images/` directory under src/ to the output, including the one in

@@ -5,8 +5,8 @@
 // only when its frontmatter key was present. That maps onto a data collection plus one
 // component per block, so this file is just resolution and ordering.
 //
-// Only the two operational use-cases (production-monitoring, shop-floor-communication)
-// come through here - they had no template body at all. The six architecture pages had
+// The remaining operational use-case (shop-floor-communication) comes through here - it
+// had no template body at all. The six architecture pages had
 // real markup and are hand-written Vue pages alongside this one; Nuxt matches those
 // static routes ahead of this dynamic one, and the guard below makes that explicit
 // rather than load-bearing-by-accident.

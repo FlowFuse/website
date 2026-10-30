@@ -98,7 +98,7 @@ const QUOTES = [
 const FAQ = [
     {
         question: 'Is FlowFuse an MES alternative?',
-        answer: 'No, and we don\'t want to be. Most software vendors want you to standardize on their platform. We\'d rather you keep the MES you spent years implementing. For order management, genealogy, and validated records, it should stay. FlowFuse is how teams make an MES composable: the standard core stays in place, and the line-specific pieces are built as separate applications your team controls. Teams without an MES often start the same way, building [OEE tracking](/blueprints/manufacturing/oee-dashboard/) or [shift reporting](/use-cases/production-monitoring/) as individual apps, and decide on MES scope later.',
+        answer: 'No, and we don\'t want to be. Most software vendors want you to standardize on their platform. We\'d rather you keep the MES you spent years implementing. For order management, genealogy, and validated records, it should stay. FlowFuse is how teams make an MES composable: the standard core stays in place, and the line-specific pieces are built as separate applications your team controls. Teams without an MES often start the same way, building [OEE tracking](/blueprints/manufacturing/oee-dashboard/) or [shift reporting](/use-cases/production-line-monitoring/) as individual apps, and decide on MES scope later.',
     },
     {
         question: 'How does FlowFuse use AI?',
