@@ -186,19 +186,29 @@
                         ]
                     },
                     {
-                        "title": "By Integration",
+                        "title": "By Team",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-[9] md:col-start-3 md:row-start-2 xl:col-start-4",
+                        "listClasses": "row-span-4 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
-                                "label": "OPC UA",
-                                "href": "/integrations/opcua/",
-                                "icon": "server-stack"
+                                "label": "Manufacturing Operations",
+                                "href": "/teams/manufacturing-operations/",
+                                "icon": "factory"
                             },
                             {
-                                "label": "See all integrations",
-                                "href": "/integrations/",
-                                "icon": "arrow-right"
+                                "label": "Automation & Controls",
+                                "href": "/teams/automation-controls/",
+                                "icon": "cog"
+                            },
+                            {
+                                "label": "Maintenance & Reliability",
+                                "href": "/teams/maintenance-reliability/",
+                                "icon": "wrench-screwdriver"
+                            },
+                            {
+                                "label": "Digital Transformation",
+                                "href": "/teams/digital-transformation/",
+                                "icon": "rocket-launch"
                             }
                         ]
                     }
@@ -532,15 +542,23 @@
                         ]
                     },
                     {
-                        "title": "By Integration",
+                        "title": "By Team",
                         "links": [
                             {
-                                "label": "OPC UA",
-                                "href": "/integrations/opcua/"
+                                "label": "Manufacturing Operations",
+                                "href": "/teams/manufacturing-operations/"
                             },
                             {
-                                "label": "See all integrations",
-                                "href": "/integrations/"
+                                "label": "Automation & Controls",
+                                "href": "/teams/automation-controls/"
+                            },
+                            {
+                                "label": "Maintenance & Reliability",
+                                "href": "/teams/maintenance-reliability/"
+                            },
+                            {
+                                "label": "Digital Transformation",
+                                "href": "/teams/digital-transformation/"
                             }
                         ]
                     }
