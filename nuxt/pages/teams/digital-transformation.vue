@@ -78,9 +78,21 @@ const PAGE = {
         heading: ['Your Team Sets the Standard.', 'We Help You Scale It.'] as [string, string],
         intro: 'We work alongside your central team from the first use case, and stay with you as it reaches every plant.',
         items: [
-            { title: 'Finding the first use case', description: 'Our engineers help you pick a first use case with a clear result and an owner at the plant, shape the business case behind it, then build it with your team.', icon: 'i-lucide-target' },
-            { title: 'A small team for many plants', description: 'Your central team sets the standard and the guardrails, and we help train people at each site to work within them, so a team of a few can support many plants.', icon: 'i-lucide-users' },
-            { title: 'Never locked in', description: 'FlowFuse is built on open-source Node-RED. Everything you build belongs to you, and your team can change it without waiting on us.', icon: 'i-lucide-lock-open' },
+            { title: 'Finding the first use case', descriptionLinks: [
+                { text: 'Our engineers help you pick a ' },
+                { text: 'first use case', href: '/use-cases/' },
+                { text: ' with a clear result and an owner at the plant, shape the business case behind it, then build it with your team.' },
+            ], icon: 'i-lucide-target' },
+            { title: 'A small team for many plants', descriptionLinks: [
+                { text: 'Your central team sets the standard and the guardrails, and we help train people at each site to work within them, so a team of a few can support ' },
+                { text: 'many plants', href: '/use-cases/remote-device-management/' },
+                { text: '.' },
+            ], icon: 'i-lucide-users' },
+            { title: 'Never locked in', descriptionLinks: [
+                { text: 'FlowFuse is built on open-source ' },
+                { text: 'Node-RED', href: '/node-red/' },
+                { text: '. Everything you build belongs to you, and your team can change it without waiting on us.' },
+            ], icon: 'i-lucide-lock-open' },
         ],
     },
     proof: {
@@ -98,7 +110,7 @@ const PAGE = {
         items: [
             {
                 question: 'How does this fit with the MES and ERP in our roadmap?',
-                answer: 'It sits alongside them. MES and ERP keep their roles, and FlowFuse connects them to the plant floor and to each other, so your roadmap gains a common layer instead of another multi-year rollout.',
+                answer: 'It sits alongside them. MES and ERP keep their roles, and FlowFuse connects them to the plant floor and to each other through [industrial integrations](/integrations/) and [IT/OT middleware](/use-cases/it-ot-middleware/), so your roadmap gains a common layer instead of another multi-year rollout.',
             },
             {
                 question: 'Isn\'t this just another point solution?',
@@ -106,15 +118,15 @@ const PAGE = {
             },
             {
                 question: 'What should our first use case be?',
-                answer: 'One with a clear owner and a number the plant already watches, such as downtime on a bottleneck line or energy on a major asset. Keep it to one line or asset so it shows a result fast, and let that result make the case for the next plant.',
+                answer: 'One with a clear owner and a number the plant already watches, such as [downtime on a bottleneck line](/use-cases/production-line-monitoring/) or energy on a major asset. Keep it to one line or asset so it shows a result fast, and let that result make the case for the next plant. Browse [use cases](/use-cases/) for more examples.',
             },
             {
                 question: 'How do we stop plants building their own one-offs?',
-                answer: 'Set the standard centrally and let plants adapt within it. Roles decide who can build and who can deploy, and every change moves through stages, so plants can adjust the standard without copying it.',
+                answer: 'Set the standard centrally and let plants adapt within it. [Roles and permissions](/docs/user/role-based-access-control/) decide who can build and who can deploy, and [DevOps Pipelines](/docs/user/devops-pipelines/) move every change through stages, so plants can adjust the standard without copying it.',
             },
             {
                 question: 'We already run Node-RED in some plants. Can FlowFuse bring it under one standard?',
-                answer: 'Yes, and it\'s one of the most common ways programs start. Existing flows move under central management, so scattered projects become one governed program.',
+                answer: 'Yes, and it\'s one of the most common ways programs start. Existing [Node-RED flows](/node-red/) move under central management, so scattered projects become one governed program. See [how FlowFuse manages Node-RED](/platform/why-flowfuse/).',
             },
             {
                 question: 'Where does AI fit?',
@@ -122,11 +134,11 @@ const PAGE = {
             },
             {
                 question: 'Will IT and security approve it?',
-                answer: 'It\'s built for their review. Run it in the cloud, on your own servers or air-gapped. Plants connect outward with no inbound ports to open. Single sign-on, role-based access and audit logging cover the controls IEC 62443 and NIS2 assessments look for, and FlowFuse is SOC 2 Type I and Type II certified.',
+                answer: 'It\'s built for their review. Run it in the cloud, [on your own servers or air-gapped](/docs/install/introduction/). Plants connect outward with no inbound ports to open. [Single sign-on](/docs/admin/sso/), [role-based access](/docs/user/role-based-access-control/) and [audit logging](/docs/user/logs/#audit-log) cover the controls IEC 62443 and NIS2 assessments look for, and FlowFuse is [SOC 2 Type I and Type II certified](/platform/security/#certifications).',
             },
             {
                 question: 'How is FlowFuse priced when budgets sit with the plants?',
-                answer: 'Per instance, meaning each running application or connected device. A first plant can start small, each plan includes a set number of instances, and volume discounts apply as the program reaches hundreds or thousands. Tell us how many plants you plan to reach and we\'ll model the cost with you.',
+                answer: 'Per instance, meaning each running application or connected device. A first plant can start small, each plan includes a set number of instances, and volume discounts apply as the program reaches hundreds or thousands. See [FlowFuse pricing](/pricing/), or tell us how many plants you plan to reach and we\'ll model the cost with you.',
             },
         ],
     },

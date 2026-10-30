@@ -162,7 +162,14 @@ useSchemaOrg([
               <UIcon :name="item.icon" class="w-5 h-5 text-white" />
             </span>
             <h3 class="mt-2 mb-0 text-xl font-medium text-gray-800">{{ item.title }}</h3>
-            <p class="m-0 text-gray-600">{{ item.description }}</p>
+            <p class="m-0 text-gray-600">
+              <template v-if="item.descriptionLinks">
+                <template v-for="(part, index) in item.descriptionLinks" :key="index">
+                  <a v-if="part.href" :href="part.href" class="text-indigo-600 hover:underline">{{ part.text }}</a><template v-else>{{ part.text }}</template>
+                </template>
+              </template>
+              <template v-else>{{ item.description }}</template>
+            </p>
           </li>
         </ul>
       </div>

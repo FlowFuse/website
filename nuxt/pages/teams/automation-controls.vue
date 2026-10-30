@@ -78,9 +78,31 @@ const PAGE = {
         heading: ['Your Engineers and Ours,', 'With Nothing Locked In'] as [string, string],
         intro: 'We work as part of your team from the first deployment, and we\'re still there when the last site goes live.',
         items: [
-            { title: 'Side by side with your engineers', description: 'From the first deployment, our team works with yours and is there when a site needs help. Platform and Certified Node support is covered by an SLA, so there\'s someone to call.', icon: 'i-lucide-handshake' },
-            { title: 'Never locked in', description: 'FlowFuse is built on open-source Node-RED. What your team builds stays readable, changeable and yours, with no dependency on our roadmap or on any one hardware vendor. Applications are standard Node-RED flows that export as plain JSON.', icon: 'i-lucide-lock-open' },
-            { title: 'Ready for your CISO', description: 'Run it in the cloud, on your own servers or air-gapped, with single sign-on, role-based access and audit logging: the controls IEC 62443 and NIS2 assessments look for. FlowFuse is SOC 2 Type I and Type II certified.', icon: 'i-lucide-shield-check' },
+            { title: 'Side by side with your engineers', descriptionLinks: [
+                { text: 'From the first deployment, our team works with yours and is there when a site needs help. ' },
+                { text: 'Platform', href: '/product/' },
+                { text: ' and ' },
+                { text: 'Certified Node', href: '/integrations/?certified=1' },
+                { text: ' support is covered by an SLA, so there\'s someone to call.' },
+            ], icon: 'i-lucide-handshake' },
+            { title: 'Never locked in', descriptionLinks: [
+                { text: 'FlowFuse is built on open-source ' },
+                { text: 'Node-RED', href: '/node-red/' },
+                { text: '. What your team builds stays readable, changeable and yours, with no dependency on our roadmap or on any one hardware vendor. Applications are standard Node-RED flows that export as plain JSON.' },
+            ], icon: 'i-lucide-lock-open' },
+            { title: 'Ready for your CISO', descriptionLinks: [
+                { text: 'Run it in the cloud, ' },
+                { text: 'on your own servers or air-gapped', href: '/docs/install/introduction/' },
+                { text: ', with ' },
+                { text: 'single sign-on', href: '/docs/admin/sso/' },
+                { text: ', ' },
+                { text: 'role-based access', href: '/docs/user/role-based-access-control/' },
+                { text: ' and ' },
+                { text: 'audit logging', href: '/docs/user/logs/#audit-log' },
+                { text: ': the controls IEC 62443 and NIS2 assessments look for. FlowFuse is ' },
+                { text: 'SOC 2 Type I and Type II certified', href: '/platform/security/#certifications' },
+                { text: '.' },
+            ], icon: 'i-lucide-shield-check' },
         ],
     },
     proof: {
@@ -98,15 +120,15 @@ const PAGE = {
         items: [
             {
                 question: 'Does FlowFuse replace our PLCs or SCADA?',
-                answer: 'No. The PLCs keep control of the machines and the SCADA stays as it is. FlowFuse reads from them, reaches equipment they can\'t, and runs the data and supervisory applications around them. It isn\'t built for e-stops, interlocks or other deterministic control, which stay in the PLCs.',
+                answer: 'No. The PLCs keep control of the machines and the SCADA stays as it is. FlowFuse reads from them, reaches equipment they can\'t, and runs the data and supervisory applications around them. See how FlowFuse fits [alongside SCADA](/use-cases/scada/) and [connects industrial equipment](/integrations/). It isn\'t built for e-stops, interlocks or other deterministic control, which stay in the PLCs.',
             },
             {
                 question: 'Can FlowFuse write to our PLCs?',
-                answer: 'Yes, when you choose to. Most teams start read-only and add write actions later, one step at a time. Anything that writes to a controller goes through the same versioned, staged deployment as any other change, and role-based access decides who can deploy it.',
+                answer: 'Yes, when you choose to. Most teams start read-only and add write actions later, one step at a time. Anything that writes to a controller goes through the same [versioned, staged deployment](/platform/device-agent/) as any other change, and [role-based access](/docs/user/role-based-access-control/) decides who can deploy it.',
             },
             {
                 question: 'Where does it sit in our network?',
-                answer: 'Plants connect outward, so no inbound connections need to be opened into the OT network. FlowFuse can be placed in whichever zone your policy calls for.',
+                answer: 'Plants connect outward, so no inbound connections need to be opened into the OT network. FlowFuse can be placed in whichever zone your policy calls for. See the [OT deployment architecture](/docs/application-guide/architectures/ot/) and [security overview](/platform/security/).',
             },
             {
                 question: 'Is open source safe in our OT?',
@@ -114,7 +136,7 @@ const PAGE = {
             },
             {
                 question: 'We already run Node-RED on some lines. Can FlowFuse manage it?',
-                answer: 'Yes. Existing flows can be brought under central management, with snapshots, access control and a view of every device, so a setup only one person understood becomes something the team can support. It\'s one of the most common ways teams start.',
+                answer: 'Yes. Existing flows can be brought under central management, with [snapshots](/docs/user/snapshots/), [access control](/docs/user/role-based-access-control/) and a view of every device, so a setup only one person understood becomes something the team can support. It\'s one of the most common ways teams start. Learn more about [managing Node-RED with FlowFuse](/node-red/).',
             },
             {
                 question: 'What does it run on at the plant?',
@@ -122,11 +144,11 @@ const PAGE = {
             },
             {
                 question: 'Can we trust what the AI builds?',
-                answer: 'Nothing it builds goes live on its own. Engineers review what it drafts, and it moves through the same stages as any other change, with a snapshot to go back to.',
+                answer: 'Nothing it builds goes live on its own. Engineers review what it drafts with [FlowFuse Expert](/docs/user/expert/), and it moves through the same [deployment stages](/docs/user/devops-pipelines/) as any other change, with a [snapshot](/docs/user/snapshots/) to go back to.',
             },
             {
                 question: 'How is FlowFuse priced?',
-                answer: 'Per instance. Each plan includes a set number of instances, and there are volume discounts for rollouts of hundreds or thousands. Tell us how many sites you expect and we\'ll model the cost with you, including what the next site adds.',
+                answer: 'Per instance. Each plan includes a set number of instances, and there are volume discounts for rollouts of hundreds or thousands. See [FlowFuse pricing](/pricing/), or tell us how many sites you expect and we\'ll model the cost with you, including what the next site adds.',
             },
         ],
     },

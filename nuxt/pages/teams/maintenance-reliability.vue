@@ -78,9 +78,25 @@ const PAGE = {
         heading: ['Your Team Keeps the Machines Running.', 'We Help With the Rest.'] as [string, string],
         intro: 'Your people are already stretched between breakdowns and PMs. We work alongside them from the first asset, so monitoring never becomes another job on their list.',
         items: [
-            { title: 'We set up the first one with you', description: 'Our engineers connect your first asset type, set the warning limits with your reliability engineers, and get the first work order into your CMMS. Platform and Certified Node support is covered by an SLA.', icon: 'i-lucide-handshake' },
+            { title: 'We set up the first one with you', descriptionLinks: [
+                { text: 'Our engineers connect your first asset type, set the warning limits with your reliability engineers, and get the first work order into your CMMS. ' },
+                { text: 'Platform', href: '/product/' },
+                { text: ' and ' },
+                { text: 'Certified Node', href: '/integrations/?certified=1' },
+                { text: ' support is covered by an SLA.' },
+            ], icon: 'i-lucide-handshake' },
             { title: 'Your team learns to run it', description: 'Your engineers build alongside ours and come away able to add the next asset type themselves, without needing a data team.', icon: 'i-lucide-graduation-cap' },
-            { title: 'We stand with you in the IT review', description: 'We answer security\'s questions with you: cloud, self-hosted or air-gapped, single sign-on, audit logs, and SOC 2 Type I and Type II certification.', icon: 'i-lucide-shield-check' },
+            { title: 'We stand with you in the IT review', descriptionLinks: [
+                { text: 'We answer security\'s questions with you: cloud, ' },
+                { text: 'self-hosted', href: '/docs/install/introduction/' },
+                { text: ' or air-gapped, ' },
+                { text: 'single sign-on', href: '/platform/security/' },
+                { text: ', ' },
+                { text: 'audit logs', href: '/platform/security/' },
+                { text: ', and ' },
+                { text: 'SOC 2 Type I and Type II certification', href: '/platform/security/#certifications' },
+                { text: '.' },
+            ], icon: 'i-lucide-shield-check' },
         ],
     },
     proof: {
@@ -98,15 +114,15 @@ const PAGE = {
         items: [
             {
                 question: 'Do we have to replace our CMMS?',
-                answer: 'No. FlowFuse handles the equipment side and feeds whichever CMMS or EAM you already run, from SAP PM and Maximo to MaintainX. Your teams keep working in the system they know.',
+                answer: 'No. FlowFuse handles the equipment side and feeds whichever CMMS or EAM you already run, from SAP PM and Maximo to MaintainX, using [integrations](/integrations/) to connect the systems. Your teams keep working in the system they know.',
             },
             {
                 question: 'Will it work with the equipment across our plants?',
-                answer: 'Usually, yes. Most plants run a mix of old, new and OEM equipment, and FlowFuse reads from most of it without changing PLC programs. Where a machine exposes no data, sensors can be added.',
+                answer: 'Usually, yes. Most plants run a mix of old, new and OEM equipment, and FlowFuse reads from most of it through [industrial integrations](/integrations/) without changing PLC programs. Where a machine exposes no data, sensors can be added.',
             },
             {
                 question: 'How does this fit our reliability program?',
-                answer: 'It supports the program you already run, whether that\'s TPM or reliability-centered maintenance. Condition turns into scheduled work, and every failure is logged with its cause for root-cause review.',
+                answer: 'It supports the program you already run, whether that\'s TPM or reliability-centered maintenance. Condition turns into scheduled work, and every failure is logged with its cause for root-cause review. See how [condition data can drive planned maintenance](/use-cases/production-line-monitoring/).',
             },
             {
                 question: 'Do you provide the prediction model?',
@@ -114,11 +130,11 @@ const PAGE = {
             },
             {
                 question: 'What do we need on our side to start?',
-                answer: 'One asset type, access to its PLC or sensors, a reliability engineer who knows how it fails, and access to your CMMS. Our engineers handle the rest with you.',
+                answer: 'One asset type, access to its PLC or sensors, a reliability engineer who knows how it fails, and access to your CMMS. Browse [supported integrations](/integrations/) and [talk with our team](/contact-us/); our engineers handle the rest with you.',
             },
             {
                 question: 'We already pay for condition monitoring. Where does FlowFuse fit?',
-                answer: 'Alongside it. FlowFuse brings your condition-monitoring vendor\'s alerts together with PLC and machine data, and turns them into work orders in your CMMS, so the monitoring you\'ve paid for starts driving planned work.',
+                answer: 'Alongside it. FlowFuse brings your condition-monitoring vendor\'s alerts together with PLC and machine data through [integrations](/integrations/), and turns them into work orders in your CMMS, so the monitoring you\'ve paid for starts driving planned work.',
             },
             {
                 question: 'How do we show the return?',
@@ -126,7 +142,7 @@ const PAGE = {
             },
             {
                 question: 'How is FlowFuse priced?',
-                answer: 'Per instance, meaning each running application or connected device. Each plan includes a set number of instances, and there are volume discounts for rollouts of hundreds or thousands. Tell us how many sites and assets you expect and we\'ll model the cost with you.',
+                answer: 'Per instance, meaning each running application or connected device. Each plan includes a set number of instances, and there are volume discounts for rollouts of hundreds or thousands. See [FlowFuse pricing](/pricing/), or tell us how many sites and assets you expect and we\'ll model the cost with you.',
             },
         ],
     },

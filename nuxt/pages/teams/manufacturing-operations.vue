@@ -79,9 +79,21 @@ const PAGE = {
         heading: ['You\'re Never Alone,', 'and Never Locked In.'] as [string, string],
         intro: 'We become part of your team from the first conversation, and stay that way long after go-live.',
         items: [
-            { title: 'Built together, around your goals', description: 'Our team works alongside yours to build solutions around what you\'re accountable for, and stays close whenever a plant needs help.', icon: 'i-lucide-handshake' },
-            { title: 'No lock-in, ever', description: 'FlowFuse is built on open-source Node-RED. Everything you build belongs to you, and your team can change it without waiting on us.', icon: 'i-lucide-lock-open' },
-            { title: 'Your team grows with it', description: 'Your engineers learn by building alongside ours, and come away able to run and extend it on their own.', icon: 'i-lucide-graduation-cap' },
+            { title: 'Built together, around your goals', descriptionLinks: [
+                { text: 'Our team works alongside yours to build solutions around what you\'re accountable for, and stays close whenever a plant needs help. Learn about ' },
+                { text: 'working with FlowFuse engineers', href: '/professional-services/' },
+                { text: '.' },
+            ], icon: 'i-lucide-handshake' },
+            { title: 'No lock-in, ever', descriptionLinks: [
+                { text: 'FlowFuse is built on open-source ' },
+                { text: 'Node-RED', href: '/node-red/' },
+                { text: '. Everything you build belongs to you, and your team can change it without waiting on us.' },
+            ], icon: 'i-lucide-lock-open' },
+            { title: 'Your team grows with it', descriptionLinks: [
+                { text: 'Your engineers learn by building alongside ours, and come away able to ' },
+                { text: 'run and extend it on their own', href: '/docs/' },
+                { text: '.' },
+            ], icon: 'i-lucide-graduation-cap' },
         ],
     },
     proof: {
@@ -99,35 +111,35 @@ const PAGE = {
         items: [
             {
                 question: 'Do we need to replace our MES, ERP or SCADA?',
-                answer: 'No. Whether you run Siemens Opcenter, Rockwell Plex, SAP or something built in-house, it stays in place. FlowFuse connects the machines your MES can\'t reach, handles the workflows it was never built for, and sends the results back into it, so the systems you\'ve already paid for get more useful.',
+                answer: 'No. Whether you run Siemens Opcenter, Rockwell Plex, SAP or something built in-house, it stays in place. FlowFuse connects the machines your MES can\'t reach through [industrial integrations](/integrations/), handles the workflows it was never built for, and sends the results back into it using [IT/OT middleware](/use-cases/it-ot-middleware/), so the systems you\'ve already paid for get more useful.',
             },
             {
                 question: 'How quickly will we see results?',
-                answer: 'Faster than most plant projects, because the first step is small. A typical start is one line and one question: why does it keep stopping? A live downtime view with reasons for that line takes weeks, not a year-long rollout, and what it shows becomes the case for the next line.',
+                answer: 'Faster than most plant projects, because the first step is small. A typical start is one line and one question: why does it keep stopping? A live [production line monitoring](/use-cases/production-line-monitoring/) view with reasons for that line takes weeks, not a year-long rollout, and what it shows becomes the case for the next line.',
             },
             {
                 question: 'Our plants all run different equipment. Will this work?',
-                answer: 'Yes. A Siemens line in one plant, Allen-Bradley in another and decades-old machines in a third is normal, and FlowFuse connects all of them. [Walter](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/) uses the same approach to connect machines of every configuration across all its sites, and each plant still reports the same numbers the same way.',
+                answer: 'Yes. A Siemens line in one plant, Allen-Bradley in another and decades-old machines in a third is normal, and FlowFuse connects all of them through [industrial integrations](/integrations/). [Walter](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/) uses the same approach to connect machines of every configuration across all its sites, and each plant still reports the same numbers the same way.',
             },
             {
                 question: 'Do we need to hire more engineers?',
-                answer: 'No. Walter Tools connected machines across all its sites with the same seven-person IT team it started with. Solutions are reused at the next plant instead of rebuilt, built-in AI handles much of the routine work, and our [partners](/partners/) can add hands for a large rollout.',
+                answer: 'No. Walter Tools connected machines across all its sites with the same seven-person IT team it started with. Solutions are reused at the next plant instead of rebuilt, [FlowFuse AI](/ai/) handles much of the routine work, and our [partners](/partners/) can add hands for a large rollout.',
             },
             {
                 question: 'How does FlowFuse fit with our continuous improvement program?',
-                answer: 'It gives it better numbers. The morning tier meeting opens on yesterday\'s downtime by reason and by shift, already counted. A kaizen on a line is measured before and after on the same data, and when an improvement works, it\'s rolled out to similar lines as the new standard instead of living in one team\'s spreadsheet.',
+                answer: 'It gives it better numbers. The morning tier meeting opens on yesterday\'s downtime by reason and by shift, already counted. A kaizen on a line is measured before and after on the same data, and when an improvement works, it\'s rolled out to similar lines as the new standard instead of living in one team\'s spreadsheet. [Dashboards](/platform/dashboard/) give teams a shared view of those measures.',
             },
             {
                 question: 'What happens when a plant needs help?',
-                answer: 'Your engineers can see and fix any plant\'s setup from one place, and push the fix out without anyone travelling to site. Behind them is a FlowFuse team that knows your setup, and a platform backed by a 99.9% uptime commitment.',
+                answer: 'Your engineers can see and fix any plant\'s setup from one place, and push the fix out without anyone travelling to site using [remote device management](/use-cases/remote-device-management/). Behind them is a FlowFuse team that knows your setup, and a platform backed by a 99.9% uptime commitment.',
             },
             {
                 question: 'Will our IT and security teams approve FlowFuse?',
-                answer: 'It\'s built for their checklist. FlowFuse runs in the cloud or on your own servers, including fully offline sites, with single sign-on, role-based access, audit trails and [SOC 2 Type I and Type II certification](/platform/security/#certifications). Plants connect out securely, without opening your network to inbound traffic.',
+                answer: 'It\'s built for their checklist. FlowFuse runs in the cloud or [on your own servers, including fully offline sites](/docs/install/introduction/), with [single sign-on](/docs/admin/sso/), [role-based access](/docs/user/role-based-access-control/), [audit trails](/docs/user/logs/#audit-log) and [SOC 2 Type I and Type II certification](/platform/security/#certifications). Plants connect out securely, without opening your network to inbound traffic. See the [security overview](/platform/security/).',
             },
             {
                 question: 'How is FlowFuse priced?',
-                answer: 'It scales with your deployment, with volume pricing as you add plants, so you start with what one plant needs and grow from there. Tell us which plants you want to begin with and we\'ll scope it with you.',
+                answer: 'It scales with your deployment, with volume pricing as you add plants, so you start with what one plant needs and grow from there. See [FlowFuse pricing](/pricing/), or tell us which plants you want to begin with and we\'ll scope it with you.',
             },
         ],
     },
