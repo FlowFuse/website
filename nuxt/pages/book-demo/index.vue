@@ -1,24 +1,42 @@
 <script setup lang="ts">
 const highlights = [
-    '<span class="font-semibold">5→1</span> systems unified into one platform, like <a href="/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge">Walter Tools</a>',
-    '<span class="font-semibold">3-5X</span> faster deployment, like <a href="/customer-stories/node-red-building-management">Power Workplace</a>',
-    '<span class="font-semibold">40+</span> industrial protocols supported out of box',
+    '<span class="font-semibold">Your goals:</span> where your operation is headed, and what\'s in the way',
+    '<span class="font-semibold">Your operation:</span> the equipment, systems and sites involved, and how your team will maintain it',
+    '<span class="font-semibold">Your first solution:</span> where to start, what it\'s worth, and how to reuse it across every plant',
+]
+
+const approach = [
+    {
+        heading: 'Define',
+        description: 'Start with what matters most. We learn how your operation runs, agree the problem worth solving first, and define what success looks like.',
+        icon: 'i-lucide-target',
+    },
+    {
+        heading: 'Design',
+        description: 'Plan for every plant, not just the first. We design the architecture, data models and governance to carry to the next line and the next site.',
+        icon: 'i-lucide-pencil-ruler',
+    },
+    {
+        heading: 'Deliver',
+        description: 'Build it together, then hand it over. Our engineers work alongside yours, put it into production, and leave your team owning it. It\'s open source, so it\'s still yours in ten years.',
+        icon: 'i-lucide-rocket',
+    },
 ]
 
 useSeoMeta({
-    title: 'Walk through your setup with our team',
-    description: 'Book a demo to understand how FlowFuse helps you professionalize your Node-RED deployment.',
+    title: 'Talk to FlowFuse about your operation',
+    description: 'Tell us where your operation is headed. We\'ll shape a first solution with you and show how it scales across your plants.',
     ogImage: '/images/og-book-demo.jpeg',
 })
 </script>
 
 <template>
   <MqlContactPage
-    eyebrow="Get a personalized product tour"
-    title="Standardize your production workflows"
-    subtitle="Starting with one conversation"
+    eyebrow="Talk to our team"
+    title="Start with your operation, not our product"
+    subtitle="Shape a solution that scales to every plant"
     subtitle-icon="i-lucide-arrow-right"
-    description="See how you'd build, deploy, and govern operational applications across your own plants and production lines."
+    description="Tell us where your operation is headed and what's in the way. We'll work out where the data lives, what the solution looks like, and how it scales."
     :highlights="highlights"
   >
     <HubSpotMeetings />
@@ -26,8 +44,8 @@ useSeoMeta({
 
   <div class="container m-auto max-w-5xl px-6 pb-20">
     <h2 class="mb-10 text-center">
-      Built for <span class="text-indigo-600">OT and IT, together</span>
+      From the first conversation <span class="text-indigo-600">to every plant</span>
     </h2>
-    <DifferentiatorCards />
+    <DifferentiatorCards :items="approach" />
   </div>
 </template>
