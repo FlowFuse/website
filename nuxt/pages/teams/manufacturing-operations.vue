@@ -34,7 +34,7 @@ const PAGE = {
                     'Figures available as each shift runs, not at month-end',
                 ],
                 image: { src: '/images/teams/manufacturing-all-plants-dashboard.webp', alt: 'FlowFuse Dashboard comparing five plants: company OEE, availability, performance and quality gauges, a seven-day OEE trend per plant against the 85% target, and a table of each plant\'s figures', fit: 'cover' },
-                link: { to: '/use-cases/production-monitoring/', label: 'See production monitoring' },
+                link: { to: '/use-cases/production-line-monitoring/', label: 'See production line monitoring' },
             },
             {
                 eyebrow: 'What Your Systems Don\'t Cover',
