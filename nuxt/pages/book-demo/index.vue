@@ -1,31 +1,31 @@
 <script setup lang="ts">
 const highlights = [
-    '<span class="font-semibold">The problem:</span> what it costs you today, and what fixed looks like',
-    '<span class="font-semibold">The solution:</span> the PLCs, systems and sites involved, and how to maintain it',
-    '<span class="font-semibold">The build:</span> what to build first, and how to reuse it across every plant',
+    '<span class="font-semibold">Your goals:</span> where your operation is headed, and what\'s in the way',
+    '<span class="font-semibold">Your operation:</span> the equipment, systems and sites involved, and how your team will maintain it',
+    '<span class="font-semibold">Your first solution:</span> where to start, what it\'s worth, and how to reuse it across every plant',
 ]
 
 const approach = [
     {
         heading: 'Define',
-        description: 'Pick one problem worth solving. We agree on the operational problem, the data behind it, and what success looks like on your floor.',
+        description: 'Start with what matters most. We learn how your operation runs, agree the problem worth solving first, and define what success looks like.',
         icon: 'i-lucide-target',
     },
     {
         heading: 'Design',
-        description: 'Build it once, built to reuse. The architecture, data models and governance are made to carry to the next line and the next plant.',
+        description: 'Plan for every plant, not just the first. We design the architecture, data models and governance to carry to the next line and the next site.',
         icon: 'i-lucide-pencil-ruler',
     },
     {
         heading: 'Deliver',
-        description: 'Ship it, then hand it over. Our engineers build alongside your team, put it into production, and leave you owning it. It\'s open source, so it\'s still yours in ten years.',
+        description: 'Build it together, then hand it over. Our engineers work alongside yours, put it into production, and leave your team owning it. It\'s open source, so it\'s still yours in ten years.',
         icon: 'i-lucide-rocket',
     },
 ]
 
 useSeoMeta({
     title: 'Talk to FlowFuse about your operation',
-    description: 'Bring one operational problem. We\'ll scope the fix and show how FlowFuse, our AI and our engineers deliver it across your plants.',
+    description: 'Tell us where your operation is headed. We\'ll shape a first solution with you and show how it scales across your plants.',
     ogImage: '/images/og-book-demo.jpeg',
 })
 </script>
@@ -33,10 +33,10 @@ useSeoMeta({
 <template>
   <MqlContactPage
     eyebrow="Talk to our team"
-    title="Bring us one problem from your floor"
-    subtitle="Leave with a plan to fix it"
+    title="Start with your operation, not our product"
+    subtitle="Shape a solution that scales to every plant"
     subtitle-icon="i-lucide-arrow-right"
-    description="Tell us what's slowing your plants down. We'll work out where the data lives, what the fix looks like, and how it scales."
+    description="Tell us where your operation is headed and what's in the way. We'll work out where the data lives, what the solution looks like, and how it scales."
     :highlights="highlights"
   >
     <HubSpotMeetings />
@@ -44,7 +44,7 @@ useSeoMeta({
 
   <div class="container m-auto max-w-5xl px-6 pb-20">
     <h2 class="mb-10 text-center">
-      We don't hand you a report. We <span class="text-indigo-600">build it with you.</span>
+      From the first conversation <span class="text-indigo-600">to every plant</span>
     </h2>
     <DifferentiatorCards :items="approach" />
   </div>
