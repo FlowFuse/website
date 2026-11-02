@@ -34,7 +34,7 @@ The purpose of the FlowFuse’s Sales Compensation Plan (“Plan”) is to estab
 
 **"Incentive Compensation"** means the compensation, in excess of Base Salary, earned upon meeting specific individual and/or Company performance goals. Incentive Compensation for a particular Salesperson is set forth in Exhibit A.
 
-**"Incremental ARR"** means the incremental Annual Recurring Revenue generated from a sale. For new business, this is the total Annual Recurring Revenue (ARR) of the first contract. For upsells and renewals, this refers onlly to the increase in the annual recurring revenue relative to the prior contract.
+**"Incremental ARR"** means the increase in Annual Recurring Revenue from a sale, measured per contract year against the ARR in effect immediately before the Agreement's start date. For new business, this is the ARR of each contract year. For upsells and renewals, this is each contract year's ARR minus the ARR of the prior contract. Exhibit A section 10 determines how many contract years are commissionable.
 
 **“Recoverable Draw”** is a Draw Payment offset by Earned Commissions.  Once Commissions are calculated, there will be a true up to recover the Draw Payment and pay the balance due (if any). If the value of the Draw Payment exceeds the Earned Commissions, the Company reserves the right to continue to deduct the value of Draw Payments from future Commissions until the full Draw Payment amount is recovered. This is referred to as a negative carry forward balance.
 
@@ -235,7 +235,7 @@ If a multi-year contract includes non-recurring components, only the ARR portion
 | :---: | :---: | ----- |
 | All FlowFuse License Transactions |  |  |
 
-Notes: Commissions will be paid on multi-year deals at the base rate according to the multi-year guidelines in sections 10 & 11\.
+Notes: Commissions will be paid on multi-year deals at the base rate according to the multi-year guidelines in section 10\.
 
 ### 9. Quota
 
@@ -246,45 +246,26 @@ Q2	\$  [Quota Q2]
 Q3	\$  [Quota Q3]
 Q4	\$  [Quota Q4]
 
-### 10. Multi-year Bookings
+### 10. Multi-year Bookings Paid in Advance
 
-For multi-year bookings that are paid in advance (i.e NET30 or agreed on payment terms for the full multi-year term), the Salesperson will receive 100% commission credit for the calculated value of the booking.
+For multi-year bookings paid in advance (NET30, or agreed payment terms covering the full term), the Salesperson receives 100% commission credit on the Incremental ARR of each of the first three contract years. Contract years four and beyond are not commissionable. Quota credit is based on the first contract year only.
 
-### 11. Multi-year Bookings with Committed Annual Payments
+Multi-year Agreements must be paid in advance for the full term. Multi-year bookings with annual payments are not offered.
 
-When a multi-year order is booked which includes non-cancellable annual payment terms, the Sales Representative will be paid a Booking Advance and quota and commission credit on the schedule noted below:
+Applies to Agreements Booked on or after October 1, 2026.
 
-**Value Calculation of Orders with Annual Payments**
-
-| Year  | Percentage of Order Commissionable | Quota Credit |
-| :---- | :---: | :---: |
-| First year’s committed payment | 100% | 100% |
-| Year 2 value, with committed payment | 50% | 0% |
-| Year 3 value, with committed payment | 25% | 0% |
-
-**Multi-Year Payment Example:**  
-A \$300,000 booking with annual payments due equally at signing at year 1, 2 and 3 from signing would be paid commissions and receive quota credit as if it is \$175,000 deal: 
-
-| 3 Year Booking for \$300,000 Paid Annually in 3 Equal Payments | Calculation | Commission and Quota Amount |
-| :---- | :---- | :---- |
-| At Signing, Year 1: | \$100,000 X 100% \= | \$100,000 |
-| Year 2: | \$100,000 X 50%   \= | \$50,000 |
-| Year 3: | \$100,000 X 25%   \= | \$25,000 |
-| Total Commissionable Value  |  | \$175,000 |
-| Total Quota Credit |  | \$175,000 |
-
-### 12. Accelerated Commissions
+### 11. Accelerated Commissions
 
 Once Salesperson has achieved 100% of annual quota assignment, the Salesperson will be eligible for commissions at the accelerated rate as identified in the table outlined in section 8 for the remainder of the year.
 
-### 13. Annual Quota Bonus
+### 12. Annual Quota Bonus
 
 Once Salesperson has sold in excess of the assigned annual quota per section 9, Salesperson will be eligible for a bonus of \$10,000.
 
-### 14. 200% Attainment Bonus
+### 13. 200% Attainment Bonus
 
 Salesperson will receive 2 percentage points additional commission on all bookings for the year retroactive to \[Month 2 of the quota\] upon achieving 200% of the assigned annual quota.
 
-### 15.  Modifications
+### 14.  Modifications
 
 Except as set forth above, the CEO must approve any changes to the terms of this Exhibit in writing.  By his or her signature below, the Employee recognizes and agrees that no compensation shall be considered earned until and unless all terms and conditions have been met and all calculations have been completed.
