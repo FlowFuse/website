@@ -16,6 +16,10 @@ Kubernetes allows Pods to request both a minium and a limit value for both CPU a
 
 This allows Kubernetes to over commit resources on nodes while ensuring all Instances can always get the minimums and allow them to temperarily ramp up to the limits.
 
+More details about Kubernetes Stack configuration can be found [here](https://flowfuse.com/docs/install/kubernetes/stacks).
+
+
+
 [Kubernetes Stack Properties Panel](/changelog/2026/11/k8s-stack-properties.png)
 
 *Kubernetes Stack Properties Panel*
