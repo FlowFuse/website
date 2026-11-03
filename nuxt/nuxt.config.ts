@@ -537,6 +537,11 @@ export default defineNuxtConfig({
 
                     '/about/',
 
+                    '/teams/manufacturing-operations/',
+                    '/teams/automation-controls/',
+                    '/teams/maintenance-reliability/',
+                    '/teams/digital-transformation/',
+
                     ...collectSlugRoutes(join(__dirname, 'content/landing'), '/landing'),
 
                     // /use-cases/ plus the two entries served by pages/use-cases/[slug].vue.

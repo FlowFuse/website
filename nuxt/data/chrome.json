@@ -132,9 +132,36 @@
                 "label": "Solutions",
                 "columns": [
                     {
-                        "title": "By Industry",
+                        "title": "By Team",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-[5] xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
+                        "links": [
+                            {
+                                "label": "Manufacturing Operations",
+                                "href": "/teams/manufacturing-operations/",
+                                "icon": "factory"
+                            },
+                            {
+                                "label": "Automation & Controls",
+                                "href": "/teams/automation-controls/",
+                                "icon": "cog"
+                            },
+                            {
+                                "label": "Maintenance & Reliability",
+                                "href": "/teams/maintenance-reliability/",
+                                "icon": "wrench-screwdriver"
+                            },
+                            {
+                                "label": "Digital Transformation",
+                                "href": "/teams/digital-transformation/",
+                                "icon": "rocket-launch"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "By Industry",
+                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
+                        "listClasses": "row-span-[5] md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -165,8 +192,8 @@
                     },
                     {
                         "title": "By Use Case",
-                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-4 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
+                        "listClasses": "row-span-4 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
                                 "label": "Production Line Monitoring",
@@ -181,23 +208,6 @@
                             {
                                 "label": "See all use cases",
                                 "href": "/use-cases/",
-                                "icon": "arrow-right"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "By Integration",
-                        "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-[9] md:col-start-3 md:row-start-2 xl:col-start-4",
-                        "links": [
-                            {
-                                "label": "OPC UA",
-                                "href": "/integrations/opcua/",
-                                "icon": "server-stack"
-                            },
-                            {
-                                "label": "See all integrations",
-                                "href": "/integrations/",
                                 "icon": "arrow-right"
                             }
                         ]
@@ -532,15 +542,23 @@
                         ]
                     },
                     {
-                        "title": "By Integration",
+                        "title": "By Team",
                         "links": [
                             {
-                                "label": "OPC UA",
-                                "href": "/integrations/opcua/"
+                                "label": "Manufacturing Operations",
+                                "href": "/teams/manufacturing-operations/"
                             },
                             {
-                                "label": "See all integrations",
-                                "href": "/integrations/"
+                                "label": "Automation & Controls",
+                                "href": "/teams/automation-controls/"
+                            },
+                            {
+                                "label": "Maintenance & Reliability",
+                                "href": "/teams/maintenance-reliability/"
+                            },
+                            {
+                                "label": "Digital Transformation",
+                                "href": "/teams/digital-transformation/"
                             }
                         ]
                     }
