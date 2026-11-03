@@ -151,9 +151,8 @@ watch(filmIndex, () => nextTick(quietFilms))
         headshot="/images/team/headshot-rhythm.png"
         story="/customer-stories/aperia-technologies-plc-replacement/"
         :video="{
-          webm: FILMS[0]!.webm,
-          mp4: FILMS[0]!.mp4,
-          poster: FILMS[0]!.poster,
+          youtube: 'cCsgLfs2MbI',
+          poster: `${ASSETS}/packaging-youtube.webp`,
           label: `Film: ${FILMS[0]!.story}`,
         }"
     />
