@@ -30,7 +30,7 @@ Your line PLCs, your edge gateways and your cloud dashboards rarely live on one 
 
 ## Find the right target fast
 
-Targets in the editor are grouped by application, and you can filter the list to one application. Remote instances appear right alongside hosted ones.
+Targets in the editor are grouped by application, and you can filter the list to one application. Remote instances assigned to an application appear right alongside hosted ones.
 
 ## Get it
 
