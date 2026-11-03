@@ -1,7 +1,7 @@
 ---
 title: Project Nodes now reach every instance in your application
 description: Send to and call remote instances, keep broadcasts inside one application, and find targets grouped by application.
-date: 2026-11-19 12:00:00
+date: 2026-11-03 12:00:00
 release: "3.3"
 authors: ["stephen-mclaughlin"]
 tags:
@@ -10,11 +10,12 @@ issues:
   - https://github.com/FlowFuse/nr-project-nodes/issues/30
   - https://github.com/FlowFuse/nr-project-nodes/pull/296
   - https://github.com/FlowFuse/flowfuse/pull/9079
+  - https://github.com/FlowFuse/flowfuse/pull/9083
+  - https://github.com/FlowFuse/nr-project-nodes/pull/299
 ---
 
 Your line PLCs, your edge gateways and your cloud dashboards rarely live on one Node-RED instance. Now the Project Nodes link all of them, wherever they run.
 
-<!-- VIDEO PLACEHOLDER: replace the src (and the aria-label/caption if needed) once the video is rendered -->
 <video autoplay loop muted playsinline aria-label="Remote instances on a factory floor and a hosted instance in the cloud exchanging messages with the Project Nodes" style="border: 2px solid #E5E7EB;" width="1920" height="1080" preload="none"><source src="/changelog/2026/11/images/application-aware-project-nodes.webm" type="video/webm" /></video>
 
 *Linking hosted and remote instances in one application.*
