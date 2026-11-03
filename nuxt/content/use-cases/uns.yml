@@ -4,4 +4,4 @@
 # one place rather than a hand-maintained list.
 slug: uns
 title: "FlowFuse for UNS"
-problem: "Adopt a Unified Namespace without ripping out existing infrastructure. FlowFuse connects producers and consumers through MQTT with low-code flows."
+problem: "Build your Unified Namespace with one toolkit: connect every machine, contextualize raw tags, run a built-in MQTT broker, and manage the namespace across every plant."
