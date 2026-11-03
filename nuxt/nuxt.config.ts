@@ -641,6 +641,7 @@ export default defineNuxtConfig({
 
     studio: {
         route: '/_studio',
+        development: { sync: false },
         repository: {
             provider: 'github',
             owner: 'FlowFuse',

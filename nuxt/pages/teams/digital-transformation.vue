@@ -33,7 +33,7 @@ const PAGE = {
                     'Consistent naming and structure, so data from every plant compares',
                     'Plant data delivered to your data lake, cloud or AI tools',
                 ],
-                image: { src: '/images/use-cases/mes/flow-editor.webp', alt: 'Node-RED flow publishing PLC data to structured plant, area and line topics', fit: 'cover' },
+                image: { src: '/images/use-cases/mes/flow-editor.webp', alt: 'Node-RED flow publishing PLC data to structured plant, area and line topics', fit: 'cover', video: '/images/teams/clips/flow-editor.mp4' },
                 link: { to: '/integrations/', label: 'Browse all integrations' },
             },
             {
@@ -45,7 +45,7 @@ const PAGE = {
                     'The same KPIs calculated the same way at every site',
                     'An AI assistant that drafts flows and dashboards for engineers to review',
                 ],
-                image: { src: '/images/use-cases/scada/oee-dashboard.webp', alt: 'OEE dashboard showing gauges, downtime and production data for a line', fit: 'cover' },
+                image: { src: '/images/teams/manufacturing-all-plants-dashboard.webp', alt: 'FlowFuse Dashboard comparing five plants: company OEE, availability, performance and quality gauges, a seven-day OEE trend per plant against the 85% target, and a table of each plant\'s figures', fit: 'cover', video: '/images/teams/clips/manufacturing-all-plants-dashboard.mp4' },
                 link: { to: '/blueprints/', label: 'Browse Blueprints' },
             },
             {
@@ -57,7 +57,7 @@ const PAGE = {
                     'Deployment by site, region or line',
                     'Version history and rollback for every application',
                 ],
-                image: { src: '/images/teams/pipelines-plants.webp', alt: 'FlowFuse DevOps pipeline deploying from development to production', fit: 'cover' },
+                image: { src: '/images/teams/pipelines-plants.webp', alt: 'FlowFuse DevOps pipeline pushing Development to Staging, then Staging to Production, where every device in the America group moves to the new snapshot', fit: 'cover', video: '/images/teams/clips/pipelines-plants.mp4' },
                 link: { to: '/use-cases/remote-device-management/', label: 'See rollouts across every plant' },
             },
             {
@@ -69,7 +69,7 @@ const PAGE = {
                     'An audit log of every change',
                     'Remote updates, without site visits',
                 ],
-                image: { src: '/images/teams/digital-transformation-audit-log.webp', alt: 'FlowFuse team Audit Log listing recent events on an OT gateway: flow deployments, Node-RED settings changes, nodes installed and removed, and remote access enabled', fit: 'cover' },
+                image: { src: '/images/teams/digital-transformation-audit-log.webp', alt: 'FlowFuse team Audit Log listing pipeline stages deployed to Staging and the America device group, a flow deployed through the pipeline and a snapshot set as target, each with its time, where it ran and the user who made it, then scrolling through the device restarts those changes caused', fit: 'cover', video: '/images/teams/clips/digital-transformation-audit-log.mp4' },
                 link: { to: '/platform/security/', label: 'See platform security' },
             },
         ],
