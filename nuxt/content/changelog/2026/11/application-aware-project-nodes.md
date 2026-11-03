@@ -38,4 +38,4 @@ This is available to Enterprise teams on FlowFuse Cloud now and in FlowFuse v3.3
 
 Read more in the [Project Nodes documentation](/docs/user/projectnodes/#applications).
 
-- _Needs `@flowfuse/nr-project-nodes` v0.8.0 or later on every instance that uses the new options, remote instances included. Update it in the Palette Manager._
+_Needs `@flowfuse/nr-project-nodes` v0.8.0 or later on every instance that uses the new options, remote instances included. Update it in the Palette Manager._
