@@ -222,7 +222,7 @@
                     {
                         "title": "Learn",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-5 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Blog",
@@ -233,6 +233,11 @@
                                 "label": "Webinars",
                                 "href": "/webinars/",
                                 "icon": "screen"
+                            },
+                            {
+                                "label": "Free Templates",
+                                "href": "/blog/templates/",
+                                "icon": "clipboard-document-check"
                             },
                             {
                                 "label": "Publications",
@@ -578,6 +583,10 @@
                             {
                                 "label": "Webinars",
                                 "href": "/webinars/"
+                            },
+                            {
+                                "label": "Free Templates",
+                                "href": "/blog/templates/"
                             },
                             {
                                 "label": "Publications",
