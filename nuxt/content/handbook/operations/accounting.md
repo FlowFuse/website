@@ -201,9 +201,9 @@ Find the previous quarter's worksheet to see what we submitted to the State. You
 First off, find the filing from last quarter and duplicate the workbook.
 
 **Stripe Data**
-- Log into the Stripe Dashboard → Reports (left sidebar).
-- Look under the Balance report category and select "Itemized balance change from activity" — this is the report that matches the exact column structure Zeni used before (balance_transaction_id, gross, fee, net, reporting_category, etc.).
-- Set the date range to your desired range.
+- Log into the Stripe Dashboard → Reporting (left sidebar). Click "Reports"
+- Click "Balance Summary" and scroll down to find "Balance change from activity" — this is the report that matches the exact column structure Zeni used before (balance_transaction_id, gross, fee, net, reporting_category, etc.).
+- Set the date range to your desired range and export the file.
 - In the workbook that you duplicated, add the new data from Stripe in a new sheet.
 - Filter the sheet for the "customer_address_country" for "US"
 - Add column "State & non- US" to the right of customer_address_state. See how it got done in the previous filing for inspiration.
