@@ -464,6 +464,14 @@ export default defineContentConfig({
                 // "Operational use cases" rather than "By architecture" on the listing.
                 values: z.array(z.string()).optional(),
                 architecture: z.string().optional(),
+                // Optional demo clip beside the hero text; without it the hero stays centered.
+                heroMedia: z.object({
+                    video: z.string(),
+                    poster: z.string().optional(),
+                    alt: z.string(),
+                    width: z.number().optional(),
+                    height: z.number().optional(),
+                }).optional(),
                 customerPain: z.object({
                     heading: z.string(),
                     intro: z.array(z.string()).optional(),
@@ -505,6 +513,15 @@ export default defineContentConfig({
                     intro: z.string().optional(),
                     steps: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
                     note: z.string().optional(),
+                }).optional(),
+                // Solution pages only: how FlowFuse builds the first system with the
+                // customer and hands it over. Rendered last, ahead of the closing CTA.
+                engagement: z.object({
+                    heading: z.string(),
+                    intro: z.string().optional(),
+                    steps: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
+                    keepHeading: z.string().optional(),
+                    keep: z.array(z.object({ title: z.string(), detail: z.string() })).optional(),
                 }).optional(),
                 closingCta: z.object({
                     heading: z.string().optional(),
