@@ -3,6 +3,8 @@
 // result and quote, linked to the full story. Only quote stories already on the site.
 // With a video, the film sits on the left and the quote stacks on the right, so the page
 // can be shown to a customer live: the film never autoplays, and plays with its sound on.
+// A film hosted on YouTube passes `youtube` (the video id) and a `poster`; the player only
+// loads when clicked.
 defineProps<{
     logo: string
     brand: string
@@ -12,7 +14,7 @@ defineProps<{
     role: string
     headshot: string
     story: string
-    video?: { webm: string, mp4: string, poster: string, label: string }
+    video?: { webm?: string, mp4?: string, youtube?: string, poster: string, label: string }
 }>()
 </script>
 
@@ -22,7 +24,11 @@ defineProps<{
       <div class="relative">
         <div class="absolute -top-2 -left-2 w-full h-full rounded-lg bg-gradient-to-tl from-indigo-400 via-indigo-300 to-indigo-100" aria-hidden="true" />
         <div class="relative rounded-lg border border-indigo-300 overflow-hidden bg-indigo-950 shadow-lg">
+          <div v-if="video.youtube" class="aspect-video">
+            <LiteYoutube :videoid="video.youtube" :title="video.label" :poster="video.poster" class="!h-full !max-w-none" />
+          </div>
           <video
+              v-else
               class="block w-full h-auto"
               :poster="video.poster"
               width="1280"

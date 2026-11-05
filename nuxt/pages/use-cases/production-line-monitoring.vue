@@ -26,34 +26,31 @@ const WHY = [
     { icon: 'i-lucide-factory', title: 'Every plant after the first is faster', description: 'The first solution becomes the template for the next line and the next site.', destination: 'signUp' as const, linkText: 'How we build with you' },
 ]
 
-// The solutions under this track, one tab each: the film and what it solves.
+// The solutions under this track, one tab each: the film (on YouTube) and what it solves.
 const FILMS = [
     {
         key: 'packaging',
         name: 'Downtime Tracking',
         story: 'Finding the hidden losses on a packaging line',
         description: 'Short stops too brief for the downtime log add up to real lost output. FlowFuse counts every stop on every machine, shows the biggest loss to the team on shift, and measures each fix from a baseline.',
-        webm: `${ASSETS}/packaging.webm`,
-        mp4: `${ASSETS}/packaging.mp4`,
-        poster: `${ASSETS}/packaging-poster.jpg`,
+        youtube: 'cCsgLfs2MbI',
+        poster: `${ASSETS}/packaging-youtube.webp`,
     },
     {
         key: 'machining',
         name: 'Machine Monitoring',
         story: 'Finding the capacity a machining cell is losing',
         description: 'Idle time is not the same as lost capacity. FlowFuse separates time lost to how machines are run from time with no work, ties it to the orders at risk, and shows it shift by shift.',
-        webm: `${ASSETS}/machining.webm`,
-        mp4: `${ASSETS}/machining.mp4`,
-        poster: `${ASSETS}/machining-poster.jpg`,
+        youtube: 'DIc4kejVDZQ',
+        poster: `${ASSETS}/machining-youtube.webp`,
     },
     {
         key: 'maintenance',
         name: 'Predictive Maintenance',
         story: 'Finding the real cause before a pump fails',
         description: 'Vibration alarms show the state, not the cause. FlowFuse ranks every asset by its real wear, teaches the alarm to catch it early, and sends maintenance the evidence before the line stops.',
-        webm: `${ASSETS}/maintenance.webm`,
-        mp4: `${ASSETS}/maintenance.mp4`,
-        poster: `${ASSETS}/maintenance-poster.jpg`,
+        youtube: '53befQfEq9g',
+        poster: `${ASSETS}/maintenance-youtube.webp`,
     },
 ]
 
@@ -109,25 +106,17 @@ useSchemaOrg([
         name: f.story,
         description: f.description,
         thumbnailUrl: `https://flowfuse.com${f.poster}`,
-        contentUrl: `https://flowfuse.com${f.mp4}`,
+        embedUrl: `https://www.youtube.com/embed/${f.youtube}`,
         uploadDate: '2026-10-27',
     })),
 ])
 
 const filmIndex = ref(0)
 const film = computed(() => FILMS[filmIndex.value]!)
-
-// This page is shown to customers live, so its films start at 30% volume rather than full.
-// Set after mount (and after each tab switch, which renders a new player) because the players
-// are server-rendered and can load before an event handler would attach.
-const page = ref<HTMLElement>()
-const quietFilms = () => page.value?.querySelectorAll('video').forEach((v) => { v.volume = 0.3 })
-onMounted(quietFilms)
-watch(filmIndex, () => nextTick(quietFilms))
 </script>
 
 <template>
-  <div ref="page" class="w-full">
+  <div class="w-full">
     <SolutionPageHero
         eyebrow="Production Performance"
         eyebrow-icon="arrow-trending-up"
@@ -151,8 +140,7 @@ watch(filmIndex, () => nextTick(quietFilms))
         headshot="/images/team/headshot-rhythm.png"
         story="/customer-stories/aperia-technologies-plc-replacement/"
         :video="{
-          webm: FILMS[0]!.webm,
-          mp4: FILMS[0]!.mp4,
+          youtube: FILMS[0]!.youtube,
           poster: FILMS[0]!.poster,
           label: `Film: ${FILMS[0]!.story}`,
         }"
@@ -210,20 +198,9 @@ watch(filmIndex, () => nextTick(quietFilms))
           <div class="relative">
             <div class="absolute -top-2 -left-2 w-full h-full rounded-lg bg-gradient-to-tl from-indigo-400 via-indigo-300 to-indigo-100" aria-hidden="true" />
             <div class="relative rounded-lg border border-indigo-300 overflow-hidden bg-indigo-950 shadow-lg">
-              <video
-                  :key="film.key"
-                  class="block w-full h-auto"
-                  :poster="film.poster"
-                  width="1280"
-                  height="720"
-                  controls
-                  playsinline
-                  preload="metadata"
-                  :aria-label="`Film: ${film.story}`"
-              >
-                <source :src="film.webm" type="video/webm">
-                <source :src="film.mp4" type="video/mp4">
-              </video>
+              <div class="aspect-video">
+                <LiteYoutube :key="film.key" :videoid="film.youtube" :title="`Film: ${film.story}`" :poster="film.poster" class="!h-full !max-w-none" />
+              </div>
             </div>
           </div>
           <div class="max-lg:text-center">
