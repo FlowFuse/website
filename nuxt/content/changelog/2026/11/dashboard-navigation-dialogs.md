@@ -1,6 +1,6 @@
 ---
-title: Navigation and Dialogs Without Extra Wiring
-description: Buttons can now go to a page or open a dialog on their own, and ui-control can show, hide, enable and disable things from actions set up in the node.
+title: Dashboard Navigation and Dialogs Without Extra Wiring
+description: In FlowFuse Dashboard, buttons can now go to a page or open a dialog on their own, and ui-control can show, hide, enable and disable things from actions set up in the node.
 date: 2026-11-05 12:00:00
 release: "3.3"
 authors: ["stephen-mclaughlin", "noley-holland"]
