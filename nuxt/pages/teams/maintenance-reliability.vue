@@ -33,7 +33,7 @@ const PAGE = {
                     'Readings from sensors you add where equipment has none',
                     'No rip-and-replace, no new controllers',
                 ],
-                image: { src: '/images/use-cases/mes/flow-editor.webp', alt: 'Node-RED flow reading S7, Allen-Bradley, OPC UA and Modbus sources', fit: 'cover' },
+                image: { src: '/images/use-cases/mes/flow-editor.webp', alt: 'Node-RED flow reading S7, Allen-Bradley, OPC UA and Modbus sources', fit: 'cover', video: '/images/teams/clips/flow-editor.mp4' },
                 link: { to: '/integrations/', label: 'Browse all integrations' },
             },
             {
@@ -45,7 +45,7 @@ const PAGE = {
                     'Warnings routed to the right team at each site',
                     'One tuning change applied everywhere',
                 ],
-                image: { src: '/images/teams/maintenance-condition-dashboard.webp', alt: 'FlowFuse Dashboard showing vibration, bearing temperature, motor current and oil pressure gauges, a 24-hour vibration trend crossing its warning limit, and a table of assets with active warnings', fit: 'cover' },
+                image: { src: '/images/teams/maintenance-condition-dashboard.webp', alt: 'FlowFuse Dashboard showing vibration, bearing temperature, motor current and oil pressure gauges, a live vibration trend climbing through its warning limit, and the pump being added to the table of assets with active warnings', fit: 'cover', video: '/images/teams/clips/maintenance-condition-dashboard.mp4' },
                 link: { to: '/platform/dashboard/', label: 'See FlowFuse Dashboard' },
             },
             {
@@ -57,7 +57,7 @@ const PAGE = {
                     'No double entry for technicians',
                     'Every failure and its cause logged for root-cause review',
                 ],
-                image: { src: '/images/teams/maintenance-warning-to-work-order.webp', alt: 'Node-RED flow that subscribes to a pump vibration tag over OPC UA, publishes a warning over MQTT when it passes its limit, then builds a work order, creates it in the CMMS and logs the failure and cause', fit: 'cover' },
+                image: { src: '/images/teams/maintenance-warning-to-work-order.webp', alt: 'Node-RED flow that subscribes to a pump vibration tag over OPC UA, publishes a warning over MQTT when it passes its limit, then builds a work order, creates it in the CMMS and logs the failure and cause', fit: 'cover', video: '/images/teams/clips/maintenance-warning-to-work-order.mp4' },
                 link: { to: '/use-cases/it-ot-middleware/', label: 'See IT/OT integration' },
             },
             {
@@ -69,7 +69,7 @@ const PAGE = {
                     'Updates pushed remotely, without a site visit',
                     'Each site\'s limits kept in its own settings',
                 ],
-                image: { src: '/images/teams/maintenance-device-groups.webp', alt: 'FlowFuse Groups view for a manufacturing team showing Europe, America and Japan device groups, each with its target snapshot and device count', fit: 'cover' },
+                image: { src: '/images/teams/pipelines-plants.webp', alt: 'FlowFuse DevOps pipeline pushing Development to Staging, then Staging to Production, where every device in the America group moves to the new snapshot', fit: 'cover', video: '/images/teams/clips/pipelines-plants.mp4' },
                 link: { to: '/use-cases/remote-device-management/', label: 'Manage every site remotely' },
             },
         ],

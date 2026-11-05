@@ -33,7 +33,7 @@ const PAGE = {
                     'Works alongside Ignition, Kepware and FactoryTalk',
                     'No changes to PLC logic',
                 ],
-                image: { src: '/images/use-cases/mes/flow-editor.webp', alt: 'Node-RED flow reading S7, Allen-Bradley, OPC UA and Modbus sources', fit: 'cover' },
+                image: { src: '/images/use-cases/mes/flow-editor.webp', alt: 'Node-RED flow reading S7, Allen-Bradley, OPC UA and Modbus sources', fit: 'cover', video: '/images/teams/clips/flow-editor.mp4' },
                 link: { to: '/integrations/', label: 'Browse all integrations' },
             },
             {
@@ -45,7 +45,7 @@ const PAGE = {
                     'An AI assistant that drafts flows and dashboards',
                     'Results written back to SCADA, MES or ERP',
                 ],
-                image: { src: '/images/use-cases/scada/oee-dashboard.webp', alt: 'OEE dashboard with availability, performance and quality gauges, downtime and production data for a line', fit: 'cover' },
+                image: { src: '/images/teams/manufacturing-all-plants-dashboard.webp', alt: 'FlowFuse Dashboard comparing five plants: company OEE, availability, performance and quality gauges, a seven-day OEE trend per plant against the 85% target, and a table of each plant\'s figures', fit: 'cover', video: '/images/teams/clips/manufacturing-all-plants-dashboard.mp4' },
                 link: { to: '/use-cases/scada/', label: 'Explore FlowFuse for SCADA' },
             },
             {
@@ -57,7 +57,7 @@ const PAGE = {
                     'Site settings held in environment variables',
                     'Automatic snapshots on deploy (applications only, not PLC programs)',
                 ],
-                image: { src: '/images/teams/pipelines-plants.webp', alt: 'FlowFuse DevOps pipelines from development to production', fit: 'cover' },
+                image: { src: '/images/teams/pipelines-plants.webp', alt: 'FlowFuse DevOps pipeline pushing Development to Staging, then Staging to Production, where every device in the America group moves to the new snapshot', fit: 'cover', video: '/images/teams/clips/pipelines-plants.mp4' },
                 link: { to: '/platform/device-agent/', label: 'See staged rollout and rollback' },
             },
             {
@@ -69,7 +69,7 @@ const PAGE = {
                     'Open any device\'s editor from the browser, without a site visit',
                     'Flows keep running if a device loses its connection',
                 ],
-                image: { src: '/images/use-cases/mes/platform-home.webp', alt: 'FlowFuse home screen with hosted and remote instances', fit: 'cover' },
+                image: { src: '/images/use-cases/mes/platform-home.webp', alt: 'FlowFuse home screen with hosted and remote instances', fit: 'cover', video: '/images/teams/clips/platform-home.mp4' },
                 link: { to: '/use-cases/remote-device-management/', label: 'Manage every site remotely' },
             },
         ],

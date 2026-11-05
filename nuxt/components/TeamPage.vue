@@ -10,7 +10,7 @@ const props = defineProps<{
         metaDescription: string
         hero: { eyebrow: string, title: Heading, subtext: string, imagePlaceholder: string, image?: { src: string, alt: string } }
         outcomes: { heading: Heading, intro: string, items: Array<{ label: string, title: string, detail: string, icon: string }> }
-        solutions: { heading: Heading, intro: string, cards: Array<{ eyebrow: string, title: string, description: string, points: string[], image: { src: string, alt: string, fit: 'cover' | 'contain' }, link: { to: string, label: string } }> }
+        solutions: { heading: Heading, intro: string, cards: Array<{ eyebrow: string, title: string, description: string, points: string[], image: { src: string, alt: string, fit: 'cover' | 'contain', video?: string, youtube?: string }, link: { to: string, label: string } }> }
         support: { heading: Heading, intro: string, items: Array<{ title: string, description: string, icon: string }> }
         proof: { heading: Heading, intro: string, items: Array<{ number: string, text: string }> }
         faq: { heading: Heading, items: Array<{ question: string, answer: string }> }
@@ -24,6 +24,23 @@ const FRAME_VARIANTS = [
 ]
 
 const url = `https://flowfuse.com/teams/${props.page.slug}/`
+
+const clips = ref<HTMLVideoElement[]>([])
+let clipObserver: IntersectionObserver | undefined
+
+onMounted(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    clipObserver = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            const video = entry.target as HTMLVideoElement
+            if (entry.isIntersecting) video.play().catch(() => {})
+            else video.pause()
+        }
+    }, { threshold: 0.25 })
+    clips.value.forEach(video => clipObserver!.observe(video))
+})
+
+onBeforeUnmount(() => clipObserver?.disconnect())
 
 useSeoMeta({
     title: props.page.metaTitle,
@@ -120,13 +137,37 @@ useSchemaOrg([
                     class="absolute inset-0 rounded-lg border-2 overflow-hidden bg-white"
                     :class="FRAME_VARIANTS[i % 2].border"
                 >
-                  <img
-                      :src="card.image.src"
-                      :alt="card.image.alt"
-                      loading="lazy"
-                      class="w-full h-full"
-                      :class="card.image.fit === 'contain' ? 'object-contain p-3' : 'object-cover object-top'"
-                  >
+                  <LiteYoutube
+                      v-if="card.image.youtube"
+                      :videoid="card.image.youtube"
+                      :title="card.image.alt"
+                      :poster="card.image.src"
+                      class="!h-full !max-w-none"
+                  />
+                  <template v-else>
+                    <video
+                        v-if="card.image.video"
+                        ref="clips"
+                        :src="card.image.video"
+                        :poster="card.image.src"
+                        :aria-label="card.image.alt"
+                        muted
+                        loop
+                        playsinline
+                        preload="none"
+                        class="motion-reduce:hidden w-full h-full object-cover object-top"
+                    />
+                    <img
+                        :src="card.image.src"
+                        :alt="card.image.alt"
+                        loading="lazy"
+                        class="w-full h-full"
+                        :class="[
+                            card.image.fit === 'contain' ? 'object-contain p-3' : 'object-cover object-top',
+                            { 'motion-safe:hidden': card.image.video },
+                        ]"
+                    >
+                  </template>
                 </div>
               </div>
             </div>
