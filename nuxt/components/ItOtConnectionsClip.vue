@@ -4,7 +4,7 @@
 //      one by one, with data moving both ways on every link (results toward the business in
 //      slate, decisions toward the line in indigo).
 //   2. Systems: each pair of protocol boxes slides together and becomes the system that speaks
-//      them (S7 + EtherNet/IP become PLCs, OData + SOAP become ERP, ...), still connected both ways.
+//      them (S7 + EtherNet/IP become PLCs, OData + RFC become ERP, ...), still connected both ways.
 // Then the picture fades and plays again. Drawn as one SVG on the frame's 430x289 shape so it
 // scales with the frame. With reduced motion on, the systems picture shows, still.
 
@@ -12,8 +12,8 @@ type Side = 'ot' | 'it'
 
 // Protocols are listed in pairs; pair j merges into SYSTEMS[side][j]. Keep the pairings true.
 const PROTOCOLS: Record<Side, string[]> = {
-    ot: ['Siemens S7', 'EtherNet/IP', 'OPC UA', 'Modbus', 'OPC HDA', 'PI Web API', 'MQTT', 'IO-Link'],
-    it: ['OData', 'SOAP', 'REST', 'SQL', 'GraphQL', 'Webhooks', 'Kafka', 'AMQP'],
+    ot: ['Siemens S7', 'EtherNet/IP', 'OPC UA', 'Modbus', 'OPC HDA', 'Sparkplug B', 'MQTT', 'IO-Link'],
+    it: ['OData', 'RFC', 'HTTPS', 'WebSocket', 'SOAP', 'SFTP', 'Kafka', 'AMQP'],
 }
 const SYSTEMS: Record<Side, string[]> = {
     ot: ['PLCs', 'SCADA', 'Historians', 'Sensors'],
@@ -50,14 +50,14 @@ function path(side: Side, y: number) {
 }
 
 // Merge choreography, in ms from the moment the merge starts.
-const SLIDE_MS = 600 // the two boxes of a pair slide onto each other
-const PAIR_STAGGER_MS = 220 // pairs merge one after another, top to bottom
+const SLIDE_MS = 780 // the two boxes of a pair slide onto each other
+const PAIR_STAGGER_MS = 290 // pairs merge one after another, top to bottom
 const REVEAL_MS = SLIDE_MS - 100 // the system label appears as the boxes meet
-const LINK_MS = SLIDE_MS + 150 // then its link draws to the hub
+const LINK_MS = SLIDE_MS + 200 // then its link draws to the hub
 
-const STEP_MS = 480
-const BEFORE_MERGE_MS = 1300
-const MERGED_MS = 4200
+const STEP_MS = 625
+const BEFORE_MERGE_MS = 1700
+const MERGED_MS = 5400
 const FADE_MS = 450
 
 const shown = ref(0) // how many protocols are connected
@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
       :viewBox="`0 0 ${W} ${H}`"
       class="w-full h-full block bg-gray-50"
       role="img"
-      aria-label="Plant protocols (Siemens S7, EtherNet/IP, OPC UA, Modbus, OPC HDA, PI Web API, MQTT, IO-Link) and IT protocols (OData, SOAP, REST, SQL, GraphQL, Webhooks, Kafka, AMQP) connect to FlowFuse, then merge in pairs into the systems that speak them: PLCs, SCADA, historians and sensors on the plant side, ERP, MES, CMMS and cloud on the business side, with decisions flowing to the line and results flowing to the business"
+      aria-label="Plant protocols (Siemens S7, EtherNet/IP, OPC UA, Modbus, OPC HDA, Sparkplug B, MQTT, IO-Link) and IT protocols (OData, RFC, HTTPS, WebSocket, SOAP, SFTP, Kafka, AMQP) connect to FlowFuse, then merge in pairs into the systems that speak them: PLCs, SCADA, historians and sensors on the plant side, ERP, MES, CMMS and cloud on the business side, with decisions flowing to the line and results flowing to the business"
   >
     <defs>
       <pattern :id="`${uid}-grid`" width="14" height="14" patternUnits="userSpaceOnUse">
@@ -167,12 +167,12 @@ onBeforeUnmount(() => {
           />
           <template v-if="isShown(o.side, o.i)">
             <circle r="2.2" class="fill-slate-500">
-              <animateMotion :dur="`${2 + (o.i % 3) * 0.3}s`" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+              <animateMotion :dur="`${2.6 + (o.i % 3) * 0.4}s`" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
                 <mpath :href="`#${uid}-p-${o.side}-${o.i}`" />
               </animateMotion>
             </circle>
             <circle r="2.2" class="fill-indigo-600">
-              <animateMotion :dur="`${2 + (o.i % 3) * 0.3}s`" :begin="`${0.9 + (o.i % 2) * 0.4}s`" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+              <animateMotion :dur="`${2.6 + (o.i % 3) * 0.4}s`" :begin="`${0.9 + (o.i % 2) * 0.4}s`" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
                 <mpath :href="`#${uid}-p-${o.side}-${o.i}`" />
               </animateMotion>
             </circle>
@@ -197,12 +197,12 @@ onBeforeUnmount(() => {
             <!-- SMIL timing runs from page load, so the dots stay hidden until their link has drawn -->
             <g class="sys-dots" :style="{ animationDelay: `${pairDelay(j) + LINK_MS + 500}ms` }">
               <circle r="2.4" class="fill-slate-500">
-                <animateMotion :dur="`${2.2 + (j % 2) * 0.3}s`" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
+                <animateMotion :dur="`${2.9 + (j % 2) * 0.4}s`" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear">
                   <mpath :href="`#${uid}-s-${side}-${j}`" />
                 </animateMotion>
               </circle>
               <circle r="2.4" class="fill-indigo-600">
-                <animateMotion :dur="`${2.2 + (j % 2) * 0.3}s`" :begin="`${1.1 + (j % 2) * 0.4}s`" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
+                <animateMotion :dur="`${2.9 + (j % 2) * 0.4}s`" :begin="`${1.1 + (j % 2) * 0.4}s`" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
                   <mpath :href="`#${uid}-s-${side}-${j}`" />
                 </animateMotion>
               </circle>
@@ -245,7 +245,6 @@ onBeforeUnmount(() => {
 
       <!-- Caption under the hub -->
       <g class="fill-gray-500 text-[9px]" text-anchor="middle">
-        <text :x="W / 2" :y="HUB.y + HUB.h + 20" class="beat-protocols">{{ shown }} {{ shown === 1 ? 'protocol' : 'protocols' }} connected</text>
         <text :x="W / 2" :y="HUB.y + HUB.h + 20" class="beat-systems">Every system, one platform</text>
       </g>
 
@@ -281,7 +280,7 @@ onBeforeUnmount(() => {
 }
 .is-merged .beat-systems {
     opacity: 1;
-    transition-delay: 700ms;
+    transition-delay: 900ms;
 }
 
 .clip-link {
@@ -293,7 +292,7 @@ onBeforeUnmount(() => {
     stroke-dashoffset: 0;
 }
 .clip-link.draw {
-    animation: draw 500ms ease-out both;
+    animation: draw 650ms ease-out both;
 }
 @keyframes draw {
     to { stroke-dashoffset: 0; }
@@ -324,7 +323,7 @@ onBeforeUnmount(() => {
 /* Slide onto the partner (transform), then hand over to the system box (opacity) */
 .clip-chip.is-merging {
     opacity: 0;
-    transition: transform 600ms cubic-bezier(0.6, 0, 0.3, 1), opacity 250ms ease;
+    transition: transform 780ms cubic-bezier(0.6, 0, 0.3, 1), opacity 320ms ease;
 }
 
 .sys-box {
@@ -332,7 +331,7 @@ onBeforeUnmount(() => {
     transform-box: fill-box;
     transform-origin: center;
     transform: scale(0.9);
-    transition: opacity 250ms ease, transform 400ms cubic-bezier(0.2, 0.9, 0.3, 1.3);
+    transition: opacity 320ms ease, transform 520ms cubic-bezier(0.2, 0.9, 0.3, 1.3);
 }
 .sys-box.is-on {
     opacity: 1;
