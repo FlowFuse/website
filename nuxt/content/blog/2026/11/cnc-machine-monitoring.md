@@ -3,7 +3,7 @@ title: 'CNC Machine Monitoring: Get More Output Before More Machines'
 authors:
   - sumit-shinde
 cta:
-  type: sign-up
+  type: demo
   title: Recover Lost Spindle Hours Before You Buy Another Machine
   description: Deploy a production monitoring application on your bottleneck cell, connected to your own machines and measured against a downtime target we set together. Your team runs it, and FlowFuse scales it to every cell and site.
 date: '2026-11-05'
