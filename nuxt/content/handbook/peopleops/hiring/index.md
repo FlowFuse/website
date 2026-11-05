@@ -230,6 +230,21 @@ The onboarding buddy’s responsibilities are:
 - Check in periodically to ensure the team member is settling in and answer basic questions.
 - Direct the team member to the right documentation or people when needed.
 
+This goes on the hiring page, https://flowfuse.com/handbook/peopleops/hiring/ (on GitHub: `nuxt/content/handbook/peopleops/hiring/index.md`). Paste it right after the "Onboarding Buddy" section and before "Offboarding":
+
+### Work Anniversaries
+
+We celebrate every team member's work anniversary in the Slack. A scheduled Claude automation runs every weekday at 2:00 PM UTC. It reads the [New Hires Anniversary - Claude Slack Automation](https://docs.google.com/spreadsheets/d/1A8Omiy3UtURsOGBmSwWAZ067Ak_bos5LCHLLLncAbVA/edit) sheet and posts a message mentioning anyone whose anniversary is that day. On Fridays, it also covers Saturday, and on Mondays it also covers Sunday.
+
+The sheet has three columns: Legal Full Name, Worker Start Date (as shown in Deel), and Member ID (the Slack member ID: open their Slack profile, click three dots, then Copy member ID). Only the first tab is read.
+
+- **Onboarding:** once the new team member has joined Slack, add their row to the sheet. This is part of the admin's onboarding task list
+- **Offboarding:** remove their row on or before their last day, so their anniversary is no longer posted. This is part of the admin's offboarding task list
+
+**Anniversary gifts:** When the Slack message appears, BizOps orders the gift from the storefront. This is the same vendor as our onboarding kits; Gifts are given at these milestones only:
+
+Before ordering, confirm the recipient's shipping address from Deel. All team members are eligible, including direct hires, Deel/EOR employees, and long-term contractors. 
+
 ## Offboarding
 
 The purpose of the offboarding section in the handbook is to provide a clear and structured framework for employees at FlowFuse to follow during the offboarding process. The offboarding process is managed by the People Ops Manager in close collaboration with the CEO, Reporting Managers, and Deel for Payroll at FlowFuse.
