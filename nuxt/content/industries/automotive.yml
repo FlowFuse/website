@@ -63,7 +63,7 @@ applications:
       linkText: "Read how to build a downtime logger"
       linkHref: "/blog/2026/07/build-downtime-logger/"
       image: "/images/industries/clips/downtime-overview.webp"
-      imageAlt: "Live downtime dashboard: an in-progress weld cell stoppage counts up, then a conveyor material jam starts and appears on the timeline and in the events table"
+      imageAlt: "FlowFuse Dashboard for Body Shop Line 3 downtime: a conveyor material jam opens a new stop that counts up and is acknowledged by maintenance, and the line state strip turns red for that station"
       clip: "/images/industries/clips/downtime-overview.mp4"
       variant: "indigo"
 compliance:
