@@ -61,7 +61,7 @@ Deployment works through [snapshots](/blog/2024/09/node-red-version-control-with
 
 **Where it breaks:**
 
-You own the hardware, and that ownership is non-trivial. Device failures, resource contention, OS-level conflicts, and network interface issues become your responsibility. FlowFuse substantially reduces the operational burden through remote deployment, remote terminal access (Team and Enterprise tiers), centralized health monitoring, and automatic snapshot recovery, but it doesn't eliminate the reality of managing physical machines.
+You own the hardware, and that ownership is non-trivial. Device failures, resource contention, OS-level conflicts, and network interface issues become your responsibility. FlowFuse substantially reduces the operational burden through remote deployment, remote terminal access, centralized health monitoring, and automatic snapshot recovery, but it doesn't eliminate the reality of managing physical machines.
 
 The cost structure also shifts. Cloud instances carry a predictable per-instance fee with no capital outlay. Edge deployments require upfront hardware investment, ongoing maintenance, and staff time to manage device lifecycle. At low device counts, this is manageable. At scale, across dozens of sites and hundreds of devices, it becomes a meaningful operational line item that needs to be planned for, not discovered.
 
