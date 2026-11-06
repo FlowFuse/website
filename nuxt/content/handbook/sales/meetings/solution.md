@@ -57,15 +57,16 @@ that FlowFuse is an app platform rather than a way to run Node-RED.
 2. **The apps that will solve it.** The app or apps are scoped against FlowFuse's [app delivery methods](/docs/application-guide/app-delivery-methods/) and app patterns (above), so the PoV showcases FlowFuse as an app-building platform — not a test of Node-RED. One use case may take one app or several.
 3. **Well-defined success criteria.** Each thing the PoV must prove is written as a concrete pass signal both sides agree on, so "success" is settled before testing starts.
 4. **An agreed plan.** The tasks, owners and dates are agreed *with the customer*.
-5. **A ready environment.** The customer is set up to test in a [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/) — a Cloud trial or a self-hosted install. Its form follows the architecture decision above: where FlowFuse lives.
+5. **Confidentiality settled.** Whether an NDA is required is asked and answered here — either one is signed, or the customer has been asked and said it isn't needed, with that answer captured somewhere findable (a recorded call, an email, or the workbook's **Overview** tab). What matters is that the question was asked, not the form the answer took. The PoV depends on it: the use-case, incumbent and gap-analysis conversations that make a PoV a proof of *value* rather than a feature test cannot happen while either side has to stay vague. The AE owns the request via the [NDA process](/handbook/sales/legal/#non-disclosure-agreement-nda); signing is the customer's internal process and can take weeks, so raise it as soon as the PoV is on the table.
+6. **A ready environment.** The customer is set up to test in a [FlowFuse Trial Environment](/handbook/sales/flowfuse-trial-environment/) — a Cloud trial or a self-hosted install. Its form follows the architecture decision above: where FlowFuse lives. For a **self-hosted** install, "installed" is not the same as "ready": the environment must also be able to reach the hosts FlowFuse needs — above all to **install and update nodes and packages** — or the PoV stalls the first time someone adds a node. On locked-down OT or air-gapped networks, get the required outbound access filed *and proven* here, in Solution, not during the PoV. Hand the customer's network team the [Networking requirements](/docs/install/networking-requirements/) list, and validate a real package install against it — some packages pull native builds from arbitrary hosts that can't be fully enumerated, so a working allowlist is the thing to confirm, not assume.
 
-These five outputs are the same five gates as the
+These six outputs are the same six gates as the
 [Pre-PoV checklist](/handbook/sales/meetings/pov/#pre-pov-checklist): Solution's job
 is to produce all of them.
 
 ## Handoff into the PoV
 
-When those five are in place the deal is ready to move from Solution (stage 3)
+When those six are in place the deal is ready to move from Solution (stage 3)
 into **Validate** (stage 4) — the [Proof of Value](/handbook/sales/meetings/pov/).
 The output of this stage becomes the opening tabs of the PoV workbook — the use
 case, the apps, the scoping criteria and the plan — running in the
