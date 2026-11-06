@@ -85,7 +85,7 @@ Before you start building, get these ready:
 - **A webcam node and an OCR node.** The Tool Check page uses `@sumit_shinde_84/node-red-dashboard-2-ui-webcam` to capture the label and `@sumit_shinde_84/node-red-contrib-simple-ocr` to read it. Install both from the Palette Manager.
 - **A device with a camera** for the Tool Check page, since the scanner works through the browser.
 
-> **Note:** [FlowFuse Tables](/docs/user/ff-tables/) is included in every FlowFuse product (Edge, Hub and Fleet), on FlowFuse Cloud and on self-hosted installations with an Enterprise license running on Kubernetes. If you'd rather use your own database, use any external database instead, such as Postgres or MySQL, with the standard database nodes from the palette. The SQL here is standard PostgreSQL, and the widgets only care about the shape of the rows, not where they came from.
+> **Note:** [FlowFuse Tables](/docs/user/ff-tables/) is included in every FlowFuse product (Edge, Hub and Fleet), on FlowFuse Cloud and on self-hosted installations with a FlowFuse license running on Kubernetes. If you'd rather use your own database, use any external database instead, such as Postgres or MySQL, with the standard database nodes from the palette. The SQL here is standard PostgreSQL, and the widgets only care about the shape of the rows, not where they came from.
 
 ## How the Application Works
 

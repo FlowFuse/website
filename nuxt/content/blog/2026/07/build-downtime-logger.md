@@ -89,7 +89,7 @@ Once you see these five pieces working together, the rest of the tutorial is jus
 
 Everything in this application reads from and writes to a single table, so that's where we start.
 
-> Note: [FlowFuse Tables](/docs/user/ff-tables/) is included in every FlowFuse product (Edge, Hub and Fleet), on FlowFuse Cloud and on self-hosted installations with an Enterprise license running on Kubernetes. If you'd rather use your own database, you can follow along using any external database instead, Postgres, MySQL, or whatever you already have, with the standard database nodes from the palette. The SQL and flow logic in this tutorial will work the same either way.
+> Note: [FlowFuse Tables](/docs/user/ff-tables/) is included in every FlowFuse product (Edge, Hub and Fleet), on FlowFuse Cloud and on self-hosted installations with a FlowFuse license running on Kubernetes. If you'd rather use your own database, you can follow along using any external database instead, Postgres, MySQL, or whatever you already have, with the standard database nodes from the palette. The SQL and flow logic in this tutorial will work the same either way.
 
 1. Add a Query node to your canvas. This lets you run SQL queries directly against your FlowFuse managed database.
 
