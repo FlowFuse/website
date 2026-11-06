@@ -20,14 +20,14 @@ test('a missing section is reported by name', () => {
 })
 
 test('a git-dated section with no lastmod at all is reported', () => {
-    const urls = complete().map(u => u.includes('/handbook/') ? url('/handbook/page/') : u)
+    const urls = complete().map(u => u.includes('/changelog/') ? url('/changelog/page/') : u)
     const problems = sitemapProblems(sitemap(urls))
     assert.equal(problems.length, 1)
-    assert.match(problems[0], /\/handbook\/ URLs has a lastmod/)
+    assert.match(problems[0], /\/changelog\/ URLs has a lastmod/)
 })
 
 test('a git-dated section with some dates is fine', () => {
-    const urls = [...complete(), url('/handbook/undated/')]
+    const urls = [...complete(), url('/changelog/undated/')]
     assert.deepEqual(sitemapProblems(sitemap(urls)), [])
 })
 
