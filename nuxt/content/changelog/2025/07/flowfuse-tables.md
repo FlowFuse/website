@@ -10,6 +10,9 @@ issues:
   - "https://github.com/FlowFuse/flowfuse/issues/4911"
 ---
 
+::product-update-note
+::
+
 As part of the FlowFuse v2.20.0 release we are adding an option for a Team level hosted relational database.
 
 ![Screenshot of the FlowFuse Tables onboarding wizard](./images/create-database.png){data-zoomable}

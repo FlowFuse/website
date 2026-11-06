@@ -8,6 +8,9 @@ tags:
   - changelog
 ---
 
+::product-update-note
+::
+
 We released support for [pushing snapshots to a Git repository](/changelog/2025/04/git-integration/) as part of the DevOps Pipelines feature last month. As promised, we've now added the ability to pull snapshots back from the repository.
 
 This unlocks a number of powerful workflows with the Pipelines.

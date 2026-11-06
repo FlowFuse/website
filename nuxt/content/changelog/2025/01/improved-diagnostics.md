@@ -10,6 +10,9 @@ tags:
     - changelog
 ---
 
+::product-update-note
+::
+
 It happens! Sometimes things go wrong, but don't worry, we have you covered.
 
 For Team and Enterprise customers on FlowFuse Cloud, we've improved the emails we send notifying you that something has gone wrong with one of your instances.

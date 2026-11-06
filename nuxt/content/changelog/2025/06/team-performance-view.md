@@ -8,6 +8,9 @@ tags:
   - changelog
 ---
 
+::product-update-note
+::
+
 We've added a new view for every Hosted Instance in FlowFuse, Performance.
 
 ![Screenshot of the Performance view for a Hosted Instance](./images/instance-performance.png){data-zoomable}

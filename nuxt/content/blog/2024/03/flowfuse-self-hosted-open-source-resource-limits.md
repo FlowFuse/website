@@ -16,6 +16,9 @@ tier. This change does not affect FlowFuse Cloud users in any way.
 
 <!--more-->
 
+::product-update-note
+::
+
 ## New Open Source Tier Resource Limits
 
 The new limit for the number of Node-RED runtimes on the Open Source tier is 5.

@@ -14,6 +14,9 @@ At the end of the year there’s always an opportunity to review how the year we
 
 <!--more-->
 
+::product-update-note
+::
+
 ### FlowFuse branding
 
 First off; in 2023 we were known as FlowForge. But, due to some trademark challenges, we went through a [rebranding phase](/blog/2023/08/flowforge-is-now-flowfuse/) over the summer. It's been a bit of an adjustment, and you might still catch us – and even some of our customers – occasionally slipping up with the old name. But overall, we're really pleased with how smoothly everything's transitioned.
