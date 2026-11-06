@@ -97,7 +97,7 @@ Streaming messages follow sequence conventions with:
 
 ## Requirements
 
-FlowFuse Tables requires **Enterprise tier** and must be enabled for your team.
+FlowFuse Tables is included in every FlowFuse product (Edge, Hub and Fleet) and must be enabled for your team.
 
 ## Example Flow
 

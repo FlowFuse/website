@@ -9,6 +9,9 @@ tags:
     - changelog
 ---
 
+::product-update-note
+::
+
 Instances can now make use of the new Timeline feature, providing a concise, chronological view of key activities within your Node-RED instance.
 
 The Timeline tracks important events such as pipeline stage deployments, snapshot restorations, flow deployments, snapshot creations, and updates to instance settings, offering clear insight into when and what changes have been made.

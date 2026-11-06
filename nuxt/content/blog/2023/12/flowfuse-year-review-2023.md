@@ -14,6 +14,9 @@ At the end of the year there’s always an opportunity to review how the year we
 
 <!--more-->
 
+::product-update-note
+::
+
 ### FlowFuse branding
 
 First off; in 2023 we were known as FlowForge. But, due to some trademark challenges, we went through a [rebranding phase](/blog/2023/08/flowforge-is-now-flowfuse/) over the summer. It's been a bit of an adjustment, and you might still catch us – and even some of our customers – occasionally slipping up with the old name. But overall, we're really pleased with how smoothly everything's transitioned.
@@ -41,7 +44,7 @@ We’re always happy to [support you](/contact-us/) in any of these or other ind
 
 A driving force behind the horizontal nature of adoption of the FlowFuse development platform has been the introduction of product tiers earlier this year. We’ve introduced Team and Enterprise tiers.
 
-A user can be promoted to the [Team or Enterprise tier](/changelog/2023/09/introduction-enterprise-tier/) when they’re ready to further professionalize their adoption and have access to enhanced compliance, faster time to value for their developers, among other features.
+A user can be promoted to the Team or Enterprise tier when they’re ready to further professionalize their adoption and have access to enhanced compliance, faster time to value for their developers, among other features.
 
 ### What 2024 will bring
 

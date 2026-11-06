@@ -241,7 +241,7 @@ After transforming the Modbus data into a human-readable format, the next step i
 
 **Step 3.1: Preparing Your MQTT Broker**
 
-As mentioned in the prerequisites, FlowFuse provides an integrated MQTT broker service for Team and Enterprise users. The broker uses username and password authentication, you create clients on the platform with credentials that control topic access.
+As mentioned in the prerequisites, FlowFuse provides an integrated MQTT broker service on the Edge and Fleet products. The broker uses username and password authentication, you create clients on the platform with credentials that control topic access.
 
 **To create MQTT clients:**
 
