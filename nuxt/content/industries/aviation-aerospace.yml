@@ -64,8 +64,9 @@ applications:
       description: "When a non-conformance occurs, the affected part, serial, work order, and process data should already be connected. FlowFuse routes quality events automatically, initiates holds with full part-serial context, and enforces disposition approval gates before release or scrap."
       linkText: "Read how to build a defect and quality monitoring dashboard"
       linkHref: "/blog/2026/07/defect-and-quality-monitoring/"
-      image: "/images/industries/automotive/4-quality-traceability.png"
-      imageAlt: "Screenshot of a quality traceability application"
+      image: "/images/industries/clips/quality-traceability.webp"
+      imageAlt: "Traceability timeline for one VIN: a vision inspection fails, the part is reworked and re-inspected, then passes leak test and final inspection while quality events and inspections update"
+      clip: "/images/industries/clips/quality-traceability.mp4"
       variant: "indigo"
 compliance:
   heading: "Aerospace <span class='text-indigo-600'>Compliance &amp; Standards</span>"

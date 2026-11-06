@@ -67,8 +67,9 @@ applications:
       description: "Build [poka-yoke](/blog/2025/09/poka-yoke-mistake-proofing/) workflows that check the scanned part, active job, and required process steps against approved instructions. Show operators what to do next, flag mismatches, and route exceptions before an incorrect setup or missed check moves downstream."
       linkText: "Build a digital work instructions dashboard"
       linkHref: "/blog/2026/07/digital-work-instruction/"
-      image: "/images/industries/industrial-machinery/error-proof-work.png"
-      imageAlt: "Screenshot of a guided work instruction app showing a step-by-step fixture alignment checklist with a reference photo"
+      image: "/images/industries/clips/work-instructions.webp"
+      imageAlt: "Operator working through step-by-step instructions to install a front wheel, ticking each checklist item before Next Step unlocks"
+      clip: "/images/industries/clips/work-instructions.mp4"
       variant: "indigo"
 compliance:
   description: "Supplying regulated customers means your own process gets audited too. FlowFuse helps you keep the data an auditor asks for queryable in one place. These are workflows FlowFuse supports, not a guarantee of regulatory compliance — certification and audit outcomes depend on your own program."
