@@ -222,4 +222,15 @@ export const redirects: Record<string, NitroRouteRules> = {
     // is the surviving page, with component-manufacturing content folded into its
     // Applications section.
     '/industries/aerospace-components/': { redirect: { to: '/industries/aviation-aerospace/', statusCode: 301 } },
+
+    // Posts about tiers and prices that no longer exist (Starter, Pro, Team, the free tier,
+    // the old Enterprise package), retired once Edge, Hub and Fleet replaced them.
+    '/blog/2025/08/annual_billing/': { redirect: { to: '/pricing/', statusCode: 301 } },
+    '/blog/2026/03/enterprise-packaging-updates/': { redirect: { to: '/pricing/', statusCode: 301 } },
+    '/changelog/2025/07/team-to-pro-plan-rename/': { redirect: { to: '/pricing/', statusCode: 301 } },
+    '/changelog/2025/03/free-tier/': { redirect: { to: '/pricing/', statusCode: 301 } },
+    '/changelog/2025/01/free-tier-onboarding/': { redirect: { to: '/pricing/', statusCode: 301 } },
+    '/changelog/2024/02/device-pricing-change/': { redirect: { to: '/pricing/', statusCode: 301 } },
+    '/changelog/2024/04/pricing-change/': { redirect: { to: '/pricing/', statusCode: 301 } },
+    '/changelog/2023/09/introduction-enterprise-tier/': { redirect: { to: '/pricing/', statusCode: 301 } },
 }

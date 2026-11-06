@@ -41,7 +41,7 @@ We’re always happy to [support you](/contact-us/) in any of these or other ind
 
 A driving force behind the horizontal nature of adoption of the FlowFuse development platform has been the introduction of product tiers earlier this year. We’ve introduced Team and Enterprise tiers.
 
-A user can be promoted to the [Team or Enterprise tier](/changelog/2023/09/introduction-enterprise-tier/) when they’re ready to further professionalize their adoption and have access to enhanced compliance, faster time to value for their developers, among other features.
+A user can be promoted to the Team or Enterprise tier when they’re ready to further professionalize their adoption and have access to enhanced compliance, faster time to value for their developers, among other features.
 
 ### What 2024 will bring
 
