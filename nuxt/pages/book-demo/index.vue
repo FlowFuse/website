@@ -1,31 +1,31 @@
 <script setup lang="ts">
 const highlights = [
-    '<span class="font-semibold">Your goals:</span> where your operation is headed, and what\'s in the way',
-    '<span class="font-semibold">Your operation:</span> the equipment, systems and sites involved, and how your team will maintain it',
-    '<span class="font-semibold">Your first solution:</span> where to start, what it\'s worth, and how to reuse it across every plant',
+    '<span class="font-semibold">What it\'s worth:</span> a first view of the output, cost or risk at stake',
+    '<span class="font-semibold">What you already run:</span> how a solution works with your equipment and systems, not instead of them',
+    '<span class="font-semibold">How it scales:</span> where to start, and how one solution reaches every plant',
 ]
 
 const approach = [
     {
-        heading: 'Define',
-        description: 'Start with what matters most. We learn how your operation runs, agree the problem worth solving first, and define what success looks like.',
+        heading: 'Start with the problem',
+        description: 'We learn how your operation runs, agree one costly problem worth solving, and set the result we\'ll measure from day one.',
         icon: 'i-lucide-target',
     },
     {
-        heading: 'Design',
-        description: 'Plan for every plant, not just the first. We design the architecture, data models and governance to carry to the next line and the next site.',
-        icon: 'i-lucide-pencil-ruler',
+        heading: 'Build together',
+        description: 'Not build or buy, but both. Our forward-deployed engineers and your team build the first solution on the FlowFuse platform, working with the systems you already run.',
+        icon: 'i-lucide-handshake',
     },
     {
-        heading: 'Deliver',
-        description: 'Build it together, then hand it over. Our engineers work alongside yours, put it into production, and leave your team owning it. It\'s open source, so it\'s still yours in ten years.',
+        heading: 'Scale what works',
+        description: 'Prove it at one plant, then roll the approved version to every site. Your team owns it, and every change is approved, recorded and reversible.',
         icon: 'i-lucide-rocket',
     },
 ]
 
 useSeoMeta({
     title: 'Talk to FlowFuse about your operation',
-    description: 'Tell us where your operation is headed. We\'ll shape a first solution with you and show how it scales across your plants.',
+    description: 'Bring us the problem that costs your plants the most. We\'ll help you see what solving it is worth, and how one solution can reach every site.',
     ogImage: '/images/og-book-demo.jpeg',
 })
 </script>
@@ -33,10 +33,10 @@ useSeoMeta({
 <template>
   <MqlContactPage
     eyebrow="Talk to our team"
-    title="Start with your operation, not our product"
-    subtitle="Shape a solution that scales to every plant"
+    title="Bring us the problem that costs your plants the most"
+    subtitle="See what it's worth to solve, and how to solve it once for every plant"
     subtitle-icon="i-lucide-arrow-right"
-    description="Tell us where your operation is headed and what's in the way. We'll work out where the data lives, what the solution looks like, and how it scales."
+    description="This is a conversation about your operation, not a product demo. We'll learn how your plants run, help you size what the problem costs, and tell you honestly whether FlowFuse is the right way to solve it."
     :highlights="highlights"
   >
     <HubSpotMeetings />
