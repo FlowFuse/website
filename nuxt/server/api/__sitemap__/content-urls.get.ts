@@ -4,7 +4,7 @@ import { queryCollection } from '@nuxt/content/server'
 import { getGitLastmod } from '../../../lib/git-lastmod.mjs'
 import { contentPagePath } from '../../../lib/content-page-path.mjs'
 
-// docs/handbook/changelog/blog/ebooks/whitepapers deliberately carry no `sitemap` schema
+// docs/changelog/blog/ebooks/whitepapers deliberately carry no `sitemap` schema
 // field in content.config.ts - @nuxtjs/sitemap's @nuxt/content integration re-splices
 // each collection's onUrl/filter as raw source text into a generated file with no closure
 // over this module's imports or helpers, which git-based lastmod needs. This route does
@@ -58,7 +58,7 @@ const CONTENT_SOURCES: ContentSource[] = [
         // real destination.
         filter: entry => entry.layout !== 'redirect',
     },
-    { collection: 'handbook', fileRoot: 'nuxt/content' },
+    // The handbook is deliberately absent: it is noindex (routeRules in nuxt.config.ts).
     {
         collection: 'blueprints',
         // Already git-derived once, at sync time, against the blueprint-library repo this

@@ -9,12 +9,13 @@
 // /sitemap.xml in the sitemap:prerender:done hook and fails the build on any problem.
 
 // Top-level path of each section content-urls.get.ts publishes. The blueprints are left
-// out: a build without access to the private library has none, by design.
-export const CONTENT_SECTIONS = ['docs', 'handbook', 'changelog', 'blog', 'customer-stories', 'ebooks', 'whitepaper']
+// out: a build without access to the private library has none, by design. The handbook
+// is left out because it is noindex and deliberately absent from the sitemap.
+export const CONTENT_SECTIONS = ['docs', 'changelog', 'blog', 'customer-stories', 'ebooks', 'whitepaper']
 
 // Sections whose lastmod comes only from git history, so a failed walk empties them all.
 // The blog is not listed: posts with `lastUpdated` keep a date either way.
-export const GIT_DATED_SECTIONS = ['handbook', 'changelog', 'customer-stories', 'ebooks', 'whitepaper']
+export const GIT_DATED_SECTIONS = ['changelog', 'customer-stories', 'ebooks', 'whitepaper']
 
 /**
  * @param {string} xml the rendered /sitemap.xml
