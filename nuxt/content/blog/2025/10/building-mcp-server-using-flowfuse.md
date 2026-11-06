@@ -43,7 +43,7 @@ Before you begin, ensure you have the following:
 
 * **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed**. This will add the [MCP nodes](/docs/flowfuse-nodes/mcp/) to your Node palette in your instance editor.
 
-> **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are only available on the Enterprise tier.
+> **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are available in every FlowFuse product: Edge, Hub and Fleet.
 
 ### Configuring the MCP Server
 
@@ -250,7 +250,7 @@ In this example, the flow includes a tool that triggers a POST request to the ma
 
 Below is the flow that includes the Resource we created to monitor production lines and the Tool that sends a POST request.
 
-*Note: The flow uses the FlowFuse Query node and [FlowFuse tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which are only available on the Enterprise tier. If you do not have Enterprise, you can use other data sources instead, such as HTTP Request, OPC UA, or other database nodes.*
+*Note: The flow uses the FlowFuse Query node and [FlowFuse tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which are included in every FlowFuse product. If you'd rather not use FlowFuse Tables, you can use other data sources instead, such as HTTP Request, OPC UA, or other database nodes.*
 
 ::render-flow{:height="300"}
 ```json

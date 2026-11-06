@@ -179,7 +179,7 @@ Your parsed data now flows through as individual records, ready to be published 
 
 ### Step 4: Publishing to MQTT
 
-Now we'll publish the parsed CSV data to an MQTT broker for real-time distribution. If you have FlowFuse Team or Enterprise tier, [enable the MQTT broker within your FlowFuse team](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-3%3A-set-up-mqtt-with-flowfuse).
+Now we'll publish the parsed CSV data to an MQTT broker for real-time distribution. If you're on FlowFuse Edge or Fleet, [enable the MQTT broker within your FlowFuse team](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-3%3A-set-up-mqtt-with-flowfuse).
 
 #### Adding Context to Your Data
 

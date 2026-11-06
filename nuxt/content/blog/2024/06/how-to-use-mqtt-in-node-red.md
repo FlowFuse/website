@@ -71,7 +71,7 @@ This guide walks through the configuration steps and common patterns you'll need
 Before you start, make sure you have:
 
 - **Node-RED Instance**: You need Node-RED running somewhere. Easiest option is FlowFuse, grab a [free trial](https://app.flowfuse.com/) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
-- **MQTT Broker**: You'll need an MQTT broker to handle message routing. If you're on FlowFuse Pro tier, you get a built-in MQTT broker service, no separate setup needed.
+- **MQTT Broker**: You'll need an MQTT broker to handle message routing. FlowFuse Edge and Fleet include a built-in MQTT broker service, no separate setup needed.
 
 ## Getting Connected
 
