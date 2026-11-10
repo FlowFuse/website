@@ -1,5 +1,7 @@
 ---
 title: "AI Assisted Development"
+navigation:
+  icon: i-lucide-sparkles
 ---
 
 # AI Assisted Development

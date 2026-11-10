@@ -1,5 +1,7 @@
 ---
 title: "Tools"
+navigation:
+  icon: i-lucide-wrench
 ---
 # Tools
 
