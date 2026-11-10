@@ -6,9 +6,9 @@ navigation:
 
 # AI Assisted Development
 
-These pages are hands-on walkthroughs for getting AI coding tools working against your local FlowFuse development environment. They assume you already have [Claude Code](../index.md#claude-code) running and the [dev environment](https://github.com/FlowFuse/dev-env) up.
+These pages are hands-on walkthroughs for getting AI coding tools working against your local FlowFuse development environment. They assume you already have [Claude Code](/handbook/engineering/tools/#claude-code) running and the [dev environment](https://github.com/FlowFuse/dev-env) up.
 
-Before you set anything up, read the [LLM programming assists](../index.md#llm-programming-assists) section in Tools and the [AI Development and Customer Data Policy](../../../company/security/ai-development-and-customer-data.md). The short version: you own what the tool produces, review every line, and never feed it customer data, secrets or PII. Everything on these pages points the tools at `localhost` only.
+Before you set anything up, read the [LLM programming assists](/handbook/engineering/tools/#llm-programming-assists) section in Tools and the [AI Development and Customer Data Policy](../../../company/security/ai-development-and-customer-data.md). The short version: you own what the tool produces, review every line, and never feed it customer data, secrets or PII. Everything on these pages points the tools at `localhost` only.
 
 ## Walkthroughs
 

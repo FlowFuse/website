@@ -75,9 +75,59 @@ The investigation phase is only as good as the data Claude can reach. Beyond loc
 
 ## Where it rubs against our rules
 
-Superpowers assumes a lone developer who lets Claude commit. We do not work that way, so say these once per project:
+Superpowers assumes a lone developer who lets Claude commit. We do not work that way: you review, you commit, you open the PR. The skills do not override your instructions, but they will keep suggesting it, so put the rule somewhere durable. Three levels, pick how firm you want it.
 
-- Claude never commits or pushes unless asked in that message.
-- Design documents and plans are working files and stay out of PRs.
-- Issues and PRs follow the [contributing guide](../../contributing/index.md), not the skill's templates.
-- The [AI Development and Customer Data Policy](../../../company/security/ai-development-and-customer-data.md) applies to every brainstorm and debugging session.
+**1. Write it down once.** `~/.claude/CLAUDE.md` is read in every repository you open. A short block there beats repeating yourself:
+
+```markdown
+# Committing
+- Never run git commit or git push unless I ask for it in that message. Finishing a task is not permission.
+- Design documents and plans from skills are working files. Never add them to a commit.
+- Issues and PRs follow the FlowFuse contributing guide, not a skill's template.
+```
+
+**2. Let Claude remember it.** If you would rather not edit files, say it in the conversation: "remember that you never commit unless I ask". Claude stores it in its memory for the project and recalls it at the start of every session. This is softer than CLAUDE.md, since memory is advice Claude reads rather than an instruction it is bound to, but it is enough for most days.
+
+**3. Enforce it with a hook.** A permission rule set to ask is skipped when Claude runs in auto mode. A hook is not, so this is the only option that holds in every mode. Save this as `~/.claude/hooks/git-needs-a-human.sh` and make it executable:
+
+```bash
+#!/usr/bin/env bash
+# PreToolUse hook on Bash: anything that publishes work gets bounced to a yes/no prompt.
+set -uo pipefail
+cmd=$(jq -r '.tool_input.command // empty') || exit 0
+[[ -z $cmd ]] && exit 0
+
+ask() {
+  jq -nc --arg r "$1" '{hookSpecificOutput: {hookEventName: "PreToolUse", permissionDecision: "ask", permissionDecisionReason: $r}}'
+  exit 0
+}
+
+# one shell command per segment, so grepping a file for "git push" does not trip the rule
+mapfile -t segments < <(printf '%s' "$cmd" | sed -E 's/(\|\||&&|[;&|\n]|\$\(|`)/\n/g')
+for seg in "${segments[@]}"; do
+  [[ $seg =~ (^|[[:space:]])git([[:space:]].*)?[[:space:]](commit|push)([[:space:]]|$) ]] \
+    && ask "This publishes work. Ask the user to review it first, or to run it themselves."
+  [[ $seg =~ (^|[[:space:]])gh[[:space:]]+(pr|issue|release)[[:space:]]+(create|new)([[:space:]]|$) ]] \
+    && ask "This opens something on GitHub other people will see. Ask the user first."
+done
+exit 0
+```
+
+Then register it in `~/.claude/settings.json`:
+
+```json
+{
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Bash",
+                "hooks": [{ "type": "command", "command": "/home/you/.claude/hooks/git-needs-a-human.sh" }]
+            }
+        ]
+    }
+}
+```
+
+From then on every `git commit`, `git push`, `gh pr create` and `gh issue create` that Claude attempts turns into a yes or no prompt for you, whatever mode it runs in, and Claude is told to hand the command back to you instead. It needs `jq` installed. It is a guardrail against carelessness, not a sandbox: a commit hidden behind a script or a variable will not be caught.
+
+Whichever level you choose, the [AI Development and Customer Data Policy](../../../company/security/ai-development-and-customer-data.md) still applies to every brainstorm and debugging session, and issues and PRs still follow the [contributing guide](../../contributing).
