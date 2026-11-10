@@ -13,3 +13,4 @@ Before you set anything up, read the [LLM programming assists](../index.md#llm-p
 ## Walkthroughs
 
 - [Browser automation with playwright-cli](./playwright-cli.md) - let Claude Code drive a real browser against your local platform, restricted to localhost, with your dev login kept out of the conversation.
+- [Working with superpowers](./superpowers.md) - the process skills plugin: brainstorming before building, plans before code, root cause before fixes, with one FlowFuse scenario for each.
