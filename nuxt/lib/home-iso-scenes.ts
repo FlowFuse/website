@@ -71,25 +71,30 @@ function hero () {
 
 // One plant tile for the sites diagram: slab, main hall, annex and a silo.
 function plant (s: IsoScene, ox: number, oy: number, tone: 'line' | 'accent') {
-    s.box(ox, oy, 0, 12, 10, 0.6, 'muted')
+    // The slab sits under the whole tile, so it's painted before anything on it
+    s.box(ox, oy, 0, 12, 10, 0.6, 'muted', ox + oy - 1)
     s.box(ox + 1, oy + 1, 0.6, 6, 5, 4, tone)
     s.box(ox + 7.5, oy + 1.5, 0.6, 3, 3, 2.5, tone)
     s.cylinder(ox + 9.2, oy + 7.2, 0.6, 1.3, 4.5, tone)
-    s.dot(ox + 4, oy + 3.5, 4.6, 0.6, 'accent', ox + oy + 50)
 }
 
 // One plant on the left, proven; four on the right, each receiving the same solution.
 function sites () {
     const s = new IsoScene()
     const source: [number, number] = [2, 26]
-    const targets: [number, number][] = [[28, -2], [47, -2], [28, 17], [47, 17]]
+    const targets: [number, number][] = [[38, 30], [46, 16], [47, -5], [37, -31]]
     plant(s, ...source, 'accent')
     for (const t of targets) plant(s, ...t, 'line')
-    const from: [number, number, number] = [source[0] + 4, source[1] + 3.5, 5]
+    // Every site has a short mast on its roof. The links run mast-top to mast-top,
+    // high enough that they pass above the buildings rather than through them.
+    const mast = 9
+    const [fx, fy] = [source[0] + 4, source[1] + 3.5]
+    for (const [tx, ty] of [source, ...targets]) {
+        s.line([[tx + 4, ty + 3.5, 4.6], [tx + 4, ty + 3.5, mast]], 'line', 'none', tx + ty + 60)
+        s.dot(tx + 4, ty + 3.5, mast, 0.6, 'accent', OVER + 1)
+    }
     for (const [tx, ty] of targets) {
-        const to: [number, number, number] = [tx + 4, ty + 3.5, 5]
-        const mid: [number, number, number] = [(from[0] + to[0]) / 2, (from[1] + to[1]) / 2, 13]
-        s.line([from, mid, to], 'accent', 'flow', OVER)
+        s.line([[fx, fy, mast], [tx + 4, ty + 3.5, mast]], 'accent', 'flow', OVER)
     }
     return s
 }
@@ -97,27 +102,29 @@ function sites () {
 function operations () {
     const s = new IsoScene()
     for (let k = 0; k < 3; k++) {
-        s.box(0.5 + k * 6.5, 0.3, 0, 0.6, 0.6, 1.6)
-        s.box(0.5 + k * 6.5, 3.1, 0, 0.6, 0.6, 1.6)
+        s.box(0.5 + k * 6.5, 0.3, 0, 0.6, 0.6, 1.6, 'line', k)
+        s.box(0.5 + k * 6.5, 3.1, 0, 0.6, 0.6, 1.6, 'line', 10 + k)
     }
-    s.box(0, 0, 1.6, 16, 4, 0.9)
-    for (let k = 0; k < 3; k++) s.box(1.5 + k * 5, 0.6, 2.5, 2.6, 2.6, 2.2, k === 1 ? 'accent' : 'line')
+    // Belt over the legs, product over the belt
+    s.box(0, 0, 1.6, 16, 4, 0.9, 'line', 20)
+    for (let k = 0; k < 3; k++) s.box(1.5 + k * 5, 0.6, 2.5, 2.6, 2.6, 2.2, k === 1 ? 'accent' : 'line', 30 + k)
     return s
 }
 
 function maintenance () {
     const s = new IsoScene()
-    s.box(0, 0, 0, 12, 6, 1.2, 'muted')
+    s.box(0, 0, 0, 12, 6, 1.2, 'muted', -1)
     s.cylinder(3.5, 3, 1.2, 2.3, 5, 'line', 1)
     s.cylinder(8.5, 3, 1.2, 1.6, 3.2, 'line')
-    s.line([[8.5, 3, 4.4], [8.5, 3, 7], [13, 3, 7]], 'line', 'none', 30)
+    // Discharge pipe: up off the pump, across, and down into the base
+    s.line([[8.5, 3, 4.4], [8.5, 3, 6.5], [11, 3, 6.5], [11, 3, 1.2]], 'line', 'none', 30)
     s.dot(3.5, 3, 6.2, 0.7, 'accent', 40)
     return s
 }
 
 function automation () {
     const s = new IsoScene()
-    s.box(0, 0, 0, 1, 12.5, 8, 'muted')
+    s.box(0, 0, 0, 1, 12.5, 8, 'muted', -1)
     for (let i = 0; i < 5; i++) {
         const y = 0.5 + i * 2.4
         s.box(1, y, 0.6, 3.4, 2, 6.6, i === 0 ? 'accent' : 'line')
@@ -128,12 +135,13 @@ function automation () {
 
 function digital () {
     const s = new IsoScene()
-    s.box(5.5, 5.5, 8, 4, 4, 2, 'accent')
+    // Plants, then the links off their roofs, then the hub on top of the links
     const plants: [number, number][] = [[0, 12], [12, 0], [12, 12]]
     for (const [x, y] of plants) {
         s.box(x, y, 0, 4, 4, 3.5)
-        s.line([[x + 2, y + 2, 3.5], [7.5, 7.5, 8]], 'accent', 'flow', OVER)
+        s.line([[x + 2, y + 2, 3.5], [7.5, 7.5, 8]], 'accent', 'flow', 50)
     }
+    s.box(5.5, 5.5, 8, 4, 4, 2, 'accent', 60)
     return s
 }
 
