@@ -37,11 +37,8 @@ function hero () {
     // Product rides on the belt, so it's drawn after the belt and its rollers
     for (let k = 0; k < 5; k++) s.box(9 + k * 7.5, 25, 3.2, 3, 3, 2.4, k === 2 ? 'accent' : 'line', 61 + k)
 
-    // Robot cell at the end of the line
+    // Collection station at the end of the line
     s.cylinder(55, 31, 0, 2.6, 3)
-    s.line([[55, 31, 3], [55, 31, 10], [50.5, 28, 12.5], [47, 26.5, 7.5]], 'accent', 'none', 88)
-    s.dot(55, 31, 10, 0.6, 'accent', 89)
-    s.dot(50.5, 28, 12.5, 0.6, 'accent', 89)
 
     // Tanks and the pipe that feeds the line
     s.cylinder(56, 9, 0, 4, 15, 'line', 2)
