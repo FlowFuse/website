@@ -28,11 +28,7 @@ This feature allows you to run and manage your own MQTT Clients alongside your N
 
 ### Pricing
 
-From today, Enterprise teams on FlowFuse Cloud will be able to create up to 20 clients on their accounts at **no extra cost**.
-
-In the near future, users will then be able to purchase additional packs of clients to add to their team.
-
-Self-hosted Enterprise customers will be able to make use of this feature in our next release.
+The MQTT service is included in FlowFuse Edge and Fleet. See [pricing](/pricing/) for what each product includes.
 ## Version History - Visual Timeline
 
 Since early iterations of FlowFuse, Snapshots have played a key role in Version Control for your Node-RED flows, environment variables and settings. Whilst we still offer the same "Snapshots" view in the application, we've also added a new view to give a clearer picture of what flows are running on your Node-RED instances and _when_.
@@ -65,11 +61,9 @@ Together, we can make FlowFuse better with each release!
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
 
-### FlowFuse Cloud
+### Build with us
 
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
 
 ## Upgrading FlowFuse
 

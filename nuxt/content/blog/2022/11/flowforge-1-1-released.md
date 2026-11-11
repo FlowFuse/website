@@ -90,7 +90,6 @@ you can have your own FlowFuse running locally in about 30 minutes.
 ([Docker](/docs/install/docker/) and [Kubernetes](/docs/install/kubernetes/)
 are available too!)
 
-If you'd rather use our hosted offering: [Sign up for FlowFuse Cloud](https://app.flowfuse.com/account/create?code=RELEASE11)
 with the coupon **RELEASE11** to get your first project free for a month.
 
 ### Upgrading FlowFuse

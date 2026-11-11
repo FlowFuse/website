@@ -74,7 +74,7 @@ This redesign creates a more intuitive workflow that aligns with how teams actua
 
 ## More Powerful "Small" Instances
 
-Based on user feedback and our own review of instance performance, we have increased the CPU and memory of all "small" Node-RED instances running on FlowFuse. This will have the immediate benefit of preventing slowdowns and loading issues for all Starter and Team customers. 
+Based on user feedback and our own review of instance performance, we have increased the CPU and memory of all "small" Node-RED instances running on FlowFuse. This will have the immediate benefit of preventing slowdowns and loading issues for FlowFuse Cloud customers. 
 
 ## What's Next?
 
@@ -93,11 +93,9 @@ Which of these new features are you most excited to try? Email me directly at gr
 ## Try FlowFuse
 
 
-### FlowFuse Cloud
+### Build with us
 
-The quickest way to get started is with FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
+To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
 
 ### Self-Hosted
 

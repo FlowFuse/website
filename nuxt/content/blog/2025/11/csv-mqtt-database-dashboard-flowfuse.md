@@ -89,14 +89,11 @@ If you're using FlowFuse to log data, you can send to MQTT and databases as data
 
 This guide shows you how to read CSV files, whether real-time or historical, and route them to MQTT brokers, databases, and dashboards.
 
-::cta-image{src="/blog/2025/11/images/csv-to-mqtt-cta-1.png" alt="Try FlowFuse free and turn this tutorial into a live pipeline for your own logs" cta="sign-up"}
-::
-
 ### Prerequisites
 
 Before starting, ensure you have:
 
-- A running FlowFuse instance. If you don't have one, [sign up for free](https://app.flowfuse.com/)
+- A running FlowFuse instance
 - CSV log files with industrial data
 - Access to an MQTT broker
 - Access to a database

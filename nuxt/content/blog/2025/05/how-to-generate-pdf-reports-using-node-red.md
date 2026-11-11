@@ -13,8 +13,6 @@ tags:
    - how-to
 cta:
   type: sign-up
-  title: Automate PDF Reports with Node-RED on FlowFuse
-  description: FlowFuse gives you a managed Node-RED environment with one-click deployment, secure HTTP endpoints, and Dashboard 2.0 integration, everything you need to automate and serve PDF reports in production.
 meta:
   howto:
     name: "How to Generate PDF Reports Using Node-RED"

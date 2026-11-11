@@ -34,9 +34,6 @@ What separates industry leaders from the rest? They refuse to accept "normal" wa
 
 This guide shows you exactly how to build a real-time SPC system using FlowFuse. You'll create a live dashboard that tracks measurements and alerts operators the moment something goes wrong. No statistics degree needed, just practical steps you can implement today.
 
-::cta-image{src="/blog/2025/07/images/spc-cta-1.png" alt="Try FlowFuse free and build a real-time control chart from your own machine data" cta="sign-up"}
-::
-
 ## Why Traditional Quality Control Falls Short                   
 
 Most manufacturers still rely on [end-of-line inspection](/blog/2026/10/automotive-quality-control/). Make parts, check parts, scrap the bad ones. This reactive approach creates three expensive problems:
@@ -64,7 +61,7 @@ Walter Shewhart developed this method at Bell Labs in the 1920s, proving its eff
 
 Let's build a real example. This guide shows you how to create a SPC control chart for individual measurements - perfect for monitoring critical dimensions in real-time.
 
-First, open your FlowFuse Node-RED instance. If you don't have one yet, you can [sign up for a free account](https://app.flowfuse.com/account/create) and have an instance running in minutes.
+First, open your FlowFuse Node-RED instance.
 
 ### What We're Building
 
@@ -345,7 +342,7 @@ Every day without SPC is money left on the table. Those 16,000 scrapped parts pe
 
 Here's your path to production-ready SPC:
 
-1. **[Start Free with FlowFuse](https://app.flowfuse.com/account/create)** - Get your instance running in minutes
+1. **[Build with us](/build-with-us/)** - put SPC on your own line
 2. **Follow this tutorial** - Build your first SPC chart today
 3. **Connect one machine** - Start with your most critical measurement
 4. **Expand gradually** - Add more parameters as you prove value
@@ -354,7 +351,7 @@ Don't wait for the perfect plan. Don't form another committee. Pick one measurem
 
 Because somewhere right now, one of your machines is drifting out of spec. The only question is whether you'll catch it in time.
 
-**[Build Your First SPC Dashboard Now →](https://app.flowfuse.com/account/create)**
+**[Build Your First SPC Dashboard With Us →](/build-with-us/)**
 
 ## References
 

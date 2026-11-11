@@ -103,7 +103,7 @@ Brownfield doesn’t require cutover. Legacy runs. New workflows build on events
 
 The factories that fail treat this as infrastructure. The ones that succeed pick the highest-cost delay, fix it with events, measure the difference, and move on. Value drives adoption. Not architecture diagrams.
 
-*FlowFuse makes event-driven architecture practical for manufacturing by connecting IT and OT systems through a single platform that supports virtually any protocol, includes a built-in MQTT broker, and provides enterprise-grade deployment and security. [Get started with FlowFuse today](https://app.flowfuse.com/account/create)*
+*FlowFuse makes event-driven architecture practical for manufacturing by connecting IT and OT systems through a single platform that supports virtually any protocol, includes a built-in MQTT broker, and provides enterprise-grade deployment and security. [Build your first event-driven application with us](/build-with-us/)*
 
 ## Sources & References
 

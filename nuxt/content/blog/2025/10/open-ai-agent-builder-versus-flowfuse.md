@@ -106,5 +106,5 @@ Whether you're monitoring production lines, building [predictive maintenance](/b
 systems, or implementing Industry 4.0 initiatives, FlowFuse provides the 
 infrastructure to collect, transform, and act on data from the edge.
 
-**Start building today:** [Try FlowFuse free](https://app.flowfuse.com/account/create) or  [book a demo](/book-demo/) to 
+**Start building today:** [Build with us](/build-with-us/) or [book a demo](/book-demo/) to 
 see how we help teams manage industrial data at scale.

@@ -55,11 +55,9 @@ Which of these new features are you most excited to try? Reach out on GitHub or 
 
 ## Try FlowFuse
 
-### FlowFuse Cloud
+### Build with us
 
-The quickest way to get started is with FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
+To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
 
 ### Self-Hosted
 

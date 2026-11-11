@@ -65,4 +65,4 @@ This isn't just theoretical: [Energinet, Denmark's national transmission system 
 
 Virtual Power Plants are the future of the energy grid, but building them without the right tools is slow, brittle, and expensive. Low-code platforms like **FlowFuse** change that. They offer a practical, scalable, and secure way to integrate DERs, manage fleet operations, and coordinate distributed energy like never before.
 
-Ready to revolutionize your energy infrastructure? Start building your VPP with [FlowFuse's free trial](https://app.flowfuse.com/account/create) or [Book a Demo](/book-demo/) to see how leading energy companies are orchestrating thousands of DERs with low-code automation.
+Ready to revolutionize your energy infrastructure? Start building your VPP: [build with us](/build-with-us/) or [Book a Demo](/book-demo/) to see how leading energy companies are orchestrating thousands of DERs with low-code automation.

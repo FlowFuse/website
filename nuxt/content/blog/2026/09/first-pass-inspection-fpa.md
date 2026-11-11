@@ -34,9 +34,6 @@ Before full-scale production, [automotive manufacturers](/industries/automotive/
 
 Much of this still runs on paper checklists and spreadsheets, which makes it easy for inspection results to drift away from the production data that explains them.
 
-::cta-image{src="/blog/2026/09/images/fai-process-cta1.png" alt="Use FlowFuse to connect production data, build digital inspection workflows, and get better visibility into your quality processes - start your free trial" cta="sign-up"}
-::
-
 ## What Is First Article Inspection (FAI)?
 
 First Article Inspection (FAI) is a planned, complete, independent, and documented physical and functional inspection process used to verify that production processes can produce an item that meets specified requirements.

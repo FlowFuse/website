@@ -13,8 +13,6 @@ tags:
    - how-to
 cta:
   type: sign-up
-  title: Build Secure Multi-User Dashboards With Node-RED
-  description: FlowFuse makes it simple to add user authentication, personalized views, and role-based access to your Node-RED dashboards. Start your free trial and see it in action.
 meta:
   howto:
     name: "How to Display Logged-In User on Node-RED Dashboard 2.0"

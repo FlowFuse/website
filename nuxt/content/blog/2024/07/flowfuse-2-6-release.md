@@ -112,9 +112,9 @@ Together, we can make FlowFuse better with each release!
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-### FlowFuse Cloud
+### Build with us
 
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud: [Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
 
 ## Upgrading FlowFuse
 

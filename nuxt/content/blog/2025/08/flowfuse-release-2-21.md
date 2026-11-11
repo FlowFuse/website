@@ -1,7 +1,7 @@
 ---
 metaTitle: "FlowFuse 2.21: AI-Assisted SQL & Low-Code Nodes"
 title: "FlowFuse 2.21: AI-Assisted SQL, Low-Code Custom Nodes, and Remote Instance Performance Insights"
-subtitle: "Introducing FlowFuse Expert functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, Annual Billing for Self-Service, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes."
+subtitle: "Introducing FlowFuse Expert functionality in Tables to do natural language queries of your databases, Remote Instance observability to improve performance monitoring, Team Broker nodes to make MQTT even easier to work with, a new Energy Monitoring Blueprint, AI-Generated Snapshot Summaries, and new subflow version control to provide low-code development of custom nodes."
 description: "FlowFuse 2.21 introduces AI-assisted SQL, low-code custom nodes, and remote instance performance insights for engineering teams."
 date: 2025-08-28
 lastUpdated: 2026-08-13
@@ -35,8 +35,6 @@ This integration makes working with FlowFuse Tables even more accessible, allowi
 _New snapshot summarization provides clear, AI-generated descriptions of changes between versions_
 
 Managing instance versions becomes more intuitive with our new Snapshot Summary feature. When creating snapshots, FlowFuse can now automatically generate intelligent summaries that describes the changes introduced. This saves you time, and makes it much easier for teams to understand project evolution and quickly identify the right version for deployment or rollback scenarios.
-
-Available for Pro and Enterprise.
 
 ## Team Broker Nodes
 
@@ -73,13 +71,6 @@ _Energy Monitoring Dashboard provides realtime usage and cost insights_
 
 This Blueprint provides a real-time energy monitoring dashboard template for industrial facilities. It features live consumption tracking, cost analytics, spike detection, and historical trending with an integrated energy rate display. Perfect for demonstrating IoT energy management capabilities, and with Node-RED, it is fully customizable.
 
-## Annual Billing Option
-
-![Screenshot of annual billing selection interface](./images/annual-billing.png){data-zoomable}
-_New annual billing options provide cost savings and simplified budget planning_
-
-FlowFuse Cloud customers on Starter and Pro plans can now choose to subscribe on a yearly basis and receive a free month for doing so. This allows teams to save money compared to a monthly subscription and lock in current pricing.
-
 ## What's Next?
 
 For the next release, we're working on features that will enable you to connect your own AI models with Node-RED and FlowFuse, paving the way to create AI-supported automations in your applications.  We're also planning on pushing a lot of performance updates to Dashboard, and to make it even easier to build your own applications on FlowFuse. We're excited about it -- stay tuned!
@@ -95,11 +86,9 @@ Which of these new features are you most excited to try? Email me directly at gr
 ## Try FlowFuse
 
 
-### FlowFuse Cloud
+### Build with us
 
-The quickest way to get started is with FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
+To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
 
 ### Self-Hosted
 

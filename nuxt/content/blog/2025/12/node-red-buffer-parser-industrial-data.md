@@ -13,8 +13,6 @@ tags:
   - how-to
 cta:
   type: sign-up
-  title: "Parse Industrial Data at Scale with FlowFuse"
-  description: "FlowFuse gives you a managed Node-RED platform with remote deployment, snapshots, and the FlowFuse AI Expert built into the editor, so you can decode industrial buffers and manage edge devices without the operational overhead."
 meta:
   howto:
     name: "How to Parse Modbus Buffer Data in Node-RED Using the Buffer Parser Node"
@@ -138,7 +136,7 @@ This works, but it's also fragile. When you need to add a pressure reading next 
 
 Buffer Parser turns this into configuration you can see and modify without touching code. Let's walk through a practical example.
 
-> But before you start, make sure you have a Node-RED instance running on your edge device. The fastest, easiest, and most production-ready way is using FlowFuse. If you don't have an account yet, create one with our [free trial](https://app.flowfuse.com/). FlowFuse simplifies managing remote instances and provides the ability to create hosted instances, no matter how many you need to manage, it makes it easy. There are no deployment headaches either; everything is managed by FlowFuse with built-in security. You'll also get access to tools such as DevOps pipelines, snapshots for recovery, audit logs, real-time collaboration with granular role-based access control (RBAC), and much more.
+> But before you start, make sure you have a Node-RED instance running on your edge device. The fastest, easiest, and most production-ready way is using FlowFuse. FlowFuse simplifies managing remote instances and provides the ability to create hosted instances, no matter how many you need to manage, it makes it easy. There are no deployment headaches either; everything is managed by FlowFuse with built-in security. You'll also get access to tools such as DevOps pipelines, snapshots for recovery, audit logs, real-time collaboration with granular role-based access control (RBAC), and much more.
 
 ## Setting Up the Buffer Parser
 

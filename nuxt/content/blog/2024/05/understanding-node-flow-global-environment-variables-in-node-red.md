@@ -15,7 +15,7 @@ tags:
 cta:
   type: signup
   title: "Take Your Node-RED Flows to Production with FlowFuse"
-  description: "Built by the team behind Node-RED, FlowFuse turns your flows into production-grade applications, with persistent state that survives restarts, centralized management of every instance, team collaboration with role-based access and SSO, DevOps pipelines, and built-in monitoring with crash alerts. Start your free trial today."
+  description: "Built by the team behind Node-RED, FlowFuse turns your flows into production-grade applications, with persistent state that survives restarts, centralized management of every instance, team collaboration with role-based access and SSO, DevOps pipelines, and built-in monitoring with crash alerts."
 meta:
 faq:
 - question: "What are the different types of variables in Node-RED?"

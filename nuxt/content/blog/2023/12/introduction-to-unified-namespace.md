@@ -26,9 +26,6 @@ To facilitate a many to many connection between data producers and data consumer
 1. Data transport through a hub-and-spokes model
 1. Set structure of the Data
 
-::cta-image{src="/blog/2023/12/images/intro-uns-cta-1.png" alt="Get a free FlowFuse instance and connect your first data source to a Unified Namespace today" cta="sign-up"}
-::
-
 ## Hub and spokes model replaces Point to Point
 
 Traditionally, for example web servers serving web pages, the client requests a
@@ -83,4 +80,4 @@ You can also watch this webinar that explores the core concepts of the Unified N
 
 While Node-RED is highly effective for implementing UNS, managing and deploying it can be complex. FlowFuse provides a unified platform that simplifies deployment with one-click operations, secure management, and scalable Node-RED applications. It also includes features that enhance collaboration, alongside offering centralized management of all Node-RED instances to ensure streamlined operations and increased efficiency.
 
-**[Sign up](https://app.flowfuse.com/account/create) now for a free trial and experience FlowFuse's features**
+[Build your first production application with FlowFuse](/build-with-us/).

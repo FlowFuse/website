@@ -35,9 +35,6 @@ That makes compliance a manual exercise: match measurements to control plan requ
 
 The solution is to connect control plan characteristics to production measurements so each reading can be evaluated against the right requirement as it happens. That only works when the measurement data itself is trustworthy, including [calibration status](/blog/2026/07/calibration-management-dashboard/).
 
-::cta-image{src="/blog/2026/08/images/control-plan-cta-1.png" alt="Know which gauges are due for calibration - sign up for FlowFuse" cta="sign-up"}
-::
-
 ## What a control plan specifies
 
 A control plan is a structured document that defines what needs to be controlled during production, how it should be measured, how often it should be checked, and what to do when a result is out of specification. It is typically developed as part of [APQP](https://www.aiag.org/training-and-resources/manuals/details/APQP-3) and maintained within an [IATF 16949](https://www.iatfglobaloversight.org/iatf-169492016/) quality system, as one of the core tools of [automotive quality control](/blog/2026/10/automotive-quality-control/). It is also one of the 18 elements of a [PPAP](/blog/2026/09/ppap/) submission, where it shows the customer how the part will be controlled once production starts. Before submission, its step numbers and special characteristics should be [checked against the PFMEA and process flow diagram](/blog/2026/10/ppap-checklist-template/#special-characteristics-and-process-steps).

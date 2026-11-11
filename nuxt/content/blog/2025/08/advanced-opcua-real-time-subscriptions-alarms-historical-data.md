@@ -39,7 +39,7 @@ To follow this guide, you'll need:
 - A working OPC UA server connection
 - The basics from our [previous tutorial](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/)
 
-> Managing and scaling Node-RED instances is easy with FlowFuse, offering DevOps pipelines, audit logs, snapshots, high availability, and much more. [Start your free trial today!](https://app.flowfuse.com/account/create)
+> Managing and scaling Node-RED instances is easy with FlowFuse, offering DevOps pipelines, audit logs, snapshots, high availability, and much more.
 
 Before proceeding, check which features your OPC UA server supports, most handle subscriptions and events, but historical data and methods vary by vendor.
 
@@ -299,4 +299,4 @@ Following our managed MQTT broker, we've now added database services built right
 
 See [OPC UA subscriptions, alarms, and historical access](/integrations/opcua/#opc-ua-client-and-server-capabilities) for how these capabilities fit into FlowFuse's broader OPC UA client and server support. Connecting PLCs beyond OPC UA? FlowFuse also supports [Siemens S7](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/), EtherNet/IP, Modbus TCP/RTU, and MQTT, see the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.
 
-[Get started free](https://app.flowfuse.com/account/create) and scale and manage your Node-RED deployments today.
+[Build with us](/build-with-us/) to scale and manage your Node-RED deployments in production.

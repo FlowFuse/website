@@ -24,7 +24,7 @@ First, you'll need to get an installation of Node-RED up and running. There are 
 
 #### FlowFuse
 
-To get Node-RED running on FlowFuse [sign up as a new user](https://app.flowfuse.com/account/create). New users are enrolled in a trial and a Node-RED instance will be started for you within a minute.
+FlowFuse runs Node-RED for industrial teams in production, with team collaboration, version control and remote device management. To put it to work on your own use case, [build with us](/build-with-us/).
 
 Once that instance has booted up you can access Node-RED by pressing "Open Editor".
 

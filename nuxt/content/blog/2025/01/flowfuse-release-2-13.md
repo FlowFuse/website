@@ -62,17 +62,9 @@ We've introduced a new view in FlowFuse which you can find in the "Operations" s
 
 This functionality has been in FlowFuse for a little while, but was buried down in the "Applications" view, and found users were missing it. We've now brought it to the forefront, and made it easier to use, and help you deploy out to thousands of Remote Instances with the single click of a button.
 
-## New Onboarding Tour
-
-![Screenshot from the new Free Tier onboarding tour](./images/free-tier-tour.png){data-zoomable}
-
-We have a new onboarding tour that will be shown to those users signing up to our [new Free Tier on FlowFuse Cloud](/blog/2024/12/flowfuse-release-2-12/).
-
-This tour is purpose built to help you get up and running with your first Remote Instance in FlowFuse, setting up the Device Agent on your own hardware, and accessing your Remote Instance via FlowFuse Cloud.
-
 ## In Case You Missed It...
 
-Last month we [released a new Free Tier on FlowFuse Cloud](/blog/2024/12/flowfuse-release-2-12/), but announced it in the same article as our latest release and so a lot of the other new features we'd added to FlowFuse were lost in the weeds a little. We had a few self-hosted customers mention that they missed the updates for 2.12, so we also wanted to re-highlight some new features from that release too:
+We had a few self-hosted customers mention that they missed the updates for 2.12, so we also wanted to re-highlight some new features from that release:
 
 - **Pipelines** - New view at the team-level to manage your DevOps Pipelines, making it easier to deploy between development, test and production environments. Pipelines can also be used to push updates out to thousands of Remote Instances at once using the new "Groups" feature.
 - **Bill of Materials** - New view at the team-level to get a clear picture of all dependencies that your Instances are using. Makes it easier to manage out-of-date packages, and help with auditing and compliance.
@@ -93,8 +85,6 @@ Together, we can make FlowFuse better with each release!
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
 
-### FlowFuse Cloud
+### Build with us
 
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
+To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
