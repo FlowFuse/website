@@ -149,10 +149,14 @@ onMounted(startQuoteTimer)
 onUnmounted(() => clearInterval(quoteTimer))
 
 // "You're never alone" from /teams/manufacturing-operations/, with the copy pointed at a UNS.
-// Each description is split into parts so a part with an href renders as a link.
-const SUPPORT = [
+// Each description is split into parts so a part with an href renders as a link, and a
+// part with a destination renders as a tracked CtaLink to that CTA destination.
+type SupportPart = { text: string, href?: string, destination?: 'signUp' }
+const SUPPORT: Array<{ icon: string, title: string, parts: SupportPart[] }> = [
     { icon: 'i-lucide-handshake', title: 'Built with your team', parts: [
-        { text: 'Our engineers work alongside yours to design the namespace and deliver the first plant, then stay close whenever a site needs help.' },
+        { text: 'Our engineers work alongside yours to design the namespace and deliver the first plant, then stay close whenever a site needs help. See ' },
+        { text: 'how we build with your team', destination: 'signUp' as const },
+        { text: '.' },
     ] },
     { icon: 'i-lucide-lock-open', title: 'No lock-in, ever', parts: [
         { text: 'FlowFuse is built on open-source ' },
@@ -418,7 +422,7 @@ useSchemaOrg([
             <h3 class="mt-2 mb-0 text-xl font-medium text-gray-800">{{ item.title }}</h3>
             <p class="m-0 text-gray-600">
               <template v-for="(part, i) in item.parts" :key="i">
-                <NuxtLink v-if="part.href" :to="part.href" class="text-indigo-600 hover:underline">{{ part.text }}</NuxtLink><template v-else>{{ part.text }}</template>
+                <CtaLink v-if="part.destination" :destination="part.destination" position="support" class="text-indigo-600 hover:underline">{{ part.text }}</CtaLink><NuxtLink v-else-if="part.href" :to="part.href" class="text-indigo-600 hover:underline">{{ part.text }}</NuxtLink><template v-else>{{ part.text }}</template>
               </template>
             </p>
           </li>
