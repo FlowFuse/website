@@ -106,6 +106,6 @@ Explore the [product page](/product/) to decide if FlowFuse Edge, FlowFuse Hub, 
 
 1. [Build your first production application with us](/build-with-us/): FlowFuse engineers work alongside your team to get one application live on your own equipment and data.
 2. See what each product includes on the [pricing page](/pricing/).
-3. [Book a demo](/book-demo/) to see the new features.
+3. [Estimate what FlowFuse is worth on your lines](/resources/roi-calculator/) with the ROI calculator, using your own downtime and engineering numbers.
 
 Note: FlowFuse Self-Hosted requires the 3.0 release installed for the new license types and features mentioned in this release.
