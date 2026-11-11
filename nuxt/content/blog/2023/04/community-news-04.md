@@ -27,8 +27,6 @@ Join Steve McLaughlin from FlowFuse as he showcases how easy it is to use Node-R
 ## From our Blog
 [Comparing Node-RED Dashboards Solutions](/blog/2023/03/comparing-node-red-dashboards/) - A popular article comparing Node-RED Dashboard, uibuilder and FlexDash.
 
-[IBM Cloud removes Node-RED starter application](/blog/2023/03/ibmcloud-starter-removed/) - IBM has discontinued their Node-RED Starter Application, discover how to migrate to FlowFuse.
-
 [The benefits and drawbacks of using Node-RED function nodes](/blog/2023/03/why-should-you-use-node-red-function-nodes/) - Node-RED function nodes provide a great deal of flexibility in Node-RED. Discover the benefits and drawbacks of using them.
 
 [FlowFuse 15. Now Available](/blog/2023/03/flowforge-1-5-0-released/) - FlowFuse 1.5 included updates to the UI and architecture to allow for future features.

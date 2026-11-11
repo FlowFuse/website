@@ -61,7 +61,7 @@ Deployment works through [snapshots](/blog/2024/09/node-red-version-control-with
 
 **Where it breaks:**
 
-You own the hardware, and that ownership is non-trivial. Device failures, resource contention, OS-level conflicts, and network interface issues become your responsibility. FlowFuse substantially reduces the operational burden through remote deployment, remote terminal access (Team and Enterprise tiers), centralized health monitoring, and automatic snapshot recovery, but it doesn't eliminate the reality of managing physical machines.
+You own the hardware, and that ownership is non-trivial. Device failures, resource contention, OS-level conflicts, and network interface issues become your responsibility. FlowFuse substantially reduces the operational burden through remote deployment, remote terminal access, centralized health monitoring, and automatic snapshot recovery, but it doesn't eliminate the reality of managing physical machines.
 
 The cost structure also shifts. Cloud instances carry a predictable per-instance fee with no capital outlay. Edge deployments require upfront hardware investment, ongoing maintenance, and staff time to manage device lifecycle. At low device counts, this is manageable. At scale, across dozens of sites and hundreds of devices, it becomes a meaningful operational line item that needs to be planned for, not discovered.
 
@@ -83,7 +83,7 @@ interface. The WAN link between them is treated as unreliable by design - not a 
 
 FlowFuse manages both environments from a single interface. The same snapshot system, DevOps pipelines, and version history work across hosted and Remote Instances.
 
-The technically important piece is how cloud and Remote Instances communicate when connectivity is intermittent. FlowFuse Project Nodes (available on Team and Enterprise tiers) provide native instance-to-instance messaging within the platform. Note that Project Nodes are not a durable message queue - if a device is offline when a message is sent, that message is dropped. The [store-and-forward](/blueprints/getting-started/store-and-forward/) pattern handles this correctly: the edge device writes incoming data to a local SQLite buffer continuously, then flushes to the cloud on reconnect. This is a well-established FlowFuse architecture, but it needs to be designed in explicitly at the device level. It won't emerge on its own.
+The technically important piece is how cloud and Remote Instances communicate when connectivity is intermittent. FlowFuse Project Nodes (included in every FlowFuse product) provide native instance-to-instance messaging within the platform. Note that Project Nodes are not a durable message queue - if a device is offline when a message is sent, that message is dropped. The [store-and-forward](/blueprints/getting-started/store-and-forward/) pattern handles this correctly: the edge device writes incoming data to a local SQLite buffer continuously, then flushes to the cloud on reconnect. This is a well-established FlowFuse architecture, but it needs to be designed in explicitly at the device level. It won't emerge on its own.
 
 **Where hybrid breaks:**
 

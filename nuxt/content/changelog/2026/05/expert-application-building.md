@@ -9,6 +9,9 @@ tags:
 issues:
 ---
 
+::product-update-note
+::
+
 You can now describe what you want to build, and the FlowFuse Expert will assemble it for you directly on your Node-RED workspace. It adds tabs, drops in nodes, wires them together, and configures their properties, to help get you up and running.
 
 Previously, the Expert could answer questions, suggest changes, and act on links you clicked. Turning those suggestions into a working OEE dashboard, MES handover screen, or Modbus-to-UNS bridge still meant placing every node and wire by hand. Now the Expert does that work for you, and you keep iterating in chat to shape the result around your real-world setup.

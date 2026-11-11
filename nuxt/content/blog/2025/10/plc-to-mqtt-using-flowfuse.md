@@ -51,7 +51,7 @@ meta:
     - question: "What options does FlowFuse provide for transforming PLC data?"
       answer: "FlowFuse offers Change nodes with JSONata for visual no-code transformations like mapping fields and adding context, Function nodes for full JavaScript custom logic and npm packages, and pre-built community nodes such as node-red-contrib-buffer-parser for parsing raw Modbus and PLC outputs into structured formats."
     - question: "What plan do I need to use the FlowFuse MQTT broker?"
-      answer: "You need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker."
+      answer: "The FlowFuse MQTT broker is included in the Edge and Fleet products. You can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker."
     - question: "How should I structure my MQTT topics?"
       answer: "Structure topics using the ISA-95 Equipment Hierarchy in the format company/site/area/line/cell/device/measurement (for example, acme/plant-a/assembly/line1/press-1/pressure01/bar). This builds toward a Unified Namespace (UNS), eliminates data silos, and enables powerful wildcard subscriptions. Use lowercase with hyphens for multi-word names."
     - question: "What QoS setting should I use for the FlowFuse MQTT Out node?"
@@ -180,7 +180,7 @@ Traditional PLC-to-cloud setups typically involve several moving parts: edge gat
 
 FlowFuse consolidates those layers into a single integrated platform. It provides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
 
-To use the FlowFuse MQTT broker, you'll need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
+The FlowFuse MQTT broker is included in the Edge and Fleet products. You can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
 
 ![Enabling FlowFuse MQTT Broker](./images/set-broker.png){data-zoomable}
 _Enabling FlowFuse MQTT Broker_

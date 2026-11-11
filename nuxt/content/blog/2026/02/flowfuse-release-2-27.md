@@ -17,6 +17,9 @@ FlowFuse 2.27 tightens the development loop for Remote instances and makes FlowF
 
 <!--more-->
 
+::product-update-note
+::
+
 ## A More Integrated Remote Development Workflow
 
 Teams run production and edge workloads in Remote instances. When tooling behaves differently across environments, it slows debugging and increases risk during active changes.

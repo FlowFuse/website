@@ -95,9 +95,9 @@ To get started:
 ![Alt text describing the UI shown](./images/your-image.png)
 *Caption describing what is shown in context.*
 
-<!-- AVAILABILITY — Include if this is plan- or version-gated. Delete if available to everyone. -->
+<!-- AVAILABILITY — Name the products from the feature's `tiers` in feature-catalog.yml. -->
 
-This feature is available to [plan/tier] users of FlowFuse Cloud and [licence type] Self Hosted users from [vX.Y].
+This feature is available in [Edge / Hub / Fleet] from [vX.Y].
 ```
 
 ## Writing the post
@@ -171,9 +171,9 @@ Once that entry is in place, the post renders "Available in Edge / Hub / Fleet" 
 
 If the feature does not yet exist in the catalog, add it or flag it for someone to add before the post goes live. A feature that only exists to carry a changelog link, rather than to be sold, gets `showOnPricing: false` so it stays off the pricing page. Give it `tiers` all the same, so its badges still state where it is available. If availability is genuinely undecided, leave `tiers` off the entry entirely: no badge is better than a wrong one. Product must review any additions or availability changes before merging.
 
-Always write an availability note in the post as well. Badges name the plans, but prose tells the user what it means for them. Write it like this:
+Always write an availability note in the post as well. Badges name the products, but prose tells the user what it means for them. Write it like this:
 
-> This feature is available on the Edge and Fleet plans from vX.Y.
+> This feature is available in the Edge and Fleet products from vX.Y.
 
 Put it at the end of the post, or immediately after the main announcement if it affects whether the user can access the feature at all.
 
@@ -215,7 +215,7 @@ Paste the following prompt into your tool of choice along with your PR descripti
 > - Focuses on what the user can now do (use “you” where possible)
 > - Explains the user benefit in one or two sentences
 > - Includes a 'getting started' section only if the user needs to take action
-> - Ends with an availability note: "This feature is available to [tier] users of FlowFuse Cloud and [licence type] Self Hosted users from vX.Y."
+> - Ends with an availability note naming the products, as in feature-catalog.yml: "This feature is available in [Edge / Hub / Fleet] from vX.Y."
 >
 > Do not use PR titles or commit message language. Write for someone who just opened FlowFuse and wants to know what’s new.
 >
@@ -251,8 +251,6 @@ Instead of describing the feature abstractly, this shows exactly how a user will
 ### Translating a technical change into a user benefit
 
 > Any action that triggers a restart of the Node-RED instance will now restart them in sequence rather than in parallel. This means there should be no downtime for this instance.
->
-> This feature is available to Enterprise Licensed Self Hosted users and Enterprise tier users of FlowFuse Cloud.
 
 *Source: [HA Hosted Instance Rolling Restart](/changelog/2026/02/ha-instance-rolling-restart/)*
 
