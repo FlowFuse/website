@@ -145,7 +145,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/professional-services/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
     '/blog/2024/03/flowfuse-self-hosted-open-source-resource-limits/': { redirect: { to: '/pricing/', statusCode: 302 } },
     '/blog/2024/05/product-strategy-updates/': { redirect: { to: '/platform/why-flowfuse/', statusCode: 302 } },
-    '/blog/2024/12/flowfuse-release-2-12/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+    '/blog/2024/12/flowfuse-release-2-12/': { redirect: { to: '/pricing/', statusCode: 302 } },
     '/blog/2025/08/flowfuse-why-pricing-matters/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
 
     '/handbook/peopleops/job-descriptions/technical-product-manager': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager/', statusCode: 301 } },
