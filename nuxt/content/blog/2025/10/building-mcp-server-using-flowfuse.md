@@ -4,7 +4,7 @@ title: "Building MCP Servers for AI Agent Integration in Node-RED with FlowFuse"
 subtitle: "Integrate AI into industrial systems FlowFuse new MCP nodes"
 description: "Learn how to build a fully functional MCP server in Node-RED, enabling AI agents to access data using a low-code approach."
 date: 2025-10-14
-lastUpdated: 2025-02-06
+lastUpdated: 2026-02-06
 authors: ["sumit-shinde"]
 image: /blog/2025/10/images/building-mcp-server-node-red-with-ff.png
 keywords: Node-RED MCP Server, Node-RED AI, Model Context Protocol, AI agents within Node-RED
@@ -43,7 +43,7 @@ Before you begin, ensure you have the following:
 
 * **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed**. This will add the [MCP nodes](/docs/flowfuse-nodes/mcp/) to your Node palette in your instance editor.
 
-> **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are only available on the Enterprise tier.
+> **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are available in every FlowFuse product: Edge, Hub and Fleet.
 
 ### Configuring the MCP Server
 
@@ -250,7 +250,7 @@ In this example, the flow includes a tool that triggers a POST request to the ma
 
 Below is the flow that includes the Resource we created to monitor production lines and the Tool that sends a POST request.
 
-*Note: The flow uses the FlowFuse Query node and [FlowFuse tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which are only available on the Enterprise tier. If you do not have Enterprise, you can use other data sources instead, such as HTTP Request, OPC UA, or other database nodes.*
+*Note: The flow uses the FlowFuse Query node and [FlowFuse tables](/blog/2025/08/getting-started-with-flowfuse-tables/), which are included in every FlowFuse product. If you'd rather not use FlowFuse Tables, you can use other data sources instead, such as HTTP Request, OPC UA, or other database nodes.*
 
 ::render-flow{:height="300"}
 ```json

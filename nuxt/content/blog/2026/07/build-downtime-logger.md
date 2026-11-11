@@ -33,7 +33,7 @@ meta:
   - question: "Do I need FlowFuse Tables, or can I use my own database?"
     answer: "You can use either. The same flow works with an external database such as Postgres or MySQL using the standard database nodes from the palette instead of FlowFuse Tables, the SQL and flow logic are identical either way."
   - question: "Do I need the FlowFuse Broker, or can I use my own MQTT broker?"
-    answer: "You can use either. The FlowFuse Broker is available to Pro and Enterprise tier teams on FlowFuse Cloud and requires no separate config node, but the same flow works with any MQTT broker using the standard MQTT nodes instead of the ff-mqtt-in and ff-mqtt-out nodes."
+    answer: "You can use either. The FlowFuse Broker is included in the Edge and Fleet products and requires no separate config node, but the same flow works with any MQTT broker using the standard MQTT nodes instead of the ff-mqtt-in and ff-mqtt-out nodes."
   - question: "What if my machine sends different event names or a boolean instead of a string?"
     answer: "That's expected, the downtime_started and downtime_ended event names used here are just an example. What matters is the underlying pattern, one signal that opens a record and one that closes it, so adjust the switch node's rules and the payload fields in the change nodes to match whatever your PLC, sensor, or SCADA system actually sends."
   - question: "Can this track downtime for more than one machine?"
@@ -89,7 +89,7 @@ Once you see these five pieces working together, the rest of the tutorial is jus
 
 Everything in this application reads from and writes to a single table, so that's where we start.
 
-> Note: [FlowFuse Tables](/docs/user/ff-tables/) is currently in beta and available to Enterprise tier teams on FlowFuse Cloud, as well as Enterprise licensed self hosted teams running on Kubernetes. If you're on a different tier, you can follow along using any external database instead, Postgres, MySQL, or whatever you already have, with the standard database nodes from the palette. The SQL and flow logic in this tutorial will work the same either way.
+> Note: [FlowFuse Tables](/docs/user/ff-tables/) is included in every FlowFuse product (Edge, Hub and Fleet), on FlowFuse Cloud and on self-hosted installations with a FlowFuse license running on Kubernetes. If you'd rather use your own database, you can follow along using any external database instead, Postgres, MySQL, or whatever you already have, with the standard database nodes from the palette. The SQL and flow logic in this tutorial will work the same either way.
 
 1. Add a Query node to your canvas. This lets you run SQL queries directly against your FlowFuse managed database.
 
@@ -123,7 +123,7 @@ With the table in place, the application has somewhere to write to. Next, we'll 
 
 With the table ready, the next step is getting machine events into it, using MQTT.
 
-Note: this tutorial uses the FlowFuse [built in broker](/docs/user/teambroker/), available to Pro and Enterprise tier teams on FlowFuse Cloud. If you're on a different tier, contact us to get access, or use your own broker with the standard MQTT nodes instead, they work the same way here.
+Note: this tutorial uses the FlowFuse [built in broker](/docs/user/teambroker/), included in the Edge and Fleet products. On Hub, contact us to get access, or use your own broker with the standard MQTT nodes instead, they work the same way here.
 
 The event names used here, `downtime_started` and `downtime_ended`, are just an example. Your source may use different tags or a boolean instead of a string. What matters is the pattern, one signal opens a record and one closes it, so adjust to match your actual data.
 

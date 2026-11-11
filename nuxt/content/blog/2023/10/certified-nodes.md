@@ -14,6 +14,9 @@ We are thrilled to introduce a new feature for our Teams and Enterprise Tier cus
 
 <!--more-->
 
+::product-update-note
+::
+
 ## What is a certified node?
 
 A certified node is a module from the Node-RED library that undergoes a certification process, ensuring it adheres to standards that address three core pillars:

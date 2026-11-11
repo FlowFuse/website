@@ -10,6 +10,9 @@ issues:
   - https://github.com/FlowFuse/flowfuse/issues/7031
 ---
 
+::product-update-note
+::
+
 The Developer Mode tab is now available directly in the immersive editor drawer when working with remote instances. You can toggle auto snapshot and create snapshots without leaving the editor.
 
 ![Developer Mode tab in the immersive editor drawer](./images/developer-mode-in-editor.png)

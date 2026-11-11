@@ -24,7 +24,7 @@ This document lists and explains the **MCP nodes** available in FlowFuse. MCP (M
 * **A running FlowFuse Enterprise instance.** If you do not have one, [contact us](/contact-us/) to discuss Enterprise options.
 * **Ensure the `@flowfuse-nodes/nr-mcp-server-nodes` package is installed** in your Node-RED palette.
 
-> **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are only available on the Enterprise tier.
+> **Note:** The MCP nodes (@flowfuse-nodes/nr-mcp-server-nodes) are available in every FlowFuse product: Edge, Hub and Fleet.
 
 ### Configuring Your MCP Server
 

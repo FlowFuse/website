@@ -71,7 +71,7 @@ Before you start building, make sure you have the following ready:
 
 - **FlowFuse Dashboard installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-text`, `ui-chart`, `ui-table`, and `ui-template`) to build the interface. If it is not already installed, add it from the Node-RED Palette Manager. If you are new to FlowFuse Dashboard, follow the [Getting Started guide](https://dashboard.flowfuse.com/getting-started.html) to become familiar with the basics before continuing.
 
-> Note: [FlowFuse Tables](/docs/user/ff-tables/) is currently in beta and available to Enterprise tier teams on FlowFuse Cloud, as well as Enterprise licensed self hosted teams running on Kubernetes. If you're on a different tier, you can follow along using any external database instead, Postgres, MySQL, or whatever you already have, with the standard database nodes from the palette. The SQL and flow logic in this tutorial will work the same either way.
+> Note: [FlowFuse Tables](/docs/user/ff-tables/) is included in every FlowFuse product (Edge, Hub and Fleet), on FlowFuse Cloud and on self-hosted installations with a FlowFuse license running on Kubernetes. If you'd rather use your own database, you can follow along using any external database instead, Postgres, MySQL, or whatever you already have, with the standard database nodes from the palette. The SQL and flow logic in this tutorial will work the same either way.
 
 ## How the Application Works
 
