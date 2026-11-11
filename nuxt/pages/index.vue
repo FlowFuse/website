@@ -4,7 +4,8 @@
 //   2. Choose where to start: four team entry points, one per /teams/ page
 //   3. Problem to solution: one plant proven, every site running it
 //   4. Metrics of success: customer results, each linked to its story
-//   5. Social proof: logos, testimonials, security credentials
+//   (logo strip with the user count sits straight under the hero)
+//   5. Social proof: testimonials, security credentials
 //   6. Call to action
 //
 // The illustrations are isometric wireframes generated in nuxt/lib/home-iso-scenes.ts
@@ -137,6 +138,13 @@ useSeoMeta({
     </div>
   </section>
 
+  <!-- Logo strip: users count and customer logos, straight under the hero -->
+  <section class="w-full px-6 pb-4 border-b border-gray-100">
+    <div class="max-w-screen-lg mx-auto text-center">
+      <SocialProof />
+    </div>
+  </section>
+
   <!-- 2. Choose where to start -->
   <section class="w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
@@ -228,12 +236,9 @@ useSeoMeta({
   </section>
 
   <!-- 5. Social proof -->
-  <section class="w-full px-6 pt-4 pb-20 bg-radial-indigo-small">
+  <section class="w-full px-6 pt-16 pb-20 bg-radial-indigo-small">
     <div class="max-w-screen-lg mx-auto">
-      <div class="text-center">
-        <SocialProof />
-      </div>
-      <div class="mt-16">
+      <div class="mt-4">
         <h2 class="text-balance md:text-5xl">Real results from <span class="text-indigo-600">industrial teams</span></h2>
         <TestimonialCarousel hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
       </div>
