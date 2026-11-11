@@ -277,7 +277,7 @@ Below is the complete flow. Import it, enter your API URL with your API key in t
 
 That's it! You've built a real-time weather dashboard and learned the basics of Node-RED, connecting to APIs, processing data, and building visual interfaces.
 
-Throughout this tutorial, you used FlowFuse to host Node-RED and FlowFuse Dashboard for the UI. If you're just starting out, FlowFuse makes things easier, no server setup, no port forwarding, and your dashboard works anywhere. Plus, when you're ready to build bigger projects, features like team collaboration, DevOps pipelines, RBAC, snapshots, and audit logs are already built in.
+Throughout this tutorial, you used Node-RED and FlowFuse Dashboard for the UI. When a dashboard like this moves onto a production line, FlowFuse adds team collaboration, DevOps pipelines, RBAC, snapshots and audit logs.
 
 Try expanding your dashboard by adding more cities, creating historical charts, or setting up weather alerts. The pattern stays the same, you're just swapping data sources and visualizations.
 

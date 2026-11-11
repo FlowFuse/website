@@ -243,7 +243,7 @@ Your cloud provider charges per gigabyte. You were paying to transmit and store 
 
 Before Protocol Buffers, scaling meant budgeting for more capacity. After implementation, the same infrastructure handles more without additional spend. That next tier pricing? You just pushed it out by years.
 
-You're not rebuilding anything. Define a `.proto` schema, drop in encode/decode nodes, deploy. No consultants, no multi-phase rollout, no capital purchases.
+You're not rebuilding anything. Define a `.proto` schema, drop in encode/decode nodes, deploy. No new hardware, no rip-and-replace, no multi-phase rollout.
 
 This isn't optimization theater. It's removing waste that never should have been there. And once implemented, every new data source, every increased message rate, every additional field benefits from the same reduction. You're not just cutting your bill once, you're changing the cost structure of every future expansion.
 

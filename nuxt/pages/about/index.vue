@@ -49,7 +49,7 @@ const INVESTORS = [
 
 const JOB_BOARD = 'https://boards.greenhouse.io/flowfuse'
 
-const META_DESCRIPTION = 'FlowFuse provides a complete platform for building, scaling and securing your production Node-RED applications. Accelerate digitalization of your industrial processes with ease.'
+const META_DESCRIPTION = 'FlowFuse is the edge-native platform for industrial applications. Manufacturers use it to build, deploy and govern production applications across their plants, and FlowFuse engineers build the first one with their team.'
 
 useSeoMeta({
     title: 'About',
@@ -67,7 +67,6 @@ useSeoMeta({
 useSchemaOrg([
     defineOrganization({
         legalName: 'FlowFuse Inc',
-        description: META_DESCRIPTION,
         foundingDate: '2021',
         founder: [{ name: "Nick O'Leary" }],
         address: {

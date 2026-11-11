@@ -15,7 +15,7 @@ tags:
 meta:
   howto:
     name: "Connect a PLC to MQTT using FlowFuse"
-    description: "Extract data from any PLC protocol, transform and structure it, and publish it reliably to MQTT using FlowFuse and Node-RED, without expensive gateways or consultants."
+    description: "Extract data from any PLC protocol, transform and structure it, and publish it reliably to MQTT using FlowFuse and Node-RED, without proprietary gateways."
     totalTime: "PT30M"
     tool:
       - "FlowFuse"
@@ -59,10 +59,10 @@ meta:
     - question: "How do I configure access control for the MQTT client?"
       answer: "After deploying, the MQTT client is created automatically. Double-click the MQTT Out node, click Configure Access Control to be redirected to the broker client management section, click the client edit, select Publish, and click Confirm."
     - question: "How much can FlowFuse save compared to traditional PLC-to-cloud setups?"
-      answer: "Because your own team handles implementation without consultants charging $150-$250 per hour, you can save $12,000 to $30,000 on setup alone. The managed MQTT broker includes unlimited messaging with no per-message fees, protocol drivers are free and open-source with no per-tag licensing, and you can deploy on existing hardware instead of buying $10,000 proprietary gateways."
+      answer: "Protocol nodes and the built-in broker replace custom gateway work, and the same flows are reused at every site, by your team or your integrator. The managed MQTT broker includes unlimited messaging with no per-message fees, protocol drivers are free and open-source with no per-tag licensing, and you can deploy on existing hardware instead of buying $10,000 proprietary gateways."
     - question: "Can FlowFuse work on air-gapped or proxied networks?"
       answer: "Yes. For networks with proxy servers, the Device Agent supports standard proxy configurations through environment variables. For air-gapped networks, you can pre-cache Node-RED modules and deploy without internet connectivity after the initial setup."
-tldr: "This tutorial shows how to publish PLC data to MQTT using FlowFuse and Node-RED without expensive gateways or consultants. You extract data from any PLC protocol (Modbus, OPC UA, EtherNet/IP, Siemens S7, and more) using pre-built connectors, transform and contextualize it into consistent JSON with Change, Function, or community nodes, then publish it to the built-in FlowFuse MQTT broker using an ISA-95 topic hierarchy with proper access controls. FlowFuse's edge-first architecture keeps firewalls closed to inbound traffic, letting plant engineers ship production flows in under an hour."
+tldr: "This tutorial shows how to publish PLC data to MQTT using FlowFuse and Node-RED without proprietary gateways. You extract data from any PLC protocol (Modbus, OPC UA, EtherNet/IP, Siemens S7, and more) using pre-built connectors, transform and contextualize it into consistent JSON with Change, Function, or community nodes, then publish it to the built-in FlowFuse MQTT broker using an ISA-95 topic hierarchy with proper access controls. FlowFuse's edge-first architecture keeps firewalls closed to inbound traffic, letting plant engineers ship production flows in under an hour."
 ---
 
 Getting [PLC](/blog/2025/12/what-is-plc/) data into systems where it can be monitored, analyzed, and acted upon is essential for modern manufacturing. MQTT has become the standard for moving this data. It's lightweight, handles unreliable networks well, and excels at real-time streaming. Once your PLC data is published to MQTT, it creates a common pipeline that IT systems understand, flowing easily to cloud platforms, analytics tools, dashboards, and eliminating protocol translation headaches.
@@ -249,7 +249,7 @@ Plant engineers configure PLC connections, transform data, contextualize it, and
 
 The FlowFuse Expert fills remaining gaps, describe what you need in plain English, and it generates function nodes, database queries, or dashboard components. Click "Explain" on any flow to get instant documentation.
 
-This eliminates the consultant dependency that inflates project costs. Your team handles implementation and maintenance without external help at $150-$250 per hour, saving $12,000 to $30,000 on setup alone. The managed MQTT broker includes unlimited messaging with no per-message fees. Protocol drivers are free and open-source with no per-tag licensing. Deploy on existing industrial hardware instead of buying $10,000 proprietary gateways.
+Protocol nodes and the built-in broker remove the custom gateway work that inflates project costs, and the same flows are reused at every site, by your team or your integrator. The managed MQTT broker includes unlimited messaging with no per-message fees. Protocol drivers are free and open-source with no per-tag licensing. Deploy on existing industrial hardware instead of buying $10,000 proprietary gateways.
 
 Manufacturers typically see substantial cost reduction in the first year, with improving economics as you scale since hardware and licensing costs stay eliminated. Most engineers ship production flows in their first session.
 

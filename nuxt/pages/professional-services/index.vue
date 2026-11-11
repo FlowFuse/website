@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
     title: 'Professional Services',
-    description: 'At FlowFuse, we partner with our customers to ensure their successful deployment of FlowFuse and Node-RED. Our professional services are available to Enterprise tier customers, providing expert support for critical projects.',
+    description: 'FlowFuse engineers work alongside your team to get your first application into production on FlowFuse, then train your engineers to run and extend it.',
 })
 </script>
 
@@ -9,7 +9,7 @@ useSeoMeta({
   <div class="w-full">
     <PageHero
         title="Professional Services"
-        description="At FlowFuse, we partner with our customers to ensure their successful deployment of FlowFuse and Node-RED. Our professional services are available to Enterprise tier customers, providing expert support for critical projects."
+        description="FlowFuse engineers work alongside your team to get your first application into production on FlowFuse, then train your engineers to run and extend it."
     />
     <div class="text-left max-w-full">
       <div class="w-full pt-0 md:pt-12 px-0">
