@@ -120,6 +120,6 @@ This demo shows how even a small, targeted integration between your production l
 
 If you are exploring how to bring these kinds of improvements to your manufacturing operations, let’s talk.
 
-We’d be happy to discuss how FlowFuse can help you build custom, scalable solutions tailored to your factory’s needs.
+FlowFuse engineers can build the first production application like this with your team, then your team or integrator rolls it out across your lines. [Build with us](/build-with-us/).
 
 👉 [Get in touch with us](/contact-us/)

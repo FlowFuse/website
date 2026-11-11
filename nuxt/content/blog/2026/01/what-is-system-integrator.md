@@ -120,7 +120,7 @@ The tools are also changing who can do integration work. Software developers and
 
 That's why choosing the right integrator still matters.
 
-::cta-image{src="/blog/2026/01/images/integrator-cta-1.png" alt="Talk to our team about where FlowFuse fits alongside your system integrator, or in place of one" cta="demo"}
+::cta-image{src="/blog/2026/01/images/integrator-cta-1.png" alt="Integrator, in-house, or both? Talk to our team about where FlowFuse fits in your setup" cta="demo"}
 ::
 
 ## How to Choose a System Integrator

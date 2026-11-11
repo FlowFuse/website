@@ -1,6 +1,6 @@
 ---
 title: Why you need FlowFuse when you already have Node-RED?
-subtitle: FlowFuse makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED
+subtitle: FlowFuse is the industrial application platform that takes Node-RED applications from one engineer to governed production across every site
 description: "Discover how FlowFuse enhances Node-RED with easy developer collaboration, flow deployment, and scalable infrastructure."
 date: 2022-12-15
 authors: ["rob-marcer"]
@@ -16,7 +16,7 @@ Many organizations face challenges in IT/OT convergence. There are many protocol
 
 This is why Node-RED is adopted so widely, it makes a world of difference through two of its properties: Low-Code Development and the ability to integrate with a wide range of hardware and software systems. Node-RED makes it easy to program data collection, then use that data for decision making, and provide feedback to both your digital platform and the physical reality of your business. Furthermore, Node-RED is unrivalled in making data accessible. The data previously locked in a walled garden of your hardware providers is now accessible and obtainable. With that, more data is available and better decisions are made, faster.
 
-FlowFuse makes developer collaboration, flow deployment, and scaling of infrastructure easy when working with Node-RED. It offers an intuitive user interface for creating, deploying, monitoring, and managing multiple Node-RED projects. FlowFuse also provides one-click deployment to thousands of devices, making it easy to manage large-scale environments. 
+FlowFuse is the industrial application platform that takes Node-RED applications from one engineer to governed production across every site. It offers an intuitive user interface for creating, deploying, monitoring, and managing multiple Node-RED projects. FlowFuse also provides one-click deployment to thousands of devices, making it easy to manage large-scale environments. 
 
 These features make FlowFuse a valuable tool for organizations using Node-RED to build applications and automate processes. Enabling for further adoption of Node-RED to integrate more systems, for even better decisions.
 

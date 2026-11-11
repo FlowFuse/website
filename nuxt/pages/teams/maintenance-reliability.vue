@@ -142,7 +142,7 @@ const PAGE = {
             },
             {
                 question: 'How is FlowFuse priced?',
-                answer: 'Per instance, meaning each running application or connected device. Each plan includes a set number of instances, and there are volume discounts for rollouts of hundreds or thousands. See [FlowFuse pricing](/pricing/), or tell us how many sites and assets you expect and we\'ll model the cost with you.',
+                answer: 'It depends on the scope of your first application and how widely you plan to roll it out. We scope it with you, based on the sites and assets you expect to cover. Edge, Hub and Fleet are listed on [FlowFuse pricing](/pricing/).',
             },
         ],
     },

@@ -21,11 +21,11 @@ Today, we see many industrial engineers using Node-RED to collect and integrate 
 
 In the larger software development community, DevOps tools are being used to address many of these same challenges. DevOps is all about increasing the reliability and speed of the software development lifecycle. Using tools that increase automation of the software development process and improve collaboration and communication between developers. These are also many of the same challenges that FlowFuse solves for Node-RED users. 
 
-For these reasons, we see FlowFuse as being the DevOps platform for Node-RED. We believe FlowFuse enables a more reliable way to deliver Node-RED applications in a repeatable, collaborative and secure manner. What FlowFuse adds to Node-RED are some key features:
+For these reasons, we built FlowFuse as the platform for running Node-RED applications in industrial production. We believe FlowFuse enables a more reliable way to deliver Node-RED applications in a repeatable, collaborative and secure manner. What FlowFuse adds to Node-RED are some key features:
 * Tools for collaborative Node-RED development 
 * The ability to manage remote deployments of Node-RED instances
 * A more streamline way to deliver Node-RED applications
-* FlowFuse Cloud provides a hosted Node-RED platform but FlowFuse can also be self-hosted
+* FlowFuse runs on FlowFuse Cloud or self-hosted, on-premises and at the edge
 * FlowFuse also offers professional technical support to organizations that require the assurance of receiving help with production deployments.
 
 We will be rolling out this new way of talking about FlowFuse over the next couple of days and weeks. We are always open to feedback about FlowFuse and would love to hear about your experience of using Node-RED.

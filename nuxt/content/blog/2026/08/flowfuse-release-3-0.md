@@ -49,7 +49,7 @@ Edge fits teams connecting PLCs, machines, and systems, and businesses standardi
 
 Fleet fits telemetry collection, distributed device deployments, and hardware and OEM partners shipping FlowFuse to their own customers. Where Edge gives you depth at each site, Fleet gives you reach across thousands of them.
 
-It's the same strong platform underneath. The difference is which problem each one is tuned for — data center, manufacturing site, or a distributed fleet — so the path from "sign up" to "in production" is shorter for every team, making everything easier from POCs to prod and scaling.
+It's the same strong platform underneath. The difference is which problem each one is tuned for — data center, manufacturing site, or a distributed fleet — so the path from first application to production is shorter for every team, making everything easier from POCs to prod and scaling.
 
 Every product is enabled by FlowFuse Expert, and every product connects the AI agent you already use.
 
@@ -104,8 +104,8 @@ As soon as applications spread across sites and devices, the hard part shifts fr
 
 Explore the [product page](/product/) to decide if FlowFuse Edge, FlowFuse Hub, or FlowFuse Fleet is for you. FlowFuse 3.0 is live today on Cloud and Self-Hosted.
 
-1. [Start a Free Trial of FlowFuse Edge](https://app.flowfuse.com/account/create): All OT teams can request a free 30-day trial immediately; if you're looking to try out FlowFuse Hub or FlowFuse Fleet, just [contact us](/contact-us/) and we'll make it happen.
-2. See the full feature set and request [Pricing](/pricing/)
-3. [Set up a demo](/book-demo/) to see all of these new features
+1. [Build your first production application with us](/build-with-us/): FlowFuse engineers work alongside your team to get one application live on your own equipment and data.
+2. See what each product includes on the [pricing page](/pricing/).
+3. [Estimate what FlowFuse is worth on your lines](/resources/roi-calculator/) with the ROI calculator, using your own downtime and engineering numbers.
 
 Note: FlowFuse Self-Hosted requires the 3.0 release installed for the new license types and features mentioned in this release.

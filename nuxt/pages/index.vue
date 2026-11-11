@@ -94,7 +94,7 @@ const FAQ = [
     { question: 'Do I need Node-RED experience to use FlowFuse?', answer: 'No. FlowFuse Expert, our AI-assisted development tool, lets your team describe what they need in plain language and generates the logic. Your team can build without a steep learning curve.' },
     { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes, FlowFuse is designed for brownfield environments. It connects to and extends your existing MES, ERP, SCADA, PLCs, and other systems without replacing them or requiring modifications to core platforms.' },
     { question: 'How does FlowFuse handle security and compliance?', answer: 'FlowFuse is SOC 2 Type 1 and Type 2 certified. It supports RBAC, SSO, audit logs, and air-gapped self-hosted deployments for environments with strict network isolation requirements.' },
-    { question: 'How long does a typical deployment take?', answer: 'Most teams are operational within days. FlowFuse is designed to start with a single use case and expand, not require a multi-month implementation before delivering value.' },
+    { question: 'How long does a typical deployment take?', answer: 'It depends on the application, and we agree the timeline when we scope it with you. You start with one application on one line, built with FlowFuse engineers alongside your team, and it goes into production before anything is rolled out further.' },
 ]
 
 // base.njk gave the homepage a title of "FlowFuse • <tagLine>" rather than the usual
@@ -110,6 +110,16 @@ useSeoMeta({
 
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
+    // States what the product is and how it is bought. No offers/price: FlowFuse is sold
+    // as a scoped deployment (/build-with-us/), not a self-serve plan.
+    defineSoftwareApp({
+        name: 'FlowFuse',
+        applicationCategory: 'BusinessApplication',
+        applicationSubCategory: 'Industrial application platform',
+        operatingSystem: 'Cloud, Linux, Windows, macOS',
+        description: 'FlowFuse is a platform for building, deploying and governing industrial applications across plants, from the cloud to machines on the factory floor. FlowFuse engineers build the first application with the customer\'s team.',
+        url: 'https://flowfuse.com/',
+    }),
     ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
 ])
 </script>

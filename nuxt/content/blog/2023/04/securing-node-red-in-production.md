@@ -50,12 +50,12 @@ meta:
     - question: "Where is the Node-RED settings.js file located?"
       answer: "On a default Debian or Raspberry Pi installation, settings.js is found in ~/.node-red/. The exact location can vary depending on platform and installation method."
     - question: "Is Node-RED secure by default?"
-      answer: "No, by default Node-RED has no username or password and is accessible to anyone on the same network. Adding authentication and encrypting traffic are important steps even for hobby projects."
+      answer: "No, by default Node-RED has no username or password and is accessible to anyone on the same network. Adding authentication and encrypting traffic are important steps even for a pilot on a single machine."
     - question: "What does FlowFuse provide for Node-RED security?"
       answer: "FlowFuse Cloud secures the Node-RED editor with your account credentials, enforces HTTPS on all traffic, supports SSO, provides role-based access control, and secures remote device access through encrypted tunnels."
-    - question: "Should I secure a local hobby Node-RED installation?"
-      answer: "Yes, even for hobby use it is a good habit. Unsecured Node-RED instances on a LAN can be accessed and edited by anyone on the network, so adding a password takes only a few minutes and significantly reduces risk."
-tldr: "This step-by-step guide covers the essential security measures for Node-RED deployments: adding username/password authentication via settings.js, restricting LAN access, enabling HTTPS with TLS certificates, and using FlowFuse Cloud as a managed alternative that handles these concerns automatically. Even hobby deployments benefit from these protections to prevent unauthorized access to the Node-RED editor."
+    - question: "Should I secure a Node-RED installation used only for testing?"
+      answer: "Yes. Test and pilot instances often end up in production. Unsecured Node-RED instances on a LAN can be accessed and edited by anyone on the network, so adding a password takes only a few minutes and significantly reduces risk."
+tldr: "This step-by-step guide covers the essential security measures for Node-RED deployments: adding username/password authentication via settings.js, restricting LAN access, enabling HTTPS with TLS certificates, and how FlowFuse enforces these controls across every production instance. Even test deployments benefit from these protections to prevent unauthorized access to the Node-RED editor."
 ---
 
 Node-RED is very easy to get up and running. Whether you run it locally, in Docker, on a Raspberry Pi, or on a service such as FlowFuse Cloud you can have a project up and running in minutes.
@@ -64,7 +64,7 @@ Node-RED is very easy to get up and running. Whether you run it locally, in Dock
 
 One thing that can get overlooked is the security of Node-RED. From personal experience, the first few times I installed Node-RED I was more focussed on the possibilities of what I could do with this new tool than I was keeping my projects secure. 
 
-In this article I’m going to look at some easy ways to make your Node-RED project more secure, even when first learning about it in a hobby environment.
+In this article I’m going to look at some easy ways to make your Node-RED project more secure, even while you are still testing it.
 
 ## Protecting access from your LAN to Node-RED
 

@@ -138,7 +138,7 @@ const PAGE = {
             },
             {
                 question: 'How is FlowFuse priced when budgets sit with the plants?',
-                answer: 'Per instance, meaning each running application or connected device. A first plant can start small, each plan includes a set number of instances, and volume discounts apply as the program reaches hundreds or thousands. See [FlowFuse pricing](/pricing/), or tell us how many plants you plan to reach and we\'ll model the cost with you.',
+                answer: 'It is scoped to your first application and the plants you plan to reach, so a first plant can start without a program-wide commitment. We model the cost with you as the rollout grows. Edge, Hub and Fleet are listed on [FlowFuse pricing](/pricing/).',
             },
         ],
     },
