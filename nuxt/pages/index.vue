@@ -308,18 +308,18 @@ useSeoMeta({
   </section>
 
   <!-- 5. Social proof -->
-  <section class="w-full px-6 pt-16 pb-20 bg-radial-indigo-small">
+  <section class="home-dark w-full px-6 pt-16 pb-20">
     <div class="max-w-screen-lg mx-auto">
       <div class="mt-4">
-        <h2 class="text-balance md:text-5xl">Real results from <span class="text-indigo-600">industrial teams</span></h2>
-        <TestimonialCarousel hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
+        <h2 class="text-balance text-white md:text-5xl">Real results from <span class="text-indigo-300">industrial teams</span></h2>
+        <TestimonialCarousel dark hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
       </div>
       <div class="mt-14 flex flex-wrap justify-center gap-x-8 gap-y-4">
-        <span v-for="t in TRUST" :key="t.label" class="flex items-center gap-2 text-gray-600 text-sm">
-          <UIcon :name="t.icon" class="w-5 h-5 text-indigo-500" />
+        <span v-for="t in TRUST" :key="t.label" class="flex items-center gap-2 text-indigo-100 text-sm">
+          <UIcon :name="t.icon" class="w-5 h-5 text-indigo-300" />
           {{ t.label }}
         </span>
-        <NuxtLink to="/platform/security/" class="flex items-center gap-1 text-indigo-600 text-sm font-medium">
+        <NuxtLink to="/platform/security/" class="flex items-center gap-1 text-white text-sm font-medium hover:underline">
           Security details
           <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
         </NuxtLink>
