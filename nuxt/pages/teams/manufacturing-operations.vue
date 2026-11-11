@@ -80,9 +80,7 @@ const PAGE = {
         intro: 'We become part of your team from the first conversation, and stay that way long after go-live.',
         items: [
             { title: 'Built together, around your goals', descriptionLinks: [
-                { text: 'Our team works alongside yours to build solutions around what you\'re accountable for, and stays close whenever a plant needs help. Learn about ' },
-                { text: 'working with FlowFuse engineers', href: '/professional-services/' },
-                { text: '.' },
+                { text: 'Our team works alongside yours to build solutions around what you\'re accountable for, and stays close whenever a plant needs help.' },
             ], icon: 'i-lucide-handshake' },
             { title: 'No lock-in, ever', descriptionLinks: [
                 { text: 'FlowFuse is built on open-source ' },

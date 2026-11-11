@@ -152,9 +152,7 @@ onUnmounted(() => clearInterval(quoteTimer))
 // Each description is split into parts so a part with an href renders as a link.
 const SUPPORT = [
     { icon: 'i-lucide-handshake', title: 'Built with your team', parts: [
-        { text: 'Our engineers work alongside yours to design the namespace and deliver the first plant, then stay close whenever a site needs help. See ' },
-        { text: 'how we work with your team', href: '/professional-services/' },
-        { text: '.' },
+        { text: 'Our engineers work alongside yours to design the namespace and deliver the first plant, then stay close whenever a site needs help.' },
     ] },
     { icon: 'i-lucide-lock-open', title: 'No lock-in, ever', parts: [
         { text: 'FlowFuse is built on open-source ' },

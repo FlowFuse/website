@@ -142,6 +142,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/blog/2023/08/flowfuse-1-11-release/': { redirect: { to: '/pricing/', statusCode: 302 } },
     '/blog/2023/08/open-source-is-a-tier-not-competition/': { redirect: { to: '/pricing/', statusCode: 302 } },
     '/blog/2024/02/professional-services-for-node-red/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+    '/professional-services/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
     '/blog/2024/03/flowfuse-self-hosted-open-source-resource-limits/': { redirect: { to: '/pricing/', statusCode: 302 } },
     '/blog/2024/05/product-strategy-updates/': { redirect: { to: '/platform/why-flowfuse/', statusCode: 302 } },
     '/blog/2024/12/flowfuse-release-2-12/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
