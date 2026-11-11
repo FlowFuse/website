@@ -48,7 +48,7 @@ const STEPS = [
 const FAQ = [
     {
         question: 'What happens on the first call?',
-        answer: 'We talk through the operational problem you want to solve, the equipment and systems involved, and who would be involved. If FlowFuse is a good fit, we agree the next step together, usually a session to scope the solution and its value.',
+        answer: 'We talk through the operational problem you want to solve, the equipment and systems involved, and who on your team should take part. If FlowFuse is a good fit, we agree the next step together, usually a session to scope the solution and its value.',
     },
     {
         question: 'Can our team maintain it without you?',
