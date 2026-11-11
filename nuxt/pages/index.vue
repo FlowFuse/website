@@ -48,9 +48,9 @@ const PROBLEM = [
 ]
 
 const SOLUTION = [
-    'The AI builds the change. Your engineer approves it.',
-    'Proven at one site, deployed to every site from one place.',
-    'Every change versioned, audited and reversible.',
+    'A solution is proven once and deployed everywhere.',
+    'Each deployment goes faster than the last.',
+    'Your team owns the solution and pushes improvements to every site.',
 ]
 
 const STEPS = [
@@ -100,10 +100,10 @@ const TRUST = [
 ]
 
 useSeoMeta({
-    title: 'The Industrial AI that does the work',
-    description: 'FlowFuse builds the change, ships it to every site, and can\'t touch a machine without your approval.',
-    ogDescription: 'FlowFuse builds the change, ships it to every site, and can\'t touch a machine without your approval.',
-    keywords: 'Industrial AI, Node-RED, Industrial Applications, IIoT, Multi-site Manufacturing, Edge, Industrial Automation, Industry 4.0',
+    title: 'Deploy proven solutions across every site',
+    description: 'FlowFuse builds the first solution with your team on the equipment you already run, proves it at one site, and deploys it to the rest, faster with each one.',
+    ogDescription: 'FlowFuse builds the first solution with your team on the equipment you already run, proves it at one site, and deploys it to the rest, faster with each one.',
+    keywords: 'Industrial Solutions, Node-RED, Industrial Applications, IIoT, Multi-site Manufacturing, Edge, Industrial Automation, Industry 4.0',
     ogUrl: 'https://flowfuse.com/',
     twitterSite: '@FlowFuseinc',
 })
@@ -114,10 +114,10 @@ useSeoMeta({
   <section class="home-dark w-full px-6 pt-16 md:pt-24 pb-16 md:pb-20 overflow-hidden">
     <div class="max-w-screen-xl mx-auto grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-10 md:gap-6 items-center">
       <div class="max-md:text-center relative z-10">
-        <p class="home-eyebrow text-red-300">Industrial AI for multi-site operations</p>
-        <h1 class="text-balance text-white font-medium text-5xl md:text-6xl leading-[1.05] mt-5 mb-0">The Industrial AI that does the work.</h1>
+        <p class="home-eyebrow text-red-300">Industrial solutions for multi-site operations</p>
+        <h1 class="text-balance text-white font-medium text-4xl md:text-5xl leading-[1.08] mt-5 mb-0">Deploy proven solutions across every site, faster with each one.</h1>
         <p class="text-indigo-100 text-lg md:text-xl font-light mt-6 mb-0 max-w-lg max-md:mx-auto">
-          Builds the change. Ships it to every site. Can't touch a machine without your approval.
+          Mission-critical problems need more than software. They need a solution that works on the equipment you already run and delivers a result you can measure. We build the first one with your team, prove it at one site, and deploy it to the rest.
         </p>
         <div class="flex flex-wrap gap-4 items-center mt-10 max-md:justify-center">
           <CtaBookDemo variant="highlight" position="hero" />
@@ -129,8 +129,8 @@ useSeoMeta({
         <div class="home-chip absolute left-2 bottom-2 md:left-0 md:bottom-6">
           <UIcon name="i-lucide-circle-check" class="w-5 h-5 text-emerald-300 shrink-0" />
           <div class="text-left">
-            <p class="m-0 text-white text-sm font-medium leading-5">Change approved</p>
-            <p class="m-0 text-indigo-200 text-xs leading-4">Rolling out to every line</p>
+            <p class="m-0 text-white text-sm font-medium leading-5">Proven at site 1</p>
+            <p class="m-0 text-indigo-200 text-xs leading-4">Deploying to every site</p>
           </div>
         </div>
       </div>
