@@ -117,7 +117,7 @@ useSchemaOrg([
         applicationCategory: 'BusinessApplication',
         applicationSubCategory: 'Industrial application platform',
         operatingSystem: 'Cloud, Linux, Windows, macOS',
-        description: 'FlowFuse is the edge-native platform for industrial applications. Manufacturers use it to build, deploy and govern production applications across their plants, and FlowFuse engineers build the first one with their team.',
+        description: 'FlowFuse is a platform for building, deploying and governing industrial applications across plants, from the cloud to machines on the factory floor. FlowFuse engineers build the first application with the customer\'s team.',
         url: 'https://flowfuse.com/',
     }),
     ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
