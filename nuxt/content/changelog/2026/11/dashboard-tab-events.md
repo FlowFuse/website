@@ -20,9 +20,9 @@ Each message looks like this:
 msg = {
     payload: 'tab',
     tab: 1,
-    id: 'tab-inbox',
-    name: 'Inbox',
-    page: 'Mail'
+    id: 'c41e7b09a2d35f18',
+    name: 'Alarms',
+    page: 'Line 1'
 }
 ```
 
