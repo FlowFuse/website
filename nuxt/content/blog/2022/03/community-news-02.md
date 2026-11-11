@@ -15,9 +15,6 @@ Welcome to the FlowFuse newsletter, a regular roundup of what\`s happening with 
 <!--more-->
 If you've got something that you'd like us to share please email [contact@flowfuse.com](mailto:contact@flowfuse.com).
 
-[Announcing FlowFuse Cloud](/blog/2022/02/announcing-flowforge-cloud/)  
-We are excited to announce FlowFuse Cloud, a hosted Node-RED as a service offering and today we are opening the waitlist.
-
 [FlowFuse 0.2](/blog/2022/02/flowforge-02-released/)  
 We continue to iterate with our 4 weekly releases of the FlowFuse platform.
 

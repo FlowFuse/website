@@ -577,7 +577,6 @@ export default defineNuxtConfig({
                     '/contact-us',
                     '/book-demo',
                     '/support',
-                    '/professional-services',
                     '/dashboard/tags-and-canvas-feedback',
                     '/trial-feedback',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
