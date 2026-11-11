@@ -1,9 +1,9 @@
 // The homepage's wireframe scenes, drawn with the IsoScene primitives in home-iso.ts.
 // Coordinates are world units; render() fits the viewBox, so a scene's absolute
 // scale doesn't matter, only its proportions.
-import { IsoScene } from './home-iso'
+import { IsoScene, project } from './home-iso'
 
-export type SceneName = 'hero' | 'sites' | 'operations' | 'maintenance' | 'automation' | 'digital'
+export type SceneName = 'hero' | 'sites' | 'foundation' | 'operations' | 'maintenance' | 'automation' | 'digital'
 
 // Flow lines are drawn above every solid, so data reads as travelling over the plant.
 const OVER = 1e5
@@ -99,6 +99,55 @@ function sites () {
     return s
 }
 
+// The Foundation Partnership, as four sites in a row. Each site is a stack: four
+// foundation layers (integrations, data model, deployment pattern, governance) under
+// the solution itself. At site 1 every layer is built new (accent). Every later site
+// reuses the whole stack (line) and only adds a thin cap of site-specific work, which
+// is the picture of "faster with each one". Links carry the foundation along the row.
+export const FOUNDATION_SITES = 4
+const STACK = { step: 15, size: 8, layer: 1.1, gap: 0.35, block: 3.4 }
+
+function foundationOrigin (i: number): [number, number] {
+    return [i * STACK.step, -i * STACK.step]
+}
+
+function foundation () {
+    const s = new IsoScene()
+    const { size, layer, gap, block } = STACK
+    const top = 4 * (layer + gap)
+    for (let i = 0; i < FOUNDATION_SITES; i++) {
+        const [ox, oy] = foundationOrigin(i)
+        const built = i === 0
+        const tone = built ? 'accent' : 'line'
+        // Stacks sit side by side on screen, so each gets its own depth band
+        const base = i * 10
+        for (let k = 0; k < 4; k++) s.box(ox, oy, k * (layer + gap), size, size, layer, tone, base + k)
+        s.box(ox + 1.5, oy + 1.5, top, size - 3, size - 3, block, tone, base + 5)
+        // Site-specific work at every later site: a thin cap on the reused solution
+        if (!built) s.box(ox + 1.5, oy + 1.5, top + block, size - 3, size - 3, 0.7, 'accent', base + 6)
+    }
+    // The foundation travels from each site to the next, at the height of the layers
+    for (let i = 0; i + 1 < FOUNDATION_SITES; i++) {
+        const [ax, ay] = foundationOrigin(i)
+        const [bx, by] = foundationOrigin(i + 1)
+        // From this stack's right-most edge to the next stack's left-most edge: a level,
+        // horizontal run through the gap that touches neither stack's faces
+        s.line([[ax + size, ay, 2.9], [bx, by + size, 2.9]], 'accent', 'flow', i * 10 + 8)
+    }
+    return s
+}
+
+// Where each foundation site sits across the rendered picture, as a fraction of its
+// width, so the page can set a label under each one.
+export function foundationSiteCenters () {
+    const [minX, , width] = renderScene('foundation').viewBox.split(' ').map(Number)
+    return Array.from({ length: FOUNDATION_SITES }, (_, i) => {
+        const [ox, oy] = foundationOrigin(i)
+        const [sx] = project(ox + STACK.size / 2, oy + STACK.size / 2, 0)
+        return (sx - minX) / width
+    })
+}
+
 function operations () {
     const s = new IsoScene()
     for (let k = 0; k < 3; k++) {
@@ -145,7 +194,7 @@ function digital () {
     return s
 }
 
-const BUILDERS: Record<SceneName, () => IsoScene> = { hero, sites, operations, maintenance, automation, digital }
+const BUILDERS: Record<SceneName, () => IsoScene> = { hero, sites, foundation, operations, maintenance, automation, digital }
 
 const cache = new Map<SceneName, ReturnType<IsoScene['render']>>()
 
