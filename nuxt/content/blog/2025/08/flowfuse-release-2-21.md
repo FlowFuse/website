@@ -55,7 +55,7 @@ We've now introduced the Subflow exporter which provides a low-code and intuitiv
 
 From the sidebar in your Node-RED Editor, you can now very easily create and manage custom nodes, without writing code or having to create and manage your own version control infrastructure. Simply create a flow in Node-RED, convert it to a subflow, fill out the package details for your new custom node and hit "Publish". Now your new node is available for all to install across your FlowFuse team.
 
-Available for Enterprise customers only.
+Available in FlowFuse Edge, Hub and Fleet.
 
 ## Remote Instance Observability
 ![Screenshot of remote instance monitoring interface](./images/remote.png)

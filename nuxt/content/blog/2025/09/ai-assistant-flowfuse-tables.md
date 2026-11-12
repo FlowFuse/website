@@ -43,7 +43,7 @@ Before you begin, make sure FlowFuse Tables is activated in your FlowFuse team. 
 
 After deployment, press the "Insert simulated Data" inject button to populate your table with a week's worth of hourly sensor readings. This sample data will help you explore Query node capabilities.
 
-> **Note:** FlowFuse Tables is currently available for Enterprise users only.
+> **Note:** FlowFuse Tables is available in FlowFuse Edge, Hub and Fleet.
 
 Now, let us test the natural language querying powered by the FlowFuse Expert:  
 1. Add an Inject node to your flow  

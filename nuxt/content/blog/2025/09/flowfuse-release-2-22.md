@@ -61,7 +61,7 @@ This is especially important for users with large remote instance deployments, a
 
 ## SAML Group Assertions for Dashboard Development
 
-Managing Dashboard permissions when building flows just got easier for Enterprise teams using SSO.
+Managing Dashboard permissions when building flows just got easier for teams using SSO.
 
 We've added an new option so that a users SSO Group memberships can be included in the `user` object Dashboard flows receive when a user is logged in. This makes it much easier to build custom permissions into your FlowFuse Dashboard applications, giving you far more flexibility.
 

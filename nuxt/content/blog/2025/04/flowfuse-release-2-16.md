@@ -38,7 +38,7 @@ This last point is important; this release lets you backup your flows to git, bu
 
 We'll also look at enabling other Git hosting providers - let us know which you'd like to see on the list.
 
-This feature is available to Enterprise teams on FlowFuse Cloud and self-hosted customers.
+This feature is available in FlowFuse Hub, on FlowFuse Cloud and self-hosted.
 
 ## Better Node-RED log handling
 

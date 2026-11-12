@@ -59,7 +59,7 @@ _Image showing the 'Applications' option in the FlowFuse platform._
 ![Image showing the 'Dependencies' option in the FlowFuse platform for the SBoM interface.](./images/dependencies-tab-option.png){data-zoomable}
 _Image showing the 'Dependencies' option in the FlowFuse platform for the SBoM interface._
 
-*Note: This feature is only available for FlowFuse Enterprise customers.*
+*Note: This feature is available in FlowFuse Hub.*
 
 ### Understanding What the SBoM Interface Shows
 
