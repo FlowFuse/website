@@ -82,6 +82,7 @@ path.r-none:not([d$='Z']) { fill: none; }
 }
 .r-dot { fill: var(--accent); stroke: none; }
 .r-dot.t-muted { fill: var(--muted); }
+.r-dot.t-line { fill: var(--top); stroke: var(--stroke); }
 .r-dot.t-accent { animation: iso-pulse 2.4s ease-in-out infinite; }
 
 @keyframes iso-flow { to { stroke-dashoffset: -7.6; } }

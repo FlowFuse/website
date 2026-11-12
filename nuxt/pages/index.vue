@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // The homepage, written for director-level buyers. Six parts, in this order:
 //   1. Value statement (hero, with the wireframe plant)
-//   2. Choose where to start: four team entry points, one per /teams/ page
+//   2. Results you can measure: the scorecard numbers a first solution moves
 //   3. Problem to solution: one plant proven, every site running it
 //   3b. The Foundation Partnership: why each site is faster than the last
 //   4. Metrics of success: customer results, each linked to its story
@@ -17,35 +17,14 @@
 // (the partnership page) through CtaLink, so clicks still count as the signUp CTA.
 import { foundationSiteCenters } from '../lib/home-iso-scenes'
 
-const START_POINTS = [
-    {
-        scene: 'operations',
-        team: 'Operations',
-        title: 'Every plant on plan',
-        text: 'See output, downtime and quality live at every plant, and roll out what works.',
-        to: '/teams/manufacturing-operations/',
-    },
-    {
-        scene: 'maintenance',
-        team: 'Maintenance & reliability',
-        title: 'Fewer surprise stops',
-        text: 'Catch failures before they stop the line. Send technicians with the diagnosis in hand.',
-        to: '/teams/maintenance-reliability/',
-    },
-    {
-        scene: 'automation',
-        team: 'Automation & controls',
-        title: 'One standard, every change on record',
-        text: 'Run approved logic across mixed controllers and sites, tested and versioned.',
-        to: '/teams/automation-controls/',
-    },
-    {
-        scene: 'digital',
-        team: 'Digital transformation',
-        title: 'From pilot to every plant',
-        text: 'Turn one working pilot into the standard every site runs.',
-        to: '/teams/digital-transformation/',
-    },
+// The scorecard plant and operations leaders already report against (Quality, Delivery,
+// Cost), plus Uptime for maintenance. Under each word, one line that sees the problem and
+// acts on it: these are solutions that do something, not dashboards. The next section carries "every plant", so this one stays off it.
+const SCORECARD = [
+    { scene: 'quality', name: 'Quality', text: 'Stop bad parts at the station, not at the end of the line.' },
+    { scene: 'delivery', name: 'Delivery', text: 'Spot a slipping order while there’s still time to save it.' },
+    { scene: 'cost', name: 'Cost', text: 'Find your costliest stops and fix them first.' },
+    { scene: 'uptime', name: 'Uptime', text: 'Turn early warnings into work orders before a machine fails.' },
 ] as const
 
 const PROBLEM = [
@@ -170,30 +149,34 @@ useSeoMeta({
     </div>
   </section>
 
-  <!-- 2. Choose where to start -->
+  <!-- 2. Results you can measure: picks up the hero's last promise -->
   <section class="w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
-      <p class="home-eyebrow text-red-500 max-md:text-center">Choose where to start</p>
-      <h2 class="text-balance mt-4 mb-12 md:text-5xl max-md:text-center">Start with the result <span class="text-indigo-600">you're measured on.</span></h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <NuxtLink
-            v-for="item in START_POINTS"
-            :key="item.to"
-            :to="item.to"
-            class="home-start group flex flex-col rounded-xl border border-indigo-100 bg-white p-6 hover:no-underline hover:border-indigo-300 transition-colors"
-        >
-          <div class="h-24 flex items-center justify-center mb-6">
-            <HomeIsoArt :scene="item.scene" class="max-h-24 w-auto max-w-[150px]" />
-          </div>
-          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-500 m-0">{{ item.team }}</p>
-          <p class="text-gray-800 text-lg font-medium leading-6 mt-2 mb-0">{{ item.title }}</p>
-          <p class="text-gray-600 font-light text-sm leading-5 mt-3 mb-0 flex-grow">{{ item.text }}</p>
-          <span class="flex items-center gap-1.5 text-indigo-600 text-sm font-medium mt-6">
-            <span class="group-hover:underline">Start here</span>
-            <UIcon name="i-lucide-arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </span>
-        </NuxtLink>
+      <div class="max-md:text-center">
+        <p class="home-eyebrow text-red-500">Results you can measure</p>
+        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Every solution starts with <br class="max-md:hidden"><span class="text-indigo-600">a number on your scorecard.</span></h2>
+        <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-xl max-md:mx-auto">
+          We agree the number first, then build the solution that moves it.
+        </p>
       </div>
+      <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 rounded-2xl border border-gray-200 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(67,56,202,0.12)] overflow-hidden">
+        <div
+            v-for="(kpi, i) in SCORECARD"
+            :key="kpi.name"
+            class="relative p-7 md:p-8 border-gray-200"
+            :class="[
+              i % 2 === 1 ? 'border-l' : '',
+              i > 1 ? 'max-lg:border-t lg:border-l' : '',
+            ]"
+        >
+          <div class="h-28 flex items-center justify-center rounded-xl bg-gradient-to-b from-indigo-50/70 to-transparent">
+            <HomeIsoArt :scene="kpi.scene" class="max-h-[88px] w-auto max-w-[170px]" />
+          </div>
+          <p class="m-0 mt-6 text-center text-gray-900 text-xl md:text-2xl font-medium tracking-tight">{{ kpi.name }}</p>
+          <p class="m-0 mt-2 text-center text-gray-500 text-[15px] leading-6 text-balance">{{ kpi.text }}</p>
+        </div>
+      </div>
+      <p class="m-0 mt-8 text-center text-gray-500">Measured on something else? <span class="text-gray-800 font-medium">We start there too.</span></p>
     </div>
   </section>
 
