@@ -64,6 +64,9 @@ The typical approach is a custom Python script that subscribes to the broker, pa
 
 This article takes a different approach. Using FlowFuse (the enterprise platform built on [Node-RED](/)), you'll build the entire pipeline as a visual flow covering MQTT subscription, payload transformation, and InfluxDB write. Every step is visible, editable, and easy to hand off.
 
+::cta-image{src="/blog/2026/02/images/mqtt-to-influxdb-cta-1.png" alt="Build this pipeline in minutes. Build this pipeline on your own data, with our engineers alongside your team." cta="sign-up"}
+::
+
 ## TL;DR
 
 - **What**: Build an MQTT-to-InfluxDB pipeline that subscribes to a broker, transforms the payload, and writes time-series data to InfluxDB.

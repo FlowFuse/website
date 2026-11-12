@@ -39,6 +39,9 @@ These aren't competing protocols. They're answers to incompatible constraints. M
 
 This article shows what each protocol actually demands, where each fails under real constraints, and why teams consistently choose wrong, not because they pick inferior technology, but because they never validated their deployment requirements.
 
+::cta-image{src="/blog/2026/02/images/mqtt-vs-coap-cta-1.png" alt="Not sure MQTT or CoAP wins here?. Run both protocols on your actual device and see which one holds up." cta="sign-up"}
+::
+
 ## What Actually Separates These Protocols
 
 To choose between CoAP and MQTT, you need to understand what these protocols do and what architectural assumptions they force on your system.

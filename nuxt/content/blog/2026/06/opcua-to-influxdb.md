@@ -79,6 +79,9 @@ For the OPC UA connection, this guide uses the **FlowFuse Edge Certified Nodes p
 
 With those ready, the next step is installing the nodes that connect FlowFuse to OPC UA and InfluxDB.
 
+::cta-image{src="/blog/2026/06/images/opcua-influxdb-cta-1.png" alt="Start logging equipment history today. Turn live equipment readings into queryable history, with our engineers alongside your team." cta="sign-up"}
+::
+
 ## Installing the nodes
 
 You'll install two packages: the InfluxDB nodes and the FlowFuse Edge Certified OPC UA nodes.

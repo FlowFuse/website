@@ -26,6 +26,9 @@ To facilitate a many to many connection between data producers and data consumer
 1. Data transport through a hub-and-spokes model
 1. Set structure of the Data
 
+::cta-image{src="/blog/2023/12/images/intro-uns-cta-1.png" alt="Ready to build your first UNS?. Connect your first data source, with our engineers alongside your team." cta="sign-up"}
+::
+
 ## Hub and spokes model replaces Point to Point
 
 Traditionally, for example web servers serving web pages, the client requests a

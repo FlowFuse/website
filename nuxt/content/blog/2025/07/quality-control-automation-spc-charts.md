@@ -34,6 +34,9 @@ What separates industry leaders from the rest? They refuse to accept "normal" wa
 
 This guide shows you exactly how to build a real-time SPC system using FlowFuse. You'll create a live dashboard that tracks measurements and alerts operators the moment something goes wrong. No statistics degree needed, just practical steps you can implement today.
 
+::cta-image{src="/blog/2025/07/images/spc-cta-1.png" alt="Stop catching defects after the fact. Build a real-time control chart from your own machine data, with our engineers alongside your team." cta="sign-up"}
+::
+
 ## Why Traditional Quality Control Falls Short                   
 
 Most manufacturers still rely on [end-of-line inspection](/blog/2026/10/automotive-quality-control/). Make parts, check parts, scrap the bad ones. This reactive approach creates three expensive problems:

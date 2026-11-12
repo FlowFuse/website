@@ -128,6 +128,9 @@ Sparkplug B carries a trade-off that rarely makes it into the comparison posts, 
 
 The [Sparkplug B spec mandates QoS 0](https://github.com/eclipse-sparkplug/sparkplug/blob/master/docs/normative_statements.md) for all data and lifecycle messages, the NBIRTH, DBIRTH, NDATA, DDATA, NDEATH, and DDEATH messages that carry your actual telemetry and device state. The one exception is the Primary Host Application's STATE message, which uses QoS 1 so host availability is signalled reliably. But for the data you care about, QoS 0 means "fire and forget." The publisher sends a message and moves on, with no delivery guarantee. In theory that's maximum speed. In practice, if the network hiccups or the broker restarts, that data is gone. For a real-time dashboard, fine. For a regulated environment where every reading has to be accounted for, that's a genuine risk. Plain MQTT, by contrast, lets you pick your quality of service: QoS 0, QoS 1 for "at least once," or QoS 2 for "exactly once." If you can't afford to lose data, you choose a higher level and pay for it in some performance.
 
+::cta-image{src="/blog/2026/06/images/mqtt-vs-sparkplug-cta-1.png" alt="Outgrowing plain MQTT?. FlowFuse speaks both MQTT and Sparkplug B, so switching doesn't mean starting over." cta="sign-up"}
+::
+
 The other costs are smaller but real. The binary payload that saves you bandwidth is also harder to debug, since you can't just read it off the wire without the right tooling. And teams used to sending plain JSON have a learning curve to climb: topic conventions, birth and death messages, protobuf schemas. For a handful of sensors, that overhead isn't worth it. Plain MQTT is simpler and does the job.
 
 ## How to choose between MQTT and Sparkplug B

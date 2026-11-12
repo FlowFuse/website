@@ -38,6 +38,9 @@ AI is being used in manufacturing to predict equipment failures, detect defects,
 
 Implementing AI in a manufacturing environment is more than selecting the right model. It requires connecting data, building applications, and bringing results to where they can have the most impact. This article covers the [main use cases for AI in manufacturing](#common-use-cases-of-ai-in-manufacturing), the [software required](#software-stack-for-ai-in-manufacturing), and [how to implement AI](#how-to-implement-ai-in-manufacturing) in production.
 
+::cta-image{src="/blog/2026/09/images/ai-in-manufacturing-cta-1.png" alt="Bring AI into your production environment. Use AI with the industrial data, applications, and workflows running in FlowFuse." cta="sign-up"}
+::
+
 ## What Is AI in Manufacturing?
 
 AI stands for artificial intelligence. It encompasses technologies that enable learning from data, recognizing patterns, making predictions, and performing tasks that require human intelligence.
