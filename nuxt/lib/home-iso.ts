@@ -26,7 +26,12 @@ export interface Shape {
     depth: number
     // explicit [minX, minY, maxX, maxY] for shapes whose path holds arcs
     bounds?: [number, number, number, number]
+    // a named part of the scene (one machine, one line) that the page can highlight
+    group?: string
 }
+
+// Where a named group sits in the rendered picture, as fractions of its width and height.
+export interface GroupBox { x: number, y: number, w: number, h: number }
 
 const COS30 = Math.cos(Math.PI / 6)
 const SIN30 = 0.5
@@ -41,6 +46,14 @@ function pt ([sx, sy]: [number, number]) {
 
 export class IsoScene {
     shapes: Shape[] = []
+
+    // Tag every shape drawn inside `draw` as part of one named group.
+    tag (group: string, draw: () => void) {
+        const from = this.shapes.length
+        draw()
+        for (let i = from; i < this.shapes.length; i++) this.shapes[i].group = group
+        return this
+    }
 
     // A solid box drawn as three outlined faces. `depth` sorts painter's-algorithm style:
     // objects further back (smaller x + y) are drawn first.
@@ -118,32 +131,63 @@ export class IsoScene {
         return this
     }
 
-    // Painter's-algorithm order, plus a padded viewBox around everything drawn.
+    // Painter's-algorithm order, a padded viewBox around everything drawn, and where
+    // each named group sits inside it.
     render (pad = 2) {
         const shapes = [...this.shapes].sort((a, b) => a.depth - b.depth)
-        let minX = Infinity; let minY = Infinity; let maxX = -Infinity; let maxY = -Infinity
-        const grow = (x: number, y: number) => {
-            minX = Math.min(minX, x); minY = Math.min(minY, y)
-            maxX = Math.max(maxX, x); maxY = Math.max(maxY, y)
-        }
+        const all = emptyBox()
+        const groups = new Map<string, Box>()
         for (const s of shapes) {
-            if (s.points) s.points.forEach(([x, y]) => grow(x, y))
-            if (s.kind === 'circle') { grow(s.cx! - s.r!, s.cy! - s.r!); grow(s.cx! + s.r!, s.cy! + s.r!) }
-            if (s.bounds) { grow(s.bounds[0], s.bounds[1]); grow(s.bounds[2], s.bounds[3]) }
-            else if (s.d) {
-                // Every coordinate pair in our own path strings is "x,y" or "x y" after a command.
-                const nums = s.d.match(/-?\d+(\.\d+)?/g)?.map(Number) ?? []
-                if (!s.d.includes('A')) for (let i = 0; i + 1 < nums.length; i += 2) grow(nums[i], nums[i + 1])
+            const b = shapeBox(s)
+            if (!b) continue
+            growBox(all, b)
+            // A group's box covers its solid parts, not the data lines rising off it,
+            // so a callout pointing at the group lands on the machine itself
+            if (s.group && s.role !== 'flow') {
+                if (!groups.has(s.group)) groups.set(s.group, emptyBox())
+                growBox(groups.get(s.group)!, b)
             }
         }
-        // Arcs only ever sit inside the box/cylinder outline already counted above.
-        const viewBox = `${(minX - pad).toFixed(1)} ${(minY - pad).toFixed(1)} ${(maxX - minX + pad * 2).toFixed(1)} ${(maxY - minY + pad * 2).toFixed(1)}`
+        const [minX, minY] = [all[0] - pad, all[1] - pad]
+        const [width, height] = [all[2] - all[0] + pad * 2, all[3] - all[1] + pad * 2]
+        const viewBox = `${minX.toFixed(1)} ${minY.toFixed(1)} ${width.toFixed(1)} ${height.toFixed(1)}`
+        const groupBoxes: Record<string, GroupBox> = {}
+        for (const [name, b] of groups) {
+            groupBoxes[name] = { x: (b[0] - minX) / width, y: (b[1] - minY) / height, w: (b[2] - b[0]) / width, h: (b[3] - b[1]) / height }
+        }
         return {
             viewBox,
+            groups: groupBoxes,
             shapes: shapes.map(s => ({
                 ...s,
                 points: s.points ? s.points.map(pt).join(' ') : undefined,
             })),
         }
     }
+}
+
+type Box = [number, number, number, number]
+
+function emptyBox (): Box {
+    return [Infinity, Infinity, -Infinity, -Infinity]
+}
+
+function growBox (b: Box, [x0, y0, x1, y1]: Box) {
+    b[0] = Math.min(b[0], x0); b[1] = Math.min(b[1], y0)
+    b[2] = Math.max(b[2], x1); b[3] = Math.max(b[3], y1)
+}
+
+// The 2D extent of one shape. Paths with arcs carry explicit bounds (the arcs sit inside
+// the outline already counted); every other path is read from its own "x,y" pairs.
+function shapeBox (s: Shape): Box | null {
+    const b = emptyBox()
+    const grow = (x: number, y: number) => growBox(b, [x, y, x, y])
+    if (s.points) s.points.forEach(([x, y]) => grow(x, y))
+    if (s.kind === 'circle') { grow(s.cx! - s.r!, s.cy! - s.r!); grow(s.cx! + s.r!, s.cy! + s.r!) }
+    if (s.bounds) growBox(b, s.bounds)
+    else if (s.d && !s.d.includes('A')) {
+        const nums = s.d.match(/-?\d+(\.\d+)?/g)?.map(Number) ?? []
+        for (let i = 0; i + 1 < nums.length; i += 2) grow(nums[i], nums[i + 1])
+    }
+    return b[0] === Infinity ? null : b
 }
