@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // The homepage, written for director-level buyers. Six parts, in this order:
-//   1. Value statement (hero, with the wireframe plant)
+//   1. Value statement (hero, with the animated wireframe plant: components/home/Hero.vue)
 //   2. Results you can measure: the scorecard numbers a first solution moves
 //   3. Problem to solution: one plant proven, every site running it
 //   3b. The Foundation Partnership: why each site is faster than the last
@@ -148,7 +148,7 @@ useSchemaOrg([
         </div>
       </div>
       <div class="relative">
-        <HomeIsoArt scene="hero" variant="dark" class="w-full max-w-[680px] mx-auto" />
+        <HomeHero class="w-full max-w-[680px] mx-auto" />
       </div>
     </div>
   </section>
