@@ -62,11 +62,6 @@ We'd like the thank the following for their contributions to this release:
 
 As an open-source project, we welcome community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
-### Try it out
-
-As an open source project you can also use [FlowFuse-Community](/docs/install/) for free, forever.
-
-
 ### Upgrading FlowFuse
 
 Our managed [FlowFuse](site:appURL) is already running 1.0. Upgrade your project Stacks to the latest version to make sure you get all the latest changes.
