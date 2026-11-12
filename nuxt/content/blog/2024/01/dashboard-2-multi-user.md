@@ -52,7 +52,7 @@ For your devices, we provide the necessary configuration and access token upon r
 
 ##### FlowFuse Self-Hosted
 
-It works on Node-RED instances running on FlowFuse with FlowFuse User Authentication enabled, and FlowFuse handles the setup for you.
+For self-hosted customers, we provide the necessary configuration upon request to get started.
 
 Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.
 

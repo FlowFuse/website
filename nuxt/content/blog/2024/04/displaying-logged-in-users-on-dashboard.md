@@ -43,7 +43,7 @@ meta:
     - question: "What is the FlowFuse Multi-user Dashboard addon?"
       answer: "It is a plugin for Dashboard 2.0 that uses the FlowFuse API to attach authenticated user information, including user ID, username, email, full name, and avatar, to every msg object emitted by dashboard widgets."
     - question: "Which FlowFuse plans support the Multi-user addon?"
-      answer: "The Multi-User addon is included in FlowFuse Edge, Hub and Fleet. It works on Node-RED instances running on FlowFuse with FlowFuse User Authentication enabled, and FlowFuse handles the setup for you."
+      answer: "The Multi-User addon is included in FlowFuse Edge, Hub and Fleet. To use it, turn on FlowFuse User Authentication in your instance's Security settings, then install the addon from the Node-RED Palette Manager. For self-hosted installs and devices, [contact us](/contact-us/) for the configuration."
     - question: "How is user data accessed inside a ui-template widget?"
       answer: "User data is available as setup.socketio.auth.user in the Vue template (e.g. {{ setup.socketio.auth.user.name }}) and as this.setup.socketio.auth.user in the widget's JavaScript section."
     - question: "What is the difference between 'Include Client Data' and 'Accept Client Constraints'?"
@@ -120,7 +120,7 @@ A feature that ensures messages are specifically targeted to individual clients,
 
 For example, consider a manufacturing facility where each production line has its own monitoring system. With this feature enabled, data from sensors on Production Line A will only be sent to the monitoring system designated for Production Line A. This ensures that data remains isolated and relevant to each specific area of operation, maintaining organizational efficiency and security.
 
-*Note: The Multi-User addon is included in FlowFuse Edge, Hub and Fleet. It works on Node-RED instances running on FlowFuse with FlowFuse User Authentication enabled, and FlowFuse handles the setup for you.*
+*Note: The Multi-User addon is included in FlowFuse Edge, Hub and Fleet. To use it, turn on FlowFuse User Authentication in your instance's Security settings, then install the addon from the Node-RED Palette Manager. For self-hosted installs and devices, [contact us](/contact-us/) for the configuration.*
 
 !["Screenshot displaying the FlowFuse Muti-user addon option"](./images/displaying-logged-in-user-ff-auth-tab.png "Screenshot displaying the FlowFuse Muti-user addon option"){data-zoomable}
 

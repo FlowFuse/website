@@ -81,7 +81,7 @@ Before you start building, get these ready:
 - **[FlowFuse Dashboard](/platform/dashboard/) installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-template`, `ui-table`, `ui-form`, `ui-button`, `ui-control`, `ui-event`, `ui-text`) to build the operator interface. Install it from the Palette Manager if it isn't already in your instance.
 - **The FlowFuse Dashboard user addon.** This is what attaches the logged-in user to every dashboard message. We'll install it in the first section.
 
-> Note: The Multi-User addon is included in FlowFuse Edge, Hub and Fleet. It works on Node-RED instances running on FlowFuse with FlowFuse User Authentication enabled, and FlowFuse handles the setup for you.
+> Note: The Multi-User addon is included in FlowFuse Edge, Hub and Fleet. To use it, turn on FlowFuse User Authentication in your instance's Security settings, then install the addon from the Node-RED Palette Manager. For self-hosted installs and devices, [contact us](/contact-us/) for the configuration.
 
 ## How the Application Works
 
