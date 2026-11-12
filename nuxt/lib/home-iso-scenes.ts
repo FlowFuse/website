@@ -251,20 +251,26 @@ function quality () {
     return s
 }
 
-// Delivery: a loaded truck leaving the dock, the finished goods it carries.
+// Delivery: a box truck on the road, the load it carries in orange: the order being
+// tracked. Facing down-right, so the cab front and the near side both show.
 function delivery () {
     const s = new IsoScene()
-    // Pallet of finished goods waiting on the dock
-    s.box(-6, 0.5, 0, 4.5, 4.5, 0.5, 'muted', -5)
-    s.box(-5.5, 1, 0.5, 1.8, 1.8, 1.6, 'line', -4)
-    s.box(-3.5, 1, 0.5, 1.8, 1.8, 1.6, 'line', -3)
-    s.box(-5.5, 3, 0.5, 1.8, 1.8, 1.6, 'line', -2)
-    // Cargo body, then the cab with its windscreen
-    s.box(0, 0, 1.2, 10, 5, 5.5, 'line', 10)
-    s.box(10, 0.4, 1.2, 3.6, 4.2, 3.8, 'accent', 11)
-    s.panelX(13.6, 1, 4, 3.2, 4.6, 'accent', 12)
-    // Wheels on the near side
-    for (const x of [2, 7.5, 11.8]) s.dot(x, 5.2, 1.1, 1.05, 'line', 30)
+    // The stretch of road it stands on, under everything
+    s.box(-1, -0.8, 0, 18.6, 7.4, 0.3, 'muted', -100)
+    // Chassis rail, then the cargo box (the order) and its rear door
+    s.box(0.4, 0.8, 1.1, 15.2, 3.4, 0.6, 'line', 10)
+    s.box(0, 0, 1.7, 10.2, 5, 5.4, 'accent', 20)
+    s.panelY(5, 0.8, 9.4, 2.4, 6.4, 'accent', 21)
+    // Cab: the cabin, a lower hood in front of it, windscreen and side window
+    s.box(10.6, 0.3, 1.7, 3.4, 4.4, 3.8, 'line', 30)
+    s.box(14, 0.5, 1.7, 1.8, 4, 1.9, 'line', 31)
+    s.panelX(14, 0.9, 4.3, 3.9, 5.1, 'line', 32)
+    s.panelY(4.7, 11.2, 13.4, 3.7, 5.1, 'line', 33)
+    // Wheels on the near side, each a tyre with a hub
+    for (const x of [2.6, 6.8, 12.6]) {
+        s.disc(x, 5.05, 1.35, 1.05, 'line', 'left', 50 + x)
+        s.disc(x, 5.1, 1.35, 0.45, 'line', 'top', 51 + x)
+    }
     return s
 }
 
