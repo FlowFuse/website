@@ -70,6 +70,7 @@ As an open-source project, we welcome the community involvement in what we're bu
 
 ### Try it out
 
+To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
 
 ### Upgrading FlowFuse
 
