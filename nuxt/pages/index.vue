@@ -122,8 +122,11 @@ const TRUST = [
     { icon: 'i-lucide-server', label: 'Self-hosted or air-gapped' },
 ]
 
+// The homepage ranks for the brand, so its title leads with it. The site-wide template
+// would append "• FlowFuse" again, so it's switched off for this page only.
+useHead({ titleTemplate: '%s' })
 useSeoMeta({
-    title: 'Deploy proven solutions across every site',
+    title: 'FlowFuse | Deploy Proven Industrial Solutions at Every Site',
     description: 'FlowFuse builds the first solution with your team on the equipment you already run, proves it at one site, and deploys it to the rest, faster with each one.',
     ogDescription: 'FlowFuse builds the first solution with your team on the equipment you already run, proves it at one site, and deploys it to the rest, faster with each one.',
     keywords: 'Industrial Solutions, Node-RED, Industrial Applications, IIoT, Multi-site Manufacturing, Edge, Industrial Automation, Industry 4.0',
