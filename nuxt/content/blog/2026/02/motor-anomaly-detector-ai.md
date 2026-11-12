@@ -114,7 +114,7 @@ The `motor_id` and `ts` fields are ignored by the model and can be omitted or re
 
 You'll need an MQTT broker to route messages between the sensor, the training script, and Node-RED. Make sure your sensor is publishing to a consistent topic so all three can stay in sync.
 
-> **Tip:** If you're using [FlowFuse](/) for enterprise Node-RED, a built-in MQTT broker is available on **Pro** and **Enterprise** tiers with no external setup required. [Contact us](/contact-us) for more information.
+> **Tip:** If you're using [FlowFuse](/) for enterprise Node-RED, a built-in MQTT broker is included in **FlowFuse Edge** and **Fleet** with no external setup required. [Contact us](/contact-us) for more information.
 
 ## Part 2: Training the Autoencoder
 

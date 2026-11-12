@@ -28,12 +28,12 @@ meta:
     - question: "What is a Remote Instance in FlowFuse?"
       answer: "A Remote Instance is a Node-RED instance that is managed by FlowFuse but runs on external hardware, such as an edge device in a factory or a home server, connected via the Device Agent."
     - question: "Is the FlowFuse free plan still available?"
-      answer: "The free plan has been withdrawn. You can sign up for a 2-week free trial to experience all FlowFuse features, or start with the Starter plan at $20/month."
+      answer: "No. The free plan and the self-serve plans have been retired. FlowFuse is now offered as Edge, Hub and Fleet; to get started, [build with us](/build-with-us/)."
     - question: "Can I use FlowFuse for home automation?"
       answer: "Yes. FlowFuse is well suited for home automation scenarios where you want to manage multiple Node-RED instances from a single interface, with version control and remote access."
     - question: "What is Developer Mode in the FlowFuse Device Agent?"
       answer: "Developer Mode allows you to access your remote Node-RED editor directly through FlowFuse Cloud, so you can edit flows on edge devices without needing direct network access to the hardware."
-tldr: "FlowFuse 2.12 introduced a free team tier on FlowFuse Cloud, allowing users to manage two remote Node-RED instances via the Device Agent at no cost. The release also included Device Auto Snapshots for automatic flow backups. Note: the free plan has since been withdrawn, but a 2-week trial and a Starter plan are available."
+tldr: "FlowFuse 2.12 introduced a free team tier on FlowFuse Cloud, allowing users to manage two remote Node-RED instances via the Device Agent at no cost. The release also included Device Auto Snapshots for automatic flow backups. Note: the free plan has since been retired, and FlowFuse is now offered as Edge, Hub and Fleet."
 ---
 
 The new Free plan on FlowFuse Cloud will allow you to manage two remote instances using FlowFuse Device Agent, completely free of charge, forever! The new plan also provides Device Auto Snapshots, so any changes to your Node-RED flows running on your devices are backed up automatically.
