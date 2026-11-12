@@ -44,7 +44,7 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/platform/features/': { redirect: { to: '/product/', statusCode: 301 } },
     '/product/why-flowfuse/': { redirect: { to: '/product/', statusCode: 301 } },
     '/features/': { redirect: { to: '/product/', statusCode: 301 } },
-    '/blog/2024/03/flowfuse-self-hosted-starter-resource-limits/': { redirect: { to: '/blog/2024/03/flowfuse-self-hosted-open-source-resource-limits/', statusCode: 301 } },
+    '/blog/2024/03/flowfuse-self-hosted-starter-resource-limits/': { redirect: { to: '/pricing/', statusCode: 301 } },
     '/unified-namespace/': { redirect: { to: '/use-cases/uns/', statusCode: 301 } },
     '/solutions/manufacturing/': { redirect: { to: '/use-cases/it-ot-middleware/', statusCode: 301 } },
     '/solutions/device-management/': { redirect: { to: '/use-cases/remote-device-management/', statusCode: 301 } },
@@ -129,7 +129,25 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/ingest': { redirect: { to: '/', statusCode: 301 } },
     '/handbook/marketing/customer-stories': { redirect: { to: '/handbook/marketing/content-strategy/customer-stories/', statusCode: 301 } },
     '/handbook/marketing/customer-stories/': { redirect: { to: '/handbook/marketing/content-strategy/customer-stories/', statusCode: 301 } },
-    '/blog/2023/08/new-starter-tier/': { redirect: { to: '/blog/2023/08/flowfuse-1-11-release/', statusCode: 301 } },
+    '/blog/2023/08/new-starter-tier/': { redirect: { to: '/pricing/', statusCode: 301 } },
+
+    // Posts that taught FlowFuse as self-serve hosted Node-RED, the old free and paid
+    // tiers, or professional services. Retired with the move to selling deployments
+    // (Foundation Partnership). 302 as agreed with marketing.
+    '/blog/2022/02/announcing-flowforge-cloud/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+    '/blog/2022/04/flowforge-accepting-customers/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+    '/blog/2022/05/sign-up-for-flowforge-cloud/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+    '/blog/2022/07/new-projecttype/': { redirect: { to: '/pricing/', statusCode: 302 } },
+    '/blog/2023/03/ibmcloud-starter-removed/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+    '/blog/2023/08/flowfuse-1-11-release/': { redirect: { to: '/pricing/', statusCode: 302 } },
+    '/blog/2023/08/open-source-is-a-tier-not-competition/': { redirect: { to: '/pricing/', statusCode: 302 } },
+    '/blog/2024/02/professional-services-for-node-red/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+    '/professional-services/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+    '/blog/2024/03/flowfuse-self-hosted-open-source-resource-limits/': { redirect: { to: '/pricing/', statusCode: 302 } },
+    '/blog/2024/05/product-strategy-updates/': { redirect: { to: '/platform/why-flowfuse/', statusCode: 302 } },
+    '/blog/2024/12/flowfuse-release-2-12/': { redirect: { to: '/pricing/', statusCode: 302 } },
+    '/blog/2025/08/flowfuse-why-pricing-matters/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
+
     '/handbook/peopleops/job-descriptions/technical-product-manager': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager/', statusCode: 301 } },
     '/handbook/peopleops/job-descriptions/technical-product-manager/': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager/', statusCode: 301 } },
     '/node-red/fundamentals/': { redirect: { to: '/blog/2023/01/getting-started-with-node-red/', statusCode: 301 } },

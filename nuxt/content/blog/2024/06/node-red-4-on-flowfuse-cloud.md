@@ -19,7 +19,7 @@ Node-RED 4.0 is the new major release of the project, which is at the heart of a
 <!--more-->
 
 
-As [we wrote recently](/blog/2024/05/product-strategy-updates/), our product mission statement is to provide the best way to build, manage and deploy Node-RED applications at scale, in reliable and secure production environments. This drives the work we do both within the FlowFuse platform and our contributions back into the Node-RED project. 
+Our goal is to make FlowFuse the platform industrial teams use to build, deploy and govern Node-RED applications in reliable, secure production environments. That drives the work we do both within the FlowFuse platform and our contributions back into the Node-RED project. 
 
 The [Node-RED 4.0 release](https://nodered.org/blog/2024/06/20/version-4-0-released) includes some of our recent contributions to improve the Build part of that mission - more specifically around the Collaborative Development part.
 

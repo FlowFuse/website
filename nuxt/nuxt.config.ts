@@ -293,7 +293,7 @@ export default defineNuxtConfig({
             // Nuxt-native dynamic routes (integrations) that
             // @nuxtjs/seo's static-route auto-discovery can't see
             '/api/__sitemap__/dynamic-urls',
-            // docs/handbook/changelog/blog/ebooks/whitepapers with lastmod/images -
+            // docs/changelog/blog/ebooks/whitepapers with lastmod/images -
             // see content-urls.get.ts for why this isn't done via a `sitemap` schema
             // field on the collections instead.
             '/api/__sitemap__/content-urls',
@@ -326,7 +326,8 @@ export default defineNuxtConfig({
             // architecture pages have their own .vue files and are discovered normally.
             ...collectUseCaseRoutes(join(__dirname, 'content/use-cases')).map(loc => ({ loc })),
         ],
-        exclude: ['/_studio/**', '/api/**'],
+        // /handbook is noindex (see routeRules), so it stays out of the sitemap too.
+        exclude: ['/_studio/**', '/api/**', '/handbook', '/handbook/**'],
     },
 
     robots: {
@@ -423,7 +424,15 @@ export default defineNuxtConfig({
         '/terms': { robots: false },
         '/privacy-policy': { robots: false },
         '/thank-you/**': { robots: false },
-        '/handbook/sales/subscription-agreement-1.5': { robots: false },
+        // The handbook is internal company content, not something we want ranking in
+        // search. @nuxtjs/robots turns this into a `noindex, follow` meta tag and
+        // X-Robots-Tag header on every handbook page: the pages stay out of results, but
+        // links from them into docs and the blog still count. Crawlers must still be
+        // allowed to fetch these pages (no robots.txt Disallow), or they never see the
+        // noindex and keep old URLs indexed. The handbook is also left out of the
+        // sitemap (content-urls.get.ts) and llms.txt.
+        '/handbook': { robots: 'noindex, follow' },
+        '/handbook/**': { robots: 'noindex, follow' },
         ...redirects,
     },
 
@@ -568,7 +577,6 @@ export default defineNuxtConfig({
                     '/contact-us',
                     '/book-demo',
                     '/support',
-                    '/professional-services',
                     '/dashboard/tags-and-canvas-feedback',
                     '/trial-feedback',
                     '/ebooks/beginner-guide-to-a-professional-nodered/',
