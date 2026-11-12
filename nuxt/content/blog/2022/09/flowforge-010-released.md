@@ -60,10 +60,6 @@ We'd like the thank the following for their contributions to this release:
 
 As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](/docs/contribute/).
 
-### Try it out
-
-To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
-
 ### Upgrading FlowFuse
 
 [FlowFuse Cloud](site:appURL) is already running 0.10 and the stacks updated. Upgrade your project stacks to the latest version to make sure you get all the latest changes.
