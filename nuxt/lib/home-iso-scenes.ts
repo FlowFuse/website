@@ -3,65 +3,99 @@
 // scale doesn't matter, only its proportions.
 import { IsoScene, project } from './home-iso'
 
-export type SceneName = 'hero' | 'sites' | 'foundation' | 'operations' | 'maintenance' | 'automation' | 'digital' | 'quality' | 'delivery' | 'cost' | 'uptime'
+export type SceneName = 'hero' | 'sites' | 'foundation' | 'operations' | 'maintenance' | 'automation' | 'digital'
 
 // Flow lines are drawn above every solid, so data reads as travelling over the plant.
 const OVER = 1e5
 
-// A plant floor: edge gateway, PLC cabinet, three machines, a conveyor carrying
-// product to a robot cell, two tanks, and every source wired up to one hub above.
+// The six solution areas the hero steps through. Each is a tagged group in the hero
+// scene; the page highlights one at a time and shows its readout (HomeHero.vue).
+export const HERO_GROUPS = ['cnc', 'packaging', 'inspection', 'vibration', 'well', 'energy'] as const
+export type HeroGroup = typeof HERO_GROUPS[number]
+
+// A plant floor: a PLC cabinet with an edge gateway, three machining centres, a
+// packaging conveyor with a vision camera over it, a pump, a tank battery, and every
+// source wired up to one hub above. The base drawing is all indigo, so the orange
+// highlight the page puts on one solution at a time is the only warm colour. Each
+// solution's group includes its own riser to the data bus, so its data path lights too.
 function hero () {
     const s = new IsoScene()
     s.floor(0, 0, 64, 44, 4)
+    const bus = 21
+    const riser = (x: number, y: number, z: number) =>
+        s.line([[x, y, z], [x, y, bus], [x, 6, bus]], 'line', 'flow', OVER + 1)
 
-
-    // Three machining centres, each with a screen, a door and a status light
+    // Three machining centres, each with a screen, a door and a status light.
+    // The first is the CNC performance group.
     for (let i = 0; i < 3; i++) {
         const x = 9 + i * 13
-        s.box(x, 8, 0, 10, 8, 9)
-        s.panelY(16, x + 1.5, x + 4.5, 4, 7.5, 'accent', x + 8 + 9.1)
-        s.panelY(16, x + 5.5, x + 9, 1, 7.5, 'muted', x + 8 + 9.1)
-        s.dot(x + 8.5, 9.5, 9, 0.6, i === 1 ? 'muted' : 'accent', x + 20)
+        const draw = () => {
+            s.box(x, 8, 0, 10, 8, 9)
+            s.panelY(16, x + 1.5, x + 4.5, 4, 7.5, 'line', x + 8 + 9.1)
+            s.panelY(16, x + 5.5, x + 9, 1, 7.5, 'muted', x + 8 + 9.1)
+            s.dot(x + 8.5, 9.5, 9, 0.6, 'muted', x + 20)
+            riser(x + 5, 12, 9)
+        }
+        if (i === 0) s.tag('cnc', draw)
+        else draw()
     }
 
-    // Conveyor: frame, legs, rollers and product
-    for (let k = 0; k < 6; k++) {
-        s.box(7 + k * 8, 24.4, 0, 0.8, 0.8, 2)
-        s.box(7 + k * 8, 28, 0, 0.8, 0.8, 2)
-    }
-    s.box(6, 24, 2, 44, 5, 1.2)
-    for (let k = 0; k < 22; k++) {
-        const x = 7 + k * 2
-        s.line([[x, 24, 3.2], [x, 29, 3.2]], 'muted', 'none', 6 + 24 + 30)
-    }
-    // Product rides on the belt, so it's drawn after the belt and its rollers
-    for (let k = 0; k < 5; k++) s.box(9 + k * 7.5, 25, 3.2, 3, 3, 2.4, k === 2 ? 'accent' : 'line', 61 + k)
+    // Packaging conveyor: legs, belt, rollers, product, and a riser off the end
+    s.tag('packaging', () => {
+        for (let k = 0; k < 6; k++) {
+            s.box(7 + k * 8, 24.4, 0, 0.8, 0.8, 2)
+            s.box(7 + k * 8, 28, 0, 0.8, 0.8, 2)
+        }
+        s.box(6, 24, 2, 44, 5, 1.2)
+        for (let k = 0; k < 22; k++) {
+            const x = 7 + k * 2
+            s.line([[x, 24, 3.2], [x, 29, 3.2]], 'muted', 'none', 6 + 24 + 30)
+        }
+        // Product rides on the belt, so it's drawn after the belt and its rollers
+        for (let k = 0; k < 5; k++) s.box(9 + k * 7.5, 25, 3.2, 3, 3, 2.4, 'line', 61 + k)
+        riser(49, 26.5, 3.2)
+    })
 
-    // Collection station at the end of the line
-    s.cylinder(55, 31, 0, 2.6, 3)
+    // Vision inspection: a gantry over the belt with a camera looking down at it.
+    // The back post sits behind the belt; the beam, camera and front post in front.
+    s.tag('inspection', () => {
+        s.box(30, 22.6, 0, 0.6, 0.6, 9)
+        s.box(30, 29.6, 0, 0.6, 0.6, 9, 'line', 70)
+        s.box(30, 22.6, 9, 0.6, 7.6, 0.6, 'line', 71)
+        s.box(29.4, 25.8, 6.8, 1.6, 1.6, 2.2, 'line', 72)
+        s.dot(31, 26.6, 7.6, 0.45, 'muted', 73)
+        riser(30.3, 26.2, 9.6)
+    })
 
-    // Tanks and the pipe that feeds the line
-    s.cylinder(56, 9, 0, 4, 15, 'line', 2)
-    s.cylinder(56, 20, 0, 3, 10, 'line', 1)
-    s.line([[53.5, 20, 3], [52, 20, 3], [52, 24, 3]], 'line', 'none', 74)
+    // Pump and motor at the end of the line: vibration condition monitoring
+    s.tag('vibration', () => {
+        s.cylinder(54, 31, 0, 2.4, 3.4, 'line', 1)
+        s.box(57, 29.8, 0, 3.6, 2.4, 2.4)
+        s.line([[56.3, 31, 1.4], [57, 31, 1.4]], 'line', 'none', 92)
+        riser(54, 31, 3.4)
+    })
 
-    // PLC cabinet with edge gateway antenna, front left, I/O modules on its face
-    s.box(2, 30, 0, 3, 9, 8)
-    s.line([[3.5, 38, 8], [3.5, 38, 11]], 'line', 'none', 42)
-    s.dot(3.5, 38, 11, 0.6, 'accent', 43)
-    for (let m = 0; m < 4; m++) s.panelX(5, 31 + m * 2, 32.4 + m * 2, 2, 6.5, m === 0 ? 'accent' : 'muted', 40)
+    // Tank battery and the pipe that feeds the line: well and plunger-lift optimisation
+    s.tag('well', () => {
+        s.cylinder(56, 9, 0, 4, 15, 'line', 2)
+        s.cylinder(56, 20, 0, 3, 10, 'line', 1)
+        s.line([[53.5, 20, 3], [52, 20, 3], [52, 24, 3]], 'line', 'none', 74)
+        riser(56, 9, 15)
+    })
 
-    // Data: every source rises to a shared bus, and the bus feeds the hub
-    const bus = 21
+    // PLC cabinet with an edge gateway antenna and I/O modules: remote energy service
+    s.tag('energy', () => {
+        s.box(2, 30, 0, 3, 9, 8)
+        s.line([[3.5, 38, 8], [3.5, 38, 11]], 'line', 'none', 42)
+        s.dot(3.5, 38, 11, 0.6, 'muted', 43)
+        for (let m = 0; m < 4; m++) s.panelX(5, 31 + m * 2, 32.4 + m * 2, 2, 6.5, 'muted', 40)
+        s.line([[3.5, 30, 8], [3.5, 30, bus], [3.5, 6, bus]], 'line', 'flow', OVER + 1)
+    })
+
+    // The data bus and the hub every source feeds
     s.line([[3.5, 6, bus], [56, 6, bus]], 'muted', 'none', OVER)
-    const risers: [number, number, number][] = [[14, 12, 9], [27, 12, 9], [40, 12, 9], [56, 9, 15]]
-    for (const [x, y, z] of risers) s.line([[x, y, z], [x, y, bus], [x, 6, bus]], 'accent', 'flow', OVER + 1)
-    s.line([[3.5, 30, 8], [3.5, 30, bus], [3.5, 6, bus]], 'accent', 'flow', OVER + 1)
-    s.line([[30, 6, bus], [30, 6, 26]], 'accent', 'flow', OVER + 1)
-    s.box(27, 3, 26, 6, 6, 3, 'accent')
-    s.shapes[s.shapes.length - 1].depth = OVER + 2
-    s.shapes[s.shapes.length - 2].depth = OVER + 2
-    s.shapes[s.shapes.length - 3].depth = OVER + 2
+    s.line([[30, 6, bus], [30, 6, 26]], 'line', 'flow', OVER + 1)
+    s.box(27, 3, 26, 6, 6, 3, 'line', OVER + 2)
     s.dot(30, 6, 29, 0.8, 'accent', OVER + 3)
     return s
 }
@@ -191,77 +225,7 @@ function digital () {
     return s
 }
 
-// Scorecard scenes: one picture per card on the "Results you can measure" section.
-// Accent always marks the signal FlowFuse raises: the caught defect, the current
-// hour, the stop being costed, the warning.
-
-// Quality: parts travel under an inspection camera; the defective one is flagged
-// mid-line, before it reaches the end.
-function quality () {
-    const s = new IsoScene()
-    for (let k = 0; k < 3; k++) {
-        s.box(0.5 + k * 8, 0.3, 0, 0.6, 0.6, 1.6, 'line', k)
-        s.box(0.5 + k * 8, 3.1, 0, 0.6, 0.6, 1.6, 'line', 10 + k)
-    }
-    s.box(0, 0, 1.6, 19, 4, 0.9, 'line', 20)
-    // Camera gantry: far post behind the belt, near post and beam in front
-    s.box(9, -1, 0, 0.7, 0.7, 7.5, 'line', 15)
-    s.box(1.5, 0.7, 2.5, 2.6, 2.6, 2.2, 'line', 30)
-    s.box(8.2, 0.7, 2.5, 2.6, 2.6, 2.2, 'accent', 31)
-    s.box(14.5, 0.7, 2.5, 2.6, 2.6, 2.2, 'line', 32)
-    s.box(9, 4.3, 0, 0.7, 0.7, 7.5, 'line', 40)
-    s.box(9, -1, 7.5, 0.7, 6, 0.8, 'line', 41)
-    // Camera head on the beam, looking down at the flagged part
-    s.box(8.8, 1.6, 6.3, 1.1, 1.1, 1.2, 'line', 42)
-    s.line([[9.35, 2.15, 6.3], [9.5, 2, 4.9]], 'accent', 'flow', 43)
-    return s
-}
-
-// Delivery: a loaded truck leaving the dock, the finished goods it carries.
-function delivery () {
-    const s = new IsoScene()
-    // Pallet of finished goods waiting on the dock
-    s.box(-6, 0.5, 0, 4.5, 4.5, 0.5, 'muted', -5)
-    s.box(-5.5, 1, 0.5, 1.8, 1.8, 1.6, 'line', -4)
-    s.box(-3.5, 1, 0.5, 1.8, 1.8, 1.6, 'line', -3)
-    s.box(-5.5, 3, 0.5, 1.8, 1.8, 1.6, 'line', -2)
-    // Cargo body, then the cab with its windscreen
-    s.box(0, 0, 1.2, 10, 5, 5.5, 'line', 10)
-    s.box(10, 0.4, 1.2, 3.6, 4.2, 3.8, 'accent', 11)
-    s.panelX(13.6, 1, 4, 3.2, 4.6, 'accent', 12)
-    // Wheels on the near side
-    for (const x of [2, 7.5, 11.8]) s.dot(x, 5.2, 1.1, 1.05, 'line', 30)
-    return s
-}
-
-// Cost: three coin stacks, each lower than the last.
-function cost () {
-    const s = new IsoScene()
-    s.box(-2, -2, 0, 18, 7, 0.5, 'muted', -10)
-    const stacks: [number, number][] = [[0, 8], [6, 5.2], [12, 2.6]]
-    stacks.forEach(([x, h], i) => {
-        s.cylinder(x + 1.5, 1.5, 0.5, 2, h, i === 2 ? 'accent' : 'line', Math.round(h / 1.3) - 1)
-    })
-    return s
-}
-
-// Uptime: a machine with a stack light on top; the top segment is lit, the warning
-// that comes before a failure.
-function uptime () {
-    const s = new IsoScene()
-    s.box(-1, -1, 0, 11, 9, 0.5, 'muted', -10)
-    s.box(0, 0, 0.5, 8, 6.5, 6.5, 'line', 1)
-    s.panelY(6.5, 1, 4.2, 2.5, 5.5, 'muted', 2)
-    s.panelY(6.5, 5, 7, 1.2, 5.5, 'muted', 2)
-    // Stack light: pole, two unlit segments, the lit one on top
-    s.cylinder(6, 2, 7, 0.35, 1.2, 'line')
-    s.cylinder(6, 2, 8.2, 1, 1.4, 'line')
-    s.cylinder(6, 2, 9.6, 1, 1.4, 'line')
-    s.cylinder(6, 2, 11, 1, 1.4, 'accent')
-    return s
-}
-
-const BUILDERS: Record<SceneName, () => IsoScene> = { hero, sites, foundation, operations, maintenance, automation, digital, quality, delivery, cost, uptime }
+const BUILDERS: Record<SceneName, () => IsoScene> = { hero, sites, foundation, operations, maintenance, automation, digital }
 
 const cache = new Map<SceneName, ReturnType<IsoScene['render']>>()
 
