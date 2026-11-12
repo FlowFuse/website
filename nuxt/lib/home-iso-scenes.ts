@@ -3,7 +3,7 @@
 // scale doesn't matter, only its proportions.
 import { IsoScene, project } from './home-iso'
 
-export type SceneName = 'hero' | 'sites' | 'foundation' | 'operations' | 'maintenance' | 'automation' | 'digital'
+export type SceneName = 'hero' | 'sites' | 'foundation' | 'operations' | 'maintenance' | 'automation' | 'digital' | 'quality' | 'delivery' | 'cost' | 'uptime'
 
 // Flow lines are drawn above every solid, so data reads as travelling over the plant.
 const OVER = 1e5
@@ -191,7 +191,77 @@ function digital () {
     return s
 }
 
-const BUILDERS: Record<SceneName, () => IsoScene> = { hero, sites, foundation, operations, maintenance, automation, digital }
+// Scorecard scenes: one picture per card on the "Results you can measure" section.
+// Accent always marks the signal FlowFuse raises: the caught defect, the current
+// hour, the stop being costed, the warning.
+
+// Quality: parts travel under an inspection camera; the defective one is flagged
+// mid-line, before it reaches the end.
+function quality () {
+    const s = new IsoScene()
+    for (let k = 0; k < 3; k++) {
+        s.box(0.5 + k * 8, 0.3, 0, 0.6, 0.6, 1.6, 'line', k)
+        s.box(0.5 + k * 8, 3.1, 0, 0.6, 0.6, 1.6, 'line', 10 + k)
+    }
+    s.box(0, 0, 1.6, 19, 4, 0.9, 'line', 20)
+    // Camera gantry: far post behind the belt, near post and beam in front
+    s.box(9, -1, 0, 0.7, 0.7, 7.5, 'line', 15)
+    s.box(1.5, 0.7, 2.5, 2.6, 2.6, 2.2, 'line', 30)
+    s.box(8.2, 0.7, 2.5, 2.6, 2.6, 2.2, 'accent', 31)
+    s.box(14.5, 0.7, 2.5, 2.6, 2.6, 2.2, 'line', 32)
+    s.box(9, 4.3, 0, 0.7, 0.7, 7.5, 'line', 40)
+    s.box(9, -1, 7.5, 0.7, 6, 0.8, 'line', 41)
+    // Camera head on the beam, looking down at the flagged part
+    s.box(8.8, 1.6, 6.3, 1.1, 1.1, 1.2, 'line', 42)
+    s.line([[9.35, 2.15, 6.3], [9.5, 2, 4.9]], 'accent', 'flow', 43)
+    return s
+}
+
+// Delivery: a loaded truck leaving the dock, the finished goods it carries.
+function delivery () {
+    const s = new IsoScene()
+    // Pallet of finished goods waiting on the dock
+    s.box(-6, 0.5, 0, 4.5, 4.5, 0.5, 'muted', -5)
+    s.box(-5.5, 1, 0.5, 1.8, 1.8, 1.6, 'line', -4)
+    s.box(-3.5, 1, 0.5, 1.8, 1.8, 1.6, 'line', -3)
+    s.box(-5.5, 3, 0.5, 1.8, 1.8, 1.6, 'line', -2)
+    // Cargo body, then the cab with its windscreen
+    s.box(0, 0, 1.2, 10, 5, 5.5, 'line', 10)
+    s.box(10, 0.4, 1.2, 3.6, 4.2, 3.8, 'accent', 11)
+    s.panelX(13.6, 1, 4, 3.2, 4.6, 'accent', 12)
+    // Wheels on the near side
+    for (const x of [2, 7.5, 11.8]) s.dot(x, 5.2, 1.1, 1.05, 'line', 30)
+    return s
+}
+
+// Cost: three coin stacks, each lower than the last.
+function cost () {
+    const s = new IsoScene()
+    s.box(-2, -2, 0, 18, 7, 0.5, 'muted', -10)
+    const stacks: [number, number][] = [[0, 8], [6, 5.2], [12, 2.6]]
+    stacks.forEach(([x, h], i) => {
+        s.cylinder(x + 1.5, 1.5, 0.5, 2, h, i === 2 ? 'accent' : 'line', Math.round(h / 1.3) - 1)
+    })
+    return s
+}
+
+// Uptime: a machine with a stack light on top; the top segment is lit, the warning
+// that comes before a failure.
+function uptime () {
+    const s = new IsoScene()
+    s.box(-1, -1, 0, 11, 9, 0.5, 'muted', -10)
+    s.box(0, 0, 0.5, 8, 6.5, 6.5, 'line', 1)
+    s.panelY(6.5, 1, 4.2, 2.5, 5.5, 'muted', 2)
+    s.panelY(6.5, 5, 7, 1.2, 5.5, 'muted', 2)
+    // Stack light: pole, two unlit segments, the lit one on top
+    s.cylinder(6, 2, 7, 0.35, 1.2, 'line')
+    s.cylinder(6, 2, 8.2, 1, 1.4, 'line')
+    s.cylinder(6, 2, 9.6, 1, 1.4, 'line')
+    s.cylinder(6, 2, 11, 1, 1.4, 'accent')
+    return s
+}
+
+const BUILDERS: Record<SceneName, () => IsoScene> = { hero, sites, foundation, operations, maintenance, automation, digital, quality, delivery, cost, uptime }
 
 const cache = new Map<SceneName, ReturnType<IsoScene['render']>>()
 

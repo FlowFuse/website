@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // The homepage, written for director-level buyers. Six parts, in this order:
 //   1. Value statement (hero, with the wireframe plant)
-//   2. Choose where to start: four team entry points, one per /teams/ page
+//   2. Results you can measure: the scorecard numbers a first solution moves
 //   3. Problem to solution: one plant proven, every site running it
 //   3b. The Foundation Partnership: why each site is faster than the last
 //   4. Metrics of success: customer results, each linked to its story
@@ -18,35 +18,14 @@
 import { foundationSiteCenters } from '../lib/home-iso-scenes'
 import { faqAnswerText } from '../lib/faq-answer.mjs'
 
-const START_POINTS = [
-    {
-        scene: 'operations',
-        team: 'Operations',
-        title: 'Every plant on plan',
-        text: 'See output, downtime and quality live at every plant, and roll out what works.',
-        to: '/teams/manufacturing-operations/',
-    },
-    {
-        scene: 'maintenance',
-        team: 'Maintenance & reliability',
-        title: 'Fewer surprise stops',
-        text: 'Catch failures before they stop the line. Send technicians with the diagnosis in hand.',
-        to: '/teams/maintenance-reliability/',
-    },
-    {
-        scene: 'automation',
-        team: 'Automation & controls',
-        title: 'One standard, every change on record',
-        text: 'Run approved logic across mixed controllers and sites, tested and versioned.',
-        to: '/teams/automation-controls/',
-    },
-    {
-        scene: 'digital',
-        team: 'Digital transformation',
-        title: 'From pilot to every plant',
-        text: 'Turn one working pilot into the standard every site runs.',
-        to: '/teams/digital-transformation/',
-    },
+// The scorecard plant and operations leaders already report against (Quality, Delivery,
+// Cost), plus Uptime for maintenance. Under each word, one line that sees the problem and
+// acts on it: these are solutions that do something, not dashboards. The next section carries "every plant", so this one stays off it.
+const SCORECARD = [
+    { scene: 'quality', name: 'Quality', text: 'Stop bad parts at the station, not at the end of the line.' },
+    { scene: 'delivery', name: 'Delivery', text: 'Spot a slipping order while there’s still time to save it.' },
+    { scene: 'cost', name: 'Cost', text: 'Find your costliest stops and fix them first.' },
+    { scene: 'uptime', name: 'Uptime', text: 'Turn early warnings into work orders before a machine fails.' },
 ] as const
 
 const PROBLEM = [
@@ -170,53 +149,50 @@ useSchemaOrg([
       </div>
       <div class="relative">
         <HomeIsoArt scene="hero" variant="dark" class="w-full max-w-[680px] mx-auto" />
-        <div class="home-chip absolute left-2 bottom-2 md:left-0 md:bottom-6">
-          <UIcon name="i-lucide-circle-check" class="w-5 h-5 text-emerald-300 shrink-0" />
-          <div class="text-left">
-            <p class="m-0 text-white text-sm font-medium leading-5">Proven at site 1</p>
-            <p class="m-0 text-indigo-200 text-xs leading-4">Deploying to every site</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Logo strip: users count and customer logos, straight under the hero -->
-  <section class="w-full px-6 pb-4 border-b border-gray-100">
+  <section class="home-after-hero w-full px-6 pb-4">
     <div class="max-w-screen-lg mx-auto text-center">
       <SocialProof />
     </div>
   </section>
 
-  <!-- 2. Choose where to start -->
+  <!-- 2. Results you can measure: picks up the hero's last promise -->
   <section class="w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
-      <p class="home-eyebrow text-red-500 max-md:text-center">Choose where to start</p>
-      <h2 class="text-balance mt-4 mb-12 md:text-5xl max-md:text-center">Start with the result <span class="text-indigo-600">you're measured on.</span></h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <NuxtLink
-            v-for="item in START_POINTS"
-            :key="item.to"
-            :to="item.to"
-            class="home-start group flex flex-col rounded-xl border border-indigo-100 bg-white p-6 hover:no-underline hover:border-indigo-300 transition-colors"
-        >
-          <div class="h-24 flex items-center justify-center mb-6">
-            <HomeIsoArt :scene="item.scene" class="max-h-24 w-auto max-w-[150px]" />
-          </div>
-          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-500 m-0">{{ item.team }}</p>
-          <p class="text-gray-800 text-lg font-medium leading-6 mt-2 mb-0">{{ item.title }}</p>
-          <p class="text-gray-600 font-light text-sm leading-5 mt-3 mb-0 flex-grow">{{ item.text }}</p>
-          <span class="flex items-center gap-1.5 text-indigo-600 text-sm font-medium mt-6">
-            <span class="group-hover:underline">Start here</span>
-            <UIcon name="i-lucide-arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </span>
-        </NuxtLink>
+      <div class="max-md:text-center">
+        <p class="home-eyebrow text-red-500">Results you can measure</p>
+        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Every solution starts with <br class="max-md:hidden"><span class="text-indigo-600">a number on your scorecard.</span></h2>
+        <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-xl max-md:mx-auto">
+          We agree the number first, then build the solution that moves it.
+        </p>
       </div>
+      <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 rounded-2xl border border-gray-200 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(67,56,202,0.12)] overflow-hidden">
+        <div
+            v-for="(kpi, i) in SCORECARD"
+            :key="kpi.name"
+            class="relative p-7 md:p-8 border-gray-200"
+            :class="[
+              i % 2 === 1 ? 'border-l' : '',
+              i > 1 ? 'max-lg:border-t lg:border-l' : '',
+            ]"
+        >
+          <div class="h-28 flex items-center justify-center rounded-xl bg-gradient-to-b from-indigo-50/70 to-transparent">
+            <HomeIsoArt :scene="kpi.scene" class="max-h-[88px] w-auto max-w-[170px]" />
+          </div>
+          <p class="m-0 mt-6 text-center text-gray-900 text-xl md:text-2xl font-medium tracking-tight">{{ kpi.name }}</p>
+          <p class="m-0 mt-2 text-center text-gray-500 text-[15px] leading-6 text-balance">{{ kpi.text }}</p>
+        </div>
+      </div>
+      <p class="m-0 mt-8 text-center text-gray-500">Measured on something else? <span class="text-gray-800 font-medium">We start there too.</span></p>
     </div>
   </section>
 
   <!-- 3. Problem to solution -->
-  <section class="w-full px-6 py-20 md:py-24 bg-gradient-to-br from-indigo-50 to-red-50/60">
+  <section class="w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">One solution, every site</p>
       <h2 class="text-balance mt-4 md:text-5xl max-md:text-center max-w-3xl">Solve it at one plant. <span class="text-indigo-600">Run it at all of them.</span></h2>
@@ -301,8 +277,9 @@ useSchemaOrg([
     </div>
   </section>
 
-  <!-- 4. Metrics of success -->
-  <section class="w-full px-6 py-20 md:py-24">
+  <!-- 4. Metrics of success: the one tinted band in the light middle, so the long
+       white run has a resting point -->
+  <section class="w-full px-6 py-20 md:py-24 bg-indigo-50/50">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">Results</p>
       <h2 class="text-balance mt-4 mb-12 md:text-5xl max-md:text-center">Measured on the line, <span class="text-indigo-600">not in a report.</span></h2>
@@ -326,18 +303,18 @@ useSchemaOrg([
   </section>
 
   <!-- 5. Social proof -->
-  <section class="home-dark w-full px-6 pt-16 pb-20">
+  <section class="w-full px-6 pt-20 pb-20">
     <div class="max-w-screen-lg mx-auto">
       <div class="mt-4">
-        <h2 class="text-balance text-white md:text-5xl">Real results from <span class="text-indigo-300">industrial teams</span></h2>
-        <TestimonialCarousel dark hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
+        <h2 class="text-balance md:text-5xl">Real results from <span class="text-indigo-600">industrial teams</span></h2>
+        <TestimonialCarousel hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
       </div>
       <div class="mt-14 flex flex-wrap justify-center gap-x-8 gap-y-4">
-        <span v-for="t in TRUST" :key="t.label" class="flex items-center gap-2 text-indigo-100 text-sm">
-          <UIcon :name="t.icon" class="w-5 h-5 text-indigo-300" />
+        <span v-for="t in TRUST" :key="t.label" class="flex items-center gap-2 text-gray-600 text-sm">
+          <UIcon :name="t.icon" class="w-5 h-5 text-indigo-500" />
           {{ t.label }}
         </span>
-        <NuxtLink to="/platform/security/" class="flex items-center gap-1 text-white text-sm font-medium hover:underline">
+        <NuxtLink to="/platform/security/" class="flex items-center gap-1 text-indigo-600 text-sm font-medium hover:underline">
           Security details
           <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
         </NuxtLink>
@@ -356,8 +333,9 @@ useSchemaOrg([
   </section>
 
   <!-- 6. Call to action -->
-  <section class="home-dark w-full px-6 py-20 md:py-24 text-center">
-    <div class="max-w-3xl mx-auto">
+  <section class="w-full px-6 pt-8 pb-20 md:pb-24">
+    <div class="home-cta max-w-screen-lg mx-auto rounded-2xl px-6 py-16 md:py-20 text-center">
+     <div class="max-w-3xl mx-auto">
       <h2 class="text-balance text-white md:text-5xl mt-0">Bring us the problem that repeats across your sites.</h2>
       <p class="text-indigo-100 font-light text-lg md:text-xl mt-6 mb-0">We'll build the first one with you, prove it at one site, and roll it out to the rest on the same foundation.</p>
       <div class="flex flex-wrap gap-4 items-center justify-center mt-10">
@@ -368,10 +346,22 @@ useSchemaOrg([
         </CtaLink>
       </div>
     </div>
+    </div>
   </section>
 </template>
 
 <style scoped>
+/* Page rhythm: the hero is the only dark section. The strip under it picks up the
+   hero's indigo and lets it go to white, and the closing call to action is a card in the
+   hero's colours on the light page, rather than a second full-width dark band. */
+.home-after-hero {
+  background: linear-gradient(to bottom, #eef2ff 0%, #ffffff 100%);
+}
+.home-cta {
+  background:
+    radial-gradient(ellipse 60% 70% at 75% 45%, rgba(99, 102, 241, 0.22), transparent 70%),
+    #0c1330;
+}
 .home-dark {
   background:
     radial-gradient(ellipse 60% 70% at 75% 45%, rgba(99, 102, 241, 0.22), transparent 70%),
@@ -383,15 +373,5 @@ useSchemaOrg([
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-.home-chip {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  padding: 0.625rem 0.875rem;
-  border-radius: 0.75rem;
-  background: #1b2452;
-  border: 1px solid #3c4a8a;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 </style>
