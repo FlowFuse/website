@@ -6,7 +6,8 @@
 //   3b. The Foundation Partnership: why each site is faster than the last
 //   4. Metrics of success: customer results, each linked to its story
 //   (logo strip with the user count sits straight under the hero)
-//   5. Social proof: testimonials, security credentials
+//   5. Social proof: testimonials
+//   5b. Security: SOC 2 and the controls enterprise IT asks about
 //   6. Call to action
 //
 // The illustrations are isometric wireframes generated in nuxt/lib/home-iso-scenes.ts
@@ -21,11 +22,12 @@ import { faqAnswerText } from '../lib/faq-answer.mjs'
 // The scorecard plant and operations leaders already report against (Quality, Delivery,
 // Cost), plus Uptime for maintenance. Under each word, one line that sees the problem and
 // acts on it: these are solutions that do something, not dashboards. The next section carries "every plant", so this one stays off it.
+// Each card links to the page that goes deepest on that number.
 const SCORECARD = [
-    { scene: 'quality', name: 'Quality', text: 'Stop bad parts at the station, not at the end of the line.' },
-    { scene: 'delivery', name: 'Delivery', text: 'Spot a slipping order while there’s still time to save it.' },
-    { scene: 'cost', name: 'Cost', text: 'Find your costliest stops and fix them first.' },
-    { scene: 'uptime', name: 'Uptime', text: 'Turn early warnings into work orders before a machine fails.' },
+    { scene: 'quality', name: 'Quality', text: 'Stop bad parts at the station, not at the end of the line.', link: 'Production line monitoring', to: '/use-cases/production-line-monitoring/' },
+    { scene: 'delivery', name: 'Delivery', text: 'Spot a slipping order while there’s still time to save it.', link: 'For operations teams', to: '/teams/manufacturing-operations/' },
+    { scene: 'cost', name: 'Cost', text: 'Find your costliest stops and fix them first.', link: 'Estimate your ROI', to: '/resources/roi-calculator/' },
+    { scene: 'uptime', name: 'Uptime', text: 'Turn early warnings into work orders before a machine fails.', link: 'For maintenance teams', to: '/teams/maintenance-reliability/' },
 ] as const
 
 const PROBLEM = [
@@ -42,17 +44,42 @@ const SOLUTION = [
 
 // What the first solution leaves behind, reused at every site after it.
 // Same four pieces as the FOUNDATION list on /build-with-us/; keep the two in step.
+// Each card links to where that piece is covered in depth.
 const FOUNDATION = [
-    { icon: 'i-lucide-plug', title: 'Integrations', text: 'Connections to your machines, historians and business systems. Built at the first site, reused at the next.' },
-    { icon: 'i-lucide-database', title: 'Data models', text: 'One structure for your operational data, so every plant speaks the same language.' },
-    { icon: 'i-lucide-rocket', title: 'Deployment patterns', text: 'A tested way to roll the solution out to new lines and plants without starting over.' },
-    { icon: 'i-lucide-shield-check', title: 'Governance', text: 'Roles, access and change control, set up once and applied everywhere.' },
+    { icon: 'i-lucide-plug', title: 'Integrations', text: 'Connections to your machines, historians and business systems. Built at the first site, reused at the next.', to: '/integrations/' },
+    { icon: 'i-lucide-database', title: 'Data models', text: 'One structure for your operational data, so every plant speaks the same language.', to: '/use-cases/uns/' },
+    { icon: 'i-lucide-rocket', title: 'Deployment patterns', text: 'A tested way to roll the solution out to new lines and plants without starting over.', to: '/platform/device-agent/' },
+    { icon: 'i-lucide-shield-check', title: 'Governance', text: 'Roles, access and change control, set up once and applied everywhere.', to: '/platform/security/' },
 ]
 
+// `link` turns one phrase of a step into a link: text before, the link, text after.
 const STEPS = [
     { name: 'Define', text: 'We agree the problem and the number it has to move.' },
-    { name: 'Design', text: 'Our engineers build the first solution with your team, on your equipment, and lay the foundation as they go.' },
-    { name: 'Deliver', text: 'Prove it at one site, then roll it out on the same foundation, with your team, a partner or ours.' },
+    { name: 'Design', text: '', link: { label: 'Our engineers', to: '/professional-services/', after: ' build the first solution with your team, on your equipment, and lay the foundation as they go.' } },
+    { name: 'Deliver', text: 'Prove it at one site, then roll it out on the same foundation, with your team, a ', link: { label: 'partner', to: '/partners/', after: ' or ours.' } },
+]
+
+// Ways in by industry and by team, under the results.
+const EXPLORE = [
+    {
+        label: 'By industry',
+        links: [
+            { name: 'Automotive', to: '/industries/automotive/' },
+            { name: 'Industrial machinery', to: '/industries/industrial-machinery/' },
+            { name: 'Building materials', to: '/industries/building-materials/' },
+            { name: 'Energy and utilities', to: '/industries/energy-utilities/' },
+            { name: 'Aviation and aerospace', to: '/industries/aviation-aerospace/' },
+        ],
+    },
+    {
+        label: 'By team',
+        links: [
+            { name: 'Manufacturing operations', to: '/teams/manufacturing-operations/' },
+            { name: 'Maintenance and reliability', to: '/teams/maintenance-reliability/' },
+            { name: 'Automation and controls', to: '/teams/automation-controls/' },
+            { name: 'Digital transformation', to: '/teams/digital-transformation/' },
+        ],
+    },
 ]
 
 // One label under each site in the foundation picture, placed where that site is drawn.
@@ -94,12 +121,13 @@ const METRICS = [
     },
 ]
 
-const TRUST = [
-    { icon: 'i-lucide-shield-check', label: 'SOC 2 Type II' },
-    { icon: 'i-lucide-key-round', label: 'Single sign-on' },
-    { icon: 'i-lucide-users', label: 'Role-based access' },
-    { icon: 'i-lucide-scroll-text', label: 'Audit logs' },
-    { icon: 'i-lucide-server', label: 'Self-hosted or air-gapped' },
+// The security section. Same claims as the shared <EnterpriseSecurity> block on the
+// product and pricing pages, drawn in this page's card style instead of that block's.
+const SECURITY = [
+    { icon: 'i-lucide-key-round', title: 'Single sign-on', text: 'Sign in through the identity provider you already use.' },
+    { icon: 'i-lucide-users', title: 'Role-based access', text: 'Decide who can view, change and deploy, site by site.' },
+    { icon: 'i-lucide-scroll-text', title: 'Audit logs', text: 'Every change recorded: who made it, what changed and when.' },
+    { icon: 'i-lucide-server', title: 'Self-hosted or air-gapped', text: 'Run it in your own environment, offline if you need to.' },
 ]
 
 // Rendered by <Faq> and repeated as FAQ structured data below.
@@ -161,7 +189,7 @@ useSchemaOrg([
   </section>
 
   <!-- 2. Results you can measure: picks up the hero's last promise -->
-  <section class="w-full px-6 py-20 md:py-24">
+  <section class="home-band w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <div class="max-md:text-center">
         <p class="home-eyebrow text-red-500">Results you can measure</p>
@@ -171,10 +199,11 @@ useSchemaOrg([
         </p>
       </div>
       <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 rounded-2xl border border-gray-200 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(67,56,202,0.12)] overflow-hidden">
-        <div
+        <NuxtLink
             v-for="(kpi, i) in SCORECARD"
             :key="kpi.name"
-            class="relative p-7 md:p-8 border-gray-200"
+            :to="kpi.to"
+            class="group relative flex flex-col p-7 md:p-8 border-gray-200 hover:no-underline hover:bg-indigo-50/40 transition-colors"
             :class="[
               i % 2 === 1 ? 'border-l' : '',
               i > 1 ? 'max-lg:border-t lg:border-l' : '',
@@ -184,10 +213,17 @@ useSchemaOrg([
             <HomeIsoArt :scene="kpi.scene" class="max-h-[88px] w-auto max-w-[170px]" />
           </div>
           <p class="m-0 mt-6 text-center text-gray-900 text-xl md:text-2xl font-medium tracking-tight">{{ kpi.name }}</p>
-          <p class="m-0 mt-2 text-center text-gray-500 text-[15px] leading-6 text-balance">{{ kpi.text }}</p>
-        </div>
+          <p class="m-0 mt-2 text-center text-gray-500 text-[15px] leading-6 text-balance flex-grow">{{ kpi.text }}</p>
+          <span class="mt-5 flex items-center justify-center gap-1 text-indigo-600 text-sm font-medium">
+            <span class="group-hover:underline">{{ kpi.link }}</span>
+            <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+          </span>
+        </NuxtLink>
       </div>
-      <p class="m-0 mt-8 text-center text-gray-500">Measured on something else? <span class="text-gray-800 font-medium">We start there too.</span></p>
+      <p class="m-0 mt-8 text-center text-gray-500">
+        Measured on something else? <span class="text-gray-800 font-medium">We start there too.</span>
+        <NuxtLink to="/use-cases/" class="text-indigo-600 font-medium hover:underline whitespace-nowrap">See all use cases</NuxtLink>
+      </p>
     </div>
   </section>
 
@@ -218,6 +254,10 @@ useSchemaOrg([
               </li>
             </ul>
           </div>
+          <NuxtLink to="/product/" class="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline max-md:justify-center">
+            See the platform that runs it at every site
+            <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+          </NuxtLink>
         </div>
       </div>
 
@@ -225,7 +265,7 @@ useSchemaOrg([
   </section>
 
   <!-- 3b. The Foundation Partnership -->
-  <section class="w-full px-6 py-20 md:py-24">
+  <section class="home-band w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">The Foundation Partnership</p>
       <h2 class="text-balance mt-4 md:text-5xl max-md:text-center max-w-3xl">The first site builds the foundation. <span class="text-indigo-600">Every site after starts on it.</span></h2>
@@ -253,17 +293,27 @@ useSchemaOrg([
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
-        <div v-for="f in FOUNDATION" :key="f.title" class="rounded-xl border border-indigo-100 bg-white p-6">
+        <NuxtLink
+            v-for="f in FOUNDATION"
+            :key="f.title"
+            :to="f.to"
+            class="group rounded-xl border border-indigo-100 bg-white p-6 hover:no-underline hover:border-indigo-300 transition-colors"
+        >
           <UIcon :name="f.icon" class="w-6 h-6 text-indigo-500" />
-          <p class="text-gray-800 font-medium mt-4 mb-0">{{ f.title }}</p>
+          <p class="text-gray-800 font-medium mt-4 mb-0 flex items-center gap-1.5">
+            <span class="group-hover:underline">{{ f.title }}</span>
+            <UIcon name="i-lucide-arrow-right" class="w-4 h-4 text-indigo-500 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition" />
+          </p>
           <p class="text-gray-600 font-light text-sm leading-5 mt-2 mb-0">{{ f.text }}</p>
-        </div>
+        </NuxtLink>
       </div>
 
       <div class="grid sm:grid-cols-3 gap-6 mt-14 pt-10 border-t border-indigo-100">
         <div v-for="(step, i) in STEPS" :key="step.name" class="max-sm:text-center">
           <p class="m-0 text-indigo-600 text-2xl font-medium"><span class="text-red-400 text-base font-semibold mr-2">0{{ i + 1 }}</span>{{ step.name }}</p>
-          <p class="m-0 mt-2 text-gray-600 font-light">{{ step.text }}</p>
+          <p class="m-0 mt-2 text-gray-600 font-light">
+            {{ step.text }}<template v-if="step.link"><NuxtLink :to="step.link.to" class="text-indigo-600 font-normal underline decoration-indigo-200 underline-offset-2 hover:decoration-indigo-600">{{ step.link.label }}</NuxtLink>{{ step.link.after }}</template>
+          </p>
         </div>
       </div>
 
@@ -277,9 +327,8 @@ useSchemaOrg([
     </div>
   </section>
 
-  <!-- 4. Metrics of success: the one tinted band in the light middle, so the long
-       white run has a resting point -->
-  <section class="w-full px-6 py-20 md:py-24 bg-indigo-50/50">
+  <!-- 4. Metrics of success, then ways in by industry and team -->
+  <section class="w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">Results</p>
       <h2 class="text-balance mt-4 mb-12 md:text-5xl max-md:text-center">Measured on the line, <span class="text-indigo-600">not in a report.</span></h2>
@@ -299,31 +348,62 @@ useSchemaOrg([
           </span>
         </NuxtLink>
       </div>
+      <div class="mt-12 pt-8 border-t border-gray-100 flex flex-col gap-4">
+        <div v-for="group in EXPLORE" :key="group.label" class="flex flex-wrap items-baseline gap-x-5 gap-y-2 max-md:justify-center">
+          <span class="text-xs font-semibold uppercase tracking-wide text-gray-500 w-28 shrink-0 max-md:w-full max-md:text-center">{{ group.label }}</span>
+          <NuxtLink v-for="l in group.links" :key="l.to" :to="l.to" class="text-indigo-600 text-sm font-medium hover:underline">{{ l.name }}</NuxtLink>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- 5. Social proof -->
-  <section class="w-full px-6 pt-20 pb-20">
+  <section class="home-band w-full px-6 pt-20 pb-14">
     <div class="max-w-screen-lg mx-auto">
       <div class="mt-4">
         <h2 class="text-balance md:text-5xl">Real results from <span class="text-indigo-600">industrial teams</span></h2>
         <TestimonialCarousel hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
       </div>
-      <div class="mt-14 flex flex-wrap justify-center gap-x-8 gap-y-4">
-        <span v-for="t in TRUST" :key="t.label" class="flex items-center gap-2 text-gray-600 text-sm">
-          <UIcon :name="t.icon" class="w-5 h-5 text-indigo-500" />
-          {{ t.label }}
-        </span>
-        <NuxtLink to="/platform/security/" class="flex items-center gap-1 text-indigo-600 text-sm font-medium hover:underline">
-          Security details
+    </div>
+  </section>
+
+  <!-- 5b. Security -->
+  <section class="w-full px-6 py-20 md:py-24">
+    <div class="max-w-screen-lg mx-auto grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-14 items-center">
+      <div class="max-md:text-center">
+        <p class="home-eyebrow text-red-500">Security</p>
+        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Built for enterprise <span class="text-indigo-600">manufacturing.</span></h2>
+        <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-md max-md:mx-auto">
+          FlowFuse is SOC 2 Type II certified, with the access controls and deployment options large manufacturers' security teams ask for.
+        </p>
+        <NuxtLink to="/platform/security/" class="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline mt-6">
+          Security and compliance details
           <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
         </NuxtLink>
+      </div>
+      <div class="grid sm:grid-cols-[minmax(0,4fr)_minmax(0,5fr)] gap-5">
+        <div class="rounded-xl border border-indigo-100 bg-white p-6 flex flex-col items-center justify-center text-center">
+          <div class="w-32 h-32">
+            <IconsSoc2BadgeIcon />
+          </div>
+          <p class="text-gray-800 font-medium mt-4 mb-0">SOC 2 Type II</p>
+          <p class="text-gray-600 font-light text-sm mt-1 mb-0">Independently audited</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div v-for="item in SECURITY" :key="item.title" class="rounded-xl border border-indigo-100 bg-white px-5 py-4 flex gap-4 items-start">
+            <UIcon :name="item.icon" class="w-6 h-6 text-indigo-500 shrink-0 mt-0.5" />
+            <div>
+              <p class="text-gray-800 font-medium m-0">{{ item.title }}</p>
+              <p class="text-gray-600 font-light text-sm leading-5 mt-1 mb-0">{{ item.text }}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="w-full px-6 pt-20 bg-indigo-50/50">
+  <section class="home-band w-full px-6 pt-20">
     <div class="max-w-screen-lg mx-auto">
       <h2 class="mb-1 md:text-5xl max-md:text-center">Frequently asked <span class="text-indigo-600">questions</span></h2>
       <div class="-mt-20">
@@ -353,7 +433,19 @@ useSchemaOrg([
 <style scoped>
 /* Page rhythm: the hero is the only dark section. The strip under it picks up the
    hero's indigo and lets it go to white, and the closing call to action is a card in the
-   hero's colours on the light page, rather than a second full-width dark band. */
+   hero's colours on the light page, rather than a second full-width dark band.
+   Below the strip, sections alternate white and .home-band, so the light middle of the
+   page never runs white for long. */
+.home-band {
+  background-color: #f5f7ff;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+  border-top: 1px solid #e0e7ff;
+  border-bottom: 1px solid #e0e7ff;
+}
 .home-after-hero {
   background: linear-gradient(to bottom, #eef2ff 0%, #ffffff 100%);
 }
