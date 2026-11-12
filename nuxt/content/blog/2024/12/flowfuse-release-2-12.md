@@ -33,7 +33,7 @@ meta:
       answer: "Yes. FlowFuse is well suited for home automation scenarios where you want to manage multiple Node-RED instances from a single interface, with version control and remote access."
     - question: "What is Developer Mode in the FlowFuse Device Agent?"
       answer: "Developer Mode allows you to access your remote Node-RED editor directly through FlowFuse Cloud, so you can edit flows on edge devices without needing direct network access to the hardware."
-tldr: "FlowFuse 2.12 introduced a free team tier on FlowFuse Cloud, allowing users to manage two remote Node-RED instances via the Device Agent at no cost. The release also included Device Auto Snapshots for automatic flow backups. Note: the free plan has since been retired, and FlowFuse is now offered as Edge, Hub and Fleet."
+tldr: "FlowFuse 2.12 introduced a free team tier on FlowFuse Cloud (since retired; FlowFuse is now offered as Edge, Hub and Fleet), allowing users to manage two remote Node-RED instances via the Device Agent at no cost. The release also included Device Auto Snapshots for automatic flow backups."
 ---
 
 The new Free plan on FlowFuse Cloud will allow you to manage two remote instances using FlowFuse Device Agent, completely free of charge, forever! The new plan also provides Device Auto Snapshots, so any changes to your Node-RED flows running on your devices are backed up automatically.
