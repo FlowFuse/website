@@ -16,6 +16,7 @@
 // Partnership is what makes it so. Every secondary link leads to /build-with-us/
 // (the partnership page) through CtaLink, so clicks still count as the signUp CTA.
 import { foundationSiteCenters } from '../lib/home-iso-scenes'
+import { faqAnswerText } from '../lib/faq-answer.mjs'
 
 const START_POINTS = [
     {
@@ -122,6 +123,14 @@ const TRUST = [
     { icon: 'i-lucide-server', label: 'Self-hosted or air-gapped' },
 ]
 
+// Rendered by <Faq> and repeated as FAQ structured data below.
+const FAQ = [
+    { question: 'What is FlowFuse?', answer: 'FlowFuse is an industrial platform built on Node-RED, with engineers who build your first solution alongside your team. You prove it at one site, then roll it out to every site, faster each time.' },
+    { question: 'What is the Foundation Partnership?', answer: 'FlowFuse engineers build your first solution with your team, on the equipment you already run. What they build becomes the foundation every later site reuses, and you roll it out with your team, a partner or ours.' },
+    { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms.' },
+    { question: 'How does FlowFuse handle security and compliance?', answer: 'FlowFuse is SOC 2 Type II certified. It supports single sign-on, role-based access, audit logs, and self-hosted or air-gapped deployments.' },
+]
+
 // The homepage ranks for the brand, so its title leads with it. The site-wide template
 // would append "• FlowFuse" again, so it's switched off for this page only.
 useHead({ titleTemplate: '%s' })
@@ -133,6 +142,10 @@ useSeoMeta({
     ogUrl: 'https://flowfuse.com/',
     twitterSite: '@FlowFuseinc',
 })
+useSchemaOrg([
+    defineWebPage({ '@type': 'FAQPage' }),
+    ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
+])
 </script>
 
 <template>
@@ -326,6 +339,16 @@ useSeoMeta({
           Security details
           <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
         </NuxtLink>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="w-full px-6 pt-20 bg-indigo-50/50">
+    <div class="max-w-screen-lg mx-auto">
+      <h2 class="mb-1 md:text-5xl max-md:text-center">Frequently asked <span class="text-indigo-600">questions</span></h2>
+      <div class="-mt-20">
+        <Faq :faq="FAQ" variant="page" />
       </div>
     </div>
   </section>
