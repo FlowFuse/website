@@ -125,7 +125,7 @@ const TRUST = [
 
 // Rendered by <Faq> and repeated as FAQ structured data below.
 const FAQ = [
-    { question: 'What is FlowFuse?', answer: 'FlowFuse is an industrial platform built on [Node-RED](/node-red/), with engineers who build your first solution alongside your team. You prove it at one site, then roll it out to every site, faster each time.' },
+    { question: 'What is FlowFuse?', answer: 'FlowFuse is an industrial platform built on [Node-RED](/node-red/), with engineers who build your first solution alongside your team. Together we prove it at one site, then deploy it to the rest, faster with each one.' },
     { question: 'How is FlowFuse different from a system integrator?', answer: 'A system integrator builds a project and hands it over. FlowFuse builds your first solution with your team on a platform you keep, so your team owns it, changes it and rolls it out to every site without starting over.' },
     { question: 'What is the Foundation Partnership?', answer: 'FlowFuse engineers build your first solution with your team, on the equipment you already run. What they build becomes the foundation every later site reuses, and you roll it out with your team, a partner or ours. [See how the Foundation Partnership works](/build-with-us/).' },
     { question: 'What kinds of problems does FlowFuse solve?', answer: 'Problems that repeat across your plants: scrap and rework, late orders, unplanned stops and the cost behind them. We start with the one you are measured on. See how other teams solved theirs in our [customer stories](/customer-stories/).' },
