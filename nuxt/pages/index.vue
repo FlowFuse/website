@@ -131,19 +131,12 @@ useSeoMeta({
       </div>
       <div class="relative">
         <HomeIsoArt scene="hero" variant="dark" class="w-full max-w-[680px] mx-auto" />
-        <div class="home-chip absolute left-2 bottom-2 md:left-0 md:bottom-6">
-          <UIcon name="i-lucide-circle-check" class="w-5 h-5 text-emerald-300 shrink-0" />
-          <div class="text-left">
-            <p class="m-0 text-white text-sm font-medium leading-5">Proven at site 1</p>
-            <p class="m-0 text-indigo-200 text-xs leading-4">Deploying to every site</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Logo strip: users count and customer logos, straight under the hero -->
-  <section class="w-full px-6 pb-4 border-b border-gray-100">
+  <section class="home-after-hero w-full px-6 pb-4">
     <div class="max-w-screen-lg mx-auto text-center">
       <SocialProof />
     </div>
@@ -181,7 +174,7 @@ useSeoMeta({
   </section>
 
   <!-- 3. Problem to solution -->
-  <section class="w-full px-6 py-20 md:py-24 bg-gradient-to-br from-indigo-50 to-red-50/60">
+  <section class="w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">One solution, every site</p>
       <h2 class="text-balance mt-4 md:text-5xl max-md:text-center max-w-3xl">Solve it at one plant. <span class="text-indigo-600">Run it at all of them.</span></h2>
@@ -266,8 +259,9 @@ useSeoMeta({
     </div>
   </section>
 
-  <!-- 4. Metrics of success -->
-  <section class="w-full px-6 py-20 md:py-24">
+  <!-- 4. Metrics of success: the one tinted band in the light middle, so the long
+       white run has a resting point -->
+  <section class="w-full px-6 py-20 md:py-24 bg-indigo-50/50">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">Results</p>
       <h2 class="text-balance mt-4 mb-12 md:text-5xl max-md:text-center">Measured on the line, <span class="text-indigo-600">not in a report.</span></h2>
@@ -291,18 +285,18 @@ useSeoMeta({
   </section>
 
   <!-- 5. Social proof -->
-  <section class="home-dark w-full px-6 pt-16 pb-20">
+  <section class="w-full px-6 pt-20 pb-20">
     <div class="max-w-screen-lg mx-auto">
       <div class="mt-4">
-        <h2 class="text-balance text-white md:text-5xl">Real results from <span class="text-indigo-300">industrial teams</span></h2>
-        <TestimonialCarousel dark hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
+        <h2 class="text-balance md:text-5xl">Real results from <span class="text-indigo-600">industrial teams</span></h2>
+        <TestimonialCarousel hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
       </div>
       <div class="mt-14 flex flex-wrap justify-center gap-x-8 gap-y-4">
-        <span v-for="t in TRUST" :key="t.label" class="flex items-center gap-2 text-indigo-100 text-sm">
-          <UIcon :name="t.icon" class="w-5 h-5 text-indigo-300" />
+        <span v-for="t in TRUST" :key="t.label" class="flex items-center gap-2 text-gray-600 text-sm">
+          <UIcon :name="t.icon" class="w-5 h-5 text-indigo-500" />
           {{ t.label }}
         </span>
-        <NuxtLink to="/platform/security/" class="flex items-center gap-1 text-white text-sm font-medium hover:underline">
+        <NuxtLink to="/platform/security/" class="flex items-center gap-1 text-indigo-600 text-sm font-medium hover:underline">
           Security details
           <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
         </NuxtLink>
@@ -311,8 +305,9 @@ useSeoMeta({
   </section>
 
   <!-- 6. Call to action -->
-  <section class="home-dark w-full px-6 py-20 md:py-24 text-center">
-    <div class="max-w-3xl mx-auto">
+  <section class="w-full px-6 pt-8 pb-20 md:pb-24">
+    <div class="home-cta max-w-screen-lg mx-auto rounded-2xl px-6 py-16 md:py-20 text-center">
+     <div class="max-w-3xl mx-auto">
       <h2 class="text-balance text-white md:text-5xl mt-0">Bring us the problem that repeats across your sites.</h2>
       <p class="text-indigo-100 font-light text-lg md:text-xl mt-6 mb-0">We'll build the first one with you, prove it at one site, and roll it out to the rest on the same foundation.</p>
       <div class="flex flex-wrap gap-4 items-center justify-center mt-10">
@@ -323,10 +318,20 @@ useSeoMeta({
         </CtaLink>
       </div>
     </div>
+    </div>
   </section>
 </template>
 
 <style scoped>
+/* Page rhythm: the hero is the only dark section. The strip under it picks up the
+   hero's indigo and lets it go to white, and the closing call to action is a card on
+   the light page, as on the live homepage, rather than a second dark band. */
+.home-after-hero {
+  background: linear-gradient(to bottom, #eef2ff 0%, #ffffff 100%);
+}
+.home-cta {
+  background: radial-gradient(ellipse 50% 150% at 50% 100%, var(--color-indigo-500), #211c64);
+}
 .home-dark {
   background:
     radial-gradient(ellipse 60% 70% at 75% 45%, rgba(99, 102, 241, 0.22), transparent 70%),
@@ -338,15 +343,5 @@ useSeoMeta({
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-}
-.home-chip {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  padding: 0.625rem 0.875rem;
-  border-radius: 0.75rem;
-  background: #1b2452;
-  border: 1px solid #3c4a8a;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 </style>
