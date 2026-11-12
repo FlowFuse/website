@@ -125,10 +125,13 @@ const TRUST = [
 
 // Rendered by <Faq> and repeated as FAQ structured data below.
 const FAQ = [
-    { question: 'What is FlowFuse?', answer: 'FlowFuse is an industrial platform built on Node-RED, with engineers who build your first solution alongside your team. You prove it at one site, then roll it out to every site, faster each time.' },
-    { question: 'What is the Foundation Partnership?', answer: 'FlowFuse engineers build your first solution with your team, on the equipment you already run. What they build becomes the foundation every later site reuses, and you roll it out with your team, a partner or ours.' },
-    { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms.' },
-    { question: 'How does FlowFuse handle security and compliance?', answer: 'FlowFuse is SOC 2 Type II certified. It supports single sign-on, role-based access, audit logs, and self-hosted or air-gapped deployments.' },
+    { question: 'What is FlowFuse?', answer: 'FlowFuse is an industrial platform built on [Node-RED](/node-red/), with engineers who build your first solution alongside your team. You prove it at one site, then roll it out to every site, faster each time.' },
+    { question: 'How is FlowFuse different from a system integrator?', answer: 'A system integrator builds a project and hands it over. FlowFuse builds your first solution with your team on a platform you keep, so your team owns it, changes it and rolls it out to every site without starting over.' },
+    { question: 'What is the Foundation Partnership?', answer: 'FlowFuse engineers build your first solution with your team, on the equipment you already run. What they build becomes the foundation every later site reuses, and you roll it out with your team, a partner or ours. [See how the Foundation Partnership works](/build-with-us/).' },
+    { question: 'What kinds of problems does FlowFuse solve?', answer: 'Problems that repeat across your plants: scrap and rework, late orders, unplanned stops and the cost behind them. We start with the one you are measured on. See how other teams solved theirs in our [customer stories](/customer-stories/).' },
+    { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms. See the full list of [integrations](/integrations/).' },
+    { question: 'Who owns the solution once it is built?', answer: 'Your team does. FlowFuse engineers build the first one alongside you, and your team runs it, improves it and pushes changes to every site.' },
+    { question: 'How does FlowFuse handle security and compliance?', answer: 'FlowFuse is SOC 2 Type II certified. It supports single sign-on, role-based access, audit logs, and self-hosted or air-gapped deployments. Read more on our [security page](/platform/security/).' },
 ]
 
 // The homepage ranks for the brand, so its title leads with it. The site-wide template
