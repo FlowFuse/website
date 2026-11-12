@@ -9,9 +9,14 @@
 // customer result, and carry no customer names.
 //
 // The plant renders fully drawn with the first step already lit (server-side too), so
-// nothing waits on load. Autoplay pauses on hover and stops once someone picks a step.
-// Under prefers-reduced-motion there is no autoplay; the first step shows still, and
-// the step buttons still work.
+// nothing waits on load.
+//
+// Timing has one clock: the active segment's fill animation. When it ends, the next
+// step starts (after the last, the first), so the bar and the picture never drift.
+// Hovering pauses that animation, which pauses everything. Picking a segment jumps to
+// it and carries on from there. Under prefers-reduced-motion the fill doesn't
+// animate, so nothing advances on its own; the first step shows still, and the step
+// buttons still work.
 import { renderScene, HERO_GROUPS, type HeroGroup } from '../../lib/home-iso-scenes'
 
 interface Step {
@@ -31,7 +36,7 @@ const STEPS: Step[] = [
     { group: 'energy', solution: 'Remote energy service', value: 'Balance charge sent', detail: 'Battery string 3, approved remotely', kind: 'command' },
 ]
 
-const STEP_MS = 4800
+const STEP_MS = 3600
 
 const boxes = renderScene('hero').groups
 const current = ref(0)
@@ -43,29 +48,11 @@ const anchor = computed(() => {
     return { left: (b.x + b.w / 2) * 100, top: b.y * 100 }
 })
 
-let timer: ReturnType<typeof setTimeout> | undefined
-let hovering = false
-let stopped = false
+const hovering = ref(false)
 
-function schedule (ms: number) {
-    clearTimeout(timer)
-    timer = setTimeout(() => {
-        if (!hovering && !stopped) current.value = (current.value + 1) % STEPS.length
-        schedule(STEP_MS)
-    }, ms)
+function advance () {
+    current.value = (current.value + 1) % STEPS.length
 }
-
-function pick (i: number) {
-    current.value = i
-    stopped = true
-    clearTimeout(timer)
-}
-
-onMounted(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    schedule(STEP_MS)
-})
-onUnmounted(() => clearTimeout(timer))
 
 // Paths for the small line charts in the callouts (viewBox 0 0 120 36)
 const SPARK_UP = 'M2,30 L14,29 L26,30 L38,28 L50,29 L62,27 L74,25 L86,20 L98,14 L110,8 L118,5'
@@ -74,7 +61,7 @@ const BARS = [22, 25, 24, 26, 23, 8, 6, 22, 25, 24]
 </script>
 
 <template>
-  <div class="relative" @mouseenter="hovering = true" @mouseleave="hovering = false">
+  <div class="relative" :class="{ paused: hovering }" @mouseenter="hovering = true" @mouseleave="hovering = false">
     <div class="relative" aria-hidden="true">
       <HomeIsoArt scene="hero" variant="dark" animated :active="step.group" class="w-full" />
 
@@ -149,9 +136,14 @@ const BARS = [22, 25, 24, 26, 23, 8, 6, 22, 25, 24]
           :aria-label="`Show ${s.solution}`"
           :aria-pressed="i === current"
           :title="s.solution"
-          @click="pick(i)"
+          @click="current = i"
       >
-        <span :key="`${current}-${i}`" class="seg-fill" :style="{ animationDuration: `${STEP_MS}ms` }" />
+        <span
+            :key="`${current}-${i}`"
+            class="seg-fill"
+            :style="{ animationDuration: `${STEP_MS}ms` }"
+            @animationend="i === current && advance()"
+        />
       </button>
     </div>
   </div>
@@ -225,6 +217,7 @@ const BARS = [22, 25, 24, 26, 23, 8, 6, 22, 25, 24]
 .seg-done { background: rgba(165, 180, 252, 0.45); }
 .seg-fill { position: absolute; inset: 0; width: 0; background: #ff7b6b; }
 .seg-on .seg-fill { animation: fill linear forwards; }
+.paused .seg-on .seg-fill { animation-play-state: paused; }
 
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @keyframes ring { to { stroke-dasharray: 78 100; } }
