@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // The homepage, written for director-level buyers. Six parts, in this order:
 //   1. Value statement (hero, with the animated wireframe plant: components/home/Hero.vue)
-//   2. Results you can measure: the scorecard numbers a first solution moves
+//   2. Your outcomes: the business outcomes a first solution delivers
 //   3. One solution, every site: what FlowFuse is, the problem it solves, and the
 //      Foundation Partnership that makes each site faster than the last
 //   4. Metrics of success: customer results, each linked to its story
@@ -53,13 +53,6 @@ const FOUNDATION = [
     { icon: 'i-lucide-database', title: 'Data models', text: 'One structure for your operational data, so every plant speaks the same language.', to: '/use-cases/uns/' },
     { icon: 'i-lucide-rocket', title: 'Deployment patterns', text: 'A tested way to roll the solution out to new lines and plants without starting over.', to: '/platform/device-agent/' },
     { icon: 'i-lucide-shield-check', title: 'Governance', text: 'Roles, access and change control, set up once and applied everywhere.', to: '/platform/security/' },
-]
-
-// `link` turns one phrase of a step into a link: text before, the link, text after.
-const STEPS = [
-    { name: 'Define', text: 'We agree the problem and the number it has to move.' },
-    { name: 'Design', text: '', link: { label: 'Our engineers', to: '/professional-services/', after: ' build the first solution with your team, on your equipment, and lay the foundation as they go.' } },
-    { name: 'Deliver', text: 'Prove it at one site, then roll it out on the same foundation, with your team, a ', link: { label: 'partner', to: '/partners/', after: ' or ours.' } },
 ]
 
 // Ways in by industry and by team, under the results.
@@ -135,8 +128,8 @@ const SECURITY = [
 
 // Rendered by <Faq> and repeated as FAQ structured data below.
 const FAQ = [
-    { question: 'What is FlowFuse?', answer: 'FlowFuse is an industrial platform built on [Node-RED](/node-red/), with engineers who build your first solution alongside your team. Together we prove it at one site, then deploy it to the rest, faster with each one.' },
-    { question: 'What is the Foundation Partnership?', answer: 'FlowFuse engineers build your first solution with your team, on the equipment you already run. What they build becomes the foundation every later site reuses, and you roll it out with your team, a partner or ours. [See how the Foundation Partnership works](/build-with-us/).' },
+    { question: 'What is FlowFuse?', answer: 'FlowFuse solves hard operational problems for manufacturers, asset operators and the companies that service industrial equipment, using an industrial application platform built on open-source [Node-RED](/node-red/). Our engineers build your first solution alongside your team. Together we prove it at one site, then deploy it to the rest, faster with each one.' },
+    { question: 'What is the Foundation Partnership?', answer: 'FlowFuse engineers build your first solution with your team, on the equipment you already run. What they build becomes the foundation every later site reuses, and we roll it out with your team, site by site. [See how the Foundation Partnership works](/build-with-us/).' },
     { question: 'What kinds of problems does FlowFuse solve?', answer: 'Problems that repeat across your plants: scrap and rework, late orders, unplanned stops and the cost behind them. We start with the one you are measured on. See how other teams solved theirs in our [customer stories](/customer-stories/).' },
     { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms. See the full list of [integrations](/integrations/).' },
     { question: 'Who owns the solution once it is built?', answer: 'You do. Everything we build together runs in your FlowFuse environment, with full version history, so your team can change it, extend it and roll it out without waiting on us. It is built on open-source Node-RED, so nothing is locked away.' },
@@ -195,10 +188,10 @@ useSchemaOrg([
   <section class="home-band w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <div class="max-md:text-center">
-        <p class="home-eyebrow text-red-500">Results you can measure</p>
-        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Every solution starts with <br class="max-md:hidden"><span class="text-indigo-600">a number on your scorecard.</span></h2>
+        <p class="home-eyebrow text-red-500">Your outcomes</p>
+        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Every solution matches <br class="max-md:hidden"><span class="text-indigo-600">your business outcome.</span></h2>
         <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-xl max-md:mx-auto">
-          We agree the number first, then build the solution that moves it.
+          You set the outcome. We build the solution that delivers it.
         </p>
       </div>
       <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 rounded-2xl border border-gray-200 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(67,56,202,0.12)] overflow-hidden">
@@ -223,10 +216,6 @@ useSchemaOrg([
           </span>
         </NuxtLink>
       </div>
-      <p class="m-0 mt-8 text-center text-gray-500">
-        Measured on something else? <span class="text-gray-800 font-medium">We start there too.</span>
-        <NuxtLink to="/use-cases/" class="text-indigo-600 font-medium hover:underline whitespace-nowrap">See all use cases</NuxtLink>
-      </p>
     </div>
   </section>
 
@@ -238,7 +227,7 @@ useSchemaOrg([
       <h2 class="text-balance mt-4 md:text-5xl max-md:text-center max-w-3xl">Solve it at one plant. <span class="text-indigo-600">Run it at all of them.</span></h2>
       <!-- What FlowFuse is, in plain words, before the page explains how it works -->
       <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-2xl max-md:text-center max-md:mx-auto">
-        FlowFuse is an industrial application platform built on open-source <NuxtLink to="/node-red/" class="text-indigo-600 font-normal underline decoration-indigo-200 underline-offset-2 hover:decoration-indigo-600">Node-RED</NuxtLink>. It connects to the machines and systems you already run, and deploys the solutions built on it to every site from one place.
+        FlowFuse solves hard operational problems for manufacturers, asset operators and the companies that service industrial equipment, using an industrial application platform built on open-source <NuxtLink to="/node-red/" class="text-indigo-600 font-normal underline decoration-indigo-200 underline-offset-2 hover:decoration-indigo-600">Node-RED</NuxtLink>.
       </p>
 
       <div class="grid md:grid-cols-2 gap-5 mt-10">
@@ -307,15 +296,6 @@ useSchemaOrg([
             </p>
             <p class="text-gray-600 font-light text-sm leading-5 mt-2 mb-0">{{ f.text }}</p>
           </NuxtLink>
-        </div>
-
-        <div class="grid sm:grid-cols-3 gap-6 mt-14 pt-10 border-t border-indigo-100">
-          <div v-for="(step, i) in STEPS" :key="step.name" class="max-sm:text-center">
-            <p class="m-0 text-indigo-600 text-2xl font-medium"><span class="text-red-400 text-base font-semibold mr-2">0{{ i + 1 }}</span>{{ step.name }}</p>
-            <p class="m-0 mt-2 text-gray-600 font-light">
-              {{ step.text }}<template v-if="step.link"><NuxtLink :to="step.link.to" class="text-indigo-600 font-normal underline decoration-indigo-200 underline-offset-2 hover:decoration-indigo-600">{{ step.link.label }}</NuxtLink>{{ step.link.after }}</template>
-            </p>
-          </div>
         </div>
 
         <!-- Mid-page, the reader is still learning: one "learn more", no sales ask -->
