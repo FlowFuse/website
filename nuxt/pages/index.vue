@@ -324,13 +324,15 @@ useSeoMeta({
 
 <style scoped>
 /* Page rhythm: the hero is the only dark section. The strip under it picks up the
-   hero's indigo and lets it go to white, and the closing call to action is a card on
-   the light page, as on the live homepage, rather than a second dark band. */
+   hero's indigo and lets it go to white, and the closing call to action is a card in the
+   hero's colours on the light page, rather than a second full-width dark band. */
 .home-after-hero {
   background: linear-gradient(to bottom, #eef2ff 0%, #ffffff 100%);
 }
 .home-cta {
-  background: radial-gradient(ellipse 50% 150% at 50% 100%, var(--color-indigo-500), #211c64);
+  background:
+    radial-gradient(ellipse 60% 70% at 75% 45%, rgba(99, 102, 241, 0.22), transparent 70%),
+    #0c1330;
 }
 .home-dark {
   background:
