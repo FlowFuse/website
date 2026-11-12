@@ -17,8 +17,6 @@ tags:
   - how-to
 cta:
   type: sign-up
-  title: "Build Beautiful Node-RED Dashboards Faster"
-  description: "FlowFuse gives you everything you need to build, style, and deploy Node-RED Dashboard 2.0 applications, with multi-user support, authentication, and production-ready infrastructure built in. Go from prototype to a secure, shareable dashboard without managing servers. Start free today."
 meta:
   howto:
     name: "How to Configure Node-RED Dashboard 2.0 Layout, Sidebar, and Styling"

@@ -64,7 +64,7 @@ We'll use [FlowFuse Dashboard](/platform/dashboard/) for the UI since it's moder
 
 Before you start, make sure you have:
 
-- **Node-RED Instance:** You need Node-RED running somewhere. Easiest option is FlowFuse, [grab a free trial](https://app.flowfuse.com/account/create) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
+- **Node-RED Instance:** You need Node-RED running somewhere. A local install works for this tutorial.
 - **OpenWeatherMap Account:** Sign up at `openweathermap.org`. The free tier gives you enough API calls for this project.
 
 ## Installing FlowFuse Dashboard
@@ -282,5 +282,3 @@ Throughout this tutorial, you used FlowFuse to host Node-RED and FlowFuse Dashbo
 Try expanding your dashboard by adding more cities, creating historical charts, or setting up weather alerts. The pattern stays the same, you're just swapping data sources and visualizations.
 
 This same pattern scales to a global level, too: [the World Meteorological Organization uses Node-RED to modernize how meteorological data is shared between national weather services worldwide](/customer-stories/un-wmo-nr-data-sharing/).
-
-[Start your free FlowFuse trial](https://app.flowfuse.com/account/create) and keep building.

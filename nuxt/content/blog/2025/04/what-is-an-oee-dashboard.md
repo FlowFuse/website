@@ -141,6 +141,6 @@ _OEE Dashboard_
 
 With the plan settled, [Part 2 builds the manufacturing OEE dashboard](/blog/2025/04/build-manufacturing-oee-dashboard/): collecting the data, running the calculations, and assembling the widgets. [Part 3 then designs and scales it for factory screens](/blog/2025/04/design-and-scale-oee-dashboard/) - theming, responsive layout, multiple production lines, and your real database.
 
-If you would rather skip the tutorials and dive straight in, [register for a FlowFuse account](https://app.flowfuse.com/account/create) and start from our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
+If you would rather skip the tutorials and dive straight in, start from our ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
 
 For a wider view of what else belongs on the shop floor, see our [manufacturing dashboard examples](/blog/2026/08/manufacturing-dashboard-examples/).

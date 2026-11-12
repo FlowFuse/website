@@ -20,13 +20,7 @@ In this blog post, we'll take a look at how to get started with Node-RED and cre
 
 ### Installing Node-RED
 
-First, you'll need to get an installation of Node-RED up and running. There are several ways to do this. We suggest using FlowFuse as it's very easy to get Node-RED running. You can also install Node-RED locally using npm (Node Package Manager), which comes with Node.js.
-
-#### FlowFuse
-
-To get Node-RED running on FlowFuse [sign up as a new user](https://app.flowfuse.com/account/create). New users are enrolled in a trial and a Node-RED instance will be started for you within a minute.
-
-Once that instance has booted up you can access Node-RED by pressing "Open Editor".
+First, you'll need to get an installation of Node-RED up and running. The quickest way is to install it locally using npm (Node Package Manager), which comes with Node.js.
 
 #### npm
 

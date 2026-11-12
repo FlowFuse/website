@@ -299,6 +299,6 @@ Modern PLCs are not the hard part. Getting forty controllers from five vendors, 
 ![FlowFuse platform for industrial data integration connecting PLCs, edge devices, and enterprise systems](./images/flowfuse-platform.png){data-zoomable}
 _FlowFuse connects controllers, edge devices, and enterprise systems from a single governed platform._
 
-Build the integration once, deploy it to every site, and manage it centrally instead of rebuilding a snowflake at each plant. See the [PLC integration overview](/landing/plc/) for supported protocols and reference architectures, or [connect your first controller free](https://app.flowfuse.com/account/create).
+Build the integration once, deploy it to every site, and manage it centrally instead of rebuilding a snowflake at each plant. See the [PLC integration overview](/landing/plc/) for supported protocols and reference architectures, or [connect your first controller with us](/build-with-us/).
 
 Dick Morley's specification gave engineers a controller they could reprogram without touching a wire. The same freedom is now available for the integration layer above it.

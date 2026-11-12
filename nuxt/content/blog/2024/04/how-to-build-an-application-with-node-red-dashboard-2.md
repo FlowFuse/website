@@ -15,8 +15,6 @@ tags:
     - how-to
 cta:
   type: sign-up
-  title: Build and Deploy Node-RED Applications Faster
-  description: FlowFuse gives you everything you need to build, secure, and scale Node-RED applications, multi-user support, authentication, and production-ready deployment included. Start your free trial today.
 meta:
   howto:
     name: "How to Build an Application with Node-RED Dashboard 2.0"
@@ -73,7 +71,7 @@ In this guide, we'll build a Todo application to guide you through the features 
 
 If you're new to Dashboard 2.0, refer to our blog post [Getting Started with Dashboard 2.0](/blog/2024/03/dashboard-getting-started/) to install and get things started.
 
-::cta-image{src="/blog/2024/04/images/build-app-cta-1.png" alt="Get a free FlowFuse instance and follow every step of this tutorial with your own data" cta="sign-up"}
+::cta-image{src="/blog/2024/04/images/build-app-cta-1.png" alt="Build this app alongside the tutorial. Build it on your own data, with our engineers alongside your team." cta="sign-up"}
 ::
 
 ## Installing Flowfuse user addon

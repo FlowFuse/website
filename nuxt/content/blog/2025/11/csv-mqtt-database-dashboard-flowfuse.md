@@ -57,7 +57,7 @@ meta:
     - question: "Why ingest CSV logs from PLCs and SCADA systems?"
       answer: "PLCs, legacy SCADA systems, and custom applications often log data directly to CSV files. These systems are reliable but were not built to integrate with MQTT brokers or databases, so the data must be read and ingested after the files are written to make it accessible to modern systems."
     - question: "What are the prerequisites for this guide?"
-      answer: "You need a running FlowFuse instance, CSV log files with industrial data, access to an MQTT broker, and access to a database. Enterprise accounts include built-in MQTT broker and database services, so no external setup is required."
+      answer: "You need a running FlowFuse instance, CSV log files with industrial data, access to an MQTT broker, and access to a database. FlowFuse Edge and Fleet include a built-in MQTT broker and database, so no external setup is required."
     - question: "What is the difference between the real-time and batch processing pipelines?"
       answer: "The real-time pipeline monitors CSV files for changes and immediately publishes new data to MQTT topics for live dashboards and alerting. The batch processing pipeline reads CSV files on a schedule and writes data to databases in efficient batches, suited for historical storage, trend analysis, and reporting."
     - question: "How are CSV files monitored for changes in real time?"
@@ -89,19 +89,19 @@ If you're using FlowFuse to log data, you can send to MQTT and databases as data
 
 This guide shows you how to read CSV files, whether real-time or historical, and route them to MQTT brokers, databases, and dashboards.
 
-::cta-image{src="/blog/2025/11/images/csv-to-mqtt-cta-1.png" alt="Try FlowFuse free and turn this tutorial into a live pipeline for your own logs" cta="sign-up"}
+::cta-image{src="/blog/2025/11/images/csv-to-mqtt-cta-1.png" alt="Stop babysitting CSV exports. Turn your CSV exports into a live data pipeline, built with our engineers alongside your team." cta="sign-up"}
 ::
 
 ### Prerequisites
 
 Before starting, ensure you have:
 
-- A running FlowFuse instance. If you don't have one, [sign up for free](https://app.flowfuse.com/)
+- A running FlowFuse instance
 - CSV log files with industrial data
 - Access to an MQTT broker
 - Access to a database
 
-**Note:** If you have an Enterprise account, you won't need to set up external MQTT brokers or databases, FlowFuse provides these services built into the platform.
+**Note:** If you're on FlowFuse Edge or Fleet, you won't need to set up external MQTT brokers or databases, FlowFuse provides these services built into the platform.
 
 ### Sample Data
 
@@ -287,7 +287,7 @@ Now we'll configure the database insertion to write batched data efficiently.
 
 #### Enabling FlowFuse Database
 
-If you have a Enterprise account, you can use the built-in PostgreSQL database service instead of setting up an external database. Follow the instructions in [Getting Started with FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/#step-1%3A-enable-the-database-in-your-project) to enable the database in your project.
+FlowFuse includes a built-in PostgreSQL database service you can use instead of setting up an external database. Follow the instructions in [Getting Started with FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/#step-1%3A-enable-the-database-in-your-project) to enable the database in your project.
 
 Once enabled, you'll have access to a fully managed PostgreSQL database that's automatically configured and ready to use with your FlowFuse flows.
 

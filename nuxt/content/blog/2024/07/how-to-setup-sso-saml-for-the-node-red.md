@@ -14,7 +14,7 @@ tags:
 cta:
   type: pricing
   title: Enterprise-Grade Security for Your Node-RED Platform
-  description: SSO with SAML and LDAP, RBAC, audit logging, and SOC 2 compliance, all included in FlowFuse Enterprise for teams that need centralized authentication and production-grade governance.
+  description: SSO with SAML and LDAP, RBAC, audit logging, and SOC 2 compliance, all included in FlowFuse for teams that need centralized authentication and production-grade governance.
 ---
 
 SSO plays a crucial role in modern enterprise environments by simplifying user authentication across multiple applications. At FlowFuse, we recognize the significance of SSO and offer robust support for integrating it with your self-hosted platform. In this comprehensive guide, we will focus on configuring SSO SAML, specifically using Google as the Identity Provider (IdP). We also support SSO with [LDAP](/blog/2024/07/how-to-setup-sso-ldap-for-the-node-red/). For more information, refer to [Setting up LDAP SSO for your Self-Hosted FlowFuse](/docs/admin/sso/ldap/).
@@ -57,7 +57,7 @@ SAML (Security Assertion Markup Language) is a protocol used in SSO scenarios to
 
 ## Setting up SSO For Your Self-Hosted FlowFuse Platform
 
-Before proceeding, ensure you have deployed FlowFuse on your server with an Enterprise license and configured it with email. Without email configuration, the SSO setup option won't appear in your FlowFuse.Furthermore, Make sure you have a [Google Workspace account created](https://www.youtube.com/watch?v=Rc7BT7PDqFs) and [verified your domain](https://www.youtube.com/watch?v=JIOaLKsz2R0) within Google Workspace. FlowFuse supports other providers for SAML SSO as well; check our [documentation on supported providers](/docs/admin/sso/saml/#providers) for details.
+Before proceeding, ensure you have deployed FlowFuse on your server with a Hub, Edge or Fleet license and configured it with email. Without email configuration, the SSO setup option won't appear in your FlowFuse.Furthermore, Make sure you have a [Google Workspace account created](https://www.youtube.com/watch?v=Rc7BT7PDqFs) and [verified your domain](https://www.youtube.com/watch?v=JIOaLKsz2R0) within Google Workspace. FlowFuse supports other providers for SAML SSO as well; check our [documentation on supported providers](/docs/admin/sso/saml/#providers) for details.
 
 If you haven't deployed FlowFuse yet, refer to our [documentation on installing FlowFuse](/docs/install/introduction/) or our blog on [deploying FlowFuse on Ubuntu with Docker](/blog/2024/07/deploying-flowfuse-with-docker/).
 

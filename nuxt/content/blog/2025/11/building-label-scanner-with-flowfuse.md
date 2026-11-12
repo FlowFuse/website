@@ -33,7 +33,7 @@ This tutorial shows you how you can build an OCR system using FlowFuse that can 
 ## Getting Started
 
 Before we dive in, make sure you have a running FlowFuse instance.
-If you do not have one yet, you can [sign up for the 30-day free trial](https://app.flowfuse.com/) and get a hosted instance running in under two minutes.
+
 
 ### Installing Required Nodes
 
@@ -187,5 +187,3 @@ Also, this OCR scanner is just one piece of what's possible with FlowFuse. Imagi
 FlowFuse helps manufacturers like you break down data silos and build connected, intelligent operations. From shop floor to top floor, your data works together.
 
 **See it in action.** [Book a demo](/book-demo/) and discover how FlowFuse can transform your entire facility, not just your label scanning.
-
-Or start building today with our [30-day free trial](https://app.flowfuse.com/).

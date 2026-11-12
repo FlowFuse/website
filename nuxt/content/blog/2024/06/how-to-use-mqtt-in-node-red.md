@@ -14,8 +14,6 @@ tags:
   - how-to
 cta:
   type: sign-up
-  title: "Run Production-Grade MQTT and Node-RED in One Platform"
-  description: "FlowFuse gives you hosted Node-RED and a built-in MQTT broker with access control, TLS, and managed credentials, plus remote device management and DevOps pipelines to run reliably from one device to entire factory floors. Start free today."
 meta:
   howto:
     name: "How to Connect Node-RED to an MQTT Broker"
@@ -70,7 +68,7 @@ This guide walks through the configuration steps and common patterns you'll need
 
 Before you start, make sure you have:
 
-- **Node-RED Instance**: You need Node-RED running somewhere. Easiest option is FlowFuse, grab a [free trial](https://app.flowfuse.com/) and you get a cloud-hosted instance ready to go. No server setup, no port forwarding hassles.
+- **Node-RED Instance**: You need Node-RED running somewhere. A local install works for this guide.
 - **MQTT Broker**: You'll need an MQTT broker to handle message routing. FlowFuse Edge and Fleet include a built-in MQTT broker service, no separate setup needed.
 
 ## Getting Connected
@@ -242,4 +240,4 @@ You now know how to connect Node-RED to MQTT brokers, publish data to topics, su
 
 Go build something. Connect a sensor, route the data, display it somewhere useful. The patterns you've learned here scale from a single device to entire factory floors.
 
-When you hit the limits of managing individual instances (tracking deployments, coordinating updates, maintaining uptime across sites), that's when tools like [FlowFuse](https://app.flowfuse.com/account/create) become relevant. Until then, you have everything you need.
+When you hit the limits of managing individual instances (tracking deployments, coordinating updates, maintaining uptime across sites), that's when platforms like [FlowFuse](/) become relevant. Until then, you have everything you need.

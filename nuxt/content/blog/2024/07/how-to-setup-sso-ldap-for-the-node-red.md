@@ -14,7 +14,7 @@ tags:
 cta:
   type: pricing
   title: Enterprise Security for Node-RED at Scale
-  description: SSO with LDAP and SAML, RBAC, audit logging, and SOC 2 compliance, all included in FlowFuse Enterprise for teams that need production-grade governance across their Node-RED deployments.
+  description: SSO with LDAP and SAML, RBAC, audit logging, and SOC 2 compliance, all included in FlowFuse for teams that need production-grade governance across their Node-RED deployments.
 ---
 
 A few days ago, we published a [blog](/blog/2024/07/how-to-setup-sso-saml-for-the-node-red/) explaining SSO and how to set up SAML for your self-hosted FlowFuse. Now, in this guide, we will walk you through the process of setting up SSO with LDAP for your self-hosted FlowFuse. We will use OpenLDAP as the provider and cover everything from introducing LDAP, how it works, installing and configuring OpenLDAP, managing users (create, delete, update), and finally setting up FlowFuse for SSO with LDAP.
@@ -43,7 +43,7 @@ LDAP enables applications and services to query, add, update, and delete directo
 
 ## Setting up SSO LDAP for FlowFuse
 
-Before we proceed, ensure that FlowFuse is deployed on your server with an Enterprise license and you have ssh connection with it so that you can run commands on the server. If you haven't installed it yet, please check out our [documentation on installing FlowFuse](/docs/install/introduction/) or our blog on [deploying FlowFuse on Ubuntu with Docker](/blog/2024/07/deploying-flowfuse-with-docker/).
+Before we proceed, ensure that FlowFuse is deployed on your server with a Hub, Edge or Fleet license and you have ssh connection with it so that you can run commands on the server. If you haven't installed it yet, please check out our [documentation on installing FlowFuse](/docs/install/introduction/) or our blog on [deploying FlowFuse on Ubuntu with Docker](/blog/2024/07/deploying-flowfuse-with-docker/).
 
 ### Installing and Configuring OpenLDAP
 

@@ -35,7 +35,7 @@ That makes compliance a manual exercise: match measurements to control plan requ
 
 The solution is to connect control plan characteristics to production measurements so each reading can be evaluated against the right requirement as it happens. That only works when the measurement data itself is trustworthy, including [calibration status](/blog/2026/07/calibration-management-dashboard/).
 
-::cta-image{src="/blog/2026/08/images/control-plan-cta-1.png" alt="Know which gauges are due for calibration - sign up for FlowFuse" cta="sign-up"}
+::cta-image{src="/blog/2026/08/images/control-plan-cta-1.png" alt="Know which gauges are due for calibration. Track calibration status and due dates for every gauge, CMM, and torque controller with a live dashboard built in FlowFuse." cta="sign-up"}
 ::
 
 ## What a control plan specifies

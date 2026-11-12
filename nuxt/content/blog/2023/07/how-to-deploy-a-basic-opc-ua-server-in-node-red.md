@@ -15,8 +15,6 @@ tags:
    - how-to
 cta:
   type: sign-up
-  title: "Run Your OPC UA Node-RED Server in the Cloud"
-  description: "Sign up for FlowFuse to deploy, manage, and scale your Node-RED OPC UA server flows securely in the cloud with built-in DevOps pipelines."
 meta:
   howto:
     name: "How to Deploy a Basic OPC UA Server in Node-RED"

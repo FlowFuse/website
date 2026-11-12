@@ -95,7 +95,7 @@ The solution lies in low-code integration platforms that consolidate protocol ha
 Before you start, make sure you have the following:
 
 - A properly configured and fully operational PLCs, located on the same network as the edge device that will be reading its data.
-- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](/blog/2025/09/installing-node-red/) and set up your instance following the instructions in this article.
+- A running FlowFuse instance on your edge device. See [this guide](/blog/2025/09/installing-node-red/) to set it up.
 
 # Getting Started
 
@@ -255,6 +255,6 @@ Manufacturers typically see substantial cost reduction in the first year, with i
 
 ## Get Started
 
-Connect your first PLC today. [Sign up for FlowFuse](https://app.flowfuse.com/), install the Device Agent on your edge hardware, and have data flowing to MQTT in under an hour. The platform handles the complexity, you focus on turning factory data into insights.
+Connect your first PLC: install the Device Agent on your edge hardware and have data flowing to MQTT in under an hour. The platform handles the complexity, you focus on turning factory data into insights.
 
 MQTT is one of several ways FlowFuse connects PLCs to the modern industrial stack. For a full view of supported protocols, OPC UA, EtherNet/IP, Siemens S7, Modbus, and more, see the [FlowFuse PLC integration overview](/landing/plc/).

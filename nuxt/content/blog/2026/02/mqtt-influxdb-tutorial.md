@@ -12,8 +12,6 @@ tags:
 - mqtt
 cta:
   type: sign-up
-  title: Build Pipelines You Can Actually Debug
-  description: FlowFuse turns MQTT-to-InfluxDB and every other IIoT integration into a visual flow. No custom scripts, no silent failures, no mystery at 2am. Start your free trial today.
 meta:
   howto:
     name: "How to Build an MQTT-to-InfluxDB Data Pipeline in Node-RED"
@@ -51,7 +49,7 @@ meta:
     - question: "Why isn't my data showing up in InfluxDB?"
       answer: "The most common causes are an incorrect API token, a mismatched organization name, or a bucket that does not exist yet. Open the Node-RED debug panel and check for errors on the InfluxDB out node."
     - question: "Do I need a separate MQTT broker for this pipeline?"
-      answer: "Not necessarily. FlowFuse Pro and Enterprise include a built-in broker whose MQTT nodes configure themselves automatically. You can also use any external broker by entering its host, port, and credentials."
+      answer: "Not necessarily. FlowFuse Edge and Fleet include a built-in broker whose MQTT nodes configure themselves automatically. You can also use any external broker by entering its host, port, and credentials."
 tldr: "Building an MQTT-to-InfluxDB pipeline in FlowFuse requires just three nodes: an MQTT in node to subscribe to sensor topics, a change node to transform the payload into InfluxDB's field-and-tag structure, and an InfluxDB out node to write the data. This visual approach eliminates the hidden failure modes of custom scripts and makes the entire pipeline easy to debug and hand off."
 ---
 
@@ -66,7 +64,7 @@ The typical approach is a custom Python script that subscribes to the broker, pa
 
 This article takes a different approach. Using FlowFuse (the enterprise platform built on [Node-RED](/)), you'll build the entire pipeline as a visual flow covering MQTT subscription, payload transformation, and InfluxDB write. Every step is visible, editable, and easy to hand off.
 
-::cta-image{src="/blog/2026/02/images/mqtt-to-influxdb-cta-1.png" alt="Try FlowFuse free and get your MQTT data into InfluxDB with drag-and-drop nodes, not a Python script" cta="sign-up"}
+::cta-image{src="/blog/2026/02/images/mqtt-to-influxdb-cta-1.png" alt="Build this pipeline in minutes. Build this pipeline on your own data, with our engineers alongside your team." cta="sign-up"}
 ::
 
 ## TL;DR
@@ -79,8 +77,8 @@ This article takes a different approach. Using FlowFuse (the enterprise platform
 
 Before you start, make sure you have the following in place.
 
-- A running FlowFuse instance. If you don't have one yet, [sign up](https://app.flowfuse.com/account/create) to get started.
-- An MQTT broker. FlowFuse Pro and Enterprise include a [built-in broker](/docs/user/teambroker/), and the [MQTT nodes](/docs/flowfuse-nodes/mqtt/) configure themselves automatically. If you are using an external broker, keep your host, port, and credentials handy.
+- A running FlowFuse instance.
+- An MQTT broker. FlowFuse Edge and Fleet include a [built-in broker](/docs/user/teambroker/), and the [MQTT nodes](/docs/flowfuse-nodes/mqtt/) configure themselves automatically. If you are using an external broker, keep your host, port, and credentials handy.
 - A running InfluxDB instance, either local or on InfluxDB Cloud. Keep your URL, token, organization, and bucket name handy.
 
 ## Building the Pipeline
@@ -117,7 +115,7 @@ Drag an MQTT in node onto the canvas and double-click it to open its settings. C
 
 ![MQTT broker security tab in Node-RED showing username and password fields.](./images/mqtt-in--security.png "MQTT broker security tab in Node-RED showing username and password fields.")
 
-If you are on FlowFuse Pro or Enterprise, the built-in broker details will already be picked up by the node and you can skip the above.
+If you are on FlowFuse Edge or Fleet, the built-in broker details will already be picked up by the node and you can skip the above.
 
 Once the broker is configured:
 

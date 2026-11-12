@@ -83,8 +83,6 @@ HOME env var not set within Node-RED process [#117](https://github.com/FlowFuse/
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-If you'd rather use our hosted offering: [Get started for free](https://app.flowfuse.com/account/create) on FlowFuse Cloud.
-
 ## Upgrading FlowFuse
 
 [FlowFuse Cloud](site:appURL) is already running 1.8.

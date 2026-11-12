@@ -38,7 +38,7 @@ This last point is important; this release lets you backup your flows to git, bu
 
 We'll also look at enabling other Git hosting providers - let us know which you'd like to see on the list.
 
-This feature is available to Enterprise teams on FlowFuse Cloud and self-hosted customers.
+This feature is available in FlowFuse Hub, on FlowFuse Cloud and self-hosted.
 
 ## Better Node-RED log handling
 
@@ -100,8 +100,3 @@ Together, we can make FlowFuse better with each release!
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
 
-### FlowFuse Cloud
-
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

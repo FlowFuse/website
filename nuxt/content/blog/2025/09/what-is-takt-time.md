@@ -140,7 +140,7 @@ In an ideal lean environment: **Cycle Time should sit at roughly 90–95% of Tak
 
 ## Implementing Takt Time Monitoring with FlowFuse
 
-Understanding takt time in theory is one thing; putting it into practice requires the right tools. [FlowFuse](/) connects to your existing systems, whether [PLCs](/blog/2025/10/plc-to-mqtt-using-flowfuse/), [databases](/docs/node-red/database/), or ERP software, to calculate takt time automatically in real time instead of on static spreadsheets. Before starting, [create a FlowFuse account](https://app.flowfuse.com/account/create) if you don't already have one.
+Understanding takt time in theory is one thing; putting it into practice requires the right tools. [FlowFuse](/) connects to your existing systems, whether [PLCs](/blog/2025/10/plc-to-mqtt-using-flowfuse/), [databases](/docs/node-red/database/), or ERP software, to calculate takt time automatically in real time instead of on static spreadsheets.
 
 ### Step 1: Connect to Your Data Sources
 

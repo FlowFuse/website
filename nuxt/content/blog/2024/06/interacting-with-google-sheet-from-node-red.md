@@ -15,8 +15,6 @@ tags:
    - how-to
 cta:
   type: sign-up
-  title: Connect Node-RED to Any Data Source
-  description: FlowFuse makes it simple to build, deploy, and manage Node-RED integrations, from Google Sheets to industrial systems, with production-ready infrastructure and team collaboration built in.
 meta:
   howto:
     name: "How to Interact with Google Sheets from Node-RED"

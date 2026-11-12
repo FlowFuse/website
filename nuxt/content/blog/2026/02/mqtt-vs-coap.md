@@ -39,7 +39,7 @@ These aren't competing protocols. They're answers to incompatible constraints. M
 
 This article shows what each protocol actually demands, where each fails under real constraints, and why teams consistently choose wrong, not because they pick inferior technology, but because they never validated their deployment requirements.
 
-::cta-image{src="/blog/2026/02/images/mqtt-vs-coap-cta-1.png" alt="Try FlowFuse free and test MQTT and CoAP against real traffic on the same edge device" cta="sign-up"}
+::cta-image{src="/blog/2026/02/images/mqtt-vs-coap-cta-1.png" alt="Not sure MQTT or CoAP wins here?. Run both protocols on your actual device and see which one holds up." cta="sign-up"}
 ::
 
 ## What Actually Separates These Protocols

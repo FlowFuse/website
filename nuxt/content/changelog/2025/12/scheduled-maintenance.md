@@ -28,9 +28,7 @@ place. The restart will be targeted in the first 30 minutes of the selected hour
 As well as scheduling upgrades, you can also enable scheduled restarts even if not update 
 is available which may be useful to help with ensuring things run smoothly.
 
-Self Hosted users can configure default restart/upgrade times at a TeamType level, 
-FlowFuse Cloud Starter Tier users will have this enabled by default and it will run,
-at weekends.
+Self Hosted users can configure default restart/upgrade times at a TeamType level.
 
 ![TeamType Scheduled Maintenance Settings](./images/scheduled-maintenance-admin.png)
 _TeamType Scheduled Maintenance Settings_
