@@ -2,8 +2,8 @@
 // The homepage, written for director-level buyers. Six parts, in this order:
 //   1. Value statement (hero, with the animated wireframe plant: components/home/Hero.vue)
 //   2. Results you can measure: the scorecard numbers a first solution moves
-//   3. Problem to solution: one plant proven, every site running it
-//   3b. The Foundation Partnership: why each site is faster than the last
+//   3. One solution, every site: what FlowFuse is, the problem it solves, and the
+//      Foundation Partnership that makes each site faster than the last
 //   4. Metrics of success: customer results, each linked to its story
 //   (logo strip with the user count sits straight under the hero)
 //   5. Social proof: testimonials
@@ -14,8 +14,11 @@
 // and rendered by <HomeIsoArt>, in place of stock photography.
 //
 // The page sells one idea: each site is faster than the last, and the Foundation
-// Partnership is what makes it so. Every secondary link leads to /build-with-us/
-// (the partnership page) through CtaLink, so clicks still count as the signUp CTA.
+// Partnership is what makes it so. Calls to action follow where the reader is: the hero
+// offers both "Talk to Us" and the partnership; mid-page there is one "learn more" to the
+// partnership; the close asks for the conversation, with the ROI calculator as the
+// lighter option. Partnership links go to /build-with-us/ through CtaLink, so clicks
+// still count as the signUp CTA.
 import { foundationSiteCenters } from '../lib/home-iso-scenes'
 import { faqAnswerText } from '../lib/faq-answer.mjs'
 
@@ -227,108 +230,107 @@ useSchemaOrg([
     </div>
   </section>
 
-  <!-- 3. Problem to solution -->
+  <!-- 3. One solution, every site: the problem, what FlowFuse is, then the Foundation
+       Partnership as the answer. One section, so the page says it once. -->
   <section class="w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">One solution, every site</p>
       <h2 class="text-balance mt-4 md:text-5xl max-md:text-center max-w-3xl">Solve it at one plant. <span class="text-indigo-600">Run it at all of them.</span></h2>
-
-      <div class="grid md:grid-cols-2 gap-10 items-center mt-12">
-        <HomeIsoArt scene="sites" class="w-full max-w-[460px] mx-auto" />
-        <div class="flex flex-col gap-4">
-          <div class="rounded-xl bg-white border border-indigo-100 p-6">
-            <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 m-0">Where it stalls today</p>
-            <ul class="mt-4 mb-0 p-0 list-none flex flex-col gap-3">
-              <li v-for="line in PROBLEM" :key="line" class="flex gap-3 items-start m-0 text-gray-600 font-light">
-                <UIcon name="i-lucide-x" class="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
-                <span>{{ line }}</span>
-              </li>
-            </ul>
-          </div>
-          <div class="rounded-xl p-6 bg-gradient-to-br from-indigo-600 to-indigo-800">
-            <p class="text-xs font-semibold uppercase tracking-wide text-indigo-200 m-0">With FlowFuse</p>
-            <ul class="mt-4 mb-0 p-0 list-none flex flex-col gap-3">
-              <li v-for="line in SOLUTION" :key="line" class="flex gap-3 items-start m-0 text-white">
-                <UIcon name="i-lucide-check" class="w-5 h-5 text-red-300 shrink-0 mt-0.5" />
-                <span>{{ line }}</span>
-              </li>
-            </ul>
-          </div>
-          <NuxtLink to="/product/" class="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline max-md:justify-center">
-            See the platform that runs it at every site
-            <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
-          </NuxtLink>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 3b. The Foundation Partnership -->
-  <section class="home-band w-full px-6 py-20 md:py-24">
-    <div class="max-w-screen-lg mx-auto">
-      <p class="home-eyebrow text-red-500 max-md:text-center">The Foundation Partnership</p>
-      <h2 class="text-balance mt-4 md:text-5xl max-md:text-center max-w-3xl">The first site builds the foundation. <span class="text-indigo-600">Every site after starts on it.</span></h2>
+      <!-- What FlowFuse is, in plain words, before the page explains how it works -->
       <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-2xl max-md:text-center max-md:mx-auto">
-        FlowFuse engineers build your first solution alongside your team, on the equipment you already run. What they build is more than one project. It's the foundation every later site reuses, so each rollout has less left to build.
+        FlowFuse is an industrial application platform built on open-source <NuxtLink to="/node-red/" class="text-indigo-600 font-normal underline decoration-indigo-200 underline-offset-2 hover:decoration-indigo-600">Node-RED</NuxtLink>. It connects to the machines and systems you already run, and deploys the solutions built on it to every site from one place.
       </p>
 
-      <div class="mt-12 rounded-2xl home-dark px-6 pt-10 pb-6 md:px-10">
-        <HomeIsoArt scene="foundation" variant="dark" class="w-full" />
-        <div class="relative h-12 mt-4">
-          <div
-              v-for="l in FOUNDATION_LABELS"
-              :key="l.name"
-              class="absolute top-0 -translate-x-1/2 text-center whitespace-nowrap"
-              :style="{ left: `${l.at * 100}%` }"
-          >
-            <p class="m-0 text-white text-sm font-medium">{{ l.name }}</p>
-            <p class="m-0 text-xs max-sm:hidden" :class="l.at === FOUNDATION_LABELS[0].at ? 'text-red-300' : 'text-indigo-200'">{{ l.note }}</p>
+      <div class="grid md:grid-cols-2 gap-5 mt-10">
+        <div class="rounded-xl bg-white border border-indigo-100 p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 m-0">Where it stalls today</p>
+          <ul class="mt-4 mb-0 p-0 list-none flex flex-col gap-3">
+            <li v-for="line in PROBLEM" :key="line" class="flex gap-3 items-start m-0 text-gray-600 font-light">
+              <UIcon name="i-lucide-x" class="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+              <span>{{ line }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-xl p-6 bg-gradient-to-br from-indigo-600 to-indigo-800">
+          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-200 m-0">With FlowFuse</p>
+          <ul class="mt-4 mb-0 p-0 list-none flex flex-col gap-3">
+            <li v-for="line in SOLUTION" :key="line" class="flex gap-3 items-start m-0 text-white">
+              <UIcon name="i-lucide-check" class="w-5 h-5 text-red-300 shrink-0 mt-0.5" />
+              <span>{{ line }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <NuxtLink to="/product/" class="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline mt-5 max-md:w-full max-md:justify-center">
+        See the platform that runs it at every site
+        <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+      </NuxtLink>
+
+      <!-- The Foundation Partnership: how the first site makes every later one faster -->
+      <div class="mt-20 pt-16 border-t border-indigo-100">
+        <p class="home-eyebrow text-red-500 max-md:text-center">The Foundation Partnership</p>
+        <h3 class="text-balance mt-4 mb-0 text-3xl md:text-4xl font-medium text-gray-800 max-md:text-center max-w-3xl">The first site builds the foundation. <span class="text-indigo-600">Every site after starts on it.</span></h3>
+        <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-2xl max-md:text-center max-md:mx-auto">
+          FlowFuse engineers build your first solution alongside your team, on the equipment you already run. What they build is more than one project. It's the foundation every later site reuses, so each rollout has less left to build.
+        </p>
+
+        <div class="mt-12 rounded-2xl home-dark px-6 pt-10 pb-6 md:px-10">
+          <HomeIsoArt scene="foundation" variant="dark" class="w-full" />
+          <div class="relative h-12 mt-4">
+            <div
+                v-for="l in FOUNDATION_LABELS"
+                :key="l.name"
+                class="absolute top-0 -translate-x-1/2 text-center whitespace-nowrap"
+                :style="{ left: `${l.at * 100}%` }"
+            >
+              <p class="m-0 text-white text-sm font-medium">{{ l.name }}</p>
+              <p class="m-0 text-xs max-sm:hidden" :class="l.at === FOUNDATION_LABELS[0].at ? 'text-red-300' : 'text-indigo-200'">{{ l.note }}</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-4 pt-4 border-t border-white/10 text-xs text-indigo-200">
+            <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm border border-[#ff7b6b] bg-[#3b2546]" />Built new at this site</span>
+            <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm border border-[#a5b4fc] bg-[#1c2650]" />Reused from the foundation</span>
           </div>
         </div>
-        <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-4 pt-4 border-t border-white/10 text-xs text-indigo-200">
-          <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm border border-[#ff7b6b] bg-[#3b2546]" />Built new at this site</span>
-          <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm border border-[#a5b4fc] bg-[#1c2650]" />Reused from the foundation</span>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+          <NuxtLink
+              v-for="f in FOUNDATION"
+              :key="f.title"
+              :to="f.to"
+              class="group rounded-xl border border-indigo-100 bg-white p-6 hover:no-underline hover:border-indigo-300 transition-colors"
+          >
+            <UIcon :name="f.icon" class="w-6 h-6 text-indigo-500" />
+            <p class="text-gray-800 font-medium mt-4 mb-0 flex items-center gap-1.5">
+              <span class="group-hover:underline">{{ f.title }}</span>
+              <UIcon name="i-lucide-arrow-right" class="w-4 h-4 text-indigo-500 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition" />
+            </p>
+            <p class="text-gray-600 font-light text-sm leading-5 mt-2 mb-0">{{ f.text }}</p>
+          </NuxtLink>
         </div>
-      </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
-        <NuxtLink
-            v-for="f in FOUNDATION"
-            :key="f.title"
-            :to="f.to"
-            class="group rounded-xl border border-indigo-100 bg-white p-6 hover:no-underline hover:border-indigo-300 transition-colors"
-        >
-          <UIcon :name="f.icon" class="w-6 h-6 text-indigo-500" />
-          <p class="text-gray-800 font-medium mt-4 mb-0 flex items-center gap-1.5">
-            <span class="group-hover:underline">{{ f.title }}</span>
-            <UIcon name="i-lucide-arrow-right" class="w-4 h-4 text-indigo-500 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition" />
-          </p>
-          <p class="text-gray-600 font-light text-sm leading-5 mt-2 mb-0">{{ f.text }}</p>
-        </NuxtLink>
-      </div>
-
-      <div class="grid sm:grid-cols-3 gap-6 mt-14 pt-10 border-t border-indigo-100">
-        <div v-for="(step, i) in STEPS" :key="step.name" class="max-sm:text-center">
-          <p class="m-0 text-indigo-600 text-2xl font-medium"><span class="text-red-400 text-base font-semibold mr-2">0{{ i + 1 }}</span>{{ step.name }}</p>
-          <p class="m-0 mt-2 text-gray-600 font-light">
-            {{ step.text }}<template v-if="step.link"><NuxtLink :to="step.link.to" class="text-indigo-600 font-normal underline decoration-indigo-200 underline-offset-2 hover:decoration-indigo-600">{{ step.link.label }}</NuxtLink>{{ step.link.after }}</template>
-          </p>
+        <div class="grid sm:grid-cols-3 gap-6 mt-14 pt-10 border-t border-indigo-100">
+          <div v-for="(step, i) in STEPS" :key="step.name" class="max-sm:text-center">
+            <p class="m-0 text-indigo-600 text-2xl font-medium"><span class="text-red-400 text-base font-semibold mr-2">0{{ i + 1 }}</span>{{ step.name }}</p>
+            <p class="m-0 mt-2 text-gray-600 font-light">
+              {{ step.text }}<template v-if="step.link"><NuxtLink :to="step.link.to" class="text-indigo-600 font-normal underline decoration-indigo-200 underline-offset-2 hover:decoration-indigo-600">{{ step.link.label }}</NuxtLink>{{ step.link.after }}</template>
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div class="flex flex-wrap gap-4 items-center mt-12 max-md:justify-center">
-        <CtaBookDemo variant="primary" position="foundation-partnership" />
-        <CtaLink destination="signUp" position="foundation-partnership" class="flex items-center gap-1.5 text-indigo-600 font-medium hover:underline">
-          How the Foundation Partnership works
-          <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
-        </CtaLink>
+        <!-- Mid-page, the reader is still learning: one "learn more", no sales ask -->
+        <div class="flex mt-12 max-md:justify-center">
+          <CtaLink destination="signUp" position="foundation-partnership" class="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline">
+            How the Foundation Partnership works
+            <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+          </CtaLink>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 4. Metrics of success, then ways in by industry and team -->
-  <section class="w-full px-6 py-20 md:py-24">
+  <section class="home-band w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">Results</p>
       <h2 class="text-balance mt-4 mb-12 md:text-5xl max-md:text-center">Measured on the line, <span class="text-indigo-600">not in a report.</span></h2>
@@ -348,7 +350,7 @@ useSchemaOrg([
           </span>
         </NuxtLink>
       </div>
-      <div class="mt-12 pt-8 border-t border-gray-100 flex flex-col gap-4">
+      <div class="mt-12 pt-8 border-t border-indigo-100 flex flex-col gap-4">
         <div v-for="group in EXPLORE" :key="group.label" class="flex flex-wrap items-baseline gap-x-5 gap-y-2 max-md:justify-center">
           <span class="text-xs font-semibold uppercase tracking-wide text-gray-500 w-28 shrink-0 max-md:w-full max-md:text-center">{{ group.label }}</span>
           <NuxtLink v-for="l in group.links" :key="l.to" :to="l.to" class="text-indigo-600 text-sm font-medium hover:underline">{{ l.name }}</NuxtLink>
@@ -357,18 +359,17 @@ useSchemaOrg([
     </div>
   </section>
 
-  <!-- 5. Social proof -->
-  <section class="home-band w-full px-6 pt-20 pb-14">
+  <!-- 5. Social proof: customer quotes -->
+  <section class="w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
-      <div class="mt-4">
-        <h2 class="text-balance md:text-5xl">Real results from <span class="text-indigo-600">industrial teams</span></h2>
-        <TestimonialCarousel hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
-      </div>
+      <p class="home-eyebrow text-red-500 max-md:text-center">Customers</p>
+      <h2 class="text-balance mt-4 mb-10 md:text-5xl max-md:text-center">Real results from <span class="text-indigo-600">industrial teams</span></h2>
+      <HomeTestimonials />
     </div>
   </section>
 
   <!-- 5b. Security -->
-  <section class="w-full px-6 py-20 md:py-24">
+  <section class="home-band w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-14 items-center">
       <div class="max-md:text-center">
         <p class="home-eyebrow text-red-500">Security</p>
@@ -403,7 +404,7 @@ useSchemaOrg([
   </section>
 
   <!-- FAQ -->
-  <section class="home-band w-full px-6 pt-20">
+  <section class="w-full px-6 pt-20">
     <div class="max-w-screen-lg mx-auto">
       <h2 class="mb-1 md:text-5xl max-md:text-center">Frequently asked <span class="text-indigo-600">questions</span></h2>
       <div class="-mt-20">
@@ -413,17 +414,18 @@ useSchemaOrg([
   </section>
 
   <!-- 6. Call to action -->
-  <section class="w-full px-6 pt-8 pb-20 md:pb-24">
+  <section class="home-band w-full px-6 pt-16 pb-20 md:pb-24">
     <div class="home-cta max-w-screen-lg mx-auto rounded-2xl px-6 py-16 md:py-20 text-center">
      <div class="max-w-3xl mx-auto">
       <h2 class="text-balance text-white md:text-5xl mt-0">Bring us the problem that repeats across your sites.</h2>
       <p class="text-indigo-100 font-light text-lg md:text-xl mt-6 mb-0">We'll build the first one with you, prove it at one site, and roll it out to the rest on the same foundation.</p>
       <div class="flex flex-wrap gap-4 items-center justify-center mt-10">
         <CtaBookDemo variant="highlight" position="get-started" />
-        <CtaLink destination="signUp" position="get-started" class="flex items-center gap-1.5 text-white font-medium hover:underline">
-          How the Foundation Partnership works
+        <!-- Not ready to talk? A lighter next step than the one the page already offered twice -->
+        <NuxtLink to="/resources/roi-calculator/" class="flex items-center gap-1.5 text-white font-medium hover:underline">
+          Estimate your ROI first
           <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
-        </CtaLink>
+        </NuxtLink>
       </div>
     </div>
     </div>
