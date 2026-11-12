@@ -61,8 +61,6 @@ Application Overview: “Open Editor” shouldn’t show (or should be disabled)
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-To run FlowFuse in production with your team, [build with us](/build-with-us/).
-
 ## Upgrading FlowFuse
 
 [FlowFuse Cloud](site:appURL) is already running 1.6.

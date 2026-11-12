@@ -63,8 +63,6 @@ If you're interested in contributing, checkout our [guide in the docs](/docs/con
 We're confident you can have self managed FlowFuse running locally in under 30 minutes.
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-To run FlowFuse in production with your team, [build with us](/build-with-us/).
-
 ## Upgrading FlowFuse
 
 [FlowFuse Cloud](site:appURL) is already running 1.3.

@@ -41,8 +41,6 @@ At FlowFuse, our mission is to empower bottom-up innovation and enable organizat
 
 You can install FlowFuse yourself via a variety of install options. You can find out more details [here](/docs/install/introduction/).
 
-To run FlowFuse in production with your team, [build with us](/build-with-us/).
-
 ## Upgrading FlowFuse
 
 [FlowFuse Cloud](site:appURL) is already running version 2.0.

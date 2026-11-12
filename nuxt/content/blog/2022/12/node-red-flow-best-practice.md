@@ -90,8 +90,6 @@ Excessive link nodes within groups can make a flow much harder to understand, wh
 
 With FlowFuse, you can quickly [set up and manage teams](/docs/user/team/), giving each member the right level of access. It keeps all your [Node-RED instances organized in one place](https://www.youtube.com/watch?v=KOnQnR7yfT0&list=PLpcyqc7kNgp3nRacWBJ9JUVUJqtTjXdvh&index=2), so your team can collaborate seamlessly. Plus, it features [snapshots](https://www.youtube.com/watch?v=m2Onip4Lf4w), which let you restore previous versions of your flows if something goes wrong. FlowFuse simplifies team collaboration, making it easier to manage and work on Node-RED projects.
 
-[See how teams collaborate on production Node-RED applications with FlowFuse](/build-with-us/).
-
 ### Conclusion
 
 Working on Node-RED flows as part of a team doesn't have to be a headache. By following some simple best practices you can make collaboration smooth sailing for everyone involved. So next time you're starting work on a new Node-RED flow, remember these tips and make life easier for yourself and your teammates.
