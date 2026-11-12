@@ -95,7 +95,6 @@ If something in this release improves your workflow, or if there is still fricti
 ### FlowFuse Cloud
 
 The fastest way to get started is with FlowFuse Cloud.  
-To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
 
 ### Self-Hosted
 

@@ -85,6 +85,3 @@ Together, we can make FlowFuse better with each release!
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
 
-### Build with us
-
-To put these capabilities to work on your own production use case, [build with us](/build-with-us/).

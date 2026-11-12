@@ -298,5 +298,3 @@ Managing OPC UA flows across multiple sites? FlowFuse helps teams deploy Node-RE
 Following our managed MQTT broker, we've now added database services built right into the platform, plus new AI features that make building flows faster than ever.
 
 See [OPC UA subscriptions, alarms, and historical access](/integrations/opcua/#opc-ua-client-and-server-capabilities) for how these capabilities fit into FlowFuse's broader OPC UA client and server support. Connecting PLCs beyond OPC UA? FlowFuse also supports [Siemens S7](/blog/2025/01/integrating-siemens-s7-plcs-with-node-red-guide/), EtherNet/IP, Modbus TCP/RTU, and MQTT, see the [FlowFuse PLC integration overview](/landing/plc/) for all supported protocols and use cases.
-
-[Build with us](/build-with-us/) to scale and manage your Node-RED deployments in production.

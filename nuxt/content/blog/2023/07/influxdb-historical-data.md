@@ -250,5 +250,3 @@ This is where **FlowFuse** comes in. It takes your existing Node-RED flows and a
 * Remote instance management, and much more
 
 Your flows continue to work just as they are, FlowFuse simply makes them production-ready.
-
-To run this in production across your sites, [build with us](/build-with-us/).

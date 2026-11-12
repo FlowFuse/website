@@ -111,10 +111,6 @@ If something in this release improves your workflow, or if there is still fricti
 
 ## Try FlowFuse
 
-### Build with us
-
-To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
-
 ### Self-Hosted
 
 Run FlowFuse locally using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).

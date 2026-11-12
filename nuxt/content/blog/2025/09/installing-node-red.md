@@ -90,7 +90,7 @@ As the official enterprise solution developed by Node-RED's creator, FlowFuse re
 
 ## Setting Up FlowFuse
 
-FlowFuse customers add a Remote Instance from their team. To evaluate FlowFuse, [build with us](/build-with-us/).
+FlowFuse customers add a Remote Instance from their team.
 
 ### Step 1: Add Remote Instance
 

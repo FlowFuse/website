@@ -187,5 +187,3 @@ Also, this OCR scanner is just one piece of what's possible with FlowFuse. Imagi
 FlowFuse helps manufacturers like you break down data silos and build connected, intelligent operations. From shop floor to top floor, your data works together.
 
 **See it in action.** [Book a demo](/book-demo/) and discover how FlowFuse can transform your entire facility, not just your label scanning.
-
-Or [build with us](/build-with-us/) to put it on your own line.

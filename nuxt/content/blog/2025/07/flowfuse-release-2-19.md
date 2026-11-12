@@ -99,10 +99,6 @@ Which of these new features are you most excited to try? Email me directly at gr
 ## Try FlowFuse
 
 
-### Build with us
-
-To put these capabilities to work on your own production use case, [build with us](/build-with-us/).
-
 ### Self-Hosted
 
 Get FlowFuse running locally in under 30 minutes using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).

@@ -282,5 +282,3 @@ Throughout this tutorial, you used FlowFuse to host Node-RED and FlowFuse Dashbo
 Try expanding your dashboard by adding more cities, creating historical charts, or setting up weather alerts. The pattern stays the same, you're just swapping data sources and visualizations.
 
 This same pattern scales to a global level, too: [the World Meteorological Organization uses Node-RED to modernize how meteorological data is shared between national weather services worldwide](/customer-stories/un-wmo-nr-data-sharing/).
-
-To take a dashboard like this to production, [build with us](/build-with-us/).
