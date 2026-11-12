@@ -43,7 +43,7 @@ LDAP enables applications and services to query, add, update, and delete directo
 
 ## Setting up SSO LDAP for FlowFuse
 
-Before we proceed, ensure that FlowFuse is deployed on your server with an Enterprise license and you have ssh connection with it so that you can run commands on the server. If you haven't installed it yet, please check out our [documentation on installing FlowFuse](/docs/install/introduction/) or our blog on [deploying FlowFuse on Ubuntu with Docker](/blog/2024/07/deploying-flowfuse-with-docker/).
+Before we proceed, ensure that FlowFuse is deployed on your server with a Hub, Edge or Fleet license and you have ssh connection with it so that you can run commands on the server. If you haven't installed it yet, please check out our [documentation on installing FlowFuse](/docs/install/introduction/) or our blog on [deploying FlowFuse on Ubuntu with Docker](/blog/2024/07/deploying-flowfuse-with-docker/).
 
 ### Installing and Configuring OpenLDAP
 

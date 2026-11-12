@@ -57,7 +57,7 @@ SAML (Security Assertion Markup Language) is a protocol used in SSO scenarios to
 
 ## Setting up SSO For Your Self-Hosted FlowFuse Platform
 
-Before proceeding, ensure you have deployed FlowFuse on your server with an Enterprise license and configured it with email. Without email configuration, the SSO setup option won't appear in your FlowFuse.Furthermore, Make sure you have a [Google Workspace account created](https://www.youtube.com/watch?v=Rc7BT7PDqFs) and [verified your domain](https://www.youtube.com/watch?v=JIOaLKsz2R0) within Google Workspace. FlowFuse supports other providers for SAML SSO as well; check our [documentation on supported providers](/docs/admin/sso/saml/#providers) for details.
+Before proceeding, ensure you have deployed FlowFuse on your server with a Hub, Edge or Fleet license and configured it with email. Without email configuration, the SSO setup option won't appear in your FlowFuse.Furthermore, Make sure you have a [Google Workspace account created](https://www.youtube.com/watch?v=Rc7BT7PDqFs) and [verified your domain](https://www.youtube.com/watch?v=JIOaLKsz2R0) within Google Workspace. FlowFuse supports other providers for SAML SSO as well; check our [documentation on supported providers](/docs/admin/sso/saml/#providers) for details.
 
 If you haven't deployed FlowFuse yet, refer to our [documentation on installing FlowFuse](/docs/install/introduction/) or our blog on [deploying FlowFuse on Ubuntu with Docker](/blog/2024/07/deploying-flowfuse-with-docker/).
 

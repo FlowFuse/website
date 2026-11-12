@@ -52,7 +52,7 @@ For your devices, we provide the necessary configuration and access token upon r
 
 ##### FlowFuse Self-Hosted
 
-For our Self-Hosted Enterprise customers who also want to use the Certified Nodes and the Multi-User Dashboard, we provide all necessary configurations upon request to get started.
+For our self-hosted customers who also want to use the Certified Nodes and the Multi-User Dashboard, we provide all necessary configurations upon request to get started.
 
 Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.
 
