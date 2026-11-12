@@ -102,6 +102,18 @@ export class IsoScene {
         return this
     }
 
+    // A filled disc standing upright in the x-z plane, facing the viewer's left side
+    // (the y-max side): a wheel, a gauge, a port. Projects to a slanted ellipse.
+    disc (cx: number, y: number, cz: number, r: number, tone: Tone = 'line', role: 'left' | 'top' = 'left', depth?: number) {
+        const points: [number, number][] = []
+        for (let k = 0; k < 24; k++) {
+            const t = (k / 24) * Math.PI * 2
+            points.push(project(cx + r * Math.cos(t), y, cz + r * Math.sin(t)))
+        }
+        this.shapes.push({ kind: 'poly', role, tone, depth: depth ?? cx + y, points })
+        return this
+    }
+
     // An open 3D polyline: a pipe, a robot arm, a cable. `flow` animates it as data.
     line (points: [number, number, number][], tone: Tone = 'line', role: 'none' | 'flow' = 'none', depth?: number) {
         const projected = points.map(([a, b, c]) => project(a, b, c))
