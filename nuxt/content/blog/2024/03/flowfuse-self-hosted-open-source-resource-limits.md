@@ -25,7 +25,7 @@ The new limit for the number of Node-RED runtimes on the Open Source tier is 5.
 These 5 instances can be distributed across a maximum of 5 teams. This revised
 structure allows for the development of your initial FlowFuse and Node-RED
 solutions, providing a clear understanding of how FlowFuse can enhance your
-organization's workflows. Upgrading to a Team or Enterprise tier license unlocks
+organization's workflows. Upgrading to an Enterprise license unlocks
 the full potential of FlowFuse and grants access to our dedicated support team.
 
 ## Why the Change?

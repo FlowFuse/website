@@ -44,7 +44,7 @@ All instances on FlowFuse can be configured with _"FlowFuse User Authentication"
 
 _Note: Every instance created from today onwards automatically comes with the necessary configuration. Already created instances need to be manually restarted._
 
-The Personalised Multi-User Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](/integrations/?certified=1) catalogue, accessible to our Teams and Enterprise customers.
+The Personalised Multi-User Dashboard plugin, `@flowfuse/node-red-dashboard-2-user-addon`, is available in our [Certified Nodes](/integrations/?certified=1) catalogue, accessible to FlowFuse customers.
 
 Once the "FlowFuse User Authentication" option has been enabled on your instance, you can then install our plugin, `@flowfuse/node-red-dashboard-2-user-addon`, through the "Manage Palette" option in the Node-RED Editor.
 
@@ -52,7 +52,7 @@ For your devices, we provide the necessary configuration and access token upon r
 
 ##### FlowFuse Self-Hosted
 
-For all our Teams and Enterprise Self-Hosted customers who also want to use the Certified Nodes and the Multi-User Dashboard, we provide all necessary configurations upon request to get started.
+For our Self-Hosted Enterprise customers who also want to use the Certified Nodes and the Multi-User Dashboard, we provide all necessary configurations upon request to get started.
 
 Alternatively, if you're looking to elevate your Node-RED infrastructure, [book in a chat with us](/contact-us) to talk about how FlowFuse can help.
 
