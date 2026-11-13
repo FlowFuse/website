@@ -53,7 +53,7 @@ The same approach suits a dashboard chat interface that sends direct messages to
 
 ## Get it
 
-This is available to Enterprise teams on FlowFuse Cloud now and in FlowFuse v3.3 for Self Hosted. Existing flows keep working unchanged.
+This is available to FlowFuse Edge, Hub and Fleet teams on FlowFuse Cloud now and in FlowFuse v3.3 for Self Hosted. Existing flows keep working unchanged.
 
 Read more in the [Project Nodes documentation](/docs/user/projectnodes/).
 
