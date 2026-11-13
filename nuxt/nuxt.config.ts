@@ -212,7 +212,8 @@ export default defineNuxtConfig({
     llms: {
         domain: site.baseURL,
         title: 'FlowFuse',
-        description: `${site.messaging.tagLine} - ${site.messaging.subtitle}`,
+        // The subtitle alone: the tagline still carries the old platform category.
+        description: site.messaging.subtitle,
         full: {
             title: 'FlowFuse - Full Documentation',
             description: 'Complete FlowFuse documentation, blog, changelog, and resources in a single markdown document.',

@@ -7,12 +7,16 @@
 // unmounts - the .njk's setInterval had no teardown because 11ty pages never unmount.
 import testimonials from '../data/testimonials.json'
 
-withDefaults(defineProps<{
+// `dark` sets the card, text and dots for a dark section background (the homepage).
+// Off by default, so the product page and ABM pages keep the light card.
+const props = withDefaults(defineProps<{
     hideReadMore?: boolean
     browseAllUrl?: string
     browseAllText?: string
+    dark?: boolean
 }>(), {
     hideReadMore: false,
+    dark: false,
     browseAllUrl: undefined,
     browseAllText: 'Browse all customer stories',
 })
@@ -44,7 +48,11 @@ onUnmounted(() => clearInterval(timer))
 
 <template>
   <div>
-    <div class="flex flex-col flex-wrap content-center justify-center p-6 sm:max-w-screen-lg max-w-5xl mx-auto border-2 border-indigo-200 rounded-xl bg-white hover:drop-shadow-lg hover:border-blue-600 hover:border-2 transition ease-in-out duration-300">
+    <div class="flex flex-col flex-wrap content-center justify-center p-6 sm:max-w-screen-lg max-w-5xl mx-auto border-2 rounded-xl hover:border-2 transition ease-in-out duration-300"
+        :class="props.dark
+          ? 'border-white/10 bg-white/5 text-indigo-100 hover:border-indigo-300'
+          : 'border-indigo-200 bg-white hover:drop-shadow-lg hover:border-blue-600'"
+    >
       <NuxtLink
           v-for="(t, i) in testimonials"
           :id="t.id"
@@ -62,8 +70,8 @@ onUnmounted(() => clearInterval(timer))
               <span v-if="!hideReadMore" class="text-right pb-5 flex gap-1 hover:underline">
                 Read the full story <UIcon name="i-heroicons-arrow-long-right" class="w-5 h-5" />
               </span>
-              <p class="font-normal italic text-2xl">"{{ t.quote }}"</p>
-              <p class="text-lg mt-4 flex flex-row gap-3 text-right items-center self-end mb-0 mr-0">
+              <p class="font-normal italic text-2xl" :class="{ 'text-white': props.dark }">"{{ t.quote }}"</p>
+              <p class="text-lg mt-4 flex flex-row gap-3 text-right items-center self-end mb-0 mr-0" :class="{ 'text-indigo-200': props.dark }">
                 <span>{{ t.author }}, <span class="font-medium">{{ t.company }}</span></span>
                 <span class="w-16 h-16 min-w-16 rounded-full mx-1 bg-black p-1">
                   <img :src="asset(t.companyLogo)" :alt="`${t.company} logo`" width="56" loading="lazy" class="w-full h-auto">
@@ -83,15 +91,27 @@ onUnmounted(() => clearInterval(timer))
             v-for="(t, i) in testimonials"
             :key="t.id"
             class="testimonial-button align-baseline max-md:p-2"
-            :class="{ active: i === current }"
+            :class="{ active: i === current, 'testimonial-button-dark': props.dark }"
             :aria-label="`Show testimonial from ${t.author}, ${t.company}`"
             @click="show(i)"
         ><span /></button>
       </div>
-      <NuxtLink v-if="browseAllUrl" :to="browseAllUrl" class="flex items-center gap-1.5 text-blue-600 hover:underline">
+      <NuxtLink v-if="browseAllUrl" :to="browseAllUrl" class="flex items-center gap-1.5 hover:underline" :class="props.dark ? 'text-indigo-200' : 'text-blue-600'">
         {{ browseAllText }}
         <UIcon name="i-heroicons-arrow-long-right" class="w-5 h-5" />
       </NuxtLink>
     </div>
   </div>
 </template>
+
+<style scoped>
+/* Dots on a dark background: dim when idle, bright when showing */
+.testimonial-button-dark span {
+  background-color: rgb(255 255 255 / 0.15);
+  border-color: rgb(255 255 255 / 0.25);
+}
+.testimonial-button-dark.active span {
+  background-color: #ff7b6b;
+  border-color: #ff7b6b;
+}
+</style>
