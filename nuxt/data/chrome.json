@@ -266,9 +266,9 @@
                         "listClasses": "row-span-3 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
-                                "label": "Why FlowFuse",
-                                "href": "/platform/why-flowfuse/",
-                                "icon": "flowfuse"
+                                "label": "Foundation Partnership",
+                                "href": "/build-with-us/",
+                                "icon": "puzzle-piece"
                             },
                             {
                                 "label": "Customer Stories",
@@ -422,10 +422,6 @@
             {
                 "title": "Evaluate",
                 "links": [
-                    {
-                        "label": "Why FlowFuse",
-                        "href": "/platform/why-flowfuse/"
-                    },
                     {
                         "label": "Customer Stories",
                         "href": "/customer-stories/"
