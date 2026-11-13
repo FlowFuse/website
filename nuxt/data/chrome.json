@@ -147,7 +147,7 @@
                                 "href": "/product/fleet/",
                                 "icon": "server-stack",
                                 "indent": true,
-                                "description": "Run Node-RED across distributed devices"
+                                "description": "Manage thousands of devices in the field"
                             },
                             {
                                 "label": "Security",
