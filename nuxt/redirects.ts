@@ -148,8 +148,10 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/blog/2024/12/flowfuse-release-2-12/': { redirect: { to: '/pricing/', statusCode: 302 } },
     '/blog/2025/08/flowfuse-why-pricing-matters/': { redirect: { to: '/build-with-us/', statusCode: 302 } },
 
-    '/handbook/peopleops/job-descriptions/technical-product-manager': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager/', statusCode: 301 } },
-    '/handbook/peopleops/job-descriptions/technical-product-manager/': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager/', statusCode: 301 } },
+    '/handbook/peopleops/job-descriptions/technical-product-manager': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager-platform/', statusCode: 301 } },
+    '/handbook/peopleops/job-descriptions/technical-product-manager/': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager-platform/', statusCode: 301 } },
+    '/handbook/peopleops/job-descriptions/product-manager': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager-platform/', statusCode: 301 } },
+    '/handbook/peopleops/job-descriptions/product-manager/': { redirect: { to: '/handbook/peopleops/job-descriptions/product-manager-platform/', statusCode: 301 } },
     '/node-red/fundamentals/': { redirect: { to: '/blog/2023/01/getting-started-with-node-red/', statusCode: 301 } },
     '/webinars/mqtt-vs-opc-ua-industrial-data-showdown/': { redirect: { to: '/webinars/2026/mqtt-vs-opc-ua-industrial-data-showdown/', statusCode: 301 } },
     '/handbook/marketing/email/': { redirect: { to: '/handbook/marketing/', statusCode: 301 } },
