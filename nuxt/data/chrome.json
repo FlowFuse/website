@@ -18,7 +18,7 @@
                             {
                                 "label": "Automation & Controls",
                                 "href": "/teams/automation-controls/",
-                                "icon": "cog"
+                                "icon": "power"
                             },
                             {
                                 "label": "Maintenance & Reliability",
@@ -53,7 +53,7 @@
                                 "icon": "building-office-2"
                             },
                             {
-                                "label": "Energy and Utilities",
+                                "label": "Energy & Utilities",
                                 "href": "/industries/energy-utilities/",
                                 "icon": "bolt"
                             },
@@ -63,7 +63,7 @@
                                 "icon": "airplane"
                             },
                             {
-                                "label": "See all industries",
+                                "label": "See All Industries",
                                 "href": "/industries/",
                                 "icon": "arrow-right"
                             }
@@ -90,9 +90,9 @@
                                 "icon": "chart"
                             },
                             {
-                                "label": "IT/OT middleware",
+                                "label": "IT/OT Middleware",
                                 "href": "/use-cases/it-ot-middleware/",
-                                "icon": "cog"
+                                "icon": "arrows-right-left"
                             },
                             {
                                 "label": "Unified Namespace",
@@ -102,10 +102,10 @@
                             {
                                 "label": "Remote Device Management",
                                 "href": "/use-cases/remote-device-management/",
-                                "icon": "chip"
+                                "icon": "wifi"
                             },
                             {
-                                "label": "See all use cases",
+                                "label": "See All Use Cases",
                                 "href": "/use-cases/",
                                 "icon": "arrow-right"
                             }
@@ -119,12 +119,12 @@
                 "label": "Platform",
                 "columns": [
                     {
-                        "title": "Overview",
+                        "title": "Products",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
-                                "label": "Product",
+                                "label": "Platform Overview",
                                 "href": "/product/",
                                 "icon": "star"
                             },
@@ -148,18 +148,13 @@
                                 "icon": "server-stack",
                                 "indent": true,
                                 "description": "For OEMs managing equipment in the field"
-                            },
-                            {
-                                "label": "Security",
-                                "href": "/platform/security/",
-                                "icon": "lock-closed"
                             }
                         ]
                     },
                     {
-                        "title": "Components",
+                        "title": "Features",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-6 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-[7] md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
                                 "label": "FlowFuse Dashboard",
@@ -190,11 +185,16 @@
                                 "label": "Blueprint Library",
                                 "href": "/blueprints/",
                                 "icon": "building-library"
+                            },
+                            {
+                                "label": "Security & Compliance",
+                                "href": "/platform/security/",
+                                "icon": "shield-check"
                             }
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(7,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "platform"
             },
             {
@@ -213,15 +213,15 @@
                             {
                                 "label": "Webinars",
                                 "href": "/webinars/",
-                                "icon": "screen"
+                                "icon": "camera"
                             },
                             {
-                                "label": "Ebooks & whitepapers",
+                                "label": "Ebooks & Whitepapers",
                                 "href": "/resources/publications/",
                                 "icon": "book-open"
                             },
                             {
-                                "label": "Free templates",
+                                "label": "Free Templates",
                                 "href": "/blog/templates/",
                                 "icon": "clipboard-document-check"
                             },
@@ -238,9 +238,9 @@
                         "listClasses": "row-span-5 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
-                                "label": "Application guides",
+                                "label": "Application Guides",
                                 "href": "/docs/application-guide/",
-                                "icon": "book-open"
+                                "icon": "document-check"
                             },
                             {
                                 "label": "Docs",
@@ -250,7 +250,7 @@
                             {
                                 "label": "Changelog",
                                 "href": "/changelog/",
-                                "icon": "rocket-launch"
+                                "icon": "clock"
                             },
                             {
                                 "label": "GitHub",
@@ -261,10 +261,15 @@
                         ]
                     },
                     {
-                        "title": "Customers",
+                        "title": "Evaluate",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
                         "listClasses": "row-span-3 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
+                            {
+                                "label": "Why FlowFuse",
+                                "href": "/platform/why-flowfuse/",
+                                "icon": "flowfuse"
+                            },
                             {
                                 "label": "Customer Stories",
                                 "href": "/customer-stories/",
@@ -273,7 +278,7 @@
                             {
                                 "label": "ROI Calculator",
                                 "href": "/resources/roi-calculator/",
-                                "icon": "arrow-trending-up"
+                                "icon": "dollar"
                             }
                         ]
                     }
@@ -287,17 +292,12 @@
                     {
                         "title": "Company",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-3 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
-                                "label": "Why FlowFuse",
-                                "href": "/platform/why-flowfuse/",
-                                "icon": "flowfuse"
-                            },
-                            {
-                                "label": "About us",
+                                "label": "About Us",
                                 "href": "/about/",
-                                "icon": "building-office-2"
+                                "icon": "globe-alt"
                             },
                             {
                                 "label": "Jobs",
@@ -307,7 +307,7 @@
                             {
                                 "label": "Handbook",
                                 "href": "/handbook/",
-                                "icon": "book-open"
+                                "icon": "rectangle-stack"
                             }
                         ]
                     },
@@ -324,7 +324,7 @@
                             {
                                 "label": "Foundation Partnership",
                                 "href": "/build-with-us/",
-                                "icon": "wrench-screwdriver"
+                                "icon": "puzzle-piece"
                             },
                             {
                                 "label": "Contact Us",
@@ -349,6 +349,14 @@
                 "href": "/pricing/",
                 "classes": "nav-collapsible"
             }
+        ],
+        "order": [
+            "Solutions",
+            "Platform",
+            "Industrial AI",
+            "Resources",
+            "Company",
+            "Pricing"
         ]
     },
     "footer": {
@@ -357,7 +365,7 @@
                 "title": "Product",
                 "links": [
                     {
-                        "label": "Platform overview",
+                        "label": "Platform Overview",
                         "href": "/product/"
                     },
                     {
@@ -390,7 +398,7 @@
                         "href": "/platform/why-flowfuse/"
                     },
                     {
-                        "label": "Customer stories",
+                        "label": "Customer Stories",
                         "href": "/customer-stories/"
                     },
                     {
@@ -427,7 +435,7 @@
                         "href": "/blog/"
                     },
                     {
-                        "label": "Free templates",
+                        "label": "Free Templates",
                         "href": "/blog/templates/"
                     },
                     {
@@ -454,7 +462,7 @@
                 "title": "Company",
                 "links": [
                     {
-                        "label": "About us",
+                        "label": "About Us",
                         "href": "/about/"
                     },
                     {
@@ -470,7 +478,7 @@
                         "href": "/handbook/"
                     },
                     {
-                        "label": "Contact us",
+                        "label": "Contact Us",
                         "href": "/contact-us/"
                     }
                 ]
@@ -483,7 +491,7 @@
                         "href": "/platform/security/"
                     },
                     {
-                        "label": "Service status",
+                        "label": "Service Status",
                         "href": "https://status.flowfuse.com/"
                     },
                     {
@@ -491,7 +499,7 @@
                         "href": "/support/"
                     },
                     {
-                        "label": "Community forum",
+                        "label": "Community Forum",
                         "href": "https://discourse.nodered.org/c/vendors/flowfuse/24/"
                     },
                     {

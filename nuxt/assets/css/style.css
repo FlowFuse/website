@@ -3189,17 +3189,17 @@ lite-youtube::before {
     }
 }
 
-/* De-emphasize "See all ..." index links in the mega panels and footer.
-   Keyed on the index-page hrefs so it needs no markup changes. */
-/* Rest colour is carried by the inner .ff-nav-label span (the arrow icon uses
-   the anchor's currentColor), so both must be de-emphasized. */
+/* "See All ..." index links in the mega panels take the brand colour, so they
+   read as a link to more rather than as a disabled item. Keyed on the
+   index-page hrefs so it needs no markup changes. Integrations is a regular
+   menu item now, not a See All link, so it is deliberately not listed here.
+   Rest colour is carried by the inner .ff-nav-label span (the arrow icon uses
+   the anchor's currentColor), so both are set. */
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"],
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"],
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"],
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"] .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"] .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"] .ff-nav-label {
-    color: #6b7280;
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"] .ff-nav-label {
+    color: var(--color-indigo-600);
 }
 /* Free Trial keeps its brand-purple colour at rest (it carries a .ff-nav-label
    for the animated underline, which would otherwise render it grey). */
@@ -3241,10 +3241,8 @@ lite-youtube::before {
    which also colors the currentColor underline */
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"]:hover,
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"]:hover .ff-nav-label {
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover .ff-nav-label {
     color: var(--color-indigo-700);
 }
 .ff-website footer.ff-footer a[href="/use-cases/"],

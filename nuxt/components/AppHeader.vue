@@ -11,6 +11,18 @@ const hl = (key) => {
 
 const resolveHref = useResolveHref()
 
+// Top-level items in the order chrome.json's header.order gives, mixing dropdowns and
+// direct links, so a direct link (Industrial AI) can sit between two dropdowns.
+const topItems = (() => {
+    const dropdowns = Object.fromEntries(chrome.header.dropdowns.map(d => [d.label, d]))
+    const direct = Object.fromEntries(chrome.header.direct.map(d => [d.label, d]))
+    return chrome.header.order.map((label) => {
+        if (dropdowns[label]) return { type: 'dropdown', item: dropdowns[label] }
+        if (direct[label]) return { type: 'direct', item: direct[label] }
+        throw new Error(`chrome.json header.order names "${label}", which is neither a dropdown nor a direct link`)
+    })
+})()
+
 // Columns in a dropdown share one row grid (grid-rows-subgrid), so a link with a
 // two-line description would stretch the matching row in every other column.
 // A dropdown that uses descriptions lets each column stack on its own instead.
@@ -162,7 +174,9 @@ onMounted(() => {
 
       <!-- Nav -->
       <ul id="nav-content" class="">
-        <li v-for="dd in chrome.header.dropdowns" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :data-nav-section="dd.label">
+        <template v-for="top in topItems" :key="top.item.label">
+        <template v-if="top.type === 'dropdown'">
+        <li v-for="dd in [top.item]" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :data-nav-section="dd.label">
           <span class="flex items-center gap-1"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul :class="dd.megaClasses">
             <li class="mega-highlight"><a :href="hl(dd.highlight).link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl(dd.highlight).title }}</span><span class="mega-highlight-media"><img :src="hl(dd.highlight).image" alt="" loading="lazy"></span></a></li>
@@ -182,9 +196,9 @@ onMounted(() => {
             </template>
           </ul>
         </li>
-
-        <!-- Direct links -->
-        <li v-for="item in chrome.header.direct" :key="item.label" :class="item.classes"><a class="flex items-center gap-2" :href="item.href"><span class="ff-nav-label">{{ item.label }}</span></a></li>
+        </template>
+        <li v-else :class="top.item.classes"><a class="flex items-center gap-2" :href="top.item.href"><span class="ff-nav-label">{{ top.item.label }}</span></a></li>
+        </template>
 
         <!-- More overflow (populated by JS) -->
         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">

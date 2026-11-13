@@ -152,3 +152,22 @@ test('the footer is not a copy of the header', () => {
         `the footer repeats ${repeated} of the header's ${headerPages.length} pages - `
         + 'keep it a short doormat, not a second mega nav')
 })
+
+test('header.order places every top-level item exactly once', () => {
+    // AppHeader.vue renders the top bar from header.order, so an item missing
+    // there silently disappears from the site and an unknown label breaks the build.
+    const items = [...chrome.header.dropdowns, ...chrome.header.direct].map(i => i.label).sort()
+    assert.deepEqual([...chrome.header.order].sort(), items)
+})
+
+test('no two header links share an icon', () => {
+    // An icon shared by unrelated pages (one chip for FlowFuse Edge and Remote
+    // Device Management) implies a link that is not there. The See All links are
+    // the one deliberate exception: they all mean the same thing.
+    const seen = new Map()
+    for (const { icon, label, href } of navLinks) {
+        if (icon === 'arrow-right') continue
+        assert.ok(!seen.has(icon), `"${label}" and "${seen.get(icon)}" both use the ${icon} icon`)
+        seen.set(icon, label)
+    }
+})
