@@ -1,4 +1,4 @@
-// Guards on nuxt/data/chrome.json, the shared marketing nav and footer.
+// Guards on nuxt/data/chrome.json, the marketing nav and footer.
 //
 // The file is rendered by two independent components (AppHeader.vue and AppFooter.vue),
 // so the things that can drift are checked here rather than left to a reviewer noticing.
@@ -13,9 +13,9 @@ const chrome = JSON.parse(readFileSync(join(repo, 'nuxt/data/chrome.json'), 'utf
 
 const navLinks = chrome.header.dropdowns.flatMap(d => d.columns.flatMap(c => c.links))
 const footerLinks = [
-    ...chrome.footer.sections.flatMap(s => s.groups.flatMap(g => g.links)),
-    ...chrome.footer.company.grid.flatMap(g => g.links),
-    ...chrome.footer.company.trailing.links,
+    ...chrome.footer.columns.flatMap(c => c.links),
+    chrome.footer.newsletter,
+    ...chrome.footer.legal,
 ]
 const allLinks = [...navLinks, ...chrome.header.direct, ...footerLinks]
 
@@ -96,7 +96,6 @@ test('every utility class in the data file is a plain literal', () => {
     const classFields = [
         ...chrome.header.dropdowns.flatMap(d => [d.megaClasses,
             ...d.columns.flatMap(c => [c.titleGrid, c.listClasses])]),
-        ...chrome.footer.sections.flatMap(s => [s.gridClasses, ...s.groups.map(g => g.classes)]),
     ].filter(Boolean)
     assert.ok(classFields.length > 0)
     for (const field of classFields) {
@@ -129,9 +128,30 @@ test('every dropdown column reserves enough grid rows for its links', () => {
     }
 })
 
-test('the footer bottom row keeps its two alignment slots', () => {
-    // 4/2/2/2 on purpose: the nested grid lines up under the Solutions
-    // sub-columns above and the trailing group under Resources.
-    assert.equal(chrome.footer.company.grid.length, 3)
-    assert.ok(chrome.footer.company.trailing.links.length > 0)
+test('the header lists each page once', () => {
+    // A mega menu should show each choice once: a page under two headings makes
+    // visitors guess which one is right. Direct links count, so Pricing or
+    // Industrial AI cannot creep back into a dropdown beside their top-level entry.
+    const seen = new Map()
+    for (const { href, label } of [...navLinks, ...chrome.header.direct]) {
+        const page = href.split('#')[0]
+        assert.ok(!seen.has(page),
+            `"${label}" and "${seen.get(page)}" both link to ${page} in the header - keep one`)
+        seen.set(page, label)
+    }
+})
+
+test('the footer is not a copy of the header', () => {
+    // The footer has its own job (utility, trust, company and long-tail pages),
+    // so it is a separate list. Some overlap is expected - Contact, About, the
+    // key product pages, the industry list - but past two thirds it has drifted
+    // back into mirroring the mega nav. (When the footer got its own list it
+    // shared 27 of 44 column links with the header; the old mirrored footer
+    // shared 84%.)
+    const headerPages = new Set([...navLinks, ...chrome.header.direct].map(l => l.href.split('#')[0]))
+    const columnLinks = chrome.footer.columns.flatMap(c => c.links)
+    const shared = columnLinks.filter(l => headerPages.has(l.href.split('#')[0])).length
+    assert.ok(shared / columnLinks.length <= 2 / 3,
+        `${shared} of ${columnLinks.length} footer links repeat the header - `
+        + 'the footer should carry what the header leaves out')
 })

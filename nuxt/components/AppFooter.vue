@@ -1,6 +1,10 @@
 <script setup>
-// The nav and footer links live in nuxt/data/chrome.json; edit them there.
+// The footer links live in nuxt/data/chrome.json; edit them there. The footer has its own
+// list rather than repeating the header's mega nav: it carries utility, trust and company
+// links plus long-tail pages (comparisons, industries, Node-RED topics, free templates)
+// that the header leaves out.
 import chrome from '../data/chrome.json'
+import site from '../data/site.json'
 
 const resolveHref = useResolveHref()
 
@@ -12,55 +16,38 @@ const onCaptureClick = (item) => {
 
 <template>
     <footer class="ff-footer bg-gray-100 w-full" data-nav-zone="footer">
-        <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
-            <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
-            <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
-                <section v-for="sec in chrome.footer.sections" :key="sec.title" class="pt-5" :data-nav-section="sec.title">
-                    <p class="text-lg font-medium text-gray-900 mb-6">{{ sec.title }}</p>
-                    <div :class="sec.gridClasses">
-                        <div v-for="grp in sec.groups" :key="grp.title" :class="grp.classes">
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ grp.title }}</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li v-for="item in grp.links" :key="item.label"><a :href="resolveHref(item.href)" @click="onCaptureClick(item)">{{ item.label }}</a></li>
-                            </ul>
-                        </div>
-                    </div>
+        <div class="pt-16 pb-12 px-6 max-w-screen-xl mx-auto">
+            <!-- Top strip: a second chance to act for readers who reached the end of the page -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-10 border-b border-gray-300" data-nav-section="Footer top">
+                <div class="flex flex-col gap-3">
+                    <a href="/" class="ff-logo-link ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
+                        <FlowFuseWordmark uid="footer" color="#1F2937" />
+                    </a>
+                    <p class="text-sm text-gray-600 max-w-sm">{{ site.messaging.tagLine }}</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+                    <a :href="chrome.footer.newsletter.href" class="font-medium" @click="onCaptureClick(chrome.footer.newsletter)">{{ chrome.footer.newsletter.label }}</a>
+                    <CtaBookDemo variant="primary" position="footer" />
+                </div>
+            </div>
+            <!-- Link columns -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-x-8 gap-y-10 pt-10 text-sm">
+                <section v-for="col in chrome.footer.columns" :key="col.title" :data-nav-section="col.title">
+                    <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ col.title }}</p>
+                    <ul class="flex flex-col gap-2.5">
+                        <li v-for="item in col.links" :key="item.label"><a :href="resolveHref(item.href)" @click="onCaptureClick(item)">{{ item.label }}</a></li>
+                    </ul>
                 </section>
             </div>
-            <!-- Company -->
-            <section class="mt-12 border-t border-gray-300 pt-9" data-nav-section="Company">
-                <!-- Mirrors the upper section's [2fr_3fr_1fr] tracks so the logo lines up
-                     under Platform, the three groups under Solutions' sub-columns, and the
-                     last group under Resources. -->
-                <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-8 text-sm">
-                    <div>
-                        <a href="/" class="ff-logo-link ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
-                            <FlowFuseWordmark uid="footer" color="#1F2937" />
-                        </a>
-                    </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
-                        <div v-for="(grp, i) in chrome.footer.company.grid" :key="i">
-                            <ul class="flex flex-col gap-2.5">
-                                <li v-for="item in grp.links" :key="item.label"><a :href="resolveHref(item.href)">{{ item.label }}</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col gap-2.5">
-                            <li v-for="item in chrome.footer.company.trailing.links" :key="item.label"><a :href="resolveHref(item.href)">{{ item.label }}</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-<!-- Legal + social bottom row -->
+            <!-- Legal + social bottom row -->
             <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500" data-nav-section="Legal and social">
                 <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <span>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.</span>
                     <span aria-hidden="true">&middot;</span>
-                    <a href="/privacy-policy/">Privacy</a>
-                    <span aria-hidden="true">&middot;</span>
-                    <a href="/terms/">Terms</a>
-                    <span aria-hidden="true">&middot;</span>
+                    <template v-for="item in chrome.footer.legal" :key="item.label">
+                        <a :href="item.href">{{ item.label }}</a>
+                        <span aria-hidden="true">&middot;</span>
+                    </template>
                     <a class="cursor-pointer" type="button" data-cc="show-preferencesModal">Cookie preferences</a>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-4 gap-y-2">

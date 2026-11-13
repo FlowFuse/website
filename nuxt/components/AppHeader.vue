@@ -11,6 +11,11 @@ const hl = (key) => {
 
 const resolveHref = useResolveHref()
 
+// Columns in a dropdown share one row grid (grid-rows-subgrid), so a link with a
+// two-line description would stretch the matching row in every other column.
+// A dropdown that uses descriptions lets each column stack on its own instead.
+const hasDescriptions = (dd) => dd.columns.some(c => c.links.some(l => l.description))
+
 onMounted(() => {
     const navToggle = document.getElementById('nav-toggle')
     if (navToggle) {
@@ -164,8 +169,14 @@ onMounted(() => {
             <template v-for="col in dd.columns" :key="col.title">
               <li class="pl-3 title border-l-2 border-gray-200" :class="col.titleGrid"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
               <li class="contents">
-                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="col.listClasses">
-                  <li v-for="item in col.links" :key="item.label" :class="{ 'nav-indent': item.indent }"><a class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a></li>
+                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="[col.listClasses, { 'ff-sub-free': hasDescriptions(dd) }]">
+                  <li v-for="item in col.links" :key="item.label" :class="{ 'nav-indent': item.indent }">
+                    <!-- A description is for product names that do not explain themselves
+                         (Edge, Hub, Fleet). It sits in a <div>, not a <span>, so the generic
+                         `header a > span` icon transforms in style.css leave it alone. -->
+                    <a v-if="item.description" class="flex items-start gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><div class="ff-nav-text"><span class="ff-nav-label">{{ item.label }}</span><small class="ff-nav-desc">{{ item.description }}</small></div></a>
+                    <a v-else class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a>
+                  </li>
                 </ul>
               </li>
             </template>

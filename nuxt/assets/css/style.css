@@ -3071,6 +3071,31 @@ lite-youtube::before {
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent > a {
     padding-left: 1rem !important;
 }
+/* See hasDescriptions() in AppHeader.vue: stack this column's links on their own
+   rather than on the dropdown's shared row grid. */
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu.ff-sub-free {
+    display: flex !important;
+    flex-direction: column;
+    align-self: start;
+}
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a > svg {
+    flex-shrink: 0;
+}
+/* Optional one-line description under a mega-menu link (chrome.json `description`),
+   used for product names that do not explain themselves. */
+.ff-website header .ff-nav-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.125rem;
+}
+.ff-website header .ff-nav-desc {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--color-gray-500);
+    font-weight: 400;
+}
 /* Mobile accordion: eyebrows indent to the link icon column, moderate row
    height, and tap feedback via a text-hugging underline (the desktop
    animated line needs a text span the link markup does not have) */
