@@ -3245,19 +3245,6 @@ lite-youtube::before {
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover .ff-nav-label {
     color: var(--color-indigo-700);
 }
-.ff-website footer.ff-footer a[href="/use-cases/"],
-.ff-website footer.ff-footer a[href="/industries/"],
-.ff-website footer.ff-footer a[href="/integrations/"] {
-    color: #6b7280;
-}
-/* ...but on hover they take the brand purple, so text + the currentColor
-   underline both go indigo (this base rule is unlayered and otherwise beats
-   the footer :hover colour). */
-.ff-website footer.ff-footer a[href="/use-cases/"]:hover,
-.ff-website footer.ff-footer a[href="/industries/"]:hover,
-.ff-website footer.ff-footer a[href="/integrations/"]:hover {
-    color: var(--color-indigo-700);
-}
 /* Mobile nav: sections expand on tap only (hover neutralized below md) */
 @media (max-width: 767px) {
     .ff-website header .ff-nav-dropdown:hover > ul:not(.ff-nav-nested-cols),

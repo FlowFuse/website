@@ -19,12 +19,14 @@ const onCaptureClick = (item) => {
         <div class="pt-16 pb-12 px-6 max-w-screen-xl mx-auto">
             <!-- Brand block, then the link columns. No CTA button here: the header is
                  sticky, so Talk to Us is already on screen at the bottom of every page. -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[1.4fr_repeat(5,1fr)] gap-x-8 gap-y-10 text-sm">
-                <div class="col-span-2 sm:col-span-3 lg:col-span-1 flex flex-col gap-4">
-                    <a href="/" class="ff-logo-link ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 text-sm">
+                <!-- Brand row: its own line above the columns, so six link columns get
+                     the full width and names like "Manufacturing Operations" fit. -->
+                <div class="col-span-2 sm:col-span-3 lg:col-span-6 flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-3 pb-8 border-b border-gray-200">
+                    <a href="/" class="ff-logo-link ff-footer-logo block w-40 shrink-0 no-underline hover:no-underline" aria-label="FlowFuse home">
                         <FlowFuseWordmark uid="footer" color="#1F2937" />
                     </a>
-                    <p class="text-gray-600 max-w-xs">{{ site.messaging.tagLine }}</p>
+                    <p class="text-gray-600 text-base">{{ site.messaging.tagLine }}</p>
                 </div>
                 <section v-for="col in chrome.footer.columns" :key="col.title" :data-nav-section="col.title">
                     <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ col.title }}</p>

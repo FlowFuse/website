@@ -362,6 +362,39 @@
     "footer": {
         "columns": [
             {
+                "title": "Solutions",
+                "links": [
+                    {
+                        "label": "SCADA",
+                        "href": "/use-cases/scada/"
+                    },
+                    {
+                        "label": "Production Line Monitoring",
+                        "href": "/use-cases/production-line-monitoring/"
+                    },
+                    {
+                        "label": "MES",
+                        "href": "/use-cases/mes/"
+                    },
+                    {
+                        "label": "IT/OT Middleware",
+                        "href": "/use-cases/it-ot-middleware/"
+                    },
+                    {
+                        "label": "Unified Namespace",
+                        "href": "/use-cases/uns/"
+                    },
+                    {
+                        "label": "Remote Device Management",
+                        "href": "/use-cases/remote-device-management/"
+                    },
+                    {
+                        "label": "All Use Cases",
+                        "href": "/use-cases/"
+                    }
+                ]
+            },
+            {
                 "title": "Product",
                 "links": [
                     {
@@ -394,16 +427,16 @@
                 "title": "Evaluate",
                 "links": [
                     {
+                        "label": "Foundation Partnership",
+                        "href": "/build-with-us/"
+                    },
+                    {
                         "label": "Why FlowFuse",
                         "href": "/platform/why-flowfuse/"
                     },
                     {
                         "label": "Customer Stories",
                         "href": "/customer-stories/"
-                    },
-                    {
-                        "label": "Foundation Partnership",
-                        "href": "/build-with-us/"
                     },
                     {
                         "label": "FlowFuse vs Ignition",
@@ -484,7 +517,7 @@
                 ]
             },
             {
-                "title": "Trust & support",
+                "title": "Trust & Support",
                 "links": [
                     {
                         "label": "Security",
