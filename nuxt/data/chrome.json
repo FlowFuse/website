@@ -133,21 +133,21 @@
                                 "href": "/product/edge/",
                                 "icon": "chip",
                                 "indent": true,
-                                "description": "Connect PLCs and machines on the plant floor"
+                                "description": "For OT teams connecting the plant floor"
                             },
                             {
                                 "label": "FlowFuse Hub",
                                 "href": "/product/hub/",
                                 "icon": "circle-stack",
                                 "indent": true,
-                                "description": "Integrate ERPs, databases and cloud APIs"
+                                "description": "For IT teams connecting enterprise systems"
                             },
                             {
                                 "label": "FlowFuse Fleet",
                                 "href": "/product/fleet/",
                                 "icon": "server-stack",
                                 "indent": true,
-                                "description": "Manage thousands of devices in the field"
+                                "description": "For OEMs managing equipment in the field"
                             },
                             {
                                 "label": "Security",
