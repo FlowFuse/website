@@ -157,16 +157,6 @@
                         "listClasses": "row-span-[7] md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
-                                "label": "Unified Namespace",
-                                "href": "/use-cases/uns/",
-                                "icon": "uns"
-                            },
-                            {
-                                "label": "MES",
-                                "href": "/use-cases/mes/",
-                                "icon": "chart"
-                            },
-                            {
                                 "label": "SCADA",
                                 "href": "/use-cases/scada/",
                                 "icon": "screen"
@@ -177,9 +167,19 @@
                                 "icon": "arrow-trending-up"
                             },
                             {
+                                "label": "MES",
+                                "href": "/use-cases/mes/",
+                                "icon": "chart"
+                            },
+                            {
                                 "label": "IT/OT middleware",
                                 "href": "/use-cases/it-ot-middleware/",
                                 "icon": "cog"
+                            },
+                            {
+                                "label": "Unified Namespace",
+                                "href": "/use-cases/uns/",
+                                "icon": "uns"
                             },
                             {
                                 "label": "Remote Device Management",
