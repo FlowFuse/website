@@ -3,88 +3,6 @@
     "header": {
         "dropdowns": [
             {
-                "label": "Platform",
-                "columns": [
-                    {
-                        "title": "Overview",
-                        "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
-                        "links": [
-                            {
-                                "label": "Product",
-                                "href": "/product/",
-                                "icon": "star"
-                            },
-                            {
-                                "label": "FlowFuse Edge",
-                                "href": "/product/edge/",
-                                "icon": "chip",
-                                "indent": true,
-                                "description": "Connect PLCs and machines on the plant floor"
-                            },
-                            {
-                                "label": "FlowFuse Hub",
-                                "href": "/product/hub/",
-                                "icon": "circle-stack",
-                                "indent": true,
-                                "description": "Integrate ERPs, databases and cloud APIs"
-                            },
-                            {
-                                "label": "FlowFuse Fleet",
-                                "href": "/product/fleet/",
-                                "icon": "server-stack",
-                                "indent": true,
-                                "description": "Run Node-RED across distributed devices"
-                            },
-                            {
-                                "label": "Security",
-                                "href": "/platform/security/",
-                                "icon": "lock-closed"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Components",
-                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-6 md:col-start-2 md:row-start-2 xl:col-start-3",
-                        "links": [
-                            {
-                                "label": "FlowFuse Dashboard",
-                                "href": "/platform/dashboard/",
-                                "icon": "dashboard"
-                            },
-                            {
-                                "label": "Device Agent",
-                                "href": "/platform/device-agent/",
-                                "icon": "device-agent"
-                            },
-                            {
-                                "label": "Node-RED",
-                                "href": "/node-red/",
-                                "icon": "code-bracket"
-                            },
-                            {
-                                "label": "FlowFuse Expert",
-                                "href": "/docs/user/expert/",
-                                "icon": "sparkles"
-                            },
-                            {
-                                "label": "Integrations",
-                                "href": "/integrations/",
-                                "icon": "squares-plus"
-                            },
-                            {
-                                "label": "Blueprint Library",
-                                "href": "/blueprints/",
-                                "icon": "building-library"
-                            }
-                        ]
-                    }
-                ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(7,auto)] md:pr-1 md:auto-rows-auto items-center",
-                "highlight": "platform"
-            },
-            {
                 "label": "Solutions",
                 "columns": [
                     {
@@ -196,6 +114,88 @@
                 ],
                 "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "solutions"
+            },
+            {
+                "label": "Platform",
+                "columns": [
+                    {
+                        "title": "Overview",
+                        "titleGrid": "xl:col-start-2 xl:row-start-1",
+                        "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
+                        "links": [
+                            {
+                                "label": "Product",
+                                "href": "/product/",
+                                "icon": "star"
+                            },
+                            {
+                                "label": "FlowFuse Edge",
+                                "href": "/product/edge/",
+                                "icon": "chip",
+                                "indent": true,
+                                "description": "Connect PLCs and machines on the plant floor"
+                            },
+                            {
+                                "label": "FlowFuse Hub",
+                                "href": "/product/hub/",
+                                "icon": "circle-stack",
+                                "indent": true,
+                                "description": "Integrate ERPs, databases and cloud APIs"
+                            },
+                            {
+                                "label": "FlowFuse Fleet",
+                                "href": "/product/fleet/",
+                                "icon": "server-stack",
+                                "indent": true,
+                                "description": "Run Node-RED across distributed devices"
+                            },
+                            {
+                                "label": "Security",
+                                "href": "/platform/security/",
+                                "icon": "lock-closed"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "Components",
+                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
+                        "listClasses": "row-span-6 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "links": [
+                            {
+                                "label": "FlowFuse Dashboard",
+                                "href": "/platform/dashboard/",
+                                "icon": "dashboard"
+                            },
+                            {
+                                "label": "Device Agent",
+                                "href": "/platform/device-agent/",
+                                "icon": "device-agent"
+                            },
+                            {
+                                "label": "Node-RED",
+                                "href": "/node-red/",
+                                "icon": "code-bracket"
+                            },
+                            {
+                                "label": "FlowFuse Expert",
+                                "href": "/docs/user/expert/",
+                                "icon": "sparkles"
+                            },
+                            {
+                                "label": "Integrations",
+                                "href": "/integrations/",
+                                "icon": "squares-plus"
+                            },
+                            {
+                                "label": "Blueprint Library",
+                                "href": "/blueprints/",
+                                "icon": "building-library"
+                            }
+                        ]
+                    }
+                ],
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(7,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "highlight": "platform"
             },
             {
                 "label": "Resources",
