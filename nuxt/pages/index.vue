@@ -161,7 +161,7 @@ useSchemaOrg([
         <p class="home-eyebrow text-red-300">Industrial solutions for multi-site operations</p>
         <h1 class="text-balance text-white font-medium text-4xl md:text-5xl leading-[1.08] mt-5 mb-0">Deploy proven solutions across every site, faster with each one.</h1>
         <p class="text-indigo-100 text-lg md:text-xl font-light mt-6 mb-0 max-w-lg max-md:mx-auto">
-          Mission-critical problems need more than software. They need a solution that works on the equipment you already run and delivers a result you can measure. We build the first one with your team, prove it at one site, and deploy it to the rest.
+          The fastest gains come from using the equipment you already own. We build the solution with your team to get more from the lines and assets you run today, without replacing them.
         </p>
         <div class="flex flex-wrap gap-4 items-center mt-10 max-md:justify-center">
           <CtaBookDemo variant="highlight" position="hero" />
