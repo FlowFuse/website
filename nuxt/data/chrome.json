@@ -322,7 +322,7 @@
                                 "icon": "user-group"
                             },
                             {
-                                "label": "Build with us",
+                                "label": "Foundation Partnership",
                                 "href": "/build-with-us/",
                                 "icon": "wrench-screwdriver"
                             },
@@ -394,6 +394,10 @@
                         "href": "/customer-stories/"
                     },
                     {
+                        "label": "Foundation Partnership",
+                        "href": "/build-with-us/"
+                    },
+                    {
                         "label": "FlowFuse vs Ignition",
                         "href": "/vs/ignition/"
                     },
@@ -456,10 +460,6 @@
                     {
                         "label": "Partners",
                         "href": "/partners/"
-                    },
-                    {
-                        "label": "Build with us",
-                        "href": "/build-with-us/"
                     },
                     {
                         "label": "Jobs",
