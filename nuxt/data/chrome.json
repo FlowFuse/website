@@ -365,32 +365,28 @@
                 "title": "Solutions",
                 "links": [
                     {
-                        "label": "SCADA",
-                        "href": "/use-cases/scada/"
+                        "label": "Manufacturing Operations",
+                        "href": "/teams/manufacturing-operations/"
                     },
                     {
-                        "label": "Production Line Monitoring",
-                        "href": "/use-cases/production-line-monitoring/"
+                        "label": "Automation & Controls",
+                        "href": "/teams/automation-controls/"
                     },
                     {
-                        "label": "MES",
-                        "href": "/use-cases/mes/"
+                        "label": "Maintenance & Reliability",
+                        "href": "/teams/maintenance-reliability/"
                     },
                     {
-                        "label": "IT/OT Middleware",
-                        "href": "/use-cases/it-ot-middleware/"
-                    },
-                    {
-                        "label": "Unified Namespace",
-                        "href": "/use-cases/uns/"
-                    },
-                    {
-                        "label": "Remote Device Management",
-                        "href": "/use-cases/remote-device-management/"
+                        "label": "Digital Transformation",
+                        "href": "/teams/digital-transformation/"
                     },
                     {
                         "label": "All Use Cases",
                         "href": "/use-cases/"
+                    },
+                    {
+                        "label": "All Industries",
+                        "href": "/industries/"
                     }
                 ]
             },
