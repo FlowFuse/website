@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import navHighlights from '../data/navHighlights.json'
 // The nav and footer links live in nuxt/data/chrome.json; edit them there.
 import chrome from '../data/chrome.json'
@@ -10,6 +10,25 @@ const hl = (key) => {
 }
 
 const resolveHref = useResolveHref()
+
+// The top-level item the current page belongs to, so the nav shows where the visitor
+// is. Longest matching href wins, so /product/edge/ resolves through FlowFuse Edge
+// (Platform) and /use-cases/mes/ through MES (Solutions).
+const route = useRoute()
+const currentSection = computed(() => {
+    const path = route.path.endsWith('/') ? route.path : `${route.path}/`
+    let best = { section: null, length: 0 }
+    const consider = (href, section) => {
+        if (!href || !href.startsWith('/') || href === '/') return
+        const base = href.split('#')[0]
+        if (path.startsWith(base) && base.length > best.length) best = { section, length: base.length }
+    }
+    for (const dd of chrome.header.dropdowns) {
+        for (const col of dd.columns) for (const link of col.links) consider(link.href, dd.label)
+    }
+    for (const item of chrome.header.direct) consider(item.href, item.label)
+    return best.section
+})
 
 // Top-level items in the order chrome.json's header.order gives, mixing dropdowns and
 // direct links, so a direct link (Industrial AI) can sit between two dropdowns.
@@ -63,6 +82,45 @@ onMounted(() => {
             const navContent = document.getElementById('nav-content')
             if (navContent) navContent.style.top = ''
         }
+    })
+
+    // Keyboard access, following the W3C disclosure-navigation pattern: Tab moves between
+    // the top-level items with their panels closed, Enter/Space opens or closes a panel,
+    // Escape closes it and returns focus to its trigger. A panel stays closed on keyboard
+    // focus by adding .ff-nav-suppressed, which overrides the :focus-within rule that
+    // still opens it for a mouse click. aria-expanded follows what is on screen.
+    document.querySelectorAll('header .ff-nav-dropdown').forEach((li) => {
+        const trigger = li.querySelector(':scope > span')
+        if (!trigger) return
+        const setExpanded = (open) => trigger.setAttribute('aria-expanded', open ? 'true' : 'false')
+        const reopen = () => { li.classList.remove('ff-nav-suppressed') }
+        li.addEventListener('mouseenter', () => { reopen(); setExpanded(true) })
+        li.addEventListener('mouseleave', () => { reopen(); setExpanded(li.contains(document.activeElement)) })
+        li.addEventListener('focusin', (e) => {
+            if (e.target === trigger && !li.matches(':hover') && !li.contains(e.relatedTarget)) {
+                li.classList.add('ff-nav-suppressed')
+            }
+            setExpanded(!li.classList.contains('ff-nav-suppressed'))
+        })
+        li.addEventListener('focusout', (e) => {
+            if (li.contains(e.relatedTarget)) return
+            reopen()
+            setExpanded(li.matches(':hover'))
+        })
+        li.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return
+            li.classList.add('ff-nav-suppressed')
+            setExpanded(false)
+            trigger.focus()
+        })
+        trigger.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return
+            e.preventDefault()
+            if (window.innerWidth < 768) { trigger.click(); return }
+            const closing = !li.classList.contains('ff-nav-suppressed')
+            li.classList.toggle('ff-nav-suppressed', closing)
+            setExpanded(!closing)
+        })
     })
 
     // Mobile nav: dropdown sections expand on tap, not hover
@@ -176,8 +234,8 @@ onMounted(() => {
       <ul id="nav-content" class="">
         <template v-for="top in topItems" :key="top.item.label">
         <template v-if="top.type === 'dropdown'">
-        <li v-for="dd in [top.item]" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :data-nav-section="dd.label">
-          <span class="flex items-center gap-1"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
+        <li v-for="dd in [top.item]" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :class="{ 'ff-nav-current': currentSection === dd.label }" :data-nav-section="dd.label">
+          <span class="flex items-center gap-1" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul :class="dd.megaClasses">
             <li class="mega-highlight"><a :href="hl(dd.highlight).link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl(dd.highlight).title }}</span><span class="mega-highlight-media"><img :src="hl(dd.highlight).image" alt="" loading="lazy"></span></a></li>
             <template v-for="col in dd.columns" :key="col.title">
@@ -197,7 +255,7 @@ onMounted(() => {
           </ul>
         </li>
         </template>
-        <li v-else :class="top.item.classes"><a class="flex items-center gap-2" :href="top.item.href"><span class="ff-nav-label">{{ top.item.label }}</span></a></li>
+        <li v-else :class="[top.item.classes, { 'ff-nav-current': currentSection === top.item.label }]"><a class="flex items-center gap-2" :href="top.item.href" :aria-current="currentSection === top.item.label ? 'page' : undefined"><span class="ff-nav-label">{{ top.item.label }}</span></a></li>
         </template>
 
         <!-- More overflow (populated by JS) -->

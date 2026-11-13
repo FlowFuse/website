@@ -3890,3 +3890,32 @@ lite-youtube::before {
         transform: none;
     }
 }
+
+/* Keyboard: a visible focus ring on the menu triggers, and Escape (which adds
+   .ff-nav-suppressed in AppHeader.vue) closes a panel even though focus stays
+   inside the item. */
+.ff-website header #nav-content > li > span:focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown.ff-nav-suppressed > ul.mega {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: none !important;
+    }
+}
+
+/* Current section: the top-level item the page belongs to keeps the brand colour
+   and its underline, so visitors can see where they are (set in AppHeader.vue). */
+.ff-website header #nav-content > li.ff-nav-current > a > .ff-nav-label,
+.ff-website header #nav-content > li.ff-nav-current > span > .ff-nav-label {
+    color: var(--color-indigo-600);
+}
+@media (min-width: 768px) {
+    .ff-website header #nav-content > li.ff-nav-current > a > .ff-nav-label::after,
+    .ff-website header #nav-content > li.ff-nav-current > span > .ff-nav-label::after {
+        transform: scaleX(1);
+    }
+}
