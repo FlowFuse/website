@@ -365,16 +365,16 @@
                 "title": "Solutions",
                 "links": [
                     {
-                        "label": "Manufacturing Operations",
-                        "href": "/teams/manufacturing-operations/"
-                    },
-                    {
                         "label": "Automation & Controls",
                         "href": "/teams/automation-controls/"
                     },
                     {
                         "label": "Maintenance & Reliability",
                         "href": "/teams/maintenance-reliability/"
+                    },
+                    {
+                        "label": "Manufacturing Operations",
+                        "href": "/teams/manufacturing-operations/"
                     },
                     {
                         "label": "Digital Transformation",
@@ -423,10 +423,6 @@
                 "title": "Evaluate",
                 "links": [
                     {
-                        "label": "Foundation Partnership",
-                        "href": "/build-with-us/"
-                    },
-                    {
                         "label": "Why FlowFuse",
                         "href": "/platform/why-flowfuse/"
                     },
@@ -435,20 +431,12 @@
                         "href": "/customer-stories/"
                     },
                     {
-                        "label": "FlowFuse vs Ignition",
-                        "href": "/vs/ignition/"
-                    },
-                    {
-                        "label": "FlowFuse vs Kepware",
-                        "href": "/vs/kepware/"
-                    },
-                    {
-                        "label": "FlowFuse vs Litmus",
-                        "href": "/vs/litmus/"
-                    },
-                    {
                         "label": "ROI Calculator",
                         "href": "/resources/roi-calculator/"
+                    },
+                    {
+                        "label": "Foundation Partnership",
+                        "href": "/build-with-us/"
                     }
                 ]
             },
@@ -460,20 +448,20 @@
                         "href": "/docs/"
                     },
                     {
-                        "label": "Blog",
-                        "href": "/blog/"
-                    },
-                    {
                         "label": "Free Templates",
                         "href": "/blog/templates/"
+                    },
+                    {
+                        "label": "Node-RED Academy",
+                        "href": "https://node-red-academy.learnworlds.com/"
                     },
                     {
                         "label": "Webinars",
                         "href": "/webinars/"
                     },
                     {
-                        "label": "Node-RED Academy",
-                        "href": "https://node-red-academy.learnworlds.com/"
+                        "label": "Blog",
+                        "href": "/blog/"
                     },
                     {
                         "label": "Newsletter",
@@ -495,16 +483,16 @@
                         "href": "/about/"
                     },
                     {
-                        "label": "Partners",
-                        "href": "/partners/"
+                        "label": "Handbook",
+                        "href": "/handbook/"
                     },
                     {
                         "label": "Jobs",
                         "href": "site:jobBoard"
                     },
                     {
-                        "label": "Handbook",
-                        "href": "/handbook/"
+                        "label": "Partners",
+                        "href": "/partners/"
                     },
                     {
                         "label": "Contact Us",
