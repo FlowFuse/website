@@ -14,7 +14,6 @@ const chrome = JSON.parse(readFileSync(join(repo, 'nuxt/data/chrome.json'), 'utf
 const navLinks = chrome.header.dropdowns.flatMap(d => d.columns.flatMap(c => c.links))
 const footerLinks = [
     ...chrome.footer.columns.flatMap(c => c.links),
-    chrome.footer.newsletter,
     ...chrome.footer.legal,
 ]
 const allLinks = [...navLinks, ...chrome.header.direct, ...footerLinks]
@@ -142,16 +141,14 @@ test('the header lists each page once', () => {
 })
 
 test('the footer is not a copy of the header', () => {
-    // The footer has its own job (utility, trust, company and long-tail pages),
-    // so it is a separate list. Some overlap is expected - Contact, About, the
-    // key product pages, the industry list - but past two thirds it has drifted
-    // back into mirroring the mega nav. (When the footer got its own list it
-    // shared 27 of 44 column links with the header; the old mirrored footer
-    // shared 84%.)
-    const headerPages = new Set([...navLinks, ...chrome.header.direct].map(l => l.href.split('#')[0]))
-    const columnLinks = chrome.footer.columns.flatMap(c => c.links)
-    const shared = columnLinks.filter(l => headerPages.has(l.href.split('#')[0])).length
-    assert.ok(shared / columnLinks.length <= 2 / 3,
-        `${shared} of ${columnLinks.length} footer links repeat the header - `
-        + 'the footer should carry what the header leaves out')
+    // The footer is a short doormat with its own job, so it is a separate list.
+    // Sharing the key pages with the header is expected (Pricing, About,
+    // Contact); carrying most of the mega nav is not. The footer this replaced
+    // repeated 92% of the header's links.
+    const footerPages = new Set(chrome.footer.columns.flatMap(c => c.links).map(l => l.href.split('#')[0]))
+    const headerPages = [...new Set([...navLinks, ...chrome.header.direct].map(l => l.href.split('#')[0]))]
+    const repeated = headerPages.filter(page => footerPages.has(page)).length
+    assert.ok(repeated / headerPages.length <= 0.5,
+        `the footer repeats ${repeated} of the header's ${headerPages.length} pages - `
+        + 'keep it a short doormat, not a second mega nav')
 })

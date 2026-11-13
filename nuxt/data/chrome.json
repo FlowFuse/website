@@ -361,37 +361,37 @@
                         "href": "/product/"
                     },
                     {
-                        "label": "Pricing",
-                        "href": "/pricing/"
+                        "label": "FlowFuse Edge",
+                        "href": "/product/edge/"
+                    },
+                    {
+                        "label": "FlowFuse Hub",
+                        "href": "/product/hub/"
+                    },
+                    {
+                        "label": "FlowFuse Fleet",
+                        "href": "/product/fleet/"
                     },
                     {
                         "label": "Industrial AI",
                         "href": "/ai/"
                     },
                     {
-                        "label": "Integrations",
-                        "href": "/integrations/"
-                    },
-                    {
-                        "label": "Blueprint Library",
-                        "href": "/blueprints/"
-                    },
-                    {
-                        "label": "Docs",
-                        "href": "/docs/"
-                    },
-                    {
-                        "label": "Changelog",
-                        "href": "/changelog/"
+                        "label": "Pricing",
+                        "href": "/pricing/"
                     }
                 ]
             },
             {
-                "title": "Compare",
+                "title": "Evaluate",
                 "links": [
                     {
                         "label": "Why FlowFuse",
                         "href": "/platform/why-flowfuse/"
+                    },
+                    {
+                        "label": "Customer stories",
+                        "href": "/customer-stories/"
                     },
                     {
                         "label": "FlowFuse vs Ignition",
@@ -406,103 +406,43 @@
                         "href": "/vs/litmus/"
                     },
                     {
-                        "label": "FlowFuse vs Tulip",
-                        "href": "/landing/tulip/"
+                        "label": "ROI Calculator",
+                        "href": "/resources/roi-calculator/"
                     }
                 ]
             },
             {
-                "title": "Industries",
+                "title": "Resources",
                 "links": [
                     {
-                        "label": "Automotive",
-                        "href": "/industries/automotive/"
+                        "label": "Docs",
+                        "href": "/docs/"
                     },
                     {
-                        "label": "Industrial Machinery",
-                        "href": "/industries/industrial-machinery/"
+                        "label": "Blog",
+                        "href": "/blog/"
                     },
                     {
-                        "label": "Building Materials",
-                        "href": "/industries/building-materials/"
-                    },
-                    {
-                        "label": "Energy & Utilities",
-                        "href": "/industries/energy-utilities/"
-                    },
-                    {
-                        "label": "Aviation & Aerospace",
-                        "href": "/industries/aviation-aerospace/"
-                    },
-                    {
-                        "label": "All industries",
-                        "href": "/industries/"
-                    }
-                ]
-            },
-            {
-                "title": "Node-RED & protocols",
-                "links": [
-                    {
-                        "label": "What is Node-RED?",
-                        "href": "/node-red/"
-                    },
-                    {
-                        "label": "Node-RED documentation",
-                        "href": "/docs/node-red/"
-                    },
-                    {
-                        "label": "MQTT in Node-RED",
-                        "href": "/docs/node-red/protocol/mqtt/"
-                    },
-                    {
-                        "label": "OPC UA integration",
-                        "href": "/integrations/opcua/"
-                    },
-                    {
-                        "label": "Modbus in Node-RED",
-                        "href": "/docs/node-red/protocol/modbus/"
-                    },
-                    {
-                        "label": "InfluxDB with Node-RED",
-                        "href": "/docs/node-red/database/influxdb/"
-                    },
-                    {
-                        "label": "Migrate to FlowFuse",
-                        "href": "/docs/migration/"
-                    }
-                ]
-            },
-            {
-                "title": "Free resources",
-                "links": [
-                    {
-                        "label": "All free templates",
+                        "label": "Free templates",
                         "href": "/blog/templates/"
                     },
                     {
-                        "label": "5S Checklist",
-                        "href": "/blog/2025/09/what-is-5s-checklist/"
-                    },
-                    {
-                        "label": "Fishbone Diagram Template",
-                        "href": "/blog/2026/09/ishikawa-fishbone-diagram-template/"
-                    },
-                    {
-                        "label": "PPAP Checklist",
-                        "href": "/blog/2026/10/ppap-checklist-template/"
-                    },
-                    {
-                        "label": "5 Whys Template",
-                        "href": "/blog/2026/09/five-whys-template/"
-                    },
-                    {
-                        "label": "ROI Calculator",
-                        "href": "/resources/roi-calculator/"
+                        "label": "Webinars",
+                        "href": "/webinars/"
                     },
                     {
                         "label": "Node-RED Academy",
                         "href": "https://node-red-academy.learnworlds.com/"
+                    },
+                    {
+                        "label": "Newsletter",
+                        "href": "/blog/#sign-up",
+                        "capture": {
+                            "event": "cta-blog-subscribe",
+                            "props": {
+                                "position": "footer"
+                            }
+                        }
                     }
                 ]
             },
@@ -512,10 +452,6 @@
                     {
                         "label": "About us",
                         "href": "/about/"
-                    },
-                    {
-                        "label": "Customer stories",
-                        "href": "/customer-stories/"
                     },
                     {
                         "label": "Partners",
@@ -543,7 +479,7 @@
                 "title": "Trust & support",
                 "links": [
                     {
-                        "label": "Security & certifications",
+                        "label": "Security",
                         "href": "/platform/security/"
                     },
                     {
@@ -551,7 +487,7 @@
                         "href": "https://status.flowfuse.com/"
                     },
                     {
-                        "label": "Request support",
+                        "label": "Support",
                         "href": "/support/"
                     },
                     {
@@ -565,16 +501,6 @@
                 ]
             }
         ],
-        "newsletter": {
-            "label": "Subscribe to the newsletter",
-            "href": "/blog/#sign-up",
-            "capture": {
-                "event": "cta-blog-subscribe",
-                "props": {
-                    "position": "footer"
-                }
-            }
-        },
         "legal": [
             {
                 "label": "Privacy",

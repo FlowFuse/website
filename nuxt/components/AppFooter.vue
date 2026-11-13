@@ -1,8 +1,8 @@
 <script setup>
 // The footer links live in nuxt/data/chrome.json; edit them there. The footer has its own
-// list rather than repeating the header's mega nav: it carries utility, trust and company
-// links plus long-tail pages (comparisons, industries, Node-RED topics, free templates)
-// that the header leaves out.
+// list rather than repeating the header's mega nav. It is a short doormat organised the
+// way a buyer evaluates: what the product is, why choose it, where to learn, who the
+// company is, and the trust and support links people look for at the bottom of a page.
 import chrome from '../data/chrome.json'
 import site from '../data/site.json'
 
@@ -17,21 +17,15 @@ const onCaptureClick = (item) => {
 <template>
     <footer class="ff-footer bg-gray-100 w-full" data-nav-zone="footer">
         <div class="pt-16 pb-12 px-6 max-w-screen-xl mx-auto">
-            <!-- Top strip: a second chance to act for readers who reached the end of the page -->
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 pb-10 border-b border-gray-300" data-nav-section="Footer top">
-                <div class="flex flex-col gap-3">
+            <!-- Brand block, then the link columns. No CTA button here: the header is
+                 sticky, so Talk to Us is already on screen at the bottom of every page. -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[1.4fr_repeat(5,1fr)] gap-x-8 gap-y-10 text-sm">
+                <div class="col-span-2 sm:col-span-3 lg:col-span-1 flex flex-col gap-4">
                     <a href="/" class="ff-logo-link ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
                         <FlowFuseWordmark uid="footer" color="#1F2937" />
                     </a>
-                    <p class="text-sm text-gray-600 max-w-sm">{{ site.messaging.tagLine }}</p>
+                    <p class="text-gray-600 max-w-xs">{{ site.messaging.tagLine }}</p>
                 </div>
-                <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
-                    <a :href="chrome.footer.newsletter.href" class="font-medium" @click="onCaptureClick(chrome.footer.newsletter)">{{ chrome.footer.newsletter.label }}</a>
-                    <CtaBookDemo variant="primary" position="footer" />
-                </div>
-            </div>
-            <!-- Link columns -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-x-8 gap-y-10 pt-10 text-sm">
                 <section v-for="col in chrome.footer.columns" :key="col.title" :data-nav-section="col.title">
                     <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ col.title }}</p>
                     <ul class="flex flex-col gap-2.5">
