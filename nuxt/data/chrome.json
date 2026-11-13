@@ -303,11 +303,6 @@
                                 "label": "Jobs",
                                 "href": "site:jobBoard",
                                 "icon": "case"
-                            },
-                            {
-                                "label": "Handbook",
-                                "href": "/handbook/",
-                                "icon": "rectangle-stack"
                             }
                         ]
                     },
