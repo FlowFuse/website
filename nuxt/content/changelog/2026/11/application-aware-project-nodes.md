@@ -43,7 +43,7 @@ Another new feature brought in this release enables you to choose the target ins
 
 **Choose the topic at runtime.** Topics work the same way. Set **Topic** to `env`, or to `msg.` on `Project Out` and `Project Call`. `Project In` reads its topic when the node starts, so it takes `env` but not `msg.`.
 
-Together, runtime target and topic let one set of flows serve every instance. In the video below, each line asks a config instance for its settings, taking the target and topic from its environment. The returned config names the collector, and the line then sends its data and status there, with the target and topic read from each message. Because the target and topic come from the environment, you can promote the same flows through a FlowFuse pipeline to other environments and only the environment settings change..
+Together, runtime target and topic let one set of flows serve every instance. In the video below, each line asks a config instance for its settings, taking the target and topic from its environment. The returned config names the collector, and the line then sends its data and status there, with the target and topic read from each message. Because the target and topic come from the environment, you can promote the same flows through a FlowFuse pipeline to other environments and only the environment settings change.
 
 The same approach suits a dashboard chat interface that sends direct messages to other instances, writing each record to the right database based on payload, or routing data to a backup instance when one fails. The [Project Nodes documentation](/docs/user/projectnodes/) covers the target and topic formats.
 
