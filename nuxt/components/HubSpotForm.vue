@@ -10,6 +10,8 @@ const props = withDefaults(defineProps<{
     description?: string
     /** Tighter vertical spacing for the title/description section, matching professional-services' original layout. Only relevant when `title` is set. */
     compact?: boolean
+    /** Replaces HubSpot's default form stylesheet. HubSpot then renders the form into the page rather than an iframe, so scope every rule to .hs-form. */
+    css?: string
 }>(), {
     compact: false,
 })
@@ -18,9 +20,13 @@ const props = withDefaults(defineProps<{
 // to onFormSubmit, which fires on the attempt and is what `cta` tracks). The Dashboard 1.0
 // importer on /platform/dashboard/ gates its conversion on this, the way hs-form.njk's
 // `onFormSubmitted` hook did.
-const emit = defineEmits<{ submitted: [] }>()
+// `ready` passes the rendered <form> (in the page or HubSpot's iframe) for tweaks CSS can't make,
+// such as a placeholder or the button text.
+const emit = defineEmits<{ submitted: [], ready: [form: HTMLFormElement] }>()
 
-const containerId = `hs-form-${props.formId.replace(/-/g, '')}`
+// useId() keeps two embeds of one form on a page (the footer newsletter and the blog's)
+// from sharing an id, which would render both into the first container.
+const containerId = `hs-form-${props.formId.replace(/-/g, '')}-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`
 const region = props.region ?? 'eu1'
 const portalId = props.portalId ?? '26586079'
 const showFallback = ref(false)
@@ -53,6 +59,12 @@ onMounted(async () => {
             region,
             portalId,
             formId: props.formId,
+            ...(props.css !== undefined ? { css: props.css } : {}),
+            onFormReady: (form: unknown) => {
+                const el = (form as any)?.jquery ? (form as any)[0] : form
+                // tagName, not instanceof: the form lives in the iframe's own window.
+                if (el?.tagName === 'FORM') emit('ready', el)
+            },
             ...(props.cta ? {
                 onFormSubmit: () => {
                     if (typeof (window as any).capture === 'function') {

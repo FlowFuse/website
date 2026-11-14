@@ -11,8 +11,7 @@ const resolveHref = useResolveHref()
 const onCaptureClick = (item) => {
     if (!item.capture || typeof window === 'undefined' || !window.capture) return
     window.capture(item.capture.event, item.capture.props)
-}
-</script>
+}</script>
 
 <template>
     <footer class="ff-footer bg-gray-100 w-full" data-nav-zone="footer">
@@ -22,11 +21,16 @@ const onCaptureClick = (item) => {
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 text-sm">
                 <!-- Brand row: its own line above the columns, so six link columns get
                      the full width and names like "Manufacturing Operations" fit. -->
-                <div class="col-span-2 sm:col-span-3 lg:col-span-6 flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-3 pb-8 border-b border-gray-200">
-                    <a href="/" class="ff-logo-link ff-footer-logo block w-40 shrink-0 no-underline hover:no-underline" aria-label="FlowFuse home">
-                        <FlowFuseWordmark uid="footer" color="#1F2937" />
-                    </a>
-                    <p class="text-gray-600 text-base">{{ site.messaging.tagLine }}</p>
+                <div class="col-span-2 sm:col-span-3 lg:col-span-6 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-x-12 gap-y-8 pb-8 border-b border-gray-200">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-3">
+                        <a href="/" class="ff-logo-link ff-footer-logo block w-40 shrink-0 no-underline hover:no-underline" aria-label="FlowFuse home">
+                            <FlowFuseWordmark uid="footer" color="#1F2937" />
+                        </a>
+                        <p class="text-gray-600 text-base">{{ site.messaging.tagLine }}</p>
+                    </div>
+                    <!-- Newsletter: the one low-commitment offer on the site, for visitors
+                         not ready to talk to sales. -->
+                    <FooterNewsletter />
                 </div>
                 <section v-for="col in chrome.footer.columns" :key="col.title" :data-nav-section="col.title">
                     <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ col.title }}</p>
