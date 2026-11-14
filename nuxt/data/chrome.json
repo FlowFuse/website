@@ -317,11 +317,6 @@
                                 "icon": "user-group"
                             },
                             {
-                                "label": "Foundation Partnership",
-                                "href": "/build-with-us/",
-                                "icon": "puzzle-piece"
-                            },
-                            {
                                 "label": "Contact Us",
                                 "href": "/contact-us/",
                                 "icon": "mail"
