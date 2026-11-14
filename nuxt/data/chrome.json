@@ -1,17 +1,130 @@
 {
-    "_comment": "Canonical marketing chrome: the top mega nav and the footer link lists. A page added or removed here propagates to the whole site: components/AppHeader.vue and components/AppFooter.vue import this file directly. Icon keys are filenames in nuxt/assets/nav-icons/; utils/navIcons.ts resolves them, and a unit test keeps the two in sync. Class strings are literal so Tailwind can see them (assets/css/style.css and assets/css/theme.css each declare an @source for this file). An href of 'site:<key>' is resolved against nuxt/data/site.json at render time instead of being a literal URL, so values like the job board link stay single-sourced there.",
+    "_comment": "Canonical marketing chrome: the top mega nav and the footer link lists. The header and footer are separate lists on purpose: the header carries the primary tasks, each page once; the footer carries utility, trust and company links plus long-tail pages the header leaves out, and is not a copy of the mega nav. components/AppHeader.vue and components/AppFooter.vue import this file directly. Icon keys are filenames in nuxt/assets/nav-icons/; utils/navIcons.ts resolves them, and a unit test keeps the two in sync. Class strings are literal so Tailwind can see them (assets/css/style.css and assets/css/theme.css each declare an @source for this file). An href of 'site:<key>' is resolved against nuxt/data/site.json at render time instead of being a literal URL, so values like the job board link stay single-sourced there.",
     "header": {
         "dropdowns": [
+            {
+                "label": "Solutions",
+                "columns": [
+                    {
+                        "title": "By Team",
+                        "titleGrid": "xl:col-start-2 xl:row-start-1",
+                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
+                        "links": [
+                            {
+                                "label": "Manufacturing Operations",
+                                "href": "/teams/manufacturing-operations/",
+                                "icon": "factory"
+                            },
+                            {
+                                "label": "Automation & Controls",
+                                "href": "/teams/automation-controls/",
+                                "icon": "power"
+                            },
+                            {
+                                "label": "Maintenance & Reliability",
+                                "href": "/teams/maintenance-reliability/",
+                                "icon": "wrench-screwdriver"
+                            },
+                            {
+                                "label": "Digital Transformation",
+                                "href": "/teams/digital-transformation/",
+                                "icon": "rocket-launch"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "By Industry",
+                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
+                        "listClasses": "row-span-[6] md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "links": [
+                            {
+                                "label": "Automotive",
+                                "href": "/industries/automotive/",
+                                "icon": "car"
+                            },
+                            {
+                                "label": "Industrial Machinery",
+                                "href": "/industries/industrial-machinery/",
+                                "icon": "cog-6-tooth"
+                            },
+                            {
+                                "label": "Building Materials",
+                                "href": "/industries/building-materials/",
+                                "icon": "building-office-2"
+                            },
+                            {
+                                "label": "Energy & Utilities",
+                                "href": "/industries/energy-utilities/",
+                                "icon": "bolt"
+                            },
+                            {
+                                "label": "Aviation & Aerospace",
+                                "href": "/industries/aviation-aerospace/",
+                                "icon": "airplane"
+                            },
+                            {
+                                "label": "See All Industries",
+                                "href": "/industries/",
+                                "icon": "arrow-right"
+                            }
+                        ]
+                    },
+                    {
+                        "title": "By Use Case",
+                        "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
+                        "listClasses": "row-span-[7] md:col-start-3 md:row-start-2 xl:col-start-4",
+                        "links": [
+                            {
+                                "label": "SCADA",
+                                "href": "/use-cases/scada/",
+                                "icon": "screen"
+                            },
+                            {
+                                "label": "Production Line Monitoring",
+                                "href": "/use-cases/production-line-monitoring/",
+                                "icon": "arrow-trending-up"
+                            },
+                            {
+                                "label": "MES",
+                                "href": "/use-cases/mes/",
+                                "icon": "chart"
+                            },
+                            {
+                                "label": "IT/OT Middleware",
+                                "href": "/use-cases/it-ot-middleware/",
+                                "icon": "arrows-right-left"
+                            },
+                            {
+                                "label": "Unified Namespace",
+                                "href": "/use-cases/uns/",
+                                "icon": "uns"
+                            },
+                            {
+                                "label": "Remote Device Management",
+                                "href": "/use-cases/remote-device-management/",
+                                "icon": "wifi"
+                            },
+                            {
+                                "label": "See All Use Cases",
+                                "href": "/use-cases/",
+                                "icon": "arrow-right"
+                            }
+                        ]
+                    }
+                ],
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "highlight": "solutions"
+            },
             {
                 "label": "Platform",
                 "columns": [
                     {
-                        "title": "Overview",
+                        "title": "Products",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-6 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
-                                "label": "Product",
+                                "label": "Platform Overview",
                                 "href": "/product/",
                                 "icon": "star"
                             },
@@ -19,36 +132,29 @@
                                 "label": "FlowFuse Edge",
                                 "href": "/product/edge/",
                                 "icon": "chip",
-                                "indent": true
+                                "indent": true,
+                                "description": "For OT teams connecting the plant floor"
                             },
                             {
                                 "label": "FlowFuse Hub",
                                 "href": "/product/hub/",
                                 "icon": "circle-stack",
-                                "indent": true
+                                "indent": true,
+                                "description": "For IT teams connecting enterprise systems"
                             },
                             {
                                 "label": "FlowFuse Fleet",
                                 "href": "/product/fleet/",
                                 "icon": "server-stack",
-                                "indent": true
-                            },
-                            {
-                                "label": "Security Statement",
-                                "href": "/platform/security/",
-                                "icon": "lock-closed"
-                            },
-                            {
-                                "label": "Pricing",
-                                "href": "/pricing/",
-                                "icon": "dollar"
+                                "indent": true,
+                                "description": "For OEMs managing equipment in the field"
                             }
                         ]
                     },
                     {
-                        "title": "Components",
+                        "title": "Features",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-6 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-[7] md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
                                 "label": "FlowFuse Dashboard",
@@ -79,48 +185,11 @@
                                 "label": "Blueprint Library",
                                 "href": "/blueprints/",
                                 "icon": "building-library"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Capabilities",
-                        "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-[7] md:col-start-3 md:row-start-2 xl:col-start-4",
-                        "links": [
-                            {
-                                "label": "Industrial AI",
-                                "href": "/ai/",
-                                "icon": "sparkles"
                             },
                             {
-                                "label": "IT/OT middleware",
-                                "href": "/use-cases/it-ot-middleware/",
-                                "icon": "cog"
-                            },
-                            {
-                                "label": "Unified Namespace",
-                                "href": "/use-cases/uns/",
-                                "icon": "uns"
-                            },
-                            {
-                                "label": "MES",
-                                "href": "/use-cases/mes/",
-                                "icon": "chart"
-                            },
-                            {
-                                "label": "SCADA",
-                                "href": "/use-cases/scada/",
-                                "icon": "screen"
-                            },
-                            {
-                                "label": "Remote Device Management",
-                                "href": "/use-cases/remote-device-management/",
-                                "icon": "chip"
-                            },
-                            {
-                                "label": "Data Integration",
-                                "href": "/use-cases/data-integration/",
-                                "icon": "arrows-right-left"
+                                "label": "Security & Compliance",
+                                "href": "/platform/security/",
+                                "icon": "shield-check"
                             }
                         ]
                     }
@@ -129,100 +198,12 @@
                 "highlight": "platform"
             },
             {
-                "label": "Solutions",
-                "columns": [
-                    {
-                        "title": "By Team",
-                        "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
-                        "links": [
-                            {
-                                "label": "Manufacturing Operations",
-                                "href": "/teams/manufacturing-operations/",
-                                "icon": "factory"
-                            },
-                            {
-                                "label": "Automation & Controls",
-                                "href": "/teams/automation-controls/",
-                                "icon": "cog"
-                            },
-                            {
-                                "label": "Maintenance & Reliability",
-                                "href": "/teams/maintenance-reliability/",
-                                "icon": "wrench-screwdriver"
-                            },
-                            {
-                                "label": "Digital Transformation",
-                                "href": "/teams/digital-transformation/",
-                                "icon": "rocket-launch"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "By Industry",
-                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-[5] md:col-start-2 md:row-start-2 xl:col-start-3",
-                        "links": [
-                            {
-                                "label": "Automotive",
-                                "href": "/industries/automotive/",
-                                "icon": "car"
-                            },
-                            {
-                                "label": "Industrial Machinery",
-                                "href": "/industries/industrial-machinery/",
-                                "icon": "cog-6-tooth"
-                            },
-                            {
-                                "label": "Building Materials",
-                                "href": "/industries/building-materials/",
-                                "icon": "building-office-2"
-                            },
-                            {
-                                "label": "Energy and Utilities",
-                                "href": "/industries/energy-utilities/",
-                                "icon": "bolt"
-                            },
-                            {
-                                "label": "See all industries",
-                                "href": "/industries/",
-                                "icon": "arrow-right"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "By Use Case",
-                        "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-4 md:col-start-3 md:row-start-2 xl:col-start-4",
-                        "links": [
-                            {
-                                "label": "Production Line Monitoring",
-                                "href": "/use-cases/production-line-monitoring/",
-                                "icon": "arrow-trending-up"
-                            },
-                            {
-                                "label": "Shop Floor Communication",
-                                "href": "/use-cases/shop-floor-communication/",
-                                "icon": "chat"
-                            },
-                            {
-                                "label": "See all use cases",
-                                "href": "/use-cases/",
-                                "icon": "arrow-right"
-                            }
-                        ]
-                    }
-                ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(12,auto)] md:pr-1 md:auto-rows-auto items-center",
-                "highlight": "solutions"
-            },
-            {
                 "label": "Resources",
                 "columns": [
                     {
                         "title": "Learn",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-5 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Blog",
@@ -232,12 +213,17 @@
                             {
                                 "label": "Webinars",
                                 "href": "/webinars/",
-                                "icon": "screen"
+                                "icon": "camera"
                             },
                             {
-                                "label": "Publications",
+                                "label": "Ebooks & Whitepapers",
                                 "href": "/resources/publications/",
                                 "icon": "book-open"
+                            },
+                            {
+                                "label": "Free Templates",
+                                "href": "/blog/templates/",
+                                "icon": "clipboard-document-check"
                             },
                             {
                                 "label": "Node-RED Academy",
@@ -252,9 +238,9 @@
                         "listClasses": "row-span-5 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
-                                "label": "Guides",
+                                "label": "Application Guides",
                                 "href": "/docs/application-guide/",
-                                "icon": "book-open"
+                                "icon": "document-check"
                             },
                             {
                                 "label": "Docs",
@@ -264,26 +250,26 @@
                             {
                                 "label": "Changelog",
                                 "href": "/changelog/",
-                                "icon": "rocket-launch"
+                                "icon": "clock"
                             },
                             {
-                                "label": "Github",
+                                "label": "GitHub",
                                 "href": "https://github.com/FlowFuse/flowfuse",
                                 "icon": "github",
                                 "solid": true
-                            },
-                            {
-                                "label": "Support forums",
-                                "href": "https://discourse.nodered.org/c/vendors/flowfuse/24/",
-                                "icon": "chat-bubble-left-right-sm"
                             }
                         ]
                     },
                     {
-                        "title": "Customers",
+                        "title": "Evaluate",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
                         "listClasses": "row-span-3 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
+                            {
+                                "label": "Foundation Partnership",
+                                "href": "/build-with-us/",
+                                "icon": "puzzle-piece"
+                            },
                             {
                                 "label": "Customer Stories",
                                 "href": "/customer-stories/",
@@ -292,7 +278,7 @@
                             {
                                 "label": "ROI Calculator",
                                 "href": "/resources/roi-calculator/",
-                                "icon": "arrow-trending-up"
+                                "icon": "dollar"
                             }
                         ]
                     }
@@ -306,62 +292,29 @@
                     {
                         "title": "Company",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-5 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-3 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
-                                "label": "Why FlowFuse",
-                                "href": "/platform/why-flowfuse/",
-                                "icon": "flowfuse"
-                            },
-                            {
-                                "label": "About us",
+                                "label": "About Us",
                                 "href": "/about/",
-                                "icon": "building-office-2"
+                                "icon": "globe-alt"
                             },
                             {
                                 "label": "Jobs",
                                 "href": "site:jobBoard",
                                 "icon": "case"
-                            },
-                            {
-                                "label": "Handbook",
-                                "href": "/handbook/",
-                                "icon": "book-open"
-                            },
-                            {
-                                "label": "Security certifications",
-                                "href": "/platform/security/#certifications",
-                                "icon": "certificate"
                             }
                         ]
                     },
                     {
-                        "title": "Partners & Services",
+                        "title": "Work with us",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-2 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-3 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
-                                "label": "Partnerships",
+                                "label": "Partners",
                                 "href": "/partners/",
                                 "icon": "user-group"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Support",
-                        "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-3 md:col-start-3 md:row-start-2 xl:col-start-4",
-                        "links": [
-                            {
-                                "label": "Service Status",
-                                "href": "https://status.flowfuse.com/",
-                                "icon": "check-badge",
-                                "solid": true
-                            },
-                            {
-                                "label": "Request Support",
-                                "href": "/support/",
-                                "icon": "lifebuoy"
                             },
                             {
                                 "label": "Contact Us",
@@ -371,7 +324,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "company"
             }
         ],
@@ -386,304 +339,188 @@
                 "href": "/pricing/",
                 "classes": "nav-collapsible"
             }
+        ],
+        "order": [
+            "Solutions",
+            "Platform",
+            "Industrial AI",
+            "Resources",
+            "Company",
+            "Pricing"
         ]
     },
     "footer": {
-        "sections": [
+        "columns": [
             {
-                "title": "Platform",
-                "gridClasses": "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-8 gap-y-8",
-                "groups": [
+                "title": "Solutions",
+                "links": [
                     {
-                        "title": "Overview",
-                        "links": [
-                            {
-                                "label": "Product",
-                                "href": "/product/"
-                            },
-                            {
-                                "label": "FlowFuse Edge",
-                                "href": "/product/edge/"
-                            },
-                            {
-                                "label": "FlowFuse Hub",
-                                "href": "/product/hub/"
-                            },
-                            {
-                                "label": "FlowFuse Fleet",
-                                "href": "/product/fleet/"
-                            },
-                            {
-                                "label": "Security Statement",
-                                "href": "/platform/security/"
-                            },
-                            {
-                                "label": "Pricing",
-                                "href": "/pricing/"
-                            }
-                        ],
-                        "classes": "lg:col-start-1 lg:row-start-1"
+                        "label": "Automation & Controls",
+                        "href": "/teams/automation-controls/"
                     },
                     {
-                        "title": "Components",
-                        "links": [
-                            {
-                                "label": "FlowFuse Dashboard",
-                                "href": "/platform/dashboard/"
-                            },
-                            {
-                                "label": "Device Agent",
-                                "href": "/platform/device-agent/"
-                            },
-                            {
-                                "label": "Node-RED",
-                                "href": "/node-red/"
-                            },
-                            {
-                                "label": "FlowFuse Expert",
-                                "href": "/docs/user/expert/"
-                            },
-                            {
-                                "label": "Integrations",
-                                "href": "/integrations/"
-                            },
-                            {
-                                "label": "Blueprint Library",
-                                "href": "/blueprints/"
-                            }
-                        ],
-                        "classes": "lg:col-start-1 lg:row-start-2"
+                        "label": "Maintenance & Reliability",
+                        "href": "/teams/maintenance-reliability/"
                     },
                     {
-                        "title": "Capabilities",
-                        "links": [
-                            {
-                                "label": "Industrial AI",
-                                "href": "/ai/"
-                            },
-                            {
-                                "label": "IT/OT middleware",
-                                "href": "/use-cases/it-ot-middleware/"
-                            },
-                            {
-                                "label": "Unified Namespace",
-                                "href": "/use-cases/uns/"
-                            },
-                            {
-                                "label": "MES",
-                                "href": "/use-cases/mes/"
-                            },
-                            {
-                                "label": "SCADA",
-                                "href": "/use-cases/scada/"
-                            },
-                            {
-                                "label": "Remote Device Management",
-                                "href": "/use-cases/remote-device-management/"
-                            },
-                            {
-                                "label": "Data Integration",
-                                "href": "/use-cases/data-integration/"
-                            }
-                        ],
-                        "classes": "lg:col-start-2 lg:row-start-1 lg:row-span-2"
+                        "label": "Manufacturing Operations",
+                        "href": "/teams/manufacturing-operations/"
+                    },
+                    {
+                        "label": "Digital Transformation",
+                        "href": "/teams/digital-transformation/"
+                    },
+                    {
+                        "label": "All Use Cases",
+                        "href": "/use-cases/"
+                    },
+                    {
+                        "label": "All Industries",
+                        "href": "/industries/"
                     }
                 ]
             },
             {
-                "title": "Solutions",
-                "gridClasses": "grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8",
-                "groups": [
+                "title": "Product",
+                "links": [
                     {
-                        "title": "By Industry",
-                        "links": [
-                            {
-                                "label": "Automotive",
-                                "href": "/industries/automotive/"
-                            },
-                            {
-                                "label": "Industrial Machinery",
-                                "href": "/industries/industrial-machinery/"
-                            },
-                            {
-                                "label": "Building Materials",
-                                "href": "/industries/building-materials/"
-                            },
-                            {
-                                "label": "Energy and Utilities",
-                                "href": "/industries/energy-utilities/"
-                            },
-                            {
-                                "label": "See all industries",
-                                "href": "/industries/"
-                            }
-                        ]
+                        "label": "Platform Overview",
+                        "href": "/product/"
                     },
                     {
-                        "title": "By Use Case",
-                        "links": [
-                            {
-                                "label": "Production Line Monitoring",
-                                "href": "/use-cases/production-line-monitoring/"
-                            },
-                            {
-                                "label": "Shop Floor Communication",
-                                "href": "/use-cases/shop-floor-communication/"
-                            },
-                            {
-                                "label": "See all use cases",
-                                "href": "/use-cases/"
-                            }
-                        ]
+                        "label": "FlowFuse Edge",
+                        "href": "/product/edge/"
                     },
                     {
-                        "title": "By Team",
-                        "links": [
-                            {
-                                "label": "Manufacturing Operations",
-                                "href": "/teams/manufacturing-operations/"
-                            },
-                            {
-                                "label": "Automation & Controls",
-                                "href": "/teams/automation-controls/"
-                            },
-                            {
-                                "label": "Maintenance & Reliability",
-                                "href": "/teams/maintenance-reliability/"
-                            },
-                            {
-                                "label": "Digital Transformation",
-                                "href": "/teams/digital-transformation/"
-                            }
-                        ]
+                        "label": "FlowFuse Hub",
+                        "href": "/product/hub/"
+                    },
+                    {
+                        "label": "FlowFuse Fleet",
+                        "href": "/product/fleet/"
+                    },
+                    {
+                        "label": "Industrial AI",
+                        "href": "/ai/"
+                    },
+                    {
+                        "label": "Pricing",
+                        "href": "/pricing/"
+                    }
+                ]
+            },
+            {
+                "title": "Evaluate",
+                "links": [
+                    {
+                        "label": "Customer Stories",
+                        "href": "/customer-stories/"
+                    },
+                    {
+                        "label": "ROI Calculator",
+                        "href": "/resources/roi-calculator/"
+                    },
+                    {
+                        "label": "Foundation Partnership",
+                        "href": "/build-with-us/"
                     }
                 ]
             },
             {
                 "title": "Resources",
-                "gridClasses": "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-x-8 gap-y-8",
-                "groups": [
-                    {
-                        "title": "Learn",
-                        "links": [
-                            {
-                                "label": "Blog",
-                                "href": "/blog/"
-                            },
-                            {
-                                "label": "Webinars",
-                                "href": "/webinars/"
-                            },
-                            {
-                                "label": "Publications",
-                                "href": "/resources/publications/"
-                            },
-                            {
-                                "label": "Node-RED Academy",
-                                "href": "https://node-red-academy.learnworlds.com/"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Reference",
-                        "links": [
-                            {
-                                "label": "Guides",
-                                "href": "/docs/application-guide/"
-                            },
-                            {
-                                "label": "Docs",
-                                "href": "/docs/"
-                            },
-                            {
-                                "label": "Changelog",
-                                "href": "/changelog/"
-                            },
-                            {
-                                "label": "Github",
-                                "href": "https://github.com/FlowFuse/flowfuse"
-                            },
-                            {
-                                "label": "Support forums",
-                                "href": "https://discourse.nodered.org/c/vendors/flowfuse/24/"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Customers",
-                        "links": [
-                            {
-                                "label": "Customer Stories",
-                                "href": "/customer-stories/"
-                            },
-                            {
-                                "label": "Sign Up to Mailing List",
-                                "href": "/blog/#sign-up",
-                                "capture": {
-                                    "event": "cta-blog-subscribe",
-                                    "props": { "position": "footer" }
-                                }
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "company": {
-            "grid": [
-                {
-                    "links": [
-                        {
-                            "label": "Why FlowFuse",
-                            "href": "/platform/why-flowfuse/"
-                        },
-                        {
-                            "label": "About us",
-                            "href": "/about/"
-                        },
-                        {
-                            "label": "Jobs",
-                            "href": "site:jobBoard"
-                        },
-                        {
-                            "label": "Security certifications",
-                            "href": "/platform/security/#certifications"
-                        }
-                    ]
-                },
-                {
-                    "links": [
-                        {
-                            "label": "Handbook",
-                            "href": "/handbook/"
-                        },
-                        {
-                            "label": "Partnerships",
-                            "href": "/partners/"
-                        }
-                    ]
-                },
-                {
-                    "links": [
-                        {
-                            "label": "Service Status",
-                            "href": "https://status.flowfuse.com/"
-                        }
-                    ]
-                }
-            ],
-            "trailing": {
                 "links": [
                     {
-                        "label": "Request Support",
-                        "href": "/support/"
+                        "label": "Docs",
+                        "href": "/docs/"
+                    },
+                    {
+                        "label": "Free Templates",
+                        "href": "/blog/templates/"
+                    },
+                    {
+                        "label": "Node-RED Academy",
+                        "href": "https://node-red-academy.learnworlds.com/"
+                    },
+                    {
+                        "label": "Webinars",
+                        "href": "/webinars/"
+                    },
+                    {
+                        "label": "Blog",
+                        "href": "/blog/"
+                    },
+                    {
+                        "label": "Newsletter",
+                        "href": "/blog/#sign-up",
+                        "capture": {
+                            "event": "cta-blog-subscribe",
+                            "props": {
+                                "position": "footer"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "title": "Company",
+                "links": [
+                    {
+                        "label": "About Us",
+                        "href": "/about/"
+                    },
+                    {
+                        "label": "Handbook",
+                        "href": "/handbook/"
+                    },
+                    {
+                        "label": "Jobs",
+                        "href": "site:jobBoard"
+                    },
+                    {
+                        "label": "Partners",
+                        "href": "/partners/"
                     },
                     {
                         "label": "Contact Us",
                         "href": "/contact-us/"
                     }
                 ]
+            },
+            {
+                "title": "Trust & Support",
+                "links": [
+                    {
+                        "label": "Security",
+                        "href": "/platform/security/"
+                    },
+                    {
+                        "label": "Service Status",
+                        "href": "https://status.flowfuse.com/"
+                    },
+                    {
+                        "label": "Support",
+                        "href": "/support/"
+                    },
+                    {
+                        "label": "Community Forum",
+                        "href": "https://discourse.nodered.org/c/vendors/flowfuse/24/"
+                    },
+                    {
+                        "label": "GitHub",
+                        "href": "https://github.com/FlowFuse/flowfuse"
+                    }
+                ]
             }
-        }
+        ],
+        "legal": [
+            {
+                "label": "Privacy",
+                "href": "/privacy-policy/"
+            },
+            {
+                "label": "Terms",
+                "href": "/terms/"
+            }
+        ]
     }
 }

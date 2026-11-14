@@ -1,66 +1,53 @@
 <script setup>
-// The nav and footer links live in nuxt/data/chrome.json; edit them there.
+// The footer links live in nuxt/data/chrome.json; edit them there. The footer has its own
+// list rather than repeating the header's mega nav. It is a short doormat organised the
+// way a buyer evaluates: what the product is, why choose it, where to learn, who the
+// company is, and the trust and support links people look for at the bottom of a page.
 import chrome from '../data/chrome.json'
+import site from '../data/site.json'
 
 const resolveHref = useResolveHref()
 
 const onCaptureClick = (item) => {
     if (!item.capture || typeof window === 'undefined' || !window.capture) return
     window.capture(item.capture.event, item.capture.props)
-}
-</script>
+}</script>
 
 <template>
     <footer class="ff-footer bg-gray-100 w-full" data-nav-zone="footer">
-        <div class="pt-20 pb-12 px-6 max-w-screen-xl mx-auto">
-            <!-- Sections synced with the top nav: Platform / Solutions / Resources / Company -->
-            <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-12 text-sm">
-                <section v-for="sec in chrome.footer.sections" :key="sec.title" class="pt-5" :data-nav-section="sec.title">
-                    <p class="text-lg font-medium text-gray-900 mb-6">{{ sec.title }}</p>
-                    <div :class="sec.gridClasses">
-                        <div v-for="grp in sec.groups" :key="grp.title" :class="grp.classes">
-                            <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ grp.title }}</p>
-                            <ul class="flex flex-col gap-2.5">
-                                <li v-for="item in grp.links" :key="item.label"><a :href="resolveHref(item.href)" @click="onCaptureClick(item)">{{ item.label }}</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <!-- Company -->
-            <section class="mt-12 border-t border-gray-300 pt-9" data-nav-section="Company">
-                <!-- Mirrors the upper section's [2fr_3fr_1fr] tracks so the logo lines up
-                     under Platform, the three groups under Solutions' sub-columns, and the
-                     last group under Resources. -->
-                <div class="grid grid-cols-1 lg:grid-cols-[2fr_3fr_1fr] gap-x-8 gap-y-8 text-sm">
-                    <div>
-                        <a href="/" class="ff-logo-link ff-footer-logo block w-40 no-underline hover:no-underline" aria-label="FlowFuse home">
+        <div class="pt-16 pb-12 px-6 max-w-screen-xl mx-auto">
+            <!-- Brand block, then the link columns. No CTA button here: the header is
+                 sticky, so Talk to Us is already on screen at the bottom of every page. -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 text-sm">
+                <!-- Brand row: its own line above the columns, so six link columns get
+                     the full width and names like "Manufacturing Operations" fit. -->
+                <div class="col-span-2 sm:col-span-3 lg:col-span-6 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-x-12 gap-y-8 pb-8 border-b border-gray-200">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-3">
+                        <a href="/" class="ff-logo-link ff-footer-logo block w-40 shrink-0 no-underline hover:no-underline" aria-label="FlowFuse home">
                             <FlowFuseWordmark uid="footer" color="#1F2937" />
                         </a>
+                        <p class="text-gray-600 text-base">{{ site.messaging.tagLine }}</p>
                     </div>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
-                        <div v-for="(grp, i) in chrome.footer.company.grid" :key="i">
-                            <ul class="flex flex-col gap-2.5">
-                                <li v-for="item in grp.links" :key="item.label"><a :href="resolveHref(item.href)">{{ item.label }}</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <ul class="flex flex-col gap-2.5">
-                            <li v-for="item in chrome.footer.company.trailing.links" :key="item.label"><a :href="resolveHref(item.href)">{{ item.label }}</a></li>
-                        </ul>
-                    </div>
+                    <!-- Newsletter: the one low-commitment offer on the site, for visitors
+                         not ready to talk to sales. -->
+                    <FooterNewsletter />
                 </div>
-            </section>
-<!-- Legal + social bottom row -->
+                <section v-for="col in chrome.footer.columns" :key="col.title" :data-nav-section="col.title">
+                    <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ col.title }}</p>
+                    <ul class="flex flex-col gap-2.5">
+                        <li v-for="item in col.links" :key="item.label"><a :href="resolveHref(item.href)" @click="onCaptureClick(item)">{{ item.label }}</a></li>
+                    </ul>
+                </section>
+            </div>
+            <!-- Legal + social bottom row -->
             <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-gray-500" data-nav-section="Legal and social">
                 <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
                     <span>Copyright {{ new Date().getFullYear() }} FlowFuse Inc. All Rights Reserved.</span>
                     <span aria-hidden="true">&middot;</span>
-                    <a href="/privacy-policy/">Privacy</a>
-                    <span aria-hidden="true">&middot;</span>
-                    <a href="/terms/">Terms</a>
-                    <span aria-hidden="true">&middot;</span>
+                    <template v-for="item in chrome.footer.legal" :key="item.label">
+                        <a :href="item.href">{{ item.label }}</a>
+                        <span aria-hidden="true">&middot;</span>
+                    </template>
                     <a class="cursor-pointer" type="button" data-cc="show-preferencesModal">Cookie preferences</a>
                 </div>
                 <div class="flex flex-wrap items-center gap-x-4 gap-y-2">

@@ -1078,12 +1078,33 @@ h4:hover .header-anchor::before {
     }
 
     .ff-website header nav .ff-nav-chevron {
-        @apply block md:hidden transition-transform p-0 min-h-0 leading-none;
+        @apply block transition-transform p-0 min-h-0 leading-none;
     }
 
     /* Chevron rotation is tap-driven on mobile (.mobile-expanded, see below); it
        must NOT react to hover/focus, or a mouse at mobile width flips it without
-       opening the section. The chevron is md:hidden, so there is no desktop case. */
+       opening the section. On desktop the chevron is a small, muted marker that a
+       top-level item has a dropdown, and it flips while the panel is open, keyed
+       to aria-expanded (which AppHeader.vue keeps in step with hover, focus and
+       Escape) rather than :hover, so a keyboard-suppressed panel stays pointing down. */
+    @media (min-width: 768px) {
+        .ff-website header #nav-content > li.ff-nav-dropdown > span .ff-nav-chevron svg {
+            width: 0.875rem;
+            height: 0.875rem;
+            stroke-width: 2;
+            opacity: 0.7;
+            transition: transform 150ms ease, opacity 150ms ease;
+        }
+        .ff-website header #nav-content > li.ff-nav-dropdown > span[aria-expanded="true"] .ff-nav-chevron svg {
+            transform: rotate(180deg);
+            opacity: 1;
+        }
+    }
+    @media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+        .ff-website header #nav-content > li.ff-nav-dropdown > span .ff-nav-chevron svg {
+            transition: none;
+        }
+    }
 
     .ff-website header #nav-content {
         /* Mobile drawer. `top` is set on open (base.njk) to the header's live
@@ -3071,6 +3092,31 @@ lite-youtube::before {
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu li.nav-indent > a {
     padding-left: 1rem !important;
 }
+/* See hasDescriptions() in AppHeader.vue: stack this column's links on their own
+   rather than on the dropdown's shared row grid. */
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu.ff-sub-free {
+    display: flex !important;
+    flex-direction: column;
+    align-self: start;
+}
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a > svg {
+    flex-shrink: 0;
+}
+/* Optional one-line description under a mega-menu link (chrome.json `description`),
+   used for product names that do not explain themselves. */
+.ff-website header .ff-nav-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.125rem;
+}
+.ff-website header .ff-nav-desc {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--color-gray-500);
+    font-weight: 400;
+}
 /* Mobile accordion: eyebrows indent to the link icon column, moderate row
    height, and tap feedback via a text-hugging underline (the desktop
    animated line needs a text span the link markup does not have) */
@@ -3164,17 +3210,17 @@ lite-youtube::before {
     }
 }
 
-/* De-emphasize "See all ..." index links in the mega panels and footer.
-   Keyed on the index-page hrefs so it needs no markup changes. */
-/* Rest colour is carried by the inner .ff-nav-label span (the arrow icon uses
-   the anchor's currentColor), so both must be de-emphasized. */
+/* "See All ..." index links in the mega panels take the brand colour, so they
+   read as a link to more rather than as a disabled item. Keyed on the
+   index-page hrefs so it needs no markup changes. Integrations is a regular
+   menu item now, not a See All link, so it is deliberately not listed here.
+   Rest colour is carried by the inner .ff-nav-label span (the arrow icon uses
+   the anchor's currentColor), so both are set. */
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"],
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"],
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"],
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"] .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"] .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"] .ff-nav-label {
-    color: #6b7280;
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"] .ff-nav-label {
+    color: var(--color-indigo-600);
 }
 /* Free Trial keeps its brand-purple colour at rest (it carries a .ff-nav-label
    for the animated underline, which would otherwise render it grey). */
@@ -3216,23 +3262,8 @@ lite-youtube::before {
    which also colors the currentColor underline */
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover,
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"]:hover,
 .ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/use-cases/"]:hover .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover .ff-nav-label,
-.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/integrations/"]:hover .ff-nav-label {
-    color: var(--color-indigo-700);
-}
-.ff-website footer.ff-footer a[href="/use-cases/"],
-.ff-website footer.ff-footer a[href="/industries/"],
-.ff-website footer.ff-footer a[href="/integrations/"] {
-    color: #6b7280;
-}
-/* ...but on hover they take the brand purple, so text + the currentColor
-   underline both go indigo (this base rule is unlayered and otherwise beats
-   the footer :hover colour). */
-.ff-website footer.ff-footer a[href="/use-cases/"]:hover,
-.ff-website footer.ff-footer a[href="/industries/"]:hover,
-.ff-website footer.ff-footer a[href="/integrations/"]:hover {
+.ff-website header .ff-nav-dropdown > ul.mega ul.sub-menu a[href="/industries/"]:hover .ff-nav-label {
     color: var(--color-indigo-700);
 }
 /* Mobile nav: sections expand on tap only (hover neutralized below md) */
@@ -3865,5 +3896,34 @@ lite-youtube::before {
     .ff-prompts__dot--active,
     .ff-prompts__dot--active:hover {
         transform: none;
+    }
+}
+
+/* Keyboard: a visible focus ring on the menu triggers, and Escape (which adds
+   .ff-nav-suppressed in AppHeader.vue) closes a panel even though focus stays
+   inside the item. */
+.ff-website header #nav-content > li > span:focus-visible {
+    outline: 2px solid var(--color-indigo-600);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+@media (min-width: 768px) {
+    .ff-website header .ff-nav-dropdown.ff-nav-suppressed > ul.mega {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: none !important;
+    }
+}
+
+/* Current section: the top-level item the page belongs to keeps the brand colour
+   and its underline, so visitors can see where they are (set in AppHeader.vue). */
+.ff-website header #nav-content > li.ff-nav-current > a > .ff-nav-label,
+.ff-website header #nav-content > li.ff-nav-current > span > .ff-nav-label {
+    color: var(--color-indigo-600);
+}
+@media (min-width: 768px) {
+    .ff-website header #nav-content > li.ff-nav-current > a > .ff-nav-label::after,
+    .ff-website header #nav-content > li.ff-nav-current > span > .ff-nav-label::after {
+        transform: scaleX(1);
     }
 }
