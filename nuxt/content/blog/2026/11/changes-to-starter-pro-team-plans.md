@@ -67,7 +67,7 @@ If your flows feed production systems or anything people rely on day to day, ple
 
 ## Will I lose my data?
 
-No. Pausing your account does not delete your data. Your flows, configuration, and account data stay intact. If you need a copy of your data while your account is paused, contact [support@flowfuse.com](mailto:support@flowfuse.com).
+Not immediately - but paused accounts will be removed January 1st, 2028. Until then, pausing your account does not delete your data. Your flows, configuration, and account data stay intact. If you need a copy of your data while your account is paused, contact [support@flowfuse.com](mailto:support@flowfuse.com).
 
 ## I'm on FlowFuse Self-Hosted. Does this apply to me?
 
