@@ -374,15 +374,7 @@ export default defineNuxtConfig({
                 { rel: 'stylesheet', href: '/css/style.css' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-                // Loaded without blocking first paint. The file is only @font-face rules with
-                // font-display: swap, so text already paints in the fallback first and swaps
-                // when Heebo arrives; holding the whole page back for this third-party request
-                // (~0.9s on throttled mobile) bought nothing. media="print" + onload is the
-                // standard non-blocking pattern; the <link> keeps its place before the Nuxt
-                // CSS, so @font-face precedence is unchanged. The <noscript> covers no-JS.
-                // KaTeX's stylesheet is added per page by useKatexStyles(), not here.
                 { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap' },
-                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap', media: 'print', onload: "this.media='all'" },
                 { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
                 { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
                 { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
@@ -397,6 +389,11 @@ export default defineNuxtConfig({
                 { name: 'google-site-verification', content: 'KQ654UVVaVEEdt8WzyAWmMFW5CwTW9gNp6LdZOiYiAc' },
             ],
             script: [
+                // Script-inserted so these stylesheets don't block first paint.
+                {
+                    textContent: "(function(){var s=document.currentScript;function add(h,i){var l=document.createElement('link');l.rel='stylesheet';l.href=h;if(i){l.integrity=i;l.crossOrigin='anonymous'}s.parentNode.insertBefore(l,s)}add('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');add('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css','sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+')})()",
+                    tagPriority: 'critical',
+                },
                 // Studio's GitHub sign-in comes back to /__nuxt_studio/auth/github with
                 // ?code=&iss=&state=, and that handler finishes by redirecting to the page you
                 // asked to edit. This host appends the request's own query string to every
@@ -620,13 +617,7 @@ export default defineNuxtConfig({
     },
 
     hooks: {
-        // Nuxt adds a <link rel="prefetch"> to every page's <head> for each lazily
-        // imported chunk (on the homepage ~290 KB, one chunk alone 249 KB), so the browser
-        // starts downloading code for other pages while this one is still loading. Those
-        // requests compete with the stylesheets and scripts the page needs to paint, and
-        // Lighthouse counts every request started before first paint against FCP/LCP
-        // (FCP 3.9s -> 2.8s on throttled mobile with them blocked). The chunks still load
-        // on demand when a route or lazy component actually needs them.
+        // Don't prefetch other pages' chunks on load.
         'build:manifest' (manifest) {
             for (const chunk of Object.values(manifest)) chunk.prefetch = false
         },
