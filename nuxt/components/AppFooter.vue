@@ -21,8 +21,8 @@ const onCaptureClick = (item) => {
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 text-sm">
                 <!-- Brand row: its own line above the columns, so six link columns get
                      the full width and names like "Manufacturing Operations" fit. -->
-                <div class="col-span-2 sm:col-span-3 lg:col-span-6 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-x-12 gap-y-8 pb-8 border-b border-gray-200">
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-x-6 gap-y-3">
+                <div class="col-span-2 sm:col-span-3 lg:col-span-6 flex flex-col md:flex-row md:items-start md:justify-between gap-x-12 gap-y-8 pb-8 border-b border-gray-200">
+                    <div class="flex flex-col lg:flex-row lg:items-center gap-x-6 gap-y-3 min-w-0">
                         <a href="/" class="ff-logo-link ff-footer-logo block w-40 shrink-0 no-underline hover:no-underline" aria-label="FlowFuse home">
                             <FlowFuseWordmark uid="footer" color="#1F2937" />
                         </a>

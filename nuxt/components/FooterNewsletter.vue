@@ -21,21 +21,7 @@ const css = `
 .ff-footer-newsletter .hs-form .hs_email .hs-input::placeholder { color: #9ca3af; }
 .ff-footer-newsletter .hs-form .hs_email .hs-input:focus { border-color: #4f46e5; box-shadow: 0 0 0 1px #4f46e5; }
 .ff-footer-newsletter .hs-form .hs_email .hs-input.invalid.error { border-color: #dc2626; }
-.ff-footer-newsletter .hs-form .legal-consent-container { order: 8; flex: 0 0 100%; margin-top: 8px; font-size: 12px; line-height: 1.6; color: #6b7280; }
-.ff-footer-newsletter .hs-form .legal-consent-container p { margin: 0 0 4px; font-size: 12px !important; color: inherit !important; }
-.ff-footer-newsletter .hs-form .legal-consent-container span { font-size: 12px !important; color: inherit !important; font-family: inherit !important; }
-.ff-footer-newsletter .hs-form .legal-consent-container a { color: inherit; text-decoration: underline; }
-.ff-footer-newsletter .hs-form .legal-consent-container ul { list-style: none; margin: 0 0 4px; padding: 0; }
-.ff-footer-newsletter .hs-form .legal-consent-container .hs-form-booleancheckbox-display { display: flex; align-items: flex-start; gap: 6px; margin: 0; cursor: pointer; }
-.ff-footer-newsletter .hs-form .legal-consent-container input[type=checkbox] { width: 14px; height: 14px; margin: 2px 0 0; flex: 0 0 auto; accent-color: #4f46e5; }
-.ff-footer-newsletter .hs-form .legal-consent-container .field { margin: 0; }
-.ff-footer-newsletter .hs-form .legal-consent-container label span { margin: 0 !important; padding: 0 !important; }
-/* Three groups with room between them: the consent text, the checkbox, then the two
-   privacy sentences run together as one paragraph instead of two stacked lines. */
-.ff-footer-newsletter .hs-form .legal-consent-container .hs-richtext { margin: 0 0 10px; }
-.ff-footer-newsletter .hs-form .legal-consent-container .inputs-list { margin: 0 0 10px; }
-.ff-footer-newsletter .hs-form .legal-consent-container div + .hs-richtext, .ff-footer-newsletter .hs-form .legal-consent-container .hs-richtext + .hs-richtext { display: inline; margin: 0; }
-.ff-footer-newsletter .hs-form .legal-consent-container div + .hs-richtext::after { content: " "; }
+.ff-footer-newsletter .hs-form .legal-consent-container { display: none; }
 /* The captcha is invisible; its inline badge is hidden (Google allows this when the form
    carries the reCAPTCHA notice, which the line under the embed does). visibility, not
    display: none, so the captcha still runs. */
@@ -64,12 +50,13 @@ function onReady(form: HTMLFormElement) {
 </script>
 
 <template>
-  <section class="ff-footer-newsletter w-full lg:max-w-md" data-nav-section="Newsletter">
+  <section class="ff-footer-newsletter w-full md:w-[26rem] md:shrink-0" data-nav-section="Newsletter">
     <p class="font-semibold text-gray-900">Get the monthly newsletter</p>
     <p class="text-gray-600 mt-1 mb-4">Product updates, guides and webinars, once a month.</p>
     <HubSpotForm :form-id="FORM_ID" cta="cta-blog-subscribe" reference="footer" :css="css" @ready="onReady" />
-    <p class="mt-2 text-xs text-gray-500">
-      This site is protected by reCAPTCHA and the Google
+    <p class="mt-3 text-xs text-gray-500">
+      You can unsubscribe at any time. Read our <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
+      This form is protected by reCAPTCHA, and Google's
       <a href="https://policies.google.com/privacy" class="underline" target="_blank" rel="noopener">Privacy Policy</a> and
       <a href="https://policies.google.com/terms" class="underline" target="_blank" rel="noopener">Terms of Service</a> apply.
     </p>
