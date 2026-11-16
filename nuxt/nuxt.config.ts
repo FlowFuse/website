@@ -374,12 +374,22 @@ export default defineNuxtConfig({
                 { rel: 'stylesheet', href: '/css/style.css' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap' },
-                { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css', integrity: 'sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+', crossorigin: 'anonymous' },
+                // Loaded without blocking first paint. The file is only @font-face rules with
+                // font-display: swap, so text already paints in the fallback first and swaps
+                // when Heebo arrives; holding the whole page back for this third-party request
+                // (~0.9s on throttled mobile) bought nothing. media="print" + onload is the
+                // standard non-blocking pattern; the <link> keeps its place before the Nuxt
+                // CSS, so @font-face precedence is unchanged. The <noscript> covers no-JS.
+                // KaTeX's stylesheet is added per page by useKatexStyles(), not here.
+                { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap' },
+                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap', media: 'print', onload: "this.media='all'" },
                 { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
                 { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
                 { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
                 { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#aa4444' },
+            ],
+            noscript: [
+                { innerHTML: '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap">' },
             ],
             meta: [
                 { name: 'msapplication-TileColor', content: '#00aba9' },
@@ -610,6 +620,16 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        // Nuxt adds a <link rel="prefetch"> to every page's <head> for each lazily
+        // imported chunk (on the homepage ~290 KB, one chunk alone 249 KB), so the browser
+        // starts downloading code for other pages while this one is still loading. Those
+        // requests compete with the stylesheets and scripts the page needs to paint, and
+        // Lighthouse counts every request started before first paint against FCP/LCP
+        // (FCP 3.9s -> 2.8s on throttled mobile with them blocked). The chunks still load
+        // on demand when a route or lazy component actually needs them.
+        'build:manifest' (manifest) {
+            for (const chunk of Object.values(manifest)) chunk.prefetch = false
+        },
         // `meta` is reserved by @nuxt/content - it holds the <!--more--> excerpt - so a
         // collection that declares its own `meta` schema field silently loses everything
         // under it. These collections' frontmatter still writes "meta:", so rewrite the key
