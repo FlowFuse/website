@@ -128,7 +128,7 @@ const SECURITY = [
 
 // Rendered by <Faq> and repeated as FAQ structured data below.
 const FAQ = [
-    { question: 'What is FlowFuse?', answer: 'FlowFuse solves hard operational problems for manufacturers, asset operators and the companies that service industrial equipment, using an industrial application platform built on open-source [Node-RED](/node-red/). Our engineers build your first solution alongside your team. Together we prove it at one site, then deploy it to the rest, faster with each one.' },
+    { question: 'What is FlowFuse?', answer: 'FlowFuse solves hard operational problems for manufacturers, asset operators and the companies that service industrial equipment, by combining an industrial application platform built on open-source [Node-RED](/node-red/), reusable solution components, and hands-on engineering. Our engineers help your team get the first solution running at one site. The platform and the solution are what stay, and they deploy to the rest of your sites, faster with each one.' },
     { question: 'What is the Foundation Partnership?', answer: 'It is how your first solution gets started. FlowFuse engineers work with your team to get it running on the equipment you already have, and to set up the foundation it runs on: integrations, data models, deployment patterns and governance, all in the FlowFuse platform. Every later site reuses that foundation, so your team rolls the solution out site by site. [See how the Foundation Partnership works](/build-with-us/).' },
     { question: 'What kinds of problems does FlowFuse solve?', answer: 'Problems that repeat across your plants: scrap and rework, late orders, unplanned stops and the cost behind them. We start with the one you are measured on. See how other teams solved theirs in our [customer stories](/customer-stories/).' },
     { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms. See the full list of [integrations](/integrations/).' },
@@ -159,7 +159,7 @@ useSchemaOrg([
     <div class="max-w-screen-xl mx-auto grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-10 md:gap-6 items-center">
       <div class="max-md:text-center relative z-10">
         <p class="home-eyebrow text-red-300">Industrial solutions for multi-site operations</p>
-        <h1 class="text-balance text-white font-medium text-4xl md:text-5xl leading-[1.08] mt-5 mb-0">Deploy proven solutions across every site, faster with each one.</h1>
+        <h1 class="text-balance text-white font-medium text-4xl md:text-5xl leading-[1.08] mt-5 mb-0">Solve the operational problems your existing systems can’t.</h1>
         <p class="text-indigo-100 text-lg md:text-xl font-light mt-6 mb-0 max-w-lg max-md:mx-auto">
           FlowFuse combines industrial software, reusable solution patterns, and hands-on engineering to solve critical manufacturing problems using the equipment and systems you already have. Start with one high-value solution, then scale what works across your operations.
         </p>
@@ -310,7 +310,7 @@ useSchemaOrg([
   </section>
 
   <!-- 4. Metrics of success, then ways in by industry and team -->
-  <section class="home-band w-full px-6 py-20 md:py-24">
+  <section class="home-band home-defer w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">Results</p>
       <h2 class="text-balance mt-4 mb-12 md:text-5xl max-md:text-center">Measured on the line, <span class="text-indigo-600">not in a report.</span></h2>
@@ -340,7 +340,7 @@ useSchemaOrg([
   </section>
 
   <!-- 5. Social proof: customer quotes -->
-  <section class="w-full px-6 py-20 md:py-24">
+  <section class="home-defer w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto">
       <p class="home-eyebrow text-red-500 max-md:text-center">Customers</p>
       <h2 class="text-balance mt-4 mb-10 md:text-5xl max-md:text-center">Real results from <span class="text-indigo-600">industrial teams</span></h2>
@@ -349,7 +349,7 @@ useSchemaOrg([
   </section>
 
   <!-- 5b. Security -->
-  <section class="home-band w-full px-6 py-20 md:py-24">
+  <section class="home-band home-defer w-full px-6 py-20 md:py-24">
     <div class="max-w-screen-lg mx-auto grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-14 items-center">
       <div class="max-md:text-center">
         <p class="home-eyebrow text-red-500">Security</p>
@@ -384,7 +384,7 @@ useSchemaOrg([
   </section>
 
   <!-- FAQ -->
-  <section class="w-full px-6 pt-20">
+  <section class="home-defer w-full px-6 pt-20">
     <div class="max-w-screen-lg mx-auto">
       <h2 class="mb-1 md:text-5xl max-md:text-center">Frequently asked <span class="text-indigo-600">questions</span></h2>
       <div class="-mt-20">
@@ -427,6 +427,13 @@ useSchemaOrg([
   background-position: center top;
   border-top: 1px solid #e0e7ff;
   border-bottom: 1px solid #e0e7ff;
+}
+/* Sections well below the first screen: the browser skips their style, layout and paint
+   until they come near the viewport. The intrinsic size is a placeholder height so the
+   scrollbar doesn't jump; `auto` makes the browser remember the real height once seen. */
+.home-defer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }
 .home-after-hero {
   background: linear-gradient(to bottom, #eef2ff 0%, #ffffff 100%);
