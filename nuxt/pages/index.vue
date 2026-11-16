@@ -189,9 +189,9 @@ useSchemaOrg([
     <div class="max-w-screen-lg mx-auto">
       <div class="max-md:text-center">
         <p class="home-eyebrow text-red-500">Your outcomes</p>
-        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Every solution matches <br class="max-md:hidden"><span class="text-indigo-600">your business outcome.</span></h2>
+        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Better resuts, faster deployment, <br class="max-md:hidden"><span class="text-indigo-600">proven in production.</span></h2>
         <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-xl max-md:mx-auto">
-          You set the outcome. A proven solution, running on the FlowFuse platform, delivers it.
+          Build an industrial application foundation - and then improve quality, delivery, cost, and uptime across all of your sites.
         </p>
       </div>
       <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 rounded-2xl border border-gray-200 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(67,56,202,0.12)] overflow-hidden">
