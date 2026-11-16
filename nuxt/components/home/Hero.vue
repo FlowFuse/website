@@ -50,6 +50,20 @@ const anchor = computed(() => {
 
 const hovering = ref(false)
 
+// Scrolled away, the hero stops on the step it was showing, the same way hovering
+// pauses it, so its step clock and callout animations stop costing frames off screen.
+const root = ref<HTMLElement | null>(null)
+const offscreen = ref(false)
+let observer: IntersectionObserver | undefined
+onMounted(() => {
+    if (!root.value || typeof IntersectionObserver === 'undefined') return
+    observer = new IntersectionObserver((entries) => {
+        offscreen.value = !entries[entries.length - 1].isIntersecting
+    })
+    observer.observe(root.value)
+})
+onBeforeUnmount(() => observer?.disconnect())
+
 function advance () {
     current.value = (current.value + 1) % STEPS.length
 }
@@ -61,7 +75,7 @@ const BARS = [22, 25, 24, 26, 23, 8, 6, 22, 25, 24]
 </script>
 
 <template>
-  <div class="relative" :class="{ paused: hovering }" @mouseenter="hovering = true" @mouseleave="hovering = false">
+  <div ref="root" class="relative" :class="{ paused: hovering || offscreen }" @mouseenter="hovering = true" @mouseleave="hovering = false">
     <div class="relative" aria-hidden="true">
       <HomeIsoArt scene="hero" variant="dark" animated :active="step.group" class="w-full" />
 
