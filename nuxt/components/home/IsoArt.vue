@@ -30,13 +30,30 @@ const strokeWidth = computed(() => {
 function traceable (role: string) {
     return role !== 'flow' && role !== 'dot'
 }
+
+// Pause every animation in the scene while it is off screen. The flow lines and pulses
+// loop forever and animate SVG stroke properties the browser cannot hand to the GPU, so
+// each running scene costs style and paint work on every frame, seen or not. Scenes
+// render running (server-side too); the observer only pauses them once they leave view.
+const svg = ref<SVGSVGElement | null>(null)
+const offscreen = ref(false)
+let observer: IntersectionObserver | undefined
+onMounted(() => {
+    if (!svg.value || typeof IntersectionObserver === 'undefined') return
+    observer = new IntersectionObserver((entries) => {
+        offscreen.value = !entries[entries.length - 1].isIntersecting
+    }, { rootMargin: '100px 0px' })
+    observer.observe(svg.value)
+})
+onBeforeUnmount(() => observer?.disconnect())
 </script>
 
 <template>
   <svg
+      ref="svg"
       :viewBox="art.viewBox"
       class="iso-art"
-      :class="[`iso-${props.variant}`, { 'iso-animated': props.animated }]"
+      :class="[`iso-${props.variant}`, { 'iso-animated': props.animated, 'iso-paused': offscreen }]"
       :style="props.animated ? { '--sw': strokeWidth } : undefined"
       aria-hidden="true"
       focusable="false"
@@ -161,6 +178,9 @@ path.r-none:not([d$='Z']) { fill: none; }
 }
 
 @keyframes iso-draw { to { stroke-dashoffset: 0; } }
+
+/* Off screen: hold every animation where it is (see the observer in the script) */
+.iso-paused, .iso-paused * { animation-play-state: paused !important; }
 
 @media (prefers-reduced-motion: reduce) {
   .r-flow, .r-dot.t-accent { animation: none; }
