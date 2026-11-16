@@ -71,7 +71,7 @@ No. Pausing your account does not delete your data. Your flows, configuration, a
 
 ## I'm on FlowFuse Self-Hosted. Does this apply to me?
 
-Yes. Self-Hosted customers on Starter, Pro, or Team licenses need to contact [support@flowfuse.com](mailto:support@flowfuse.com) before December 31, 2026 as well.
+Yes. Self-Hosted customers on Enterprise or Team licenses need to contact [support@flowfuse.com](mailto:support@flowfuse.com) before December 31, 2026 as well.
 
 Your flows and data live on your own infrastructure, so they stay with you.
 
