@@ -141,8 +141,8 @@ const FAQ = [
 useHead({ titleTemplate: '%s' })
 useSeoMeta({
     title: 'FlowFuse | Deploy Proven Industrial Solutions at Every Site',
-    description: 'FlowFuse combines industrial software, reusable solution patterns and hands-on engineering to solve critical manufacturing problems with the equipment and systems you already have.',
-    ogDescription: 'FlowFuse combines industrial software, reusable solution patterns and hands-on engineering to solve critical manufacturing problems with the equipment and systems you already have.',
+    description: 'FlowFuse delivers proven solutions to critical manufacturing problems using the equipment you already run. Our software, reusable patterns, and engineers get the first one live, and every site after starts from that foundation.',
+    ogDescription: 'FlowFuse delivers proven solutions to critical manufacturing problems using the equipment you already run. Our software, reusable patterns, and engineers get the first one live, and every site after starts from that foundation.',
     keywords: 'Industrial Solutions, Node-RED, Industrial Applications, IIoT, Multi-site Manufacturing, Edge, Industrial Automation, Industry 4.0',
     ogUrl: 'https://flowfuse.com/',
     twitterSite: '@FlowFuseinc',
@@ -161,7 +161,7 @@ useSchemaOrg([
         <p class="home-eyebrow text-red-300">Industrial solutions for multi-site operations</p>
         <h1 class="text-balance text-white font-medium text-4xl md:text-5xl leading-[1.08] mt-5 mb-0">Solve the operational problems your existing systems can’t.</h1>
         <p class="text-indigo-100 text-lg md:text-xl font-light mt-6 mb-0 max-w-lg max-md:mx-auto">
-          FlowFuse combines industrial software, reusable solution patterns, and hands-on engineering to solve critical manufacturing problems using the equipment and systems you already have. Start with one high-value solution, then scale what works across your operations.
+          FlowFuse delivers proven solutions to critical manufacturing problems using the equipment you already run. Our software, reusable patterns, and engineers get the first one live, and every site after starts from that foundation.
         </p>
         <div class="flex flex-wrap gap-4 items-center mt-10 max-md:justify-center">
           <CtaBookDemo variant="highlight" position="hero" />
@@ -191,7 +191,7 @@ useSchemaOrg([
         <p class="home-eyebrow text-red-500">Your outcomes</p>
         <h2 class="text-balance mt-4 mb-0 md:text-5xl">Better resuts, faster deployment, <br class="max-md:hidden"><span class="text-indigo-600">proven in production.</span></h2>
         <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-xl max-md:mx-auto">
-          Build an industrial application foundation - and then improve quality, delivery, cost, and uptime across all of your sites.
+          Leverage an industrial application foundation - and then improve quality, delivery, cost, and uptime across all of your sites.
         </p>
       </div>
       <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 rounded-2xl border border-gray-200 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(67,56,202,0.12)] overflow-hidden">
