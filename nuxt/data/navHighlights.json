@@ -16,8 +16,8 @@
         "image": "/images/education/education_hero.jpg"
     },
     "company": {
-        "title": "Partner with FlowFuse",
-        "link": "/partners/",
-        "image": "/images/stories/arch_systems.jpeg"
+        "title": "Meet the team behind FlowFuse",
+        "link": "/about/",
+        "image": "/images/about/about.png"
     }
 }
