@@ -80,6 +80,8 @@ useSchemaOrg([
         mainEntity: page.value.structuredData.faq.map(item => defineQuestion({ name: item.question, acceptedAnswer: { '@type': 'Answer', text: faqAnswerText(item.answer) } })),
     } : undefined),
 ])
+
+useKatexStyles()
 </script>
 
 <template>
