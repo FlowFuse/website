@@ -1,7 +1,7 @@
 ---
 title: React to Tab Changes in Dashboard
 description: In FlowFuse Dashboard, ui-control now sends a message when someone switches tab on a page that uses the Tabs layout.
-date: 2026-11-11 12:00:00
+date: 2026-11-16 12:00:00
 release: "3.3"
 authors: ["noley-holland"]
 tags:
@@ -33,4 +33,4 @@ To get started, set the `ui-control` node's **Output** to **Page/Tab Change Even
 
 You also get a message for the first tab when the page opens, so your flow always knows which tab is showing. Existing flows that handle the `change` event for pages keep working as before.
 
-This feature is available to all FlowFuse Dashboard users from v1.37.0, on FlowFuse Cloud and Self Hosted.
+This feature is available to all FlowFuse Dashboard users from v1.37.0, wherever you run Node-RED.
