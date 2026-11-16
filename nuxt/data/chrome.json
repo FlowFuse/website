@@ -312,11 +312,6 @@
                         "listClasses": "row-span-3 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
-                                "label": "Partners",
-                                "href": "/partners/",
-                                "icon": "user-group"
-                            },
-                            {
                                 "label": "Contact Us",
                                 "href": "/contact-us/",
                                 "icon": "mail"
