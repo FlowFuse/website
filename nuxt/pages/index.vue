@@ -129,7 +129,7 @@ const SECURITY = [
 // Rendered by <Faq> and repeated as FAQ structured data below.
 const FAQ = [
     { question: 'What is FlowFuse?', answer: 'FlowFuse solves hard operational problems for manufacturers, asset operators and the companies that service industrial equipment, using an industrial application platform built on open-source [Node-RED](/node-red/). Our engineers build your first solution alongside your team. Together we prove it at one site, then deploy it to the rest, faster with each one.' },
-    { question: 'What is the Foundation Partnership?', answer: 'FlowFuse engineers build your first solution with your team, on the equipment you already run. What they build becomes the foundation every later site reuses, and we roll it out with your team, site by site. [See how the Foundation Partnership works](/build-with-us/).' },
+    { question: 'What is the Foundation Partnership?', answer: 'It is how your first solution gets started. FlowFuse engineers work with your team to get it running on the equipment you already have, and to set up the foundation it runs on: integrations, data models, deployment patterns and governance, all in the FlowFuse platform. Every later site reuses that foundation, so your team rolls the solution out site by site. [See how the Foundation Partnership works](/build-with-us/).' },
     { question: 'What kinds of problems does FlowFuse solve?', answer: 'Problems that repeat across your plants: scrap and rework, late orders, unplanned stops and the cost behind them. We start with the one you are measured on. See how other teams solved theirs in our [customer stories](/customer-stories/).' },
     { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms. See the full list of [integrations](/integrations/).' },
     { question: 'Who owns the solution once it is built?', answer: 'You do. Everything we build together runs in your FlowFuse environment, with full version history, so your team can change it, extend it and roll it out without waiting on us. It is built on open-source Node-RED, so nothing is locked away.' },
@@ -141,8 +141,8 @@ const FAQ = [
 useHead({ titleTemplate: '%s' })
 useSeoMeta({
     title: 'FlowFuse | Deploy Proven Industrial Solutions at Every Site',
-    description: 'FlowFuse builds the first solution with your team on the equipment you already run, proves it at one site, and deploys it to the rest, faster with each one.',
-    ogDescription: 'FlowFuse builds the first solution with your team on the equipment you already run, proves it at one site, and deploys it to the rest, faster with each one.',
+    description: 'FlowFuse combines industrial software, reusable solution patterns and hands-on engineering to solve critical manufacturing problems with the equipment and systems you already have.',
+    ogDescription: 'FlowFuse combines industrial software, reusable solution patterns and hands-on engineering to solve critical manufacturing problems with the equipment and systems you already have.',
     keywords: 'Industrial Solutions, Node-RED, Industrial Applications, IIoT, Multi-site Manufacturing, Edge, Industrial Automation, Industry 4.0',
     ogUrl: 'https://flowfuse.com/',
     twitterSite: '@FlowFuseinc',
@@ -161,7 +161,7 @@ useSchemaOrg([
         <p class="home-eyebrow text-red-300">Industrial solutions for multi-site operations</p>
         <h1 class="text-balance text-white font-medium text-4xl md:text-5xl leading-[1.08] mt-5 mb-0">Deploy proven solutions across every site, faster with each one.</h1>
         <p class="text-indigo-100 text-lg md:text-xl font-light mt-6 mb-0 max-w-lg max-md:mx-auto">
-          The fastest gains come from using the equipment you already own. We build the solution with your team to get more from the lines and assets you run today, without replacing them.
+          FlowFuse combines industrial software, reusable solution patterns, and hands-on engineering to solve critical manufacturing problems using the equipment and systems you already have. Start with one high-value solution, then scale what works across your operations.
         </p>
         <div class="flex flex-wrap gap-4 items-center mt-10 max-md:justify-center">
           <CtaBookDemo variant="highlight" position="hero" />
@@ -191,7 +191,7 @@ useSchemaOrg([
         <p class="home-eyebrow text-red-500">Your outcomes</p>
         <h2 class="text-balance mt-4 mb-0 md:text-5xl">Every solution matches <br class="max-md:hidden"><span class="text-indigo-600">your business outcome.</span></h2>
         <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-xl max-md:mx-auto">
-          You set the outcome. We build the solution that delivers it.
+          You set the outcome. A proven solution, running on the FlowFuse platform, delivers it.
         </p>
       </div>
       <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 rounded-2xl border border-gray-200 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(67,56,202,0.12)] overflow-hidden">
@@ -260,7 +260,7 @@ useSchemaOrg([
         <p class="home-eyebrow text-red-500 max-md:text-center">The Foundation Partnership</p>
         <h3 class="text-balance mt-4 mb-0 text-3xl md:text-4xl font-medium text-gray-800 max-md:text-center max-w-3xl">The first site builds the foundation. <span class="text-indigo-600">Every site after starts on it.</span></h3>
         <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-2xl max-md:text-center max-md:mx-auto">
-          FlowFuse engineers build your first solution alongside your team, on the equipment you already run. What they build is more than one project. It's the foundation every later site reuses, so each rollout has less left to build.
+          Our engineers work alongside your team to get the first solution running quickly and to set up the foundation underneath it. That foundation lives in the FlowFuse platform, built from reusable solution components, so every later site starts on it and each rollout has less left to build.
         </p>
 
         <div class="mt-12 rounded-2xl home-dark px-6 pt-10 pb-6 md:px-10">
@@ -398,7 +398,7 @@ useSchemaOrg([
     <div class="home-cta max-w-screen-lg mx-auto rounded-2xl px-6 py-16 md:py-20 text-center">
      <div class="max-w-3xl mx-auto">
       <h2 class="text-balance text-white md:text-5xl mt-0">Bring us the problem that repeats across your sites.</h2>
-      <p class="text-indigo-100 font-light text-lg md:text-xl mt-6 mb-0">We'll build the first one with you, prove it at one site, and roll it out to the rest on the same foundation.</p>
+      <p class="text-indigo-100 font-light text-lg md:text-xl mt-6 mb-0">Start with one high-value solution, prove it at one site, and roll it out to the rest on the same foundation.</p>
       <div class="flex flex-wrap gap-4 items-center justify-center mt-10">
         <CtaBookDemo variant="highlight" position="get-started" />
         <!-- Not ready to talk? A lighter next step than the one the page already offered twice -->
