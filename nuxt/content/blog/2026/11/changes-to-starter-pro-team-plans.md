@@ -59,7 +59,7 @@ We'll pause your account on January 1, 2027.
 When we pause your account:
 
 - **Hosted instances** stop running and can't be restarted. Anything that depends on them, such as dashboards, HTTP endpoints, and integrations with other systems, stops too.
-- **Remote instances** keep running on your devices, but you can't manage them from FlowFuse. If a device loses its connection, it won't reconnect.
+- **Remote instances** keep running on your devices, but you can't manage them from FlowFuse.
 - **Exporting your data** requires contacting [support@flowfuse.com](mailto:support@flowfuse.com).
 - **Billing stops.** We won't charge you while your account is paused.
 
