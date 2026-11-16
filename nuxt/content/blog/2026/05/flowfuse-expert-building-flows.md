@@ -13,8 +13,6 @@ tags:
     - ai
 cta:
     type: sign-up
-    title: Try FlowFuse Expert on your team
-    description: FlowFuse Expert Application Building is in open beta on FlowFuse Cloud, no request needed. Sign up and start building.
 tldr: "FlowFuse Expert can now build complete Node-RED applications from a natural language description, wiring nodes on the canvas in real time. Before building, Expert reads your installed palette, existing canvas state, node configurations, and runtime debug data to produce output that matches your actual environment. The feature is in open beta on FlowFuse Cloud (all tiers) and Self-Hosted Enterprise, and works on both Hosted and Remote Instances."
 ---
 
@@ -40,7 +38,7 @@ The result is output you can trust to match what you expect, so you reach your i
 
 ## Get started in two minutes
 
-FlowFuse Expert is included in Edge, Hub and Fleet on FlowFuse Cloud, with no request needed. It is also available on self-hosted installations with a FlowFuse license; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up. If you don't already have a FlowFuse account, [sign up](https://app.flowfuse.com/account/create) first.
+FlowFuse Expert is included in Edge, Hub and Fleet on FlowFuse Cloud, with no request needed. It is also available on self-hosted installations with a FlowFuse license; [contact us](/contact-us/?subject=FlowFuse%20Expert%20Application%20Building) to get it set up.
 
 Once enabled, open the editor and [find the FlowFuse Expert chat](/docs/user/expert/chat/#opening-the-chat-interface). The chat is our integrated AI across the whole suite, so you'll find it everywhere from FlowFuse to Node-RED Editor. 
 

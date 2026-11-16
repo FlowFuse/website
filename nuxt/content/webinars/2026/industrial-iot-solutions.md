@@ -40,7 +40,7 @@ Picture your average day. Maybe it looks like a plant losing millions of dollars
 
 Every one of those problems is real and until now, all of them got handed the same generic platform and told to make it fit. That changed with this launch. We introduced three industrial IoT solutions: FlowFuse Hub, FlowFuse Edge, and FlowFuse Fleet — each built around one of those real jobs, not a tier or a bundle.
 
-Watch Kristopher Sandoval (Product Marketing) and Drew Gatti (Solutions Engineering) walk through all three in action, find out which one is yours, and leave knowing exactly how to start — today, in a 30-day trial, or as an upgrade from what you're already running.
+Watch Kristopher Sandoval (Product Marketing) and Drew Gatti (Solutions Engineering) walk through all three in action, find out which one is yours, and leave knowing exactly how to start, whether that's a first deployment or an upgrade from what you're already running.
 
 ## Which industrial IoT solution fits my setup?
 

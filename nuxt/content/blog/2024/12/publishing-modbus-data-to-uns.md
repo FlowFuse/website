@@ -71,8 +71,8 @@ _Bridging Modbus Data to MQTT using Node-RED_
 Before you start, make sure you have:
 
 - **Modbus data source**: An actual Modbus device or a simulator like ModSim.
-- **Node-RED Instance**: The easiest and production-ready option is FlowFuse, run Node-RED on edge devices, manage and build flows remotely with your team. Deploy, scale, and secure hundreds or thousands of instances with built-in team collaboration, version control, and production-grade features. [Sign up here](https://app.flowfuse.com/) and follow [this guide to run Node-RED with FlowFuse on your edge device](/blog/2025/09/installing-node-red/). Alternatively, install Node-RED locally on hardware with access to your Modbus network.
-- **MQTT Broker**: You need broker connection details (host, port, credentials). If you're using FlowFuse Pro or Enterprise, there's an integrated broker at `broker.flowfuse.cloud`, just create a client in the platform and you're done.
+- **Node-RED Instance**: The easiest and production-ready option is FlowFuse, run Node-RED on edge devices, manage and build flows remotely with your team. Deploy, scale, and secure hundreds or thousands of instances with built-in team collaboration, version control, and production-grade features. Follow [this guide to run Node-RED with FlowFuse on your edge device](/blog/2025/09/installing-node-red/). Alternatively, install Node-RED locally on hardware with access to your Modbus network.
+- **MQTT Broker**: You need broker connection details (host, port, credentials). If you're using FlowFuse Edge or Fleet, there's a built-in broker at `broker.flowfuse.cloud`, just create a client in the platform and you're done.
 
 ### Step 1: Collect Data from Modbus Devices
 

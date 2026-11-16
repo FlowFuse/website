@@ -11,7 +11,7 @@ tags:
 ::product-update-note
 ::
 
-From today, Enterprise tier teams on FlowFuse Cloud are able to add a Git Repository stage to their deployment pipelines. When the pipeline is triggered, the latest snapshot will get pushed to the configured repository.
+From today, FlowFuse Hub teams on FlowFuse Cloud are able to add a Git Repository stage to their deployment pipelines. When the pipeline is triggered, the latest snapshot will get pushed to the configured repository.
 
 This has been one of those features that has come up a number of times with our users; we knew we wanted to have Git integration in the platform, but we also wanted it to fit in a natural way with the developer workflows we provide.
 

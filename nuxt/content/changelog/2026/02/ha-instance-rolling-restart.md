@@ -17,4 +17,4 @@ As part of FlowFuse v2.27.0 release the behavior of Hosted Node-RED instances wi
 
 Any action that triggers a restart of the Node-RED instance (manually triggered or as part of a Pipeline deploy) will now restart them in sequence rather than in parallel. This means that there should be no down time for this instance.
 
-This feature is available to Enterprise Licensed Self Hosted users and Enterprise tier users of FlowFuse Cloud.
+This feature is available in FlowFuse Hub, on FlowFuse Cloud and self-hosted.

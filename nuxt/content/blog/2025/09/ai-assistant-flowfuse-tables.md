@@ -43,7 +43,7 @@ Before you begin, make sure FlowFuse Tables is activated in your FlowFuse team. 
 
 After deployment, press the "Insert simulated Data" inject button to populate your table with a week's worth of hourly sensor readings. This sample data will help you explore Query node capabilities.
 
-> **Note:** FlowFuse Tables is currently available for Enterprise users only.
+> **Note:** FlowFuse Tables is available in FlowFuse Edge, Hub and Fleet.
 
 Now, let us test the natural language querying powered by the FlowFuse Expert:  
 1. Add an Inject node to your flow  
@@ -102,4 +102,4 @@ The FlowFuse Expert now brings natural language capabilities to database queries
 
 FlowFuse's mission has always been to democratize industrial automation and reduce complexity for engineers and operational teams. As part of this commitment, more AI-powered features are on the roadmap to simplify industrial workflows even further.
 
-Ready to transform how your team works with data? [Book a demo](https://app.flowfuse.com/account/create) and see how FlowFuse makes building industrial applications simple and accessible.
+Ready to transform how your team works with data? [Book a demo](/book-demo/) and see how FlowFuse makes building industrial applications simple and accessible.

@@ -76,7 +76,7 @@ Parallel restarts in HA environments can introduce avoidable service interruptio
 
 Hosted Node-RED instances with HA enabled now restart sequentially rather than in parallel. Any manual or pipeline-triggered restart follows this behavior.
 
-This feature is available to Enterprise licensed self-hosted users and Enterprise tier users of FlowFuse Cloud.
+This feature is available in FlowFuse Hub, on FlowFuse Cloud and self-hosted.
 
 ### In practice
 
@@ -95,7 +95,6 @@ If something in this release improves your workflow, or if there is still fricti
 ### FlowFuse Cloud
 
 The fastest way to get started is with FlowFuse Cloud.  
-[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in minutes.
 
 ### Self-Hosted
 

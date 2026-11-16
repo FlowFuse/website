@@ -20,4 +20,4 @@ The Developer Mode tab is now available directly in the immersive editor drawer 
 
 Previously, accessing Developer Mode meant opening a second browser window and navigating to the standalone device view, breaking your flow inside the editor and adding unnecessary friction, especially when working through a staged dev, test, and promote rollout.
 
-This feature is available to Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from v2.29.
+This feature is available on FlowFuse Cloud and on self-hosted installations with a FlowFuse license from v2.29.

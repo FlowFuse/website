@@ -11,7 +11,7 @@ tags:
 ::product-update-note
 ::
 
-For Team and Enterprise tier Teams on FlowFuse Cloud we are introducing a NPM package repository giving you a place to host custom Node-RED nodes.
+In every FlowFuse product (Edge, Hub and Fleet) we are introducing a NPM package repository giving you a place to host custom Node-RED nodes.
 
 These Node-RED nodes can be used in both Hosted and Remote Instances and will show up in a custom catalogue with the name "FlowFuse Team [team name] Catalogue" in the Node-RED editor.
 

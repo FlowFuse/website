@@ -12,8 +12,6 @@ tags:
    - FlowFuse Cloud
 cta:
   type: sign-up
-  title: Try Node-RED 4 on FlowFuse Cloud
-  description: FlowFuse Cloud gives your team multiplayer editing, concurrent deploy handling, and everything you need to collaborate on Node-RED flows at scale.
 ---
 
 Node-RED 4.0 is the new major release of the project, which is at the heart of all we do at FlowFuse. It brings a range of new features that continue to make Node-RED the first choice for low-code development.
