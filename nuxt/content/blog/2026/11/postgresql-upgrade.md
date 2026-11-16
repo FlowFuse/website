@@ -1,0 +1,115 @@
+---
+title: 'Migrating from PostgreSQL 14 to 16'
+authors:
+  - ben-hardill
+date: '2026-12-20'
+description: Learn how to upgrade the PostgreSQL Database used with FlowFuse Docker and Kubernetes.
+tags:
+  - flowfuse
+  - kubernetes
+  - docker
+  - postgresql
+  - postgres
+---
+
+PostgreSQL v14 passed it's End Of Supported Life at the start of November 2026, to ensure on going support we are migrating to PostgreSQL v16.
+
+As part of the FlowFuse v3.4.0 release we are shipping PostgreSQL v16, the following are the instructions for upgrading from any version greater than v2.10.0.
+
+If you are starting with version v2.10.0 or older please follow [these instructons](https://github.com/FlowFuse/docker-compose/blob/main/UPGRADE.md) to move to v3.3.0 first.
+
+<!--more-->
+
+## Assumptions
+
+Through out this document the following assumptions will be made
+
+### Docker
+
+- Docker Compose commands include the `-p flowfuse` option to set the project name. Your project name can be found by running `docker compose ls`
+- The posgres service in the `docker-compose.yml` has not_ been edited (specifically the `POSTGRES_PASSWORD` and `POSTGRES_USER` environment variables)
+
+### Kubernetes
+
+- The FlowFuse helm chart was installed into the `flowfuse` namespace
+- You are using the bundled PostgreSQL database, not an externally installed and configured install. Specifically the following Helm values are **not** set:
+    - `postgresql.host`
+    - `postgresql.auth.username`
+    - `postgresql.auth.password`
+    - `postgresql.auth.database`
+
+If these your install is different then the commands will need to be updated to match your specific environment.
+
+## Backup
+
+Before starting any migration it is important to ensure a full backup of the database is performed.
+
+The following commands will write a compressed database backup to a file called `flowfuse-db-backp-sql.bz2` in the current directory.
+
+### Docker
+
+```bash
+docker exec -it flowfuse-postgres-1 pg_dump flowforge | bzip2 > flowfuse-db-backup-sql.bz2 
+```
+
+You should also take a copy of your current `docker-compose.yml` file
+
+```bash
+cp docker-compose.yml docker-compose-backup.yml
+```
+
+### Kubernetes
+
+```bash
+PGPASSWORD=`kubectl -n flowfuse get secrets flowfuse-secrets -o json | jq -r '.data."postgres-password"' | base64 -d`
+kubectl -n flowfuse exec -it flowfuse-postgresql-0 -- /bin/sh -c "env PGPASSWORD=$PGPASSWORD pg_dump -U postgres flowforge" | bzip2 > flowfuse-db-backup-sql.bz2
+```
+
+## Upgrade
+
+### Docker
+
+Once the backup has completed the following steps need to be completed to upgrade the PostgreSQL instance. These instructions insert part 2 into the [normal upgrade instructions](https://flowfuse.com/docs/install/docker/#upgrade)
+
+1. Stop the docker compose project
+    ```bash
+    docker compose -p flowfuse down --rmi all
+    ```
+2. Run the in place database upgrade
+    ```bash
+    docker run --rm -it --name pgupdate -v flowfuse_db:/var/lib/postgresql/data -e POSTGRES_PASSWORD=password -e POSTGRES_USER=root -e PGAUTO_ONESHOT=yes pgautoupgrade/pgautoupgrade:16-trixie
+    ```
+3. Download the latest Docker Compose files
+    ```bash
+    curl -L -o docker-compose.yml https://github.com/FlowFuse/docker-compose/releases/latest/download/docker-compose.yml
+    ```
+4. Make sure the `.env` file is present and contains your installation-specific configuration. Download an example `.env` file if needed:
+    ```bash
+    curl -o .env.example https://raw.githubusercontent.com/FlowFuse/docker-compose/refs/heads/main/.env.example
+    ```
+5. Pull the latest version of the default stack container (and any other stacks you have configured)
+   ```bash
+   docker pull flowfuse/node-red:latest
+   ```
+6. Start the project depending on the TLS configuration (replace `$projectName` with your project name):
+
+  - automatic TLS:
+    ```bash
+    docker compose --profile autossl -p flowfuse up -d
+    ```
+  - any other scenario:
+    ```bash
+    docker compose -p flowfuse up -d
+    ```
+
+
+### Kubernetes
+
+The Kubernetes upgrade is handled by the helm chart. Using v2.x.x of the helm chart will include an init container to the PostgreSQL subchart that will perform an inplace upgrade at startup (and no-op on subsequent restarts).
+
+The usual Kubernetes instructions should be followed.
+
+
+## Rollback
+
+Should there be a problem the following instauctions can be 
