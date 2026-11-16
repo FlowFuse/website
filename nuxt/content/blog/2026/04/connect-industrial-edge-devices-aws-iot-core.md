@@ -11,8 +11,6 @@ tags:
   - flowfuse
 cta:
   type: sign-up
-  title: Edge to cloud, without the complexity
-  description: FlowFuse connects your industrial machines to AWS IoT Core, securely, at scale, without managing infrastructure.
 meta:
   howto:
     name: "How to Connect Industrial Edge Devices to AWS IoT Core"
@@ -73,7 +71,7 @@ If you're new to MQTT and want to understand how it works before diving in, [thi
 
 Before you begin, make sure you have the following in place:
 
-- A FlowFuse account with a running instance. If you don't have one yet, [sign up](https://app.flowfuse.com/account/create).
+- A FlowFuse account with a running instance.
 - An AWS account with access to the IoT Core service.
 - Basic familiarity with the AWS console.
 

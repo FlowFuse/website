@@ -12,8 +12,6 @@ tags:
     - how-to
 cta:
   type: sign-up
-  title: "Supercharge Node-RED with FlowFuse"
-  description: "Sign up for FlowFuse to run Node-RED in the cloud, import any npm module in function nodes, and build powerful integrations without needing command-line access."
 meta:
   howto:
     name: "How to Use Any npm Module in a Node-RED Function Node"

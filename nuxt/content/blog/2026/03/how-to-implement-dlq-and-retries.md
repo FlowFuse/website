@@ -223,7 +223,7 @@ When a message reaches this stage, retries are finished. The goal now is to pres
 
 [FlowFuse Tables](/blog/2025/08/getting-started-with-flowfuse-tables/) gives you exactly that: a managed PostgreSQL database that connects directly to your flows with no credentials to configure and no external infrastructure to manage, making it the right storage layer for a production DLQ.
 
-> **Note:** FlowFuse Tables requires an Enterprise plan.
+> **Note:** FlowFuse Tables is included in every FlowFuse product: Edge, Hub and Fleet.
 
 #### 5a: Create the DLQ Table
 

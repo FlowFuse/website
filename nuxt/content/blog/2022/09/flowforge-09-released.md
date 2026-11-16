@@ -67,11 +67,6 @@ We'd like the thank the following for their contributions to this release:
 
 As an open-source project, we welcome the community involvement in what we're building. If you're interested in contributing, checkout our [guide in the docs](https://flowforge.com/docs/contribute/).
 
-
-### Try it out
-
-[Sign up for FlowFuse Cloud](https://app.flowfuse.com/account/create) and at the checkout enter the code **RELEASE09** to get your first project free for a month.
-
 ### Upgrading FlowFuse
 
 [FlowFuse Cloud](site:appURL) is already running 0.9 and the stacks updated. Upgrade your project stacks to the latest version and start using the Project Link nodes now.

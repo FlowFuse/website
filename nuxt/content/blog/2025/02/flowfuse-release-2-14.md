@@ -22,7 +22,7 @@ This release is full of highlights, which we’ll break down into two key areas 
 
 ## MQTT Experience in FlowFuse
 
-In [October we announced the FlowFuse MQTT Broker](/blog/2024/10/announcement-mqtt-broker/), included in our Starter, Team, and Enterprise tiers. It lets you setup your own secure clients to begin publishing and subscribing to your own topics, and building out your full event-driven applications.
+In [October we announced the FlowFuse MQTT Broker](/blog/2024/10/announcement-mqtt-broker/), included in FlowFuse Edge and Fleet. It lets you setup your own secure clients to begin publishing and subscribing to your own topics, and building out your full event-driven applications.
 
 We see the MQTT experience and Node-RED experience regularly paired together, and so it's one of our missions at FlowFuse to provide the best developer experience for building out your event-driven applications when these two elements are in play.
 
@@ -98,8 +98,3 @@ Together, we can make FlowFuse better with each release!
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
 
-### FlowFuse Cloud
-
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

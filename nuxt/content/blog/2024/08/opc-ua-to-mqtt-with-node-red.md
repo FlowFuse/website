@@ -15,8 +15,6 @@ tags:
    - how-to
 cta:
   type: sign-up
-  title: Connect OPC UA and MQTT with Node-RED on FlowFuse
-  description: FlowFuse makes it easy to deploy Node-RED in the cloud or at the edge and bridge industrial protocols like OPC UA and MQTT, with built-in MQTT broker support, team collaboration, and production-ready infrastructure.
 meta:
   howto:
     name: "How to Bridge OPC UA Data to MQTT with Node-RED"
@@ -91,7 +89,7 @@ In this section, I'll demonstrate how to bridge OPC UA data to MQTT using Node-R
 
 - OPC UA Server: Make sure you have an OPC UA server configured and running with the necessary data. For this blog, we'll use the Prosys OPC UA Simulation Server, which simulates data from CNC machines designed for testing OPC UA client applications and learning the technology. You can download it from [here](https://prosysopc.com/products/opc-ua-simulation-server/).
 
-- FlowFuse Account: A FlowFuse account lets you quickly create, deploy, and manage Node-RED instances in the cloud. [sign up now](https://app.flowfuse.com/account/create?utm_campaign=60718323-BCTA&utm_source=blog&utm_medium=cta&utm_term=high_intent&utm_content=Bridging%20OPC%20UA%20Data%20to%20MQTT%20with%20Node-RED).
+- A FlowFuse instance, in the cloud or on your edge device.
 
 - [node-red-contrib-opcua](https://flows.nodered.org/node/node-red-contrib-opcua): install the node-red contrib package that will enable integration of opcua in Node-RED.
 

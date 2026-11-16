@@ -13,8 +13,6 @@ tags:
     - news
 cta:
   type: sign-up
-  title: "Welcome to FlowFuse"
-  description: "The name has changed but the mission hasn't. Sign up for FlowFuse and start building powerful Node-RED applications in a secure, collaborative, and scalable platform."
 meta:
   faq:
     - question: "Why did FlowForge change its name to FlowFuse?"

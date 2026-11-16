@@ -344,11 +344,6 @@
                                 "label": "Partnerships",
                                 "href": "/partners/",
                                 "icon": "user-group"
-                            },
-                            {
-                                "label": "Professional Services",
-                                "href": "/professional-services/",
-                                "icon": "wrench-screwdriver"
                             }
                         ]
                     },
@@ -670,10 +665,6 @@
                 },
                 {
                     "links": [
-                        {
-                            "label": "Professional Services",
-                            "href": "/professional-services/"
-                        },
                         {
                             "label": "Service Status",
                             "href": "https://status.flowfuse.com/"

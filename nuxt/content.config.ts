@@ -591,6 +591,9 @@ export default defineContentConfig({
                         imageAlt: z.string(),
                         variant: z.enum(['indigo', 'red', 'mixed']),
                         videoId: z.string().optional(),
+                        // A looping muted screen recording shown in place of `image`, which
+                        // then serves as its poster and the reduced-motion fallback.
+                        clip: z.string().optional(),
                         // Anchor id for the item's wrapping element, so an old URL (a
                         // retired page folded into this one) or another page's inline
                         // link can deep-link straight to this card.

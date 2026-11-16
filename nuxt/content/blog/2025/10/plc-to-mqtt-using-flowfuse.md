@@ -51,7 +51,7 @@ meta:
     - question: "What options does FlowFuse provide for transforming PLC data?"
       answer: "FlowFuse offers Change nodes with JSONata for visual no-code transformations like mapping fields and adding context, Function nodes for full JavaScript custom logic and npm packages, and pre-built community nodes such as node-red-contrib-buffer-parser for parsing raw Modbus and PLC outputs into structured formats."
     - question: "What plan do I need to use the FlowFuse MQTT broker?"
-      answer: "You need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker."
+      answer: "The FlowFuse MQTT broker is included in the Edge and Fleet products. You can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker."
     - question: "How should I structure my MQTT topics?"
       answer: "Structure topics using the ISA-95 Equipment Hierarchy in the format company/site/area/line/cell/device/measurement (for example, acme/plant-a/assembly/line1/press-1/pressure01/bar). This builds toward a Unified Namespace (UNS), eliminates data silos, and enables powerful wildcard subscriptions. Use lowercase with hyphens for multi-word names."
     - question: "What QoS setting should I use for the FlowFuse MQTT Out node?"
@@ -95,7 +95,7 @@ The solution lies in low-code integration platforms that consolidate protocol ha
 Before you start, make sure you have the following:
 
 - A properly configured and fully operational PLCs, located on the same network as the edge device that will be reading its data.
-- A running FlowFuse instance on your edge device. If you do not have an account, [sign up for a free trial](/blog/2025/09/installing-node-red/) and set up your instance following the instructions in this article.
+- A running FlowFuse instance on your edge device. See [this guide](/blog/2025/09/installing-node-red/) to set it up.
 
 # Getting Started
 
@@ -180,7 +180,7 @@ Traditional PLC-to-cloud setups typically involve several moving parts: edge gat
 
 FlowFuse consolidates those layers into a single integrated platform. It provides enterprise-grade features for management, scaling, deployment, and security, all handled by the FlowFuse infrastructure. You retain full control over configuration settings through a clean, intuitive interface, without needing to maintain multiple external systems.
 
-To use the FlowFuse MQTT broker, you'll need a FlowFuse Pro or higher-tier account. Once on the Pro plan, you can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
+The FlowFuse MQTT broker is included in the Edge and Fleet products. You can enable the managed MQTT service by navigating to the Broker section from the left sidebar and selecting FlowFuse Broker.
 
 ![Enabling FlowFuse MQTT Broker](./images/set-broker.png){data-zoomable}
 _Enabling FlowFuse MQTT Broker_
@@ -255,6 +255,6 @@ Manufacturers typically see substantial cost reduction in the first year, with i
 
 ## Get Started
 
-Connect your first PLC today. [Sign up for FlowFuse](https://app.flowfuse.com/), install the Device Agent on your edge hardware, and have data flowing to MQTT in under an hour. The platform handles the complexity, you focus on turning factory data into insights.
+Connect your first PLC: install the Device Agent on your edge hardware and have data flowing to MQTT in under an hour. The platform handles the complexity, you focus on turning factory data into insights.
 
 MQTT is one of several ways FlowFuse connects PLCs to the modern industrial stack. For a full view of supported protocols, OPC UA, EtherNet/IP, Siemens S7, Modbus, and more, see the [FlowFuse PLC integration overview](/landing/plc/).

@@ -9,6 +9,9 @@ tags:
 - changelog  
 ---
 
+::product-update-note
+::
+
 **Remote instances** can now make use of the new Timeline feature, providing a concise, chronological view of key activities within your Node-RED remote setup.
 
 The Timeline and Snapshots are now grouped together under the Version History tab, simplifying the navigation of your remote instance's history.

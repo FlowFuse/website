@@ -121,7 +121,7 @@ Let's walk through how to set this up.
 Before we start, ensure the following prerequisites are met:
 
   * **Hardware Connection:** The machine must be physically connected to your system using a serial interface.
-  * **Node-RED Instance:** Make sure you have an instance of Node-RED up and running. The quickest way to do this is via FlowFuse. If you don't have an account, check out our [free trial](https://app.flowfuse.com/).
+  * **Node-RED Instance:** Make sure you have an instance of Node-RED up and running. The quickest way to do this is via FlowFuse.
   * **Serialport Node:** Install the [node-red-node-serialport](https://flows.nodered.org/node/node-red-node-serialport) package if it is not already available in your palette.
 
 ### Configuring the Serial Port Node

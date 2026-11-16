@@ -1,113 +1,152 @@
 <script setup lang="ts">
-// Ported from src/index.njk (11ty), which this replaces. Same page, same copy, same
-// classes from nuxt/assets/css/style.css.
+// The homepage, written for director-level buyers. Six parts, in this order:
+//   1. Value statement (hero, with the animated wireframe plant: components/home/Hero.vue)
+//   2. Your outcomes: the business outcomes a first solution delivers
+//   3. One solution, every site: what FlowFuse is, the problem it solves, and the
+//      Foundation Partnership that makes each site faster than the last
+//   4. Metrics of success: customer results, each linked to its story
+//   (logo strip with the user count sits straight under the hero)
+//   5. Social proof: testimonials
+//   5b. Security: SOC 2 and the controls enterprise IT asks about
+//   6. Call to action
 //
-// What the port changes on purpose:
-//  - The hero's cross-fading background becomes <HomeHeroSlides>, which replaces an
-//    inline script that queried the DOM and ran two timers with no teardown.
-//  - testimonials.njk becomes <TestimonialCarousel>, explore-more-content.njk becomes
-//    <ExploreMoreContent> (renamed from ThankYouExploreMore, since this page renders it
-//    too), social-proof.njk becomes <SocialProof> and faq.njk becomes <Faq>.
-//  - cta-get-started.njk was a four-line partial reading a `cta` object the caller set;
-//    it is the markup at the foot of this page.
-//  - site.messaging.heroTagLine and .subtitle came from src/_data/site.json, which Nuxt
-//    still imports for its own config. They are literals here, so the page reads as the
-//    page.
+// The illustrations are isometric wireframes generated in nuxt/lib/home-iso-scenes.ts
+// and rendered by <HomeIsoArt>, in place of stock photography.
+//
+// The page sells one idea: each site is faster than the last, and the Foundation
+// Partnership is what makes it so. Calls to action follow where the reader is: the hero
+// offers both "Talk to Us" and the partnership; mid-page there is one "learn more" to the
+// partnership; the close asks for the conversation, with the ROI calculator as the
+// lighter option. Partnership links go to /build-with-us/ through CtaLink, so clicks
+// still count as the signUp CTA.
+import { foundationSiteCenters } from '../lib/home-iso-scenes'
 import { faqAnswerText } from '../lib/faq-answer.mjs'
 
+// The scorecard plant and operations leaders already report against (Quality, Delivery,
+// Cost), plus Uptime for maintenance. Under each word, one line that sees the problem and
+// acts on it: these are solutions that do something, not dashboards. The next section carries "every plant", so this one stays off it.
+// Each card links to the page that goes deepest on that number.
+const SCORECARD = [
+    { scene: 'quality', name: 'Quality', text: 'Stop bad parts at the station, not at the end of the line.', link: 'Production line monitoring', to: '/use-cases/production-line-monitoring/' },
+    { scene: 'delivery', name: 'Delivery', text: 'Spot a slipping order while there’s still time to save it.', link: 'For operations teams', to: '/teams/manufacturing-operations/' },
+    { scene: 'cost', name: 'Cost', text: 'Find your costliest stops and fix them first.', link: 'Estimate your ROI', to: '/resources/roi-calculator/' },
+    { scene: 'uptime', name: 'Uptime', text: 'Turn early warnings into work orders before a machine fails.', link: 'For maintenance teams', to: '/teams/maintenance-reliability/' },
+] as const
+
+const PROBLEM = [
+    'A fix that works at one plant stays at that plant.',
+    'Every new site starts as a new project.',
+    'Improvements depend on whoever built them.',
+]
+
+const SOLUTION = [
+    'A solution is proven once and deployed everywhere.',
+    'Each site starts on the foundation the last one built, so it goes faster.',
+    'Your team owns the solution and pushes improvements to every site.',
+]
+
+// What the first solution leaves behind, reused at every site after it.
+// Same four pieces as the FOUNDATION list on /build-with-us/; keep the two in step.
+// Each card links to where that piece is covered in depth.
+const FOUNDATION = [
+    { icon: 'i-lucide-plug', title: 'Integrations', text: 'Connections to your machines, historians and business systems. Built at the first site, reused at the next.', to: '/integrations/' },
+    { icon: 'i-lucide-database', title: 'Data models', text: 'One structure for your operational data, so every plant speaks the same language.', to: '/use-cases/uns/' },
+    { icon: 'i-lucide-rocket', title: 'Deployment patterns', text: 'A tested way to roll the solution out to new lines and plants without starting over.', to: '/platform/device-agent/' },
+    { icon: 'i-lucide-shield-check', title: 'Governance', text: 'Roles, access and change control, set up once and applied everywhere.', to: '/platform/security/' },
+]
+
+// Ways in by industry and by team, under the results.
+const EXPLORE = [
+    {
+        label: 'By industry',
+        links: [
+            { name: 'Automotive', to: '/industries/automotive/' },
+            { name: 'Industrial machinery', to: '/industries/industrial-machinery/' },
+            { name: 'Building materials', to: '/industries/building-materials/' },
+            { name: 'Energy and utilities', to: '/industries/energy-utilities/' },
+            { name: 'Aviation and aerospace', to: '/industries/aviation-aerospace/' },
+        ],
+    },
+    {
+        label: 'By team',
+        links: [
+            { name: 'Manufacturing operations', to: '/teams/manufacturing-operations/' },
+            { name: 'Maintenance and reliability', to: '/teams/maintenance-reliability/' },
+            { name: 'Automation and controls', to: '/teams/automation-controls/' },
+            { name: 'Digital transformation', to: '/teams/digital-transformation/' },
+        ],
+    },
+]
+
+// One label under each site in the foundation picture, placed where that site is drawn.
+const FOUNDATION_LABELS = foundationSiteCenters().map((at, i) => ({
+    at,
+    name: `Site ${i + 1}`,
+    note: i === 0 ? 'Foundation built' : 'Foundation reused',
+}))
+
+// Every figure here is a customer result published in nuxt/content/customer-stories/.
 const METRICS = [
-    { number: '50%', text: 'Reduction in scrap rate with real-time operational monitoring' },
-    { number: '10x', text: 'Faster from idea to deployed operational application with FlowFuse Expert' },
-    { number: '20+', text: 'Manufacturing sites standardized from a single platform without rebuilding' },
-]
-
-const PROBLEMS = [
-    { svgPath: 'i-heroicons-arrow-path', title: 'Every solution starts from scratch', description: 'Operational logic stays local. The same problem gets solved differently at every site, by every team, every time.' },
-    { svgPath: 'i-heroicons-link-slash', title: "Your core systems don't cover everything", description: 'MES, ERP, and SCADA solve standard problems well. The workflows in the gaps (quality gates, shift handovers, custom validation) fall back to custom code and manual workarounds.' },
-    { svgPath: 'i-heroicons-building-office-2', title: "What works on one line won't scale to fifty", description: 'A working solution on one machine requires rebuilding from scratch for the next site. There is no system to standardize, deploy, and govern what works' },
-]
-
-const CAPABILITIES = [
     {
-        capability: "Build operational workflows your core systems can't",
-        feature: 'Low-code development with FlowFuse Expert',
-        description: 'Create the operational applications that MES, ERP, and SCADA platforms struggle to support natively, from quality validation and workforce assignment to shift handovers and production visibility. Describe what you need in plain language and FlowFuse Expert generates the starting logic directly in your workspace.',
-        imagePath: '/images/home/home-node-red.png',
-        imageAlt: 'FlowFuse UI',
-        linkText: 'Learn more about FlowFuse Expert',
-        linkHref: '/ai/',
+        kind: 'Time to change',
+        number: 'Minutes',
+        text: 'to update torque specs on 15 controllers across 5 lines. It used to mean a visit to each one.',
+        company: 'Aperia Technologies',
+        to: '/customer-stories/aperia-technologies-plc-replacement/',
     },
     {
-        capability: 'Standardize proven workflows across every site',
-        feature: 'Device Agent and DevOps Pipelines',
-        description: 'Turn a successful workflow on one machine or line into a repeatable operational standard across plants. Roll out updates with version control, staged deployments, and centrally managed industrial devices. No more rebuilding from scratch for every site, or leaving improvements siloed in one location.',
-        imagePath: '/images/home/home-pipeline.png',
-        imageAlt: 'FlowFuse flow editor',
-        linkText: 'See how device management works',
-        linkHref: '/platform/device-agent/',
+        kind: 'Capacity recovered',
+        number: '8–12 hrs',
+        text: 'a day of idle end-of-line test equipment put back to work.',
+        company: 'Aperia Technologies',
+        to: '/customer-stories/aperia-technologies-plc-replacement/',
     },
     {
-        capability: 'Connect shop floor events to enterprise systems',
-        feature: 'Flow-based IT/OT connectivity',
-        description: 'Move production events, work orders, alarms, and operational data securely between PLCs, edge devices, MES, ERP, cloud platforms, and operator interfaces, without brittle point-to-point integrations or exposing inbound firewall ports.',
-        imagePath: '/images/home/home-dashboard.png',
-        imageAlt: 'FlowFuse Dashboard',
-        linkText: 'Explore production line monitoring',
-        linkHref: '/use-cases/production-line-monitoring/',
+        kind: 'Scale',
+        number: '1 → 130+',
+        text: 'instances across every site, run by the IT team that started with one.',
+        company: 'Walter',
+        to: '/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/',
+    },
+    {
+        kind: 'Coverage',
+        number: '7,000 km',
+        text: 'of national grid monitored around the clock from one governed platform.',
+        company: 'Energinet',
+        to: '/customer-stories/energinet-streamlining-critical-infrastructure-data-management/',
     },
 ]
 
-const OPERATIONAL_SYSTEM = [
-    {
-        title: 'PRODUCTION & OPERATIONS',
-        items: [
-            { name: 'Production Line Monitoring', url: '/use-cases/production-line-monitoring/', description: 'OEE tracking across lines, shifts, and plants.' },
-            { name: 'Continuous Improvement', description: 'Digital CI workflow from suggestion to closure.' },
-        ],
-    },
-    {
-        title: 'OPERATIONAL WORKFLOWS',
-        items: [
-            { name: 'Workforce Assignment', description: 'Dynamic operator allocation using training, ergonomics, and demand data.' },
-            { name: 'Shop Floor Communication', url: '/use-cases/shop-floor-communication/', description: 'Real-time alerts, escalation, and cross-site coordination.' },
-        ],
-    },
-    {
-        title: 'SYSTEM EXTENSIONS',
-        items: [
-            { name: 'Quality Validation', description: 'Inline inspection and QA checks outside the core system.' },
-            { name: 'Track & Trace', description: 'Part, component, and batch traceability across the plant.' },
-        ],
-    },
-    {
-        title: 'OPERATIONAL INFRASTRUCTURE',
-        items: [
-            { name: 'Equipment Monitoring', description: 'PLC and device health monitoring across controller types.' },
-            { name: 'Operational Data Pipelines', description: 'Structured controller data flows, diagnostics, and routing.' },
-            { name: 'System Diagnostics', description: 'Error tracking and root cause analysis across deployed applications.' },
-        ],
-    },
+// The security section. Same claims as the shared <EnterpriseSecurity> block on the
+// product and pricing pages, drawn in this page's card style instead of that block's.
+const SECURITY = [
+    { icon: 'i-lucide-key-round', title: 'Single sign-on', text: 'Sign in through the identity provider you already use.' },
+    { icon: 'i-lucide-users', title: 'Role-based access', text: 'Decide who can view, change and deploy, site by site.' },
+    { icon: 'i-lucide-scroll-text', title: 'Audit logs', text: 'Every change recorded: who made it, what changed and when.' },
+    { icon: 'i-lucide-server', title: 'Self-hosted or air-gapped', text: 'Run it in your own environment, offline if you need to.' },
 ]
 
+// Rendered by <Faq> and repeated as FAQ structured data below.
 const FAQ = [
-    { question: "What's the difference between Node-RED and FlowFuse?", answer: "Node-RED is the open-source runtime FlowFuse is built on. It's how you build the logic. FlowFuse adds everything after the build: deployment across sites, version control, team access management, and enterprise security. You can use FlowFuse without prior Node-RED experience." },
-    { question: 'Do I need Node-RED experience to use FlowFuse?', answer: 'No. FlowFuse Expert, our AI-assisted development tool, lets your team describe what they need in plain language and generates the logic. Your team can build without a steep learning curve.' },
-    { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes, FlowFuse is designed for brownfield environments. It connects to and extends your existing MES, ERP, SCADA, PLCs, and other systems without replacing them or requiring modifications to core platforms.' },
-    { question: 'How does FlowFuse handle security and compliance?', answer: 'FlowFuse is SOC 2 Type 1 and Type 2 certified. It supports RBAC, SSO, audit logs, and air-gapped self-hosted deployments for environments with strict network isolation requirements.' },
-    { question: 'How long does a typical deployment take?', answer: 'Most teams are operational within days. FlowFuse is designed to start with a single use case and expand, not require a multi-month implementation before delivering value.' },
+    { question: 'What is FlowFuse?', answer: 'FlowFuse solves hard operational problems for manufacturers, asset operators and the companies that service industrial equipment, using an industrial application platform built on open-source [Node-RED](/node-red/). Our engineers build your first solution alongside your team. Together we prove it at one site, then deploy it to the rest, faster with each one.' },
+    { question: 'What is the Foundation Partnership?', answer: 'FlowFuse engineers build your first solution with your team, on the equipment you already run. What they build becomes the foundation every later site reuses, and we roll it out with your team, site by site. [See how the Foundation Partnership works](/build-with-us/).' },
+    { question: 'What kinds of problems does FlowFuse solve?', answer: 'Problems that repeat across your plants: scrap and rework, late orders, unplanned stops and the cost behind them. We start with the one you are measured on. See how other teams solved theirs in our [customer stories](/customer-stories/).' },
+    { question: 'Can FlowFuse work with our existing systems?', answer: 'Yes. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms. See the full list of [integrations](/integrations/).' },
+    { question: 'Who owns the solution once it is built?', answer: 'You do. Everything we build together runs in your FlowFuse environment, with full version history, so your team can change it, extend it and roll it out without waiting on us. It is built on open-source Node-RED, so nothing is locked away.' },
+    { question: 'How does FlowFuse handle security and compliance?', answer: 'FlowFuse is SOC 2 Type II certified. It supports single sign-on, role-based access, audit logs, and self-hosted or air-gapped deployments. Read more on our [security page](/platform/security/).' },
 ]
 
-// base.njk gave the homepage a title of "FlowFuse • <tagLine>" rather than the usual
-// "<title> • FlowFuse", and metaTitle overrode it. metaTitle is what production serves.
+// The homepage ranks for the brand, so its title leads with it. The site-wide template
+// would append "• FlowFuse" again, so it's switched off for this page only.
+useHead({ titleTemplate: '%s' })
 useSeoMeta({
-    title: 'Build Industrial Applications at Scale',
-    description: 'Build industrial applications in minutes with AI, then deploy and govern production from cloud to edge.',
-    ogDescription: 'Build industrial applications in minutes with AI, then deploy and govern production from cloud to edge.',
-    keywords: 'Node-RED, Application Development, IoT, IIoT, Low-Code, open source, Integration, Workflow, Automation, Data Processing, Data Integration, Data Transformation, Data Visualization, Industrial Automation, Industrial IoT, Industry 4.0',
+    title: 'FlowFuse | Deploy Proven Industrial Solutions at Every Site',
+    description: 'FlowFuse builds the first solution with your team on the equipment you already run, proves it at one site, and deploys it to the rest, faster with each one.',
+    ogDescription: 'FlowFuse builds the first solution with your team on the equipment you already run, proves it at one site, and deploys it to the rest, faster with each one.',
+    keywords: 'Industrial Solutions, Node-RED, Industrial Applications, IIoT, Multi-site Manufacturing, Edge, Industrial Automation, Industry 4.0',
     ogUrl: 'https://flowfuse.com/',
     twitterSite: '@FlowFuseinc',
 })
-
 useSchemaOrg([
     defineWebPage({ '@type': 'FAQPage' }),
     ...FAQ.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
@@ -115,274 +154,298 @@ useSchemaOrg([
 </script>
 
 <template>
-  <!--Hero Content-->
-  <section class="w-full relative bg-indigo-800 md:min-h-[800px]">
-      <HomeHeroSlides />
-      <div class="relative z-10 px-6 w-full pt-12 md:pt-28 pb-36 md:pb-24">
-          <div class="sm:max-w-screen-lg mx-auto">
-              <div class="container m-auto text-left max-w-screen-lg">
-                  <div class="mx-auto">
-                      <!-- heroTagLine, not tagLine: tagLine is also the brand name in
-                      every page's <title> and in llms.txt, where the persona clause
-                      would push the title past search-result truncation. -->
-                      <h1 class="font-medium m-auto text-5xl md:text-7xl text-center text-white max-w-4xl">
-                          The Edge-Native Platform for Industrial IT, OT, and IIOT Applications
-                      </h1>
-                      <p class="mt-12 text-center text-gray-200 md:text-xl m-auto max-w-4xl">
-                          <!-- The .njk ran this through replace("-", "&#8209;"); the current subtitle
-                               contains no hyphens, so that filter changed nothing. -->
-                          Build industrial applications in minutes with AI, then deploy and govern production from cloud to edge.
-                      </p>
-                      <div class="flex flex-col mt-12">
-                          <div class="m-auto flex gap-4 items-center justify-center flex-row">
-                              <CtaBookDemo variant="highlight" position="hero" />
-                              <CtaSignUp variant="ghost" color="white" position="hero" icon="i-lucide-arrow-right" />
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+  <!-- 1. Value statement -->
+  <section class="home-dark w-full px-6 pt-16 md:pt-24 pb-16 md:pb-20 overflow-hidden">
+    <div class="max-w-screen-xl mx-auto grid md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] gap-10 md:gap-6 items-center">
+      <div class="max-md:text-center relative z-10">
+        <p class="home-eyebrow text-red-300">Industrial solutions for multi-site operations</p>
+        <h1 class="text-balance text-white font-medium text-4xl md:text-5xl leading-[1.08] mt-5 mb-0">Deploy proven solutions across every site, faster with each one.</h1>
+        <p class="text-indigo-100 text-lg md:text-xl font-light mt-6 mb-0 max-w-lg max-md:mx-auto">
+          The fastest gains come from using the equipment you already own. We build the solution with your team to get more from the lines and assets you run today, without replacing them.
+        </p>
+        <div class="flex flex-wrap gap-4 items-center mt-10 max-md:justify-center">
+          <CtaBookDemo variant="highlight" position="hero" />
+          <CtaLink destination="signUp" position="hero" class="flex items-center gap-1.5 text-white font-semibold uppercase hover:underline">
+            Foundation Partnership
+            <UIcon name="i-lucide-arrow-right" class="w-5 h-5" />
+          </CtaLink>
+        </div>
       </div>
+      <div class="relative">
+        <HomeHero class="w-full max-w-[680px] mx-auto" />
+      </div>
+    </div>
   </section>
 
-  <!-- Screenshot bridge: overlaps hero from below -->
-  <div class="relative z-10 px-6 -mt-28 md:-mt-48">
-      <div class="sm:max-w-screen-lg mx-auto">
-          <div class="w-full flex-grow relative bg-gradient-to-b from-red-50 to-indigo-100 p-4 md:p-8 rounded-xl">
-              <div class="ff-image-cover center ff-image-rounded bg-center w-full h-full">
-                  <img src="/images/home/flowfuse-home-ui.png" alt="FlowFuse Home UI" width="960" class="w-full h-auto">
-              </div>
-          </div>
-      </div>
-  </div>
+  <!-- Logo strip: users count and customer logos, straight under the hero -->
+  <section class="home-after-hero w-full px-6 pb-4">
+    <div class="max-w-screen-lg mx-auto text-center">
+      <SocialProof />
+    </div>
+  </section>
 
-  <!-- Social Proof + Metrics -->
-  <div class="w-full px-6 pt-8">
-      <!-- Social Proof -->
-      <div class="sm:max-w-screen-lg m-auto max-w-5xl mb-10">
-          <div class="mx-auto text-center -mt-0.5">
-              <SocialProof eyebrow-bg />
-          </div>
+  <!-- 2. Results you can measure: picks up the hero's last promise -->
+  <section class="home-band w-full px-6 py-20 md:py-24">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="max-md:text-center">
+        <p class="home-eyebrow text-red-500">Your outcomes</p>
+        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Every solution matches <br class="max-md:hidden"><span class="text-indigo-600">your business outcome.</span></h2>
+        <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-xl max-md:mx-auto">
+          You set the outcome. We build the solution that delivers it.
+        </p>
       </div>
+      <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 rounded-2xl border border-gray-200 bg-white shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_-12px_rgba(67,56,202,0.12)] overflow-hidden">
+        <NuxtLink
+            v-for="(kpi, i) in SCORECARD"
+            :key="kpi.name"
+            :to="kpi.to"
+            class="group relative flex flex-col p-7 md:p-8 border-gray-200 hover:no-underline hover:bg-indigo-50/40 transition-colors"
+            :class="[
+              i % 2 === 1 ? 'border-l' : '',
+              i > 1 ? 'max-lg:border-t lg:border-l' : '',
+            ]"
+        >
+          <div class="h-28 flex items-center justify-center rounded-xl bg-gradient-to-b from-indigo-50/70 to-transparent">
+            <HomeIsoArt :scene="kpi.scene" class="max-h-[88px] w-auto max-w-[170px]" />
+          </div>
+          <p class="m-0 mt-6 text-center text-gray-900 text-xl md:text-2xl font-medium tracking-tight">{{ kpi.name }}</p>
+          <p class="m-0 mt-2 text-center text-gray-500 text-[15px] leading-6 text-balance flex-grow">{{ kpi.text }}</p>
+          <span class="mt-5 flex items-center justify-center gap-1 text-indigo-600 text-sm font-medium">
+            <span class="group-hover:underline">{{ kpi.link }}</span>
+            <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+          </span>
+        </NuxtLink>
+      </div>
+    </div>
+  </section>
 
-      <!-- Metrics -->
-      <div class="max-w-md sm:max-w-screen-lg mx-auto mb-10">
-          <div class="grid sm:grid-cols-3 gap-12 my-4 max-sm:w-full m-auto">
-                  <div v-for="metric in METRICS" :key="metric.number" class="w-full h-full rounded-lg bg-red-50/70 pb-3 px-6 pt-6">
-                      <h3 class="text-5xl font-semibold text-red-400">{{ metric.number }}</h3>
-                      <p class="mt-0 font-normal leading-6">{{ metric.text }}</p>
-                  </div>
-          </div>
-      </div>
-  </div>
-  <!-- Problem section -->
-  <div class="about w-full py-20 px-6 bg-indigo-50/50 mt-16">
-      <div class="max-sm:text-center max-w-screen-lg mx-auto pb-8 bg-radial-indigo-small mb-10">
-          <h2 class=" w-full">Industrial innovation is accelerating. <span class="text-red-400">Execution is not.</span></h2>
-          <p>Teams can access data and build applications faster than ever. But <span class="font-medium">the operational logic that drives throughput, quality, and response still lives in custom code, isolated scripts, and one-off solutions that don't scale.</span> </p>
-          <!-- Status Quo section -->
-          <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mt-16">
-              <div v-for="section in PROBLEMS" :key="section.title" class="relative w-full max-md:max-w-md mx-auto">
-                  <div class="flex flex-col items-center sm:items-start">
-                      <div class="flex flex-col justify-center md:justify-start gap-3 w-full">
-                          <div class="w-8 h-8 m-auto sm:m-0 text-red-400">
-                              <UIcon :name="section.svgPath" class="w-full h-full" />
-                          </div>
-                          <div class="w-full flex flex-row gap-3 mx-auto md:m-0">
-                              <p class="w-full font-semibold md:m-0 text-gray-600">
-                              {{ section.title }}
-                              </p>
-                          </div>
-                      </div>
-                      <div>
-                          <p class="font-light">{{ section.description }}</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!-- Cost of inaction section -->
-      <div class="text-center sm:text-left max-w-screen-lg mx-auto pt-6 grid sm:grid-cols-2 gap-10">
-          <div class="flex flex-col max-md:max-w-md mx-auto md:flex-row md:items-center gap-2 md:gap-4">
-              <h4 class="text-5xl font-semibold text-red-400 shrink-0 m-0">$50B</h4>
-              <p class="m-0 leading-snug"><span class="font-medium">Annual cost of unplanned downtime</span> across industrial manufacturers globally</p>
-          </div>
-          <div class="flex flex-col max-md:max-w-md mx-auto md:flex-row md:items-center gap-2 md:gap-4">
-              <h4 class="text-5xl font-semibold text-red-400 shrink-0 m-0">800h</h4>
-              <p class="m-0 leading-snug"><span class="font-medium">Average equipment downtime</span> per year experienced by manufacturers (over 15 hours per week)</p>
-          </div>
-      </div>
-  </div>
+  <!-- 3. One solution, every site: the problem, what FlowFuse is, then the Foundation
+       Partnership as the answer. One section, so the page says it once. -->
+  <section class="w-full px-6 py-20 md:py-24">
+    <div class="max-w-screen-lg mx-auto">
+      <p class="home-eyebrow text-red-500 max-md:text-center">One solution, every site</p>
+      <h2 class="text-balance mt-4 md:text-5xl max-md:text-center max-w-3xl">Solve it at one plant. <span class="text-indigo-600">Run it at all of them.</span></h2>
+      <!-- What FlowFuse is, in plain words, before the page explains how it works -->
+      <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-2xl max-md:text-center max-md:mx-auto">
+        FlowFuse solves hard operational problems for manufacturers, asset operators and the companies that service industrial equipment, using an industrial application platform built on open-source <NuxtLink to="/node-red/" class="text-indigo-600 font-normal underline decoration-indigo-200 underline-offset-2 hover:decoration-indigo-600">Node-RED</NuxtLink>.
+      </p>
 
-  <!-- Solution section -->
-  <div class="solution-section-bg w-full px-6 py-24">
-      <div class="relative z-10 max-w-screen-lg mx-auto max-md:text-center">
-          <p class="text-indigo-500 text-sm font-semibold uppercase m-0">The missing operational layer</p>
-          <h2 class="mt-4 md:text-5xl">FlowFuse is the industrial application platform that sits between your systems and your operations</h2>
-          <p>Whether you're extending an existing system, standardizing a proven solution across sites, or connecting OT and IT data flows, FlowFuse gives your team the platform to <strong>build once and run everywhere</strong>.</p>
-          <div class="flex gap-4 items-center max-md:justify-center flex-wrap mt-6">
-              <CtaBookDemo variant="primary" position="secondary" />
-              <CtaSignUp variant="ghost" position="secondary" icon="i-lucide-arrow-right" />
-          </div>
+      <div class="grid md:grid-cols-2 gap-5 mt-10">
+        <div class="rounded-xl bg-white border border-indigo-100 p-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 m-0">Where it stalls today</p>
+          <ul class="mt-4 mb-0 p-0 list-none flex flex-col gap-3">
+            <li v-for="line in PROBLEM" :key="line" class="flex gap-3 items-start m-0 text-gray-600 font-light">
+              <UIcon name="i-lucide-x" class="w-5 h-5 text-gray-400 shrink-0 mt-0.5" />
+              <span>{{ line }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rounded-xl p-6 bg-gradient-to-br from-indigo-600 to-indigo-800">
+          <p class="text-xs font-semibold uppercase tracking-wide text-indigo-200 m-0">With FlowFuse</p>
+          <ul class="mt-4 mb-0 p-0 list-none flex flex-col gap-3">
+            <li v-for="line in SOLUTION" :key="line" class="flex gap-3 items-start m-0 text-white">
+              <UIcon name="i-lucide-check" class="w-5 h-5 text-red-300 shrink-0 mt-0.5" />
+              <span>{{ line }}</span>
+            </li>
+          </ul>
+        </div>
       </div>
-  </div>
+      <NuxtLink to="/product/" class="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline mt-5 max-md:w-full max-md:justify-center">
+        See the platform that runs it at every site
+        <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+      </NuxtLink>
 
-  <div class="w-full px-6">
-      <!-- Capabilities & Features -->
-      <div class="md:max-w-screen-lg mx-auto mt-24">
-          <div
-              v-for="(item, i) in CAPABILITIES"
-              :key="item.capability"
-              class="max-md:text-center md:flex md:flex-row gap-8 my-4 m-auto mb-12 md:mb-24"
-              :class="{ 'md:flex-row-reverse': (i + 1) % 2 === 0 }"
+      <!-- The Foundation Partnership: how the first site makes every later one faster -->
+      <div class="mt-20 pt-16 border-t border-indigo-100">
+        <p class="home-eyebrow text-red-500 max-md:text-center">The Foundation Partnership</p>
+        <h3 class="text-balance mt-4 mb-0 text-3xl md:text-4xl font-medium text-gray-800 max-md:text-center max-w-3xl">The first site builds the foundation. <span class="text-indigo-600">Every site after starts on it.</span></h3>
+        <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-2xl max-md:text-center max-md:mx-auto">
+          FlowFuse engineers build your first solution alongside your team, on the equipment you already run. What they build is more than one project. It's the foundation every later site reuses, so each rollout has less left to build.
+        </p>
+
+        <div class="mt-12 rounded-2xl home-dark px-6 pt-10 pb-6 md:px-10">
+          <HomeIsoArt scene="foundation" variant="dark" class="w-full" />
+          <div class="relative h-12 mt-4">
+            <div
+                v-for="l in FOUNDATION_LABELS"
+                :key="l.name"
+                class="absolute top-0 -translate-x-1/2 text-center whitespace-nowrap"
+                :style="{ left: `${l.at * 100}%` }"
+            >
+              <p class="m-0 text-white text-sm font-medium">{{ l.name }}</p>
+              <p class="m-0 text-xs max-sm:hidden" :class="l.at === FOUNDATION_LABELS[0].at ? 'text-red-300' : 'text-indigo-200'">{{ l.note }}</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-4 pt-4 border-t border-white/10 text-xs text-indigo-200">
+            <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm border border-[#ff7b6b] bg-[#3b2546]" />Built new at this site</span>
+            <span class="flex items-center gap-2"><span class="w-3 h-3 rounded-sm border border-[#a5b4fc] bg-[#1c2650]" />Reused from the foundation</span>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
+          <NuxtLink
+              v-for="f in FOUNDATION"
+              :key="f.title"
+              :to="f.to"
+              class="group rounded-xl border border-indigo-100 bg-white p-6 hover:no-underline hover:border-indigo-300 transition-colors"
           >
-              <div class="max-md:hidden md:w-[45%] max-md:mb-12 flex items-center">
-                  <div class="rounded-xl w-full bg-gradient-to-tl from-red-100 to-indigo-100 p-5 md:p-8 m-auto">
-                      <div class="ff-image-rounded w-full overflow-hidden">
-                          <img :src="item.imagePath" :alt="item.imageAlt" width="440" class="w-full h-auto">
-                      </div>
-                  </div>
-              </div>
-              <div class="md:w-[55%] my-auto flex flex-col">
-                  <h3 class="text-red-400 mb-3 text-sm font-semibold uppercase">{{ item.feature }}</h3>
-                  <h2>{{ item.capability }}</h2>
-                  <div class="md:hidden rounded-xl w-full bg-gradient-to-tl from-red-100 to-indigo-100 max-w-[500px] mx-auto my-6 p-4">
-                      <div class="ff-image-rounded w-full border border-red-200 overflow-hidden">
-                          <img :src="item.imagePath" :alt="item.imageAlt" width="440" class="w-full h-auto">
-                      </div>
-                  </div>
-                  <p>
-                      {{ item.description }}
-                  </p>
-                  <NuxtLink :to="item.linkHref" class="flex items-center gap-1.5 text-blue-600 hover:underline max-md:justify-center mt-3">
-                      {{ item.linkText }}
-                      <UIcon name="i-heroicons-arrow-long-right-solid" class="w-6 h-6" />
-                  </NuxtLink>
-              </div>
+            <UIcon :name="f.icon" class="w-6 h-6 text-indigo-500" />
+            <p class="text-gray-800 font-medium mt-4 mb-0 flex items-center gap-1.5">
+              <span class="group-hover:underline">{{ f.title }}</span>
+              <UIcon name="i-lucide-arrow-right" class="w-4 h-4 text-indigo-500 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition" />
+            </p>
+            <p class="text-gray-600 font-light text-sm leading-5 mt-2 mb-0">{{ f.text }}</p>
+          </NuxtLink>
+        </div>
+
+        <!-- Mid-page, the reader is still learning: one "learn more", no sales ask -->
+        <div class="flex mt-12 max-md:justify-center">
+          <CtaLink destination="signUp" position="foundation-partnership" class="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline">
+            How the Foundation Partnership works
+            <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+          </CtaLink>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Metrics of success, then ways in by industry and team -->
+  <section class="home-band w-full px-6 py-20 md:py-24">
+    <div class="max-w-screen-lg mx-auto">
+      <p class="home-eyebrow text-red-500 max-md:text-center">Results</p>
+      <h2 class="text-balance mt-4 mb-12 md:text-5xl max-md:text-center">Measured on the line, <span class="text-indigo-600">not in a report.</span></h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <NuxtLink
+            v-for="m in METRICS"
+            :key="m.kind"
+            :to="m.to"
+            class="group flex flex-col rounded-xl bg-red-50/70 p-6 hover:no-underline hover:bg-red-50 transition-colors"
+        >
+          <p class="text-xs font-semibold uppercase tracking-wide text-gray-500 m-0">{{ m.kind }}</p>
+          <p class="text-4xl font-semibold text-red-500 mt-3 mb-0 whitespace-nowrap">{{ m.number }}</p>
+          <p class="text-gray-700 font-light leading-6 mt-3 mb-0 flex-grow">{{ m.text }}</p>
+          <span class="flex items-center gap-1.5 text-indigo-600 text-sm font-medium mt-5">
+            <span class="group-hover:underline">{{ m.company }}</span>
+            <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+          </span>
+        </NuxtLink>
+      </div>
+      <div class="mt-12 pt-8 border-t border-indigo-100 flex flex-col gap-4">
+        <div v-for="group in EXPLORE" :key="group.label" class="flex flex-wrap items-baseline gap-x-5 gap-y-2 max-md:justify-center">
+          <span class="text-xs font-semibold uppercase tracking-wide text-gray-500 w-28 shrink-0 max-md:w-full max-md:text-center">{{ group.label }}</span>
+          <NuxtLink v-for="l in group.links" :key="l.to" :to="l.to" class="text-indigo-600 text-sm font-medium hover:underline">{{ l.name }}</NuxtLink>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Social proof: customer quotes -->
+  <section class="w-full px-6 py-20 md:py-24">
+    <div class="max-w-screen-lg mx-auto">
+      <p class="home-eyebrow text-red-500 max-md:text-center">Customers</p>
+      <h2 class="text-balance mt-4 mb-10 md:text-5xl max-md:text-center">Real results from <span class="text-indigo-600">industrial teams</span></h2>
+      <HomeTestimonials />
+    </div>
+  </section>
+
+  <!-- 5b. Security -->
+  <section class="home-band w-full px-6 py-20 md:py-24">
+    <div class="max-w-screen-lg mx-auto grid md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-10 md:gap-14 items-center">
+      <div class="max-md:text-center">
+        <p class="home-eyebrow text-red-500">Security</p>
+        <h2 class="text-balance mt-4 mb-0 md:text-5xl">Built for enterprise <span class="text-indigo-600">manufacturing.</span></h2>
+        <p class="text-gray-600 text-lg font-light mt-6 mb-0 max-w-md max-md:mx-auto">
+          FlowFuse is SOC 2 Type II certified, with the access controls and deployment options large manufacturers' security teams ask for.
+        </p>
+        <NuxtLink to="/platform/security/" class="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline mt-6">
+          Security and compliance details
+          <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+        </NuxtLink>
+      </div>
+      <div class="grid sm:grid-cols-[minmax(0,4fr)_minmax(0,5fr)] gap-5">
+        <div class="rounded-xl border border-indigo-100 bg-white p-6 flex flex-col items-center justify-center text-center">
+          <div class="w-32 h-32">
+            <IconsSoc2BadgeIcon />
           </div>
-      </div>
-  </div>
-
-  <!-- Mature Adoption - Operational Application System section -->
-  <div class="w-full px-6 py-20 bg-gradient-to-br from-indigo-50 to-red-50">
-      <div class="max-w-screen-lg mx-auto max-md:text-center">
-          <p class="text-indigo-400 text-sm font-semibold uppercase m-0">What mature adoption looks like</p>
-          <h2 class="my-4 md:text-5xl">From one-off solutions to <span class="text-indigo-600">an operational application system</span></h2>
-          <p class="max-w-screen-md">These are not use cases. They are production applications running across the business. Built once, governed centrally, deployed across every site.</p>
-
-          <div class="mt-10 bg-white/40 border-2 border-white rounded-xl pt-8 p-5 flex flex-col gap-8">
-              <p class="text-center text-indigo-600 text-3xl font-normal m-0">Operational Application System</p>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div v-for="category in OPERATIONAL_SYSTEM" :key="category.title" class="bg-indigo-50 border border-indigo-300 rounded-lg flex flex-col">
-                      <div class="bg-indigo-600 text-white text-sm font-medium text-center uppercase px-4 py-2.5 rounded-t-lg leading-5 min-h-16 flex items-start justify-center">
-                          {{ category.title }}
-                      </div>
-                      <div class="flex flex-col gap-[18px] p-2.5 flex-grow">
-                          <template v-for="item in category.items" :key="item.name">
-                          <NuxtLink v-if="item.url" :to="item.url" class="group bg-white border border-white rounded-lg p-4 flex flex-col gap-3 hover:no-underline hover:border-indigo-300 transition-colors">
-                              <p class="text-indigo-500 font-medium m-0"><span>{{ item.name }}</span></p>
-                              <p class="text-gray-700 font-light m-0 text-sm leading-5">{{ item.description }}</p>
-                          </NuxtLink>
-                          <div v-else class="bg-white border border-white rounded-lg p-4 flex flex-col gap-3">
-                              <p class="text-indigo-500 font-medium m-0">{{ item.name }}</p>
-                              <p class="text-gray-700 font-light m-0 text-sm leading-5">{{ item.description }}</p>
-                          </div>
-                          </template>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="rounded-xl px-8 py-9" style="background: radial-gradient(ellipse 50% 125% at 50% 100%, #6366f1, #312e81)">
-                  <div class="flex flex-col md:flex-row gap-8 items-start">
-                      <p class="text-white text-3xl font-medium m-0 md:w-80 shrink-0 leading-10">Every problem solved becomes a reusable application</p>
-                      <div class="flex flex-col gap-3.5 md:pt-2.5">
-                          <p class="text-indigo-50 font-light text-xl leading-6 m-0">That's how a small team manages operations across dozens of sites, without rebuilding from scratch every time.</p>
-                          <p class="text-red-50 font-medium text-xl leading-6 m-0">Ready to build yours?</p>
-                          <div class="flex justify-center md:justify-end mt-2">
-                              <CtaBookDemo variant="highlight" position="oas" />
-                          </div>
-                      </div>
-                  </div>
-              </div>
+          <p class="text-gray-800 font-medium mt-4 mb-0">SOC 2 Type II</p>
+          <p class="text-gray-600 font-light text-sm mt-1 mb-0">Independently audited</p>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div v-for="item in SECURITY" :key="item.title" class="rounded-xl border border-indigo-100 bg-white px-5 py-4 flex gap-4 items-start">
+            <UIcon :name="item.icon" class="w-6 h-6 text-indigo-500 shrink-0 mt-0.5" />
+            <div>
+              <p class="text-gray-800 font-medium m-0">{{ item.title }}</p>
+              <p class="text-gray-600 font-light text-sm leading-5 mt-1 mb-0">{{ item.text }}</p>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
+    </div>
+  </section>
 
-  <div class="w-full bg-radial-indigo-small pt-6 pb-10 px-6">
-      <!-- Testimonials -->
-      <div class="w-full mt-16 md:px-0">
-          <div class="max-w-screen-lg mx-auto">
-              <h2 class="md:text-5xl">Real results from <span class="text-indigo-600">industrial teams</span></h2>
-              <p class="mb-8">See how manufacturers and industrial operators are using FlowFuse to standardize, scale, and govern their operations.</p>
-              <TestimonialCarousel hide-read-more browse-all-url="/customer-stories/" browse-all-text="Browse all customer stories" />
-          </div>
+  <!-- FAQ -->
+  <section class="w-full px-6 pt-20">
+    <div class="max-w-screen-lg mx-auto">
+      <h2 class="mb-1 md:text-5xl max-md:text-center">Frequently asked <span class="text-indigo-600">questions</span></h2>
+      <div class="-mt-20">
+        <Faq :faq="FAQ" variant="page" />
       </div>
-  </div>
+    </div>
+  </section>
 
-  <!-- AI section -->
-  <div class="w-full px-6 py-20">
-      <div class="max-w-screen-lg mx-auto">
-          <p class="text-red-400 text-sm font-semibold uppercase m-0 max-md:text-center">AI in industrial operations</p>
-          <h2 class="mt-4 md:text-5xl max-md:text-center">AI makes building faster. <span class="text-red-400">FlowFuse makes it operational.</span></h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-16">
-              <div class="border-2 border-red-200 rounded-lg p-6 flex flex-col justify-between bg-gradient-to-tl from-red-50/50 to-transparent">
-                  <div class="flex flex-col gap-8">
-                      <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 shrink-0 text-red-400">
-                              <UIcon name="i-heroicons-bolt" class="w-full h-full" />
-                          </div>
-                          <p class="text-red-400 text-2xl font-medium m-0">AI accelerates the build</p>
-                      </div>
-                      <p class="text-gray-700 font-light m-0">FlowFuse Expert, our industrial-tuned AI assistant, lets your team describe what they need in plain language, and generates flows, data transformations, and dashboard logic. No waiting on scarce developers.</p>
-                  </div>
-                  <a href="/ai/" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6">
-                      <span class="group-hover:underline">Learn more about FlowFuse AI</span>
-                      <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full"><UIcon name="i-heroicons-arrow-long-right-solid" /></span>
-                  </a>
-              </div>
-              <div class="border-2 border-red-200 rounded-lg p-6 flex flex-col justify-between bg-gradient-to-tl from-red-50/50 to-transparent">
-                  <div class="flex flex-col gap-8">
-                      <div class="flex items-center gap-3">
-                          <div class="w-8 h-8 shrink-0 text-red-400">
-                              <UIcon name="i-heroicons-shield-check" class="w-full h-full" />
-                          </div>
-                          <p class="text-red-400 text-2xl font-medium m-0">FlowFuse governs the result</p>
-                      </div>
-                      <p class="text-gray-700 font-light m-0">Speed without governance creates new debt. FlowFuse provides the production layer where AI-assisted work becomes visible, versioned, secure, and reusable, across the enterprise.</p>
-                  </div>
-                  <CtaLink destination="bookDemo" position="ai" class="group hover:no-underline flex items-center justify-end gap-1.5 text-indigo-600 mt-6">
-                      <span class="group-hover:underline">Talk to us</span>
-                      <span class="w-5 h-5 shrink-0 flex items-center [&>svg]:w-full [&>svg]:h-full"><UIcon name="i-heroicons-arrow-long-right-solid" /></span>
-                  </CtaLink>
-              </div>
-          </div>
+  <!-- 6. Call to action -->
+  <section class="home-band w-full px-6 pt-16 pb-20 md:pb-24">
+    <div class="home-cta max-w-screen-lg mx-auto rounded-2xl px-6 py-16 md:py-20 text-center">
+     <div class="max-w-3xl mx-auto">
+      <h2 class="text-balance text-white md:text-5xl mt-0">Bring us the problem that repeats across your sites.</h2>
+      <p class="text-indigo-100 font-light text-lg md:text-xl mt-6 mb-0">We'll build the first one with you, prove it at one site, and roll it out to the rest on the same foundation.</p>
+      <div class="flex flex-wrap gap-4 items-center justify-center mt-10">
+        <CtaBookDemo variant="highlight" position="get-started" />
+        <!-- Not ready to talk? A lighter next step than the one the page already offered twice -->
+        <NuxtLink to="/resources/roi-calculator/" class="flex items-center gap-1.5 text-white font-medium hover:underline">
+          Estimate your ROI first
+          <UIcon name="i-lucide-arrow-right" class="w-4 h-4" />
+        </NuxtLink>
       </div>
-  </div>
-
-  <!-- FAQ Section -->
-  <div class="w-full px-6 pt-20 bg-indigo-50/50 mb-10">
-      <div class="max-w-screen-lg mx-auto">
-          <h2 class="mb-1">Frequently Asked <span class="text-indigo-600">Questions</span></h2>
-          <div class="-mt-20">
-              <Faq :faq="FAQ" variant="page" />
-          </div>
-      </div>
-  </div>
-
-  <div class="pb-10 md:pb-12 pt-14 px-6">
-      <!-- Get Started -->
-      <div class="rounded-xl px-9 py-12 flex flex-col items-center gap-8 text-center ff-get-started-bg">
-          <p class="text-white text-5xl font-medium m-0">Get Started with FlowFuse</p>
-          <p class="text-indigo-50 font-light text-xl max-w-2xl m-0">Talk to our team, and our engineers will build your first operational application alongside you.</p>
-          <CtaBookDemo variant="highlight" position="get-started" />
-      </div>
-      <!-- FF Content -->
-      <div class="max-w-screen-lg m-auto">
-          <div class="pt-12 mt-10 pb-12">
-          <h2 class="text-center w-full md:text-left col-span-full font-medium"><span class="text-indigo-600">Explore more</span> about FlowFuse</h2>
-              <ExploreMoreContent hubspot-reference="homepage" />
-          </div>
-      </div>
-  </div>
+    </div>
+    </div>
+  </section>
 </template>
+
+<style scoped>
+/* Page rhythm: the hero is the only dark section. The strip under it picks up the
+   hero's indigo and lets it go to white, and the closing call to action is a card in the
+   hero's colours on the light page, rather than a second full-width dark band.
+   Below the strip, sections alternate white and .home-band, so the light middle of the
+   page never runs white for long. */
+.home-band {
+  background-color: #f5f7ff;
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center top;
+  border-top: 1px solid #e0e7ff;
+  border-bottom: 1px solid #e0e7ff;
+}
+.home-after-hero {
+  background: linear-gradient(to bottom, #eef2ff 0%, #ffffff 100%);
+}
+.home-cta {
+  background:
+    radial-gradient(ellipse 60% 70% at 75% 45%, rgba(99, 102, 241, 0.22), transparent 70%),
+    #0c1330;
+}
+.home-dark {
+  background:
+    radial-gradient(ellipse 60% 70% at 75% 45%, rgba(99, 102, 241, 0.22), transparent 70%),
+    #0c1330;
+}
+.home-eyebrow {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+</style>

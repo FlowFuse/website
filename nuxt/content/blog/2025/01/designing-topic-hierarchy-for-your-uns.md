@@ -24,7 +24,7 @@ A well-structured topic hierarchy is critical in manufacturing, where vast amoun
 
 In this post, we'll explore the significance of topic structuring for your UNS, outline why it's essential for scalability and performance, and share best practices for designing a robust topic hierarchy that can evolve alongside your business.
 
-::cta-image{src="/blog/2025/01/images/design-topic-structer-cta-1.png" alt="Try FlowFuse free and see your entire MQTT namespace mapped out visually" cta="sign-up"}
+::cta-image{src="/blog/2025/01/images/design-topic-structer-cta-1.png" alt="Still guessing at your topic structure?. Map your entire MQTT namespace visually, with our engineers alongside your team." cta="sign-up"}
 ::
 
 ## Why Topic Structuring is Crucial for Your UNS

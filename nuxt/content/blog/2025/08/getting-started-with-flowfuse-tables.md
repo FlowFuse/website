@@ -17,7 +17,7 @@ FlowFuse recently introduced a [beta release](/handbook/engineering/releases/#be
 
 ## Getting Started
 
-FlowFuse Tables is available for Enterprise users. If you do not have an Enterprise FlowFuse account and are interested in trying it out, [contact us](/contact-us/) to get started.
+FlowFuse Tables is available in FlowFuse Edge, Hub and Fleet. To try it out, [contact us](/contact-us/).
 
 ### Step 1: Enable the Database in Your Project
 

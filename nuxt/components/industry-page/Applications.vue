@@ -11,10 +11,31 @@ type Item = {
     imageAlt: string
     variant: 'indigo' | 'red' | 'mixed'
     videoId?: string
+    // A short muted screen recording that loops in place of the still image. `image` is
+    // its poster and what visitors who prefer reduced motion see, so use the clip's own
+    // poster frame there. Same pattern as the /teams solution cards (TeamPage.vue).
+    clip?: string
     id?: string
 }
 
 defineProps<{ heading: string, description: string, items: Item[] }>()
+
+const clips = ref<HTMLVideoElement[]>([])
+let clipObserver: IntersectionObserver | undefined
+
+onMounted(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    clipObserver = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            const video = entry.target as HTMLVideoElement
+            if (entry.isIntersecting) video.play().catch(() => {})
+            else video.pause()
+        }
+    }, { threshold: 0.25 })
+    clips.value.forEach(video => clipObserver!.observe(video))
+})
+
+onBeforeUnmount(() => clipObserver?.disconnect())
 
 const VARIANTS: Record<string, { gradient: string, border: string, mobileGradient: string, mobileBorder: string }> = {
     indigo: { gradient: 'from-indigo-400 via-indigo-300 to-indigo-100', border: 'border-indigo-300', mobileGradient: 'from-indigo-100 to-indigo-50', mobileBorder: 'border-indigo-200' },
@@ -55,7 +76,21 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
                     :poster="item.image"
                     class="application-video"
                 />
-                <img v-else :src="item.image" :alt="item.imageAlt" loading="lazy">
+                <template v-else>
+                  <video
+                      v-if="item.clip"
+                      ref="clips"
+                      :src="item.clip"
+                      :poster="item.image"
+                      :aria-label="item.imageAlt"
+                      muted
+                      loop
+                      playsinline
+                      preload="none"
+                      class="motion-reduce:hidden w-full h-full object-cover object-top"
+                  />
+                  <img :src="item.image" :alt="item.imageAlt" loading="lazy" :class="{ 'motion-safe:hidden': item.clip }">
+                </template>
               </div>
             </div>
           </div>
@@ -71,7 +106,21 @@ const VARIANTS: Record<string, { gradient: string, border: string, mobileGradien
                     :poster="item.image"
                     class="application-video"
                 />
-                <img v-else :src="item.image" :alt="item.imageAlt" loading="lazy">
+                <template v-else>
+                  <video
+                      v-if="item.clip"
+                      ref="clips"
+                      :src="item.clip"
+                      :poster="item.image"
+                      :aria-label="item.imageAlt"
+                      muted
+                      loop
+                      playsinline
+                      preload="none"
+                      class="motion-reduce:hidden block w-full"
+                  />
+                  <img :src="item.image" :alt="item.imageAlt" loading="lazy" :class="{ 'motion-safe:hidden': item.clip }">
+                </template>
               </div>
             </div>
             <!-- A blank line in the source splits the description into separate paragraphs,
