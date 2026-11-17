@@ -4,7 +4,7 @@ title: "Make the Fifth Fix Faster than the First with Horizontal Deployment"
 subtitle: Build it once, make it the standard, roll it out to every plant
 meta:
     description: "Horizontal deployment in manufacturing: turn one plant's fix into a blueprint every site deploys, each live faster than the last. Live demos and Q&A."
-image: /images/webinars/make-the-fifth-fix-faster-than-the-first.jpg
+image: /images/webinars/horizontal-deployment-in-manufacturing.jpg
 date: 2027-01-26
 time: 18:00 CET (12:00pm ET / 9:00am PT)
 duration: 60
