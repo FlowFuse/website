@@ -374,12 +374,14 @@ export default defineNuxtConfig({
                 { rel: 'stylesheet', href: '/css/style.css' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap' },
-                { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css', integrity: 'sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+', crossorigin: 'anonymous' },
+                { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap' },
                 { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
                 { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
                 { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
                 { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#aa4444' },
+            ],
+            noscript: [
+                { innerHTML: '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap">' },
             ],
             meta: [
                 { name: 'msapplication-TileColor', content: '#00aba9' },
@@ -387,6 +389,11 @@ export default defineNuxtConfig({
                 { name: 'google-site-verification', content: 'KQ654UVVaVEEdt8WzyAWmMFW5CwTW9gNp6LdZOiYiAc' },
             ],
             script: [
+                // Script-inserted so these stylesheets don't block first paint.
+                {
+                    textContent: "(function(){var s=document.currentScript;function add(h,i){var l=document.createElement('link');l.rel='stylesheet';l.href=h;if(i){l.integrity=i;l.crossOrigin='anonymous'}s.parentNode.insertBefore(l,s)}add('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');add('https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css','sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+')})()",
+                    tagPriority: 'critical',
+                },
                 // Studio's GitHub sign-in comes back to /__nuxt_studio/auth/github with
                 // ?code=&iss=&state=, and that handler finishes by redirecting to the page you
                 // asked to edit. This host appends the request's own query string to every
@@ -610,6 +617,10 @@ export default defineNuxtConfig({
     },
 
     hooks: {
+        // Don't prefetch other pages' chunks on load.
+        'build:manifest' (manifest) {
+            for (const chunk of Object.values(manifest)) chunk.prefetch = false
+        },
         // `meta` is reserved by @nuxt/content - it holds the <!--more--> excerpt - so a
         // collection that declares its own `meta` schema field silently loses everything
         // under it. These collections' frontmatter still writes "meta:", so rewrite the key

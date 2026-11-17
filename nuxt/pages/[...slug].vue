@@ -16,6 +16,8 @@ if (!page.value) {
 useHead({
     title: page.value.title
 })
+
+useKatexStyles()
 </script>
 
 <template>

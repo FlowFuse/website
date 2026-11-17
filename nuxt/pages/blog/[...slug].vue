@@ -171,6 +171,8 @@ if (routeInfo.value.kind === 'post') {
         }) : undefined),
     ])
 }
+
+useKatexStyles()
 </script>
 
 <template>
