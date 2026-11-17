@@ -1,9 +1,9 @@
 ---
-metaTitle: "Make the Fifth Fix Faster than the First"
-title: "Make the Fifth Fix Faster than the First - Accelerated Industrial Application Development at Scale"
-subtitle: Leveraging the FlowFuse Foundation Partnership to Develop Applications at Record Speed
+metaTitle: "Horizontal Deployment: Stop Rebuilding at Every Plant"
+title: "Make the Fifth Fix Faster than the First with Horizontal Deployment"
+subtitle: Build it once, make it the standard, roll it out to every plant
 meta:
-    description: Build your first plant application on the floor, then turn it into a blueprint every site reuses. See how the FlowFuse Foundation Partnership works.
+    description: "Horizontal deployment in manufacturing: turn one plant's fix into a blueprint every site deploys, each live faster than the last. Live demos and Q&A."
 image: /images/webinars/make-the-fifth-fix-faster-than-the-first.jpg
 date: 2027-01-26
 time: 18:00 CET (12:00pm ET / 9:00am PT)
@@ -13,47 +13,34 @@ hubspot:
     formId:
     downloadFormId:
 ---
-Most plants can build the application their line needs. The cost comes at the next site, and the one after that, when the same fix gets rebuilt from scratch. This session shows how to pick one problem with a clear cost, build the first solution on the floor, and turn it into a blueprint that every other site deploys.
+Most plants can build the application their line needs, like live OEE or an early warning before a pump fails. Then the next plant builds it again from scratch. Five plants later, your engineers have built it five times, you're maintaining five versions, and no two plants agree on a number.
+
+Lean teams call the answer horizontal deployment: spreading what works at one plant to the rest. This session shows how to do it with the applications your engineers build, so each plant goes live faster than the last and reports the same numbers.
 
 <!--more-->
 
-## The costliest problems fall between systems
+## How Walter Tools stopped rebuilding
 
-The costliest problems in a plant rarely live inside one system. They fall between systems: losses nobody sees in real time, OEE pieced together after the shift, maintenance that waits for a breakdown.
+[Walter Tools](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/) had the same problem. Seven people in IT supported five different systems for machine data, and some production units had none. They replaced them with one standard and now copy what works from one unit to the next. A new unit is connected in hours instead of months, and the same small team supports sites around the world.
 
-Engineers close these gaps with applications they build themselves, and those applications work. Then the next site builds its own version, and so does the one after that. Five sites later there are five versions of the same fix to support, and no two of them can be compared.
+## Horizontal deployment in four steps
 
-## Make every fix after the first one faster
+Kristopher walks through the approach FlowFuse uses in the [Foundation Partnership](/build-with-us/): we define the problem with you, design a scope and a value case you can defend, and deliver the first solution alongside your team.
 
-In this webinar, Kristopher shows how manufacturers close those gaps with working applications built on the equipment and software they already own, and make every fix after the first one faster. You'll see the approach behind the [FlowFuse Foundation Partnership](/build-with-us/):
-
-1. **Pick one problem with a clear cost.** A loss you can name, measure and put a number on.
-2. **Build it on the floor.** Your engineers and ours, working alongside the people who run the line.
-3. **Turn it into a blueprint.** The next site deploys it instead of rebuilding it.
-
-Along the way, you'll see two working applications, and how [Walter Tools](/customer-stories/scaling-industrial-iot-operations-while-maintaining-competitive-edge/) uses standardized flows to connect a new production unit in hours instead of months.
-
-## What you'll learn
-
-- How to choose a first problem: a loss you can measure, an owner on the floor, and data your equipment already produces
-- How to build on what you already own: PLCs, historians, MES, ERP and CMMS, connected through Node-RED
-- What goes into a blueprint: what every site shares, and what each site adapts
-- How to deploy the blueprint to the next site through FlowFuse pipelines, with an engineer approving every change
-- How the Foundation Partnership works: Define, Design, Deliver, with FlowFuse engineers working alongside your team
+1. **Choose the first problem.** One line, a loss you can put a number on, and a cost agreed before you start.
+2. **Build on what you already have.** Connect the PLCs, SCADA, historians, MES, ERP and CMMS already in the plant. Control stays in the PLC, and operators get no extra work.
+3. **Turn it into a blueprint.** Decide what all sites share and what each one can change, so they all measure the same way.
+4. **Roll out the blueprint.** Each new site deploys it instead of rebuilding it, and every change is reviewed, recorded and reversible.
 
 ## Live demo
 
-You'll see two applications built on FlowFuse and Node-RED:
-
-- **Live OEE for a packaging line**, showing short-stop losses as they happen, while the shift can still act on them
-- **A pump health board** that raises a maintenance work request from a rising bearing trend, with a planner approving the request
-
-The session closes with live Q&A, so bring your own shop floor integration and scaling questions.
+Kristopher will show two applications live. The first is an OEE board for a packaging line. It shows short stops as they happen, so the shift can recover before the target is missed. The second watches a critical pump. When a reading starts trending the wrong way, it raises a maintenance request for a planner to approve. The session ends with open Q&A.
 
 ## Who should attend
 
-This webinar is for manufacturing operations leaders, controls and automation engineers, and digital transformation teams who have an application working at one site and want it running at every site, faster each time.
+Manufacturing operations leaders, controls and automation engineers, and digital transformation teams who have an application working at one site and want it running at every site.
 
 ### Have a problem in mind already?
+
 Our team builds the first solution with you, then helps you take it to every site.
 [Talk to us about your first fix](/build-with-us/)
