@@ -29,8 +29,7 @@ iteration:
       -  Ensure you have git configured with an appropriate `user.name` and `user.email`
     - [GitHub client](https://github.com/cli/cli)
       - Ensure the client is logged in using `gh auth login`
-    - [jq](https://stedolan.github.io/jq/download/)
-    - [yq](https://mikefarah.gitbook.io/yq/#install)
+    - [jq](https://stedolan.github.io/jq/download/) - maybe in OS package repo and/or homebrew
 
 On release day, the Release Manager takes the lead in running the release process,
 following the steps in the checklist.
