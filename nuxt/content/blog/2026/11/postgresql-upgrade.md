@@ -12,9 +12,9 @@ tags:
   - postgres
 ---
 
-PostgreSQL v14 passed it's End Of Supported Life at the start of November 2026, to ensure on going support we are migrating to PostgreSQL v16.
+PostgreSQL v14 passed it's End Of Supported Life at the start of November 2026, to ensure on going support we are migrating our Docker Compose and Kubernetes installs to PostgreSQL v16.
 
-As part of the FlowFuse v3.4.0 release we are shipping PostgreSQL v16, the following are the instructions for upgrading from any version greater than v2.10.0.
+As part of the FlowFuse v3.4.0 release we are shipping PostgreSQL v16, the following are the instructions for upgrading from any version greater than FlowFuse v2.10.0.
 
 If you are starting with version v2.10.0 or older please follow [these instructons](https://github.com/FlowFuse/docker-compose/blob/main/UPGRADE.md) to move to v3.3.0 first.
 
@@ -91,25 +91,64 @@ Once the backup has completed the following steps need to be completed to upgrad
    ```bash
    docker pull flowfuse/node-red:latest
    ```
-6. Start the project depending on the TLS configuration (replace `$projectName` with your project name):
-
-  - automatic TLS:
-    ```bash
-    docker compose --profile autossl -p flowfuse up -d
-    ```
-  - any other scenario:
-    ```bash
-    docker compose -p flowfuse up -d
-    ```
+6. Start the project depending on the TLS configuration:
+    - automatic TLS:
+        ```bash
+        docker compose --profile autossl -p flowfuse up -d
+        ```
+    - any other scenario:
+        ```bash
+        docker compose -p flowfuse up -d
+        ```
 
 
 ### Kubernetes
 
 The Kubernetes upgrade is handled by the helm chart. Using v2.x.x of the helm chart will include an init container to the PostgreSQL subchart that will perform an inplace upgrade at startup (and no-op on subsequent restarts).
 
-The usual Kubernetes instructions should be followed.
+The usual Kubernetes [upgrade instructions](https://flowfuse.com/docs/install/kubernetes/#upgrade) should be followed.
 
 
 ## Rollback
 
-Should there be a problem the following instauctions can be 
+Should there be a problem the following instauctions can be used to revert to the previous FlowFuse version and PostgreSQL v14.
+
+### Docker
+
+1. Stop any running containers
+    ```bash
+    docker compose -p flowfuse down --rmi all
+    ```
+2. Replace the new `docker-compose.yml` with the backup
+   ```bash
+   cp docker-compose-backup.yml docker-compose.yml
+   ```
+3. Delete PostgreSQL v16 database volume
+   ```bash
+   docker volume rm flowfuse_db
+   ```
+4. Bring up the containers but do not start them
+    - automatic TLS:
+        ```bash
+        docker compose --profile autossl -p flowfuse up -d --no-start
+        ```
+    - any other scenario:
+        ```bash
+        docker compose -p flowfuse up -d --no-start
+        ```
+5. Start the PostgreSQL container
+   ```bash
+   docker start flowfuse-postgres-1
+   ```
+6. Restore the backup
+   ```bash
+   bzcat flowfuse-db-backup-sql.bz2 | docker exec -it flowfuse-postgres-1 pg_restore -c flowforge
+   ```
+7. Restart other containers
+   ```bash
+   docker compose -p flowfuse start
+   ```
+
+### Kubernetes
+
+TODO
