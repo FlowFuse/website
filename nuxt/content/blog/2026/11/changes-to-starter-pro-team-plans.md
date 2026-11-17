@@ -22,9 +22,9 @@ That raises fair questions, especially about your flows and your data. Here are 
 
 We're replacing the Starter, Pro, and Team plans with three products, each built for a specific kind of work:
 
-- **FlowFuse Hub** connects your business systems.
-- **FlowFuse Edge** connects your data sources and powers your dashboards.
-- **FlowFuse Fleet** runs and manages IoT deployments across many devices.
+- **[FlowFuse Hub](https://flowfuse.com/product/hub/)** connects your business systems.
+- **[FlowFuse Edge](https://flowfuse.com/product/edge/)** connects your data sources and powers your dashboards.
+- **[FlowFuse Fleet](https://flowfuse.com/product/fleet/)** runs and manages IoT deployments across many devices.
 
 Our existing plans weren't built around what production environments need. These three products are.
 
