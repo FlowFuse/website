@@ -1,5 +1,5 @@
 ---
-title: 'Migrating from PostgreSQL 14 to 16'
+title: 'Migrating from PostgreSQL v14 to v16'
 authors:
   - ben-hardill
 date: '2026-12-20'
