@@ -20,19 +20,19 @@
         "rehype-katex": "^7.0.1",
         "remark-math": "^6.0.0",
         "sanitize-html": "^2.18.1",
-        "satori": "^0.26.0",
+        "satori": "^0.47.1",
         "unstorage": "^1.17.5"
     },
     "devDependencies": {
         "@nuxt/content": "^3.13.0",
         "@nuxt/image": "^2.0.0",
-        "@nuxt/ui": "^4.8.2",
-        "@nuxtjs/seo": "^5.3.12",
+        "@nuxt/ui": "^4.12.2",
+        "@nuxtjs/seo": "^6.0.1",
         "@types/sanitize-html": "^2.16.1",
         "better-sqlite3": "^12.10.0",
         "nuxt": "^4.6.4",
-        "nuxt-link-checker": "^5.0.10",
-        "nuxt-og-image": "^6.7.8",
+        "nuxt-link-checker": "^6.0.1",
+        "nuxt-og-image": "^7.0.7",
         "nuxt-studio": "file:.local-packages/nuxt-studio-1.7.0.tgz"
     }
 }
