@@ -35,7 +35,7 @@
                     {
                         "title": "By Industry",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-[6] md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-4 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
                                 "label": "Automotive",
@@ -48,19 +48,9 @@
                                 "icon": "cog-6-tooth"
                             },
                             {
-                                "label": "Building Materials",
-                                "href": "/industries/building-materials/",
-                                "icon": "building-office-2"
-                            },
-                            {
                                 "label": "Energy & Utilities",
                                 "href": "/industries/energy-utilities/",
                                 "icon": "bolt"
-                            },
-                            {
-                                "label": "Aviation & Aerospace",
-                                "href": "/industries/aviation-aerospace/",
-                                "icon": "airplane"
                             },
                             {
                                 "label": "See All Industries",
@@ -72,7 +62,7 @@
                     {
                         "title": "By Use Case",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-[7] md:col-start-3 md:row-start-2 xl:col-start-4",
+                        "listClasses": "row-span-4 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
                                 "label": "SCADA",
@@ -85,24 +75,9 @@
                                 "icon": "arrow-trending-up"
                             },
                             {
-                                "label": "MES",
-                                "href": "/use-cases/mes/",
-                                "icon": "chart"
-                            },
-                            {
-                                "label": "IT/OT Middleware",
-                                "href": "/use-cases/it-ot-middleware/",
-                                "icon": "arrows-right-left"
-                            },
-                            {
                                 "label": "Unified Namespace",
                                 "href": "/use-cases/uns/",
                                 "icon": "uns"
-                            },
-                            {
-                                "label": "Remote Device Management",
-                                "href": "/use-cases/remote-device-management/",
-                                "icon": "wifi"
                             },
                             {
                                 "label": "See All Use Cases",
@@ -112,7 +87,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "solutions"
             },
             {
@@ -132,59 +107,41 @@
                                 "label": "FlowFuse Edge",
                                 "href": "/product/edge/",
                                 "icon": "chip",
-                                "indent": true,
-                                "description": "For OT teams connecting the plant floor"
+                                "indent": true
                             },
                             {
                                 "label": "FlowFuse Hub",
                                 "href": "/product/hub/",
                                 "icon": "circle-stack",
-                                "indent": true,
-                                "description": "For IT teams connecting enterprise systems"
+                                "indent": true
                             },
                             {
                                 "label": "FlowFuse Fleet",
                                 "href": "/product/fleet/",
                                 "icon": "server-stack",
-                                "indent": true,
-                                "description": "For OEMs managing equipment in the field"
+                                "indent": true
                             }
                         ]
                     },
                     {
                         "title": "Features",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-[7] md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-4 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
-                            {
-                                "label": "FlowFuse Dashboard",
-                                "href": "/platform/dashboard/",
-                                "icon": "dashboard"
-                            },
-                            {
-                                "label": "Device Agent",
-                                "href": "/platform/device-agent/",
-                                "icon": "device-agent"
-                            },
                             {
                                 "label": "Node-RED",
                                 "href": "/node-red/",
                                 "icon": "code-bracket"
                             },
                             {
+                                "label": "FlowFuse Dashboard",
+                                "href": "/platform/dashboard/",
+                                "icon": "dashboard"
+                            },
+                            {
                                 "label": "FlowFuse Expert",
                                 "href": "/docs/user/expert/",
                                 "icon": "sparkles"
-                            },
-                            {
-                                "label": "Integrations",
-                                "href": "/integrations/",
-                                "icon": "squares-plus"
-                            },
-                            {
-                                "label": "Blueprint Library",
-                                "href": "/blueprints/",
-                                "icon": "building-library"
                             },
                             {
                                 "label": "Security & Compliance",
@@ -194,7 +151,7 @@
                         ]
                     }
                 ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(8,auto)] md:pr-1 md:auto-rows-auto items-center",
+                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center",
                 "highlight": "platform"
             },
             {
@@ -203,7 +160,7 @@
                     {
                         "title": "Learn",
                         "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-5 xl:col-start-2 xl:row-start-2",
+                        "listClasses": "row-span-4 xl:col-start-2 xl:row-start-2",
                         "links": [
                             {
                                 "label": "Blog",
@@ -221,11 +178,6 @@
                                 "icon": "book-open"
                             },
                             {
-                                "label": "Free Templates",
-                                "href": "/blog/templates/",
-                                "icon": "clipboard-document-check"
-                            },
-                            {
                                 "label": "Node-RED Academy",
                                 "href": "https://node-red-academy.learnworlds.com/",
                                 "icon": "academic-cap"
@@ -235,7 +187,7 @@
                     {
                         "title": "Reference",
                         "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-5 md:col-start-2 md:row-start-2 xl:col-start-3",
+                        "listClasses": "row-span-4 md:col-start-2 md:row-start-2 xl:col-start-3",
                         "links": [
                             {
                                 "label": "Application Guides",
@@ -263,7 +215,7 @@
                     {
                         "title": "Evaluate",
                         "titleGrid": "md:col-start-3 md:row-start-1 xl:col-start-4",
-                        "listClasses": "row-span-3 md:col-start-3 md:row-start-2 xl:col-start-4",
+                        "listClasses": "row-span-4 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
                                 "label": "Foundation Partnership",
@@ -279,48 +231,17 @@
                                 "label": "ROI Calculator",
                                 "href": "/resources/roi-calculator/",
                                 "icon": "dollar"
-                            }
-                        ]
-                    }
-                ],
-                "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(6,auto)] md:pr-1 md:auto-rows-auto items-center",
-                "highlight": "resources"
-            },
-            {
-                "label": "Company",
-                "columns": [
-                    {
-                        "title": "Company",
-                        "titleGrid": "xl:col-start-2 xl:row-start-1",
-                        "listClasses": "row-span-3 xl:col-start-2 xl:row-start-2",
-                        "links": [
-                            {
-                                "label": "About Us",
-                                "href": "/about/",
-                                "icon": "globe-alt"
                             },
                             {
-                                "label": "Jobs",
-                                "href": "site:jobBoard",
-                                "icon": "case"
-                            }
-                        ]
-                    },
-                    {
-                        "title": "Work with us",
-                        "titleGrid": "md:col-start-2 md:row-start-1 xl:col-start-3",
-                        "listClasses": "row-span-3 md:col-start-2 md:row-start-2 xl:col-start-3",
-                        "links": [
-                            {
-                                "label": "Contact Us",
-                                "href": "/contact-us/",
-                                "icon": "mail"
+                                "label": "Blueprint Library",
+                                "href": "/blueprints/",
+                                "icon": "building-library"
                             }
                         ]
                     }
                 ],
                 "megaClasses": "narrow mega md:grid md:grid-flow-col md:grid-rows-[repeat(5,auto)] md:pr-1 md:auto-rows-auto items-center",
-                "highlight": "company"
+                "highlight": "resources"
             }
         ],
         "direct": [
@@ -340,7 +261,6 @@
             "Platform",
             "Industrial AI",
             "Resources",
-            "Company",
             "Pricing"
         ]
     },
