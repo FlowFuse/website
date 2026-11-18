@@ -65,19 +65,19 @@
                         "listClasses": "row-span-4 md:col-start-3 md:row-start-2 xl:col-start-4",
                         "links": [
                             {
-                                "label": "SCADA",
-                                "href": "/use-cases/scada/",
-                                "icon": "screen"
-                            },
-                            {
                                 "label": "Production Line Monitoring",
                                 "href": "/use-cases/production-line-monitoring/",
                                 "icon": "arrow-trending-up"
                             },
                             {
-                                "label": "Unified Namespace",
-                                "href": "/use-cases/uns/",
-                                "icon": "uns"
+                                "label": "SCADA",
+                                "href": "/use-cases/scada/",
+                                "icon": "screen"
+                            },
+                            {
+                                "label": "MES",
+                                "href": "/use-cases/mes/",
+                                "icon": "chart"
                             },
                             {
                                 "label": "See All Use Cases",
