@@ -3,7 +3,7 @@ title: 'Build or Buy? Neither Answer Survives the Second Plant'
 subtitle: Make two decisions instead, what every site should share and what each plant builds for itself
 description: Build vs buy looks right at one plant and stalls at the second. FlowFuse CEO Michael Davis on what to standardize across sites and what to build per plant.
 metaTitle: 'Build vs Buy: Why Neither Survives the Second Plant'
-date: '2026-11-20'
+date: '2026-11-18'
 authors:
   - michael-davis
 image: /blog/2026/11/images/build-vs-buy.png
