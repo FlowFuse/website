@@ -12,6 +12,14 @@
 // is hidden here and the privacy line below the embed gives the notice instead.
 const FORM_ID = '159c173d-dd95-49bd-922b-ff3ef243e90c'
 
+// Also used in the blog post sidebar (`compact`), so both signups share the same short copy
+// and styled form rather than the sidebar showing HubSpot's default form with its full
+// consent block. `reference` keeps the two placements apart in the cta-blog-subscribe event.
+const props = withDefaults(defineProps<{ reference?: string, compact?: boolean }>(), {
+    reference: 'footer',
+    compact: false
+})
+
 const css = `
 .ff-footer-newsletter .hs-form { display: flex; flex-wrap: wrap; gap: 8px; font-family: Heebo, Helvetica, Arial, sans-serif; }
 .ff-footer-newsletter .hs-form fieldset, .ff-footer-newsletter .hs-form .hs_email { flex: 1 1 200px; max-width: none !important; margin: 0; padding: 0; border: 0; }
@@ -50,10 +58,14 @@ function onReady(form: HTMLFormElement) {
 </script>
 
 <template>
-  <section class="ff-footer-newsletter w-full md:w-[26rem] md:shrink-0" data-nav-section="Newsletter">
+  <section
+    class="ff-footer-newsletter w-full"
+    :class="{ 'md:w-[26rem] md:shrink-0': !props.compact }"
+    :data-nav-section="props.compact ? undefined : 'Newsletter'"
+  >
     <p class="font-semibold text-gray-900">Get the monthly newsletter</p>
-    <p class="text-gray-600 mt-1 mb-4">Product updates, guides and webinars, once a month.</p>
-    <HubSpotForm :form-id="FORM_ID" cta="cta-blog-subscribe" reference="footer" :css="css" @ready="onReady" />
+    <p class="text-gray-600 mt-1 mb-4" :class="{ 'text-sm': props.compact }">Product updates, guides and webinars, once a month.</p>
+    <HubSpotForm :form-id="FORM_ID" cta="cta-blog-subscribe" :reference="props.reference" :css="css" @ready="onReady" />
     <p class="mt-3 text-xs text-gray-500">
       You can unsubscribe at any time. Read our <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
       This form is protected by reCAPTCHA, and Google's

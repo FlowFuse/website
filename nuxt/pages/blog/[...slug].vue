@@ -293,8 +293,7 @@ useKatexStyles()
               <BlogSocialShare :title="page.title" :path="route.path" />
             </div>
             <div class="mt-3 pt-6 flex flex-col border-t-2">
-              <h3>Sign up for updates</h3>
-              <HubSpotForm form-id="159c173d-dd95-49bd-922b-ff3ef243e90c" cta="cta-blog-subscribe" reference="article" />
+              <FooterNewsletter reference="article" compact />
             </div>
           </div>
         </div>
