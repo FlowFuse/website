@@ -28,6 +28,10 @@ if (routeInfo.value.kind === 'notfound') {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
+// Read once in setup: isFuturePost can't reach the runtime config from inside computeds or
+// async callbacks (see composables/useBlogList.ts).
+const isProductionContext = useRuntimeConfig().public.isProductionContext
+
 const contentPath = computed(() => `/blog/${slugParts.value.join('/')}`)
 
 const { data: page } = await useAsyncData(
@@ -35,7 +39,7 @@ const { data: page } = await useAsyncData(
     () => routeInfo.value.kind === 'post' ? queryCollection('blog').path(contentPath.value).first() : Promise.resolve(null)
 )
 
-if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.date))) {
+if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.date, isProductionContext))) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
@@ -79,14 +83,14 @@ const relatedPosts = computed(() => {
     if (!current) return []
     const requiredTags = current.tags || []
     return (allPosts.value || [])
-        .filter(post => post.path !== current.path && !isFuturePost(post.date))
+        .filter(post => post.path !== current.path && !isFuturePost(post.date, isProductionContext))
         .map(post => ({ post, commonTags: requiredTags.reduce((count, tag) => count + ((post.tags || []).includes(tag) ? 1 : 0), 0) }))
         .filter(({ commonTags }) => commonTags >= requiredTags.length - 1)
         .sort((a, b) => b.commonTags - a.commonTags || new Date(b.post.date).getTime() - new Date(a.post.date).getTime())
         .slice(0, 5)
         .map(({ post }) => post)
 })
-const recommendedPosts = computed(() => (allPosts.value || []).filter(post => !isFuturePost(post.date)).slice(0, 5))
+const recommendedPosts = computed(() => (allPosts.value || []).filter(post => !isFuturePost(post.date, isProductionContext)).slice(0, 5))
 const relatedHeading = computed(() => relatedPosts.value.length ? 'Related Articles:' : 'Recommended Articles:')
 const postsToShow = computed(() => relatedPosts.value.length ? relatedPosts.value : recommendedPosts.value)
 

@@ -11,13 +11,14 @@ const props = defineProps<{
     hubspotReference: string
 }>()
 
+const isProductionContext = useRuntimeConfig().public.isProductionContext
 const { data: blogPosts } = await useAsyncData(`explore-more-blog-${props.collectionName || 'all'}`, async () => {
     const all = await queryCollection('blog')
         .select('path', 'title', 'date', 'tags')
         .order('date', 'DESC')
         .all()
     return all
-        .filter(post => !isFuturePost(post.date) && (!props.collectionName || (post.tags || []).includes(props.collectionName)))
+        .filter(post => !isFuturePost(post.date, isProductionContext) && (!props.collectionName || (post.tags || []).includes(props.collectionName)))
         .slice(0, 3)
 })
 
