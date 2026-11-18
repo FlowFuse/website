@@ -139,14 +139,14 @@
                                 "icon": "dashboard"
                             },
                             {
-                                "label": "FlowFuse Expert",
-                                "href": "/docs/user/expert/",
-                                "icon": "sparkles"
+                                "label": "Device Agent",
+                                "href": "/platform/device-agent/",
+                                "icon": "device-agent"
                             },
                             {
-                                "label": "Security & Compliance",
-                                "href": "/platform/security/",
-                                "icon": "shield-check"
+                                "label": "Integrations",
+                                "href": "/integrations/",
+                                "icon": "squares-plus"
                             }
                         ]
                     }
