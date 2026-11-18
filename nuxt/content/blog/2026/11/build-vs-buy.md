@@ -12,8 +12,8 @@ tags:
   - flowfuse
 cta:
   type: sign-up
-  title: Scope Your Foundation Partnership
-  description: Pick one result you need to move on one line. We build the first solution with your team, on the systems you already run, and make it the template for every site after it.
+  title: Start with one result on one line
+  description: Pick a number you already track, like downtime, scrap or throughput. Our engineers will build the first solution with your team, on the systems you already run, and we'll make it the template for your next plant.
 tldr:
   - Buying one suite means replacing systems that still work, and building everything depends on engineers most plants can't hire. Either way, the work rarely gets past the first site.
   - Make two decisions instead. Buy what should be the same at every site, such as security, the data model, deployment and connectors, and build only where plants differ.
@@ -47,7 +47,7 @@ Buying the foundation is still a vendor decision, and a skeptical leader should 
 
 Build where plants differ and your systems leave a gap: the operator app on one line, the workflow that gets a quality issue to maintenance without retyping, the dashboard a shift lead actually uses. We call these operational gaps. Your MES or SCADA does some things really well and was never designed for others.
 
-One production IT lead told me about a plant where the MES calculated OEE well enough, but nobody could say [why a machine sat idle](/blog/2026/07/build-downtime-logger/), because operators didn't want to stop and log a reason. His team built a small application that combined order data from the MES with signals from the machines, so an idle machine showed whether it was waiting for an order or for an operator. The MES stayed exactly where it was; the team just filled the gap it left, and the plant finally knew which of its downtime was a planning problem and which was a staffing one. That's where building earns its cost, because that's where fit matters.
+One production IT lead told me about a plant where the MES calculated OEE well enough, but nobody could say [why a machine sat idle](/blog/2026/07/build-downtime-logger/), because operators didn't want to stop and log a reason. His team built a small application that combined order data from the MES with signals from the machines, so an idle machine showed whether it was waiting for an order or for an operator. The MES stayed exactly where it was; the team just filled the gap it left, and the plant finally knew which of its downtime was a planning problem and which was a staffing one. That's where building earns its cost, because that's where fit matters. If you have a gap like that on one of your lines, [we'd like to hear about it](/book-demo/).
 
 ## What plant leaders get
 
