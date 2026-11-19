@@ -206,6 +206,7 @@ Use this sequence every time you create or update a tag:
 |---|---|
 | Analytics (e.g. Google Analytics, HubSpot, PostHog) | `analytics_storage` |
 | Advertising & remarketing (e.g. Google Tag AW (Google Ads base tag), LinkedIn InsightTag, Conversion Linker, Meta Pixel) | `ad_storage` |
+| Website visitor identification / web intent (e.g. Clay) | `ad_storage` |
 | Functional tools (non-essential UX features that do not perform analytics/advertising tracking) | `functionality_storage` |
 | Personalization & A/B testing (e.g. tools that remember user preferences or show tailored content) | `personalization_storage` |
 | Security (e.g. fraud prevention, bot detection) | `security_storage` — typically strictly necessary; no consent required in most cases |
