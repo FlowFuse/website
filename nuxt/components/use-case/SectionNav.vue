@@ -10,8 +10,10 @@ function ordinal(index: number) {
 
 <template>
   <nav v-if="items.length" class="sticky top-0 z-30 w-full bg-white/90 backdrop-blur border-y border-gray-100">
-    <div class="max-w-screen-lg mx-auto px-6">
-      <ul class="flex gap-1 sm:gap-2 overflow-x-auto list-none m-0 p-0 py-2 text-sm">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <!-- Wraps from md up so every section stays in view; below that it still swipes
+           sideways, with the scrollbar hidden so it doesn't sit under the pills. -->
+      <ul class="flex gap-1 sm:gap-2 overflow-x-auto md:overflow-visible md:flex-wrap md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden list-none m-0 p-0 py-2 text-sm">
         <li v-for="(item, i) in items" :key="item.id" class="flex-shrink-0">
           <a :href="`#${item.id}`" class="flex items-center gap-2 px-3 py-1.5 rounded-full text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 transition-colors">
             <span class="font-semibold text-indigo-400">{{ ordinal(i) }}</span>

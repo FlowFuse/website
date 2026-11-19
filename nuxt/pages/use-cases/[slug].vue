@@ -36,6 +36,7 @@ const navItems = computed(() => {
         p.competition && { id: 'competition', label: 'Why Off-the-Shelf Fails' },
         p.comparison && { id: 'with-without', label: 'With / Without FlowFuse' },
         p.aiBuildLayer && { id: 'ai-build-layer', label: 'Build It With AI' },
+        p.engagement && { id: 'engagement', label: 'How We Work With You' },
     ].filter(Boolean) as Array<{ id: string, label: string }>
 })
 
@@ -53,7 +54,7 @@ useSeoMeta({
 
 <template>
   <div v-if="page" class="w-full">
-    <UseCaseHero :title="page.title" :problem="page.problem" />
+    <UseCaseHero :title="page.title" :problem="page.problem" :media="page.heroMedia" />
     <UseCaseSectionNav :items="navItems" />
 
     <UseCasePain v-if="page.customerPain" :block="page.customerPain" />
@@ -62,6 +63,7 @@ useSeoMeta({
     <UseCaseCompetition v-if="page.competition" :block="page.competition" />
     <UseCaseComparison v-if="page.comparison" :block="page.comparison" />
     <UseCaseAiBuildLayer v-if="page.aiBuildLayer" :block="page.aiBuildLayer" :slug="slug" />
+    <UseCaseEngagement v-if="page.engagement" :block="page.engagement" />
 
     <UseCaseIndustryChips :industries="page.industries" />
 
