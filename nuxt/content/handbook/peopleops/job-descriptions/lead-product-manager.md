@@ -10,7 +10,7 @@ The Lead Product Manager owns one area of the FlowFuse product outright and runs
 
 The area of ownership is assigned based on company priorities and can shift over time. It may be Certified Nodes and the protocols that connect customers to their industrial systems (OPC UA, S7, MQTT), the core platform, the infrastructure underneath it, or how FlowFuse applies AI for its users. The shape of the role stays constant regardless of the area: a single owner who lives in their domain and runs it like it's theirs.
 
-This role builds on the [Product Manager](/handbook/peopleops/job-descriptions/product-manager/) role. Where the base role defines product strategy across FlowFuse, the Lead Product Manager applies that craft with full ownership of a single area, working hands-on and directly with engineers.
+The [product function](/handbook/engineering/product/) defines product strategy across FlowFuse. The Lead Product Manager applies that craft with full ownership of a single area, working hands-on and directly with engineers.
 
 The Lead Product Manager is primarily responsible for:
 * Continuous Discovery: Sitting in on sales and customer calls, reviewing call recordings, and talking to users directly to find the problem behind each request. The Lead PM develops deep knowledge of FlowFuse customers and the industrial IoT domain, and keeps that knowledge current.
@@ -24,8 +24,7 @@ The Lead Product Manager reports to the Engineering Manager.
 
 ### What is the Lead Product Manager not responsible for?
 
-The base [Product Manager](/handbook/peopleops/job-descriptions/product-manager/) exclusions apply, with the following clarifications:
-
+- Shipping on time: Engineering owns delivery.
 - People management: The Lead PM leads product decisions and runs refinement for their squad, but does not manage the engineers implementing the work. Building and managing a product team is a potential growth path for this role, not part of the starting scope.
 - Technical decisions on how the product is built or architected.
 - Effort estimations, the Lead Product Manager provides effort estimation when creating issues. However, the DRI for this process is the CTO.
