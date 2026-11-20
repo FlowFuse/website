@@ -1,7 +1,7 @@
 ---
 title: 'Migrating from PostgreSQL v14 to v16'
 metaTitle: 'Upgrade FlowFuse PostgreSQL 14 to 16 on Docker & Kubernetes'
-subtitle: Back up, upgrade and roll back the database behind self-hosted FlowFuse
+subtitle: "PostgreSQL v14 is end of life. Here's how to upgrade."
 authors:
   - ben-hardill
 date: '2026-12-18'
@@ -27,7 +27,7 @@ meta:
     - question: "Why is FlowFuse moving from PostgreSQL 14 to 16?"
       answer: "PostgreSQL v14 reached the end of its supported life in November 2026. To keep the database supported, FlowFuse v3.4.0 ships PostgreSQL v16 for Docker Compose and Kubernetes installs."
     - question: "Do these steps apply if I use an external PostgreSQL database?"
-      answer: "No. The steps cover the PostgreSQL database bundled with FlowFuse's Docker Compose files and Helm chart. If your install uses a database you manage yourself, the commands need to be adapted to your environment."
+      answer: "The steps assume the PostgreSQL database that comes with FlowFuse's Docker Compose and Helm installs. If your setup is different, for example you run your own database, you'll need to update the commands to match your environment."
     - question: "What if I'm running FlowFuse v2.10.0 or older?"
       answer: "Upgrade to v3.3.0 first using the [Docker Compose upgrade instructions](https://github.com/FlowFuse/docker-compose/blob/main/UPGRADE.md), then follow this guide to move to PostgreSQL v16."
     - question: "Can I roll back if the upgrade goes wrong?"
