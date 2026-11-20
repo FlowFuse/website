@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BLOG_TAG_TOPICS, BLOG_TAGS, isFuturePost } from '../../composables/useBlogList'
+import { BLOG_TAG_TOPICS, BLOG_TAGS, useIsFuturePost } from '../../composables/useBlogList'
 import { getAllBlogPosts } from '../../utils/sharedContent'
 // Handed to ContentRenderer explicitly below. Nuxt Content resolves a markdown component tag
 // against a registry it builds while parsing, and reaches it through an async loader. These
@@ -12,6 +12,7 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 definePageMeta({ layout: 'default' })
 
 const route = useRoute()
+const isFuturePost = useIsFuturePost()
 const slugParts = computed(() => (Array.isArray(route.params.slug) ? route.params.slug : [route.params.slug]).filter(Boolean))
 
 const routeInfo = computed(() => {
@@ -56,7 +57,8 @@ const { data: allPosts } = await useAsyncData(
         const all = await getAllBlogPosts()
         // Only the fields this page needs travel into its payload; the shared cache
         // itself holds the wider field set other pages (listing, author) need.
-        return all.map(post => ({ path: post.path, title: post.title, date: post.date, tags: post.tags }))
+        return all.filter(post => !isFuturePost(post.date))
+            .map(post => ({ path: post.path, title: post.title, date: post.date, tags: post.tags }))
     }
 )
 
