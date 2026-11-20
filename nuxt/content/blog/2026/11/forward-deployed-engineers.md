@@ -3,7 +3,7 @@ title: 'Forward Deployed Engineers: The End of "Here''s the Platform, Good Luck"
 subtitle: What a forward deployed engineer is, how it differs from a consultant, and how FlowFuse puts one to work in your plant
 description: What a forward deployed engineer is, how it differs from a consultant, and how FlowFuse puts one to work in your plant.
 metaTitle: Forward Deployed Engineers in Manufacturing
-date: '2026-11-24'
+date: '2026-11-20'
 authors:
   - sumit-shinde
 image: /blog/2026/11/images/forward-deployed-engineers.png
