@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <div style="display:flex;flex-direction:column;width:100%;height:100%;background:#312E81;padding:60px 70px;font-family:sans-serif;color:white;">
+  <div style="display:flex;flex-direction:column;width:100%;height:100%;box-sizing:border-box;background:#312E81;padding:60px 70px;font-family:sans-serif;color:white;">
     <!-- Header: logo + site name -->
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:auto;">
       <img
