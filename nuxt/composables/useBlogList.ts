@@ -28,11 +28,18 @@ export const BLOG_TAG_TOPICS: Record<string, string> = {
 // time (see nuxt.config.ts) rather than read from process.env here: a scheduled post gets no
 // prerendered file, so its URL is served by the Netlify function, where process.env.CONTEXT
 // is always undefined. That switched this check off and served the post before its date.
-export function isFuturePost(date: string | Date): boolean {
-    return new Date(date) > new Date() && useRuntimeConfig().public.isProductionContext
+export function isFuturePost(date: string | Date, isProductionContext: boolean): boolean {
+    return isProductionContext && new Date(date) > new Date()
+}
+
+// Call in setup, before any await: useRuntimeConfig() throws inside an async callback.
+export function useIsFuturePost(): (date: string | Date) => boolean {
+    const isProductionContext = useRuntimeConfig().public.isProductionContext
+    return date => isFuturePost(date, isProductionContext)
 }
 
 export function useBlogList(tag: string | null, pageNumber: number) {
+    const isFuturePost = useIsFuturePost()
     const { data: allEntries } = useAsyncData(
         tag ? `blog-all-${tag}` : 'blog-all',
         async () => {

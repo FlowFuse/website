@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isFuturePost } from '~/composables/useBlogList'
+import { useIsFuturePost } from '~/composables/useBlogList'
 
 // Ported from src/_includes/explore-more-content.njk: the blog / webinar / newsletter
 // row. Named for the thank-you pages when it was extracted for them; the homepage renders
@@ -10,6 +10,8 @@ const props = defineProps<{
     downloadFollowUp?: boolean
     hubspotReference: string
 }>()
+
+const isFuturePost = useIsFuturePost()
 
 const { data: blogPosts } = await useAsyncData(`explore-more-blog-${props.collectionName || 'all'}`, async () => {
     const all = await queryCollection('blog')

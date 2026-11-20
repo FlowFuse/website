@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { isFuturePost } from '../../../composables/useBlogList'
+import { useIsFuturePost } from '../../../composables/useBlogList'
 import { getAllBlogPosts } from '../../../utils/sharedContent'
 
 definePageMeta({ layout: 'default' })
 
 const route = useRoute()
+const isFuturePost = useIsFuturePost()
 const slug = computed(() => String(route.params.slug))
 
 const author = computed(() => useTeamMember(slug.value))
