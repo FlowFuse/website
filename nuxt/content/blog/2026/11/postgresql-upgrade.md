@@ -109,7 +109,7 @@ The Kubernetes upgrade is handled by the helm chart. Using v2.x.x of the helm ch
 The usual Kubernetes [upgrade instructions](https://flowfuse.com/docs/install/kubernetes/#upgrade) should be followed.
 
 
-## Rollback
+## Restore from Backup
 
 Should there be a problem the following instauctions can be used to revert to the previous FlowFuse version and PostgreSQL v14.
 
@@ -119,15 +119,11 @@ Should there be a problem the following instauctions can be used to revert to th
     ```bash
     docker compose -p flowfuse down --rmi all
     ```
-2. Replace the new `docker-compose.yml` with the backup
-   ```bash
-   cp docker-compose-backup.yml docker-compose.yml
-   ```
-3. Delete PostgreSQL v16 database volume
+2. Delete PostgreSQL v16 database volume
    ```bash
    docker volume rm flowfuse_db
    ```
-4. Bring up the containers but do not start them
+3. Bring up the containers but do not start them
     - automatic TLS:
         ```bash
         docker compose --profile autossl -p flowfuse up -d --no-start
@@ -136,19 +132,76 @@ Should there be a problem the following instauctions can be used to revert to th
         ```bash
         docker compose -p flowfuse up -d --no-start
         ```
-5. Start the PostgreSQL container
+4. Manually start the PostgreSQL container
    ```bash
    docker start flowfuse-postgres-1
    ```
-6. Restore the backup
+5. Restore the backup
    ```bash
    bzcat flowfuse-db-backup-sql.bz2 | docker exec -it flowfuse-postgres-1 pg_restore -c flowforge
    ```
-7. Restart other containers
+6. Restart other containers
    ```bash
    docker compose -p flowfuse start
    ```
 
 ### Kubernetes
 
-TODO
+If the PostgreSQL  
+
+1. Scale the FlowFuse Deployment to 0 instance
+    ```bash
+    kubectl -n flowfuse --replicas=0 deployment flowforge
+    ```
+2. Scale the FlowFuse FileServer to 0 instance
+    ```bash
+    kubectl -n flowfuse --replicas=0 deployment flowforge-file
+    ```
+3. Scale the Postgres server to 0 instance
+    ```bash
+    kubectl -n flwofuse --replicas=0 statefulsets flowfuse-postgresql
+    ```
+4. Start a Ubuntu pod with the Postgres Volume mounted
+    ```bash
+    kubectl -n flowfuse apply -f - <<EOF
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: postgres-cleanup
+    spec:
+      template:
+        containers:
+        - name: ubuntu
+            image: ubuntu
+            command:
+            - rm
+            - -rf
+            - /data/data/*
+            volumeMounts:
+            - mountPath: "/data"
+                name: data
+        volumes:
+            - name: data
+            persistentVolumeClaim:
+                claimName: data-flowfuse-postgresql-0
+        restartPolicy: Never
+      backoffLimit: 1
+   EOF 
+   ```
+5. Scale Postgres server to 1 instance
+    ```bash
+    kubectl -n flwofuse --replicas=1 statefulsets flowfuse-postgresql
+    ```
+6. Restore backup
+    ```bash
+    PGPASSWORD=`kubectl -n flowfuse get secrets flowfuse-secrets -o json | jq -r '.data."postgres-password"' | base64 -d`
+    bzcat flowfuse-db-backup.sql.bz1 | kubectl -n flowfuse exec -it flowfuse-postgresql-0 -- /bin/sh -c "env PGPASSWORD=$PGPASSWORD pg_restore -U postgres flowforge"
+    ```
+7. Scale the FlowFuse Deployment to 1 instance
+    ```bash
+    kubectl -n flowfuse --replicas=1 deployment flowforge
+    ```
+8. Scale the FlowFuse FileServer to 1 instance
+    ```bash
+    kubectl -n flowfuse --replicas=1 deployment flowforge-file
+    ```
