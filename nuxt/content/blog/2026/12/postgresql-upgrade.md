@@ -2,8 +2,9 @@
 title: 'Migrating from PostgreSQL v14 to v16'
 authors:
   - ben-hardill
-date: '2026-12-20'
+date: '2026-12-18'
 description: Learn how to upgrade the PostgreSQL Database used with FlowFuse Docker and Kubernetes.
+subtitle: Keeping PostgreSQL up to date.
 tags:
   - flowfuse
   - kubernetes
@@ -161,7 +162,7 @@ If the PostgreSQL
     ```bash
     kubectl -n flwofuse --replicas=0 statefulsets flowfuse-postgresql
     ```
-4. Start a Ubuntu pod with the Postgres Volume mounted
+4. Run an Ubuntu pod as a Job to delete the corupt data
     ```bash
     kubectl -n flowfuse apply -f - <<EOF
     apiVersion: batch/v1
