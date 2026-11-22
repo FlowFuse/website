@@ -16,6 +16,11 @@ sits organizationally within the Marketing department, as the SDR output
 activation work. See the [SDR job description](/handbook/peopleops/job-descriptions/sales-development-representative/)
 for the full role definition.
 
+In addition to working fresh inbound and outbound leads, the SDR runs the
+[Looked But Didn't Buy (LBDB)](/handbook/marketing/looked-but-didnt-buy/)
+campaign — a standing motion to re-engage lapsed MQLs and non-converted trial
+users.
+
 ## Bonus Structure
 
 The SDR is compensated under a monthly bonus plan tied to a single goal:
