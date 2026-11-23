@@ -14,13 +14,14 @@ cta:
   type: sign-up
   title: Start with one result on one line
   description: Pick an operational result you want to improve, like downtime, scrap or throughput. We'll work with your team to deliver the first application on the systems you already run, and make it a starting point for your next site.
-faq:
-- question: "Who builds the application?"
-  answer: "FlowFuse's forward deployed engineers build the first one with your team. They're FlowFuse engineers with industrial automation experience who work alongside your operations, IT and OT teams, connecting your machines and systems and setting up the integrations, data models and deployment patterns as they go. Before anything is built, you agree the scope together and how success will be measured."
-- question: "Are we locked in to FlowFuse?"
-  answer: "No. You own what's built. Everything runs in your FlowFuse environment, with full version history, so your team can change it, extend it and roll it out without waiting on FlowFuse. It's built on open-source Node-RED, so nothing is locked away."
-- question: "Do we have to replace our existing systems?"
-  answer: "No. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms."
+structuredData:
+  faq:
+    - question: "Who builds the application?"
+      answer: "FlowFuse's forward deployed engineers build the first one with your team. They're FlowFuse engineers with industrial automation experience who work alongside your operations, IT and OT teams, connecting your machines and systems and setting up the integrations, data models and deployment patterns as they go. Before anything is built, you agree the scope together and how success will be measured."
+    - question: "Are we locked in to FlowFuse?"
+      answer: "No. You own what's built. Everything runs in your FlowFuse environment, with full version history, so your team can change it, extend it and roll it out without waiting on FlowFuse. It's built on open-source Node-RED, so nothing is locked away."
+    - question: "Do we have to replace our existing systems?"
+      answer: "No. FlowFuse connects to and extends your existing MES, ERP, SCADA, PLCs and other systems, without replacing them or changing your core platforms."
 tldr:
   - Most manufacturers already buy and build. They run systems for core business and production needs, then connect or extend them where a workflow isn't covered.
   - The friction usually sits between systems, where information has to move or people re-enter it, not in the systems themselves.
