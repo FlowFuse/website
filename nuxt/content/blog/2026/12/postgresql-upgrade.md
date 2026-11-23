@@ -48,7 +48,7 @@ If you are starting with version v2.10.0 or older please follow [these instructo
 - Back up your database, and on Docker Compose your `docker-compose.yml` too.
 - On Docker Compose, run the one-off database upgrade (step 2 under [Upgrade](#upgrade)) before you start the new stack.
 - On Kubernetes, upgrade with v2.x of the Helm chart, which upgrades the database when it starts.
-- On FlowFuse v2.10.0 or older, move to v3.3.0 first.
+- On FlowFuse v2.10.0 or older on installed with Docker Compose, move to v3.3.0 first.
 ::
 
 ## Assumptions
