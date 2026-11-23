@@ -3,7 +3,7 @@ title: 'Build or Buy? The False Choice'
 subtitle: What to standardize and where local fit matters
 description: Build or buy? FlowFuse CEO Michael Davis on why most manufacturers already do both, and how to decide what to standardize across sites and where local fit matters.
 metaTitle: "Build or Buy in Manufacturing: The False Choice"
-date: '2026-11-19'
+date: '2026-11-23'
 authors:
   - michael-davis
 image: /blog/2026/11/images/build-vs-buy.png
