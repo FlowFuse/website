@@ -74,7 +74,7 @@
     },
     "dependencies": {
         "@flowfuse/flow-renderer": "^0.6.0",
-        "@netlify/blobs": "^10.7.9",
+        "@netlify/blobs": "^10.7.13",
         "@octokit/auth-app": "^8.3.0",
         "algoliasearch": "^4.25.3",
         "js-yaml": "^4.3.2",
