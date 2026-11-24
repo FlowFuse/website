@@ -10,7 +10,22 @@
 // The form only requires `email`. Processing consent is set to implicit (a notice, not a
 // checkbox) and its one checkbox, "other communications", is optional, so the consent block
 // is hidden here and the privacy line below the embed gives the notice instead.
+//
+// The blog listing reuses it too, so where it sits on the page (width, the footer's
+// data-nav-section) is set by the caller, and `reference` tells the two placements apart
+// in the cta-blog-subscribe event.
 const FORM_ID = '159c173d-dd95-49bd-922b-ff3ef243e90c'
+
+// `layout="row"` puts the heading beside the form on wider screens, for a full-width
+// placement such as the blog listing; the footer keeps the stacked default.
+// Other placements keep their own heading: pass `title`, and an empty `description` to drop
+// the footer's line, or an empty `title` when the page renders its own heading.
+withDefaults(defineProps<{ reference?: string, layout?: 'stacked' | 'row', title?: string, description?: string }>(), {
+    reference: 'footer',
+    layout: 'stacked',
+    title: 'Get the monthly newsletter',
+    description: 'Product updates, guides and webinars, once a month.',
+})
 
 const css = `
 .ff-footer-newsletter .hs-form { display: flex; flex-wrap: wrap; gap: 8px; font-family: Heebo, Helvetica, Arial, sans-serif; }
@@ -50,15 +65,19 @@ function onReady(form: HTMLFormElement) {
 </script>
 
 <template>
-  <section class="ff-footer-newsletter w-full md:w-[26rem] md:shrink-0" data-nav-section="Newsletter">
-    <p class="font-semibold text-gray-900">Get the monthly newsletter</p>
-    <p class="text-gray-600 mt-1 mb-4">Product updates, guides and webinars, once a month.</p>
-    <HubSpotForm :form-id="FORM_ID" cta="cta-blog-subscribe" reference="footer" :css="css" @ready="onReady" />
-    <p class="mt-3 text-xs text-gray-500">
-      You can unsubscribe at any time. Read our <a href="/privacy-policy/" class="underline">Privacy Policy</a>.
-      This form is protected by reCAPTCHA, and Google's
-      <a href="https://policies.google.com/privacy" class="underline" target="_blank" rel="noopener">Privacy Policy</a> and
-      <a href="https://policies.google.com/terms" class="underline" target="_blank" rel="noopener">Terms of Service</a> apply.
-    </p>
+  <section class="ff-footer-newsletter w-full" :class="{ 'md:flex md:items-start md:gap-10': layout === 'row' }">
+    <div v-if="title || description" :class="{ 'md:shrink-0': layout === 'row' }">
+      <p v-if="title" class="font-semibold text-gray-900 my-0" :class="{ 'mb-4': !description, 'md:mb-0 md:leading-[42px]': !description && layout === 'row' }">{{ title }}</p>
+      <p v-if="description" class="text-gray-600 mt-1 mb-4" :class="{ 'md:mb-0 lg:whitespace-nowrap': layout === 'row' }">{{ description }}</p>
+    </div>
+    <div :class="{ 'md:flex-1 md:min-w-0': layout === 'row' }">
+      <HubSpotForm :form-id="FORM_ID" cta="cta-blog-subscribe" :reference="reference" :css="css" @ready="onReady" />
+      <p class="mt-3 text-xs text-gray-500">
+        You can unsubscribe at any time. Read our <a href="/privacy-policy/" class="underline text-inherit">Privacy Policy</a>.
+        This form is protected by reCAPTCHA, and Google's
+        <a href="https://policies.google.com/privacy" class="underline text-inherit" target="_blank" rel="noopener">Privacy Policy</a> and
+        <a href="https://policies.google.com/terms" class="underline text-inherit" target="_blank" rel="noopener">Terms of Service</a> apply.
+      </p>
+    </div>
   </section>
 </template>
