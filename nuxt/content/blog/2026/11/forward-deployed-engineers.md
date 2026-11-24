@@ -54,7 +54,7 @@ These aren't isolated implementation problems. They expose a weakness in how ind
 
 Manufacturers have no shortage of technology to buy. What they lack is the engineering capacity to make it work together, fit it to production, and keep it working as their operations evolve. Too often, vendors deliver the software while leaving manufacturers to take responsibility for everything that makes it useful.
 
-::cta-image{alt="Someone has to do the building. Our engineers build your first application alongside your team, and you keep everything they build. Build with us" cta="sign-up" src="/images/cta/forward-deployed-engineers-build-with-us.png"}
+::cta-image{alt="Someone has to do the building. Your team builds the first application with ours, on the equipment you already run, and keeps all of it. Build with us" cta="sign-up" src="/images/cta/forward-deployed-engineers-build-with-us.png"}
 ::
 
 ## What does a forward deployed engineer do?
