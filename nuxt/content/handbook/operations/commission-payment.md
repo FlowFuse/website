@@ -61,7 +61,7 @@ overpayment.
 
 Commissionable Amount = Amount (annual Incremental ARR) × multi-year factor.
 Factor: 1 for 12-month terms; term in years, max 3, for full term paid upfront.
-Overrides are logged in the sheet with approver and reason.
+Overrides are logged in the sheet with approver and reason. An override replaces the multi-year factor for a single deal. It is used only for deals booked before October 1, 2026, or for exceptions approved in writing by the CEO. Every override must record the approver, date, and reason.
 
 When the deal board is updated with on the won deals of last month, 
 click "Export View" and export as CSV. Download this file
