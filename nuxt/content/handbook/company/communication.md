@@ -128,6 +128,14 @@ When a feature is ready to be delivered, post the final demo in [`#feature-demos
 
 When you create a new channel, add a clear description. This helps everyone browse channels and decide which ones are relevant to their work.
 
+#### Adding external collaborators
+
+Sometimes we need to work with people outside FlowFuse in Slack, such as contractors, partners, or customers. To request access for a third party, open a [Slack Collaborator request](https://github.com/FlowFuse/admin/issues/new?template=slack-collaborator.md) in the admin repository and follow the steps in the issue.
+
+Include who the person is, which organization they represent, which channel or channels they need access to, why they need access, and how long they will need it. External collaborators should only be added to the channels they need, never to internal or company-wide channels.
+
+When the work ends, update the issue so their access can be removed.
+
 ### GitHub
 
 All code at FlowFuse is stored in Git, and GitHub hosts our repositories. All changes, feature ideas, and requests are tracked there. GitHub also holds task lists for onboarding, [art requests](../design/art-requests.md), and other work that is not code related. It is important to stay up to date with GitHub and its notifications.
