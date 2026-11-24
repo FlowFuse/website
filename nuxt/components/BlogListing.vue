@@ -51,10 +51,11 @@ const featuredDate = computed(() => featured.value ? new Date(featured.value.dat
           </div>
         </NuxtLink>
       </li>
-      <li v-if="featured" class="w-full px-2 pt-2 pb-2 mb-2 flex flex-col border-t-2 border-b-2">
+      <li v-if="featured" class="w-full px-2 mt-2 mb-6">
         <a id="sign-up"></a>
-        <h3 class="mb-0 text-lg font-semibold">Sign up for our monthly email updates:</h3>
-        <HubSpotForm form-id="159c173d-dd95-49bd-922b-ff3ef243e90c" cta="cta-blog-subscribe" reference="blog" />
+        <div class="border-y border-gray-200 py-8">
+          <FooterNewsletter reference="blog" layout="row" title="Sign up for our monthly email updates:" />
+        </div>
       </li>
       <BlogListItem v-for="entry in rest" :key="entry.path" :entry="entry" />
     </ul>
