@@ -13,12 +13,11 @@ if (!author.value) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
-const isProductionContext = useRuntimeConfig().public.isProductionContext
 const { data: posts } = await useAsyncData(
     () => `blog-author-${slug.value}`,
     async () => {
         const all = await getAllBlogPosts()
-        return all.filter(entry => !isFuturePost(entry.date, isProductionContext) && (entry.authors || []).includes(slug.value))
+        return all.filter(entry => !isFuturePost(entry.date) && (entry.authors || []).includes(slug.value))
     }
 )
 

@@ -28,10 +28,6 @@ if (routeInfo.value.kind === 'notfound') {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
-// Read once in setup: isFuturePost can't reach the runtime config from inside computeds or
-// async callbacks (see composables/useBlogList.ts).
-const isProductionContext = useRuntimeConfig().public.isProductionContext
-
 const contentPath = computed(() => `/blog/${slugParts.value.join('/')}`)
 
 const { data: page } = await useAsyncData(
@@ -39,7 +35,7 @@ const { data: page } = await useAsyncData(
     () => routeInfo.value.kind === 'post' ? queryCollection('blog').path(contentPath.value).first() : Promise.resolve(null)
 )
 
-if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.date, isProductionContext))) {
+if (routeInfo.value.kind === 'post' && (!page.value || isFuturePost(page.value.date))) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
@@ -83,14 +79,14 @@ const relatedPosts = computed(() => {
     if (!current) return []
     const requiredTags = current.tags || []
     return (allPosts.value || [])
-        .filter(post => post.path !== current.path && !isFuturePost(post.date, isProductionContext))
+        .filter(post => post.path !== current.path && !isFuturePost(post.date))
         .map(post => ({ post, commonTags: requiredTags.reduce((count, tag) => count + ((post.tags || []).includes(tag) ? 1 : 0), 0) }))
         .filter(({ commonTags }) => commonTags >= requiredTags.length - 1)
         .sort((a, b) => b.commonTags - a.commonTags || new Date(b.post.date).getTime() - new Date(a.post.date).getTime())
         .slice(0, 5)
         .map(({ post }) => post)
 })
-const recommendedPosts = computed(() => (allPosts.value || []).filter(post => !isFuturePost(post.date, isProductionContext)).slice(0, 5))
+const recommendedPosts = computed(() => (allPosts.value || []).filter(post => !isFuturePost(post.date)).slice(0, 5))
 const relatedHeading = computed(() => relatedPosts.value.length ? 'Related Articles:' : 'Recommended Articles:')
 const postsToShow = computed(() => relatedPosts.value.length ? relatedPosts.value : recommendedPosts.value)
 
@@ -297,7 +293,8 @@ useKatexStyles()
               <BlogSocialShare :title="page.title" :path="route.path" />
             </div>
             <div class="mt-3 pt-6 flex flex-col border-t-2">
-              <FooterNewsletter reference="article" compact />
+              <h3>Sign up for updates</h3>
+              <HubSpotForm form-id="159c173d-dd95-49bd-922b-ff3ef243e90c" cta="cta-blog-subscribe" reference="article" />
             </div>
           </div>
         </div>
