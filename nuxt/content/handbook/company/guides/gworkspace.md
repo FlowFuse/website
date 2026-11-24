@@ -53,6 +53,25 @@ To change permission settings:
 
 For sensitive documents, please use the principle of least privilege \- only grant access to those who need it.
 
+### Sharing with External Stakeholders
+
+Customers, partners, vendors, and investors sometimes need access to our files. Before sharing anything outside FlowFuse, check its classification under the [Data Management Policy](/handbook/company/security/data-management/):
+
+* **Public** data can be shared freely.
+* **Internal** data requires management approval. An NDA is usually required.
+* **Confidential** data requires a signed NDA and management approval.
+* **Critical** data (e.g. PII, credentials) must never be shared externally.
+
+When you do share:
+
+* **Share with named people only.** Add the person's email address directly. Do not use "Anyone with the link".
+* **Grant the lowest access needed.** Default to "Viewer" or "Commenter". Only grant "Editor" when the recipient needs to contribute.
+* **Share files, not folders.** Sharing a folder exposes everything in it, including files added later. If several files are needed, create a dedicated folder for that stakeholder.
+* **Set an expiration date** for temporary access where possible.
+* **Remove access** when the engagement or project ends.
+
+If you're unsure how a file is classified, ask your manager before sharing.
+
 ## Best Practices
 
 * **Use descriptive file names** that clearly indicate the content and purpose  
