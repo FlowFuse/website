@@ -68,6 +68,8 @@ It also misses why these integrations exist in the first place. Plant teams buil
 
 That doesn't mean every integration should stay where it is. The difference is pace. Move integrations one at a time, when there's already a reason to touch them, and keep plant teams able to build what they need quickly. Done that way, consolidation happens gradually, without a cutover.
 
+::cta-image{src="/images/cta/brownfield-integration-book-demo.png" alt="Keep your equipment. Get your integrations under control. Connect old and new equipment, see every integration in one place, build once and reuse at every plant. Chris Meyer, IT Director, Wilson Tool International: FlowFuse is like a Swiss Army knife that I can drive most of our IT systems from - book a demo" cta="demo"}
+
 ## What to do instead
 
 The better approach is less dramatic. Leave the PLCs, SCADA, MES and ERP systems doing their jobs. What changes is how new IT/OT integrations get built: on one shared platform, to one standard, instead of every department bringing its own scripts and licenses.
@@ -90,8 +92,6 @@ Most manufacturers will push back here, and they should. Their plants already ru
 It also changes who can do the work. A lot of plant integration today lives in code only its author can read. FlowFuse is built on Node-RED, so applications are visual flows a controls engineer can follow without being a software developer. [FlowFuse Expert](/ai/), the AI built into the platform, can build a flow from a plain-language description and explain how an existing one works. An engineer who inherits an application from a colleague who has moved on doesn't start from zero.
 
 Teams don't have to do the first one alone. Your team builds the first application with ours, with FlowFuse's forward deployed engineers helping pick a starting point and agree on what success looks like. That could mean less downtime, faster changeovers or production data people trust. The goal is for the plant team to own it quickly, not to swap one dependency for another.
-
-::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
 
 Once the first application works, the costs from earlier start coming down:
 
