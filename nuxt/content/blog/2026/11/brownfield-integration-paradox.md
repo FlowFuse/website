@@ -3,12 +3,17 @@ title: The Brownfield Integration Paradox
 subtitle: Keeping your equipment was the right call. The unmanaged connections around it are becoming the new legacy.
 metaTitle: Brownfield IT/OT Integration Without Rip and Replace
 description: Avoiding rip and replace was the right call. Here's how unmanaged integrations become the next legacy problem in brownfield plants, and how to fix it.
-date: 2026-11-25
+date: 2026-11-26
+image: /blog/2026/11/images/brownfield-integration-paradox.png
 authors:
   - sumit-shinde
 tags:
   - posts
   - flowfuse
+cta:
+  type: demo
+  title: Find Out How Many Integrations Are Running Across Your Plants
+  description: Not sure how many integrations are running across your plants? Start there. Talk to our team about building the first one on a shared platform and scaling it from there.
 tldr:
   - Keeping legacy equipment is usually the right decision. The connections added around it, one local fix at a time, become a legacy problem of their own.
   - "The cost lands outside engineering: pilots that don't scale, security blind spots, license spend nobody can see, knowledge held by one or two people, and plants that can't be compared."
@@ -85,6 +90,8 @@ Most manufacturers will push back here, and they should. Their plants already ru
 It also changes who can do the work. A lot of plant integration today lives in code only its author can read. FlowFuse is built on Node-RED, so applications are visual flows a controls engineer can follow without being a software developer. [FlowFuse Expert](/ai/), the AI built into the platform, can build a flow from a plain-language description and explain how an existing one works. An engineer who inherits an application from a colleague who has moved on doesn't start from zero.
 
 Teams don't have to do the first one alone. Your team builds the first application with ours, with FlowFuse's forward deployed engineers helping pick a starting point and agree on what success looks like. That could mean less downtime, faster changeovers or production data people trust. The goal is for the plant team to own it quickly, not to swap one dependency for another.
+
+::cta-image{src="/images/cta/arch-systems-book-demo.png" alt="Arch Systems scales automation across complex manufacturing environments with FlowFuse - book a demo" cta="demo"}
 
 Once the first application works, the costs from earlier start coming down:
 
