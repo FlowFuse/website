@@ -3,7 +3,7 @@ title: 'Forward Deployed Engineers: The End of "Here''s the Platform, Good Luck"
 subtitle: Why complex manufacturing needs engineers who own the outcome, and how FlowFuse puts them to work in your plant
 description: What a forward deployed engineer does, why multi-site manufacturers need one, how the role differs from a consultant and how FlowFuse puts it to work.
 metaTitle: Forward Deployed Engineers in Manufacturing
-date: '2026-11-20'
+date: '2026-11-25'
 authors:
   - sumit-shinde
 image: /blog/2026/11/images/forward-deployed-engineers.png
