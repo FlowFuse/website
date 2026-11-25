@@ -1,5 +1,7 @@
 ---
 title: "Tools"
+navigation:
+  icon: i-lucide-wrench
 ---
 # Tools
 
@@ -25,3 +27,5 @@ When using AI tools for development, never share:
 ### Claude Code
 
 Claude Code is available to team members by raising an [access request issue](https://github.com/FlowFuse/admin/issues/new?template=access-request.md) and assigning it to the CTO.
+
+Once you have it, the [AI Assisted Development](./ai-assisted-development) pages walk through setting it up against your local dev environment, starting with [browser automation with playwright-cli](./ai-assisted-development/playwright-cli.md).
