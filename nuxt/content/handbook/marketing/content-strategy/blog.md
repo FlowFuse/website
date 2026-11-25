@@ -329,7 +329,6 @@ CTA images are shared across articles, so they go in `nuxt/public/images/cta/` â
 | `wenco-book-demo.png` | Dashboard and visualization articles (Wenco ships new dashboard pages in days) |
 | `aperia-book-demo.png` | PLC, protocol and device-connectivity articles (Aperia stopped reprogramming controllers station by station) |
 | `arch-systems-book-demo.png` | Manufacturing methodology, metrics and quality articles (Arch Systems scales automation across plants) |
-| `brownfield-integration-book-demo.png` | Brownfield, legacy equipment and IT/OT integration sprawl articles (Wilson Tool runs most IT systems from one platform) |
 | `power-workplace-book-demo.png` | Production hosting, reliability and security articles (Power Workplace on scalability and security audits) |
 
 Pick the one whose customer quote matches the article's topic, and place it at a section break near the middle of the article.
