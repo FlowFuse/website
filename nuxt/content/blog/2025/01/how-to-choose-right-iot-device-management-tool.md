@@ -12,7 +12,7 @@ tags:
 cta:
   type: pricing
   title: Find the Right Plan for Your IIoT Operations
-  description: FlowFuse offers flexible pricing, including a free tier for up to two devices, so you can start small and scale as your IIoT network grows, with enterprise-grade security and support built in.
+  description: FlowFuse offers three products, Edge, Hub and Fleet, on FlowFuse Cloud or self-hosted, so you can start small and scale as your IIoT network grows, with enterprise-grade security and support built in.
 ---
 
 With more devices being connected across industrial environments, managing them can get pretty overwhelming. The right IIoT device management software can help you stay on top of things, keeping everything secure, up-to-date, and running smoothly. But with so many options out there, how do you figure out which one’s best for your business?

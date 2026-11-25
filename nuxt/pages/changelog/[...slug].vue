@@ -61,6 +61,8 @@ useSeoMeta({
     twitterCard: 'summary_large_image',
     twitterSite: '@FlowFuseinc',
 })
+
+useKatexStyles()
 </script>
 
 <template>
@@ -108,7 +110,7 @@ useSeoMeta({
 
             <div class="mt-3 pt-6 flex flex-col border-t-2">
               <h3>Sign up for updates</h3>
-              <HubSpotForm form-id="159c173d-dd95-49bd-922b-ff3ef243e90c" cta="cta-blog-subscribe" reference="changelog" />
+              <FooterNewsletter reference="changelog" title="" description="" />
             </div>
           </div>
         </div>

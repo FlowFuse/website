@@ -40,7 +40,7 @@ When there are new updates to Node-RED, or the FlowFuse components, it has been 
 
 We're here to make your tasks easier, not to give you more maintenance burdens. So with this release, we've introduced the ability to automatically apply any updates that are available to Node-RED or the FlowFuse stack around it. You get to pick a maintenance window during the week for when the updates should get applied.
 
-For Starter tier teams, we will apply a default schedule for overnight at the weekend to minimise disruption. For Pro and Enterprise tiers, users can configure their own schedule via the Instance's Maintenance settings tab.
+Teams can configure their own schedule via the Instance's Maintenance settings tab.
 
 Keeping your software up to date is important, and this features gives you one less thing to worry about.
 
@@ -78,12 +78,6 @@ Your feedback continues to be invaluable in shaping FlowFuse's development. We'd
 Which of these new features are you most excited to try? Email me directly at greg@flowfuse.com - I'd love to hear from you!
 
 ## Try FlowFuse
-
-### FlowFuse Cloud
-
-The quickest way to get started is with FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

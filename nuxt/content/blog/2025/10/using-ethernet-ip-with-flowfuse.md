@@ -72,7 +72,7 @@ Before integrating your Allen-Bradley PLC with FlowFuse, ensure you have the fol
 - [Install Node-RED](/blog/2025/09/installing-node-red/) on the device that will communicate with the Allen-Bradley PLC. You cannot install Node-RED directly on the PLC, as PLCs are controllers, not computers. You can use devices like the Raspberry Pi, Revolution Pi, or industrial PCs to connect and transfer data across systems.
 - Use the [FlowFuse Device Agent](/platform/device-agent/) to install Node-RED on your edge device.
 
-> **Why FlowFuse Device Agent?** FlowFuse provides Node-RED with enterprise capabilities like remote management, team collaboration, device management, and DevOps pipelines, essential features for scaling industrial automation across your organization. These capabilities help streamline operations and ensure reliability in complex manufacturing environments. [Sign up for free](https://app.flowfuse.com/) to get started.
+> **Why FlowFuse Device Agent?** FlowFuse provides Node-RED with enterprise capabilities like remote management, team collaboration, device management, and DevOps pipelines, essential features for scaling industrial automation across your organization. These capabilities help streamline operations and ensure reliability in complex manufacturing environments.
 
 **Network Setup:**
 - Verify that the device running Node-RED is on the same network as the PLC and can successfully ping the PLC's IP address.

@@ -10,6 +10,8 @@ const props = withDefaults(defineProps<{
     description?: string
     /** Tighter vertical spacing for the title/description section, matching professional-services' original layout. Only relevant when `title` is set. */
     compact?: boolean
+    /** Replaces HubSpot's default form stylesheet. HubSpot then renders the form into the page rather than an iframe, so scope every rule to .hs-form. */
+    css?: string
 }>(), {
     compact: false,
 })
@@ -18,9 +20,13 @@ const props = withDefaults(defineProps<{
 // to onFormSubmit, which fires on the attempt and is what `cta` tracks). The Dashboard 1.0
 // importer on /platform/dashboard/ gates its conversion on this, the way hs-form.njk's
 // `onFormSubmitted` hook did.
-const emit = defineEmits<{ submitted: [] }>()
+// `ready` passes the rendered <form> (in the page or HubSpot's iframe) for tweaks CSS can't make,
+// such as a placeholder or the button text.
+const emit = defineEmits<{ submitted: [], ready: [form: HTMLFormElement] }>()
 
-const containerId = `hs-form-${props.formId.replace(/-/g, '')}`
+// useId() keeps two embeds of one form on a page (the footer newsletter and the blog's)
+// from sharing an id, which would render both into the first container.
+const containerId = `hs-form-${props.formId.replace(/-/g, '')}-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`
 const region = props.region ?? 'eu1'
 const portalId = props.portalId ?? '26586079'
 const showFallback = ref(false)
@@ -45,14 +51,41 @@ function loadScript(): Promise<void> {
     })
 }
 
+// HubSpot's embed script pulls in Google reCAPTCHA, together about 550 KiB of script and
+// over a second of main-thread work on a mid-range phone. A form in the footer would pay
+// that on every page view, so the script loads only once the form is within about a
+// screen of the viewport. A form already on screen at load still starts at once, because
+// IntersectionObserver reports the initial state straight away.
+const root = ref<HTMLElement | null>(null)
+
+function whenNearViewport(el: HTMLElement): Promise<void> {
+    if (typeof IntersectionObserver === 'undefined') return Promise.resolve()
+    return new Promise((resolve) => {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries.some(e => e.isIntersecting)) {
+                observer.disconnect()
+                resolve()
+            }
+        }, { rootMargin: '800px 0px' })
+        observer.observe(el)
+    })
+}
+
 onMounted(async () => {
     try {
+        if (root.value) await whenNearViewport(root.value)
         await loadScript()
         ;(window as any).hbspt.forms.create({
             target: `#${containerId}`,
             region,
             portalId,
             formId: props.formId,
+            ...(props.css !== undefined ? { css: props.css } : {}),
+            onFormReady: (form: unknown) => {
+                const el = (form as any)?.jquery ? (form as any)[0] : form
+                // tagName, not instanceof: the form lives in the iframe's own window.
+                if (el?.tagName === 'FORM') emit('ready', el)
+            },
             ...(props.cta ? {
                 onFormSubmit: () => {
                     if (typeof (window as any).capture === 'function') {
@@ -69,7 +102,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div :class="title ? ['w-full bg-gray-50 px-0', compact ? 'py-8' : 'py-16'] : ''">
+  <div ref="root" :class="title ? ['w-full bg-gray-50 px-0', compact ? 'py-8' : 'py-16'] : ''">
     <template v-if="title">
       <div class="text-center m-auto md:max-w-xl px-6" :class="compact ? 'pt-10 md:pt-8 mb-6 md:mb-12' : 'mb-6'">
         <h2>{{ title }}</h2>

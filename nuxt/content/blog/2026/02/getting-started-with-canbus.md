@@ -65,7 +65,7 @@ SocketCAN brings CAN bus support directly into the Linux networking stack, treat
 
 In this tutorial, you'll set up SocketCAN on Linux, integrate it with FlowFuse, and learn how to send and receive CAN frames, establishing the foundation for connecting your CAN infrastructure to the broader industrial ecosystem.
 
-::cta-image{src="/blog/2026/02/images/socket-can-cta-1.png" alt="Try FlowFuse free - install one node and read live CAN frames the same day, no drivers, no C code" cta="sign-up"}
+::cta-image{src="/blog/2026/02/images/socket-can-cta-1.png" alt="Try SocketCAN in FlowFuse. Install one node and read live CAN frames on your own hardware." cta="sign-up"}
 ::
 
 ## What Is CAN Bus?

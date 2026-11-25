@@ -68,7 +68,7 @@ In this tutorial, you'll connect FlowFuse to a Siemens S7 [PLC](/blog/2025/12/wh
 Before you begin, make sure you have the following:
 
 - A Siemens S7 PLC, or **S7-PLCSIM** if you're using a simulated PLC.
-- A FlowFuse instance running on your edge device with the Device Agent installed. If you don't already have one, [sign up](https://app.flowfuse.com/account/create) and follow the [Device Agent Quick Start guide](/docs/device-agent/quickstart/) to connect your first device.
+- A FlowFuse instance running on your edge device with the Device Agent installed. See the [Device Agent Quick Start guide](/docs/device-agent/quickstart/) to connect your first device.
 - The following packages installed:
   - `@flowfuse/node-red-dashboard`
   - `node-red-contrib-s7`

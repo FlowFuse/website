@@ -7,6 +7,9 @@ authors: ["marian-demme", "ben-hardill"]
 tags:
     - changelog
 ---
+::product-update-note
+::
+
 Bearer Token Authentication for Node-RED Instances, allows FlowFuse users to securely access their Node-RED HTTP endpoints, ensuring enhanced security and ease of implementation. Now, you can confidently manage your HTTP endpoints with the assurance that your connections are protected using FlowFuse's robust authentication mechanism. 
 
 ![Screenshot Instance Setting Bearer Token](./images/bearer-token-authentication.png)

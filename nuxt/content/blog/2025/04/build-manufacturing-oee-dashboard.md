@@ -84,7 +84,7 @@ Additionally, ensure that you organize flows into well-structured groups. To mat
 
 Before you begin building the OEE Dashboard with FlowFuse, make sure you have the following:
 
-- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running. If you don't have an account, check out our [free trial](https://app.flowfuse.com/account/create) and learn how to create an instance in FlowFuse.
+- **Running FlowFuse Instance:** Make sure you have a FlowFuse instance set up and running.
 - **FlowFuse Dashboard:** Ensure you have [FlowFuse Dashboard](https://flows.nodered.org/node/@flowfuse/node-red-dashboard) (also known as Node-RED Dashboard 2.0 in the community) installed and properly configured on your instance.
 - **SQLite Contrib Node:** Ensure you have [node-red-contrib-sqlite](https://flows.nodered.org/node/node-red-node-sqlite) installed. We use SQLite here because it needs no setup, but the flow works against any database - [FlowFuse Tables](/docs/user/ff-tables/) gives you managed PostgreSQL if you want something production-grade from the start, and our [Database](/docs/node-red/database/) guides cover MongoDB, InfluxDB, TimescaleDB, and DynamoDB.
 
@@ -581,6 +581,6 @@ Do not worry, in the next part of this series, we will style the dashboard to ma
 
 ## What Next?
 
-In [Part 3, we design and scale the dashboard for factory screens](/blog/2025/04/design-and-scale-oee-dashboard/): theming it for the shop floor, making the layout responsive, connecting it to a real data source, and scaling it across production lines. In the meantime, if you’re excited to quickly launch your OEE dashboard in your factory environment, don’t delay! [Register for a FlowFuse account](https://app.flowfuse.com/account/create) now and initiate your journey with our new effective, ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
+In [Part 3, we design and scale the dashboard for factory screens](/blog/2025/04/design-and-scale-oee-dashboard/): theming it for the shop floor, making the layout responsive, connecting it to a real data source, and scaling it across production lines. FlowFuse customers can also start from the ready-made [OEE Dashboard Blueprint](/blueprints/manufacturing/oee-dashboard/).
 
 Missed the start? [Part 1 explains what an OEE dashboard is and how to plan one](/blog/2025/04/what-is-an-oee-dashboard/). And for the other views that belong on the shop floor alongside OEE, see our [manufacturing dashboard examples](/blog/2026/08/manufacturing-dashboard-examples/).

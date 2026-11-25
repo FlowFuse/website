@@ -171,6 +171,8 @@ if (routeInfo.value.kind === 'post') {
         }) : undefined),
     ])
 }
+
+useKatexStyles()
 </script>
 
 <template>
@@ -292,7 +294,7 @@ if (routeInfo.value.kind === 'post') {
             </div>
             <div class="mt-3 pt-6 flex flex-col border-t-2">
               <h3>Sign up for updates</h3>
-              <HubSpotForm form-id="159c173d-dd95-49bd-922b-ff3ef243e90c" cta="cta-blog-subscribe" reference="article" />
+              <FooterNewsletter reference="article" title="" description="" />
             </div>
           </div>
         </div>

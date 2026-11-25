@@ -88,6 +88,8 @@ defineOgImage('Default', {
     title: pageTitle.value,
     section: 'Handbook',
 })
+
+useKatexStyles()
 </script>
 
 <template>

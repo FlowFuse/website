@@ -16,6 +16,8 @@ useHead({
         { name: 'description', content: page.value.description ?? '' },
     ]
 })
+
+useKatexStyles()
 </script>
 
 <template>
