@@ -305,6 +305,12 @@ function rewriteRelativeAssets (readme: string, owner?: string, repo?: string): 
         })
 }
 
+// A heading that starts or ends with an emoji slugs with a stray hyphen ("🇬🇧 Overview" ->
+// "-overview"), so a README's own "#overview" link would miss it.
+function normalizeAnchor (id: string): string {
+    return id.replace(/\./g, '').replace(/^-+|-+$/g, '')
+}
+
 function rewriteIntegrationLinks (html: string, node: Integration): string {
     if (!html) return html
 
@@ -324,8 +330,9 @@ function rewriteIntegrationLinks (html: string, node: Integration): string {
         if (url.startsWith('#')) {
             const target = url.slice(1)
             if (!anchorIds.has(target)) {
+                const wanted = normalizeAnchor(target)
                 for (const existing of anchorIds) {
-                    if (existing.replace(/\./g, '') === target) {
+                    if (normalizeAnchor(existing) === wanted) {
                         return `${attr}="#${existing}"`
                     }
                 }
