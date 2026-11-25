@@ -1,7 +1,7 @@
 ---
 title: 'Forward Deployed Engineers: The End of "Here''s the Platform, Good Luck"'
-subtitle: What a forward deployed engineer is, how it differs from a consultant, and how FlowFuse puts one to work in your plant
-description: What a forward deployed engineer is, how it differs from a consultant, and how FlowFuse puts one to work in your plant.
+subtitle: Why complex manufacturing needs engineers who own the outcome, and how FlowFuse puts them to work in your plant
+description: What a forward deployed engineer does, why multi-site manufacturers need one, how the role differs from a consultant and how FlowFuse puts it to work.
 metaTitle: Forward Deployed Engineers in Manufacturing
 date: '2026-11-20'
 authors:
@@ -11,87 +11,123 @@ tags:
   - posts
   - flowfuse
 tldr:
-  - A forward deployed engineer (FDE) is employed by a software vendor and works alongside your team to solve a specific problem using the vendor's platform.
-  - A consultant is measured on delivering the agreed scope. An FDE is measured on whether the problem gets solved and the solution stays in use, as long as the vendor isn't billing for their time separately.
-  - Before signing with anyone, check how the engagement is paid for and what you keep when it ends.
+  - A forward deployed engineer (FDE) embeds with your team, works out which problem is worth solving and takes responsibility for the result. The job needs someone technical, consultative, solution-oriented and accountable to both the customer and the vendor.
+  - Manufacturing needs this role. Every plant runs different equipment, processes and constraints, and the engineers who understand them are already stretched. Software and training alone don't solve that.
+  - The FDE model only holds if the vendor earns its money from the software staying in use, not from billing hours.
 cta:
   type: sign-up
   title: Scope Your Foundation Partnership
   description: Pick one problem that's costing you output or uptime. Your team builds the solution with ours, on the systems you already run, then owns and extends it.
-meta:
+structuredData:
   faq:
     - question: "What is a forward deployed engineer (FDE)?"
-      answer: "A forward deployed engineer is an engineer employed by a technology vendor who works alongside a customer's team to solve a [specific operational problem](/use-cases/) using the [vendor's platform](/product/). An FDE also helps turn the first solution into a reusable foundation for future deployments."
+      answer: "A forward deployed engineer is the vendor's engineer working inside a customer's operation. An FDE works out which [operational problem](/use-cases/) is worth solving, builds a solution that works in production and stays accountable for the result."
     - question: "What happens when the forward deployed engineer leaves?"
-      answer: "Your team takes over the day-to-day work, with the knowledge and documentation needed to maintain and extend the solution. The FDE works alongside your engineers throughout the engagement, sharing knowledge rather than becoming the only person who knows how things work. The goal is to leave your team capable of carrying the work forward independently."
-    - question: "How is a forward deployed engineer different from a consultant?"
-      answer: "A consultant is typically hired to deliver a defined project, often with the engagement ending once the agreed scope is complete. A forward deployed engineer works for the technology vendor and has a longer-term stake in the solution's success. The first deployment produces reusable application logic, data models, [dashboards](/platform/dashboard/), and [integration patterns](/integrations/) that the customer's team can adapt at other sites."
-    - question: "What role does the FlowFuse platform play in an FDE engagement?"
-      answer: "The [FlowFuse platform](/product/) provides the foundation for building, deploying, and managing industrial applications. The FDE uses it to develop applications alongside your team, connect existing industrial systems, and deploy solutions to your devices. Your team continues using the same platform to maintain, extend, and scale those applications across plants."
+      answer: "Your team takes over the day-to-day work, with the knowledge and documentation needed to maintain and extend the solution. The FDE works alongside your engineers throughout, sharing what they know rather than becoming the only person who understands how things work."
     - question: "Can FlowFuse work with our existing industrial systems and equipment?"
-      answer: "Yes. FlowFuse works with existing industrial infrastructure rather than requiring manufacturers to replace it. Built on [Node-RED](/node-red/), it supports connections to [PLCs](/landing/plc/), [SCADA](/use-cases/scada/), [MES](/use-cases/mes/), historians, [databases](/docs/node-red/database/), APIs, and industrial protocols such as [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) and [MQTT](/docs/user/teambroker/). This lets teams bring data from different systems together and build applications around the equipment and software they already operate."
+      answer: "Yes. FlowFuse works with existing infrastructure instead of replacing it. Built on [Node-RED](/node-red/), it connects to [PLCs](/landing/plc/), [SCADA](/use-cases/scada/), [MES](/use-cases/mes/), historians, [databases](/docs/node-red/database/), APIs and industrial protocols such as [OPC UA](/blog/2025/07/reading-and-writing-plc-data-using-opc-ua/) and [MQTT](/docs/user/teambroker/)."
     - question: "How does FlowFuse make deploying applications at the next plant faster?"
-      answer: "The first deployment gives your team a reusable application template, built alongside a FlowFuse [forward deployed engineer](/build-with-us/). At the next plant, your team can reuse that template, adjust equipment-specific configurations, and deploy it through FlowFuse's [DevOps pipeline](/docs/user/devops-pipelines/). [Device Groups](/docs/user/device-groups/) let you target multiple devices in a single deployment, eliminating the need to update each one individually."
+      answer: "The first deployment gives your team a reusable application, built alongside a FlowFuse [forward deployed engineer](/build-with-us/). At the next plant, your team keeps what's common, adapts what differs for that site's equipment and processes, and deploys it through FlowFuse's [DevOps pipelines](/docs/user/devops-pipelines/). [Device Groups](/docs/user/device-groups/) let you update many devices in one deployment instead of one at a time."
 ---
 
-Most vendors still sell industrial software the same way: deliver the platform, run a training session, and leave the rest to you.
+A plant can have new industrial software installed within days. Getting value from it takes much longer. The team has to learn the platform, work out how to apply it to their own equipment and processes, and keep what they build running as people, machines and priorities change. Until that happens, the plant is paying for software that hasn't solved anything yet.
 
-In *Build vs buy? Neither answer survives the second plant*, our CEO Michael Davis argued that manufacturers should buy the foundation every site shares and build only where plants differ. Few plant leaders argue with that split. The harder question is who does the building, when the engineers who could do it are already stretched across shifts, changeovers, and breakdowns.
+That makes speed to value the measure that matters: how soon the software starts fixing real problems on the floor, and whether it's still fixing them a year later.
 
-At FlowFuse, our answer is forward deployed engineers. Below, we explain what the role involves, how it differs from hiring a consultant, and how we run these engagements at FlowFuse.
+Most vendors leave that to the plant. They supply documentation, a training course and a support queue. That teaches people how the tool works, but not how to make it solve a problem on their line. The rest falls to engineers who already have full-time jobs. For the plant, it amounts to "Here's the platform, good luck."
 
 <!--more-->
 
 ## What "good luck" leaves behind
 
-The problem with handing over a platform and walking away is that the work has only just begun. Industrial software has to fit around equipment that may be decades old, production processes that cannot simply stop, and teams that already have more responsibilities than they can comfortably manage. None of that gets solved in a training session.
+It leaves a gap between the software a plant has bought and the results it was bought for. A platform only pays off once someone builds applications that solve a real problem, connects them to equipment that may be decades old, gets people on the line using them and maintains them after the vendor has gone.
 
-At a pipe manufacturer, a digitalization lead and one colleague are responsible for connecting more than a dozen plants. As they put it, "It's just my colleague and I for all of those plants." IT's "responsibility ends at the firewall."
+That work falls on plant teams that are already stretched. At a pipe manufacturer, a digitalization lead and one colleague cover more than a dozen plants. "It's just my colleague and I for all of those plants," they told us. IT's "responsibility ends at the firewall."
 
-At another manufacturer, the engineer who established the company's connectivity software left. The knowledge of how its systems connected went with them.
+When one of those people leaves, the knowledge leaves with them. At another manufacturer, the engineer who set up the connectivity software moved on, and no one else knew how the systems fit together.
 
-These aren't isolated implementation problems. They expose a weakness in how industrial technology is delivered. Ivan Getov, who writes [*The Floor Report*](https://getov.substack.com/) for maintenance managers, describes the pattern Industry 4.0 has brought to the plant floor: "Buy the sensor. Buy the platform. Buy the AI copilot. Buy the dashboard."
+Buying more technology doesn't fix this. Ivan Getov, who writes [*The Floor Report*](https://getov.substack.com/) for maintenance managers, sums up what Industry 4.0 has brought to the plant floor: "Buy the sensor. Buy the platform. Buy the AI copilot. Buy the dashboard." Manufacturers have plenty of technology. What they lack is engineering capacity.
 
-Manufacturers have no shortage of technology to buy. What they lack is the engineering capacity to make it work together, fit it to production, and keep it working as their operations evolve. Too often, vendors deliver the software while leaving manufacturers to take responsibility for everything that makes it useful.
+And that engineering has to happen on the floor, because that's where the real constraints show up: in how each machine actually behaves and in the workarounds people have built up over the years.
 
 ::cta-image{alt="Someone has to do the building. Your team builds the first application with ours, on the equipment you already run, and keeps all of it. Build with us" cta="sign-up" src="/images/cta/forward-deployed-engineers-build-with-us.png"}
 ::
 
-## What does a forward deployed engineer do?
+## What a forward deployed engineer is, and what it takes
 
-A forward deployed engineer (FDE) is an engineer from the software vendor who works inside the customer's operation. They learn the problem, work through the plant's constraints, and adapt the software until it runs the way the line needs it to. That can mean integrating existing systems, building applications, or working alongside operators and engineers until the solution is live.
+A forward deployed engineer is the vendor's own engineer, placed inside the plant. They work on the floor with the people who run it, find the constraints nobody wrote down and build applications around them. In complex, multi-site manufacturing, that makes the FDE a strategic role, and a necessary one. Doing it well takes someone who is:
 
-But isn't this what consultants already do?
+- **Technical.** They connect a 20-year-old PLC to a modern application, work within network and security constraints, and deliver something that holds up in production.
+- **Consultative.** They work out which problem is worth solving first, often by asking questions the customer hadn't framed yet. They listen to operators, controls engineers, IT and leadership, and turn those views into one plan.
+- **Solution-oriented.** They measure success in less downtime, faster changeovers or data people trust. If the first version doesn't move the number, they change it.
+- **Accountable to two sides.** The customer needs a solution that fits its operation. The vendor needs each solution to strengthen the platform rather than become a one-off to maintain forever. A good FDE does both: they deliver for this customer and feed what they learn back into the product.
 
-### FDE vs. consultant
+That last point is what lets the model scale. Without a platform behind them, an FDE is a very good contractor, and every job leaves another custom system behind.
 
-The difference isn't where the engineer works. It's the commercial relationship, the responsibility they take on, and what the customer is left with when the engagement ends.
+## Where the role came from, and why it's spreading now
 
-A consultant is typically hired for a defined project, with success measured against an agreed scope. Once the work is delivered, the engagement usually ends. If the customer wants to take the solution to another plant, that can mean another project, another budget, and another round of implementation.
+The role started at Palantir, which builds data analysis software for government agencies and large companies. Palantir found that its software only became useful once someone connected it to each customer's own data, systems and ways of working, and that customers couldn't do that work on their own. So instead of selling a license and moving on, it sent its own engineers to work inside customer sites, often for months at a time. It called them forward deployed engineers, borrowing the military term for people stationed close to where the work happens. They built what each customer needed, then took what they learned back to Palantir's product team, so that problems customers kept running into became features of the product.
 
-A forward deployed engineer works for the technology vendor, and success is measured on the plant floor: is the problem solved, and does the solution stay in use? Because the vendor is paid through the software, the work isn't finished at go-live. It's finished when the customer's team can run and extend what was built, and carry it to the next plant.
+AI companies have since adopted the model. OpenAI set up a forward deployed engineering team in 2024, Anthropic has grown its own team of engineers who work directly with customers, and job postings for the role [rose more than 800%](https://thenewstack.io/forward-deployed-engineers-ai/) between January and September 2025. The reason is the one Palantir had: a general-purpose model only pays off once someone fits it to a specific company's systems and processes.
 
-That only holds if the commercial model supports it. If a vendor sells FDE time as a separate services line, the FDE is a consultant with a different badge. The title alone guarantees nothing, so check how the engagement is paid for and what you keep when it ends.
+Manufacturing has the same problem, with more at stake. No two plants share the same machines, data or constraints, the work has to happen on the floor, and a mistake can stop a line. The model fits industrial software at least as well as it fits AI.
+
+## FDE vs. consultant
+
+From the outside, an FDE can look like a consultant, but the two work differently. A consultant builds to a specification the customer writes, and the work ends when that scope is delivered. An FDE helps decide what to build, works for the vendor and is measured on whether the solution stays in use.
+
+The difference shows up in two places: how the work is paid for, and what you keep when it ends.
 
 | | **Consultant** | **Forward deployed engineer** |
 | :- | :- | :- |
-| **Employer** | Third-party consultancy or system integrator | Software or platform vendor |
-| **Primary goal** | Deliver the agreed scope on time and budget | Solve the customer's problem and keep the software in use |
-| **Scaling model** | New engagement for each site | Can reuse the first deployment at the next site, if the engagement is set up for it |
-| **Commercial model** | Time and materials, or fixed-fee project | Included in the recurring license or partnership agreement |
+| **Who defines the scope** | The customer, in a specification | The FDE and the customer together, starting from the problem |
+| **Who they work for** | The customer, under a services contract | The software vendor |
+| **How the work is paid for** | Hourly rate or fixed project fee | Included in the software subscription |
+| **When the work ends** | When the agreed scope is delivered | When the solution runs in production and your team can maintain it |
+| **What you keep** | The deliverable, often a custom build that only the consultant fully understands | The applications, the platform they run on and a team that knows how to change them |
+| **Who is accountable for results** | The customer, once the project is signed off | The vendor, which keeps earning only while the solution stays in use |
+
+The payment model drives the rest of the table. A consultant paid by the hour earns more when a project runs longer. A vendor paid through a subscription keeps the customer only if the application is still in use after its engineer has left.
+
+## When an FDE isn't the right fit, and what it asks of you
+
+An FDE adds the most where the problem is unclear, the equipment varies from site to site and the plant team has no time to spare. It's probably more than you need if:
+
+- The problem is well defined and a standard integration solves it, such as sending one line's data to an existing historian.
+- Your own engineers have the time and skills to build, and what you need is software and support rather than extra hands.
+- Nobody at the plant can name the problem or the number that should improve. Settle that first. An FDE can help frame it, but someone on site has to own it.
+
+The model also asks something of the plant. Before you start, expect to commit:
+
+- Regular time from the controls engineers and operators who know the equipment, throughout the build and not only at kickoff.
+- IT and OT access agreed early. Network paths, accounts and security reviews often take longer than the build itself.
+- A target, a baseline and a date to measure against.
+- A named owner who will run the application after handover.
 
 ## How FlowFuse does it
 
-At FlowFuse, we built our approach around those two questions: how the work is paid for and what you keep when it ends.
+We built our approach around those two points. One recurring license covers the platform, our engineering time and the first deployment. There's no separate services bill and no hourly rate, so we only succeed if what we build solves your problem and keeps delivering.
 
-Every engagement starts with one operational problem and the people closest to it. Operations defines what needs to improve, a controls engineer brings knowledge of the equipment, and IT handles access and security. Before development begins, we agree on a target and record a baseline so both sides know what success looks like.
+### Start with one problem and the people closest to it
 
-The first deployment, the platform, and our engineers' time are covered by one recurring license. There's no separate services bill. We're not paid by the hour. Our success depends on building something that solves your problem and continues to deliver value.
+Pick a problem the plant already measures and cares about, such as a changeover that runs long or a line that stops for reasons nobody logs. Every deployment starts with one operational problem and the people closest to it. Operations defines what needs to improve, your controls engineers know how this equipment behaves day to day, and IT sets the rules for access and security. Our engineers add what they've seen work elsewhere.
 
-Our engineers build alongside your team, putting working versions in front of operators and shift leads early. Their feedback shapes the application, while all development follows your site's safety and change-control procedures.
+### Set a baseline before you build
 
-At handover, you keep the applications, flows, documentation, and project files. Built on [Node-RED](/node-red/) and open standards, your applications remain portable and can run on a standard Node-RED runtime. Your team can maintain, modify, and extend them independently. [FlowFuse](/product/) provides the foundation for building, deploying, managing, and scaling industrial applications across your plants.
+If nobody records the starting point, nobody can prove the project worked, and the next plant has no reason to fund a rollout. Before development begins, we agree on a target and record a baseline, so both sides know what success looks like.
 
-The first deployment also becomes a starting point for the next plant. Your team can reuse application logic, [dashboards](/platform/dashboard/), and [integrations](/integrations/), adapt them to the new site's equipment, and deploy through the same platform. Instead of rebuilding from scratch at every facility, you build on what already works.
+### Put working versions in front of operators early
 
-The industrial software industry has spent years making technology easier to buy. It's time to make it easier to put to work.
+Operators spot problems in a working screen that never come up in a requirements meeting. Your team builds with ours, putting working versions in front of operators and shift leads early. Their feedback shapes the application, and all development follows your site's safety and change-control procedures.
+
+### Plan the handover from day one
+
+Ask at the start who will own the application a year from now, and make sure that person helps build it. At handover, you keep the applications, flows, documentation and project files. Built on [Node-RED](/node-red/) and open standards, they stay portable and run on any Node-RED runtime. You can maintain, change and extend them on your own, using FlowFuse to manage them across plants.
+
+### Build the first site so the second can reuse it
+
+Keep site-specific settings apart from the shared logic, so the next plant adapts the application instead of rebuilding it. That first application becomes the starting point for the next plant. Your team reuses its logic, [dashboards](/platform/dashboard/) and [integrations](/integrations/), adapts them to the new site's equipment and deploys through the same platform. What we learn along the way also feeds back into FlowFuse, so the platform keeps getting better at the problems plants have in common.
+
+Industrial software vendors have spent years making technology easier to buy. Now they need to make it easier to put to work.
+
+If you're planning to roll out applications across several plants, [talk to our team](/contact-us/) about what an FDE engagement would look like on your equipment.
