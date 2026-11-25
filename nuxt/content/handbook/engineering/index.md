@@ -33,7 +33,7 @@ The product function defines what we build and why.
 - [Contributing](./contributing) - tips & details on how to set up a local development environment.
 - [Dependency Updates](./dependency-updates.md) - how we triage Dependabot PRs each week
 - [Project Management](./project-management.md) - details the processes we use to guide product development.
-- [Tools](./tools.md) - the tools we use
+- [Tools](./tools) - the tools we use, including [AI Assisted Development](./tools/ai-assisted-development) walkthroughs for your local dev environment
 
 ## Releases
 

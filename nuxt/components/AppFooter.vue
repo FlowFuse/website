@@ -30,7 +30,7 @@ const onCaptureClick = (item) => {
                     </div>
                     <!-- Newsletter: the one low-commitment offer on the site, for visitors
                          not ready to talk to sales. -->
-                    <FooterNewsletter />
+                    <FooterNewsletter class="md:w-[26rem] md:shrink-0" data-nav-section="Newsletter" />
                 </div>
                 <section v-for="col in chrome.footer.columns" :key="col.title" :data-nav-section="col.title">
                     <p class="uppercase text-xs font-semibold text-gray-400 tracking-widest mb-4">{{ col.title }}</p>

@@ -333,7 +333,15 @@ function rewriteIntegrationLinks (html: string, node: Integration): string {
             return fullMatch
         }
 
-        if (!repoUrl) return fullMatch
+        // Without a repository on npm there is nowhere on GitHub to send a relative link, and
+        // leaving it relative points it at a page on this site that does not exist (the build's
+        // link check then fails). The files a README refers to ship in the npm package, so serve
+        // them from the published version on jsDelivr instead.
+        if (!repoUrl) {
+            const version = node.version ? `@${node.version}` : ''
+            const path = url.replace(/^(\.\.?\/)+/, '').replace(/^\//, '')
+            return `${attr}="https://cdn.jsdelivr.net/npm/${node._id}${version}/${path}"`
+        }
 
         if (url.startsWith('./') || url.startsWith('../')) {
             return `${attr}="${repoUrl}/blob/master/${url.replace(/^\.\.?\//, '')}"`
