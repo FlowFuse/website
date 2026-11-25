@@ -1,7 +1,7 @@
 ---
 title: "Changes to Starter, Pro, and Team Plans: Your Questions Answered"
 subtitle: "What happens on January 1, 2027, what you need to do, and what happens to your data"
-description: "FlowFuse is retiring the Starter, Pro, and Team plans. Contact support@flowfuse.com before December 31, 2026 to move to Hub, Edge, or Fleet, or your account will be paused. Your data will not be lost."
+description: "FlowFuse is retiring the Starter, Pro, and Team plans. Contact support@flowfuse.com before March 31, 2027 to move to Hub, Edge, or Fleet, or your account will be paused. Your data will not be lost."
 date: 2026-11-16
 authors: ["kristopher-sandoval"]
 image: /blog/2026/11/images/changes-to-starter-pro-team-plans.png
@@ -9,7 +9,7 @@ tags:
    - posts
    - flowfuse
    - news
-tldr: "FlowFuse is retiring the Starter, Pro, and Team plans. If you're on one of them, email support@flowfuse.com before December 31, 2026 so we can move you to Hub, Edge, or Fleet. We will not charge you or switch your plan automatically. If we don't hear from you, we'll pause your account on January 1, 2027. Pausing does not delete your data."
+tldr: "FlowFuse is retiring the Starter, Pro, and Team plans. If you're on one of them, email support@flowfuse.com before March 31, 2027 so we can move you to Hub, Edge, or Fleet. We will not charge you or switch your plan automatically. If we don't hear from you, we'll pause your account on January 1, 2027. Pausing does not delete your data."
 ---
 
 A few weeks ago we wrote to Starter customers about restructuring our product lineup. Since then, we've made one important change: we will no longer migrate anyone automatically. Instead, we want to talk to each of you directly, so you end up on the product that fits how you use FlowFuse.
@@ -17,7 +17,9 @@ A few weeks ago we wrote to Starter customers about restructuring our product li
 That raises fair questions, especially about your flows and your data. Here are the answers.
 
 <!--more-->
-
+::note
+**Update:** Based on feedback from the FlowFuse community, we have extended the deadline from December 31, 2026 to March 31, 2027.
+::
 ## What's changing?
 
 We're replacing the Starter, Pro, and Team plans with three products, each built for a specific kind of work:
@@ -36,7 +38,7 @@ If you're seeing a banner in FlowFuse that links to this post, this applies to y
 
 ## What do I need to do?
 
-Email [support@flowfuse.com](mailto:support@flowfuse.com) before December 31, 2026. Tell us a little about how you use FlowFuse, and we'll help you pick between Hub, Edge, and Fleet and walk you through next steps.
+Email [support@flowfuse.com](mailto:support@flowfuse.com) before March 31, 2027. Tell us a little about how you use FlowFuse, and we'll help you pick between Hub, Edge, and Fleet and walk you through next steps.
 
 That's it. One email keeps your account running.
 
@@ -46,11 +48,11 @@ No. We won't move you to a new product or charge you for one unless you reach ou
 
 Our earlier email said Starter customers would move to Hub automatically on January 1, 2027. That no longer applies.
 
-## Does anything change before December 31?
+## Does anything change before March 31, 2027?
 
-No. Your current plan keeps working as it does today through December 31, 2026.
+No. Your current plan keeps working as it does today through March 31, 2027.
 
-## What happens if I don't contact you by December 31?
+## What happens if I don't contact you by March 31, 2027?
 
 We'll pause your account on January 1, 2027.
 
@@ -63,7 +65,7 @@ When we pause your account:
 - **Exporting your data** requires contacting [support@flowfuse.com](mailto:support@flowfuse.com).
 - **Billing stops.** We won't charge you while your account is paused.
 
-If your flows feed production systems or anything people rely on day to day, please don't wait until the last week of December to get in touch.
+If your flows feed production systems or anything people rely on day to day, please don't wait until the last week of March 2027 to get in touch.
 
 ## Will I lose my data?
 
@@ -71,13 +73,13 @@ Not immediately - but paused accounts will be removed January 1st, 2028. Until t
 
 ## I'm on FlowFuse Self-Hosted. Does this apply to me?
 
-Yes. Self-Hosted customers on Enterprise or Team licenses need to contact [support@flowfuse.com](mailto:support@flowfuse.com) before December 31, 2026 as well.
+Yes. Self-Hosted customers on Enterprise or Team licenses need to contact [support@flowfuse.com](mailto:support@flowfuse.com) before March 31, 2027 as well.
 
 Your flows and data live on your own infrastructure, so they stay with you.
 
-## Can I export my flows before December 31?
+## Can I export my flows before March 31, 2027?
 
-Yes. Your account works normally until December 31, so you can export your flows from the Node-RED editor at any time. You don't need to do this to keep your data, but some teams like having their own copy. After your account is paused, exports go through [support@flowfuse.com](mailto:support@flowfuse.com).
+Yes. Your account works normally until March 31, 2027, so you can export your flows from the Node-RED editor at any time. You don't need to do this to keep your data, but some teams like having their own copy. After your account is paused, exports go through [support@flowfuse.com](mailto:support@flowfuse.com).
 
 ## My account was paused. Can I still get help?
 
