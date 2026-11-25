@@ -84,6 +84,8 @@ if (faq.value.length) {
         ...faq.value.map(item => defineQuestion({ question: item.question, answer: faqAnswerText(item.answer) })),
     ])
 }
+
+useKatexStyles()
 </script>
 
 <template>

@@ -18,6 +18,8 @@ useSeoMeta({
     ogUrl: 'https://flowfuse.com/platform/security/',
     twitterSite: '@FlowFuseinc',
 })
+
+useKatexStyles()
 </script>
 
 <template>

@@ -10,6 +10,9 @@ issues:
   - https://github.com/FlowFuse/flowfuse/issues/5294
 ---
 
+::product-update-note
+::
+
 DevOps Pipeline Git Repository stages now connect to **any Git server that speaks HTTPS**, GitLab, Bitbucket, Gitea, or a self-hosted instance, not just GitHub and Azure DevOps.
 
 Previously, Git integration only worked with those two providers. If your team backs up flows to a self-hosted GitLab or an on-prem Bitbucket, you were stuck. Now you can point a pipeline at any HTTPS Git repository to back up and deploy your flows.
@@ -26,4 +29,4 @@ To get started:
 ![The Add Git Token dialog showing the GitHub, Azure DevOps, and Other provider options, with the Other option selected and the username and CA certificate fields visible](./images/generic-git-provider.png)
 *Creating a generic Git token for a self-hosted server.*
 
-This feature is available to Team and Enterprise tier users of FlowFuse Cloud and Enterprise Licensed Self Hosted users from v2.32.
+This feature is available in FlowFuse Hub, on FlowFuse Cloud and on self-hosted installations from v2.32.

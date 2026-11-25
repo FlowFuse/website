@@ -20,7 +20,7 @@ Most notably, FlowFuse now offers it's own MQTT service, with the option to crea
 
 ## MQTT Broker
 
-This is a significant milestone for FlowFuse, as we're now offering our own MQTT service. We have listened to a lot of feedback from users and prospective customers, and this has consistently been a regularly requested offering, and so we are delighted to announce that this is now live on FlowFuse Cloud for our Enterprise teams.
+This is a significant milestone for FlowFuse, as we're now offering our own MQTT service. We have listened to a lot of feedback from users and prospective customers, and this has consistently been a regularly requested offering, and so we are delighted to announce that this is now live on FlowFuse Cloud.
 
 ![Screenshot of the UI to manage your MQTT clients](./images/screenshot-mqtt-client-config.png){data-zoomable}
 
@@ -28,11 +28,7 @@ This feature allows you to run and manage your own MQTT Clients alongside your N
 
 ### Pricing
 
-From today, Enterprise teams on FlowFuse Cloud will be able to create up to 20 clients on their accounts at **no extra cost**.
-
-In the near future, users will then be able to purchase additional packs of clients to add to their team.
-
-Self-hosted Enterprise customers will be able to make use of this feature in our next release.
+The MQTT service is included in FlowFuse Edge and Fleet. See [pricing](/pricing/) for what each product includes.
 ## Version History - Visual Timeline
 
 Since early iterations of FlowFuse, Snapshots have played a key role in Version Control for your Node-RED flows, environment variables and settings. Whilst we still offer the same "Snapshots" view in the application, we've also added a new view to give a clearer picture of what flows are running on your Node-RED instances and _when_.
@@ -64,12 +60,6 @@ Together, we can make FlowFuse better with each release!
 ### Self-Hosted
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
-
-### FlowFuse Cloud
-
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.
 
 ## Upgrading FlowFuse
 

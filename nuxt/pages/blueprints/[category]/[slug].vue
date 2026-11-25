@@ -47,6 +47,8 @@ useSeoMeta({
     twitterCard: 'summary_large_image',
     twitterSite: '@FlowFuseinc',
 })
+
+useKatexStyles()
 </script>
 
 <template>

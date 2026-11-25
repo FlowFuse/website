@@ -11,7 +11,7 @@ tags:
     - flowfuse
 ---
 
-Starting today, FlowFuse Blueprints are available on FlowFuse Cloud. Additionally, upon request, all our Teams and Enterprise Self-Hosted customers gain access to this collection. But what exactly are FlowFuse Blueprints?
+Starting today, FlowFuse Blueprints are available on FlowFuse Cloud. Additionally, upon request, our self-hosted customers gain access to this collection. But what exactly are FlowFuse Blueprints?
 
 <!--more-->
 

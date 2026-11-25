@@ -105,6 +105,8 @@ const surround = computed(() => {
         description: entry.group,
     }))
 })
+
+useKatexStyles()
 </script>
 
 <template>

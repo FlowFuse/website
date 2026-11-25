@@ -7,6 +7,9 @@ authors: ["marian-demme"]
 tags:
     - changelog
 ---
+::product-update-note
+::
+
 We're excited to announce the introduction of the Instance Protection Mode, an enhancement in our efforts to provide a secure and controlled environment for managing production instances on FlowFuse. This feature empowers Team Owners with the exclusive ability to restrict modifications to production instances, ensuring that any changes are made with careful oversight and authorization.
 
 A key aspect of Instance Protection Mode is the exclusive control it grants Owners over the execution of DevOps pipelines targeting protected instances. This means: Only Owners can initiate and execute pipelines.

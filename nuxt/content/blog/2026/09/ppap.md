@@ -44,7 +44,7 @@ The Automotive Industry Action Group publishes PPAP as one of its [Quality Core 
 
 PPAP is most associated with [automotive manufacturing](/industries/automotive/), though other industries use similar part approval processes with different requirements.
 
-::cta-image{src="/blog/2026/09/images/papp-cta.png" alt="Collect PPAP data as parts are made - sign up for FlowFuse" cta="sign-up"}
+::cta-image{src="/blog/2026/09/images/papp-cta.png" alt="Collect PPAP data as parts are made. Connect gauges, CMMs, and inspection systems once, and every submission starts with data you already have." cta="sign-up"}
 ::
 
 ## The 18 Elements Of The Production Part Approval Process

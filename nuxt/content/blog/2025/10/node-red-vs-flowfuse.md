@@ -143,4 +143,4 @@ FlowFuse takes what you’ve built in Node-RED and makes it production-ready.
 
 This article highlighted the key differences between Node-RED and FlowFuse, but many advanced features and real-world use cases remain to be explored.
 
-[Book a demo with our team](/book-demo/) to see a complete live demo and discover how FlowFuse extends Node-RED for enterprise operations, or [start a free trial](https://app.flowfuse.com/) to experience it yourself.
+[Book a demo with our team](/book-demo/) to see a complete live demo and discover how FlowFuse extends Node-RED for enterprise operations, or [build your first application with us](/build-with-us/).

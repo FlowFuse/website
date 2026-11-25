@@ -67,7 +67,7 @@ In this article, we'll build two types of timers in [Node-RED](/): **stopwatches
 
 Before following this tutorial, you should have:
 
-- A running **Node-RED instance**. For professional development and production deployments, **[FlowFuse](/)** is the recommended platform. If you don’t have an account, [start your free trial](http://app.flowfuse.com) today.
+- A running **Node-RED instance**. For professional development and production deployments, **[FlowFuse](/)** is the recommended platform.
 
 > FlowFuse provides enterprise-grade Node-RED hosting with managed infrastructure, built-in [DevOps tools](/blog/2024/10/how-to-build-automate-devops-pipelines-node-red-deployments/), [MQTT broker](/blog/2025/10/plc-to-mqtt-using-flowfuse/#step-3%3A-set-up-mqtt-with-flowfuse), [database](/blog/2025/08/getting-started-with-flowfuse-tables/), [team collaboration](/blog/2024/12/flowfuse-team-collaboration/) with [granular access control](https://www.youtube.com/watch?v=mb1s1YQIpZY), and seamless scaling capabilities. Whether you need cloud-hosted instances managed by FlowFuse or remote instances running on your edge devices, the platform provides unified management for both. FlowFuse also includes AI-powered features that accelerate flow development and streamline automation projects. From prototyping to mission-critical production deployments, FlowFuse handles the infrastructure complexity so you can focus on building flows.
 

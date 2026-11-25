@@ -41,10 +41,9 @@ onMounted(() => {
       </div>
       <!-- Mobile Sign In (quick-links nav below is hidden under md) -->
       <CtaSignIn variant="nav-text" position="utility-bar-mobile" class="md:hidden shrink-0 text-indigo-100 hover:text-white no-underline hover:no-underline font-medium" />
-      <!-- Quick links (right) -->
+      <!-- Quick links (right): tasks for existing users only. Buyer pages (About, Blog)
+           live in the main nav, so they are not repeated here. -->
       <nav class="hidden md:flex items-center gap-5 shrink-0" aria-label="Quick links">
-        <a href="/about/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">About us</a>
-        <a href="/blog/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Blog</a>
         <a href="/docs/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Docs</a>
         <a href="/support/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Support</a>
         <a href="/docs/device-agent/install/overview/" class="text-indigo-100 hover:text-white no-underline hover:no-underline">Install on edge</a>

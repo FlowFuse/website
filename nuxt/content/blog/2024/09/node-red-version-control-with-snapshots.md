@@ -209,7 +209,7 @@ This feature allows you to focus on developing your Node-RED flows with the assu
 
 2. Once inside the Developer Mode tab, you will find the option to enable or disable the Auto Snapshot feature.
 
-**Note:** A limit of 10 auto snapshots is maintained, with the oldest one being deleted when a new one is created. Also this feature is only available to **Team** and **Enterprise** users.
+**Note:** A limit of 10 auto snapshots is maintained, with the oldest one being deleted when a new one is created.
 
 ## Setting a Device Target Snapshot
 

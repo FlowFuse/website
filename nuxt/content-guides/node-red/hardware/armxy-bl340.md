@@ -39,7 +39,7 @@ Exciting Update! FlowFuse is now available as three different products: [FlowFus
 Before proceeding with the installation, ensure you have the following:
 
 - **BLIIOT ARMxy BL340** – A functioning device with internet access.
-- **FlowFuse Account** - Ensure you have a FlowFuse account. If not, you can create a free account that allows you to manage up to two edge devices for free. For more information, refer to [FlowFuse Free Tier](/blog/2024/12/flowfuse-release-2-12/)
+- **FlowFuse Account** - Ensure you have a FlowFuse account. If not, [sign up](cta:signUp) first. See [pricing](/pricing/) for what each product includes.
 - **Sudo Privileges** – Administrator access to install required packages.
 
 ## Getting Started

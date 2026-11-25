@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { faqAnswerText } from '../../lib/faq-answer.mjs'
 // Where the old self-serve "Free Trial" links now land, presented as the FlowFuse
-// Solution Foundation. Enterprise teams told us a trial isn't how they want to
+// Foundation Partnership. Enterprise teams told us a trial isn't how they want to
 // evaluate FlowFuse, so the default path is a conversation with sales; a trial is
 // still available through sales for teams that want one.
 //
@@ -14,7 +14,7 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 // The offer is still being defined, so no prices, durations or package sizes
 // (Sites, Solutions, engineering days) appear here. Add them once sales signs off.
 useSeoMeta({
-    title: 'FlowFuse Solution Foundation: Deploy Your First Solution',
+    title: 'FlowFuse Foundation Partnership: Deploy Your First Solution',
     description: 'Put FlowFuse to work on a critical manufacturing problem, and establish the integrations, data models and deployment patterns you can reuse at every plant.',
     ogUrl: 'https://flowfuse.com/build-with-us/',
     twitterSite: '@FlowFuseinc',
@@ -71,7 +71,7 @@ useSchemaOrg([
     <!-- HERO: the outcome first, with FlowFuse doing the work in the first sentence. -->
     <section class="w-full px-6 pt-12 md:pt-24 pb-10">
       <div class="max-w-3xl mx-auto text-center mt-6 sm:mt-12">
-        <p class="text-indigo-600 mb-4 text-sm font-semibold uppercase tracking-wide">FlowFuse Solution Foundation</p>
+        <p class="text-indigo-600 mb-4 text-sm font-semibold uppercase tracking-wide">FlowFuse Foundation Partnership</p>
         <h1 class="font-medium home text-gray-900 mb-6">
           Deploy your first solution. <span class="text-indigo-600">Establish the foundation for every plant.</span>
         </h1>

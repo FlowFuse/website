@@ -79,13 +79,13 @@ You can interact with the live demo here: :live-demo-link{href="https://clever-g
 
 Before you start building, get these ready:
 
-- **A FlowFuse account.** [Sign up](https://app.flowfuse.com/account/create) for FlowFuse Cloud, or use a self-hosted instance.
+- **A FlowFuse team**, on FlowFuse Cloud or self-hosted.
 - **A FlowFuse instance up and running.** If you don't have one yet, create a new instance from your FlowFuse Platform.
 - **[FlowFuse Dashboard](/platform/dashboard/) installed.** This tutorial uses `@flowfuse/node-red-dashboard` nodes (`ui-template`, `ui-event`, `ui-button`, `ui-markdown`, `ui-notification`, `ui-page`, `ui-group`, `ui-theme`) to build both pages. Install it from the Palette Manager if it isn't already in your instance.
 - **A webcam node and an OCR node.** The Tool Check page uses `@sumit_shinde_84/node-red-dashboard-2-ui-webcam` to capture the label and `@sumit_shinde_84/node-red-contrib-simple-ocr` to read it. Install both from the Palette Manager.
 - **A device with a camera** for the Tool Check page, since the scanner works through the browser.
 
-> **Note:** [FlowFuse Tables](/docs/user/ff-tables/) is available to Enterprise tier teams on FlowFuse Cloud, and to Enterprise licensed self-hosted teams running on Kubernetes. If you're on a different tier, use any external database instead, such as Postgres or MySQL, with the standard database nodes from the palette. The SQL here is standard PostgreSQL, and the widgets only care about the shape of the rows, not where they came from.
+> **Note:** [FlowFuse Tables](/docs/user/ff-tables/) is included in every FlowFuse product (Edge, Hub and Fleet), on FlowFuse Cloud and on self-hosted installations with a FlowFuse license running on Kubernetes. If you'd rather use your own database, use any external database instead, such as Postgres or MySQL, with the standard database nodes from the palette. The SQL here is standard PostgreSQL, and the widgets only care about the shape of the rows, not where they came from.
 
 ## How the Application Works
 
