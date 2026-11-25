@@ -20,12 +20,16 @@ FlowFuse allows organizations to reliably deliver Node-RED applications in a con
 - DevOps deliver pipelines that support a software development lifecycle for Node-RED development. Pipelines can be setup to establish development, test and production environments for Node-RED instances.
 - Snapshot of Node-RED instances to create a version history of changes to Node-RED applications. This also includes the ability to rollback to a previous version of a Node-RED instance.
 
-FlowFuse on the AWS Marketplace is available under the Apache License c2.0 open source license. Customers can use FlowFuse free of charge but will need to pay AWS EC2 usage for hosting FlowFuse. FlowFuse offers commercially licensed Premimum and Enterprise tiers that includes enterprise oriented features, including:
-- 24/7 technical support
-- Single Sign-on
-- High Availability for Node-RED applications
-- Remote device management
+FlowFuse on the AWS Marketplace is available under the Apache License c2.0 open source license. Customers can use FlowFuse free of charge but will need to pay AWS EC2 usage for hosting FlowFuse. FlowFuse's commercially licensed products, Edge, Hub and Fleet, add enterprise-oriented features, including:
+- FlowFuse Expert, AI that builds flows and answers questions about your running applications
+- Certified Nodes for OT and IT connectivity, security-scanned and supported by FlowFuse
+- Single Sign-On and role-based access control
+- Remote device management and fleet-wide updates (Edge and Fleet)
+- High Availability for Node-RED applications (Hub)
+- Enterprise support
 
-Customers can easily upgrade to the premium or enterprise tier by obtaining a commercial license from FlowFuse. To understand what FlowFuse can do for your use-case, please [book a demo](/book-demo).
+See [pricing](/pricing/) for everything each product includes.
+
+Customers can upgrade by obtaining a commercial license for Edge, Hub or Fleet from FlowFuse. To understand what FlowFuse can do for your use-case, please [book a demo](/book-demo).
 
 FlowFuse on AWS Marketplace is available [immediately](https://aws.amazon.com/marketplace/pp/prodview-3ycrknfg67rug?sr=0-1&ref_=beagle&applicationId=AWSMPContessa). Please refer to our [documentation](/docs/install/docker/aws-marketplace/#installing-flowfuse-from-aws-market-place) and give it a try and let us know what you think.

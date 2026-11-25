@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import navHighlights from '../data/navHighlights.json'
 // The nav and footer links live in nuxt/data/chrome.json; edit them there.
 import chrome from '../data/chrome.json'
@@ -10,6 +10,42 @@ const hl = (key) => {
 }
 
 const resolveHref = useResolveHref()
+
+// The top-level item the current page belongs to, so the nav shows where the visitor
+// is. Longest matching href wins, so /product/edge/ resolves through FlowFuse Edge
+// (Platform) and /use-cases/mes/ through MES (Solutions).
+const route = useRoute()
+const currentSection = computed(() => {
+    const path = route.path.endsWith('/') ? route.path : `${route.path}/`
+    let best = { section: null, length: 0 }
+    const consider = (href, section) => {
+        if (!href || !href.startsWith('/') || href === '/') return
+        const base = href.split('#')[0]
+        if (path.startsWith(base) && base.length > best.length) best = { section, length: base.length }
+    }
+    for (const dd of chrome.header.dropdowns) {
+        for (const col of dd.columns) for (const link of col.links) consider(link.href, dd.label)
+    }
+    for (const item of chrome.header.direct) consider(item.href, item.label)
+    return best.section
+})
+
+// Top-level items in the order chrome.json's header.order gives, mixing dropdowns and
+// direct links, so a direct link (Industrial AI) can sit between two dropdowns.
+const topItems = (() => {
+    const dropdowns = Object.fromEntries(chrome.header.dropdowns.map(d => [d.label, d]))
+    const direct = Object.fromEntries(chrome.header.direct.map(d => [d.label, d]))
+    return chrome.header.order.map((label) => {
+        if (dropdowns[label]) return { type: 'dropdown', item: dropdowns[label] }
+        if (direct[label]) return { type: 'direct', item: direct[label] }
+        throw new Error(`chrome.json header.order names "${label}", which is neither a dropdown nor a direct link`)
+    })
+})()
+
+// Columns in a dropdown share one row grid (grid-rows-subgrid), so a link with a
+// two-line description would stretch the matching row in every other column.
+// A dropdown that uses descriptions lets each column stack on its own instead.
+const hasDescriptions = (dd) => dd.columns.some(c => c.links.some(l => l.description))
 
 onMounted(() => {
     const navToggle = document.getElementById('nav-toggle')
@@ -46,6 +82,45 @@ onMounted(() => {
             const navContent = document.getElementById('nav-content')
             if (navContent) navContent.style.top = ''
         }
+    })
+
+    // Keyboard access, following the W3C disclosure-navigation pattern: Tab moves between
+    // the top-level items with their panels closed, Enter/Space opens or closes a panel,
+    // Escape closes it and returns focus to its trigger. A panel stays closed on keyboard
+    // focus by adding .ff-nav-suppressed, which overrides the :focus-within rule that
+    // still opens it for a mouse click. aria-expanded follows what is on screen.
+    document.querySelectorAll('header .ff-nav-dropdown').forEach((li) => {
+        const trigger = li.querySelector(':scope > span')
+        if (!trigger) return
+        const setExpanded = (open) => trigger.setAttribute('aria-expanded', open ? 'true' : 'false')
+        const reopen = () => { li.classList.remove('ff-nav-suppressed') }
+        li.addEventListener('mouseenter', () => { reopen(); setExpanded(true) })
+        li.addEventListener('mouseleave', () => { reopen(); setExpanded(li.contains(document.activeElement)) })
+        li.addEventListener('focusin', (e) => {
+            if (e.target === trigger && !li.matches(':hover') && !li.contains(e.relatedTarget)) {
+                li.classList.add('ff-nav-suppressed')
+            }
+            setExpanded(!li.classList.contains('ff-nav-suppressed'))
+        })
+        li.addEventListener('focusout', (e) => {
+            if (li.contains(e.relatedTarget)) return
+            reopen()
+            setExpanded(li.matches(':hover'))
+        })
+        li.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return
+            li.classList.add('ff-nav-suppressed')
+            setExpanded(false)
+            trigger.focus()
+        })
+        trigger.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return
+            e.preventDefault()
+            if (window.innerWidth < 768) { trigger.click(); return }
+            const closing = !li.classList.contains('ff-nav-suppressed')
+            li.classList.toggle('ff-nav-suppressed', closing)
+            setExpanded(!closing)
+        })
     })
 
     // Mobile nav: dropdown sections expand on tap, not hover
@@ -157,23 +232,31 @@ onMounted(() => {
 
       <!-- Nav -->
       <ul id="nav-content" class="">
-        <li v-for="dd in chrome.header.dropdowns" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :data-nav-section="dd.label">
-          <span class="flex items-center gap-1"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
+        <template v-for="top in topItems" :key="top.item.label">
+        <template v-if="top.type === 'dropdown'">
+        <li v-for="dd in [top.item]" :key="dd.label" class="ff-nav-dropdown relative hover:cursor-pointer" :class="{ 'ff-nav-current': currentSection === dd.label }" :data-nav-section="dd.label">
+          <span class="flex items-center gap-1" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false"><span class="ff-nav-label">{{ dd.label }}</span><span class="ff-nav-chevron"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ff-icon--down"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg></span></span>
           <ul :class="dd.megaClasses">
             <li class="mega-highlight"><a :href="hl(dd.highlight).link" class="mega-highlight-card"><span class="mega-highlight-title">{{ hl(dd.highlight).title }}</span><span class="mega-highlight-media"><img :src="hl(dd.highlight).image" alt="" loading="lazy"></span></a></li>
             <template v-for="col in dd.columns" :key="col.title">
               <li class="pl-3 title border-l-2 border-gray-200" :class="col.titleGrid"><span class="flex items-center gap-2"><span class="ff-nav-label">{{ col.title }}</span></span></li>
               <li class="contents">
-                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="col.listClasses">
-                  <li v-for="item in col.links" :key="item.label" :class="{ 'nav-indent': item.indent }"><a class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a></li>
+                <ul class="sub-menu grid grid-rows-subgrid ml-7 auto-rows-auto border-l-2 border-gray-200" :class="[col.listClasses, { 'ff-sub-free': hasDescriptions(dd) }]">
+                  <li v-for="item in col.links" :key="item.label" :class="{ 'nav-indent': item.indent }">
+                    <!-- A description is for product names that do not explain themselves
+                         (Edge, Hub, Fleet). It sits in a <div>, not a <span>, so the generic
+                         `header a > span` icon transforms in style.css leave it alone. -->
+                    <a v-if="item.description" class="flex items-start gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><div class="ff-nav-text"><span class="ff-nav-label">{{ item.label }}</span><small class="ff-nav-desc">{{ item.description }}</small></div></a>
+                    <a v-else class="flex items-center gap-2" :href="resolveHref(item.href)"><NavIcon :name="item.icon" :solid="!!item.solid" /><span class="ff-nav-label">{{ item.label }}</span></a>
+                  </li>
                 </ul>
               </li>
             </template>
           </ul>
         </li>
-
-        <!-- Direct links -->
-        <li v-for="item in chrome.header.direct" :key="item.label" :class="item.classes"><a class="flex items-center gap-2" :href="item.href"><span class="ff-nav-label">{{ item.label }}</span></a></li>
+        </template>
+        <li v-else :class="[top.item.classes, { 'ff-nav-current': currentSection === top.item.label }]"><a class="flex items-center gap-2" :href="top.item.href" :aria-current="currentSection === top.item.label ? 'page' : undefined"><span class="ff-nav-label">{{ top.item.label }}</span></a></li>
+        </template>
 
         <!-- More overflow (populated by JS) -->
         <li id="nav-more" class="ff-nav-dropdown relative hover:cursor-pointer" style="display:none" data-nav-section="More">

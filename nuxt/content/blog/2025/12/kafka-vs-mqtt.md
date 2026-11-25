@@ -156,7 +156,7 @@ FlowFuse takes a different approach using Node-RED's visual programming model. [
 
 As mentioned before, FlowFuse includes a managed MQTT broker built directly into the platform. Beyond MQTT and Kafka, it supports industrial protocols like Modbus, OPC UA, and HTTP. Device connections, message processing, and Kafka integration all happen in one environment. You get built-in version control, deployment management, team collaboration, and much more.
 
-FlowFuse offers a free trial for testing MQTT-Kafka workflows. [Start building](https://app.flowfuse.com/) or [schedule a consultation](/contact-us/) to discuss your specific needs.
+[Build your first MQTT-Kafka pipeline with us](/build-with-us/).
 
 ## Conclusion
 

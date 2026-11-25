@@ -15,8 +15,6 @@ tags:
 keywords: flowfuse dashboard, node-red dashboard, histogram chart, dialog modal, app icon, dashboard customization, node-red dashboard 2.0, ui group, pwa icon, data visualization
 cta:
   type: sign-up
-  title: "Build Better Dashboards with FlowFuse"
-  description: "Get access to the latest FlowFuse Dashboard features including histograms, dialog groups, and custom app icons. Start your free trial today."
 meta:
   faq:
     - question: "What is the new Histogram chart type in FlowFuse Dashboard?"

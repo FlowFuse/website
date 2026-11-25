@@ -267,4 +267,4 @@ This means less complexity and faster time to value for your industrial data ini
 
 [Opto 22 customers already do this in the field](/customer-stories/opto22-embraces-node-red/), collecting sensor data and control variables with Node-RED and storing it straight into a SQL database.
 
-Ready to build your own time-series dashboard? [Get started with FlowFuse Tables](https://app.flowfuse.com/account/create) or [explore our industrial blueprints](/blueprints/)
+Ready to build your own time-series dashboard? [Build it with us](/build-with-us/) or [explore our industrial blueprints](/blueprints/)

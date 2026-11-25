@@ -16,8 +16,6 @@ tags:
     - how-to
 cta:
   type: sign-up
-  title: "Start Building Better Node-RED Dashboards"
-  description: "Sign up for FlowFuse and use the Static Asset Service to easily add and manage images in your Node-RED dashboards, no filesystem access required."
 meta:
   howto:
     name: "How to Add Images to Node-RED Dashboards"

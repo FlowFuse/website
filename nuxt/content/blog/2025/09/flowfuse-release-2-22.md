@@ -61,7 +61,7 @@ This is especially important for users with large remote instance deployments, a
 
 ## SAML Group Assertions for Dashboard Development
 
-Managing Dashboard permissions when building flows just got easier for Enterprise teams using SSO.
+Managing Dashboard permissions when building flows just got easier for teams using SSO.
 
 We've added an new option so that a users SSO Group memberships can be included in the `user` object Dashboard flows receive when a user is logged in. This makes it much easier to build custom permissions into your FlowFuse Dashboard applications, giving you far more flexibility.
 
@@ -108,12 +108,6 @@ Which of these new features are you most excited to try? Email me directly at gr
 
 ## Try FlowFuse
 
-
-### FlowFuse Cloud
-
-The quickest way to get started is with FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) and have your Node-RED instances running in the cloud within minutes.
 
 ### Self-Hosted
 

@@ -36,7 +36,7 @@ Until now, to utilise these packages within FlowFuse, you would either need to p
 
 ### Now in FlowFuse
 
-With our new update, every Team- and Enterprise-Tier Library in FlowFuse has an in-built private Node collection, ready for you to go. This means that you can push your custom node packages directly to that registry, and make it available to all of your Instances running in FlowFuse within seconds. This comes built in with full version control and all of the great update mechanisms that you already have in Node-RED.
+With our new update, every FlowFuse team library has an in-built private Node collection, ready for you to go. This means that you can push your custom node packages directly to that registry, and make it available to all of your Instances running in FlowFuse within seconds. This comes built in with full version control and all of the great update mechanisms that you already have in Node-RED.
 
 This new feature also integrates seamlessly ith our [Bill of Materials](/docs/user/bill-of-materials/) view, providing you the single source of truth to all of your Instance's dependencies in one-place, making it easier to audit and manage your Node-RED instances and their dependencies.
 
@@ -64,12 +64,6 @@ Previously, you could only use a Group as the _last_ stage in a Pipeline. With t
 
 This improvement not only saves time but also enhances the consistency and reliability of Remote Instance management across your fleet.
 
-## Removing Credit Card Requirement for Free Tier
-
-When we recently introduced the new Free Tier for FlowFuse Cloud, we had some legacy architecture in place that meant that, whilst it was entirely free, the Free Tier still require you to put in credit card details.
-
-This is something we've completely overhauled in the new version of FlowFuse, so now, you can just sign up and get started with building your own Remote Instances without the need for any credit card details. It was deployed to FlowFuse Cloud a week ago, and is already proving popular with new users. We can't wait to see what everyone builds on the free tier.
-
 ## FlowFuse Dashboard Authentication Now Includes User's Role
 
 An enhancement to FlowFuse's underlying Node-RED launcher is the inclusion of the FlowFuse user's role in the `user` object return by the FlowFuse User Addon. This means you can start building your own RBAC (Role Based Access Control) into your own Node-RED/Dashboard applications, without the need to define roles and access levels directly within your Node-RED flows.
@@ -91,8 +85,3 @@ Together, we can make FlowFuse better with each release!
 
 We're confident you can have self managed FlowFuse running locally in under 30 minutes. You can install FlowFuse using [Docker](/docs/install/docker/) or [Kubernetes](/docs/install/kubernetes/).
 
-### FlowFuse Cloud
-
-The quickest and easiest way to get started with FlowFuse is on our own hosted instance, FlowFuse Cloud.
-
-[Get started for free](https://app.flowfuse.com/account/create) now, and you'll have your own Node-RED instances running in the Cloud within minutes.

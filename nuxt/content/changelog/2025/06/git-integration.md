@@ -8,6 +8,9 @@ tags:
   - changelog
 ---
 
+::product-update-note
+::
+
 We released support for [pushing snapshots to a Git repository](/changelog/2025/04/git-integration/) as part of the DevOps Pipelines feature last month. As promised, we've now added the ability to pull snapshots back from the repository.
 
 This unlocks a number of powerful workflows with the Pipelines.
@@ -21,7 +24,7 @@ The Git Pipeline stage can be configured to push and pull from different branche
 By using an external Git Repository, it is simple to create a workflow that enables moving snapshots between two different Teams on the platform whilst maintaining the security and auditability of the individual Teams.
 
 
-This feature is available today for Enterprise tier teams on FlowFuse Cloud and will be available for self-hosted Enterprise customers as part of the 2.18 release later this week.
+This feature is available today for FlowFuse Hub teams on FlowFuse Cloud and will be available for self-hosted Hub customers as part of the 2.18 release later this week.
 
 We still only support GitHub.com hosted repositories, but we're looking at support for Azure hosted repos in the near future.
 

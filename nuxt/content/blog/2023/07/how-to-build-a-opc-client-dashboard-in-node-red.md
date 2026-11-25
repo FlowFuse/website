@@ -16,8 +16,6 @@ tags:
     - how-to
 cta:
   type: sign-up
-  title: "Deploy Your OPC UA Dashboard with FlowFuse"
-  description: "Sign up for FlowFuse to securely deploy, share, and scale your Node-RED OPC UA client dashboard applications with team collaboration and DevOps pipelines."
 meta:
   howto:
     name: "How to Build an OPC UA Client Dashboard in Node-RED"

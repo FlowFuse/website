@@ -11,7 +11,7 @@ const props = defineProps<{
         hero: { eyebrow: string, title: Heading, subtext: string, imagePlaceholder: string, image?: { src: string, alt: string } }
         outcomes: { heading: Heading, intro: string, items: Array<{ label: string, title: string, detail: string, icon: string }> }
         solutions: { heading: Heading, intro: string, cards: Array<{ eyebrow: string, title: string, description: string, points: string[], image: { src: string, alt: string, fit: 'cover' | 'contain', video?: string, youtube?: string }, link: { to: string, label: string } }> }
-        support: { heading: Heading, intro: string, items: Array<{ title: string, description: string, icon: string }> }
+        support: { heading: Heading, intro: string, items: Array<{ title: string, description?: string, descriptionLinks?: Array<{ text: string, href?: string, destination?: 'signUp' }>, icon: string }> }
         proof: { heading: Heading, intro: string, items: Array<{ number: string, text: string }> }
         faq: { heading: Heading, items: Array<{ question: string, answer: string }> }
         cta: { heading: string, body: string, buttons: Array<'bookDemo' | 'signUp'> }
@@ -206,7 +206,7 @@ useSchemaOrg([
             <p class="m-0 text-gray-600">
               <template v-if="item.descriptionLinks">
                 <template v-for="(part, index) in item.descriptionLinks" :key="index">
-                  <a v-if="part.href" :href="part.href" class="text-indigo-600 hover:underline">{{ part.text }}</a><template v-else>{{ part.text }}</template>
+                  <CtaLink v-if="part.destination" :destination="part.destination" position="support" class="text-indigo-600 hover:underline">{{ part.text }}</CtaLink><a v-else-if="part.href" :href="part.href" class="text-indigo-600 hover:underline">{{ part.text }}</a><template v-else>{{ part.text }}</template>
                 </template>
               </template>
               <template v-else>{{ item.description }}</template>
