@@ -3,7 +3,7 @@ title: The Brownfield Integration Paradox
 subtitle: Keeping your equipment was the right call. The unmanaged connections around it are becoming the new legacy.
 metaTitle: Brownfield IT/OT Integration Without Rip and Replace
 description: Avoiding rip and replace was the right call. Here's how unmanaged integrations become the next legacy problem in brownfield plants, and how to fix it.
-date: 2026-11-26
+date: 2026-11-25
 image: /blog/2026/11/images/brownfield-integration-paradox.png
 authors:
   - sumit-shinde
