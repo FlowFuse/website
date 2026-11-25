@@ -69,6 +69,7 @@ It also misses why these integrations exist in the first place. Plant teams buil
 That doesn't mean every integration should stay where it is. The difference is pace. Move integrations one at a time, when there's already a reason to touch them, and keep plant teams able to build what they need quickly. Done that way, consolidation happens gradually, without a cutover.
 
 ::cta-image{src="/blog/2026/11/images/brownfield-integration-book-demo.png" alt="Keep your equipment. Get your integrations under control. Connect old and new equipment, see every integration in one place, build once and reuse at every plant. Chris Meyer, IT Director, Wilson Tool International: FlowFuse is like a Swiss Army knife that I can drive most of our IT systems from - book a demo" cta="demo"}
+::
 
 ## What to do instead
 
