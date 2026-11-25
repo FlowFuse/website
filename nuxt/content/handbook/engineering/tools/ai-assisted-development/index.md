@@ -15,3 +15,4 @@ Before you set anything up, read the [LLM programming assists](/handbook/enginee
 - [Browser automation with playwright-cli](./playwright-cli.md) - let Claude Code drive a real browser against your local platform, restricted to localhost, with your dev login kept out of the conversation.
 - [Working with superpowers](./superpowers.md) - the process skills plugin: brainstorming before building, plans before code, root cause before fixes, with one FlowFuse scenario for each.
 - [Connecting Claude Code to PostHog](./posthog.md) - product analytics through the default connector: discover the schema, then ask in SQL.
+- [Connecting Claude Code to Sentry](./sentry.md) - error monitoring through the default connector: paste an issue link, search a deploy window, check a fix against the trace.
