@@ -57,7 +57,7 @@ With security and scalability top of mind, FlowFuse allows IT teams to manage th
 
 Low-code platforms are industry-agnostic, with applications varying from industrial manufacturing to news agencies. Here are some customer success stories of how the FlowFuse low-code platform has helped:
 
-- [**Abrasive Technology:**](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/) Leveraged Node-RED and FlowFuse to optimize automation and improve operational efficiency. The transition to FlowFuse Cloud has enhanced their ability to manage Node-RED instances effectively, supporting innovation and agility in their manufacturing processes.
+- [**Abrasive Technology:**](/customer-stories/precision-manufacturing-shop-floor-automation/) Leveraged Node-RED and FlowFuse to optimize automation and improve operational efficiency. The transition to FlowFuse Cloud has enhanced their ability to manage Node-RED instances effectively, supporting innovation and agility in their manufacturing processes.
 
 - [**Power Workplace:**](/customer-stories/node-red-building-management/) Utilized FlowFuse and Node-RED to automate building management, significantly reducing development time and enhancing scalability and reliability. This has helped them meet security and compliance requirements more easily, improving service delivery across multiple regions.
 

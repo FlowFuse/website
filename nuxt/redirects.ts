@@ -127,6 +127,8 @@ export const redirects: Record<string, NitroRouteRules> = {
     '/integrations/node-red-contrib-opcua/PLC_1.xml': { redirect: { to: '/integrations/node-red-contrib-opcua/', statusCode: 301 } },
     '/handbook/engineering/product/product%20swimlanes/': { redirect: { to: '/handbook/engineering/product/product-swimlanes/', statusCode: 301 } },
     '/ingest': { redirect: { to: '/', statusCode: 301 } },
+    '/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing': { redirect: { to: '/customer-stories/precision-manufacturing-shop-floor-automation/', statusCode: 301 } },
+    '/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/': { redirect: { to: '/customer-stories/precision-manufacturing-shop-floor-automation/', statusCode: 301 } },
     '/handbook/marketing/customer-stories': { redirect: { to: '/handbook/marketing/content-strategy/customer-stories/', statusCode: 301 } },
     '/handbook/marketing/customer-stories/': { redirect: { to: '/handbook/marketing/content-strategy/customer-stories/', statusCode: 301 } },
     '/blog/2023/08/new-starter-tier/': { redirect: { to: '/pricing/', statusCode: 301 } },

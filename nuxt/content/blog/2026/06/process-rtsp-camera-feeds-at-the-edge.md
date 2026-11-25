@@ -167,4 +167,4 @@ Where they land is set by the **File path** field. Point it at a directory you c
 
 Camera feeds don't have to sit in a silo while the rest of the floor gets connected. With the **RTSP Video Feed** node, a stream becomes still frames; with a dashboard, those frames become a live view; and with the **FlowFuse AI** nodes, they become decisions, all at the edge, with nothing leaving the plant.
 
-[Abrasive Technology already puts this pattern to work](/customer-stories/leveraging-node-red-and-flowfuse-to-automate-precision-manufacturing/), piping video feeds straight into a Node-RED dashboard to monitor its precision manufacturing lines.
+[Abrasive Technology already puts this pattern to work](/customer-stories/precision-manufacturing-shop-floor-automation/), piping video feeds straight into a Node-RED dashboard to monitor its precision manufacturing lines.
