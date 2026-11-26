@@ -3,6 +3,8 @@ title: "Node-RED UDP In node"
 metaTitle: "Node-RED - UDP In Node"
 navTitle: "UDP In"
 navOrder: 9
+meta:
+    description: "How to use the Node-RED UDP in node to receive UDP messages from devices and services on a port, with configuration, use cases and an example."
 ---
 
 # UDP In

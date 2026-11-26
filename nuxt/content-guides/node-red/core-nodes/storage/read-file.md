@@ -3,6 +3,8 @@ title: "Node-RED Read File node"
 metaTitle: "Node-RED - Read File Node"
 navTitle: "Read File"
 navOrder: 2
+meta:
+    description: "How to use the Node-RED Read File node to read file contents in a flow, including how it works on FlowFuse Cloud and on edge devices, with examples."
 ---
 
 # Read File

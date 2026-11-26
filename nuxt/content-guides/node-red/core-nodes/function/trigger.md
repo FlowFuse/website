@@ -3,6 +3,8 @@ title: "Node-RED Trigger node"
 metaTitle: "Node-RED - Trigger Node"
 navTitle: "Trigger"
 navOrder: 7
+meta:
+    description: "How to use the Node-RED Trigger node to send, repeat and reset messages on a timer, how it differs from the Inject node, with use cases and examples."
 ---
 
 # Trigger

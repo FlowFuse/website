@@ -3,6 +3,8 @@ title: "Node-RED Complete node"
 metaTitle: "Node-RED - Complete Node"
 navTitle: "Complete"
 navOrder: 3
+meta:
+    description: "How to use the Node-RED Complete node to trigger a flow when another node finishes its task, with use cases and an example."
 ---
 
 # Complete

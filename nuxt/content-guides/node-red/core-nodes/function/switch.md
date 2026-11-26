@@ -3,6 +3,8 @@ title: "Node-RED Switch node"
 metaTitle: "Node-RED - Switch Node"
 navTitle: "Switch"
 navOrder: 2
+meta:
+    description: "How to use the Node-RED Switch node to route messages to different outputs based on rules about their properties, with examples."
 ---
 
 # Switch

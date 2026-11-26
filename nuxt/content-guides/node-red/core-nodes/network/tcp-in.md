@@ -3,6 +3,8 @@ title: "Node-RED TCP in node"
 metaTitle: "Node-RED - TCP in Node"
 navTitle: "TCP in"
 navOrder: 8
+meta:
+    description: "How to use the Node-RED TCP in node to connect to remote TCP ports as a client or run a TCP server, with configuration options, use cases and examples."
 ---
 
 # TCP in

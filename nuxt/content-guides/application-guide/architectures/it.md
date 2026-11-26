@@ -2,6 +2,8 @@
 title: "IT architectures"
 navTitle: "IT architectures"
 navOrder: 1
+meta:
+    description: "Four ways to run FlowFuse when IT owns it: all on-prem, your cloud with an instance per site, a server at every site, or central and site servers together."
 ---
 
 # IT architectures

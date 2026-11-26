@@ -3,6 +3,8 @@ title: "Node-RED Delay node"
 metaTitle: "Node-RED - Delay Node"
 navTitle: "Delay"
 navOrder: 6
+meta:
+    description: "How to use the Node-RED Delay node to delay messages or rate-limit a flow, such as calls to an external API, and how to reset its queue, with examples."
 ---
 
 # Delay

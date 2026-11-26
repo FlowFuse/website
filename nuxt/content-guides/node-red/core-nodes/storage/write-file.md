@@ -3,6 +3,8 @@ title: "Node-RED Write File node"
 metaTitle: "Node-RED - Write File Node"
 navTitle: "Write File"
 navOrder: 1
+meta:
+    description: "How to use the Node-RED Write File node to save data and logs to files, including how it works on FlowFuse Cloud and on edge devices, with examples."
 ---
 
 # Write File

@@ -2,6 +2,8 @@
 title: "IIoT architectures"
 navTitle: "IIoT architectures"
 navOrder: 3
+meta:
+    description: "Many small Remote Instances, each reading a few sensors, publish to one Team Broker so a central app sees every site live, like water quality at pump stations."
 ---
 
 # IIoT architectures

@@ -2,6 +2,8 @@
 title: "OT architectures"
 navTitle: "OT architectures"
 navOrder: 2
+meta:
+    description: "Four ways to run FlowFuse next to the machines: managed from IT, inside a plant DMZ, fully air-gapped, or edge work on one server. Pick by security policy."
 ---
 
 # OT architectures

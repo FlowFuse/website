@@ -3,6 +3,8 @@ title: "Node-RED Filter node"
 metaTitle: "Node-RED - Filter Node"
 navTitle: "Filter"
 navOrder: 9
+meta:
+    description: "How to use the Node-RED Filter node (formerly RBE) to pass messages only when a value changes, with deadband and narrowband modes and examples."
 ---
 
 # Filter
