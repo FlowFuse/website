@@ -159,7 +159,7 @@ async function enrichNode (entry: IntegrationCatalogEntry): Promise<{ node: Inte
             const withAbsoluteAssets = rewriteRelativeAssets(npm.readme, node.githubOwner, node.githubRepo)
             const rendered = md.render(withAbsoluteAssets)
             const linked = rewriteIntegrationLinks(rendered, node)
-            node.readme = sanitizeReadme(linked)
+            node.readme = sanitizeReadmeWithImageAlt(linked)
         }
     } catch (err) {
         console.warn(`[integrations] enrich failed for ${node._id}:`, (err as Error).message)
@@ -258,20 +258,22 @@ const README_SANITIZE_OPTS: sanitizeHtml.IOptions = {
     allowedSchemes: ['http', 'https', 'mailto'],
     allowedSchemesByTag: { img: ['http', 'https', 'data'] },
     disallowedTagsMode: 'discard',
-    // Third-party READMEs often have images with no alt at all (badges, contributor
-    // avatars), which Semrush reports as Missing ALT attributes on our integration pages.
-    // Use the image's title when it has one; otherwise an empty alt, which marks the image
-    // as decorative for screen readers. An alt the author wrote is kept as it is.
-    transformTags: {
-        img: (tagName, attribs) => ({
-            tagName,
-            attribs: { ...attribs, alt: attribs.alt ?? attribs.title ?? '' },
-        }),
-    },
 }
 
 function sanitizeReadme (html: string): string {
     return sanitizeHtml(html, README_SANITIZE_OPTS)
+}
+
+function sanitizeReadmeWithImageAlt (html: string): string {
+    return sanitizeHtml(html, {
+        ...README_SANITIZE_OPTS,
+        transformTags: {
+            img: (tagName, attribs) => ({
+                tagName,
+                attribs: { ...attribs, alt: attribs.alt ?? attribs.title ?? '' },
+            }),
+        },
+    })
 }
 
 function sanitiseFlow (raw: string): string {
