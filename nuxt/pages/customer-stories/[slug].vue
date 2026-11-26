@@ -60,7 +60,7 @@ const breadcrumbItems = computed(() => [
     { label: pageTitle.value },
 ])
 const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
-const fullTitle = computed(() => `${pageTitle.value} • FlowFuse`)
+const fullTitle = computed(() => `${pageTitle.value} | FlowFuse`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
 useSeoMeta({
