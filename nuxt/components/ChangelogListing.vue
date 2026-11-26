@@ -3,8 +3,6 @@ const { entries, visibleGroups, hasMore, showMore, revealRelease } = useChangelo
 
 useSeoMeta({
     title: 'Changelog',
-    // Without its own description this page fell back to the site-wide default, which
-    // several pages then shared (Semrush: Duplicate meta descriptions).
     description: 'What\'s new in FlowFuse: every new feature, improvement and fix as it ships, for FlowFuse Cloud and self-hosted.',
 })
 

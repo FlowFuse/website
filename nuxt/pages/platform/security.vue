@@ -17,8 +17,6 @@ useSeoMeta({
     title: 'Security Statement - FlowFuse',
     ogUrl: 'https://flowfuse.com/platform/security/',
     twitterSite: '@FlowFuseinc',
-    // Without its own description this page fell back to the site-wide default, which
-    // several pages then shared (Semrush: Duplicate meta descriptions).
     description: 'How FlowFuse secures your Node-RED applications and data: SSO, MFA and role-based access, platform configuration, organizational controls and GxP readiness.',
 })
 
