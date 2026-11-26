@@ -159,7 +159,7 @@ async function enrichNode (entry: IntegrationCatalogEntry): Promise<{ node: Inte
             const withAbsoluteAssets = rewriteRelativeAssets(npm.readme, node.githubOwner, node.githubRepo)
             const rendered = md.render(withAbsoluteAssets)
             const linked = rewriteIntegrationLinks(rendered, node)
-            node.readme = sanitizeReadme(linked)
+            node.readme = sanitizeReadmeWithImageAlt(linked)
         }
     } catch (err) {
         console.warn(`[integrations] enrich failed for ${node._id}:`, (err as Error).message)
@@ -262,6 +262,18 @@ const README_SANITIZE_OPTS: sanitizeHtml.IOptions = {
 
 function sanitizeReadme (html: string): string {
     return sanitizeHtml(html, README_SANITIZE_OPTS)
+}
+
+function sanitizeReadmeWithImageAlt (html: string): string {
+    return sanitizeHtml(html, {
+        ...README_SANITIZE_OPTS,
+        transformTags: {
+            img: (tagName, attribs) => ({
+                tagName,
+                attribs: { ...attribs, alt: attribs.alt ?? attribs.title ?? '' },
+            }),
+        },
+    })
 }
 
 function sanitiseFlow (raw: string): string {
