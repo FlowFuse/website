@@ -8,6 +8,7 @@ import { getAllBlogPosts } from '../../utils/sharedContent'
 import FeatureTierBadges from '../../components/content/FeatureTierBadges.vue'
 import FeatureReleaseLinks from '../../components/content/FeatureReleaseLinks.vue'
 import { faqAnswerText } from '../../lib/faq-answer.mjs'
+import blogTagButtons from '../../data/blogTags.json'
 
 definePageMeta({ layout: 'default' })
 
@@ -120,17 +121,28 @@ const listingDescription = computed(() => {
         ? `Explore FlowFuse articles about ${topic}, with practical guides, technical insights, examples, and updates for industrial teams.`
         : `Browse page ${pageNumber} of FlowFuse's ${topic} articles for practical guidance, product insights, technical tutorials, and industry updates.`
 })
-const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
+// Every listing used to be titled plain "Blog", so the index, each topic page and every
+// paginated page shared one <title> (Semrush: Duplicate title tag). Each now names its
+// topic, with the same labels as the blog's filter buttons, and its page number.
+const BLOG_TAG_LABELS: Record<string, string> = Object.fromEntries(
+    [...blogTagButtons.map(b => [b.value, b.label]), ['tips', 'Tips']],
+)
+const listingTitle = computed(() => {
+    const { tag, page: pageNumber } = routeInfo.value
+    const base = tag ? (BLOG_TAG_LABELS[tag] || tag) : 'Blog'
+    return pageNumber > 1 ? `${base}, Page ${pageNumber}` : base
+})
+const seoTitle = computed(() => routeInfo.value.kind === 'listing' ? listingTitle.value : (page.value?.metaTitle || pageTitle.value))
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 const absoluteImage = computed(() => heroImage.value.startsWith('http') ? heroImage.value : `https://flowfuse.com${heroImage.value}`)
 
-// Posts get the "Blog" qualifier on the brand name; the listing doesn't (its own
-// title already says "Blog"). og:title infers from the resolved title. Needs an
+// Posts and topic listings get the "Blog" qualifier on the brand name; the main listing
+// doesn't (its own title already says "Blog"). og:title infers from the resolved title. Needs an
 // explicit high tagPriority in its own useHead call — nuxt-seo-utils pushes its own
 // global siteName with tagPriority: 'low', and that otherwise wins over a
 // page-level override regardless of registration order.
 useHead({
-    templateParams: { siteName: () => routeInfo.value.kind === 'post' ? 'FlowFuse Blog' : 'FlowFuse' },
+    templateParams: { siteName: () => (routeInfo.value.kind === 'post' || routeInfo.value.tag) ? 'FlowFuse Blog' : 'FlowFuse' },
 }, { tagPriority: 1000 })
 
 useSeoMeta({

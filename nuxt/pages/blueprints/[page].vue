@@ -13,9 +13,11 @@ if (!/^\d+$/.test(String(route.params.page))) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found' })
 }
 
+// Page 1's title and description repeated on every later page (Semrush: Duplicate title
+// tag, Duplicate meta descriptions). Naming the page number keeps each one unique.
 useSeoMeta({
-    title: BLUEPRINTS_META_TITLE,
-    description: BLUEPRINTS_DESCRIPTION,
+    title: computed(() => `${BLUEPRINTS_META_TITLE}, Page ${page.value}`),
+    description: computed(() => `Page ${page.value} of the FlowFuse Blueprint Library. ${BLUEPRINTS_DESCRIPTION}`),
 })
 </script>
 

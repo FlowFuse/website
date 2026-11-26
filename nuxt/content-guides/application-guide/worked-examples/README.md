@@ -1,6 +1,7 @@
 ---
 title: "Worked examples"
 navTitle: "Worked examples"
+metaTitle: "Application Guide: Worked Examples"
 navOrder: 5
 meta:
     description: "Start from a use case, break it into apps, and draw the architecture that ties them together — the same method a FlowFuse Proof of Value runs."
