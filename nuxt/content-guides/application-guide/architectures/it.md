@@ -3,7 +3,7 @@ title: "IT architectures"
 navTitle: "IT architectures"
 navOrder: 1
 meta:
-    description: "FlowFuse architectures for IT: fully on-prem, in your own cloud with an instance per site, a server at every site, or central apps plus local site servers."
+    description: "Four ways to run FlowFuse when IT owns it: all on-prem, your cloud with an instance per site, a server at every site, or central and site servers together."
 ---
 
 # IT architectures
