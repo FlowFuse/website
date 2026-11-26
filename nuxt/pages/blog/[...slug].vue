@@ -121,9 +121,6 @@ const listingDescription = computed(() => {
         ? `Explore FlowFuse articles about ${topic}, with practical guides, technical insights, examples, and updates for industrial teams.`
         : `Browse page ${pageNumber} of FlowFuse's ${topic} articles for practical guidance, product insights, technical tutorials, and industry updates.`
 })
-// Every listing used to be titled plain "Blog", so the index, each topic page and every
-// paginated page shared one <title> (Semrush: Duplicate title tag). Each now names its
-// topic, with the same labels as the blog's filter buttons, and its page number.
 const BLOG_TAG_LABELS: Record<string, string> = Object.fromEntries(
     [...blogTagButtons.map(b => [b.value, b.label]), ['tips', 'Tips']],
 )
