@@ -10,7 +10,6 @@ test('full flowfuse.com links become site-relative paths', () => {
 })
 
 test('query strings and anchors are kept', () => {
-    assert.equal(internalHref('https://flowfuse.com/docs/user/mcp/#setup'), '/docs/user/mcp/#setup')
     assert.equal(internalHref('https://flowfuse.com/contact-us/?subject=demo'), '/contact-us/?subject=demo')
     assert.equal(internalHref('https://flowfuse.com'), '/')
     assert.equal(internalHref('https://flowfuse.com?x=1'), '/?x=1')
@@ -30,4 +29,8 @@ test('links to files keep their full URL, so the browser loads the file instead 
     assert.equal(internalHref('https://flowfuse.com/changelog/index.xml'), 'https://flowfuse.com/changelog/index.xml')
     assert.equal(internalHref('https://flowfuse.com/files/guide.pdf?v=2'), 'https://flowfuse.com/files/guide.pdf?v=2')
     assert.equal(internalHref('https://flowfuse.com/blog/2025/09/node-red-4.1/'), '/blog/2025/09/node-red-4.1/')
+})
+
+test('links to a section of a page keep their full URL', () => {
+    assert.equal(internalHref('https://flowfuse.com/docs/user/mcp/#setup'), 'https://flowfuse.com/docs/user/mcp/#setup')
 })
