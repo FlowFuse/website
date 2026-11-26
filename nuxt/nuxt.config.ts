@@ -331,13 +331,9 @@ export default defineNuxtConfig({
         exclude: ['/_studio/**', '/api/**', '/handbook', '/handbook/**'],
     },
 
-    aiReady: {
-        contentSignal: false,
-    },
-
     robots: {
         groups: [
-            { userAgent: ['*'], allow: ['/'] },
+            { userAgent: ['*'], allow: ['/'], contentSignal: ['search=yes, ai-input=yes'] },
             { userAgent: ['Algolia Crawler'], allow: ['/'] },
         ],
         sitemap: [`${site.baseURL}/sitemap.xml`],
