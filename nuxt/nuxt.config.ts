@@ -332,9 +332,13 @@ export default defineNuxtConfig({
     },
 
     robots: {
+        // One group only. A separate 'Algolia Crawler' group used to sit here, but a
+        // robots.txt user-agent must be a single token with no spaces (RFC 9309), so
+        // validators reported the whole file as invalid. It added nothing either: the
+        // '*' group already allows every path, and site search is indexed from the
+        // build output (scripts/index-algolia.js), not by a crawler.
         groups: [
             { userAgent: ['*'], allow: ['/'] },
-            { userAgent: ['Algolia Crawler'], allow: ['/'] },
         ],
         sitemap: [`${site.baseURL}/sitemap.xml`],
     },
