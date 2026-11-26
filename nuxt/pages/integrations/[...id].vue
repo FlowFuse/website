@@ -38,6 +38,14 @@ const authorIsLinkable = computed(() => {
 // regardless of registration order.
 useHead({ templateParams: { siteName: 'FlowFuse Integrations' } }, { tagPriority: 1000 })
 useHead({ title: () => node.value._id })
+// Every integration page used to fall back to the site-wide default description, so
+// they all shared one (Semrush: Duplicate meta descriptions). The package's own npm
+// description says what this node does; a few packages have none, so those get a
+// sentence naming the package instead.
+useSeoMeta({
+    description: () => node.value.description?.trim()
+        || `${node.value._id}: a Node-RED integration in the FlowFuse integrations catalog, with install details and examples.`,
+})
 
 const activeTab = ref<'overview' | 'examples'>('overview')
 function switchTab (tab: 'overview' | 'examples') {

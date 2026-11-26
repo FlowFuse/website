@@ -20,6 +20,9 @@ const BENEFITS = [
 
 useSeoMeta({
     title: 'Partnership program',
+    // Without its own description this page fell back to the site-wide default, which
+    // several pages then shared (Semrush: Duplicate meta descriptions).
+    description: 'Join the FlowFuse referral program: recommend FlowFuse to teams running Node-RED and get rewarded for every referral.',
     ogUrl: 'https://flowfuse.com/partners/referral-sign-up/',
     twitterSite: '@FlowFuseinc',
 })
