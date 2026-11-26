@@ -16,7 +16,7 @@ It is a plugin that can be installed into any Node-RED (4.1+), making it quick a
 
 ### Why another plugin?
 
-The [Device Agent](https://flowfuse.com/docs/device-agent/overview/) is our main way of managing a remote Node-RED instance from the FlowFuse platform. As a standalone process, it has full control over Node-RED - installing, configuring and managing it all from one place.
+The [Device Agent](https://flowfuse.com/docs/device-agent/introduction/) is our main way of managing a remote Node-RED instance from the FlowFuse platform. As a standalone process, it has full control over Node-RED - installing, configuring and managing it all from one place.
 
 Where you already have Node-RED installed, it isn't always a simple task to migrate over to the Device Agent. For example, when Node-RED is baked into the software stack provided by a device manufacturer.
 
