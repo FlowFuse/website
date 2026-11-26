@@ -157,7 +157,8 @@ function pad(n: number) {
 }
 
 useSeoMeta({
-    title: META_TITLE,
+    // The global title template adds "• FlowFuse"; og:title below is not templated.
+    title: META_TITLE.replace(/ \| FlowFuse$/, ''),
     description: META_DESCRIPTION,
     ogTitle: META_TITLE,
     ogDescription: META_DESCRIPTION,

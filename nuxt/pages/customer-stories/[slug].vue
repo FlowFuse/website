@@ -63,7 +63,9 @@ const fullTitle = computed(() => `${pageTitle.value} • FlowFuse`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
 useSeoMeta({
-    title: fullTitle,
+    // Bare: the global title template appends "• FlowFuse". og:title is set explicitly
+    // below and is not templated, so it keeps the brand itself.
+    title: pageTitle,
     description: computed(() => page.value?.description || ''),
     ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),

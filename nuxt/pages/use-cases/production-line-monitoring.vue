@@ -89,7 +89,7 @@ const TITLE = 'Production Line Monitoring'
 const DESCRIPTION = 'FlowFuse engineers build production line monitoring with your team: find hidden downtime, lost capacity and failing equipment on your lines, and act on it before the shift ends.'
 
 useSeoMeta({
-    title: `${TITLE}: Find and Fix Lost Output | FlowFuse`,
+    title: `${TITLE}: Find and Fix Lost Output`,
     description: DESCRIPTION,
     ogTitle: TITLE,
     ogDescription: DESCRIPTION,

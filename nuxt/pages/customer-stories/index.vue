@@ -7,7 +7,7 @@ const { data: stories } = await useAsyncData(
 )
 
 useSeoMeta({
-    title: 'Customer Stories • FlowFuse',
+    title: 'Customer Stories',
     description: 'Read how FlowFuse customers efficiently leverage Node-RED with FlowFuse for automation across various industries, including manufacturing, automobile, and building management.',
 })
 </script>

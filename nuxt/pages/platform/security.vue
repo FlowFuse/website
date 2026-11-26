@@ -14,7 +14,7 @@ if (!page.value) {
 }
 
 useSeoMeta({
-    title: 'Security Statement - FlowFuse',
+    title: 'Security Statement',
     ogUrl: 'https://flowfuse.com/platform/security/',
     twitterSite: '@FlowFuseinc',
 })
