@@ -258,6 +258,16 @@ const README_SANITIZE_OPTS: sanitizeHtml.IOptions = {
     allowedSchemes: ['http', 'https', 'mailto'],
     allowedSchemesByTag: { img: ['http', 'https', 'data'] },
     disallowedTagsMode: 'discard',
+    // Third-party READMEs often have images with no alt at all (badges, contributor
+    // avatars), which Semrush reports as Missing ALT attributes on our integration pages.
+    // Use the image's title when it has one; otherwise an empty alt, which marks the image
+    // as decorative for screen readers. An alt the author wrote is kept as it is.
+    transformTags: {
+        img: (tagName, attribs) => ({
+            tagName,
+            attribs: { ...attribs, alt: attribs.alt ?? attribs.title ?? '' },
+        }),
+    },
 }
 
 function sanitizeReadme (html: string): string {
