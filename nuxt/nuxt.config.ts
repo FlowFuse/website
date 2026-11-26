@@ -4,6 +4,7 @@ import { parse as parseYaml } from 'yaml'
 import remarkHandbookLinks from './utils/remark-handbook-links'
 import remarkDocsLinks from './utils/remark-docs-links'
 import remarkSiteLinks from './utils/remark-site-links'
+import remarkInternalLinks from './utils/remark-internal-links'
 import { BLOG_TAGS } from './composables/useBlogList'
 import { redirects } from './redirects'
 import { sitemapProblems } from './lib/sitemap-coverage.mjs'
@@ -682,6 +683,8 @@ export default defineNuxtConfig({
                     searchDepth: 4,
                 },
                 remarkPlugins: {
+                    // First, so the plugins after it see flowfuse.com links as the internal paths they are.
+                    'internal-links': { instance: remarkInternalLinks },
                     'site-links': { instance: remarkSiteLinks },
                     'handbook-links': { instance: remarkHandbookLinks },
                     'docs-links': { instance: remarkDocsLinks },
