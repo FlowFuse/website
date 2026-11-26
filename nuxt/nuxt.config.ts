@@ -331,6 +331,15 @@ export default defineNuxtConfig({
         exclude: ['/_studio/**', '/api/**', '/handbook', '/handbook/**'],
     },
 
+    // nuxt-ai-ready (pulled in by @nuxtjs/seo 6, since the 17 Nov package update) adds
+    // "Content-Signal: search=yes, ai-input=yes" to robots.txt by default. Validators such as
+    // Semrush don't recognise that directive and report the whole file as invalid; the error
+    // first appeared in the audit after that update. The line only restated what crawlers
+    // assume anyway, so turning it off changes nothing about what may be crawled.
+    aiReady: {
+        contentSignal: false,
+    },
+
     robots: {
         // One group only. A separate 'Algolia Crawler' group used to sit here, but a
         // robots.txt user-agent must be a single token with no spaces (RFC 9309), so
