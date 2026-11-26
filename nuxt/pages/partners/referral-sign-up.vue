@@ -20,7 +20,7 @@ const BENEFITS = [
 
 useSeoMeta({
     title: 'Partnership program',
-    description: 'Join the FlowFuse referral program: recommend FlowFuse to teams running Node-RED and get rewarded for every referral.',
+    description: 'Join the FlowFuse Referral Program: recommend FlowFuse to teams building with Node-RED and get rewarded for spreading the word about FlowFuse.',
     ogUrl: 'https://flowfuse.com/partners/referral-sign-up/',
     twitterSite: '@FlowFuseinc',
 })

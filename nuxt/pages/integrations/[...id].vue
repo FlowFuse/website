@@ -39,8 +39,12 @@ const authorIsLinkable = computed(() => {
 useHead({ templateParams: { siteName: 'FlowFuse Integrations' } }, { tagPriority: 1000 })
 useHead({ title: () => node.value._id })
 useSeoMeta({
-    description: () => node.value.description?.trim()
-        || `${node.value._id}: a Node-RED integration in the FlowFuse integrations catalog, with install details and examples.`,
+    description: () => {
+        const id = node.value._id
+        const text = node.value.description?.trim()
+        if (!text) return `${id} for Node-RED: README, version and install details in the FlowFuse integrations catalog.`
+        return /node-red/i.test(text) ? `${id}: ${text}` : `${id} for Node-RED: ${text}`
+    },
 })
 
 const activeTab = ref<'overview' | 'examples'>('overview')

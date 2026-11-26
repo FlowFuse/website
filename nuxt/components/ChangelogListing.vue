@@ -3,7 +3,7 @@ const { entries, visibleGroups, hasMore, showMore, revealRelease } = useChangelo
 
 useSeoMeta({
     title: 'Changelog',
-    description: 'What\'s new in FlowFuse: every new feature, improvement and fix as it ships, for FlowFuse Cloud and self-hosted.',
+    description: 'The FlowFuse changelog: every feature, improvement and fix we ship, newest first, from FlowFuse AI and Dashboard to the Device Agent and certified nodes.',
 })
 
 // The Atom feed at /changelog/index.xml has always existed but nothing advertised it,
