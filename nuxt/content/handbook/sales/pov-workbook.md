@@ -42,7 +42,7 @@ Each SE stage owns a portion of the workbook:
 | **App** | The *solution* delivered on FlowFuse. A single use case may take one app or several to solve — the pain defines the use case, the apps are how we address it. |
 | **Scoping criteria** | The specific things the PoV sets out to prove for the use case. Each one ties back to a pain raised in Discovery. |
 | **Pass signal** | The concrete, observable outcome that shows a criterion is met (e.g. "a change made centrally reaches every target instance through a pipeline, with no one logging into an edge node"). Not a feature — a demonstrated result. |
-| **Pre-PoV gate** | Something that must be true before the PoV can start (licenses issued, plan agreed, environment ready). Gates are tracked as a checklist and block kickoff until cleared. |
+| **Pre-PoV gate** | Something that must be true before the PoV can start (confidentiality settled, licenses issued, plan agreed, environment ready). Gates are tracked as a checklist and block kickoff until cleared. |
 | **Delivery method** | How an app reaches the edge. The two we prove are **Whole App Pipeline** (promote dev → staging → production) and **Edge App + Components** (publish reusable components to the Team Library and consume them by reference). |
 | **Sponsor / champion** | The customer owner of the PoV outcome, who takes the business case to the budget holders after a successful exit. |
 | **Cloud trial** | A 30-day self-service trial of FlowFuse Cloud. |
