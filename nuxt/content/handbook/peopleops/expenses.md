@@ -209,6 +209,26 @@ the deprecation. The buy-back price is subject to approval by the CEO.
 For example, if you have a laptop that was purchased for \$2,000 and you have had
 it for 1.5 years (1 full calendar year), the buy-back price would be \$1,500.
 
+#### Buy-back process
+
+1. Let your manager and the Operations team know before your last day that you'd like to keep your laptop.
+2. Operations calculates the buy-back price from the original cost recorded in the [Asset Tracker](https://docs.google.com/spreadsheets/d/1sHJmUGG-m7y9TGrFrtqiZ6ubioLf1ySSam_cL-cmiRo/edit#gid=0) and confirms it with the CEO.
+3. Before the sale is completed, sign out of all company accounts and erase the laptop, following the instructions from Operations.
+4. Operations sends you an invoice through Stripe with the laptop model, serial number, and sale date. Pay it within 7 days by card or bank transfer. Any transfer or card fees on your side are yours to cover.
+5. Once payment is received, the laptop is marked as sold in the Asset Tracker, and ownership passes to you.
+
+If you'd rather not buy the laptop, Operations will send you instructions to return it with UPS.
+
+Buying your laptop, and any expense reimbursements you received while at FlowFuse, may have tax implications in your country. These are your own responsibility, and FlowFuse does not adjust the buy-back price to cover them. Please consult an independent advisor for your situation.
+
+##### For Operations: issuing the invoice
+
+1. In Stripe, create a customer with their full legal name, email and billing address. If they're buying as a business with a VAT number, add it as a tax ID and set the tax status to "Reverse charge."
+2. Create an invoice in USD and add the "Used Company Equipment - Laptop" product with the buy-back price. Don't add a tax rate.
+3. In the memo, add the laptop model, serial number, "sold as is" and the sale date.
+4. Allow card and bank transfer as payment methods, and set the invoice due in 7 days.
+5. Once paid, update the Asset Tracker and make sure the payment is booked as a sale of equipment, not revenue.
+
 ## Education & Conferences
 
 Continual professional development is very important, and FlowFuse will support
