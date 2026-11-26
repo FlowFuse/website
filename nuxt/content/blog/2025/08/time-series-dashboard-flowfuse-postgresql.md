@@ -1,6 +1,5 @@
 ---
 title: "Building Historical Data Dashboard with FlowFuse Tables"
-metaTitle: "Historical Data Dashboard with FlowFuse Tables"
 subtitle: "Collect, transform, store and visualize IIoT data using FlowFuse Tables"
 description: "Learn how to Build a powerful historical data dashboard for your Industrial IoT applications using FlowFuse Tables."
 date: 2025-08-21
