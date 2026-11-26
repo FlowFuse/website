@@ -40,9 +40,7 @@ test('a generic sidebar label gives way to the H1, so section landing pages stop
     assert.equal(docsPageTitle({ navTitle: 'Overview', title: 'Installing Device Agent' }), 'Installing Device Agent')
     assert.equal(docsPageTitle({ navTitle: 'Introduction', title: 'FlowFuse Cloud' }), 'FlowFuse Cloud')
     assert.equal(docsPageTitle({ navTitle: 'Quick Start', title: 'Quick Start Guide: Device Agent' }), 'Quick Start Guide: Device Agent')
-    // metaTitle still wins, and a specific label still beats the H1
     assert.equal(docsPageTitle({ metaTitle: 'Custom', navTitle: 'Overview', title: 'Installing FlowFuse' }), 'Custom')
     assert.equal(docsPageTitle({ navTitle: 'MySQL', title: 'Using MySQL with Node-RED' }), 'MySQL')
-    // no H1 to fall back to: keep the label rather than lose the title
     assert.equal(docsPageTitle({ navTitle: 'Overview' }), 'Overview')
 })
