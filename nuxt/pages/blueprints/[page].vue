@@ -14,8 +14,8 @@ if (!/^\d+$/.test(String(route.params.page))) {
 }
 
 useSeoMeta({
-    title: BLUEPRINTS_META_TITLE,
-    description: BLUEPRINTS_DESCRIPTION,
+    title: computed(() => `${BLUEPRINTS_META_TITLE}, Page ${page.value}`),
+    description: computed(() => `Page ${page.value} of the FlowFuse Blueprint Library. ${BLUEPRINTS_DESCRIPTION}`),
 })
 </script>
 

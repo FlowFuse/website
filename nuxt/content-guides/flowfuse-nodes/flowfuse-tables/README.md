@@ -1,6 +1,6 @@
 ---
 title: FlowFuse Tables
-metaTitle: "FlowFuse Tables"
+metaTitle: "FlowFuse Tables Nodes"
 navTitle: FlowFuse Tables
 navOrder: 3
 meta:

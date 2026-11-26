@@ -1,6 +1,7 @@
 ---
 title: "Foundations"
 navTitle: "Foundations"
+metaTitle: "Application Guide: Foundations"
 navOrder: 1
 meta:
     description: "The foundation to build on: what FlowFuse is, its core pieces, and how code is shared across teams."

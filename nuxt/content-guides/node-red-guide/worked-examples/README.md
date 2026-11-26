@@ -1,6 +1,7 @@
 ---
 title: "Worked examples"
 navTitle: "Worked examples"
+metaTitle: "Node-RED Guide: Worked Examples"
 navOrder: 3
 meta:
     description: "Turn an app concept into a Node-RED flow — or a few — leaning on the design patterns and data handling. The method, then the OEE apps end to end."

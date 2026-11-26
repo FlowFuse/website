@@ -16,5 +16,9 @@ export function docsPageTitle (page, slugParts = []) {
     // column, so a page whose full title is longer needs a way to say which one Google
     // gets. Pages migrated off Eleventy carry it, and nothing in FlowFuse/flowfuse's docs
     // sets it, so their titles are unaffected by its presence here.
-    return page?.metaTitle || page?.navTitle || page?.title || slugParts.at(-1) || 'Documentation'
+    if (page?.metaTitle) return page.metaTitle
+    if (page?.title && GENERIC_NAV_LABELS.has(String(page?.navTitle || '').trim().toLowerCase())) return page.title
+    return page?.navTitle || page?.title || slugParts.at(-1) || 'Documentation'
 }
+
+const GENERIC_NAV_LABELS = new Set(['overview', 'introduction', 'quick start'])

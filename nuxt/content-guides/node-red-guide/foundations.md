@@ -1,6 +1,7 @@
 ---
 title: "Foundations"
 navTitle: "Foundations"
+metaTitle: "Node-RED Guide: Foundations"
 navOrder: 1
 meta:
     description: "The handful of concepts you need to build with Node-RED, and how they fit together."
