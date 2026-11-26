@@ -1,6 +1,6 @@
 ---
 title: "What Is SCADA? Supervisory Control and Data Acquisition"
-metaTitle: "What Is SCADA: A Guide to How It Works in Manufacturing"
+metaTitle: "What Is SCADA? How It Works in Manufacturing"
 subtitle: "How SCADA systems monitor and control industrial operations, and how they fit with PLCs, HMIs, and modern IT/OT platforms."
 description: "What is SCADA? Learn how it works, how it compares to PLCs and HMIs, and why it still matters for industrial operations and multi-site manufacturers today."
 date: 2026-08-20

@@ -59,13 +59,15 @@ const breadcrumbItems = computed(() => [
     { label: 'Customer Stories', to: '/customer-stories' },
     { label: pageTitle.value },
 ])
+// The story's metaTitle when it has one: several headlines run past 70 characters.
+const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const fullTitle = computed(() => `${pageTitle.value} • FlowFuse`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
 useSeoMeta({
     // Bare: the global title template appends "• FlowFuse". og:title is set explicitly
     // below and is not templated, so it keeps the brand itself.
-    title: pageTitle,
+    title: seoTitle,
     description: computed(() => page.value?.description || ''),
     ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),

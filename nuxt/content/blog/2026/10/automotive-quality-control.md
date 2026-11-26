@@ -1,7 +1,7 @@
 ---
 title: "Automotive Quality Control 101: Lessons From a 470,000-Vehicle Recall"
 subtitle: "The systems behind automotive quality and defect control."
-metaTitle: "Automotive Quality Control: Process, Tools, and Traceability"
+metaTitle: "Automotive Quality Control: Process and Traceability"
 description: "Automotive quality control explained: the core quality tools, IATF 16949, traceability, containment, and root cause analysis, with lessons from a Hyundai engine recall."
 date: 2026-10-01
 authors: ["sumit-shinde"]

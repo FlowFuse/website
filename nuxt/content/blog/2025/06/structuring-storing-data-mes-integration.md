@@ -1,5 +1,6 @@
 ---
 title: "Structuring and Storing Data for Effective MES Integration"
+metaTitle: "Structuring and Storing Data for MES Integration"
 subtitle: Making Factory Data Tell the Right Story for Your MES
 description: Learn how to organize, structure, and store your factory data effectively to make your Manufacturing Execution System (MES) work at its best with FlowFuse.
 date: 2025-06-18

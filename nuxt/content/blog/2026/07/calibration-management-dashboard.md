@@ -1,5 +1,6 @@
 ---
 title: "Tracking Instrument Calibration with a Digital Dashboard"
+metaTitle: "Instrument Calibration Tracking with a Dashboard"
 subtitle: "Get overdue and due-soon status from the dates, not from a status column that can go out of date"
 description: "Build a calibration status dashboard in FlowFuse: work out overdue, due-soon and compliance figures from due dates, filter by department and time window, and let operators check a tool at the station with a camera."
 date: 2026-07-31

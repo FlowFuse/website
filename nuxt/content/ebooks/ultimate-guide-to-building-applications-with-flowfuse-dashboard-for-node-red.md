@@ -8,6 +8,7 @@ tertiaryImage: /images/ebooks/line-chart.gif
 usecase:
   - production-monitoring
 title: The Ultimate Guide to Building Applications with FlowFuse Dashboard for Node-RED
+metaTitle: "Ultimate Guide to Building Apps with FlowFuse Dashboard"
 description: "Download the guide to building powerful Node-RED applications with FlowFuse Dashboard, from core concepts to practical implementation."
 
 hubspot:

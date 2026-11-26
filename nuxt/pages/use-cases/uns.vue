@@ -9,7 +9,7 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 // Copy rule for the toolkit rows: the lead sentence says why the layer matters to a UNS,
 // and the bullets say how FlowFuse handles it, each starting with a verb.
 
-const META_TITLE = 'Unified Namespace (UNS) Toolkit: Connect, Contextualize, Transport | FlowFuse'
+const META_TITLE = 'Unified Namespace (UNS) Toolkit: Connect and Contextualize | FlowFuse'
 const META_DESCRIPTION = 'Build your Unified Namespace with one toolkit: connect every machine, contextualize raw tags, run a built-in MQTT broker, and manage the namespace across every plant.'
 
 // Kept to one shape so they line up:

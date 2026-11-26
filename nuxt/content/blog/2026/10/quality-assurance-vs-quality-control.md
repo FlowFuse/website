@@ -1,6 +1,6 @@
 ---
 title: "Quality Assurance vs Quality Control: Fixing the Process or Checking the Product"
-metaTitle: "Quality Assurance vs Quality Control: What's the Difference?"
+metaTitle: "Quality Assurance vs Quality Control: The Difference"
 subtitle: "QA prevents defects by improving processes; QC detects them through inspection and testing."
 description: "Learn the difference between quality assurance and quality control, with examples of QA and QC activities, roles, and how manufacturers use QC data to prevent recurring defects."
 date: 2026-10-13
