@@ -3,7 +3,7 @@ title: "OT architectures"
 navTitle: "OT architectures"
 navOrder: 2
 meta:
-    description: "FlowFuse architectures for OT: Remote Instances on plant equipment, managed from a server in IT, from inside a plant DMZ, or on a fully air-gapped network."
+    description: "FlowFuse architectures for OT: run edge instances managed from a server in IT, a plant DMZ or an air-gapped network, or consolidate edge work on one server."
 ---
 
 # OT architectures
