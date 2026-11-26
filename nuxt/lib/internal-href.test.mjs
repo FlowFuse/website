@@ -17,11 +17,17 @@ test('query strings and anchors are kept', () => {
 })
 
 test('other hosts and relative links are left alone', () => {
-    // app.flowfuse.com is the product, a different site: it stays external.
     assert.equal(internalHref('https://app.flowfuse.com/account/create'), 'https://app.flowfuse.com/account/create')
     assert.equal(internalHref('https://flowfuse.community/'), 'https://flowfuse.community/')
     assert.equal(internalHref('https://flowfuse.com.evil.example/'), 'https://flowfuse.com.evil.example/')
     assert.equal(internalHref('https://nodered.org/docs/'), 'https://nodered.org/docs/')
     assert.equal(internalHref('/docs/user/'), '/docs/user/')
     assert.equal(internalHref('#top'), '#top')
+})
+
+test('links to files keep their full URL, so the browser loads the file instead of the router', () => {
+    assert.equal(internalHref('https://flowfuse.com/img/ANDON-Screenshot-650.avif'), 'https://flowfuse.com/img/ANDON-Screenshot-650.avif')
+    assert.equal(internalHref('https://flowfuse.com/changelog/index.xml'), 'https://flowfuse.com/changelog/index.xml')
+    assert.equal(internalHref('https://flowfuse.com/files/guide.pdf?v=2'), 'https://flowfuse.com/files/guide.pdf?v=2')
+    assert.equal(internalHref('https://flowfuse.com/blog/2025/09/node-red-4.1/'), '/blog/2025/09/node-red-4.1/')
 })

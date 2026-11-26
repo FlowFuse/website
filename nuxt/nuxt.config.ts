@@ -683,7 +683,6 @@ export default defineNuxtConfig({
                     searchDepth: 4,
                 },
                 remarkPlugins: {
-                    // First, so the plugins after it see flowfuse.com links as the internal paths they are.
                     'internal-links': { instance: remarkInternalLinks },
                     'site-links': { instance: remarkSiteLinks },
                     'handbook-links': { instance: remarkHandbookLinks },
