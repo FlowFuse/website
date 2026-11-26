@@ -13,7 +13,7 @@ import { faqAnswerText } from '../../lib/faq-answer.mjs'
 // Copy rule for the capability rows: the lead sentence is the business outcome, and each
 // bullet is a short result the reader gets, not a feature list.
 
-const META_TITLE = 'IT/OT Middleware: Connect Plant Systems to ERP and MES | FlowFuse'
+const META_TITLE = 'IT/OT Middleware: Connect Plant Systems to ERP, MES and Cloud | FlowFuse'
 const META_DESCRIPTION = 'Connect your plants to ERP, MES and the cloud in both directions, on one platform IT governs and OT runs. Fewer systems, faster rollouts, every plant run the same way.'
 
 // Kept to one shape so they line up:

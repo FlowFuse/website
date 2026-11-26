@@ -1,5 +1,5 @@
 ---
-metaTitle: "Aperia: PLC Replacement with Zero Manual Setup Time"
+metaTitle: "PLC Replacement with Zero Manual Setup Time: Aperia Case Study"
 title: How Aperia Technologies Approached PLC Replacement with Zero Manual Setup Time
 description: How Aperia Technologies approached PLC replacement with FlowFuse, cutting manual reconfiguration and turning idle test gear into R&D time.
 image: /images/stories/aperia.jpg

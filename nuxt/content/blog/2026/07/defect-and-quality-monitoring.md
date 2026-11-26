@@ -1,6 +1,5 @@
 ---
 title: "Build a Defect Tracking and Quality Monitoring Dashboard"
-metaTitle: "Defect Tracking and Quality Monitoring Dashboard"
 subtitle: "See which defects happen most, why, and what they cost you"
 description: "Build a FlowFuse dashboard that tracks production defects, ranks them with a Pareto chart, and totals cost of poor quality."
 date: 2026-07-16
