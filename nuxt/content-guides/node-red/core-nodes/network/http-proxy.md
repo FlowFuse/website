@@ -3,6 +3,8 @@ title: "Node-RED HTTP Proxy node"
 metaTitle: "Node-RED - HTTP Proxy Node"
 navTitle: "HTTP Proxy"
 navOrder: 2
+meta:
+    description: "How to configure the Node-RED HTTP proxy config node to route outgoing HTTP requests through a proxy server when your network requires one."
 ---
 
 # HTTP Proxy

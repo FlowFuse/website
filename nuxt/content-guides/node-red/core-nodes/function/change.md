@@ -3,6 +3,8 @@ title: "Node-RED Change node"
 metaTitle: "Node-RED - Change Node"
 navTitle: "Change"
 navOrder: 3
+meta:
+    description: "How to use the Node-RED Change node to set, change, move or delete message properties and transform data without code, with examples."
 ---
 
 # Change

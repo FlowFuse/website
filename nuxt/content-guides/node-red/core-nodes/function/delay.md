@@ -3,6 +3,8 @@ title: "Node-RED Delay node"
 metaTitle: "Node-RED - Delay Node"
 navTitle: "Delay"
 navOrder: 6
+meta:
+    description: "How to use the Node-RED Delay node to delay messages, limit their rate or throttle a flow, with examples for each mode."
 ---
 
 # Delay

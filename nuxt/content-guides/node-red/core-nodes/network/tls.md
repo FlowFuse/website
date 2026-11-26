@@ -3,6 +3,8 @@ title: "Node-RED TLS node"
 metaTitle: "Node-RED - TLS Node"
 navTitle: "TLS"
 navOrder: 1
+meta:
+    description: "How to configure the Node-RED TLS config node to encrypt connections with certificates and keys, and which nodes use it for secure communication."
 ---
 
 # TLS

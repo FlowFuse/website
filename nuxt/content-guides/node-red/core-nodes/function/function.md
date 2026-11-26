@@ -3,6 +3,8 @@ title: "Node-RED Function node"
 metaTitle: "Node-RED - Function Node"
 navTitle: "Function"
 navOrder: 1
+meta:
+    description: "How to use the Node-RED Function node to process messages with custom JavaScript: its tabs, logging, available objects, use cases and examples."
 ---
 
 # Function

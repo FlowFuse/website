@@ -2,6 +2,8 @@
 title: "IIoT architectures"
 navTitle: "IIoT architectures"
 navOrder: 3
+meta:
+    description: "The FlowFuse IIoT architecture: small Remote Instances at distributed sites publish sensor data to a Team Broker, and one central app shows every node live."
 ---
 
 # IIoT architectures

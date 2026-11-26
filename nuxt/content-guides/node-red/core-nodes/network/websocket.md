@@ -3,6 +3,8 @@ title: "Node-RED WebSocket node"
 metaTitle: "Node-RED - WebSocket Node"
 navTitle: "WebSocket"
 navOrder: 7
+meta:
+    description: "How to use the Node-RED WebSocket in and out nodes to listen for or connect to WebSocket servers, with configuration options and examples."
 ---
 
 # WebSocket

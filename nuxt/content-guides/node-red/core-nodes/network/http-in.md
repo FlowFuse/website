@@ -3,6 +3,8 @@ title: "Node-RED HTTP in node"
 metaTitle: "Node-RED - HTTP in Node"
 navTitle: "HTTP in"
 navOrder: 5
+meta:
+    description: "How to use the Node-RED HTTP in node to create HTTP endpoints in a flow: set the URL path and method, send a response, with examples and output details."
 ---
 
 # HTTP in

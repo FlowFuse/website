@@ -3,6 +3,8 @@ title: "Node-RED Range node"
 metaTitle: "Node-RED - Range Node"
 navTitle: "Range"
 navOrder: 4
+meta:
+    description: "How to use the Node-RED Range node to map a numeric value from one range to another, such as scaling a sensor reading, with examples."
 ---
 
 # Range

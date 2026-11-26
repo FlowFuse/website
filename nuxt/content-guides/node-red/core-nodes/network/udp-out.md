@@ -3,6 +3,8 @@ title: "Node-RED UDP Out node"
 metaTitle: "Node-RED - UDP Out Node"
 navTitle: "UDP Out"
 navOrder: 10
+meta:
+    description: "How to use the Node-RED UDP out node to send UDP messages to a device or service: set the destination address and port, with use cases and an example."
 ---
 
 # UDP Out

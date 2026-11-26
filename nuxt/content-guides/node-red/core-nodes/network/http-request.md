@@ -3,6 +3,8 @@ title: "Node-RED HTTP request node"
 metaTitle: "Node-RED - HTTP request Node"
 navTitle: "HTTP request"
 navOrder: 6
+meta:
+    description: "How to use the Node-RED HTTP request node to call APIs and web services: set the method, URL, payload and headers, with examples and output options."
 ---
 
 # HTTP request
