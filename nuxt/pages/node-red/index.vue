@@ -179,7 +179,7 @@ const FAQ = [
 ]
 
 useSeoMeta({
-    title: META_TITLE,
+    title: META_TITLE.replace(/ \| FlowFuse$/, ''),
     description: META_DESCRIPTION,
     ogTitle: META_TITLE,
     ogDescription: META_DESCRIPTION,

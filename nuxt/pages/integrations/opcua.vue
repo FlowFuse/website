@@ -3,7 +3,7 @@
 // resolves this exact path first, so /integrations/opcua never falls into the
 // catch-all's "integration not found" 404.
 useSeoMeta({
-    title: 'OPC UA Client & Server | Certified Node | FlowFuse',
+    title: 'OPC UA Client & Server | Certified Node',
     description: 'Connect, secure, and bridge OPC UA with a FlowFuse Certified Node, then reach Modbus, EtherNet/IP, MQTT, and 5,000+ other integrations without leaving the canvas.',
     ogUrl: 'https://flowfuse.com/integrations/opcua/',
     twitterSite: '@FlowFuseinc',

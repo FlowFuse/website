@@ -1,5 +1,6 @@
 ---
 title: Agents install FlowFuse and certified nodes for you
+metaTitle: "Agents install FlowFuse and certified nodes"
 description: Agents can now install FlowFuse-scoped plugins and certified nodes on their own, instead of stopping to send you to the palette manager.
 date: 2026-09-24
 release: "3.1"

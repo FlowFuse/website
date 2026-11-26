@@ -180,6 +180,7 @@ export default defineContentConfig({
             source: 'customer-stories/**/*.md',
             schema: z.object({
                 description: z.string().optional(),
+                metaTitle: z.string().optional(),
                 image: z.string().optional(),
                 date: z.coerce.date(),
                 // Card-badge logo shown on the listing/related-stories tiles - distinct from
@@ -709,6 +710,7 @@ export default defineContentConfig({
             source: 'ebooks/*.md',
             schema: z.object({
                 title: z.string(),
+                metaTitle: z.string().optional(),
                 description: z.string().optional(),
                 contentTitle: z.string().optional(),
                 usecase: z.array(z.string()).optional(),

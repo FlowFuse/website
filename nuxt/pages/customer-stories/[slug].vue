@@ -59,11 +59,12 @@ const breadcrumbItems = computed(() => [
     { label: 'Customer Stories', to: '/customer-stories' },
     { label: pageTitle.value },
 ])
+const seoTitle = computed(() => page.value?.metaTitle || pageTitle.value)
 const fullTitle = computed(() => `${pageTitle.value} • FlowFuse`)
 const canonicalUrl = computed(() => `https://flowfuse.com${route.path}`)
 
 useSeoMeta({
-    title: fullTitle,
+    title: seoTitle,
     description: computed(() => page.value?.description || ''),
     ogTitle: fullTitle,
     ogDescription: computed(() => page.value?.description || ''),

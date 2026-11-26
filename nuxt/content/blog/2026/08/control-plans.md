@@ -1,5 +1,6 @@
 ---
 title: "Control Plans: Linking Quality Characteristics to Measurement Data"
+metaTitle: "Control Plans: Linking Characteristics to Measurements"
 subtitle: "Closing the gap between documented control plan requirements and real-time production measurements"
 description: "Control plans define what to measure, how often, and how to react, but shop-floor equipment rarely knows it. Here's how to connect control plan characteristics to live measurement data."
 date: 2026-08-28

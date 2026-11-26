@@ -1,5 +1,6 @@
 ---
 title: "Changes to Starter, Pro, and Team Plans: Your Questions Answered"
+metaTitle: "Starter, Pro and Team Plan Changes: Your Questions"
 subtitle: "What happens on January 1, 2027, what you need to do, and what happens to your data"
 description: "FlowFuse is retiring the Starter, Pro, and Team plans. Contact support@flowfuse.com before March 31, 2027 to move to Hub, Edge, or Fleet, or your account will be paused. Your data will not be lost."
 date: 2026-11-16

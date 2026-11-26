@@ -1,5 +1,6 @@
 ---
 title: Project Nodes now reach every instance in your application
+metaTitle: "Project Nodes reach every instance in your app"
 description: Target hosted and remote instances by application, scope broadcasts to one application, call from remote to remote, and choose the target and topic at runtime.
 date: 2026-11-16 12:00:00
 release: "3.3"

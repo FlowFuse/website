@@ -8,7 +8,7 @@
 // Copy rules (as on the solution pages): AI proposes, a person approves; no outcome numbers of
 // our own; Edge, Hub and Fleet keep their names and read as where the platform runs.
 useSeoMeta({
-    title: 'The Platform Behind Every Solution | FlowFuse',
+    title: 'The Platform Behind Every Solution',
     description: 'Every FlowFuse solution runs on one governed platform: connected to your machines, built and changed with AI your team approves, and reused at every plant.',
     ogUrl: 'https://flowfuse.com/product/',
     twitterSite: '@FlowFuseinc',
