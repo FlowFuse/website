@@ -38,6 +38,14 @@ const authorIsLinkable = computed(() => {
 // regardless of registration order.
 useHead({ templateParams: { siteName: 'FlowFuse Integrations' } }, { tagPriority: 1000 })
 useHead({ title: () => node.value._id })
+useSeoMeta({
+    description: () => {
+        const id = node.value._id
+        const text = node.value.description?.trim()
+        if (!text) return `${id} for Node-RED: README, version and install details in the FlowFuse integrations catalog.`
+        return /node-red/i.test(text) ? `${id}: ${text}` : `${id} for Node-RED: ${text}`
+    },
+})
 
 const activeTab = ref<'overview' | 'examples'>('overview')
 function switchTab (tab: 'overview' | 'examples') {

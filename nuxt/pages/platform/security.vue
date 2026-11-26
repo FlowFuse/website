@@ -17,6 +17,7 @@ useSeoMeta({
     title: 'Security Statement - FlowFuse',
     ogUrl: 'https://flowfuse.com/platform/security/',
     twitterSite: '@FlowFuseinc',
+    description: 'How FlowFuse protects your users and data: SSO, MFA, role-based access and audit logs, AES-256 encryption at rest, TLS in transit, SOC 2 and GxP readiness.',
 })
 
 useKatexStyles()
