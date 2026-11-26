@@ -180,9 +180,6 @@ export default defineContentConfig({
             source: 'customer-stories/**/*.md',
             schema: z.object({
                 description: z.string().optional(),
-                // The search-result title, when the story's headline is too long for one.
-                // Undeclared, @nuxt/content stripped it, so the metaTitle the stories
-                // already carried was never used.
                 metaTitle: z.string().optional(),
                 image: z.string().optional(),
                 date: z.coerce.date(),
@@ -713,7 +710,6 @@ export default defineContentConfig({
             source: 'ebooks/*.md',
             schema: z.object({
                 title: z.string(),
-                // The search-result title, when the ebook's title is too long for one.
                 metaTitle: z.string().optional(),
                 description: z.string().optional(),
                 contentTitle: z.string().optional(),
