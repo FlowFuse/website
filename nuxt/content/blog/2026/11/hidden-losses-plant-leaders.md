@@ -25,14 +25,14 @@ structuredData:
     - question: "How does FlowFuse help improve OEE?"
       answer: "FlowFuse's [forward-deployed engineers](/build-with-us/) work alongside your team. They start by agreeing with you which line to begin on, how OEE will be calculated and what number will count as success. They then connect the machines you already run, new and old, so stops, speeds and machine states are recorded as they happen and OEE comes from machine data instead of shift reports. Once it works on the first line, the same application rolls out to the next lines and sites, and your team owns and runs it."
 tldr:
-  - "Check the number before you try to improve OEE. Most reported OEE runs high because of settings chosen when it was set up, not because anyone is gaming it."
-  - "An ideal cycle time copied from today's speed and a planned-downtime list that keeps growing can turn a real 54% OEE into a reported 84%."
-  - "Downtime reasons typed in by the people they would blame point improvement work at the wrong causes."
-  - "The worst machine on the report is often starved or blocked by its neighbours, and a minute lost at the bottleneck costs far more than one lost anywhere else."
-  - "Each loss shows up when you compare the report with a source it doesn't control: rated speed, the fault log, the first good unit or the warehouse count."
+  - "Reported OEE usually runs high because of choices made when it was set up, not because anyone is gaming it. Check the number before you try to improve it."
+  - "If the ideal cycle time was copied from the line's speed on go-live day, speed losses disappear. On the example line, a real 80% Performance is reported as 96%."
+  - "A planned-downtime list that only grows hides late starts and overrunning changeovers. Together with a flattering cycle time, it turns a line running at 54% into a reported 84%."
+  - "Reason codes entered after the fact, by the people they would blame, send improvement work to the wrong cause, often to operator training."
+  - "The machine with the most downtime is often just starved or blocked. Find the bottleneck first: a minute lost there is lost for the whole line, while a minute lost elsewhere is usually made up."
 ---
 
-If you run a plant or lead operations, some of your biggest losses probably never appear in your reports. They hide inside numbers your team trusts and reviews every week. Most plants are making at least one of the five mistakes below, and each one hides a loss your reports don't show.
+If you run a plant or lead operations, some of your biggest losses probably never appear in your reports. They hide inside numbers your team trusts and reviews every week. Most plants make at least one of the five mistakes below.
 
 <!--more-->
 
