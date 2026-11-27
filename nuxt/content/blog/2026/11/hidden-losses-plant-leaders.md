@@ -57,6 +57,9 @@ Put the first two mistakes together, and a line that reports 84% OEE is really r
 
 Late starts in particular are more common than most managers assume. Jared Spencer, a packaging operations consultant, [describes a plant](https://buttondown.com/jaredspencer/archive/your-line-doesnt-start-when-your-shift-does/) where Line 1's first parts appeared at 8:00 on a 7:00 shift. He calls it "30 to 60 minutes of paid, present, on-the-floor labor every morning where nothing is being made."
 
+::cta-image{src="./images/hidden-losses-cta.png" alt="Numbers you can trust from every machine: pull data straight from new and legacy machines, build apps with our forward-deployed engineers, and deploy and scale across every site with FlowFuse. Book a demo." cta="demo"}
+::
+
 ## Mistake 3: Trusting downtime reasons entered by the people they would blame
 
 The downtime Pareto decides where your engineers spend their time. It is built from reason codes that operators type in under time pressure, sometimes from memory at the end of the shift, instead of [at the machine when the stop happens](/blog/2026/07/build-downtime-logger/). Two things follow. The easiest option wins, which is why "Other" is the tallest bar in so many plants. And people avoid codes that point at themselves, so operators record equipment problems and maintenance records operator problems.
@@ -72,9 +75,6 @@ A machine can be stopped without anything being wrong with it. If nothing arrive
 Picture last week's report for the same line. The labeler sits at the bottom with ten hours of downtime, so someone proposes a $40,000 upgrade. But the labeler was only broken for three of those hours. For the other seven it was waiting, mostly for bottles that the capper hadn't sent yet. The machine holding the line back was the capper, and the upgrade would have gone to the wrong one.
 
 A beverage plant we worked with had a filler line running at around 70% of schedule and couldn't say why. Once every machine on the line [reported the same states](/use-cases/production-line-monitoring/), including starved and blocked, the cause became clear. An unscrambler at the start of the line was starving everything after it.
-
-::cta-image{src="./images/hidden-losses-cta.png" alt="Numbers you can trust from every machine: pull data straight from new and legacy machines, build apps with our forward-deployed engineers, and deploy and scale across every site with FlowFuse. Book a demo." cta="demo"}
-::
 
 ## Mistake 5: Treating every lost minute as equal
 
@@ -93,7 +93,6 @@ Each of these mistakes shows up when you compare the report with a source it doe
 
 *Download the free checklist below. It gives the exact comparison for each mistake, the data to pull, and what to do when the numbers don't match.*
 
-::hub-spot-form{form-id="REPLACE-WITH-HUBSPOT-FORM-ID" cta="cta-hidden-losses-checklist" reference="hidden-losses-checklist"}
-::
+**[Download the checklist](https://26586079.fs1.hubspotusercontent-eu1.net/hubfs/26586079/Downloadable%20Blog%20Assets/Check-Your-Plant-5-Hidden-Losses.docx)**
 
 When the checks come back badly, the cause is usually the same. The data depends on people recording it after the fact, so it inherits their shortcuts, their memory and their incentives. FlowFuse connects to the machines you already have, including older equipment, and records stops, machine states and speeds as they happen, ready for an [OEE dashboard](/blueprints/manufacturing/oee-dashboard/) your team can trust. The checks then become something you can look up instead of reconstructing by hand.
