@@ -16,14 +16,16 @@ cta:
   description: "Pick one line. We'll work with your team to capture stops, speeds and machine states straight from the machines you already run, so the numbers in your review match what happened on the floor."
 structuredData:
   faq:
-    - question: "What is a hidden loss in manufacturing?"
-      answer: "A hidden loss is output a line loses that never appears in its performance reports. It usually comes from how the numbers are set up rather than from anyone hiding anything: an ideal speed that matches what the line already runs, losses classed as planned time, or downtime coded to the wrong cause."
-    - question: "How do I know if my ideal cycle time is set too low?"
-      answer: "Compare the ideal rate in your OEE system with the machine's nameplate rate and with the best hour the line has actually run in the last three months. If the ideal is the slowest of the three, or Performance has been above 95% for weeks, the target is probably set too low."
-    - question: "What are starved and blocked states?"
-      answer: "A machine is starved when nothing arrives from the machine before it, and blocked when the machine after it is full. In both cases it is stopped without anything being wrong with it. Tracking these states separately shows which stops a machine caused itself and which came from its neighbours."
-    - question: "Can FlowFuse capture machine states from older equipment?"
-      answer: "Yes. FlowFuse connects to PLCs over [industrial protocols](/docs/flowfuse-nodes/edge/) such as Modbus, OPC UA, Siemens S7 and EtherNet/IP, and machines without a network connection can be fitted with simple sensors. Stops, speeds and machine states are then recorded as they happen, which is the basis for [production line monitoring](/use-cases/production-line-monitoring/) and an [OEE dashboard](/blueprints/manufacturing/oee-dashboard/) your team can trust."
+    - question: "What is a good OEE score?"
+      answer: "85% is often quoted as world class, but it only means something if the score is calculated honestly. Most plants that measure against true ideal speeds and count every staffed minute land well below their reported figure. A consistently calculated number that improves month on month is worth more than a high one that doesn't match the floor."
+    - question: "How do you set the ideal cycle time for OEE?"
+      answer: "Use the fastest rate the machine can sustain for that product: the nameplate rate or the best rate it has actually achieved, whichever is faster. Avoid budget or standard rates, and set a separate ideal for each product, because one rate for every product hides the slow ones."
+    - question: "Should changeovers count as planned downtime?"
+      answer: "Many plants class them as planned, which is fine if the time is still reported. Set an allowance for each changeover, count anything beyond it as unplanned, and report planned hours next to Availability every week, so the losses stay visible."
+    - question: "How do you find the bottleneck on a production line?"
+      answer: "Walk the line and look for the machine that keeps working while the machines after it wait for parts and the machines before it back up. Check again when the product mix changes, because the bottleneck often moves. Averages from a report are a poor guide."
+    - question: "Can downtime be captured automatically on older machines?"
+      answer: "Yes. FlowFuse connects to PLCs over [industrial protocols](/docs/flowfuse-nodes/edge/) such as Modbus, OPC UA, Siemens S7 and EtherNet/IP, and machines without a network connection can be fitted with simple sensors. Stops, speeds and machine states are then recorded as they happen, which is the basis for [production line monitoring](/use-cases/production-line-monitoring/)."
 tldr:
   - "Most plant reports flatter the plant. The cause is usually a few settings chosen when OEE was set up, not anyone gaming the numbers."
   - "An ideal cycle time set to today's speed and a growing planned-downtime list can turn a real 54% OEE into a reported 84%."
@@ -39,7 +41,7 @@ Each one can be checked in about fifteen minutes with data you already have. The
 
 ## Mistake 1: Setting the ideal cycle time from what the line already runs
 
-Performance compares how fast a machine runs with how fast it should run. The "should" figure, the ideal cycle time, is often taken from a budget rate, a product-development estimate, or whatever the line happened to be doing when the OEE system went live. After that it is rarely revisited. Once the ideal matches the current speed, Performance looks close to perfect, and nobody works on speed because every report says speed is fine. Vorne, which publishes [OEE.com](https://www.oee.com/practical-oee/), calls this "by far the most common mistake we see."
+Performance compares how fast a machine runs with how fast it should run. The "should" figure, the ideal cycle time, is often taken from a budget rate, a product-development estimate, or whatever the line happened to be doing when the OEE system went live. After that it is rarely revisited. Once the ideal matches the current speed, Performance looks close to perfect, and nobody works on speed because every report says speed is fine. It is one of the most common ways an OEE number drifts away from reality.
 
 Picture a simple bottling line with three machines: a filler, a capper and a labeler. The capper is the slowest, and it can cap 60 bottles a minute. When OEE was set up, it happened to be running at 50, so 50 was entered as the ideal. Today it runs at 48. The report says Performance is 96%. Measured against what the capper can really do, it is 80%. That missing 20% is thousands of bottles a shift, and none of it shows up as a loss.
 
@@ -47,7 +49,7 @@ A food manufacturer we spoke with found the same problem in its scheduled cook t
 
 ## Mistake 2: Letting the "planned downtime" list grow
 
-Availability, one of the three parts of OEE, only counts losses during the time the plant planned to produce. Anything classed as planned drops out of the calculation, and that list tends to grow. Changeovers go in first, then cleaning, then start-up. Later someone adds waiting for material, trials, or shifts with no operator. Each addition had a reasonable argument behind it at the time. What almost never happens is a review of the whole list, so items get added and nothing gets taken out.
+Availability, one of the [three parts of OEE](/blog/2026/05/fixing-oee-measurement-in-manufacturing/), only counts losses during the time the plant planned to produce. Anything classed as planned drops out of the calculation, and that list tends to grow. Changeovers go in first, then cleaning, then start-up. Later someone adds waiting for material, trials, or shifts with no operator. Each addition had a reasonable argument behind it at the time. What almost never happens is a review of the whole list, so items get added and nothing gets taken out.
 
 Picture the same line on a normal morning. The shift starts at 7:00, but the first good bottle comes off at 7:45. Those 45 minutes are logged as "start-up", which counts as planned, so they don't count against the line. A changeover planned for 25 minutes takes 40, and all 40 are logged as planned too. On paper, the line was available 90% of the time. Counting every minute the team was on shift and ready to work, it was making bottles about 70% of the time.
 
@@ -57,7 +59,7 @@ Late starts in particular are more common than most managers assume. Jared Spenc
 
 ## Mistake 3: Trusting downtime reasons entered by the people they would blame
 
-The downtime Pareto decides where your engineers spend their time. It is built from reason codes that operators type in under time pressure, sometimes from memory at the end of the shift. Two things follow. The easiest option wins, which is why "Other" is the tallest bar in so many plants. And people avoid codes that point at themselves, so operators record equipment problems and maintenance records operator problems.
+The downtime Pareto decides where your engineers spend their time. It is built from reason codes that operators type in under time pressure, sometimes from memory at the end of the shift, instead of [at the machine when the stop happens](/blog/2026/07/build-downtime-logger/). Two things follow. The easiest option wins, which is why "Other" is the tallest bar in so many plants. And people avoid codes that point at themselves, so operators record equipment problems and maintenance records operator problems.
 
 Picture the downtime chart for the same line. "Other" is the biggest reason, and "Operator error" is second. So the plant books operator training. A month later, someone checks the labeler's own fault log and finds that most of those stops were the same faulty sensor. The training changed nothing, because the problem was never the operators.
 
@@ -69,7 +71,7 @@ A machine can be stopped without anything being wrong with it. If nothing arrive
 
 Picture last week's report for the same line. The labeler sits at the bottom with ten hours of downtime, so someone proposes a $40,000 upgrade. But the labeler was only broken for three of those hours. For the other seven it was waiting, mostly for bottles that the capper hadn't sent yet. The machine holding the line back was the capper, and the upgrade would have gone to the wrong one.
 
-A beverage plant we worked with had a filler line running at around 70% of schedule and couldn't say why. Once every machine on the line reported the same states, including starved and blocked, the cause became clear. An unscrambler at the start of the line was starving everything after it.
+A beverage plant we worked with had a filler line running at around 70% of schedule and couldn't say why. Once every machine on the line [reported the same states](/use-cases/production-line-monitoring/), including starved and blocked, the cause became clear. An unscrambler at the start of the line was starving everything after it.
 
 ::cta-image{src="./images/hidden-losses-cta.png" alt="Numbers you can trust from every machine: pull data straight from new and legacy machines, build apps with our forward-deployed engineers, and deploy and scale across every site with FlowFuse. Book a demo." cta="demo"}
 ::
@@ -94,4 +96,4 @@ Each of these mistakes shows up when you compare the report with a source it doe
 ::hub-spot-form{form-id="REPLACE-WITH-HUBSPOT-FORM-ID" cta="cta-hidden-losses-checklist" reference="hidden-losses-checklist"}
 ::
 
-When the checks come back badly, the cause is usually the same. The data depends on people recording it after the fact, so it inherits their shortcuts, their memory and their incentives. FlowFuse connects to the machines you already have, including older equipment, and records stops, machine states and speeds as they happen. The checks then become something you can look up instead of reconstructing by hand.
+When the checks come back badly, the cause is usually the same. The data depends on people recording it after the fact, so it inherits their shortcuts, their memory and their incentives. FlowFuse connects to the machines you already have, including older equipment, and records stops, machine states and speeds as they happen, ready for an [OEE dashboard](/blueprints/manufacturing/oee-dashboard/) your team can trust. The checks then become something you can look up instead of reconstructing by hand.
