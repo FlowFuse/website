@@ -77,7 +77,7 @@ The concept of OEE was introduced by Seiichi Nakajima in the 1960s as part of th
 
 Measuring and improving OEE allows you to improve the utilization of existing machinery and improves operational efficiency. In many cases, improving OEE is the most strategic and cost-effective approach to increasing output.
 
-Two caveats worth knowing before you build a dashboard around this number. First, OEE is easy to calculate in a way that flatters the plant - [OEE is misleading your factory: here's how to fix it](/blog/2026/05/fixing-oee-measurement-in-manufacturing/) covers the common measurement mistakes. Second, OEE only judges equipment during *scheduled* production time; [TEEP](/blog/2025/12/what-is-teep/) is the companion metric that accounts for the hours your assets sit idle by choice.
+Two caveats worth knowing before you build a dashboard around this number. First, OEE is easy to calculate in a way that flatters the plant - [OEE is misleading your factory: here's how to fix it](/blog/2026/05/fixing-oee-measurement-in-manufacturing/) covers the common measurement mistakes, and [5 hidden losses every plant leader should check for](/blog/2026/11/hidden-losses-plant-leaders/) shows how to test your own numbers. Second, OEE only judges equipment during *scheduled* production time; [TEEP](/blog/2025/12/what-is-teep/) is the companion metric that accounts for the hours your assets sit idle by choice.
 
 For a launch or capacity-approval event, a [run at rate](/blog/2026/08/run-at-rate/) is the separate test that verifies the line can hold its required output with production tooling and staffing.
 
