@@ -1,8 +1,8 @@
 ---
 title: "5 Hidden Losses Every Plant Leader Should Check For"
-metaTitle: "5 Hidden OEE and Downtime Losses to Check in Your Plant"
+metaTitle: "How to Improve OEE: 5 Hidden Losses to Check First"
 subtitle: "Where your reports make the plant look better than it is, and how to check each one"
-description: "Five mistakes that make OEE and downtime reports look better than the plant really runs, why they happen, and a 15-minute check for each. Free checklist."
+description: "Five hidden losses that make OEE look better than it is, from planned downtime to ideal cycle time, and how to check each one to improve OEE in manufacturing."
 date: 2026-11-27
 authors: ["sumit-shinde"]
 image: /blog/2026/11/images/hidden-losses-plant-leaders.png
@@ -16,12 +16,12 @@ cta:
   description: "Pick one line. We'll work with your team to capture stops, speeds and machine states straight from the machines you already run, so the numbers in your review match what happened on the floor."
 structuredData:
   faq:
-    - question: "What is a good OEE score?"
-      answer: "85% is often quoted as world class, but it only means something if the score is calculated honestly. Most plants that measure against true ideal speeds and count every staffed minute land well below their reported figure. A consistently calculated number that improves month on month is worth more than a high one that doesn't match the floor."
+    - question: "What is world class OEE?"
+      answer: "World class OEE is usually quoted as 85%, made up of 90% availability, 95% performance and 99.9% quality. It only means something if the score is calculated honestly. Most plants that measure against true ideal speeds and count every staffed minute land well below their reported figure. A consistently calculated number that improves month on month is worth more than a high one that doesn't match the floor."
     - question: "How do you set the ideal cycle time for OEE?"
       answer: "Use the fastest rate the machine can sustain for that product: the nameplate rate or the best rate it has actually achieved, whichever is faster. Avoid budget or standard rates, and set a separate ideal for each product, because one rate for every product hides the slow ones."
-    - question: "Should changeovers count as planned downtime?"
-      answer: "Many plants class them as planned, which is fine if the time is still reported. Set an allowance for each changeover, count anything beyond it as unplanned, and report planned hours next to Availability every week, so the losses stay visible."
+    - question: "What is the difference between planned and unplanned downtime?"
+      answer: "Planned downtime is time the plant decided not to produce, such as scheduled maintenance, breaks or changeovers. Unplanned downtime is time the line should have been running but wasn't, such as breakdowns, jams or waiting for material. Many plants class changeovers as planned, which is fine if the time is still reported: set an allowance for each one, count anything beyond it as unplanned, and report planned hours next to Availability every week."
     - question: "How do you find the bottleneck on a production line?"
       answer: "Walk the line and look for the machine that keeps working while the machines after it wait for parts and the machines before it back up. Check again when the product mix changes, because the bottleneck often moves. Averages from a report are a poor guide."
     - question: "Can downtime be captured automatically on older machines?"
@@ -49,7 +49,7 @@ A food manufacturer we spoke with found the same problem in its scheduled cook t
 
 ## Mistake 2: Letting the "planned downtime" list grow
 
-Availability, one of the [three parts of OEE](/blog/2026/05/fixing-oee-measurement-in-manufacturing/), only counts losses during the time the plant planned to produce. Anything classed as planned drops out of the calculation, and that list tends to grow. Changeovers go in first, then cleaning, then start-up. Later someone adds waiting for material, trials, or shifts with no operator. Each addition had a reasonable argument behind it at the time. What almost never happens is a review of the whole list, so items get added and nothing gets taken out.
+Availability, one of the [three parts of OEE](/blog/2026/05/fixing-oee-measurement-in-manufacturing/), only counts losses during the time the plant planned to produce. Anything classed as planned drops out of the calculation and never shows up as unplanned downtime, and that list tends to grow. Changeovers go in first, then cleaning, then start-up. Later someone adds waiting for material, trials, or shifts with no operator. Each addition had a reasonable argument behind it at the time. What almost never happens is a review of the whole list, so items get added and nothing gets taken out.
 
 Picture the same line on a normal morning. The shift starts at 7:00, but the first good bottle comes off at 7:45. Those 45 minutes are logged as "start-up", which counts as planned, so they don't count against the line. A changeover planned for 25 minutes takes 40, and all 40 are logged as planned too. On paper, the line was available 90% of the time. Counting every minute the team was on shift and ready to work, it was making bottles about 70% of the time.
 
