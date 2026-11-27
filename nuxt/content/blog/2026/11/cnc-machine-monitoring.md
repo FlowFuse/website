@@ -105,7 +105,7 @@ Machine state gives you spindle utilization, the number to watch first:
 
 **Spindle utilization = Cutting time ÷ Scheduled production time × 100**
 
-Add ideal cycle times and scrap counts later, and the same data gives you [OEE](/blog/2026/05/fixing-oee-measurement-in-manufacturing/) (Overall Equipment Effectiveness). Set those ideal cycle times from what the machine can really do, not what it happened to run last quarter, or the score [will flatter the cell](/blog/2026/11/hidden-losses-plant-leaders/).
+Add ideal cycle times and scrap counts later, and the same data gives you [OEE](/blog/2026/05/fixing-oee-measurement-in-manufacturing/) (Overall Equipment Effectiveness). Set those ideal cycle times from what the machine can really do, not what it happened to run last quarter, or the score [will flatter the cell](/blog/2026/11/hidden-factory/).
 
 Once production data is reliable, add quality KPIs such as first-pass yield and scrap rate, because high utilization means little if the parts are scrap. For maintenance, track spindle load, temperature and alarm history. A rising spindle load often signals tool wear.
 

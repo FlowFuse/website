@@ -79,7 +79,7 @@ Stops under a certain length stop getting logged. Changeovers get coded as plann
 
 The deeper damage is trust. Operators stop believing the dashboard because it does not reflect what actually happened. Managers stop trusting operators because the numbers look manipulated. Maintenance stops trusting downtime data because they know which codes get used to make availability look better.
 
-There is also slower drift at the management level. Ideal cycle times get adjusted downward. Planned downtime definitions get widened. Scheduled production time gets narrowed. Each change is small and defensible. Over time, the score loses meaning. [Five of these hidden losses, and a quick check for each](/blog/2026/11/hidden-losses-plant-leaders/), are worth looking for before you trust the number.
+There is also slower drift at the management level. Ideal cycle times get adjusted downward. Planned downtime definitions get widened. Scheduled production time gets narrowed. Each change is small and defensible. Over time, the score loses meaning. [Five of these hidden losses, and a quick check for each](/blog/2026/11/hidden-factory/), are worth looking for before you trust the number.
 
 The fix is removing the incentive to game. Use OEE as a diagnostic, not a scorecard. Stop ranking shifts on it. Stop tying it to bonuses. Make the goal "find the losses," not "hit 80%."
 
