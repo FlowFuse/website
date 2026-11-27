@@ -88,7 +88,7 @@ The report shows both as ten minutes of downtime. Lunch works the same way. If t
 
 ## How to check your own plant
 
-Each of these mistakes shows up when you compare the report with a source it doesn't control: the machine's rated speed, its own fault log, the time the first good unit came off, or the warehouse count. Where the two agree, the number is sound. Where they don't, you've found one of the five.
+Each of these mistakes shows up when you compare the report with a source it doesn't control: the machine's rated speed, its own fault log, or the time the first good unit came off. Where the two agree, the number is sound. Where they don't, you've found one of the five.
 
 *Download the free checklist below. It gives the exact comparison for each mistake, the data to pull, and what to do when the numbers don't match.*
 
