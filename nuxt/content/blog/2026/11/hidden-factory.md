@@ -2,7 +2,7 @@
 title: "The Hidden Factory: 5 Losses Every Plant Leader Should Check"
 metaTitle: "The Hidden Factory: 5 Losses Your OEE Reports Don't Show"
 subtitle: "Where your reports make the plant look better than it is, and how to check each one"
-description: "Your hidden factory is the capacity your OEE reports never show. Five common mistakes that hide it, and a fifteen-minute check for each."
+description: "Discover the hidden factory in your manufacturing plant. Explore five common mistakes that hide production capacity and learn how to uncover each one with a 15-minute check."
 date: 2026-11-27
 authors: ["sumit-shinde"]
 image: /blog/2026/11/images/hidden-losses-plant-leaders.png
@@ -27,18 +27,20 @@ structuredData:
     - question: "How does FlowFuse help improve OEE?"
       answer: "FlowFuse's [forward-deployed engineers](/build-with-us/) work alongside your team. They start by agreeing with you which line to begin on, how OEE will be calculated and what number will count as success. They then connect the machines you already run, new and old, so stops, speeds and machine states are recorded as they happen and OEE comes from machine data instead of shift reports. Once it works on the first line, the same application rolls out to the next lines and sites, and your team owns and runs it."
 tldr:
-  - "Reported OEE usually runs high because of choices made when it was set up, not because anyone is gaming it. Check the number before you try to improve it."
-  - "If the ideal cycle time was copied from the line's speed on go-live day, speed losses disappear. On the example line, a real 80% Performance is reported as 96%."
-  - "A planned-downtime list that only grows hides late starts and overrunning changeovers. Together with a flattering cycle time, it turns a line running at 54% into a reported 84%."
-  - "Reason codes entered after the fact, by the people they would blame, send improvement work to the wrong cause, often to operator training."
-  - "The machine with the most downtime is often just starved or blocked. Find the bottleneck first: a minute lost there is lost for the whole line, while a minute lost elsewhere is usually made up."
+  - "Most plants have more capacity than their numbers show, and finding this hidden factory comes before any work to improve OEE."
+  - "If the ideal cycle time matches the line's current speed, Performance looks close to perfect even when the line runs well below what it can do."
+  - "A planned-downtime list that keeps growing takes real losses out of Availability, so the line looks more available than it is."
+  - "Downtime reasons entered after the fact, by the people they would blame, point improvement work at the wrong problems."
+  - "The machine with the worst OEE is often waiting on its neighbours, and a minute lost at the bottleneck costs more than a minute lost anywhere else."
 ---
 
-If you run a plant or lead operations, some of your biggest losses probably never appear in your reports. They hide inside numbers your team trusts and reviews every week. Together they make up your hidden factory: output your plant could already produce but never sees, because the numbers say it isn't there. Most plants make at least one of the five mistakes below.
+If you run a plant or lead operations, your production reports may be hiding some of your biggest losses. OEE looks healthy and downtime seems under control, but machines run below their actual capacity, changeovers overrun, and production time disappears without being counted.
 
 <!--more-->
 
-Each one can be checked in about fifteen minutes, mostly with data you already have. The [checklist at the end](#how-to-find-your-hidden-factory) gives you each check, the red flags to look for, and what to fix first.
+Together, these losses make up your hidden factory: production capacity your plant already has but isn't using. The problem often isn't a lack of equipment or resources, but losses that go unnoticed because of how production is measured and managed.
+
+Five common mistakes can hide this capacity. Each takes about fifteen minutes to investigate using data you already have. The [checklist at the end](#how-to-find-your-hidden-factory) shows what to compare, which red flags to look for, and what to fix first.
 
 ## Mistake 1: Setting the ideal cycle time from what the line already runs
 
