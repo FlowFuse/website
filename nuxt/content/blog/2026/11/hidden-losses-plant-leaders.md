@@ -21,7 +21,7 @@ structuredData:
     - question: "Planned downtime vs unplanned downtime: what is the difference?"
       answer: "Planned downtime is time the plant decided not to produce, such as scheduled maintenance, breaks or changeovers. Unplanned downtime is time the line should have been running but wasn't, such as breakdowns, jams or waiting for material. Many plants class changeovers as planned, which is fine if the time is still reported: set an allowance for each one, count anything beyond it as unplanned, and report planned hours next to Availability every week."
     - question: "Can downtime be captured automatically on older machines?"
-      answer: "Yes. FlowFuse connects to PLCs over [industrial protocols](/docs/flowfuse-nodes/edge/) such as Modbus, OPC UA, Siemens S7 and EtherNet/IP, and machines without a network connection can be fitted with simple sensors. Stops, speeds and machine states are then recorded as they happen, which is the basis for [production line monitoring](/use-cases/production-line-monitoring/) and an [OEE dashboard](/blueprints/manufacturing/oee-dashboard/) your team can trust."
+      answer: "Yes. FlowFuse connects to PLCs over [industrial protocols](/docs/flowfuse-nodes/edge/) such as [Modbus](/docs/flowfuse-nodes/edge/modbus/), [OPC UA](/docs/flowfuse-nodes/edge/opcua/), [Siemens S7](/docs/flowfuse-nodes/edge/s7/) and [EtherNet/IP](/docs/flowfuse-nodes/edge/cip-suite/), and machines without a network connection can be fitted with simple sensors. Stops, speeds and machine states are then recorded as they happen, which is the basis for [production line monitoring](/use-cases/production-line-monitoring/) and an [OEE dashboard](/blueprints/manufacturing/oee-dashboard/) your team can trust."
     - question: "How does FlowFuse help improve OEE?"
       answer: "FlowFuse's [forward-deployed engineers](/build-with-us/) work alongside your team. They start by agreeing with you which line to begin on, how OEE will be calculated and what number will count as success. They then connect the machines you already run, new and old, so stops, speeds and machine states are recorded as they happen and OEE comes from machine data instead of shift reports. Once it works on the first line, the same application rolls out to the next lines and sites, and your team owns and runs it."
 tldr:
@@ -36,7 +36,7 @@ If you run a plant or lead operations, some of your biggest losses probably neve
 
 <!--more-->
 
-Each one can be checked in about fifteen minutes with data you already have. The checklist at the end shows you how.
+Each one can be checked in about fifteen minutes, mostly with data you already have. The [checklist at the end](#how-to-check-your-own-plant) gives you each check, the red flags to look for, and what to fix first.
 
 ## Mistake 1: Setting the ideal cycle time from what the line already runs
 
