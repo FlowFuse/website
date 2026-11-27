@@ -92,6 +92,7 @@ Each of these mistakes shows up when you compare the report with a source it doe
 
 *Download the free checklist below. It gives the exact comparison for each mistake, the data to pull, and what to do when the numbers don't match.*
 
-**[Download the checklist](https://26586079.fs1.hubspotusercontent-eu1.net/hubfs/26586079/Downloadable%20Blog%20Assets/Check-Your-Plant-5-Hidden-Losses.docx)**
+::hub-spot-form{form-id="7f9b3493-f67c-4eab-b1bb-772e14a9708a" cta="cta-hidden-losses-checklist" reference="hidden-losses-checklist"}
+::
 
 When the checks come back badly, the cause is usually the same. The data depends on people recording it after the fact, so it inherits their shortcuts, their memory and their incentives. FlowFuse connects to the machines you already have, including older equipment, and records stops, machine states and speeds as they happen, ready for an [OEE dashboard](/blueprints/manufacturing/oee-dashboard/) your team can trust. The checks then become something you can look up instead of reconstructing by hand.
