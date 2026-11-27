@@ -16,12 +16,16 @@ cta:
   description: "Pick one line. We'll work with your team to capture stops, speeds and machine states straight from the machines you already run, so the numbers in your review match what happened on the floor."
 structuredData:
   faq:
+    - question: "How do you improve OEE in manufacturing?"
+      answer: "Start by checking that the number is right, because you can't improve a figure that is set up to flatter the line. Set ideal cycle times from what the machines can really do, review what counts as planned downtime, and capture stop reasons at the machine. Then work on the bottleneck first, since a minute recovered there adds output to the whole line. The usual levers are shorter changeovers, fewer breakdowns and short stops, running at the rated speed, and catching quality problems earlier."
     - question: "What is world class OEE?"
       answer: "World class OEE is usually quoted as 85%, made up of 90% availability, 95% performance and 99.9% quality. It only means something if the score is calculated honestly. Most plants that measure against true ideal speeds and count every staffed minute land well below their reported figure. A consistently calculated number that improves month on month is worth more than a high one that doesn't match the floor."
     - question: "How do you set the ideal cycle time for OEE?"
       answer: "Use the fastest rate the machine can sustain for that product: the nameplate rate or the best rate it has actually achieved, whichever is faster. Avoid budget or standard rates, and set a separate ideal for each product, because one rate for every product hides the slow ones."
     - question: "What is the difference between planned and unplanned downtime?"
       answer: "Planned downtime is time the plant decided not to produce, such as scheduled maintenance, breaks or changeovers. Unplanned downtime is time the line should have been running but wasn't, such as breakdowns, jams or waiting for material. Many plants class changeovers as planned, which is fine if the time is still reported: set an allowance for each one, count anything beyond it as unplanned, and report planned hours next to Availability every week."
+    - question: "What causes unplanned downtime in manufacturing?"
+      answer: "The most common causes are equipment breakdowns, jams and short stops, waiting for material or operators, quality problems that stop the line, and changeovers that overrun their allowance. Which ones matter most varies by line, so the first step is recording every stop with an accurate reason, ideally from the machine itself rather than from memory at the end of the shift."
     - question: "How do you find the bottleneck on a production line?"
       answer: "Walk the line and look for the machine that keeps working while the machines after it wait for parts and the machines before it back up. Check again when the product mix changes, because the bottleneck often moves. Averages from a report are a poor guide."
     - question: "Can downtime be captured automatically on older machines?"
