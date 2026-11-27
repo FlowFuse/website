@@ -25,10 +25,11 @@ structuredData:
     - question: "How does FlowFuse help improve OEE?"
       answer: "FlowFuse's [forward-deployed engineers](/build-with-us/) work alongside your team. They start by agreeing with you which line to begin on, how OEE will be calculated and what number will count as success. They then connect the machines you already run, new and old, so stops, speeds and machine states are recorded as they happen and OEE comes from machine data instead of shift reports. Once it works on the first line, the same application rolls out to the next lines and sites, and your team owns and runs it."
 tldr:
-  - "Most plant reports flatter the plant. The cause is usually a few settings chosen when OEE was set up, not anyone gaming the numbers."
-  - "An ideal cycle time set to today's speed and a growing planned-downtime list can turn a real 54% OEE into a reported 84%."
-  - "Downtime reasons entered by the people they would blame, starved and blocked time charged to the wrong machine, and treating every lost minute as equal all send improvement money to the wrong place."
-  - "Each mistake shows up when you compare the report with a source it doesn't control. The free checklist walks through all five."
+  - "Check the number before you try to improve OEE. Most reported OEE runs high because of settings chosen when it was set up, not because anyone is gaming it."
+  - "An ideal cycle time copied from today's speed and a planned-downtime list that keeps growing can turn a real 54% OEE into a reported 84%."
+  - "Downtime reasons typed in by the people they would blame point improvement work at the wrong causes."
+  - "The worst machine on the report is often starved or blocked by its neighbours, and a minute lost at the bottleneck costs far more than one lost anywhere else."
+  - "Each loss shows up when you compare the report with a source it doesn't control: rated speed, the fault log, the first good unit or the warehouse count."
 ---
 
 If you run a plant or lead operations, some of your biggest losses probably never appear in your reports. They hide inside numbers your team trusts and reviews every week. Most plants are making at least one of the five mistakes below, and each one hides a loss your reports don't show.
@@ -55,7 +56,7 @@ Put the first two mistakes together, and a line that reports 84% OEE is really r
 
 Late starts in particular are more common than most managers assume. Jared Spencer, a packaging operations consultant, [describes a plant](https://buttondown.com/jaredspencer/archive/your-line-doesnt-start-when-your-shift-does/) where Line 1's first parts appeared at 8:00 on a 7:00 shift. He calls it "30 to 60 minutes of paid, present, on-the-floor labor every morning where nothing is being made."
 
-::cta-image{src="./images/hidden-losses-cta.png" alt="Numbers you can trust from every machine: pull data straight from new and legacy machines, build apps with our forward-deployed engineers, and deploy and scale across every site with FlowFuse. Book a demo." cta="demo"}
+::cta-image{src="/blog/2026/11/images/hidden-losses-cta.png" alt="Numbers you can trust from every machine: pull data straight from new and legacy machines, build apps with our forward-deployed engineers, and deploy and scale across every site with FlowFuse. Book a demo." cta="demo"}
 ::
 
 ## Mistake 3: Trusting downtime reasons entered by the people they would blame
